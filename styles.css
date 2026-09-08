@@ -66,10 +66,12 @@ h2{margin:0 0 4px;font-size:19px}
 .memory-grid button.is-selected{background:var(--accent-soft);border-color:#abd8d2;color:#0b615a}
 .word-nav{display:flex;justify-content:space-between;gap:12px;margin-top:18px}
 .writing-card{position:sticky;top:12px}
-.writing-square{position:relative;width:min(100%,430px);aspect-ratio:1;margin:16px auto 12px;border:1px solid var(--border);border-radius:16px;overflow:hidden;background:#fbfdfc;touch-action:none}
+.writing-word-label{margin:14px auto 2px;text-align:center;font-family:"BiauKai","DFKai-SB","Kaiti TC","Noto Serif TC",serif;font-size:clamp(28px,4vw,42px);font-weight:800;line-height:1.2}
+.writing-grid{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:12px;width:100%;max-width:590px;margin:12px auto 14px}
+.writing-square{position:relative;width:100%;aspect-ratio:1;border:1px solid var(--border);border-radius:16px;overflow:hidden;background:#fbfdfc;touch-action:none;min-width:0}
 .grid-lines{position:absolute;inset:0;background-image:linear-gradient(to right,transparent calc(50% - .5px),rgba(21,35,33,.15) 50%,transparent calc(50% + .5px)),linear-gradient(to bottom,transparent calc(50% - .5px),rgba(21,35,33,.15) 50%,transparent calc(50% + .5px)),linear-gradient(45deg,transparent calc(50% - .5px),rgba(21,35,33,.08) 50%,transparent calc(50% + .5px)),linear-gradient(-45deg,transparent calc(50% - .5px),rgba(21,35,33,.08) 50%,transparent calc(50% + .5px));pointer-events:none}
-.trace-char{position:absolute;inset:0;display:flex;align-items:center;justify-content:center;font-family:"BiauKai","DFKai-SB","Kaiti TC","Noto Serif TC",serif;font-size:clamp(130px,21vw,240px);font-weight:700;opacity:.12;pointer-events:none;user-select:none;word-break:break-all;text-align:center;line-height:1}
-#writingCanvas{position:absolute;inset:0;width:100%;height:100%;touch-action:none}
+.trace-char{position:absolute;inset:0;display:flex;align-items:center;justify-content:center;font-family:"BiauKai","DFKai-SB","Kaiti TC","Noto Serif TC",serif;font-size:clamp(110px,15vw,205px);font-weight:700;opacity:.12;pointer-events:none;user-select:none;text-align:center;line-height:1}
+.writing-canvas{position:absolute;inset:0;width:100%;height:100%;touch-action:none}
 .toggle-row{display:flex;align-items:center;gap:9px;min-height:44px;cursor:pointer}
 .toggle-row input{width:20px;height:20px;accent-color:var(--accent)}
 .tip-box{background:var(--panel);border-radius:13px;padding:12px;font-size:14px;line-height:1.5}
@@ -92,6 +94,7 @@ footer{text-align:center;color:var(--muted);font-size:12px;padding:22px 10px 0;l
 }
 @media (max-width:600px){
   .app-shell{padding:12px 12px 34px}.topbar{align-items:flex-end}.day-select-wrap span{display:none}.card{padding:15px;border-radius:15px;box-shadow:none}.daily-summary{align-items:flex-start}.progress-wrap{min-width:0;flex:1;flex-direction:column;align-items:stretch;gap:5px}.meanings{grid-template-columns:1fr}.memory-grid{grid-template-columns:1fr}.filter-row{grid-template-columns:1fr}.quiz-options{grid-template-columns:1fr}.toolbar>button,.toolbar>.file-btn{flex:1 1 auto}.recorder-actions button{flex:1 1 130px}.hanzi{font-size:82px}.stats-grid{grid-template-columns:1fr 1fr}.stat strong{font-size:27px}
+  .writing-grid{grid-template-columns:1fr;max-width:360px;gap:14px}.trace-char{font-size:clamp(150px,52vw,220px)}
 }
 @media (prefers-reduced-motion:reduce){*{scroll-behavior:auto!important;transition:none!important}}
 

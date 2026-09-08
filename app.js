@@ -19,7 +19,7 @@ const I18N = {
     newWords:n=>`${n} từ mới`, allDays:'Tất cả ngày', dayOption:n=>`Ngày ${n}`, searchPlaceholder:'Tìm chữ, pinyin hoặc nghĩa…',
     loadingEnglish:'Đang tải nghĩa English…', englishUnavailable:'Chưa lấy được nghĩa English.', sourceWarning:'Lưu ý dữ liệu nguồn:', likelyForm:'Ví dụ dùng dạng được suy đoán theo pinyin/nghĩa:',
     recordIdle:'Giọng ghi âm chỉ lưu tạm trên thiết bị.', recording:'🔴 Đang ghi âm… hãy đọc từ hiện tại.', recordDone:'Đã ghi xong. Bạn có thể phát lại hoặc kiểm tra phát âm.', micDenied:'Không truy cập được microphone. Hãy cấp quyền microphone cho website.', recorderUnsupported:'Thiết bị/trình duyệt này chưa hỗ trợ ghi âm bằng MediaRecorder.',
-    speechUnsupported:'Trình duyệt này không hỗ trợ nhận dạng giọng nói để chấm phát âm.', speechListening:'🎧 Đang nghe… hãy đọc từ một lần.', noRecognition:'Chưa nhận dạng được từ. Hãy thử lại ở nơi yên tĩnh.', recognitionDone:'✅ Đã nhận dạng xong. Kết quả ở bên dưới.', recognitionTimeout:'Không nhận được kết quả sau vài giây. Trên iPhone/iPad, hãy thử mở bằng Safari trực tiếp và nói ngay sau khi bấm kiểm tra.',
+    speechUnsupported:'Trình duyệt này không hỗ trợ nhận dạng giọng nói để chấm phát âm.', speechListening:'🎧 Đang nghe… hãy nói từ mẫu một lần ngay bây giờ.', noRecognition:'Không nhận được chữ từ hệ thống nhận dạng.', recognitionDone:'✅ Đã nhận dạng xong. Kết quả ở bên dưới.', recognitionTimeout:'⚠️ Trình duyệt không trả kết quả nhận dạng sau 8 giây. Đây không có nghĩa là bạn phát âm sai.', speechNoSpeech:'🎤 Không phát hiện tiếng nói. Hãy bấm kiểm tra rồi nói ngay, rõ và đủ gần microphone.', speechNetworkError:'🌐 Dịch vụ nhận dạng giọng nói gặp lỗi mạng. Hãy kiểm tra Internet rồi thử lại.', speechPermissionDenied:'🔒 Trình duyệt chưa cho phép nhận dạng bằng microphone. Hãy cấp quyền Microphone cho trang này.', speechAudioCapture:'🎙 Không lấy được tín hiệu từ microphone. Hãy kiểm tra quyền hoặc thiết bị thu âm.', speechLanguageUnsupported:'🈶 Trình duyệt không hỗ trợ nhận dạng tiếng Hoa zh-TW trên thiết bị này.', speechAborted:'Đã dừng nhận dạng giọng nói.', speechGenericError:'⚠️ Nhận dạng giọng nói gặp lỗi. Hãy thử lại.',
     feedbackExcellent:'Rất tốt — máy nhận đúng từ.', feedbackGood:'Khá gần. Hãy nghe mẫu và thử lại một lần nữa.', feedbackRetry:'Chưa khớp với từ mẫu. Hãy nghe chậm rồi đọc lại.',
     quizMeaning:q=>`“${q}” nghĩa là gì?`, quizPinyin:q=>`Pinyin của “${q}” là gì?`, quizEnglish:q=>`English của “${q}” là gì?`, correct:'✅ Chính xác!', answer:a=>`❌ Đáp án: ${a}`, noVocab:'Không tìm thấy từ phù hợp.',
     exportDone:'Đã xuất file tiến độ.', importDone:'Đã nhập tiến độ thành công.', resetConfirm:'Xóa toàn bộ tiến độ và từ đã đánh dấu trên thiết bị này?', resetDone:'Đã xóa tiến độ.', invalidFile:'File không đúng định dạng.',
@@ -37,7 +37,7 @@ const I18N = {
     newWords:n=>`${n} new words`, allDays:'All days', dayOption:n=>`Day ${n}`, searchPlaceholder:'Search Hanzi, Pinyin or meaning…',
     loadingEnglish:'Loading English definition…', englishUnavailable:'English definition unavailable.', sourceWarning:'Source-data note:', likelyForm:'Examples use the likely intended form based on the source pinyin/meaning:',
     recordIdle:'The recording is kept only temporarily on this device.', recording:'🔴 Recording… say the current word.', recordDone:'Recording complete. Play it back or check pronunciation.', micDenied:'Microphone access failed. Allow microphone permission for this site.', recorderUnsupported:'This browser/device does not support MediaRecorder.',
-    speechUnsupported:'This browser does not support speech recognition for pronunciation checking.', speechListening:'🎧 Listening… say the word once.', noRecognition:'No word was recognized. Try again in a quieter place.', recognitionDone:'✅ Recognition complete. See the result below.', recognitionTimeout:'No recognition result arrived after a few seconds. On iPhone/iPad, try opening the site directly in Safari and speak immediately after tapping check.',
+    speechUnsupported:'This browser does not support speech recognition for pronunciation checking.', speechListening:'🎧 Listening… say the target word once now.', noRecognition:'The recognition service returned no text.', recognitionDone:'✅ Recognition complete. See the result below.', recognitionTimeout:'⚠️ The browser returned no recognition result after 8 seconds. This does not mean your pronunciation was wrong.', speechNoSpeech:'🎤 No speech was detected. Tap check and speak immediately, clearly, and close enough to the microphone.', speechNetworkError:'🌐 The speech recognition service had a network error. Check your Internet connection and try again.', speechPermissionDenied:'🔒 Microphone recognition permission is not available. Allow Microphone access for this site.', speechAudioCapture:'🎙 No microphone audio could be captured. Check the microphone and site permission.', speechLanguageUnsupported:'🈶 zh-TW speech recognition is not supported on this device/browser.', speechAborted:'Speech recognition was stopped.', speechGenericError:'⚠️ Speech recognition failed. Please try again.',
     feedbackExcellent:'Very good — the browser recognized the target word.', feedbackGood:'Close. Listen to the model and try once more.', feedbackRetry:'It did not match the target. Listen slowly and try again.',
     quizMeaning:q=>`What does “${q}” mean in Vietnamese?`, quizPinyin:q=>`What is the Pinyin for “${q}”?`, quizEnglish:q=>`What does “${q}” mean in English?`, correct:'✅ Correct!', answer:a=>`❌ Answer: ${a}`, noVocab:'No matching vocabulary found.',
     exportDone:'Progress file exported.', importDone:'Progress imported successfully.', resetConfirm:'Delete all progress and favorites on this device?', resetDone:'Progress deleted.', invalidFile:'Invalid progress file.',
@@ -55,7 +55,7 @@ const I18N = {
     newWords:n=>`${n} 個新詞`, allDays:'全部', dayOption:n=>`第 ${n} 天`, searchPlaceholder:'搜尋漢字、拼音或意思…',
     loadingEnglish:'正在載入英文釋義…', englishUnavailable:'暫時無法取得英文釋義。', sourceWarning:'原始資料提醒：', likelyForm:'例句依原始拼音／意思採用推測的詞形：',
     recordIdle:'錄音只會暫時保留在此裝置。', recording:'🔴 錄音中……請讀目前的詞。', recordDone:'錄音完成。可播放錄音或檢查發音。', micDenied:'無法使用麥克風，請允許此網站使用麥克風。', recorderUnsupported:'此瀏覽器／裝置不支援 MediaRecorder。',
-    speechUnsupported:'此瀏覽器不支援用語音辨識檢查發音。', speechListening:'🎧 正在聽……請讀一次目前的詞。', noRecognition:'沒有辨識到詞語，請在較安靜的環境再試一次。',
+    speechUnsupported:'此瀏覽器不支援用語音辨識檢查發音。', speechListening:'🎧 正在聽……請現在讀一次目標詞。', noRecognition:'語音辨識服務沒有回傳文字。', recognitionDone:'✅ 辨識完成，結果如下。', recognitionTimeout:'⚠️ 8 秒後瀏覽器仍未回傳辨識結果。這不代表你的發音錯誤。', speechNoSpeech:'🎤 沒有偵測到語音。請按下檢查後立即清楚地說出目標詞。', speechNetworkError:'🌐 語音辨識服務發生網路錯誤，請檢查網路後再試。', speechPermissionDenied:'🔒 尚未允許麥克風辨識權限，請允許此網站使用麥克風。', speechAudioCapture:'🎙 無法取得麥克風聲音，請檢查麥克風與網站權限。', speechLanguageUnsupported:'🈶 此裝置／瀏覽器不支援 zh-TW 語音辨識。', speechAborted:'語音辨識已停止。', speechGenericError:'⚠️ 語音辨識發生錯誤，請再試一次。',
     feedbackExcellent:'很好，系統辨識到正確的目標詞。', feedbackGood:'很接近。再聽一次示範後重試。', feedbackRetry:'與目標詞不太相符，請先聽慢速示範再讀一次。',
     quizMeaning:q=>`「${q}」的越南文意思是什麼？`, quizPinyin:q=>`「${q}」的拼音是什麼？`, quizEnglish:q=>`「${q}」的英文意思是什麼？`, correct:'✅ 答對了！', answer:a=>`❌ 答案：${a}`, noVocab:'找不到符合的詞。',
     exportDone:'已匯出進度檔。', importDone:'已成功匯入進度。', resetConfirm:'要清除這台裝置上的全部進度與收藏嗎？', resetDone:'已清除進度。', invalidFile:'檔案格式不正確。',
@@ -574,25 +574,47 @@ function renderMemoryButtons(w){const value=state.progress[w.id]?.memory||'';doc
 function speak(text,rate=1){if(!('speechSynthesis'in window)){alert('Speech synthesis is not supported.');return;}speechSynthesis.cancel();const u=new SpeechSynthesisUtterance(text);u.lang='zh-TW';u.rate=rate;const voices=speechSynthesis.getVoices();const voice=voices.find(v=>v.lang?.toLowerCase()==='zh-tw')||voices.find(v=>v.lang?.toLowerCase().startsWith('zh'));if(voice)u.voice=voice;speechSynthesis.speak(u);}
 
 function bindRecorder(){
-  $('recordBtn').addEventListener('click',startRecording); $('stopRecordBtn').addEventListener('click',stopRecording); $('playRecordBtn').addEventListener('click',()=>{const a=$('recordingAudio');a.currentTime=0;a.play();});
+  $('recordBtn').addEventListener('click',startRecording);
+  $('stopRecordBtn').addEventListener('click',stopRecording);
+  $('playRecordBtn').addEventListener('click',()=>{const a=$('recordingAudio');a.currentTime=0;a.play();});
   $('checkPronunciationBtn').addEventListener('click',checkPronunciationFresh);
+  // Pronunciation checking is independent from recording. Recording is only for self-playback.
+  $('checkPronunciationBtn').disabled=!speechRecognitionCtor();
 }
 async function startRecording(){
   if(!navigator.mediaDevices?.getUserMedia||!window.MediaRecorder){$('recordStatus').textContent=t('recorderUnsupported');return;}
   try{
-    resetPronunciationResult(); cleanupRecordingStream(); state.stream=await navigator.mediaDevices.getUserMedia({audio:true}); state.recordedChunks=[]; state.recognitionAlternatives=[];
-    let recorder; try{recorder=new MediaRecorder(state.stream,{mimeType:'audio/webm'});}catch{recorder=new MediaRecorder(state.stream);} state.mediaRecorder=recorder;
-    recorder.addEventListener('dataavailable',e=>{if(e.data?.size)state.recordedChunks.push(e.data);}); recorder.addEventListener('stop',finalizeRecording); recorder.start();
-    startRecognition(false);
-    $('recordBtn').disabled=true;$('stopRecordBtn').disabled=false;$('playRecordBtn').disabled=true;$('checkPronunciationBtn').disabled=true;$('recordStatus').textContent=t('recording');
+    resetPronunciationResult();
+    if(state.recognitionRunning&&state.recognition)try{state.recognition.abort();}catch{}
+    cleanupRecordingStream();
+    state.stream=await navigator.mediaDevices.getUserMedia({audio:true});
+    state.recordedChunks=[];
+    state.recognitionAlternatives=[];
+    let recorder;
+    try{recorder=new MediaRecorder(state.stream,{mimeType:'audio/webm'});}catch{recorder=new MediaRecorder(state.stream);}
+    state.mediaRecorder=recorder;
+    recorder.addEventListener('dataavailable',e=>{if(e.data?.size)state.recordedChunks.push(e.data);});
+    recorder.addEventListener('stop',finalizeRecording);
+    recorder.start();
+    $('recordBtn').disabled=true;
+    $('stopRecordBtn').disabled=false;
+    $('playRecordBtn').disabled=true;
+    $('checkPronunciationBtn').disabled=true;
+    $('recordStatus').textContent=t('recording');
   }catch(err){console.error(err);$('recordStatus').textContent=t('micDenied');}
 }
-function stopRecording(){if(state.mediaRecorder?.state==='recording')state.mediaRecorder.stop();if(state.recognitionRunning&&state.recognition)try{state.recognition.stop();}catch{}}
+function stopRecording(){if(state.mediaRecorder?.state==='recording')state.mediaRecorder.stop();}
 function finalizeRecording(){
-  if(state.recordingUrl)URL.revokeObjectURL(state.recordingUrl);const type=state.mediaRecorder?.mimeType||'audio/webm';const blob=new Blob(state.recordedChunks,{type});state.recordingUrl=URL.createObjectURL(blob);
-  const audio=$('recordingAudio');audio.src=state.recordingUrl;audio.hidden=false;$('recordBtn').disabled=false;$('stopRecordBtn').disabled=true;$('playRecordBtn').disabled=false;$('checkPronunciationBtn').disabled=false;cleanupRecordingStream();
-  if(state.recognitionAlternatives.length){evaluatePronunciation(state.recognitionAlternatives);$('recordStatus').textContent=t('recognitionDone');}
-  else {$('recordStatus').textContent=t('recordDone');}
+  if(state.recordingUrl)URL.revokeObjectURL(state.recordingUrl);
+  const type=state.mediaRecorder?.mimeType||'audio/webm';
+  const blob=new Blob(state.recordedChunks,{type});
+  state.recordingUrl=URL.createObjectURL(blob);
+  const audio=$('recordingAudio');
+  audio.src=state.recordingUrl;audio.hidden=false;
+  $('recordBtn').disabled=false;$('stopRecordBtn').disabled=true;$('playRecordBtn').disabled=false;
+  $('checkPronunciationBtn').disabled=!speechRecognitionCtor();
+  cleanupRecordingStream();
+  $('recordStatus').textContent=t('recordDone');
 }
 function cleanupRecordingStream(){if(state.stream)state.stream.getTracks().forEach(t=>t.stop());state.stream=null;}
 function resetRecordingForNewWord(){
@@ -601,7 +623,10 @@ function resetRecordingForNewWord(){
   if(state.recognitionRunning&&state.recognition)try{state.recognition.abort();}catch{}
   state.recognitionRunning=false;state.recognitionGotResult=false;cleanupRecordingStream();
   if(state.recordingUrl)URL.revokeObjectURL(state.recordingUrl);state.recordingUrl=null;state.recordedChunks=[];state.recognitionAlternatives=[];
-  const audio=$('recordingAudio');audio.hidden=true;audio.removeAttribute('src');audio.load();$('recordBtn').disabled=false;$('stopRecordBtn').disabled=true;$('playRecordBtn').disabled=true;$('checkPronunciationBtn').disabled=true;$('recordStatus').textContent=t('recordIdle');resetPronunciationResult();
+  const audio=$('recordingAudio');audio.hidden=true;audio.removeAttribute('src');audio.load();
+  $('recordBtn').disabled=false;$('stopRecordBtn').disabled=true;$('playRecordBtn').disabled=true;
+  $('checkPronunciationBtn').disabled=!speechRecognitionCtor();
+  $('recordStatus').textContent=t('recordIdle');resetPronunciationResult();
 }
 function resetPronunciationResult(){$('pronunciationResult').hidden=true;$('pronunciationScore').textContent='—';$('recognizedText').textContent='';$('pronunciationFeedback').textContent='';}
 function speechRecognitionCtor(){return window.SpeechRecognition||window.webkitSpeechRecognition||null;}
@@ -613,71 +638,122 @@ function showRecognitionFailure(key='noRecognition'){
   $('recognizedText').textContent='—';
   $('pronunciationFeedback').textContent=t(key);
 }
+function recognitionErrorKey(error){
+  switch(String(error||'')){
+    case 'no-speech': return 'speechNoSpeech';
+    case 'network': return 'speechNetworkError';
+    case 'not-allowed':
+    case 'service-not-allowed': return 'speechPermissionDenied';
+    case 'audio-capture': return 'speechAudioCapture';
+    case 'language-not-supported': return 'speechLanguageUnsupported';
+    case 'aborted': return 'speechAborted';
+    default: return 'speechGenericError';
+  }
+}
+function setRecognitionBusy(busy){
+  state.recognitionRunning=busy;
+  // Never let speech checking compete with an active recording session.
+  const recording=state.mediaRecorder?.state==='recording';
+  $('checkPronunciationBtn').disabled=Boolean(busy||recording||!speechRecognitionCtor());
+}
 function startRecognition(showStatus=true){
   const SR=speechRecognitionCtor();
   if(!SR){if(showStatus){$('recordStatus').textContent=t('speechUnsupported');showRecognitionFailure('speechUnsupported');}return false;}
   try{
     if(state.recognitionTimer){clearTimeout(state.recognitionTimer);state.recognitionTimer=null;}
     if(state.recognitionRunning&&state.recognition)try{state.recognition.abort();}catch{}
+
+    // Speech checking listens live. The saved recording is intentionally not submitted for scoring.
+    // Pause any page audio first to reduce microphone/audio-session conflicts on mobile Safari.
+    const audio=$('recordingAudio');
+    if(audio&&!audio.paused)audio.pause();
+    if('speechSynthesis'in window)try{speechSynthesis.cancel();}catch{}
+    cleanupRecordingStream();
+
     const rec=new SR();
-    state.recognition=rec;state.recognitionRunning=true;state.recognitionGotResult=false;
+    state.recognition=rec;state.recognitionGotResult=false;state.recognitionAlternatives=[];
     rec.lang='zh-TW';rec.continuous=false;rec.interimResults=false;rec.maxAlternatives=5;
+    let timedOut=false;
 
     const finishTimer=()=>{if(state.recognitionTimer){clearTimeout(state.recognitionTimer);state.recognitionTimer=null;}};
+    rec.onstart=()=>{setRecognitionBusy(true);if(showStatus)$('recordStatus').textContent=t('speechListening');};
     rec.onresult=e=>{
       finishTimer();state.recognitionGotResult=true;
-      const result=e.results?.[0];const alts=[];
-      if(result){for(let i=0;i<result.length;i++)alts.push({transcript:result[i].transcript,confidence:Number.isFinite(result[i].confidence)?result[i].confidence:0});}
+      const alts=[];
+      for(let r=0;r<(e.results?.length||0);r++){
+        const result=e.results[r];
+        for(let i=0;i<result.length;i++)alts.push({transcript:result[i].transcript,confidence:Number.isFinite(result[i].confidence)?result[i].confidence:0});
+      }
       state.recognitionAlternatives=alts;
       if(alts.length){evaluatePronunciation(alts);if(showStatus)$('recordStatus').textContent=t('recognitionDone');}
       else if(showStatus){$('recordStatus').textContent=t('noRecognition');showRecognitionFailure('noRecognition');}
     };
     rec.onnomatch=()=>{finishTimer();if(showStatus){$('recordStatus').textContent=t('noRecognition');showRecognitionFailure('noRecognition');}};
     rec.onerror=e=>{
-      finishTimer();state.recognitionRunning=false;console.warn('Speech recognition:',e.error);
-      if(showStatus){$('recordStatus').textContent=t('noRecognition');showRecognitionFailure('noRecognition');}
+      finishTimer();
+      if(timedOut)return;
+      const key=recognitionErrorKey(e.error);
+      console.warn('Speech recognition:',e.error,e.message||'');
+      if(showStatus){$('recordStatus').textContent=t(key);showRecognitionFailure(key);}
     };
-    rec.onspeechend=()=>{setTimeout(()=>{if(state.recognitionRunning)try{rec.stop();}catch{}},250);};
+    rec.onspeechend=()=>{setTimeout(()=>{if(state.recognitionRunning)try{rec.stop();}catch{}},180);};
     rec.onend=()=>{
-      finishTimer();state.recognitionRunning=false;
-      if(showStatus&&!state.recognitionGotResult&&$('recordStatus').textContent===t('speechListening')){
+      finishTimer();setRecognitionBusy(false);
+      if(showStatus&&!timedOut&&!state.recognitionGotResult&&$('recordStatus').textContent===t('speechListening')){
         $('recordStatus').textContent=t('noRecognition');showRecognitionFailure('noRecognition');
       }
     };
 
-    rec.start();
-    if(showStatus)$('recordStatus').textContent=t('speechListening');
+    // A tiny delay after stopping page audio helps some mobile browsers release the audio session.
+    setRecognitionBusy(true);
+    setTimeout(()=>{
+      try{rec.start();}
+      catch(err){
+        console.warn('Speech recognition start:',err);setRecognitionBusy(false);
+        if(showStatus){$('recordStatus').textContent=t('speechGenericError');showRecognitionFailure('speechGenericError');}
+      }
+    },180);
+
     state.recognitionTimer=setTimeout(()=>{
       if(state.recognitionGotResult)return;
+      timedOut=true;
       try{rec.abort();}catch{}
-      state.recognitionRunning=false;state.recognitionTimer=null;
+      setRecognitionBusy(false);state.recognitionTimer=null;
       if(showStatus){$('recordStatus').textContent=t('recognitionTimeout');showRecognitionFailure('recognitionTimeout');}
     },8000);
     return true;
   }catch(err){
-    console.warn(err);state.recognitionRunning=false;
+    console.warn(err);setRecognitionBusy(false);
     if(state.recognitionTimer){clearTimeout(state.recognitionTimer);state.recognitionTimer=null;}
-    if(showStatus){$('recordStatus').textContent=t('speechUnsupported');showRecognitionFailure('speechUnsupported');}
+    if(showStatus){$('recordStatus').textContent=t('speechGenericError');showRecognitionFailure('speechGenericError');}
     return false;
   }
 }
 function checkPronunciationFresh(){
   resetPronunciationResult();
-  // If the browser already recognized the speech during recording, use that result immediately.
-  // This avoids a known iOS Safari/WebKit failure where a second recognition session can hang
-  // after media playback or other audio-element activity.
-  if(state.recognitionAlternatives?.length){
-    evaluatePronunciation(state.recognitionAlternatives);
-    $('recordStatus').textContent=t('recognitionDone');
-    return;
-  }
+  // Always perform a fresh live recognition pass. Recording/playback is a separate self-review feature.
   startRecognition(true);
 }
 function evaluatePronunciation(alts){
-  if(!alts?.length)return;const w=currentWord(),targets=candidateForms(w).concat(INFERRED_FORMS[w.id]?[INFERRED_FORMS[w.id]]:[]).map(normalizeChinese).filter(Boolean);
+  if(!alts?.length)return;
+  const w=currentWord(),targets=candidateForms(w).concat(INFERRED_FORMS[w.id]?[INFERRED_FORMS[w.id]]:[]).map(normalizeChinese).filter(Boolean);
   let best={score:0,transcript:'',confidence:0};
-  for(const alt of alts){const r=normalizeChinese(alt.transcript);for(const target of targets){let sim=similarity(r,target);if(r===target)sim=1;else if(r.includes(target)||target.includes(r))sim=Math.max(sim,.9);const conf=Number.isFinite(alt.confidence)?alt.confidence:0;const score=Math.round(Math.min(100,(sim*.86+Math.min(conf,1)*.14)*100));if(score>best.score)best={score,transcript:alt.transcript,confidence:conf};}}
-  const score=best.score;$('pronunciationResult').hidden=false;$('pronunciationScore').textContent=String(score);$('pronunciationTarget').textContent=`${primaryForm(w)} · ${w.pinyin}`;$('recognizedText').textContent=best.transcript||'—';
+  for(const alt of alts){
+    const r=normalizeChinese(alt.transcript);
+    for(const target of targets){
+      let sim=similarity(r,target);
+      const conf=Number.isFinite(alt.confidence)?Math.max(0,Math.min(1,alt.confidence)):0;
+      let score;
+      if(r===target){score=100;sim=1;}
+      else if(r.includes(target)||target.includes(r)){score=Math.round(92+conf*6);sim=Math.max(sim,.9);}
+      else score=Math.round(Math.min(100,(sim*.9+conf*.1)*100));
+      if(score>best.score)best={score,transcript:alt.transcript,confidence:conf};
+    }
+  }
+  const score=best.score;
+  $('pronunciationResult').hidden=false;$('pronunciationScore').textContent=String(score);
+  $('pronunciationTarget').textContent=`${primaryForm(w)} · ${w.pinyin}`;
+  $('recognizedText').textContent=best.transcript||'—';
   $('pronunciationFeedback').textContent=score>=90?t('feedbackExcellent'):score>=70?t('feedbackGood'):t('feedbackRetry');
   state.progress[w.id]={...(state.progress[w.id]||{}),lastPronunciationScore:score,lastRecognized:best.transcript,pronunciationCheckedAt:new Date().toISOString()};saveLocalState();
 }

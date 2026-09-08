@@ -9,6 +9,6 @@
  * in guest mode and saves progress only in the current browser.
  */
 window.TOCFL_SUPABASE_CONFIG = {
-  url: 'https://YOUR_PROJECT_ID.supabase.co',
-  publishableKey: 'YOUR_SUPABASE_PUBLISHABLE_KEY'
+  url: "https://rditnbjqhtpyqhdnuwvb.supabase.co",
+  publishableKey: "sb_publishable_igz6mJCkm8Lx4S8rC15Odg_9-76OvIQ"
 };

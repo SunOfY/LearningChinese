@@ -1,0 +1,187 @@
+<!doctype html>
+<html lang="vi">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover" />
+  <meta name="theme-color" content="#0f766e" />
+  <meta name="apple-mobile-web-app-capable" content="yes" />
+  <meta name="apple-mobile-web-app-status-bar-style" content="default" />
+  <meta name="apple-mobile-web-app-title" content="TOCFL A1" />
+  <title>TOCFL A1 - Phồn thể</title>
+  <link rel="manifest" href="./manifest.webmanifest" />
+  <link rel="apple-touch-icon" href="./icons/icon-192.png" />
+  <link rel="stylesheet" href="./styles.css" />
+</head>
+<body>
+  <div class="app-shell">
+    <header class="topbar">
+      <div>
+        <div class="eyebrow">🇹🇼 TOCFL · Traditional Chinese</div>
+        <h1>TOCFL A1</h1>
+      </div>
+      <div class="header-actions">
+        <label class="day-select-wrap">
+          <span>Ngày</span>
+          <select id="daySelect" aria-label="Chọn ngày học"></select>
+        </label>
+      </div>
+    </header>
+
+    <nav class="tabs" aria-label="Điều hướng chính">
+      <button class="tab is-active" data-view="today" type="button">🏠 Hôm nay</button>
+      <button class="tab" data-view="vocab" type="button">📚 Từ vựng</button>
+      <button class="tab" data-view="quiz" type="button">🧠 Quiz</button>
+      <button class="tab" data-view="progress" type="button">📊 Tiến độ</button>
+    </nav>
+
+    <main>
+      <section id="view-today" class="view is-active">
+        <div class="daily-summary card compact">
+          <div>
+            <div class="muted small">Mục tiêu</div>
+            <strong id="dailyTargetLabel">20 từ mới</strong>
+          </div>
+          <div class="progress-wrap">
+            <div class="progress-bar"><div id="dailyProgressBar"></div></div>
+            <div id="dailyProgressText" class="small muted">0 / 20</div>
+          </div>
+        </div>
+
+        <div class="study-grid">
+          <article class="card word-card">
+            <div class="word-head">
+              <div>
+                <div class="meta-line"><span id="levelPos">A1</span><span id="wordIndex">1 / 20</span></div>
+                <div id="hanzi" class="hanzi">啊</div>
+                <div id="pinyin" class="pinyin">ā</div>
+              </div>
+              <button id="favoriteBtn" type="button" class="icon-btn" title="Đánh dấu từ">☆</button>
+            </div>
+
+            <div class="meanings">
+              <div class="meaning-box">
+                <div class="meaning-label">🇻🇳 Tiếng Việt</div>
+                <div id="meaningVi" class="meaning-value"></div>
+              </div>
+              <div class="meaning-box">
+                <div class="meaning-label">🇬🇧 English</div>
+                <div id="meaningEn" class="meaning-value"></div>
+              </div>
+            </div>
+
+            <div class="toolbar">
+              <button id="speakBtn" type="button" class="primary">🔊 Nghe từ</button>
+              <button id="slowBtn" type="button">🐢 Chậm</button>
+              <button id="togglePinyinBtn" type="button">Ẩn Pinyin</button>
+            </div>
+
+            <div class="recorder-panel">
+              <div class="recorder-actions">
+                <button id="recordBtn" type="button">🎙 Bắt đầu ghi âm</button>
+                <button id="stopRecordBtn" type="button" disabled>⏹ Dừng</button>
+                <button id="playRecordBtn" type="button" disabled>▶ Phát lại</button>
+              </div>
+              <audio id="recordingAudio" controls hidden></audio>
+              <div id="recordStatus" class="small muted" aria-live="polite">Giọng ghi âm chỉ lưu tạm trên thiết bị.</div>
+            </div>
+
+            <section class="examples-section">
+              <div class="section-title-row">
+                <div>
+                  <h2>💬 Câu ví dụ</h2>
+                  <div class="small muted">Bấm loa để nghe cả câu bằng giọng zh-TW.</div>
+                </div>
+              </div>
+              <div id="examples"></div>
+            </section>
+
+            <div class="memory-section">
+              <div class="small strong">Bạn nhớ từ này mức nào?</div>
+              <div class="memory-grid">
+                <button type="button" data-memory="hard">😕 Chưa nhớ</button>
+                <button type="button" data-memory="medium">🙂 Tạm nhớ</button>
+                <button type="button" data-memory="easy">✅ Đã nhớ</button>
+              </div>
+            </div>
+
+            <div class="word-nav">
+              <button id="prevBtn" type="button">← Trước</button>
+              <button id="nextBtn" type="button" class="primary">Tiếp theo →</button>
+            </div>
+          </article>
+
+          <aside class="card writing-card">
+            <div class="section-title-row">
+              <div>
+                <h2>✍️ Luyện viết</h2>
+                <div class="small muted">Chuột · ngón tay · Apple Pencil</div>
+              </div>
+              <button id="clearCanvasBtn" type="button">Xóa</button>
+            </div>
+
+            <div class="writing-square">
+              <div class="grid-lines" aria-hidden="true"></div>
+              <div id="traceChar" class="trace-char">啊</div>
+              <canvas id="writingCanvas" aria-label="Vùng luyện viết chữ Phồn thể"></canvas>
+            </div>
+
+            <label class="toggle-row">
+              <input id="showGuideCheckbox" type="checkbox" checked />
+              <span>Hiện chữ mẫu mờ</span>
+            </label>
+
+            <div class="tip-box">
+              <strong>Cách luyện:</strong> tô theo mẫu → tắt mẫu → tự viết → đọc thành tiếng chữ vừa viết.
+            </div>
+          </aside>
+        </div>
+      </section>
+
+      <section id="view-vocab" class="view">
+        <div class="card">
+          <div class="filter-row">
+            <input id="vocabSearch" type="search" placeholder="Tìm chữ, pinyin hoặc nghĩa Việt…" />
+            <select id="vocabDayFilter" aria-label="Lọc theo ngày"></select>
+          </div>
+          <div id="vocabList" class="vocab-list"></div>
+        </div>
+      </section>
+
+      <section id="view-quiz" class="view">
+        <div class="card quiz-card">
+          <div class="eyebrow">MINI QUIZ</div>
+          <h2 id="quizQuestion">Đang tạo câu hỏi…</h2>
+          <div id="quizOptions" class="quiz-options"></div>
+          <div id="quizResult" class="quiz-result" aria-live="polite"></div>
+          <div class="toolbar"><button id="newQuizBtn" type="button" class="primary">Câu khác</button></div>
+        </div>
+      </section>
+
+      <section id="view-progress" class="view">
+        <div class="stats-grid">
+          <div class="card stat"><span>Đã đánh giá</span><strong id="statReviewed">0</strong></div>
+          <div class="card stat"><span>Đã nhớ</span><strong id="statEasy">0</strong></div>
+          <div class="card stat"><span>Tạm nhớ</span><strong id="statMedium">0</strong></div>
+          <div class="card stat"><span>Chưa nhớ</span><strong id="statHard">0</strong></div>
+        </div>
+        <div class="card backup-card">
+          <h2>💾 Sao lưu tiến độ</h2>
+          <p class="muted">Tiến độ được lưu trong trình duyệt của từng thiết bị. Bạn có thể xuất file để chuyển sang iPhone/iPad/Laptop khác.</p>
+          <div class="toolbar">
+            <button id="exportBtn" type="button" class="primary">⬇ Xuất tiến độ</button>
+            <label class="file-btn">⬆ Nhập tiến độ<input id="importInput" type="file" accept="application/json" /></label>
+            <button id="resetBtn" type="button" class="danger">Xóa tiến độ</button>
+          </div>
+          <div id="backupStatus" class="small muted" aria-live="polite"></div>
+        </div>
+      </section>
+    </main>
+
+    <footer>
+      Dữ liệu A1 lấy từ PDF người dùng cung cấp. English + câu ví dụ hiện được bổ sung đầy đủ cho Ngày 1 (20 từ) để thử giao diện.
+    </footer>
+  </div>
+
+  <script src="./app.js" defer></script>
+</body>
+</html>

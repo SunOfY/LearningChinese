@@ -1,0 +1,25 @@
+TOCFL A1 v3 — CÁCH THỬ NHANH
+
+1) UPLOAD GITHUB PAGES
+- Tạo repository (ví dụ: tocfl-a1)
+- Upload toàn bộ file trong thư mục này
+- Settings -> Pages -> Deploy from a branch -> main -> /(root)
+
+2) THỬ NGAY KHÔNG CẦN TÀI KHOẢN
+- Website chạy Guest mode
+- Loa, ghi âm, phát lại, chấm nhận dạng phát âm, luyện viết, quiz đều dùng được tùy hỗ trợ của trình duyệt
+- Tiến độ lưu trên thiết bị
+
+3) BẬT TÀI KHOẢN + ĐỒNG BỘ
+- Tạo Supabase project
+- Chạy file: supabase/schema.sql trong SQL Editor
+- Mở config.js, điền Project URL và Publishable Key
+- Push config.js lên GitHub
+- Trong Supabase Auth URL settings, đặt Site URL là URL GitHub Pages của bạn
+
+LƯU Ý BẢO MẬT
+- Chỉ dùng Publishable/Public/Anon key trong config.js
+- KHÔNG đưa service_role/secret key lên GitHub
+- RLS trong supabase/schema.sql đảm bảo mỗi user chỉ truy cập tiến độ của mình
+
+Xem README.md để có hướng dẫn chi tiết.

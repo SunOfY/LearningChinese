@@ -71,7 +71,15 @@ h2{margin:0 0 4px;font-size:19px}
 .writing-square{position:relative;width:100%;aspect-ratio:1;border:1px solid var(--border);border-radius:16px;overflow:hidden;background:#fbfdfc;touch-action:none;min-width:0}
 .grid-lines{position:absolute;inset:0;background-image:linear-gradient(to right,transparent calc(50% - .5px),rgba(21,35,33,.15) 50%,transparent calc(50% + .5px)),linear-gradient(to bottom,transparent calc(50% - .5px),rgba(21,35,33,.15) 50%,transparent calc(50% + .5px)),linear-gradient(45deg,transparent calc(50% - .5px),rgba(21,35,33,.08) 50%,transparent calc(50% + .5px)),linear-gradient(-45deg,transparent calc(50% - .5px),rgba(21,35,33,.08) 50%,transparent calc(50% + .5px));pointer-events:none}
 .trace-char{position:absolute;inset:0;display:flex;align-items:center;justify-content:center;font-family:"BiauKai","DFKai-SB","Kaiti TC","Noto Serif TC",serif;font-size:clamp(110px,15vw,205px);font-weight:700;opacity:.12;pointer-events:none;user-select:none;text-align:center;line-height:1}
-.writing-canvas{position:absolute;inset:0;width:100%;height:100%;touch-action:none}
+.writing-canvas{position:absolute;inset:0;width:100%;height:100%;touch-action:none;-webkit-user-select:none;user-select:none;-webkit-touch-callout:none;-webkit-user-drag:none}
+/* iPad / iPhone handwriting: stop Safari long-press selection/callout only inside the writing area. */
+.writing-card,.writing-grid,.writing-square,.writing-square *{
+  -webkit-user-select:none!important;
+  user-select:none!important;
+  -webkit-touch-callout:none!important;
+}
+.writing-square{touch-action:none;overscroll-behavior:contain;-webkit-tap-highlight-color:transparent}
+.writing-grid{-webkit-tap-highlight-color:transparent}
 .toggle-row{display:flex;align-items:center;gap:9px;min-height:44px;cursor:pointer}
 .toggle-row input{width:20px;height:20px;accent-color:var(--accent)}
 .tip-box{background:var(--panel);border-radius:13px;padding:12px;font-size:14px;line-height:1.5}

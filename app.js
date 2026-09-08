@@ -649,16 +649,54 @@ function renderWritingBoxes(word){
     const canvas=document.createElement('canvas'); canvas.className='writing-canvas'; canvas.setAttribute('aria-label',`Luyện viết chữ ${ch}, ô ${idx+1}`);
     square.append(lines,guide,canvas); grid.append(square);
     const ctx=canvas.getContext('2d');
-    const item={canvas,ctx,dpr:1,drawing:false,lastPoint:[0,0]}; writingCanvases.push(item);
+    const item={canvas,ctx,dpr:1,drawing:false,lastPoint:[0,0],baseLineWidth:6,pointerId:null}; writingCanvases.push(item);
     resizeWritingCanvas(item);
+
+    // Safari/iPad: do not let a Pencil/finger stroke turn into text selection,
+    // long-press callout, drag, or page scrolling while the pointer is inside the canvas.
+    const stopBrowserGesture=e=>{if(e.cancelable)e.preventDefault();};
+    ['contextmenu','selectstart','dragstart'].forEach(name=>{
+      square.addEventListener(name,e=>e.preventDefault());
+      canvas.addEventListener(name,e=>e.preventDefault());
+    });
+
     canvas.addEventListener('pointerdown',e=>{
-      item.drawing=true; canvas.setPointerCapture(e.pointerId); item.lastPoint=writingCanvasPoint(item,e);
-    });
+      if(e.pointerType==='mouse' && e.button!==0)return;
+      stopBrowserGesture(e);
+      item.drawing=true; item.pointerId=e.pointerId;
+      try{canvas.setPointerCapture(e.pointerId);}catch{}
+      item.lastPoint=writingCanvasPoint(item,e);
+      // Draw a tiny dot so a tap / very short stroke is visible.
+      item.ctx.save();
+      item.ctx.lineWidth=writingLineWidth(item,e);
+      item.ctx.beginPath();
+      item.ctx.arc(item.lastPoint[0],item.lastPoint[1],Math.max(1,item.ctx.lineWidth/2),0,Math.PI*2);
+      item.ctx.fillStyle=item.ctx.strokeStyle; item.ctx.fill();
+      item.ctx.restore();
+    },{passive:false});
+
     canvas.addEventListener('pointermove',e=>{
-      if(!item.drawing)return; const [x,y]=writingCanvasPoint(item,e);
-      item.ctx.beginPath(); item.ctx.moveTo(item.lastPoint[0],item.lastPoint[1]); item.ctx.lineTo(x,y); item.ctx.stroke(); item.lastPoint=[x,y];
-    });
-    ['pointerup','pointercancel','pointerleave'].forEach(name=>canvas.addEventListener(name,()=>{item.drawing=false;}));
+      if(!item.drawing || (item.pointerId!==null && e.pointerId!==item.pointerId))return;
+      stopBrowserGesture(e);
+      const samples=typeof e.getCoalescedEvents==='function' ? e.getCoalescedEvents() : [e];
+      for(const pe of samples){
+        const [x,y]=writingCanvasPoint(item,pe);
+        item.ctx.lineWidth=writingLineWidth(item,pe);
+        item.ctx.beginPath();
+        item.ctx.moveTo(item.lastPoint[0],item.lastPoint[1]);
+        item.ctx.lineTo(x,y);
+        item.ctx.stroke();
+        item.lastPoint=[x,y];
+      }
+    },{passive:false});
+
+    const finishStroke=e=>{
+      if(e && e.pointerId!==undefined && item.pointerId!==null && e.pointerId!==item.pointerId)return;
+      if(e)stopBrowserGesture(e);
+      item.drawing=false; item.pointerId=null;
+    };
+    ['pointerup','pointercancel'].forEach(name=>canvas.addEventListener(name,finishStroke,{passive:false}));
+    canvas.addEventListener('lostpointercapture',()=>{item.drawing=false;item.pointerId=null;});
   });
 }
 function resizeWritingCanvas(item){
@@ -666,12 +704,18 @@ function resizeWritingCanvas(item){
   const r=item.canvas.getBoundingClientRect(); if(!r.width||!r.height)return;
   const old=item.canvas.toDataURL();
   item.dpr=Math.max(1,Math.min(devicePixelRatio||1,2)); item.canvas.width=Math.round(r.width*item.dpr); item.canvas.height=Math.round(r.height*item.dpr);
-  item.ctx.setTransform(item.dpr,0,0,item.dpr,0,0); item.ctx.lineCap='round'; item.ctx.lineJoin='round'; item.ctx.lineWidth=Math.max(4,r.width/55); item.ctx.strokeStyle='#152321';
+  item.ctx.setTransform(item.dpr,0,0,item.dpr,0,0); item.ctx.lineCap='round'; item.ctx.lineJoin='round'; item.baseLineWidth=Math.max(4,r.width/55); item.ctx.lineWidth=item.baseLineWidth; item.ctx.strokeStyle='#152321';
   if(old && !old.endsWith('AAAA')){
     const img=new Image(); img.onload=()=>{item.ctx.drawImage(img,0,0,r.width,r.height);}; img.src=old;
   }
 }
 function writingCanvasPoint(item,e){const r=item.canvas.getBoundingClientRect();return[e.clientX-r.left,e.clientY-r.top];}
+function writingLineWidth(item,e){
+  const base=item.baseLineWidth||6;
+  // Apple Pencil exposes pressure on supported Safari versions. Keep the variation gentle.
+  if(e?.pointerType==='pen' && Number.isFinite(e.pressure) && e.pressure>0)return base*(0.72+Math.min(1,e.pressure)*0.55);
+  return base;
+}
 function clearWritingCanvas(){
   writingCanvases.forEach(item=>{
     const r=item.canvas.getBoundingClientRect(); item.ctx.clearRect(0,0,r.width,r.height);

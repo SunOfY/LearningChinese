@@ -19,7 +19,7 @@ const I18N = {
     newWords:n=>`${n} từ mới`, allDays:'Tất cả ngày', dayOption:n=>`Ngày ${n}`, searchPlaceholder:'Tìm chữ, pinyin hoặc nghĩa…',
     loadingEnglish:'Đang tải nghĩa English…', englishUnavailable:'Chưa lấy được nghĩa English.', sourceWarning:'Lưu ý dữ liệu nguồn:', likelyForm:'Ví dụ dùng dạng được suy đoán theo pinyin/nghĩa:',
     recordIdle:'Giọng ghi âm chỉ lưu tạm trên thiết bị.', recording:'🔴 Đang ghi âm… hãy đọc từ hiện tại.', recordDone:'Đã ghi xong. Bạn có thể phát lại hoặc kiểm tra phát âm.', micDenied:'Không truy cập được microphone. Hãy cấp quyền microphone cho website.', recorderUnsupported:'Thiết bị/trình duyệt này chưa hỗ trợ ghi âm bằng MediaRecorder.',
-    speechUnsupported:'Trình duyệt này không hỗ trợ nhận dạng giọng nói để chấm phát âm.', speechListening:'🎧 Đang nghe… hãy đọc từ một lần.', noRecognition:'Chưa nhận dạng được từ. Hãy thử lại ở nơi yên tĩnh.',
+    speechUnsupported:'Trình duyệt này không hỗ trợ nhận dạng giọng nói để chấm phát âm.', speechListening:'🎧 Đang nghe… hãy đọc từ một lần.', noRecognition:'Chưa nhận dạng được từ. Hãy thử lại ở nơi yên tĩnh.', recognitionDone:'✅ Đã nhận dạng xong. Kết quả ở bên dưới.', recognitionTimeout:'Không nhận được kết quả sau vài giây. Trên iPhone/iPad, hãy thử mở bằng Safari trực tiếp và nói ngay sau khi bấm kiểm tra.',
     feedbackExcellent:'Rất tốt — máy nhận đúng từ.', feedbackGood:'Khá gần. Hãy nghe mẫu và thử lại một lần nữa.', feedbackRetry:'Chưa khớp với từ mẫu. Hãy nghe chậm rồi đọc lại.',
     quizMeaning:q=>`“${q}” nghĩa là gì?`, quizPinyin:q=>`Pinyin của “${q}” là gì?`, quizEnglish:q=>`English của “${q}” là gì?`, correct:'✅ Chính xác!', answer:a=>`❌ Đáp án: ${a}`, noVocab:'Không tìm thấy từ phù hợp.',
     exportDone:'Đã xuất file tiến độ.', importDone:'Đã nhập tiến độ thành công.', resetConfirm:'Xóa toàn bộ tiến độ và từ đã đánh dấu trên thiết bị này?', resetDone:'Đã xóa tiến độ.', invalidFile:'File không đúng định dạng.',
@@ -37,7 +37,7 @@ const I18N = {
     newWords:n=>`${n} new words`, allDays:'All days', dayOption:n=>`Day ${n}`, searchPlaceholder:'Search Hanzi, Pinyin or meaning…',
     loadingEnglish:'Loading English definition…', englishUnavailable:'English definition unavailable.', sourceWarning:'Source-data note:', likelyForm:'Examples use the likely intended form based on the source pinyin/meaning:',
     recordIdle:'The recording is kept only temporarily on this device.', recording:'🔴 Recording… say the current word.', recordDone:'Recording complete. Play it back or check pronunciation.', micDenied:'Microphone access failed. Allow microphone permission for this site.', recorderUnsupported:'This browser/device does not support MediaRecorder.',
-    speechUnsupported:'This browser does not support speech recognition for pronunciation checking.', speechListening:'🎧 Listening… say the word once.', noRecognition:'No word was recognized. Try again in a quieter place.',
+    speechUnsupported:'This browser does not support speech recognition for pronunciation checking.', speechListening:'🎧 Listening… say the word once.', noRecognition:'No word was recognized. Try again in a quieter place.', recognitionDone:'✅ Recognition complete. See the result below.', recognitionTimeout:'No recognition result arrived after a few seconds. On iPhone/iPad, try opening the site directly in Safari and speak immediately after tapping check.',
     feedbackExcellent:'Very good — the browser recognized the target word.', feedbackGood:'Close. Listen to the model and try once more.', feedbackRetry:'It did not match the target. Listen slowly and try again.',
     quizMeaning:q=>`What does “${q}” mean in Vietnamese?`, quizPinyin:q=>`What is the Pinyin for “${q}”?`, quizEnglish:q=>`What does “${q}” mean in English?`, correct:'✅ Correct!', answer:a=>`❌ Answer: ${a}`, noVocab:'No matching vocabulary found.',
     exportDone:'Progress file exported.', importDone:'Progress imported successfully.', resetConfirm:'Delete all progress and favorites on this device?', resetDone:'Progress deleted.', invalidFile:'Invalid progress file.',
@@ -68,6 +68,7 @@ const state = {
   progress: {}, favorites: new Set(), lang: 'vi', englishDefs: {}, englishLoaded: false,
   mediaRecorder: null, recordedChunks: [], recordingUrl: null, stream: null,
   recognition: null, recognitionAlternatives: [], recognitionRunning: false,
+  recognitionTimer: null, recognitionGotResult: false,
   pinyinMap: new Map()
 };
 
@@ -589,28 +590,89 @@ async function startRecording(){
 function stopRecording(){if(state.mediaRecorder?.state==='recording')state.mediaRecorder.stop();if(state.recognitionRunning&&state.recognition)try{state.recognition.stop();}catch{}}
 function finalizeRecording(){
   if(state.recordingUrl)URL.revokeObjectURL(state.recordingUrl);const type=state.mediaRecorder?.mimeType||'audio/webm';const blob=new Blob(state.recordedChunks,{type});state.recordingUrl=URL.createObjectURL(blob);
-  const audio=$('recordingAudio');audio.src=state.recordingUrl;audio.hidden=false;$('recordBtn').disabled=false;$('stopRecordBtn').disabled=true;$('playRecordBtn').disabled=false;$('checkPronunciationBtn').disabled=false;$('recordStatus').textContent=t('recordDone');cleanupRecordingStream();
-  if(state.recognitionAlternatives.length)evaluatePronunciation(state.recognitionAlternatives);
+  const audio=$('recordingAudio');audio.src=state.recordingUrl;audio.hidden=false;$('recordBtn').disabled=false;$('stopRecordBtn').disabled=true;$('playRecordBtn').disabled=false;$('checkPronunciationBtn').disabled=false;cleanupRecordingStream();
+  if(state.recognitionAlternatives.length){evaluatePronunciation(state.recognitionAlternatives);$('recordStatus').textContent=t('recognitionDone');}
+  else {$('recordStatus').textContent=t('recordDone');}
 }
 function cleanupRecordingStream(){if(state.stream)state.stream.getTracks().forEach(t=>t.stop());state.stream=null;}
 function resetRecordingForNewWord(){
-  if(state.mediaRecorder?.state==='recording')state.mediaRecorder.stop(); if(state.recognitionRunning&&state.recognition)try{state.recognition.abort();}catch{} cleanupRecordingStream();
+  if(state.mediaRecorder?.state==='recording')state.mediaRecorder.stop();
+  if(state.recognitionTimer){clearTimeout(state.recognitionTimer);state.recognitionTimer=null;}
+  if(state.recognitionRunning&&state.recognition)try{state.recognition.abort();}catch{}
+  state.recognitionRunning=false;state.recognitionGotResult=false;cleanupRecordingStream();
   if(state.recordingUrl)URL.revokeObjectURL(state.recordingUrl);state.recordingUrl=null;state.recordedChunks=[];state.recognitionAlternatives=[];
   const audio=$('recordingAudio');audio.hidden=true;audio.removeAttribute('src');audio.load();$('recordBtn').disabled=false;$('stopRecordBtn').disabled=true;$('playRecordBtn').disabled=true;$('checkPronunciationBtn').disabled=true;$('recordStatus').textContent=t('recordIdle');resetPronunciationResult();
 }
 function resetPronunciationResult(){$('pronunciationResult').hidden=true;$('pronunciationScore').textContent='—';$('recognizedText').textContent='';$('pronunciationFeedback').textContent='';}
 function speechRecognitionCtor(){return window.SpeechRecognition||window.webkitSpeechRecognition||null;}
-function startRecognition(showStatus=true){
-  const SR=speechRecognitionCtor();if(!SR){if(showStatus)$('recordStatus').textContent=t('speechUnsupported');return false;}
-  try{
-    if(state.recognitionRunning&&state.recognition)try{state.recognition.abort();}catch{}
-    const rec=new SR();state.recognition=rec;state.recognitionRunning=true;rec.lang='zh-TW';rec.continuous=false;rec.interimResults=false;rec.maxAlternatives=5;
-    rec.onresult=e=>{const alts=[];for(let i=0;i<e.results[0].length;i++)alts.push({transcript:e.results[0][i].transcript,confidence:e.results[0][i].confidence||0});state.recognitionAlternatives=alts;evaluatePronunciation(alts);};
-    rec.onerror=e=>{console.warn('Speech recognition:',e.error);if(showStatus)$('recordStatus').textContent=t('noRecognition');};
-    rec.onend=()=>{state.recognitionRunning=false;}; rec.start(); if(showStatus)$('recordStatus').textContent=t('speechListening'); return true;
-  }catch(err){console.warn(err);state.recognitionRunning=false;if(showStatus)$('recordStatus').textContent=t('speechUnsupported');return false;}
+function showRecognitionFailure(key='noRecognition'){
+  const w=currentWord();
+  $('pronunciationResult').hidden=false;
+  $('pronunciationScore').textContent='—';
+  $('pronunciationTarget').textContent=`${primaryForm(w)} · ${w.pinyin}`;
+  $('recognizedText').textContent='—';
+  $('pronunciationFeedback').textContent=t(key);
 }
-function checkPronunciationFresh(){resetPronunciationResult();startRecognition(true);}
+function startRecognition(showStatus=true){
+  const SR=speechRecognitionCtor();
+  if(!SR){if(showStatus){$('recordStatus').textContent=t('speechUnsupported');showRecognitionFailure('speechUnsupported');}return false;}
+  try{
+    if(state.recognitionTimer){clearTimeout(state.recognitionTimer);state.recognitionTimer=null;}
+    if(state.recognitionRunning&&state.recognition)try{state.recognition.abort();}catch{}
+    const rec=new SR();
+    state.recognition=rec;state.recognitionRunning=true;state.recognitionGotResult=false;
+    rec.lang='zh-TW';rec.continuous=false;rec.interimResults=false;rec.maxAlternatives=5;
+
+    const finishTimer=()=>{if(state.recognitionTimer){clearTimeout(state.recognitionTimer);state.recognitionTimer=null;}};
+    rec.onresult=e=>{
+      finishTimer();state.recognitionGotResult=true;
+      const result=e.results?.[0];const alts=[];
+      if(result){for(let i=0;i<result.length;i++)alts.push({transcript:result[i].transcript,confidence:Number.isFinite(result[i].confidence)?result[i].confidence:0});}
+      state.recognitionAlternatives=alts;
+      if(alts.length){evaluatePronunciation(alts);if(showStatus)$('recordStatus').textContent=t('recognitionDone');}
+      else if(showStatus){$('recordStatus').textContent=t('noRecognition');showRecognitionFailure('noRecognition');}
+    };
+    rec.onnomatch=()=>{finishTimer();if(showStatus){$('recordStatus').textContent=t('noRecognition');showRecognitionFailure('noRecognition');}};
+    rec.onerror=e=>{
+      finishTimer();state.recognitionRunning=false;console.warn('Speech recognition:',e.error);
+      if(showStatus){$('recordStatus').textContent=t('noRecognition');showRecognitionFailure('noRecognition');}
+    };
+    rec.onspeechend=()=>{setTimeout(()=>{if(state.recognitionRunning)try{rec.stop();}catch{}},250);};
+    rec.onend=()=>{
+      finishTimer();state.recognitionRunning=false;
+      if(showStatus&&!state.recognitionGotResult&&$('recordStatus').textContent===t('speechListening')){
+        $('recordStatus').textContent=t('noRecognition');showRecognitionFailure('noRecognition');
+      }
+    };
+
+    rec.start();
+    if(showStatus)$('recordStatus').textContent=t('speechListening');
+    state.recognitionTimer=setTimeout(()=>{
+      if(state.recognitionGotResult)return;
+      try{rec.abort();}catch{}
+      state.recognitionRunning=false;state.recognitionTimer=null;
+      if(showStatus){$('recordStatus').textContent=t('recognitionTimeout');showRecognitionFailure('recognitionTimeout');}
+    },8000);
+    return true;
+  }catch(err){
+    console.warn(err);state.recognitionRunning=false;
+    if(state.recognitionTimer){clearTimeout(state.recognitionTimer);state.recognitionTimer=null;}
+    if(showStatus){$('recordStatus').textContent=t('speechUnsupported');showRecognitionFailure('speechUnsupported');}
+    return false;
+  }
+}
+function checkPronunciationFresh(){
+  resetPronunciationResult();
+  // If the browser already recognized the speech during recording, use that result immediately.
+  // This avoids a known iOS Safari/WebKit failure where a second recognition session can hang
+  // after media playback or other audio-element activity.
+  if(state.recognitionAlternatives?.length){
+    evaluatePronunciation(state.recognitionAlternatives);
+    $('recordStatus').textContent=t('recognitionDone');
+    return;
+  }
+  startRecognition(true);
+}
 function evaluatePronunciation(alts){
   if(!alts?.length)return;const w=currentWord(),targets=candidateForms(w).concat(INFERRED_FORMS[w.id]?[INFERRED_FORMS[w.id]]:[]).map(normalizeChinese).filter(Boolean);
   let best={score:0,transcript:'',confidence:0};

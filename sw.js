@@ -1,4 +1,4 @@
-const CACHE = 'tocfl-a1-v4.2-ipad-writing-20260908';
+const CACHE = 'tocfl-a1-v4.3-pronunciation-20260909';
 const ASSETS = [
   './',
   './index.html',

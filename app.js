@@ -981,11 +981,11 @@ function clearWritingCanvas(){
 
 function updateBranding(){
   const id=state.activeLevel||'A1';
-  const h1=document.getElementById('appTitle'); if(h1) h1.textContent=`TOCFL ${id}`;
+  const h1=document.getElementById('appTitle'); if(h1) h1.textContent='LEARNING TOCFL';
   const btn=document.getElementById('levelBtnLabel'); if(btn) btn.textContent=id;
   const eyebrow=document.getElementById('appEyebrow'); if(eyebrow) eyebrow.textContent='🇹🇼 TOCFL · Traditional Chinese';
   const authEyebrow=document.getElementById('authEyebrow'); if(authEyebrow) authEyebrow.textContent='TOCFL · CLOUD';
-  document.title=`TOCFL ${id} · Traditional Chinese`;
+  document.title='LEARNING TOCFL · Traditional Chinese';
 }
 
 function renderLevelSelector(){

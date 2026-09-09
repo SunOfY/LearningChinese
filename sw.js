@@ -1,4 +1,4 @@
-const CACHE = 'tocfl-v4-7-multilevel';
+const CACHE = 'tocfl-v4-7-1-branding';
 const ASSETS = [
   './',
   './index.html',

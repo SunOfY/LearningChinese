@@ -1,0 +1,30 @@
+TOCFL MULTI-LEVEL v4.7
+========================
+
+Mục tiêu: sau bản nâng cấp này, A2/B1/B2/C1/C2 có thể được kích hoạt chỉ bằng cách upload file dữ liệu. Không sửa app.js nữa.
+
+1) Upload đè các file code:
+   index.html
+   styles.css
+   app.js
+   auth.js
+   sw.js
+   manifest.webmanifest
+
+2) Không bắt buộc thay dữ liệu A1. File data/a1_enrichment.json có trong gói để chuẩn hóa tên, nhưng web vẫn tự fallback về data/enrichment_day1.json cũ.
+
+3) KHÔNG cần chạy SQL mới. Bản này dùng nguyên bảng user_learning_state hiện tại. Dữ liệu nhiều trình độ được đóng gói bên trong cột progress JSONB và tự migrate A1 cũ.
+
+4) Sau đăng nhập:
+   - Nếu bật “Nhớ trình độ đã chọn”: lần sau mở thẳng trình độ đó.
+   - Nếu tắt: ở phiên sau web hỏi chọn lại.
+   - Nút 🎓 A1/A2/... trên thanh đầu trang cho phép đổi bất kỳ lúc nào.
+
+5) Kích hoạt A2 sau này:
+   - Upload data/a2.json
+   - Tùy chọn: upload data/a2_enrichment.json
+   - Mở lại nút 🎓 Trình độ. A2 sẽ tự chuyển từ Coming soon sang Sẵn sàng.
+
+Tên tương tự cho B1/B2/C1/C2. Xem data/LEVEL_DATA_FORMAT.md.
+
+LƯU Ý: giữ ID từ vựng ổn định sau khi đã phát hành dữ liệu để không làm lệch tiến độ người học.

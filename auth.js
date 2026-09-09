@@ -199,6 +199,7 @@ async function signOut() {
   if (!supabaseClient) return;
   await supabaseClient.auth.signOut();
   session = null; groqStatus = { connected:false, updatedAt:null };
+  window.TOCFLApp?.onSignedOut?.();
   setCloudStatus(tr('loggedOut'));
   renderAccountUI();
   closeAuth();
@@ -208,6 +209,9 @@ async function afterSignedIn() {
   renderAccountUI();
   showAuthPane('profile');
   await refreshGroqStatus();
+  // After a successful login, return to the learning screen; the level chooser
+  // can then appear cleanly on top if the user has not chosen to remember a level.
+  closeAuth();
   if (appReady) await loadCloudState();
 }
 
@@ -223,11 +227,12 @@ async function loadCloudState() {
   if (!data) {
     await syncNow();
     setCloudStatus(tr('firstCloudUpload'));
+    await window.TOCFLApp?.afterAccountReady?.(session.user.id);
     return;
   }
   suppressSync = true;
   try {
-    window.TOCFLApp.applyCloudState({
+    await window.TOCFLApp.applyCloudState({
       progress: data.progress || {},
       favorites: Array.isArray(data.favorites) ? data.favorites : [],
       lastDay: data.last_day || 1,
@@ -237,6 +242,7 @@ async function loadCloudState() {
     suppressSync = false;
   }
   setCloudStatus(tr('cloudLoaded'));
+  await window.TOCFLApp?.afterAccountReady?.(session.user.id);
 }
 
 async function syncNow() {

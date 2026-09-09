@@ -1,0 +1,142 @@
+{
+  "1": {
+    "meaning_en": "ah; oh (interjection)",
+    "examples": [
+      {"zh":"啊！我忘了帶手機。","pinyin":"Ā! Wǒ wàng le dài shǒujī.","vi":"À! Tôi quên mang điện thoại rồi.","en":"Ah! I forgot to bring my phone."},
+      {"zh":"啊，我知道了。","pinyin":"Ā, wǒ zhīdào le.","vi":"À, tôi hiểu rồi.","en":"Oh, I understand now."}
+    ]
+  },
+  "2": {
+    "meaning_en": "to love; to like",
+    "examples": [
+      {"zh":"我愛我的家人。","pinyin":"Wǒ ài wǒ de jiārén.","vi":"Tôi yêu gia đình của tôi.","en":"I love my family."},
+      {"zh":"我愛喝咖啡。","pinyin":"Wǒ ài hē kāfēi.","vi":"Tôi thích uống cà phê.","en":"I love drinking coffee."}
+    ]
+  },
+  "3": {
+    "meaning_en": "quiet; peaceful",
+    "examples": [
+      {"zh":"圖書館很安靜。","pinyin":"Túshūguǎn hěn ānjìng.","vi":"Thư viện rất yên tĩnh.","en":"The library is very quiet."},
+      {"zh":"請安靜一點。","pinyin":"Qǐng ānjìng yìdiǎn.","vi":"Xin hãy yên lặng một chút.","en":"Please be a little quieter."}
+    ]
+  },
+  "4": {
+    "meaning_en": "sentence-final particle for suggestion, softening, or confirmation",
+    "examples": [
+      {"zh":"我們走吧！","pinyin":"Wǒmen zǒu ba!","vi":"Chúng ta đi nhé!","en":"Let's go!"},
+      {"zh":"你是學生吧？","pinyin":"Nǐ shì xuéshēng ba?","vi":"Bạn là học sinh, đúng không?","en":"You're a student, right?"}
+    ]
+  },
+  "5": {
+    "meaning_en": "eight",
+    "examples": [
+      {"zh":"我八點上課。","pinyin":"Wǒ bā diǎn shàngkè.","vi":"Tôi lên lớp lúc tám giờ.","en":"I have class at eight o'clock."},
+      {"zh":"他有八本書。","pinyin":"Tā yǒu bā běn shū.","vi":"Anh ấy có tám quyển sách.","en":"He has eight books."}
+    ]
+  },
+  "6": {
+    "meaning_en": "bǎ construction marker; classifier for handled objects",
+    "examples": [
+      {"zh":"請把門打開。","pinyin":"Qǐng bǎ mén dǎkāi.","vi":"Xin hãy mở cửa ra.","en":"Please open the door."},
+      {"zh":"我有一把傘。","pinyin":"Wǒ yǒu yì bǎ sǎn.","vi":"Tôi có một cái ô.","en":"I have an umbrella."}
+    ]
+  },
+  "7": {
+    "meaning_en": "father; dad",
+    "examples": [
+      {"zh":"我爸爸在公司工作。","pinyin":"Wǒ bàba zài gōngsī gōngzuò.","vi":"Bố tôi làm việc ở công ty.","en":"My dad works at a company."},
+      {"zh":"爸爸今天很忙。","pinyin":"Bàba jīntiān hěn máng.","vi":"Hôm nay bố rất bận.","en":"Dad is very busy today."}
+    ]
+  },
+  "8": {
+    "meaning_en": "one hundred; hundred",
+    "examples": [
+      {"zh":"這本書一百元。","pinyin":"Zhè běn shū yìbǎi yuán.","vi":"Quyển sách này giá một trăm đồng.","en":"This book costs one hundred dollars."},
+      {"zh":"學校有三百個學生。","pinyin":"Xuéxiào yǒu sānbǎi ge xuéshēng.","vi":"Trường có ba trăm học sinh.","en":"The school has three hundred students."}
+    ]
+  },
+  "9": {
+    "meaning_en": "department store",
+    "examples": [
+      {"zh":"我媽媽在百貨公司工作。","pinyin":"Wǒ māma zài bǎihuògōngsī gōngzuò.","vi":"Mẹ tôi làm việc ở trung tâm bách hóa.","en":"My mother works at a department store."},
+      {"zh":"這間百貨公司很大。","pinyin":"Zhè jiān bǎihuògōngsī hěn dà.","vi":"Trung tâm bách hóa này rất lớn.","en":"This department store is very big."}
+    ]
+  },
+  "10": {
+    "meaning_en": "white; the color white",
+    "examples": [
+      {"zh":"我喜歡白色的衣服。","pinyin":"Wǒ xǐhuān báisè de yīfú.","vi":"Tôi thích quần áo màu trắng.","en":"I like white clothes."},
+      {"zh":"他的車是白色的。","pinyin":"Tā de chē shì báisè de.","vi":"Xe của anh ấy màu trắng.","en":"His car is white."}
+    ]
+  },
+  "11": {
+    "meaning_en": "scheduled service; classifier for a bus, train, or flight",
+    "examples": [
+      {"zh":"下一班公車幾點來？","pinyin":"Xià yì bān gōngchē jǐ diǎn lái?","vi":"Chuyến xe buýt tiếp theo mấy giờ đến?","en":"What time does the next bus come?"},
+      {"zh":"我坐早上八點那一班火車。","pinyin":"Wǒ zuò zǎoshang bā diǎn nà yì bān huǒchē.","vi":"Tôi đi chuyến tàu lúc tám giờ sáng.","en":"I take the eight o'clock morning train."}
+    ]
+  },
+  "12": {
+    "meaning_en": "class; school class",
+    "examples": [
+      {"zh":"我們班有二十個學生。","pinyin":"Wǒmen bān yǒu èrshí ge xuéshēng.","vi":"Lớp chúng tôi có hai mươi học sinh.","en":"There are twenty students in our class."},
+      {"zh":"他是我們班的同學。","pinyin":"Tā shì wǒmen bān de tóngxué.","vi":"Anh ấy là bạn cùng lớp của chúng tôi.","en":"He is our classmate."}
+    ]
+  },
+  "13": {
+    "meaning_en": "to move; to carry and relocate",
+    "examples": [
+      {"zh":"我下個月要搬家。","pinyin":"Wǒ xià ge yuè yào bānjiā.","vi":"Tháng sau tôi sẽ chuyển nhà.","en":"I am moving house next month."},
+      {"zh":"請幫我搬這張桌子。","pinyin":"Qǐng bāng wǒ bān zhè zhāng zhuōzi.","vi":"Hãy giúp tôi chuyển cái bàn này.","en":"Please help me move this table."}
+    ]
+  },
+  "14": {
+    "meaning_en": "half; half past",
+    "examples": [
+      {"zh":"現在八點半。","pinyin":"Xiànzài bā diǎn bàn.","vi":"Bây giờ là tám giờ rưỡi.","en":"It is eight thirty now."},
+      {"zh":"我等了半個小時。","pinyin":"Wǒ děng le bàn ge xiǎoshí.","vi":"Tôi đã đợi nửa tiếng.","en":"I waited for half an hour."}
+    ]
+  },
+  "15": {
+    "meaning_en": "to help; to assist",
+    "examples": [
+      {"zh":"你可以幫我嗎？","pinyin":"Nǐ kěyǐ bāng wǒ ma?","vi":"Bạn có thể giúp tôi không?","en":"Can you help me?"},
+      {"zh":"謝謝你幫我。","pinyin":"Xièxie nǐ bāng wǒ.","vi":"Cảm ơn bạn đã giúp tôi.","en":"Thank you for helping me."}
+    ]
+  },
+  "16": {
+    "meaning_en": "office",
+    "examples": [
+      {"zh":"老師在辦公室。","pinyin":"Lǎoshī zài bàngōngshì.","vi":"Giáo viên đang ở văn phòng.","en":"The teacher is in the office."},
+      {"zh":"我的辦公室在三樓。","pinyin":"Wǒ de bàngōngshì zài sān lóu.","vi":"Văn phòng của tôi ở tầng ba.","en":"My office is on the third floor."}
+    ]
+  },
+  "17": {
+    "meaning_en": "baseball",
+    "examples": [
+      {"zh":"我喜歡打棒球。","pinyin":"Wǒ xǐhuān dǎ bàngqiú.","vi":"Tôi thích chơi bóng chày.","en":"I like playing baseball."},
+      {"zh":"他們週末去看棒球。","pinyin":"Tāmen zhōumò qù kàn bàngqiú.","vi":"Cuối tuần họ đi xem bóng chày.","en":"They go to watch baseball on the weekend."}
+    ]
+  },
+  "18": {
+    "meaning_en": "steamed bun; baozi",
+    "examples": [
+      {"zh":"我早餐吃兩個包子。","pinyin":"Wǒ zǎocān chī liǎng ge bāozi.","vi":"Bữa sáng tôi ăn hai cái bánh bao.","en":"I eat two steamed buns for breakfast."},
+      {"zh":"這家店的包子很好吃。","pinyin":"Zhè jiā diàn de bāozi hěn hǎochī.","vi":"Bánh bao của cửa hàng này rất ngon.","en":"The steamed buns at this shop are delicious."}
+    ]
+  },
+  "19": {
+    "meaning_en": "newspaper",
+    "examples": [
+      {"zh":"爸爸早上看報紙。","pinyin":"Bàba zǎoshang kàn bàozhǐ.","vi":"Bố đọc báo vào buổi sáng.","en":"Dad reads the newspaper in the morning."},
+      {"zh":"桌上有一份報紙。","pinyin":"Zhuō shàng yǒu yí fèn bàozhǐ.","vi":"Trên bàn có một tờ báo.","en":"There is a newspaper on the table."}
+    ]
+  },
+  "20": {
+    "meaning_en": "cup; glass (measure word)",
+    "examples": [
+      {"zh":"我要一杯茶。","pinyin":"Wǒ yào yì bēi chá.","vi":"Tôi muốn một ly trà.","en":"I would like a cup of tea."},
+      {"zh":"請給我兩杯咖啡。","pinyin":"Qǐng gěi wǒ liǎng bēi kāfēi.","vi":"Xin cho tôi hai ly cà phê.","en":"Please give me two cups of coffee."}
+    ]
+  }
+}

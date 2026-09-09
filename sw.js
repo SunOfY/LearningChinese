@@ -1,4 +1,4 @@
-const CACHE = 'tocfl-a1-v4-6-groq-byok';
+const CACHE = 'tocfl-v4-7-multilevel';
 const ASSETS = [
   './',
   './index.html',
@@ -50,19 +50,28 @@ self.addEventListener('fetch', event => {
     url.pathname.endsWith('/styles.css') ||
     url.pathname.endsWith('/app.js') ||
     url.pathname.endsWith('/auth.js') ||
-    url.pathname.endsWith('/data/a1.json') ||
-    url.pathname.endsWith('/data/enrichment_day1.json') ||
+    url.pathname.includes('/data/') && url.pathname.endsWith('.json') ||
     url.pathname.endsWith('/sw.js');
 
   if (isFreshAsset) {
     event.respondWith(
       fetch(event.request, { cache: 'no-store' })
         .then(response => {
-          const copy = response.clone();
-          caches.open(CACHE).then(cache => cache.put(event.request, copy));
+          // Do not cache 404/5xx placeholders for future level files.
+          if (response.ok) {
+            const copy = response.clone();
+            caches.open(CACHE).then(cache => cache.put(event.request, copy));
+          }
           return response;
         })
-        .catch(() => caches.match(event.request).then(cached => cached || caches.match('./index.html')))
+        .catch(async () => {
+          const cached = await caches.match(event.request);
+          if (cached) return cached;
+          if (url.pathname.includes('/data/') && url.pathname.endsWith('.json')) {
+            return new Response('', { status: 404, statusText: 'Offline data file unavailable' });
+          }
+          return caches.match('./index.html');
+        })
     );
     return;
   }

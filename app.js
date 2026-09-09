@@ -1,9 +1,24 @@
 'use strict';
 
-const STORAGE_KEY = 'tocfl-a1-progress-v2';
-const FAVORITES_KEY = 'tocfl-a1-favorites-v2';
-const LANGUAGE_KEY = 'tocfl-a1-ui-language-v2';
-const ENGLISH_CACHE_KEY = 'tocfl-a1-english-cache-v2';
+const LEGACY_STORAGE_KEY = 'tocfl-a1-progress-v2';
+const LEGACY_FAVORITES_KEY = 'tocfl-a1-favorites-v2';
+const LEGACY_LAST_DAY_KEY = 'tocfl-a1-last-day';
+const MULTI_STATE_KEY = 'tocfl-multilevel-state-v1';
+const LANGUAGE_KEY = 'tocfl-a1-ui-language-v2'; // keep the old key so existing UI-language preference survives the upgrade
+const ENGLISH_CACHE_PREFIX = 'tocfl-english-cache-v3';
+const LEGACY_ENGLISH_CACHE_KEY = 'tocfl-a1-english-cache-v2';
+
+// Future-proof level registry. To activate a level later, upload data/<level>.json.
+// The enrichment file is optional and follows data/<level>_enrichment.json.
+const LEVEL_CATALOG = [
+  { id:'A1', base:'./data/a1.json', enrich:['./data/a1_enrichment.json','./data/enrichment_day1.json'] },
+  { id:'A2', base:'./data/a2.json', enrich:['./data/a2_enrichment.json'] },
+  { id:'B1', base:'./data/b1.json', enrich:['./data/b1_enrichment.json'] },
+  { id:'B2', base:'./data/b2.json', enrich:['./data/b2_enrichment.json'] },
+  { id:'C1', base:'./data/c1.json', enrich:['./data/c1_enrichment.json'] },
+  { id:'C2', base:'./data/c2.json', enrich:['./data/c2_enrichment.json'] }
+];
+const LEVEL_MAP = Object.fromEntries(LEVEL_CATALOG.map(x=>[x.id,x]));
 const CEDICT_URL = 'https://raw.githubusercontent.com/jtoy/crdict/refs/heads/master/cedict_ts.u8';
 
 const I18N = {
@@ -15,7 +30,7 @@ const I18N = {
     examples:'💬 Câu ví dụ', examplesHint:'Bấm loa để nghe cả câu bằng giọng zh-TW.', rememberLevel:'Bạn nhớ từ này mức nào?', notRemembered:'Chưa nhớ', learning:'Tạm nhớ', remembered:'Đã nhớ', previous:'Trước', next:'Tiếp theo',
     writingPractice:'✍️ Luyện viết', writingDevices:'Chuột · ngón tay · Apple Pencil', clear:'Xóa', showGuide:'Hiện chữ mẫu mờ', writingTip:'<strong>Cách luyện:</strong> tô theo mẫu → tắt mẫu → tự viết → đọc thành tiếng chữ vừa viết.',
     creatingQuestion:'Đang tạo câu hỏi…', anotherQuestion:'Câu khác', reviewed:'Đã đánh giá', backupTitle:'💾 Sao lưu tiến độ', backupDesc:'Tiến độ được lưu trong trình duyệt của từng thiết bị. Bạn có thể xuất file để chuyển sang thiết bị khác.', exportProgress:'Xuất tiến độ', importProgress:'Nhập tiến độ', resetProgress:'Xóa tiến độ',
-    footerNote:'Dữ liệu A1 gốc lấy từ PDF người dùng cung cấp. English lấy bổ sung từ CC-CEDICT khi có mạng; câu ví dụ bổ sung phục vụ học tập và không phải câu mẫu chính thức của TOCFL.',
+    footerNote:'Dữ liệu từ vựng của từng trình độ được tải từ thư mục data. English có thể được bổ sung từ CC-CEDICT khi có mạng; câu ví dụ bổ sung phục vụ học tập và không phải câu mẫu chính thức của TOCFL.',
     newWords:n=>`${n} từ mới`, allDays:'Tất cả ngày', dayOption:n=>`Ngày ${n}`, searchPlaceholder:'Tìm chữ, pinyin hoặc nghĩa…',
     loadingEnglish:'Đang tải nghĩa English…', englishUnavailable:'Chưa lấy được nghĩa English.', sourceWarning:'Lưu ý dữ liệu nguồn:', likelyForm:'Ví dụ dùng dạng được suy đoán theo pinyin/nghĩa:',
     recordIdle:'Giọng ghi âm chỉ lưu tạm trên thiết bị.', recording:'🔴 Đang ghi âm… hãy đọc từ hiện tại.', recordDone:'Đã ghi xong. Bạn có thể phát lại hoặc kiểm tra phát âm.', micDenied:'Không truy cập được microphone. Hãy cấp quyền microphone cho website.', recorderUnsupported:'Thiết bị/trình duyệt này chưa hỗ trợ ghi âm bằng MediaRecorder.',
@@ -23,7 +38,7 @@ const I18N = {
     feedbackExcellent:'AI nghe đúng từ mẫu.', feedbackGood:'AI nghe gần đúng. Hãy nghe mẫu và thử lại.', feedbackRetry:'AI nghe thành từ khác. Hãy nghe chậm rồi đọc lại.',
     quizMeaning:q=>`“${q}” nghĩa là gì?`, quizPinyin:q=>`Pinyin của “${q}” là gì?`, quizEnglish:q=>`English của “${q}” là gì?`, correct:'✅ Chính xác!', answer:a=>`❌ Đáp án: ${a}`, noVocab:'Không tìm thấy từ phù hợp.',
     exportDone:'Đã xuất file tiến độ.', importDone:'Đã nhập tiến độ thành công.', resetConfirm:'Xóa toàn bộ tiến độ và từ đã đánh dấu trên thiết bị này?', resetDone:'Đã xóa tiến độ.', invalidFile:'File không đúng định dạng.',
-    generatedExample:'Ví dụ bổ sung tự động mức A1', curatedExample:'Ví dụ đã biên soạn'
+    generatedExample:'Ví dụ bổ sung tự động', curatedExample:'Ví dụ đã biên soạn'
   },
   en: {
     day:'Day', navToday:'Today', navVocab:'Vocabulary', navQuiz:'Quiz', navProgress:'Progress', goal:'Goal',
@@ -33,7 +48,7 @@ const I18N = {
     examples:'💬 Example sentences', examplesHint:'Tap the speaker to hear the full sentence in zh-TW.', rememberLevel:'How well do you remember this word?', notRemembered:'Not yet', learning:'Learning', remembered:'Remembered', previous:'Previous', next:'Next',
     writingPractice:'✍️ Writing practice', writingDevices:'Mouse · finger · Apple Pencil', clear:'Clear', showGuide:'Show faint guide', writingTip:'<strong>Practice:</strong> trace the guide → hide it → write from memory → say the character aloud.',
     creatingQuestion:'Creating a question…', anotherQuestion:'Another question', reviewed:'Reviewed', backupTitle:'💾 Progress backup', backupDesc:'Progress is stored in the browser on each device. Export a file to move it to another device.', exportProgress:'Export progress', importProgress:'Import progress', resetProgress:'Reset progress',
-    footerNote:'The base A1 list comes from the user-provided PDF. English glosses are supplemented from CC-CEDICT when online; example sentences are study supplements and are not official TOCFL example sentences.',
+    footerNote:'Vocabulary for each level is loaded from the data folder. English glosses may be supplemented from CC-CEDICT when online; example sentences are study supplements and are not official TOCFL examples.',
     newWords:n=>`${n} new words`, allDays:'All days', dayOption:n=>`Day ${n}`, searchPlaceholder:'Search Hanzi, Pinyin or meaning…',
     loadingEnglish:'Loading English definition…', englishUnavailable:'English definition unavailable.', sourceWarning:'Source-data note:', likelyForm:'Examples use the likely intended form based on the source pinyin/meaning:',
     recordIdle:'The recording is kept only temporarily on this device.', recording:'🔴 Recording… say the current word.', recordDone:'Recording complete. Play it back or check pronunciation.', micDenied:'Microphone access failed. Allow microphone permission for this site.', recorderUnsupported:'This browser/device does not support MediaRecorder.',
@@ -41,7 +56,7 @@ const I18N = {
     feedbackExcellent:'AI recognized the target word exactly.', feedbackGood:'AI recognized something close. Listen to the model and try again.', feedbackRetry:'AI recognized a different word. Listen slowly and try again.',
     quizMeaning:q=>`What does “${q}” mean in Vietnamese?`, quizPinyin:q=>`What is the Pinyin for “${q}”?`, quizEnglish:q=>`What does “${q}” mean in English?`, correct:'✅ Correct!', answer:a=>`❌ Answer: ${a}`, noVocab:'No matching vocabulary found.',
     exportDone:'Progress file exported.', importDone:'Progress imported successfully.', resetConfirm:'Delete all progress and favorites on this device?', resetDone:'Progress deleted.', invalidFile:'Invalid progress file.',
-    generatedExample:'Auto-generated A1 study example', curatedExample:'Curated example'
+    generatedExample:'Auto-generated study example', curatedExample:'Curated example'
   },
   'zh-Hant': {
     day:'第', navToday:'今天', navVocab:'詞彙', navQuiz:'測驗', navProgress:'進度', goal:'今日目標',
@@ -51,7 +66,7 @@ const I18N = {
     examples:'💬 例句', examplesHint:'按喇叭可用 zh-TW 聽完整句子。', rememberLevel:'你記得這個詞嗎？', notRemembered:'還不會', learning:'不太熟', remembered:'記住了', previous:'上一個', next:'下一個',
     writingPractice:'✍️ 寫字練習', writingDevices:'滑鼠 · 手指 · Apple Pencil', clear:'清除', showGuide:'顯示淡色範字', writingTip:'<strong>練習方式：</strong>描字 → 關閉範字 → 默寫 → 大聲讀出剛寫的字。',
     creatingQuestion:'正在出題…', anotherQuestion:'下一題', reviewed:'已評估', backupTitle:'💾 備份學習進度', backupDesc:'進度儲存在每台裝置的瀏覽器中。可匯出檔案，再匯入另一台裝置。', exportProgress:'匯出進度', importProgress:'匯入進度', resetProgress:'清除進度',
-    footerNote:'A1 基礎詞表來自使用者提供的 PDF。英文釋義在連網時由 CC-CEDICT 補充；例句為學習用補充內容，並非 TOCFL 官方例句。',
+    footerNote:'各級詞彙從 data 資料夾載入。連網時可由 CC-CEDICT 補充英文釋義；例句為學習補充，並非 TOCFL 官方例句。',
     newWords:n=>`${n} 個新詞`, allDays:'全部', dayOption:n=>`第 ${n} 天`, searchPlaceholder:'搜尋漢字、拼音或意思…',
     loadingEnglish:'正在載入英文釋義…', englishUnavailable:'暫時無法取得英文釋義。', sourceWarning:'原始資料提醒：', likelyForm:'例句依原始拼音／意思採用推測的詞形：',
     recordIdle:'錄音只會暫時保留在此裝置。', recording:'🔴 錄音中……請讀目前的詞。', recordDone:'錄音完成。可播放錄音或檢查發音。', micDenied:'無法使用麥克風，請允許此網站使用麥克風。', recorderUnsupported:'此瀏覽器／裝置不支援 MediaRecorder。',
@@ -59,7 +74,7 @@ const I18N = {
     feedbackExcellent:'AI 正確辨識出目標詞。', feedbackGood:'AI 辨識結果接近，請聽範例後再試一次。', feedbackRetry:'AI 辨識成其他詞，請慢速聆聽後再試一次。',
     quizMeaning:q=>`「${q}」的越南文意思是什麼？`, quizPinyin:q=>`「${q}」的拼音是什麼？`, quizEnglish:q=>`「${q}」的英文意思是什麼？`, correct:'✅ 答對了！', answer:a=>`❌ 答案：${a}`, noVocab:'找不到符合的詞。',
     exportDone:'已匯出進度檔。', importDone:'已成功匯入進度。', resetConfirm:'要清除這台裝置上的全部進度與收藏嗎？', resetDone:'已清除進度。', invalidFile:'檔案格式不正確。',
-    generatedExample:'A1 自動補充例句', curatedExample:'人工整理例句'
+    generatedExample:'自動補充例句', curatedExample:'人工整理例句'
   }
 };
 
@@ -68,7 +83,15 @@ const state = {
   progress: {}, favorites: new Set(), lang: 'vi', englishDefs: {}, englishLoaded: false,
   mediaRecorder: null, recordedChunks: [], recordingUrl: null, stream: null,
   groqRecognitionRunning: false,
-  pinyinMap: new Map()
+  pinyinMap: new Map(),
+  activeLevel: 'A1', rememberLevel: false, levelStates: {}, levelDataCache: {},
+  levelAvailability: {}, currentUserId: null
+};
+
+const LEVEL_UI = {
+  vi:{title:'Chọn trình độ',subtitle:'Chọn cấp độ bạn muốn học. Trình độ chưa có file dữ liệu sẽ ở trạng thái Coming soon.',remember:'Nhớ trình độ đã chọn',rememberHint:'Bật: lần sau vào tài khoản sẽ mở thẳng trình độ này. Tắt: phiên sau sẽ hỏi lại.',available:'Sẵn sàng',coming:'Coming soon',loading:'Đang kiểm tra…',words:n=>`${n} từ`,choose:'Học trình độ này',levelButton:'Trình độ',close:'Đóng',descriptions:{A1:'Cơ bản',A2:'Sơ cấp nâng cao',B1:'Trung cấp',B2:'Trung cao cấp',C1:'Cao cấp',C2:'Thành thạo'}},
+  en:{title:'Choose level',subtitle:'Choose what you want to study. Levels without a data file stay as Coming soon.',remember:'Remember selected level',rememberHint:'On: next time this account opens directly at this level. Off: ask again in a future session.',available:'Ready',coming:'Coming soon',loading:'Checking…',words:n=>`${n} words`,choose:'Study this level',levelButton:'Level',close:'Close',descriptions:{A1:'Beginner',A2:'Upper elementary',B1:'Intermediate',B2:'Upper intermediate',C1:'Advanced',C2:'Proficient'}},
+  'zh-Hant':{title:'選擇程度',subtitle:'選擇要學習的程度。尚未上傳資料檔的程度會顯示 Coming soon。',remember:'記住所選程度',rememberHint:'開啟：下次此帳號會直接進入這個程度。關閉：之後的工作階段會再次詢問。',available:'可使用',coming:'Coming soon',loading:'檢查中…',words:n=>`${n} 個詞`,choose:'學習這個程度',levelButton:'程度',close:'關閉',descriptions:{A1:'基礎',A2:'初級進階',B1:'中級',B2:'中高級',C1:'高級',C2:'精熟'}}
 };
 
 const $ = id => document.getElementById(id);
@@ -78,11 +101,26 @@ const t = (key, ...args) => {
   return typeof val === 'function' ? val(...args) : val;
 };
 
+const levelText = () => LEVEL_UI[state.lang] || LEVEL_UI.vi;
+const levelConfig = id => LEVEL_MAP[String(id || '').toUpperCase()] || null;
+const englishCacheKey = level => `${ENGLISH_CACHE_PREFIX}-${String(level||'A1').toLowerCase()}`;
+function emptyLevelState(){ return {progress:{},favorites:[],lastDay:1}; }
+function normalizeLevelState(value){
+  const v=value && typeof value==='object' ? value : {};
+  return {
+    progress: v.progress && typeof v.progress==='object' ? v.progress : {},
+    favorites: Array.isArray(v.favorites) ? v.favorites : [],
+    lastDay: Math.max(1, Number(v.lastDay || 1))
+  };
+}
+function a1Inferred(word){ return state.activeLevel==='A1' ? INFERRED_FORMS[word?.id] : undefined; }
+function a1EnglishOverride(word){ return state.activeLevel==='A1' ? EN_OVERRIDES[word?.id] : undefined; }
+
 const INFERRED_FORMS = {55:'出國',56:'出來',57:'出去',68:'蛋糕',383:'下面'};
 const EN_OVERRIDES = {55:'to go abroad',56:'to come out',57:'to go out',68:'cake',383:'below; underneath'};
 
 function primaryForm(word) {
-  if (INFERRED_FORMS[word.id]) return INFERRED_FORMS[word.id];
+  if (a1Inferred(word)) return a1Inferred(word);
   let s = String(word.traditional || '').trim();
   if (s.includes('/')) s = s.split('/')[0];
   s = s.replace(/右邊\)$/,'右邊');
@@ -98,39 +136,172 @@ function candidateForms(word) {
   return [...out].filter(Boolean);
 }
 
-async function init() {
-  try {
-    const [baseRes, enrichRes] = await Promise.all([fetch('./data/a1.json'), fetch('./data/enrichment_day1.json')]);
-    if (!baseRes.ok || !enrichRes.ok) throw new Error('Cannot load local data files.');
-    const base = await baseRes.json();
-    state.allWords = base.vocabulary || [];
-    state.enrich = await enrichRes.json();
-    loadLocalState();
-    buildPinyinMap();
-    bindLanguage(); buildDaySelectors(); bindNavigation(); bindStudyControls(); bindRecorder(); bindCanvas(); bindVocab(); bindQuiz(); bindBackup();
-    applyLanguage();
-    selectDay(Number(localStorage.getItem('tocfl-a1-last-day') || 1));
-    registerServiceWorker();
-    window.TOCFL_APP_READY = true;
-    document.dispatchEvent(new CustomEvent('tocfl:app-ready'));
-    loadEnglishDictionary();
-  } catch (err) {
-    console.error(err);
-    document.querySelector('main').innerHTML = `<div class="card"><strong>Error:</strong> ${escapeHtml(err.message)}<br><br>Open this through GitHub Pages or a web server, not file://.</div>`;
+async function fetchJsonOptional(url){
+  try{
+    const res=await fetch(url,{cache:'no-store'});
+    if(res.status===404) return null;
+    if(!res.ok) throw new Error(`${url}: HTTP ${res.status}`);
+    return await res.json();
+  }catch(err){
+    if(String(err?.message||'').includes('404')) return null;
+    throw err;
   }
 }
 
-function loadLocalState() {
-  try { state.progress = JSON.parse(localStorage.getItem(STORAGE_KEY) || '{}'); } catch { state.progress = {}; }
-  try { state.favorites = new Set(JSON.parse(localStorage.getItem(FAVORITES_KEY) || '[]')); } catch { state.favorites = new Set(); }
-  const lang = localStorage.getItem(LANGUAGE_KEY); if (I18N[lang]) state.lang = lang;
-  try { const c=JSON.parse(localStorage.getItem(ENGLISH_CACHE_KEY)||'{}'); state.englishDefs=c.defs||{}; state.englishLoaded=Boolean(c.complete); } catch { state.englishDefs={}; }
+function normalizeVocabulary(base, levelId){
+  const words=Array.isArray(base?.vocabulary) ? base.vocabulary : Array.isArray(base) ? base : [];
+  const target=Math.max(1,Number(base?.meta?.daily_target||20));
+  return words.map((word,index)=>({
+    ...word,
+    id: word.id ?? `${levelId}-${String(index+1).padStart(4,'0')}`,
+    level: word.level || levelId,
+    day: Math.max(1,Number(word.day || Math.floor(index/target)+1))
+  }));
 }
-function saveLocalState(options={}) {
-  localStorage.setItem(STORAGE_KEY, JSON.stringify(state.progress));
-  localStorage.setItem(FAVORITES_KEY, JSON.stringify([...state.favorites]));
+
+async function loadLevelData(levelId,{force=false}={}){
+  const id=String(levelId||'').toUpperCase();
+  const cfg=levelConfig(id); if(!cfg) return null;
+  if(!force && state.levelDataCache[id]) return state.levelDataCache[id];
+  const base=await fetchJsonOptional(cfg.base);
+  if(!base){
+    delete state.levelDataCache[id];
+    state.levelAvailability[id]={status:'missing',count:0};
+    return null;
+  }
+  const words=normalizeVocabulary(base,id);
+  if(!words.length){
+    state.levelAvailability[id]={status:'missing',count:0};
+    return null;
+  }
+  let enrich={};
+  for(const path of cfg.enrich||[]){
+    const found=await fetchJsonOptional(path);
+    if(found){ enrich=found.enrichment && typeof found.enrichment==='object' ? found.enrichment : found; break; }
+  }
+  const pack={meta:base.meta||{},words,enrich};
+  state.levelDataCache[id]=pack;
+  state.levelAvailability[id]={status:'available',count:words.length,meta:pack.meta};
+  return pack;
+}
+
+async function probeAllLevels({force=false}={}){
+  await Promise.all(LEVEL_CATALOG.map(async cfg=>{
+    if(state.levelDataCache[cfg.id]){
+      const pack=state.levelDataCache[cfg.id]; state.levelAvailability[cfg.id]={status:'available',count:pack.words.length,meta:pack.meta}; renderLevelSelector(); return;
+    }
+    if(state.levelAvailability[cfg.id]?.status==='available' && !force) return;
+    state.levelAvailability[cfg.id]={...(state.levelAvailability[cfg.id]||{}),status:'loading'}; renderLevelSelector();
+    try{
+      const res=await fetch(cfg.base,{method:'HEAD',cache:'no-store'});
+      if(res.ok) state.levelAvailability[cfg.id]={status:'available',count:null};
+      else if(res.status===404) state.levelAvailability[cfg.id]={status:'missing',count:0};
+      else if(res.status===405){
+        const base=await fetchJsonOptional(cfg.base); state.levelAvailability[cfg.id]=base?{status:'available',count:Array.isArray(base.vocabulary)?base.vocabulary.length:null}:{status:'missing',count:0};
+      }else state.levelAvailability[cfg.id]={status:'error',count:0};
+    }catch(err){ console.warn(`Level ${cfg.id}:`,err); state.levelAvailability[cfg.id]={status:'error',count:0}; }
+    renderLevelSelector();
+  }));
+}
+
+function loadEnglishCacheForLevel(levelId){
+  state.englishDefs={}; state.englishLoaded=false;
+  try{
+    let raw=localStorage.getItem(englishCacheKey(levelId));
+    if(!raw && levelId==='A1') raw=localStorage.getItem(LEGACY_ENGLISH_CACHE_KEY);
+    const c=JSON.parse(raw||'{}'); state.englishDefs=c.defs||{}; state.englishLoaded=Boolean(c.complete);
+  }catch{ state.englishDefs={}; state.englishLoaded=false; }
+}
+
+function saveCurrentLevelSnapshot(){
+  if(!state.activeLevel) return;
+  state.levelStates[state.activeLevel]={
+    progress:state.progress && typeof state.progress==='object' ? state.progress : {},
+    favorites:[...state.favorites],
+    lastDay:Math.max(1,Number(state.day||1))
+  };
+}
+
+function persistMultiState(){
+  saveCurrentLevelSnapshot();
+  const levels={};
+  for(const cfg of LEVEL_CATALOG){ if(state.levelStates[cfg.id]) levels[cfg.id]=normalizeLevelState(state.levelStates[cfg.id]); }
+  const payload={version:1,levels,settings:{activeLevel:state.activeLevel,rememberLevel:Boolean(state.rememberLevel)}};
+  localStorage.setItem(MULTI_STATE_KEY,JSON.stringify(payload));
+  // Keep an A1 mirror so an older deployment does not lose existing A1 progress.
+  const a1=normalizeLevelState(levels.A1||{});
+  localStorage.setItem(LEGACY_STORAGE_KEY,JSON.stringify(a1.progress));
+  localStorage.setItem(LEGACY_FAVORITES_KEY,JSON.stringify(a1.favorites));
+  localStorage.setItem(LEGACY_LAST_DAY_KEY,String(a1.lastDay));
+}
+
+function loadLocalState(){
+  const lang=localStorage.getItem(LANGUAGE_KEY); if(I18N[lang]) state.lang=lang;
+  let multi=null;
+  try{ multi=JSON.parse(localStorage.getItem(MULTI_STATE_KEY)||'null'); }catch{}
+  if(multi?.levels && typeof multi.levels==='object'){
+    for(const [id,value] of Object.entries(multi.levels)) if(levelConfig(id)) state.levelStates[id]=normalizeLevelState(value);
+    const desired=String(multi.settings?.activeLevel||'A1').toUpperCase();
+    state.activeLevel=levelConfig(desired)?desired:'A1';
+    state.rememberLevel=Boolean(multi.settings?.rememberLevel);
+  }else{
+    let progress={},favorites=[];
+    try{progress=JSON.parse(localStorage.getItem(LEGACY_STORAGE_KEY)||'{}');}catch{}
+    try{favorites=JSON.parse(localStorage.getItem(LEGACY_FAVORITES_KEY)||'[]');}catch{}
+    state.levelStates.A1=normalizeLevelState({progress,favorites,lastDay:Number(localStorage.getItem(LEGACY_LAST_DAY_KEY)||1)});
+    state.activeLevel='A1'; state.rememberLevel=false;
+  }
+  if(!state.levelStates.A1) state.levelStates.A1=emptyLevelState();
+  const current=normalizeLevelState(state.levelStates[state.activeLevel]||emptyLevelState());
+  state.progress=current.progress; state.favorites=new Set(current.favorites); state.day=current.lastDay;
+  loadEnglishCacheForLevel(state.activeLevel);
+}
+
+async function applyLevel(levelId,{notify=true,close=true}={}){
+  const id=String(levelId||'').toUpperCase();
+  const pack=await loadLevelData(id,{force:false});
+  if(!pack) return false;
+  saveCurrentLevelSnapshot();
+  state.activeLevel=id; state.allWords=pack.words; state.enrich=pack.enrich||{};
+  const saved=normalizeLevelState(state.levelStates[id]||emptyLevelState());
+  state.levelStates[id]=saved; state.progress=saved.progress; state.favorites=new Set(saved.favorites); state.day=saved.lastDay; state.index=0;
+  loadEnglishCacheForLevel(id); buildPinyinMap(); buildDaySelectors(); updateBranding(); applyLanguage();
+  selectDay(saved.lastDay,{notify:false});
+  persistMultiState();
+  if(close) closeLevelSelector();
+  if(notify) document.dispatchEvent(new CustomEvent('tocfl:state-changed'));
+  void loadEnglishDictionary();
+  return true;
+}
+
+async function init(){
+  try{
+    loadLocalState();
+    let desired=state.rememberLevel ? state.activeLevel : 'A1';
+    let pack=await loadLevelData(desired);
+    if(!pack && desired!=='A1'){ desired='A1'; pack=await loadLevelData('A1'); }
+    if(!pack) throw new Error('Cannot load data/a1.json.');
+    state.activeLevel=desired; state.allWords=pack.words; state.enrich=pack.enrich||{};
+    const saved=normalizeLevelState(state.levelStates[desired]||emptyLevelState());
+    state.levelStates[desired]=saved; state.progress=saved.progress; state.favorites=new Set(saved.favorites); state.day=saved.lastDay;
+    loadEnglishCacheForLevel(desired); buildPinyinMap();
+    bindLanguage(); buildDaySelectors(); bindNavigation(); bindStudyControls(); bindRecorder(); bindCanvas(); bindVocab(); bindQuiz(); bindBackup(); bindLevelSelector();
+    updateBranding(); applyLanguage(); selectDay(saved.lastDay,{notify:false});
+    registerServiceWorker();
+    window.TOCFL_APP_READY=true;
+    document.dispatchEvent(new CustomEvent('tocfl:app-ready'));
+    void probeAllLevels();
+    void loadEnglishDictionary();
+  }catch(err){
+    console.error(err);
+    document.querySelector('main').innerHTML=`<div class="card"><strong>Error:</strong> ${escapeHtml(err.message)}<br><br>Open this through GitHub Pages or a web server, not file://.</div>`;
+  }
+}
+
+function saveLocalState(options={}){
+  persistMultiState();
   updateProgressUI();
-  if (!options.silent) document.dispatchEvent(new CustomEvent('tocfl:state-changed'));
+  if(!options.silent) document.dispatchEvent(new CustomEvent('tocfl:state-changed'));
 }
 
 function bindLanguage() {
@@ -153,35 +324,42 @@ function applyLanguage() {
   refreshDaySelectorLabels();
   $('togglePinyinBtn').textContent = state.pinyinVisible ? t('hidePinyin') : t('showPinyin');
   if (!state.recordingUrl && !state.recognitionRunning) $('recordStatus').textContent=t('recordIdle');
+  updateBranding();
+  renderLevelSelector();
 }
 
-function buildDaySelectors() {
-  const maxDay = Math.max(...state.allWords.map(w => Number(w.day || 1)));
-  $('daySelect').innerHTML = Array.from({length:maxDay},(_,i)=>`<option value="${i+1}"></option>`).join('');
-  $('vocabDayFilter').innerHTML = `<option value="all"></option>` + Array.from({length:maxDay},(_,i)=>`<option value="${i+1}"></option>`).join('');
-  $('daySelect').addEventListener('change', e=>selectDay(Number(e.target.value)));
-  $('vocabDayFilter').addEventListener('change', renderVocabList);
+function buildDaySelectors(){
+  const maxDay=Math.max(1,...state.allWords.map(w=>Number(w.day||1)));
+  $('daySelect').innerHTML=Array.from({length:maxDay},(_,i)=>`<option value="${i+1}"></option>`).join('');
+  $('vocabDayFilter').innerHTML=`<option value="all"></option>`+Array.from({length:maxDay},(_,i)=>`<option value="${i+1}"></option>`).join('');
+  $('daySelect').onchange=e=>selectDay(Number(e.target.value));
+  $('vocabDayFilter').onchange=renderVocabList;
   refreshDaySelectorLabels();
 }
-function refreshDaySelectorLabels() {
+function refreshDaySelectorLabels(){
   [...$('daySelect').options].forEach((o,i)=>o.textContent=t('dayOption',i+1));
   [...$('vocabDayFilter').options].forEach((o,i)=>o.textContent=i===0?t('allDays'):t('dayOption',i));
 }
-function selectDay(day) {
-  state.day=Math.max(1,day); state.dayWords=state.allWords.filter(w=>Number(w.day)===state.day);
-  if(!state.dayWords.length){state.day=1;state.dayWords=state.allWords.filter(w=>Number(w.day)===1);}
-  state.index=0; $('daySelect').value=String(state.day); localStorage.setItem('tocfl-a1-last-day',String(state.day));
+function selectDay(day,{notify=true}={}){
+  const maxDay=Math.max(1,...state.allWords.map(w=>Number(w.day||1)));
+  state.day=Math.max(1,Math.min(maxDay,Number(day||1)));
+  state.dayWords=state.allWords.filter(w=>Number(w.day)===state.day);
+  if(!state.dayWords.length){
+    const first=state.allWords[0]; state.day=Math.max(1,Number(first?.day||1)); state.dayWords=state.allWords.filter(w=>Number(w.day)===state.day);
+  }
+  state.index=0; $('daySelect').value=String(state.day);
+  saveCurrentLevelSnapshot(); persistMultiState();
   $('dailyTargetLabel').textContent=t('newWords',state.dayWords.length);
   renderCurrentWord(); updateProgressUI(); renderVocabList(); makeQuiz();
-  document.dispatchEvent(new CustomEvent('tocfl:state-changed'));
+  if(notify) document.dispatchEvent(new CustomEvent('tocfl:state-changed'));
 }
 function currentWord(){return state.dayWords[state.index]||state.allWords[0];}
 function englishFor(word){
   const curated=state.enrich[String(word.id)]?.meaning_en; if(curated)return curated;
-  if(EN_OVERRIDES[word.id])return EN_OVERRIDES[word.id];
+  const override=a1EnglishOverride(word); if(override)return override;
   return state.englishDefs[String(word.id)] || (state.englishLoaded ? t('englishUnavailable') : t('loadingEnglish'));
 }
-function isEnglishPending(word){return !state.enrich[String(word.id)]?.meaning_en && !EN_OVERRIDES[word.id] && !state.englishDefs[String(word.id)] && !state.englishLoaded;}
+function isEnglishPending(word){return !state.enrich[String(word.id)]?.meaning_en && !a1EnglishOverride(word) && !state.englishDefs[String(word.id)] && !state.englishLoaded;}
 
 function renderCurrentWord(){
   if(!state.dayWords.length)return;
@@ -195,7 +373,7 @@ function renderCurrentWord(){
 function renderSourceNote(w){
   const box=$('dictionaryNote'); box.textContent='';
   if(w.source_note){
-    const inferred=INFERRED_FORMS[w.id] ? ` ${t('likelyForm')} ${INFERRED_FORMS[w.id]}.` : '';
+    const inferred=a1Inferred(w) ? ` ${t('likelyForm')} ${a1Inferred(w)}.` : '';
     box.textContent=`⚠️ ${t('sourceWarning')} ${w.source_note}${inferred}`;
   }
 }
@@ -206,7 +384,7 @@ async function loadEnglishDictionary(){
     const res=await fetch(CEDICT_URL,{cache:'force-cache'}); if(!res.ok)throw new Error(`CC-CEDICT HTTP ${res.status}`);
     const text=await res.text();
     const needed=new Map();
-    state.allWords.forEach(w=>{if(state.enrich[String(w.id)]?.meaning_en||EN_OVERRIDES[w.id])return;candidateForms(w).forEach(f=>needed.set(f,w.id));});
+    state.allWords.forEach(w=>{if(state.enrich[String(w.id)]?.meaning_en||a1EnglishOverride(w))return;candidateForms(w).forEach(f=>needed.set(f,w.id));});
     const byForm=new Map();
     for(const line of text.split(/\r?\n/)){
       if(!line||line.startsWith('#'))continue;
@@ -217,13 +395,13 @@ async function loadEnglishDictionary(){
     }
     const defs={...state.englishDefs};
     state.allWords.forEach(w=>{
-      if(state.enrich[String(w.id)]?.meaning_en||EN_OVERRIDES[w.id])return;
+      if(state.enrich[String(w.id)]?.meaning_en||a1EnglishOverride(w))return;
       let arr=[]; for(const f of candidateForms(w)){if(byForm.has(f)){arr=byForm.get(f);break;}}
       arr=[...new Set(arr)].filter(x=>x.length<150).slice(0,4);
       if(arr.length)defs[String(w.id)]=arr.join('; ');
     });
     state.englishDefs=defs; state.englishLoaded=true;
-    try{localStorage.setItem(ENGLISH_CACHE_KEY,JSON.stringify({complete:true,defs}));}catch{}
+    try{localStorage.setItem(englishCacheKey(state.activeLevel),JSON.stringify({complete:true,defs}));}catch{}
     renderCurrentWord(); renderVocabList();
   }catch(err){
     console.warn('CC-CEDICT load failed:',err); state.englishLoaded=true; renderCurrentWord();
@@ -248,7 +426,7 @@ function renderExamples(w){
     top.append(text,btn);
     const trans=document.createElement('div');trans.className='example-translations';
     const vi=document.createElement('div');vi.textContent=`🇻🇳 ${ex.vi}`;const en=document.createElement('div');en.textContent=`🇬🇧 ${ex.en}`;
-    const source=document.createElement('div');source.className='example-source';source.textContent=ex.source==='curated'?t('curatedExample'):t('generatedExample');
+    const source=document.createElement('div');source.className='example-source';source.textContent=ex.source==='curated'?t('curatedExample'):`${t('generatedExample')} · ${state.activeLevel}`;
     trans.append(vi,en,source);card.append(top,trans);wrap.append(card);
   });
 }
@@ -548,7 +726,7 @@ function buildPinyinMap(){
   };
   Object.entries(staticMap).forEach(([k,v])=>state.pinyinMap.set(k,v));
   state.allWords.forEach(w=>candidateForms(w).forEach(f=>state.pinyinMap.set(f,w.pinyin.replace(/[()]/g,''))));
-  Object.entries(INFERRED_FORMS).forEach(([id,form])=>{const w=state.allWords.find(x=>String(x.id)===id);if(w)state.pinyinMap.set(form,w.pinyin);});
+  if(state.activeLevel==='A1')Object.entries(INFERRED_FORMS).forEach(([id,form])=>{const w=state.allWords.find(x=>String(x.id)===id);if(w)state.pinyinMap.set(form,w.pinyin);});
 }
 function sentencePinyin(sentence,w){
   const text=String(sentence||''); const keys=[...state.pinyinMap.keys()].sort((a,b)=>b.length-a.length); let i=0,out=[];
@@ -801,60 +979,167 @@ function clearWritingCanvas(){
   });
 }
 
+function updateBranding(){
+  const id=state.activeLevel||'A1';
+  const h1=document.getElementById('appTitle'); if(h1) h1.textContent=`TOCFL ${id}`;
+  const btn=document.getElementById('levelBtnLabel'); if(btn) btn.textContent=id;
+  const eyebrow=document.getElementById('appEyebrow'); if(eyebrow) eyebrow.textContent='🇹🇼 TOCFL · Traditional Chinese';
+  const authEyebrow=document.getElementById('authEyebrow'); if(authEyebrow) authEyebrow.textContent='TOCFL · CLOUD';
+  document.title=`TOCFL ${id} · Traditional Chinese`;
+}
+
+function renderLevelSelector(){
+  const modal=$('levelModal'); if(!modal) return;
+  const tx=levelText();
+  $('levelModalTitle').textContent=tx.title;
+  $('levelModalSubtitle').textContent=tx.subtitle;
+  $('rememberLevelText').textContent=tx.remember;
+  $('rememberLevelHint').textContent=tx.rememberHint;
+  $('levelCloseBtn').title=tx.close;
+  $('rememberLevelCheckbox').checked=Boolean(state.rememberLevel);
+  const grid=$('levelGrid'); grid.innerHTML='';
+  for(const cfg of LEVEL_CATALOG){
+    const info=state.levelAvailability[cfg.id]||{status:cfg.id===state.activeLevel&&state.allWords.length?'available':'loading',count:cfg.id===state.activeLevel?state.allWords.length:0};
+    const available=info.status==='available';
+    const card=document.createElement('button'); card.type='button'; card.className='level-option'; card.disabled=!available; card.dataset.level=cfg.id;
+    if(cfg.id===state.activeLevel) card.classList.add('is-current');
+    const top=document.createElement('div'); top.className='level-option-top';
+    const code=document.createElement('strong'); code.className='level-code'; code.textContent=cfg.id;
+    const badge=document.createElement('span'); badge.className=`level-status ${available?'ready':info.status==='loading'?'loading':'soon'}`;
+    badge.textContent=available?tx.available:info.status==='loading'?tx.loading:tx.coming;
+    top.append(code,badge);
+    const desc=document.createElement('div'); desc.className='level-description'; desc.textContent=tx.descriptions[cfg.id]||cfg.id;
+    const meta=document.createElement('div'); meta.className='level-meta'; meta.textContent=available?(Number(info.count)>0?tx.words(info.count):cfg.base.replace('./','')):`${cfg.base.replace('./','')} · ${tx.coming}`;
+    const action=document.createElement('div'); action.className='level-action'; action.textContent=available?tx.choose:tx.coming;
+    card.append(top,desc,meta,action);
+    card.addEventListener('click',async()=>{
+      const remember=Boolean($('rememberLevelCheckbox')?.checked); state.rememberLevel=remember;
+      const ok=await applyLevel(cfg.id,{notify:true,close:true});
+      if(ok){
+        if(!remember && state.currentUserId) sessionStorage.setItem(`tocfl-level-picked-session:${state.currentUserId}`,'1');
+        persistMultiState();
+      }
+    });
+    grid.append(card);
+  }
+}
+
+function openLevelSelector({force=true}={}){
+  const modal=$('levelModal'); if(!modal) return;
+  if(!force && state.rememberLevel) return;
+  modal.hidden=false; document.body.classList.add('modal-open'); renderLevelSelector();
+  void probeAllLevels({force:true});
+}
+function closeLevelSelector(){
+  const modal=$('levelModal'); if(!modal) return; modal.hidden=true;
+  if($('authModal')?.hidden!==false) document.body.classList.remove('modal-open');
+}
+function bindLevelSelector(){
+  $('levelBtn')?.addEventListener('click',()=>openLevelSelector({force:true}));
+  $('levelCloseBtn')?.addEventListener('click',closeLevelSelector);
+  $('levelModal')?.addEventListener('click',e=>{if(e.target===$('levelModal'))closeLevelSelector();});
+  document.addEventListener('keydown',e=>{if(e.key==='Escape' && $('levelModal')?.hidden===false)closeLevelSelector();});
+}
+async function afterAccountReady(userId){
+  state.currentUserId=String(userId||'');
+  if(state.rememberLevel){
+    if(state.activeLevel && state.activeLevel!=='A1') await applyLevel(state.activeLevel,{notify:false,close:false});
+    return;
+  }
+  const key=state.currentUserId?`tocfl-level-picked-session:${state.currentUserId}`:'';
+  if(!key || !sessionStorage.getItem(key)) openLevelSelector({force:false});
+}
+function onSignedOut(){ state.currentUserId=null; closeLevelSelector(); }
+
 function bindNavigation(){document.querySelectorAll('.tab').forEach(btn=>btn.addEventListener('click',()=>showView(btn.dataset.view)));}
 function showView(name){document.querySelectorAll('.tab').forEach(x=>x.classList.toggle('is-active',x.dataset.view===name));document.querySelectorAll('.view').forEach(x=>x.classList.toggle('is-active',x.id===`view-${name}`));if(name==='progress')updateProgressUI();if(name==='quiz')makeQuiz();if(name==='vocab')renderVocabList();window.scrollTo({top:0,behavior:'smooth'});}
 function bindVocab(){$('vocabSearch').addEventListener('input',renderVocabList);}
 function renderVocabList(){
   const wrap=$('vocabList');if(!wrap||!state.allWords.length)return;const q=$('vocabSearch').value.trim().toLowerCase(),day=$('vocabDayFilter').value;
-  const filtered=state.allWords.filter(w=>{if(day!=='all'&&String(w.day)!==day)return false;if(!q)return true;return[w.traditional,w.pinyin,w.meaning_vi,englishFor(w)].some(v=>String(v||'').toLowerCase().includes(q));}).slice(0,507);
+  const filtered=state.allWords.filter(w=>{if(day!=='all'&&String(w.day)!==day)return false;if(!q)return true;return[w.traditional,w.pinyin,w.meaning_vi,englishFor(w)].some(v=>String(v||'').toLowerCase().includes(q));});
   wrap.innerHTML='';filtered.forEach(w=>{const b=document.createElement('button');b.type='button';b.className='vocab-item';const h=document.createElement('div');h.className='vocab-hanzi';h.textContent=w.traditional;const info=document.createElement('div');info.className='vocab-info';const strong=document.createElement('strong');strong.textContent=w.pinyin;const span=document.createElement('span');span.textContent=state.lang==='en'?englishFor(w):w.meaning_vi;info.append(strong,span);const badge=document.createElement('div');badge.className='badge';badge.textContent=`D${w.day}`;b.append(h,info,badge);b.addEventListener('click',()=>{selectDay(Number(w.day));const idx=state.dayWords.findIndex(x=>x.id===w.id);if(idx>=0)state.index=idx;renderCurrentWord();showView('today');});wrap.append(b);});if(!filtered.length)wrap.innerHTML=`<div class="muted">${escapeHtml(t('noVocab'))}</div>`;
 }
 
 function bindQuiz(){$('newQuizBtn').addEventListener('click',makeQuiz);}
 function makeQuiz(){
-  if(!state.dayWords.length)return;const correct=state.dayWords[Math.floor(Math.random()*state.dayWords.length)];let types=['vi','pinyin'];if(state.englishDefs[String(correct.id)]||state.enrich[String(correct.id)]?.meaning_en||EN_OVERRIDES[correct.id])types.push('en');const type=types[Math.floor(Math.random()*types.length)];
+  if(!state.dayWords.length)return;const correct=state.dayWords[Math.floor(Math.random()*state.dayWords.length)];let types=['vi','pinyin'];if(state.englishDefs[String(correct.id)]||state.enrich[String(correct.id)]?.meaning_en||a1EnglishOverride(correct))types.push('en');const type=types[Math.floor(Math.random()*types.length)];
   $('quizQuestion').textContent=type==='vi'?t('quizMeaning',correct.traditional):type==='en'?t('quizEnglish',correct.traditional):t('quizPinyin',correct.traditional);
   const others=state.dayWords.filter(w=>w.id!==correct.id).sort(()=>Math.random()-.5).slice(0,3),options=[correct,...others].sort(()=>Math.random()-.5);const wrap=$('quizOptions');wrap.innerHTML='';$('quizResult').textContent='';
   options.forEach(w=>{const b=document.createElement('button');b.type='button';b.className='quiz-option';b.textContent=type==='vi'?w.meaning_vi:type==='en'?englishFor(w):w.pinyin;b.addEventListener('click',()=>{const ok=w.id===correct.id;const ans=type==='vi'?correct.meaning_vi:type==='en'?englishFor(correct):correct.pinyin;$('quizResult').textContent=ok?t('correct'):t('answer',ans);if(ok){state.progress[correct.id]={...(state.progress[correct.id]||{}),quizCorrect:(state.progress[correct.id]?.quizCorrect||0)+1};saveLocalState();}});wrap.append(b);});
 }
 function updateProgressUI(){const entries=Object.values(state.progress).filter(x=>x.memory),count=x=>entries.filter(e=>e.memory===x).length;$('statReviewed').textContent=entries.length;$('statEasy').textContent=count('easy');$('statMedium').textContent=count('medium');$('statHard').textContent=count('hard');const dayReviewed=state.dayWords.filter(w=>state.progress[w.id]?.memory).length,total=state.dayWords.length||1,pct=Math.round(dayReviewed/total*100);$('dailyProgressBar').style.width=`${pct}%`;$('dailyProgressText').textContent=`${dayReviewed} / ${state.dayWords.length}`;$('dailyTargetLabel').textContent=t('newWords',state.dayWords.length);}
 
-function bindBackup(){$('exportBtn').addEventListener('click',exportProgress);$('importInput').addEventListener('change',importProgress);$('resetBtn').addEventListener('click',()=>{if(!confirm(t('resetConfirm')))return;state.progress={};state.favorites=new Set();saveLocalState();renderCurrentWord();$('backupStatus').textContent=t('resetDone');});}
-function exportProgress(){const data={version:2,exportedAt:new Date().toISOString(),progress:state.progress,favorites:[...state.favorites],lastDay:state.day,language:state.lang};const blob=new Blob([JSON.stringify(data,null,2)],{type:'application/json'}),url=URL.createObjectURL(blob),a=document.createElement('a');a.href=url;a.download=`tocfl-a1-progress-${new Date().toISOString().slice(0,10)}.json`;a.click();URL.revokeObjectURL(url);$('backupStatus').textContent=t('exportDone');}
-async function importProgress(e){const file=e.target.files?.[0];if(!file)return;try{const data=JSON.parse(await file.text());if(!data.progress||typeof data.progress!=='object')throw new Error(t('invalidFile'));state.progress=data.progress;state.favorites=new Set(Array.isArray(data.favorites)?data.favorites:[]);if(I18N[data.language]){state.lang=data.language;localStorage.setItem(LANGUAGE_KEY,state.lang);applyLanguage();}saveLocalState();if(data.lastDay)selectDay(Number(data.lastDay));renderCurrentWord();$('backupStatus').textContent=t('importDone');}catch(err){$('backupStatus').textContent=`Error: ${err.message}`;}e.target.value='';}
+function bindBackup(){
+  $('exportBtn').addEventListener('click',exportProgress); $('importInput').addEventListener('change',importProgress);
+  $('resetBtn').addEventListener('click',()=>{
+    if(!confirm(t('resetConfirm')))return;
+    for(const cfg of LEVEL_CATALOG) state.levelStates[cfg.id]=emptyLevelState();
+    state.progress={}; state.favorites=new Set(); state.day=1; persistMultiState();
+    selectDay(1,{notify:false}); document.dispatchEvent(new CustomEvent('tocfl:state-changed'));
+    $('backupStatus').textContent=t('resetDone');
+  });
+}
+function exportProgress(){
+  saveCurrentLevelSnapshot(); persistMultiState();
+  const data={version:3,format:'tocfl-multilevel-v1',exportedAt:new Date().toISOString(),levels:state.levelStates,settings:{activeLevel:state.activeLevel,rememberLevel:state.rememberLevel},language:state.lang};
+  const blob=new Blob([JSON.stringify(data,null,2)],{type:'application/json'}),url=URL.createObjectURL(blob),a=document.createElement('a');
+  a.href=url;a.download=`tocfl-all-levels-progress-${new Date().toISOString().slice(0,10)}.json`;a.click();URL.revokeObjectURL(url);$('backupStatus').textContent=t('exportDone');
+}
+async function importProgress(e){
+  const file=e.target.files?.[0]; if(!file)return;
+  try{
+    const data=JSON.parse(await file.text());
+    if(data.format==='tocfl-multilevel-v1' && data.levels){
+      state.levelStates={}; for(const [id,value] of Object.entries(data.levels)) if(levelConfig(id)) state.levelStates[id]=normalizeLevelState(value);
+      if(!state.levelStates.A1) state.levelStates.A1=emptyLevelState();
+      state.rememberLevel=Boolean(data.settings?.rememberLevel); const wanted=levelConfig(data.settings?.activeLevel)?data.settings.activeLevel:'A1';
+      if(I18N[data.language]){state.lang=data.language;localStorage.setItem(LANGUAGE_KEY,state.lang);}
+      await applyLevel(wanted,{notify:false,close:false}); persistMultiState(); document.dispatchEvent(new CustomEvent('tocfl:state-changed'));
+    }else if(data.progress && typeof data.progress==='object'){
+      state.levelStates.A1=normalizeLevelState({progress:data.progress,favorites:Array.isArray(data.favorites)?data.favorites:[],lastDay:data.lastDay||1});
+      if(I18N[data.language]){state.lang=data.language;localStorage.setItem(LANGUAGE_KEY,state.lang);}
+      await applyLevel('A1',{notify:false,close:false}); persistMultiState(); document.dispatchEvent(new CustomEvent('tocfl:state-changed'));
+    }else throw new Error(t('invalidFile'));
+    applyLanguage(); $('backupStatus').textContent=t('importDone');
+  }catch(err){$('backupStatus').textContent=`Error: ${err.message}`;} e.target.value='';
+}
 
 function registerServiceWorker(){if('serviceWorker'in navigator)navigator.serviceWorker.register('./sw.js').catch(err=>console.warn('SW:',err));}
 function escapeHtml(s){return String(s).replace(/[&<>'"]/g,c=>({'&':'&amp;','<':'&lt;','>':'&gt;',"'":'&#39;','"':'&quot;'}[c]));}
 function getCloudState(){
+  saveCurrentLevelSnapshot(); persistMultiState();
+  const levels={}; for(const cfg of LEVEL_CATALOG) if(state.levelStates[cfg.id]) levels[cfg.id]=normalizeLevelState(state.levelStates[cfg.id]);
+  const a1=normalizeLevelState(levels.A1||emptyLevelState());
   return {
-    progress: state.progress,
-    favorites: [...state.favorites],
-    lastDay: state.day,
-    language: state.lang
+    progress:{__format:'tocfl-multilevel-v1',levels,settings:{activeLevel:state.activeLevel,rememberLevel:Boolean(state.rememberLevel)}},
+    // Legacy mirrors keep the existing database schema and make migration reversible.
+    favorites:a1.favorites,lastDay:a1.lastDay,language:state.lang
   };
 }
-function applyCloudState(data={}){
-  state.progress = data.progress && typeof data.progress === 'object' ? data.progress : {};
-  state.favorites = new Set(Array.isArray(data.favorites) ? data.favorites : []);
-  if (I18N[data.language]) {
-    state.lang = data.language;
-    localStorage.setItem(LANGUAGE_KEY, state.lang);
+async function applyCloudState(data={}){
+  const cloudProgress=data.progress && typeof data.progress==='object' ? data.progress : {};
+  if(cloudProgress.__format==='tocfl-multilevel-v1' && cloudProgress.levels){
+    state.levelStates={};
+    for(const [id,value] of Object.entries(cloudProgress.levels)) if(levelConfig(id)) state.levelStates[id]=normalizeLevelState(value);
+    if(!state.levelStates.A1) state.levelStates.A1=emptyLevelState();
+    state.rememberLevel=Boolean(cloudProgress.settings?.rememberLevel);
+    const desired=String(cloudProgress.settings?.activeLevel||'A1').toUpperCase(); state.activeLevel=levelConfig(desired)?desired:'A1';
+  }else{
+    // Existing users: migrate the old single-level cloud row into A1 without touching future local levels.
+    state.levelStates.A1=normalizeLevelState({progress:cloudProgress,favorites:Array.isArray(data.favorites)?data.favorites:[],lastDay:data.lastDay||1});
+    if(!state.activeLevel) state.activeLevel='A1';
   }
-  localStorage.setItem(STORAGE_KEY, JSON.stringify(state.progress));
-  localStorage.setItem(FAVORITES_KEY, JSON.stringify([...state.favorites]));
-  applyLanguage();
-  document.dispatchEvent(new CustomEvent('tocfl:language-changed'));
-  selectDay(Number(data.lastDay || 1));
-  renderCurrentWord();
-  renderVocabList();
-  makeQuiz();
-  updateProgressUI();
+  if(I18N[data.language]){state.lang=data.language;localStorage.setItem(LANGUAGE_KEY,state.lang);}
+  let desired=state.activeLevel||'A1';
+  let ok=await applyLevel(desired,{notify:false,close:false});
+  if(!ok){desired='A1';state.activeLevel='A1';await applyLevel('A1',{notify:false,close:false});state.rememberLevel=false;}
+  persistMultiState(); applyLanguage(); document.dispatchEvent(new CustomEvent('tocfl:language-changed'));
+  renderCurrentWord(); renderVocabList(); makeQuiz(); updateProgressUI();
 }
-window.TOCFLApp = {
-  getCloudState,
-  applyCloudState,
-  getLanguage: () => state.lang,
-  isReady: () => Boolean(window.TOCFL_APP_READY)
+window.TOCFLApp={
+  getCloudState,applyCloudState,getLanguage:()=>state.lang,isReady:()=>Boolean(window.TOCFL_APP_READY),
+  openLevelSelector:()=>openLevelSelector({force:true}),afterAccountReady,onSignedOut,
+  getActiveLevel:()=>state.activeLevel,getRememberLevel:()=>state.rememberLevel
 };
 
 window.addEventListener('beforeunload',cleanupRecordingStream);

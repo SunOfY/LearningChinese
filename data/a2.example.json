@@ -1,0 +1,19 @@
+{
+  "meta": {
+    "title": "TOCFL A2",
+    "count": 1,
+    "daily_target": 20,
+    "language": "zh-TW"
+  },
+  "vocabulary": [
+    {
+      "id": "A2-001",
+      "traditional": "緊張",
+      "pinyin": "jǐnzhāng",
+      "level": "A2",
+      "pos": "VS",
+      "meaning_vi": "căng thẳng",
+      "day": 1
+    }
+  ]
+}

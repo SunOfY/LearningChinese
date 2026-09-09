@@ -11,7 +11,7 @@ const I18N = {
     day:'Ngày', navToday:'Hôm nay', navVocab:'Từ vựng', navQuiz:'Quiz', navProgress:'Tiến độ', goal:'Mục tiêu',
     favorite:'Đánh dấu từ', listenWord:'Nghe từ', slow:'Chậm', hidePinyin:'Ẩn Pinyin', showPinyin:'Hiện Pinyin',
     pronunciationPractice:'🎙 Luyện phát âm', startRecording:'Bắt đầu ghi âm', stop:'Dừng', playback:'Phát lại', checkPronunciation:'Kiểm tra phát âm',
-    target:'Mẫu:', recognized:'Azure nhận ra:', assessmentNote:'Kiểm tra phát âm dùng Azure Speech Pronunciation Assessment zh-TW của chính tài khoản đang đăng nhập.', accuracyLabel:'Độ chính xác', fluencyLabel:'Độ trôi chảy', completenessLabel:'Độ đầy đủ',
+    target:'Mẫu:', recognized:'AI nhận ra:', assessmentNote:'Groq Whisper AI nhận dạng giọng nói tiếng Trung. Điểm là độ khớp giữa chữ AI nghe được và từ mẫu; không phải điểm thanh điệu/âm vị chuyên sâu.', accuracyLabel:'Độ chính xác', fluencyLabel:'Độ trôi chảy', completenessLabel:'Độ đầy đủ',
     examples:'💬 Câu ví dụ', examplesHint:'Bấm loa để nghe cả câu bằng giọng zh-TW.', rememberLevel:'Bạn nhớ từ này mức nào?', notRemembered:'Chưa nhớ', learning:'Tạm nhớ', remembered:'Đã nhớ', previous:'Trước', next:'Tiếp theo',
     writingPractice:'✍️ Luyện viết', writingDevices:'Chuột · ngón tay · Apple Pencil', clear:'Xóa', showGuide:'Hiện chữ mẫu mờ', writingTip:'<strong>Cách luyện:</strong> tô theo mẫu → tắt mẫu → tự viết → đọc thành tiếng chữ vừa viết.',
     creatingQuestion:'Đang tạo câu hỏi…', anotherQuestion:'Câu khác', reviewed:'Đã đánh giá', backupTitle:'💾 Sao lưu tiến độ', backupDesc:'Tiến độ được lưu trong trình duyệt của từng thiết bị. Bạn có thể xuất file để chuyển sang thiết bị khác.', exportProgress:'Xuất tiến độ', importProgress:'Nhập tiến độ', resetProgress:'Xóa tiến độ',
@@ -19,8 +19,8 @@ const I18N = {
     newWords:n=>`${n} từ mới`, allDays:'Tất cả ngày', dayOption:n=>`Ngày ${n}`, searchPlaceholder:'Tìm chữ, pinyin hoặc nghĩa…',
     loadingEnglish:'Đang tải nghĩa English…', englishUnavailable:'Chưa lấy được nghĩa English.', sourceWarning:'Lưu ý dữ liệu nguồn:', likelyForm:'Ví dụ dùng dạng được suy đoán theo pinyin/nghĩa:',
     recordIdle:'Giọng ghi âm chỉ lưu tạm trên thiết bị.', recording:'🔴 Đang ghi âm… hãy đọc từ hiện tại.', recordDone:'Đã ghi xong. Bạn có thể phát lại hoặc kiểm tra phát âm.', micDenied:'Không truy cập được microphone. Hãy cấp quyền microphone cho website.', recorderUnsupported:'Thiết bị/trình duyệt này chưa hỗ trợ ghi âm bằng MediaRecorder.',
-    speechUnsupported:'Chưa tải được Azure Speech SDK. Hãy kiểm tra kết nối mạng và tải lại trang.', speechListening:'🎧 Azure đang nghe… hãy nói từ mẫu một lần ngay bây giờ.', noRecognition:'Azure không nhận được chữ. Hãy nói lại rõ hơn.', recognitionDone:'✅ Azure đã chấm xong. Kết quả ở bên dưới.', speechNoSpeech:'🎤 Azure không phát hiện tiếng nói. Hãy bấm kiểm tra rồi nói ngay.', speechPermissionDenied:'🔒 Chưa có quyền microphone. Hãy cho phép website dùng microphone.', speechGenericError:'⚠️ Không chấm được phát âm bằng Azure. Hãy thử lại.', azureLoginRequired:'🔐 Hãy đăng nhập trước khi kiểm tra phát âm.', azureNotConnected:'☁️ Tài khoản chưa kết nối Azure Speech cá nhân. Mở Tài khoản → Azure Speech cá nhân để nhập Key và Region.', azureTokenError:'Không lấy được quyền truy cập Azure Speech.',
-    feedbackExcellent:'Rất tốt — Azure đánh giá phát âm chính xác.', feedbackGood:'Khá tốt. Hãy nghe mẫu và thử lại để tăng độ chính xác.', feedbackRetry:'Phát âm chưa đủ chính xác. Hãy nghe chậm rồi đọc lại.',
+    speechUnsupported:'Thiết bị/trình duyệt này chưa hỗ trợ thu âm để gửi AI.', speechListening:'🎧 Đang thu âm khoảng 3,5 giây… hãy nói từ mẫu một lần ngay bây giờ.', noRecognition:'AI không nhận được chữ. Hãy nói lại rõ hơn.', recognitionDone:'✅ Groq AI đã nhận dạng xong. Kết quả ở bên dưới.', speechNoSpeech:'🎤 Không phát hiện được tiếng nói. Hãy bấm kiểm tra rồi nói ngay.', speechPermissionDenied:'🔒 Chưa có quyền microphone. Hãy cho phép website dùng microphone.', speechGenericError:'⚠️ Không nhận dạng được bằng Groq AI. Hãy thử lại.', groqLoginRequired:'🔐 Hãy đăng nhập trước khi kiểm tra phát âm.', groqNotConnected:'☁️ Tài khoản chưa kết nối Groq API Key cá nhân. Mở Tài khoản → Groq AI Speech cá nhân để nhập Key.', groqTranscriptionError:'Không lấy được kết quả từ Groq AI.',
+    feedbackExcellent:'AI nghe đúng từ mẫu.', feedbackGood:'AI nghe gần đúng. Hãy nghe mẫu và thử lại.', feedbackRetry:'AI nghe thành từ khác. Hãy nghe chậm rồi đọc lại.',
     quizMeaning:q=>`“${q}” nghĩa là gì?`, quizPinyin:q=>`Pinyin của “${q}” là gì?`, quizEnglish:q=>`English của “${q}” là gì?`, correct:'✅ Chính xác!', answer:a=>`❌ Đáp án: ${a}`, noVocab:'Không tìm thấy từ phù hợp.',
     exportDone:'Đã xuất file tiến độ.', importDone:'Đã nhập tiến độ thành công.', resetConfirm:'Xóa toàn bộ tiến độ và từ đã đánh dấu trên thiết bị này?', resetDone:'Đã xóa tiến độ.', invalidFile:'File không đúng định dạng.',
     generatedExample:'Ví dụ bổ sung tự động mức A1', curatedExample:'Ví dụ đã biên soạn'
@@ -29,7 +29,7 @@ const I18N = {
     day:'Day', navToday:'Today', navVocab:'Vocabulary', navQuiz:'Quiz', navProgress:'Progress', goal:'Goal',
     favorite:'Favorite word', listenWord:'Listen', slow:'Slow', hidePinyin:'Hide Pinyin', showPinyin:'Show Pinyin',
     pronunciationPractice:'🎙 Pronunciation practice', startRecording:'Start recording', stop:'Stop', playback:'Playback', checkPronunciation:'Check pronunciation',
-    target:'Target:', recognized:'Azure recognized:', assessmentNote:'Pronunciation checking uses your signed-in account’s own Azure Speech Pronunciation Assessment resource with zh-TW.', accuracyLabel:'Accuracy', fluencyLabel:'Fluency', completenessLabel:'Completeness',
+    target:'Target:', recognized:'AI recognized:', assessmentNote:'Groq Whisper AI transcribes your Chinese speech. The score is text-match similarity, not a professional tone/phoneme pronunciation score.', accuracyLabel:'Accuracy', fluencyLabel:'Fluency', completenessLabel:'Completeness',
     examples:'💬 Example sentences', examplesHint:'Tap the speaker to hear the full sentence in zh-TW.', rememberLevel:'How well do you remember this word?', notRemembered:'Not yet', learning:'Learning', remembered:'Remembered', previous:'Previous', next:'Next',
     writingPractice:'✍️ Writing practice', writingDevices:'Mouse · finger · Apple Pencil', clear:'Clear', showGuide:'Show faint guide', writingTip:'<strong>Practice:</strong> trace the guide → hide it → write from memory → say the character aloud.',
     creatingQuestion:'Creating a question…', anotherQuestion:'Another question', reviewed:'Reviewed', backupTitle:'💾 Progress backup', backupDesc:'Progress is stored in the browser on each device. Export a file to move it to another device.', exportProgress:'Export progress', importProgress:'Import progress', resetProgress:'Reset progress',
@@ -37,8 +37,8 @@ const I18N = {
     newWords:n=>`${n} new words`, allDays:'All days', dayOption:n=>`Day ${n}`, searchPlaceholder:'Search Hanzi, Pinyin or meaning…',
     loadingEnglish:'Loading English definition…', englishUnavailable:'English definition unavailable.', sourceWarning:'Source-data note:', likelyForm:'Examples use the likely intended form based on the source pinyin/meaning:',
     recordIdle:'The recording is kept only temporarily on this device.', recording:'🔴 Recording… say the current word.', recordDone:'Recording complete. Play it back or check pronunciation.', micDenied:'Microphone access failed. Allow microphone permission for this site.', recorderUnsupported:'This browser/device does not support MediaRecorder.',
-    speechUnsupported:'Azure Speech SDK is not loaded. Check your connection and reload the page.', speechListening:'🎧 Azure is listening… say the target word once now.', noRecognition:'Azure did not return recognized text. Please try again clearly.', recognitionDone:'✅ Azure assessment complete. See the result below.', speechNoSpeech:'🎤 Azure did not detect speech. Tap check and speak immediately.', speechPermissionDenied:'🔒 Microphone permission is not available. Allow microphone access for this site.', speechGenericError:'⚠️ Azure pronunciation assessment failed. Please try again.', azureLoginRequired:'🔐 Sign in before checking pronunciation.', azureNotConnected:'☁️ This account has not connected its personal Azure Speech resource. Open Account → Personal Azure Speech and enter the Key and Region.', azureTokenError:'Could not obtain Azure Speech access.',
-    feedbackExcellent:'Excellent — Azure rated the pronunciation as accurate.', feedbackGood:'Good. Listen to the model and try again to improve accuracy.', feedbackRetry:'Pronunciation needs improvement. Listen slowly and try again.',
+    speechUnsupported:'This browser/device cannot record audio for AI transcription.', speechListening:'🎧 Recording for about 3.5 seconds… say the target word once now.', noRecognition:'AI did not return recognized text. Please try again clearly.', recognitionDone:'✅ Groq AI transcription complete. See the result below.', speechNoSpeech:'🎤 No speech was detected. Tap check and speak immediately.', speechPermissionDenied:'🔒 Microphone permission is not available. Allow microphone access for this site.', speechGenericError:'⚠️ Groq AI transcription failed. Please try again.', groqLoginRequired:'🔐 Sign in before checking pronunciation.', groqNotConnected:'☁️ This account has not connected its personal Groq API Key. Open Account → Personal Groq AI Speech and enter the key.', groqTranscriptionError:'Could not obtain a result from Groq AI.',
+    feedbackExcellent:'AI recognized the target word exactly.', feedbackGood:'AI recognized something close. Listen to the model and try again.', feedbackRetry:'AI recognized a different word. Listen slowly and try again.',
     quizMeaning:q=>`What does “${q}” mean in Vietnamese?`, quizPinyin:q=>`What is the Pinyin for “${q}”?`, quizEnglish:q=>`What does “${q}” mean in English?`, correct:'✅ Correct!', answer:a=>`❌ Answer: ${a}`, noVocab:'No matching vocabulary found.',
     exportDone:'Progress file exported.', importDone:'Progress imported successfully.', resetConfirm:'Delete all progress and favorites on this device?', resetDone:'Progress deleted.', invalidFile:'Invalid progress file.',
     generatedExample:'Auto-generated A1 study example', curatedExample:'Curated example'
@@ -47,7 +47,7 @@ const I18N = {
     day:'第', navToday:'今天', navVocab:'詞彙', navQuiz:'測驗', navProgress:'進度', goal:'今日目標',
     favorite:'收藏單字', listenWord:'聽單字', slow:'慢速', hidePinyin:'隱藏拼音', showPinyin:'顯示拼音',
     pronunciationPractice:'🎙 發音練習', startRecording:'開始錄音', stop:'停止', playback:'播放錄音', checkPronunciation:'檢查發音',
-    target:'目標：', recognized:'Azure 辨識：', assessmentNote:'發音檢查使用目前登入帳號自己的 Azure Speech Pronunciation Assessment（zh-TW）。', accuracyLabel:'準確度', fluencyLabel:'流暢度', completenessLabel:'完整度',
+    target:'目標：', recognized:'AI 辨識：', assessmentNote:'Groq Whisper AI 會轉寫你的中文語音。分數代表 AI 文字辨識與目標詞的相似度，不是專業聲調／音位評分。', accuracyLabel:'準確度', fluencyLabel:'流暢度', completenessLabel:'完整度',
     examples:'💬 例句', examplesHint:'按喇叭可用 zh-TW 聽完整句子。', rememberLevel:'你記得這個詞嗎？', notRemembered:'還不會', learning:'不太熟', remembered:'記住了', previous:'上一個', next:'下一個',
     writingPractice:'✍️ 寫字練習', writingDevices:'滑鼠 · 手指 · Apple Pencil', clear:'清除', showGuide:'顯示淡色範字', writingTip:'<strong>練習方式：</strong>描字 → 關閉範字 → 默寫 → 大聲讀出剛寫的字。',
     creatingQuestion:'正在出題…', anotherQuestion:'下一題', reviewed:'已評估', backupTitle:'💾 備份學習進度', backupDesc:'進度儲存在每台裝置的瀏覽器中。可匯出檔案，再匯入另一台裝置。', exportProgress:'匯出進度', importProgress:'匯入進度', resetProgress:'清除進度',
@@ -55,8 +55,8 @@ const I18N = {
     newWords:n=>`${n} 個新詞`, allDays:'全部', dayOption:n=>`第 ${n} 天`, searchPlaceholder:'搜尋漢字、拼音或意思…',
     loadingEnglish:'正在載入英文釋義…', englishUnavailable:'暫時無法取得英文釋義。', sourceWarning:'原始資料提醒：', likelyForm:'例句依原始拼音／意思採用推測的詞形：',
     recordIdle:'錄音只會暫時保留在此裝置。', recording:'🔴 錄音中……請讀目前的詞。', recordDone:'錄音完成。可播放錄音或檢查發音。', micDenied:'無法使用麥克風，請允許此網站使用麥克風。', recorderUnsupported:'此瀏覽器／裝置不支援 MediaRecorder。',
-    speechUnsupported:'Azure Speech SDK 尚未載入，請檢查網路並重新載入頁面。', speechListening:'🎧 Azure 正在聽……請現在讀一次目標詞。', noRecognition:'Azure 沒有回傳辨識文字，請清楚地再試一次。', recognitionDone:'✅ Azure 發音評估完成，結果如下。', speechNoSpeech:'🎤 Azure 沒有偵測到語音，請按下檢查後立即說出目標詞。', speechPermissionDenied:'🔒 尚未允許麥克風權限，請允許此網站使用麥克風。', speechGenericError:'⚠️ Azure 發音評估失敗，請再試一次。', azureLoginRequired:'🔐 請先登入再檢查發音。', azureNotConnected:'☁️ 此帳號尚未連接自己的 Azure Speech。請到「帳號 → 個人 Azure Speech」輸入 Key 與 Region。', azureTokenError:'無法取得 Azure Speech 存取權。',
-    feedbackExcellent:'很好——Azure 評估此發音相當準確。', feedbackGood:'不錯。再聽一次示範並重試，可以提高準確度。', feedbackRetry:'發音還需要改善。請慢速聽完後再讀一次。',
+    speechUnsupported:'此瀏覽器／裝置無法錄音給 AI 辨識。', speechListening:'🎧 正在錄音約 3.5 秒……請現在讀一次目標詞。', noRecognition:'AI 沒有回傳辨識文字，請清楚地再試一次。', recognitionDone:'✅ Groq AI 已完成辨識，結果如下。', speechNoSpeech:'🎤 沒有偵測到語音，請按檢查後立即說話。', speechPermissionDenied:'🔒 尚未取得麥克風權限，請允許此網站使用麥克風。', speechGenericError:'⚠️ Groq AI 辨識失敗，請再試一次。', groqLoginRequired:'🔐 請先登入再檢查發音。', groqNotConnected:'☁️ 此帳號尚未連接個人的 Groq API Key。請到帳號 → 個人 Groq AI Speech 輸入 Key。', groqTranscriptionError:'無法取得 Groq AI 的辨識結果。',
+    feedbackExcellent:'AI 正確辨識出目標詞。', feedbackGood:'AI 辨識結果接近，請聽範例後再試一次。', feedbackRetry:'AI 辨識成其他詞，請慢速聆聽後再試一次。',
     quizMeaning:q=>`「${q}」的越南文意思是什麼？`, quizPinyin:q=>`「${q}」的拼音是什麼？`, quizEnglish:q=>`「${q}」的英文意思是什麼？`, correct:'✅ 答對了！', answer:a=>`❌ 答案：${a}`, noVocab:'找不到符合的詞。',
     exportDone:'已匯出進度檔。', importDone:'已成功匯入進度。', resetConfirm:'要清除這台裝置上的全部進度與收藏嗎？', resetDone:'已清除進度。', invalidFile:'檔案格式不正確。',
     generatedExample:'A1 自動補充例句', curatedExample:'人工整理例句'
@@ -67,7 +67,7 @@ const state = {
   allWords: [], enrich: {}, day: 1, dayWords: [], index: 0, pinyinVisible: true,
   progress: {}, favorites: new Set(), lang: 'vi', englishDefs: {}, englishLoaded: false,
   mediaRecorder: null, recordedChunks: [], recordingUrl: null, stream: null,
-  azureRecognitionRunning: false,
+  groqRecognitionRunning: false,
   pinyinMap: new Map()
 };
 
@@ -576,8 +576,12 @@ function bindRecorder(){
   $('recordBtn').addEventListener('click',startRecording);
   $('stopRecordBtn').addEventListener('click',stopRecording);
   $('playRecordBtn').addEventListener('click',()=>{const a=$('recordingAudio');a.currentTime=0;a.play();});
-  $('checkPronunciationBtn').addEventListener('click',checkPronunciationAzure);
+  $('checkPronunciationBtn').addEventListener('click',checkPronunciationGroq);
   $('checkPronunciationBtn').disabled=false;
+}
+function preferredRecorderMime(){
+  const choices=['audio/webm;codecs=opus','audio/webm','audio/mp4','audio/ogg;codecs=opus'];
+  return choices.find(type=>window.MediaRecorder?.isTypeSupported?.(type))||'';
 }
 async function startRecording(){
   if(!navigator.mediaDevices?.getUserMedia||!window.MediaRecorder){$('recordStatus').textContent=t('recorderUnsupported');return;}
@@ -585,8 +589,8 @@ async function startRecording(){
     resetPronunciationResult(); cleanupRecordingStream();
     state.stream=await navigator.mediaDevices.getUserMedia({audio:true});
     state.recordedChunks=[];
-    let recorder;
-    try{recorder=new MediaRecorder(state.stream,{mimeType:'audio/webm'});}catch{recorder=new MediaRecorder(state.stream);}
+    const mime=preferredRecorderMime();
+    const recorder=mime?new MediaRecorder(state.stream,{mimeType:mime}):new MediaRecorder(state.stream);
     state.mediaRecorder=recorder;
     recorder.addEventListener('dataavailable',e=>{if(e.data?.size)state.recordedChunks.push(e.data);});
     recorder.addEventListener('stop',finalizeRecording);
@@ -598,7 +602,7 @@ async function startRecording(){
 function stopRecording(){if(state.mediaRecorder?.state==='recording')state.mediaRecorder.stop();}
 function finalizeRecording(){
   if(state.recordingUrl)URL.revokeObjectURL(state.recordingUrl);
-  const type=state.mediaRecorder?.mimeType||'audio/webm';
+  const type=state.mediaRecorder?.mimeType||state.recordedChunks[0]?.type||'audio/webm';
   const blob=new Blob(state.recordedChunks,{type});
   state.recordingUrl=URL.createObjectURL(blob);
   const audio=$('recordingAudio');audio.src=state.recordingUrl;audio.hidden=false;
@@ -608,7 +612,7 @@ function finalizeRecording(){
 function cleanupRecordingStream(){if(state.stream)state.stream.getTracks().forEach(t=>t.stop());state.stream=null;}
 function resetRecordingForNewWord(){
   if(state.mediaRecorder?.state==='recording')state.mediaRecorder.stop();
-  cleanupRecordingStream();state.azureRecognitionRunning=false;
+  cleanupRecordingStream();state.groqRecognitionRunning=false;
   if(state.recordingUrl)URL.revokeObjectURL(state.recordingUrl);state.recordingUrl=null;state.recordedChunks=[];
   const audio=$('recordingAudio');audio.hidden=true;audio.removeAttribute('src');audio.load();
   $('recordBtn').disabled=false;$('stopRecordBtn').disabled=true;$('playRecordBtn').disabled=true;$('checkPronunciationBtn').disabled=false;
@@ -619,86 +623,79 @@ function resetPronunciationResult(){
   if($('azureScoreGrid'))$('azureScoreGrid').hidden=true;
   ['accuracyScore','fluencyScore','completenessScore'].forEach(id=>{if($(id))$(id).textContent='—';});
 }
-function setAzureRecognitionBusy(busy){
-  state.azureRecognitionRunning=busy;
+function setGroqRecognitionBusy(busy){
+  state.groqRecognitionRunning=busy;
   const recording=state.mediaRecorder?.state==='recording';
   $('checkPronunciationBtn').disabled=Boolean(busy||recording);
 }
-function showAzureFailure(messageKey,messageOverride=''){
+function showGroqFailure(messageKey,messageOverride=''){
   const w=currentWord();$('pronunciationResult').hidden=false;$('pronunciationScore').textContent='—';
   $('pronunciationTarget').textContent=`${primaryForm(w)} · ${w.pinyin}`;$('recognizedText').textContent='—';
   if($('azureScoreGrid'))$('azureScoreGrid').hidden=true;
   $('pronunciationFeedback').textContent=messageOverride||t(messageKey);
 }
-async function ensureMicrophonePermission(){
-  if(!navigator.mediaDevices?.getUserMedia)throw new Error('MIC_UNSUPPORTED');
-  const permissionStream=await navigator.mediaDevices.getUserMedia({audio:true});
-  permissionStream.getTracks().forEach(track=>track.stop());
-}
-async function checkPronunciationAzure(){
-  resetPronunciationResult();
-  if(state.azureRecognitionRunning)return;
-  if(!window.SpeechSDK){$('recordStatus').textContent=t('speechUnsupported');showAzureFailure('speechUnsupported');return;}
-  if(!window.TOCFLAuth?.getSession?.()?.user){$('recordStatus').textContent=t('azureLoginRequired');showAzureFailure('azureLoginRequired');window.TOCFLAuth?.openAuth?.('login');return;}
+async function capturePronunciationClip(durationMs=3500){
+  if(!navigator.mediaDevices?.getUserMedia||!window.MediaRecorder)throw Object.assign(new Error(t('speechUnsupported')),{code:'RECORDER_UNSUPPORTED'});
+  let stream=null,recorder=null,timer=null;
   try{
-    setAzureRecognitionBusy(true);
+    stream=await navigator.mediaDevices.getUserMedia({audio:true});
+    const mime=preferredRecorderMime();
+    recorder=mime?new MediaRecorder(stream,{mimeType:mime}):new MediaRecorder(stream);
+    const chunks=[];
+    const done=new Promise((resolve,reject)=>{
+      recorder.addEventListener('dataavailable',e=>{if(e.data?.size)chunks.push(e.data);});
+      recorder.addEventListener('error',e=>reject(e.error||new Error('Recorder error')),{once:true});
+      recorder.addEventListener('stop',()=>{
+        const type=recorder.mimeType||chunks[0]?.type||mime||'audio/webm';
+        const blob=new Blob(chunks,{type});
+        blob.size?resolve(blob):reject(Object.assign(new Error(t('speechNoSpeech')),{code:'EMPTY_AUDIO'}));
+      },{once:true});
+    });
+    recorder.start(250);
+    timer=setTimeout(()=>{if(recorder?.state==='recording')recorder.stop();},durationMs);
+    return await done;
+  }catch(err){
+    if(err?.name==='NotAllowedError'||err?.name==='PermissionDeniedError')throw Object.assign(new Error(t('speechPermissionDenied')),{code:'MIC_PERMISSION'});
+    throw err;
+  }finally{
+    if(timer)clearTimeout(timer);
+    if(recorder?.state==='recording')try{recorder.stop();}catch{}
+    stream?.getTracks?.().forEach(track=>track.stop());
+  }
+}
+async function checkPronunciationGroq(){
+  resetPronunciationResult();
+  if(state.groqRecognitionRunning)return;
+  if(!window.TOCFLAuth?.getSession?.()?.user){$('recordStatus').textContent=t('groqLoginRequired');showGroqFailure('groqLoginRequired');window.TOCFLAuth?.openAuth?.('login');return;}
+  if(!window.TOCFLAuth?.transcribeWithGroq){$('recordStatus').textContent=t('speechGenericError');showGroqFailure('speechGenericError');return;}
+  try{
+    setGroqRecognitionBusy(true);
     const audio=$('recordingAudio');if(audio&&!audio.paused)audio.pause();if('speechSynthesis'in window)try{speechSynthesis.cancel();}catch{}
     $('recordStatus').textContent=t('speechListening');
-    try{await ensureMicrophonePermission();}catch(err){throw Object.assign(new Error(t('speechPermissionDenied')),{code:'MIC_PERMISSION'});}
-    const tokenInfo=await window.TOCFLAuth.getAzureSpeechToken();
-    if(!tokenInfo?.token||!tokenInfo?.region)throw Object.assign(new Error(t('azureTokenError')),{code:tokenInfo?.code||'AZURE_TOKEN'});
-    await runAzurePronunciationAssessment(tokenInfo.token,tokenInfo.region);
+    const w=currentWord(),target=primaryForm(w);
+    const clip=await capturePronunciationClip(3500);
+    $('recordStatus').textContent='🤖 AI đang nhận dạng…';
+    const result=await window.TOCFLAuth.transcribeWithGroq(clip,target);
+    const recognized=String(result?.text||'').trim();
+    if(!recognized)throw Object.assign(new Error(t('noRecognition')),{code:'NO_TRANSCRIPT'});
+    renderGroqPronunciationResult(w,recognized);
+    $('recordStatus').textContent=t('recognitionDone');
   }catch(err){
-    console.warn('Azure pronunciation:',err);
+    console.warn('Groq pronunciation:',err);
     const code=String(err?.code||'');
     let key='speechGenericError';
-    if(code==='NOT_CONNECTED')key='azureNotConnected'; else if(code==='NOT_SIGNED_IN')key='azureLoginRequired'; else if(code==='MIC_PERMISSION')key='speechPermissionDenied';
-    $('recordStatus').textContent=err?.message||t(key);showAzureFailure(key,err?.message||'');
-  }finally{setAzureRecognitionBusy(false);}
+    if(code==='NOT_CONNECTED')key='groqNotConnected'; else if(code==='NOT_SIGNED_IN')key='groqLoginRequired'; else if(code==='MIC_PERMISSION')key='speechPermissionDenied'; else if(code==='NO_TRANSCRIPT'||code==='EMPTY_AUDIO')key='noRecognition';
+    $('recordStatus').textContent=err?.message||t(key);showGroqFailure(key,err?.message||'');
+  }finally{setGroqRecognitionBusy(false);}
 }
-function runAzurePronunciationAssessment(token,region){
-  return new Promise((resolve,reject)=>{
-    const SDK=window.SpeechSDK;let recognizer=null;
-    try{
-      const w=currentWord(),referenceText=primaryForm(w);
-      const speechConfig=SDK.SpeechConfig.fromAuthorizationToken(token,region);
-      speechConfig.speechRecognitionLanguage='zh-TW';
-      speechConfig.outputFormat=SDK.OutputFormat.Detailed;
-      const audioConfig=SDK.AudioConfig.fromDefaultMicrophoneInput();
-      recognizer=new SDK.SpeechRecognizer(speechConfig,audioConfig);
-      const paConfig=new SDK.PronunciationAssessmentConfig(
-        referenceText,
-        SDK.PronunciationAssessmentGradingSystem.HundredMark,
-        SDK.PronunciationAssessmentGranularity.Phoneme,
-        true
-      );
-      paConfig.applyTo(recognizer);
-      recognizer.recognizeOnceAsync(result=>{
-        try{
-          if(result.reason===SDK.ResultReason.RecognizedSpeech){
-            const pa=SDK.PronunciationAssessmentResult.fromResult(result);
-            renderAzurePronunciationResult(w,result.text||'',pa);
-            $('recordStatus').textContent=t('recognitionDone');resolve();
-          }else if(result.reason===SDK.ResultReason.NoMatch){
-            const e=Object.assign(new Error(t('noRecognition')),{code:'NO_MATCH'});reject(e);
-          }else{
-            const e=Object.assign(new Error(t('speechGenericError')),{code:'AZURE_RESULT'});reject(e);
-          }
-        }catch(e){reject(e);}finally{try{recognizer?.close();}catch{}}
-      },error=>{try{recognizer?.close();}catch{};reject(Object.assign(new Error(String(error||t('speechGenericError'))),{code:'AZURE_SDK'}));});
-    }catch(e){try{recognizer?.close();}catch{};reject(e);}
-  });
-}
-function renderAzurePronunciationResult(w,recognized,pa){
-  const safe=n=>Number.isFinite(Number(n))?Math.max(0,Math.min(100,Math.round(Number(n)))):null;
-  const pronunciation=safe(pa?.pronunciationScore),accuracy=safe(pa?.accuracyScore),fluency=safe(pa?.fluencyScore),completeness=safe(pa?.completenessScore);
-  const score=pronunciation??accuracy??0;
+function renderGroqPronunciationResult(w,recognized){
+  const target=primaryForm(w),a=normalizeChinese(target),b=normalizeChinese(recognized);
+  const score=Math.max(0,Math.min(100,Math.round(similarity(a,b)*100)));
   $('pronunciationResult').hidden=false;$('pronunciationScore').textContent=String(score);
-  $('pronunciationTarget').textContent=`${primaryForm(w)} · ${w.pinyin}`;$('recognizedText').textContent=recognized||'—';
-  if($('azureScoreGrid'))$('azureScoreGrid').hidden=false;
-  if($('accuracyScore'))$('accuracyScore').textContent=accuracy??'—';if($('fluencyScore'))$('fluencyScore').textContent=fluency??'—';if($('completenessScore'))$('completenessScore').textContent=completeness??'—';
-  $('pronunciationFeedback').textContent=score>=90?t('feedbackExcellent'):score>=70?t('feedbackGood'):t('feedbackRetry');
-  state.progress[w.id]={...(state.progress[w.id]||{}),lastPronunciationScore:score,lastPronunciationAccuracy:accuracy,lastPronunciationFluency:fluency,lastPronunciationCompleteness:completeness,lastRecognized:recognized,pronunciationProvider:'azure-zh-TW',pronunciationCheckedAt:new Date().toISOString()};
+  $('pronunciationTarget').textContent=`${target} · ${w.pinyin}`;$('recognizedText').textContent=recognized||'—';
+  if($('azureScoreGrid'))$('azureScoreGrid').hidden=true;
+  $('pronunciationFeedback').textContent=score>=95?t('feedbackExcellent'):score>=60?t('feedbackGood'):t('feedbackRetry');
+  state.progress[w.id]={...(state.progress[w.id]||{}),lastPronunciationScore:score,lastRecognized:recognized,pronunciationProvider:'groq-whisper-large-v3',pronunciationCheckedAt:new Date().toISOString()};
   saveLocalState();
 }
 function normalizeChinese(s){return String(s||'').normalize('NFKC').replace(/[\s，。！？,.!?;；:：、'"“”‘’()（）/]/g,'').toLowerCase();}

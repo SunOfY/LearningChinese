@@ -1,4 +1,4 @@
-const CACHE = 'tocfl-a1-v4.5-azure-byok-20260909';
+const CACHE = 'tocfl-a1-v4-6-groq-byok';
 const ASSETS = [
   './',
   './index.html',

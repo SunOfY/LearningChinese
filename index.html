@@ -99,11 +99,16 @@
                 <div class="score-ring"><strong id="pronunciationScore">—</strong><span>/100</span></div>
                 <div class="pronunciation-details">
                   <div><span class="muted" data-i18n="target">Mẫu:</span> <strong id="pronunciationTarget"></strong></div>
-                  <div><span class="muted" data-i18n="recognized">Máy nhận ra:</span> <strong id="recognizedText"></strong></div>
+                  <div><span class="muted" data-i18n="recognized">Azure nhận ra:</span> <strong id="recognizedText"></strong></div>
+                  <div class="azure-score-grid" id="azureScoreGrid" hidden>
+                    <span><span data-i18n="accuracyLabel">Độ chính xác</span><strong id="accuracyScore">—</strong></span>
+                    <span><span data-i18n="fluencyLabel">Độ trôi chảy</span><strong id="fluencyScore">—</strong></span>
+                    <span><span data-i18n="completenessLabel">Độ đầy đủ</span><strong id="completenessScore">—</strong></span>
+                  </div>
                   <div id="pronunciationFeedback" class="pronunciation-feedback"></div>
                 </div>
               </div>
-              <div class="assessment-note small muted" data-i18n="assessmentNote">Điểm này dựa trên nhận dạng giọng nói của trình duyệt. Nó cho biết máy có nhận đúng từ hay không, nhưng không thay thế chấm thanh điệu/ngữ âm chuyên sâu.</div>
+              <div class="assessment-note small muted" data-i18n="assessmentNote">Kiểm tra phát âm dùng Azure Speech Pronunciation Assessment zh-TW của chính tài khoản đang đăng nhập.</div>
             </div>
 
             <section class="examples-section">
@@ -252,6 +257,27 @@
           </div>
         </div>
         <p class="small muted" data-auth-i18n="privacy">Mỗi tài khoản chỉ đọc/ghi tiến độ của chính mình khi bạn đã chạy file RLS trong thư mục supabase.</p>
+
+        <div class="azure-account-card">
+          <div class="azure-account-head">
+            <div>
+              <strong data-auth-i18n="azureTitle">🎙 Azure Speech cá nhân</strong>
+              <div id="azureConnectionStatus" class="small muted" data-auth-i18n="azureNotConnected">Chưa kết nối Azure Speech riêng.</div>
+            </div>
+            <span id="azureConnectedBadge" class="azure-badge" hidden data-auth-i18n="azureConnectedBadge">Đã kết nối</span>
+          </div>
+          <p class="small muted" data-auth-i18n="azureHelp">Mỗi tài khoản nhập Key + Region của Azure Speech F0 của chính mình. Key được mã hóa trên server và không lưu trong GitHub hay trình duyệt.</p>
+          <form id="azureCredentialsForm" class="auth-form azure-form">
+            <label><span data-auth-i18n="azureRegion">Azure Region</span><input id="azureRegion" type="text" inputmode="text" autocomplete="off" placeholder="eastasia" maxlength="40" /></label>
+            <label><span data-auth-i18n="azureKey">Speech Key</span><input id="azureKey" type="password" autocomplete="new-password" placeholder="Paste Key 1 hoặc Key 2" maxlength="256" /></label>
+            <div class="toolbar azure-actions">
+              <button id="saveAzureBtn" type="submit" class="primary" data-auth-i18n="azureSaveTest">Lưu & kiểm tra</button>
+              <button id="deleteAzureBtn" type="button" class="danger" data-auth-i18n="azureDisconnect">Ngắt kết nối</button>
+            </div>
+          </form>
+          <div id="azureAccountStatus" class="small muted" aria-live="polite"></div>
+        </div>
+
         <div class="toolbar">
           <button id="logoutBtn" type="button" class="danger" data-auth-i18n="signOut">Đăng xuất</button>
         </div>
@@ -262,6 +288,7 @@
   </div>
 
   <script src="./config.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/microsoft-cognitiveservices-speech-sdk@latest/distrib/browser/microsoft.cognitiveservices.speech.sdk.bundle-min.js"></script>
   <script src="./app.js" defer></script>
   <script type="module" src="./auth.js"></script>
 </body>

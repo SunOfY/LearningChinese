@@ -20,6 +20,7 @@ const AUTH_TEXT = {
     loginSuccess:'Đăng nhập thành công.', loggedOut:'Đã đăng xuất. Website chuyển về dữ liệu cục bộ trên thiết bị.',
     firstCloudUpload:'Tài khoản chưa có dữ liệu cloud; tiến độ hiện tại trên thiết bị đã được tải lên.',
     cloudLoaded:'Đã tải tiến độ của tài khoản về thiết bị này.', guest:'Khách', profile:'Hồ sơ',
+    azureTitle:'🎙 Azure Speech cá nhân', azureNotConnected:'Chưa kết nối Azure Speech riêng.', azureConnectedBadge:'Đã kết nối', azureConnectedAt:'Đã kết nối Azure Speech', azureHelp:'Mỗi tài khoản nhập Key + Region của Azure Speech F0 của chính mình. Key được mã hóa trên server và không lưu trong GitHub hay trình duyệt.', azureRegion:'Azure Region', azureKey:'Speech Key', azureSaveTest:'Lưu & kiểm tra', azureDisconnect:'Ngắt kết nối', azureSaving:'Đang kiểm tra Azure…', azureSaved:'✅ Azure Speech đã kết nối và kiểm tra thành công.', azureDeleted:'Đã ngắt Azure Speech khỏi tài khoản.', azureNeedFields:'Hãy nhập cả Region và Speech Key.', azureFunctionError:'Chưa cấu hình Edge Function azure-speech hoặc schema BYOK.', azureConfirmDelete:'Ngắt Azure Speech cá nhân khỏi tài khoản này?',
     privacy:'Mỗi tài khoản chỉ đọc/ghi tiến độ của chính mình khi bạn đã chạy file RLS trong thư mục supabase.'
   },
   en: {
@@ -34,6 +35,7 @@ const AUTH_TEXT = {
     loginSuccess:'Signed in successfully.', loggedOut:'Signed out. The site is now using local progress on this device.',
     firstCloudUpload:'No cloud progress existed yet, so this device’s current progress was uploaded.',
     cloudLoaded:'Your account progress was loaded onto this device.', guest:'Guest', profile:'Profile',
+    azureTitle:'🎙 Personal Azure Speech', azureNotConnected:'No personal Azure Speech resource connected.', azureConnectedBadge:'Connected', azureConnectedAt:'Azure Speech connected', azureHelp:'Each account enters the Key + Region of its own Azure Speech F0 resource. The key is encrypted on the server and is never stored in GitHub or the browser.', azureRegion:'Azure Region', azureKey:'Speech Key', azureSaveTest:'Save & test', azureDisconnect:'Disconnect', azureSaving:'Testing Azure…', azureSaved:'✅ Azure Speech connected and tested successfully.', azureDeleted:'Azure Speech disconnected from this account.', azureNeedFields:'Enter both Region and Speech Key.', azureFunctionError:'The azure-speech Edge Function or BYOK schema is not configured.', azureConfirmDelete:'Disconnect personal Azure Speech from this account?',
     privacy:'With the included RLS setup, each account can only read and write its own progress.'
   },
   'zh-Hant': {
@@ -48,6 +50,7 @@ const AUTH_TEXT = {
     loginSuccess:'登入成功。', loggedOut:'已登出，目前改用這台裝置的本機進度。',
     firstCloudUpload:'雲端尚無資料，已把這台裝置目前的進度上傳。',
     cloudLoaded:'已把帳號的學習進度載入這台裝置。', guest:'訪客', profile:'個人資料',
+    azureTitle:'🎙 個人 Azure Speech', azureNotConnected:'尚未連接個人的 Azure Speech。', azureConnectedBadge:'已連接', azureConnectedAt:'Azure Speech 已連接', azureHelp:'每個帳號輸入自己 Azure Speech F0 的 Key 與 Region。Key 會在伺服器端加密，不會儲存在 GitHub 或瀏覽器。', azureRegion:'Azure Region', azureKey:'Speech Key', azureSaveTest:'儲存並測試', azureDisconnect:'中斷連接', azureSaving:'正在測試 Azure…', azureSaved:'✅ Azure Speech 已成功連接並通過測試。', azureDeleted:'已從此帳號移除 Azure Speech。', azureNeedFields:'請輸入 Region 與 Speech Key。', azureFunctionError:'尚未設定 azure-speech Edge Function 或 BYOK schema。', azureConfirmDelete:'要中斷此帳號的個人 Azure Speech 嗎？',
     privacy:'執行內附的 RLS 設定後，每個帳號只能讀寫自己的學習進度。'
   }
 };
@@ -58,6 +61,8 @@ let appReady = false;
 let syncTimer = null;
 let syncBusy = false;
 let suppressSync = false;
+let azureStatus = { connected:false, region:null, updatedAt:null };
+let azureTokenCache = null;
 
 const $ = id => document.getElementById(id);
 const lang = () => window.TOCFLApp?.getLanguage?.() || localStorage.getItem('tocfl-a1-ui-language-v2') || 'vi';
@@ -87,6 +92,7 @@ function applyAuthLanguage() {
   const loginPassword = $('loginPassword'); if (loginPassword) loginPassword.placeholder = tr('password');
   const signupPassword = $('signupPassword'); if (signupPassword) signupPassword.placeholder = tr('password');
   const signupPassword2 = $('signupPassword2'); if (signupPassword2) signupPassword2.placeholder = tr('passwordAgain');
+  const azureRegion = $('azureRegion'); if (azureRegion && !azureRegion.value) azureRegion.placeholder = 'eastasia';
   renderAccountUI();
 }
 
@@ -96,6 +102,7 @@ function openAuth(mode='login') {
   modal.hidden = false;
   document.body.classList.add('modal-open');
   showAuthPane(session ? 'profile' : mode);
+  if (session?.user) void refreshAzureStatus();
   setAuthStatus(configured ? '' : tr('setupNeeded'), !configured);
 }
 
@@ -132,7 +139,22 @@ function renderAccountUI() {
   const syncBtn = $('syncNowBtn'); if (syncBtn) syncBtn.disabled = !session?.user || !configured || syncBusy;
   const accountState = $('cloudAccountState');
   if (accountState) accountState.textContent = session?.user ? `${tr('signedInAs')} ${session.user.email}` : tr('cloudGuest');
+  renderAzureUI();
 }
+
+function renderAzureUI() {
+  const status = $('azureConnectionStatus');
+  const badge = $('azureConnectedBadge');
+  const regionInput = $('azureRegion');
+  const deleteBtn = $('deleteAzureBtn');
+  const saveBtn = $('saveAzureBtn');
+  if (status) status.textContent = azureStatus.connected ? `${tr('azureConnectedAt')} · ${azureStatus.region || '—'}` : tr('azureNotConnected');
+  if (badge) badge.hidden = !azureStatus.connected;
+  if (regionInput && azureStatus.connected && !regionInput.value) regionInput.value = azureStatus.region || '';
+  if (deleteBtn) deleteBtn.disabled = !session?.user || !azureStatus.connected;
+  if (saveBtn) saveBtn.disabled = !session?.user || !configured;
+}
+
 
 function escapeText(s) {
   return String(s || '').replace(/[&<>"']/g, c => ({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[c]));
@@ -179,7 +201,7 @@ async function signUp(e) {
 async function signOut() {
   if (!supabaseClient) return;
   await supabaseClient.auth.signOut();
-  session = null;
+  session = null; azureStatus = { connected:false, region:null, updatedAt:null }; azureTokenCache = null;
   setCloudStatus(tr('loggedOut'));
   renderAccountUI();
   closeAuth();
@@ -188,6 +210,7 @@ async function signOut() {
 async function afterSignedIn() {
   renderAccountUI();
   showAuthPane('profile');
+  await refreshAzureStatus();
   if (appReady) await loadCloudState();
 }
 
@@ -245,6 +268,76 @@ async function syncNow() {
   }
 }
 
+
+function setAzureAccountStatus(message, isError=false) {
+  const el = $('azureAccountStatus'); if (!el) return;
+  el.textContent = message || ''; el.classList.toggle('error-text', Boolean(isError));
+}
+
+async function callAzureFunction(payload) {
+  if (!configured || !session?.access_token) throw Object.assign(new Error('NOT_SIGNED_IN'), { code:'NOT_SIGNED_IN' });
+  const response = await fetch(`${String(cfg.url).replace(/\/$/,'')}/functions/v1/azure-speech`, {
+    method:'POST',
+    headers:{
+      'Content-Type':'application/json',
+      'Authorization':`Bearer ${session.access_token}`,
+      'apikey':cfg.publishableKey
+    },
+    body:JSON.stringify(payload || {})
+  });
+  let data={}; try{ data=await response.json(); }catch{}
+  if (!response.ok || data?.error) {
+    const error = new Error(data?.message || data?.error || `HTTP ${response.status}`);
+    error.code = data?.code || 'AZURE_FUNCTION_ERROR'; throw error;
+  }
+  return data;
+}
+
+async function refreshAzureStatus() {
+  if (!session?.user) { azureStatus={connected:false,region:null,updatedAt:null}; renderAzureUI(); return azureStatus; }
+  try {
+    const data=await callAzureFunction({action:'status'});
+    azureStatus={connected:Boolean(data.connected),region:data.region||null,updatedAt:data.updatedAt||null};
+  } catch (error) {
+    console.warn('Azure status:', error); azureStatus={connected:false,region:null,updatedAt:null};
+  }
+  renderAzureUI(); return azureStatus;
+}
+
+async function saveAzureCredentials(e) {
+  e?.preventDefault?.();
+  if (!session?.user) { setAzureAccountStatus(tr('fillRequired'), true); return; }
+  const region=$('azureRegion')?.value?.trim().toLowerCase() || '';
+  const key=$('azureKey')?.value?.trim() || '';
+  if (!region || !key) { setAzureAccountStatus(tr('azureNeedFields'), true); return; }
+  setAzureAccountStatus(tr('azureSaving')); const btn=$('saveAzureBtn'); if(btn)btn.disabled=true;
+  try {
+    const data=await callAzureFunction({action:'save',region,key});
+    azureStatus={connected:true,region:data.region||region,updatedAt:data.updatedAt||new Date().toISOString()}; azureTokenCache=null;
+    if($('azureKey'))$('azureKey').value=''; setAzureAccountStatus(tr('azureSaved')); renderAzureUI();
+  } catch (error) {
+    console.error(error); setAzureAccountStatus(error.message || tr('azureFunctionError'), true);
+  } finally { if(btn)btn.disabled=false; }
+}
+
+async function deleteAzureCredentials() {
+  if (!session?.user || !azureStatus.connected) return;
+  if (!confirm(tr('azureConfirmDelete'))) return;
+  try {
+    await callAzureFunction({action:'delete'}); azureStatus={connected:false,region:null,updatedAt:null}; azureTokenCache=null;
+    if($('azureRegion'))$('azureRegion').value=''; if($('azureKey'))$('azureKey').value=''; setAzureAccountStatus(tr('azureDeleted')); renderAzureUI();
+  } catch(error){ setAzureAccountStatus(error.message || tr('azureFunctionError'), true); }
+}
+
+async function getAzureSpeechToken() {
+  if (!session?.user) throw Object.assign(new Error('Please sign in first.'), {code:'NOT_SIGNED_IN'});
+  if (azureTokenCache && azureTokenCache.expiresAt>Date.now()+30_000) return azureTokenCache;
+  const data=await callAzureFunction({action:'token'});
+  if (!data.connected || !data.token || !data.region) throw Object.assign(new Error(data.message || tr('azureNotConnected')), {code:'NOT_CONNECTED'});
+  azureStatus={connected:true,region:data.region,updatedAt:azureStatus.updatedAt}; renderAzureUI();
+  azureTokenCache={token:data.token,region:data.region,expiresAt:Date.now()+8*60*1000}; return azureTokenCache;
+}
+
 function scheduleSync() {
   if (suppressSync || !session?.user || !configured) return;
   clearTimeout(syncTimer);
@@ -270,9 +363,19 @@ async function initAuth() {
     supabaseClient.auth.onAuthStateChange(async (_event, newSession) => {
       session = newSession;
       renderAccountUI();
-      if (session?.user && appReady) await loadCloudState();
+      if (session?.user) {
+        await refreshAzureStatus();
+        if (appReady) await loadCloudState();
+      } else {
+        azureStatus={connected:false,region:null,updatedAt:null};
+        azureTokenCache=null;
+        renderAzureUI();
+      }
     });
-    if (session?.user && appReady) await loadCloudState();
+    if (session?.user) {
+      await refreshAzureStatus();
+      if (appReady) await loadCloudState();
+    }
   } catch (error) {
     console.error(error);
     setCloudStatus(`${tr('cloudError')}: ${error.message}`, true);
@@ -288,6 +391,8 @@ function bindUI() {
   $('signupForm')?.addEventListener('submit', signUp);
   $('logoutBtn')?.addEventListener('click', signOut);
   $('syncNowBtn')?.addEventListener('click', syncNow);
+  $('azureCredentialsForm')?.addEventListener('submit', saveAzureCredentials);
+  $('deleteAzureBtn')?.addEventListener('click', deleteAzureCredentials);
   document.addEventListener('tocfl:language-changed', applyAuthLanguage);
   document.addEventListener('tocfl:state-changed', scheduleSync);
   document.addEventListener('tocfl:app-ready', async () => {
@@ -298,5 +403,5 @@ function bindUI() {
   document.addEventListener('keydown', e => { if (e.key === 'Escape' && !$('authModal')?.hidden) closeAuth(); });
 }
 
-window.TOCFLAuth = { syncNow, openAuth, isConfigured: () => configured, getSession: () => session };
+window.TOCFLAuth = { syncNow, openAuth, isConfigured: () => configured, getSession: () => session, getAzureSpeechToken, refreshAzureStatus, getAzureStatus: () => ({...azureStatus}) };
 initAuth();

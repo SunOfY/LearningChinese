@@ -1,4 +1,4 @@
-const CACHE = 'tocfl-a1-v4.4-pronunciation-ui-20260909';
+const CACHE = 'tocfl-a1-v4.5-azure-byok-20260909';
 const ASSETS = [
   './',
   './index.html',
@@ -50,6 +50,8 @@ self.addEventListener('fetch', event => {
     url.pathname.endsWith('/styles.css') ||
     url.pathname.endsWith('/app.js') ||
     url.pathname.endsWith('/auth.js') ||
+    url.pathname.endsWith('/data/a1.json') ||
+    url.pathname.endsWith('/data/enrichment_day1.json') ||
     url.pathname.endsWith('/sw.js');
 
   if (isFreshAsset) {

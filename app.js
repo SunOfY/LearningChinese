@@ -11,7 +11,7 @@ const I18N = {
     day:'Ngày', navToday:'Hôm nay', navVocab:'Từ vựng', navQuiz:'Quiz', navProgress:'Tiến độ', goal:'Mục tiêu',
     favorite:'Đánh dấu từ', listenWord:'Nghe từ', slow:'Chậm', hidePinyin:'Ẩn Pinyin', showPinyin:'Hiện Pinyin',
     pronunciationPractice:'🎙 Luyện phát âm', startRecording:'Bắt đầu ghi âm', stop:'Dừng', playback:'Phát lại', checkPronunciation:'Kiểm tra phát âm',
-    target:'Mẫu:', recognized:'Máy nhận ra:', assessmentNote:'Điểm này dựa trên nhận dạng giọng nói của trình duyệt. Nó cho biết máy có nhận đúng từ hay không, nhưng không thay thế chấm thanh điệu/ngữ âm chuyên sâu.',
+    target:'Mẫu:', recognized:'Azure nhận ra:', assessmentNote:'Kiểm tra phát âm dùng Azure Speech Pronunciation Assessment zh-TW của chính tài khoản đang đăng nhập.', accuracyLabel:'Độ chính xác', fluencyLabel:'Độ trôi chảy', completenessLabel:'Độ đầy đủ',
     examples:'💬 Câu ví dụ', examplesHint:'Bấm loa để nghe cả câu bằng giọng zh-TW.', rememberLevel:'Bạn nhớ từ này mức nào?', notRemembered:'Chưa nhớ', learning:'Tạm nhớ', remembered:'Đã nhớ', previous:'Trước', next:'Tiếp theo',
     writingPractice:'✍️ Luyện viết', writingDevices:'Chuột · ngón tay · Apple Pencil', clear:'Xóa', showGuide:'Hiện chữ mẫu mờ', writingTip:'<strong>Cách luyện:</strong> tô theo mẫu → tắt mẫu → tự viết → đọc thành tiếng chữ vừa viết.',
     creatingQuestion:'Đang tạo câu hỏi…', anotherQuestion:'Câu khác', reviewed:'Đã đánh giá', backupTitle:'💾 Sao lưu tiến độ', backupDesc:'Tiến độ được lưu trong trình duyệt của từng thiết bị. Bạn có thể xuất file để chuyển sang thiết bị khác.', exportProgress:'Xuất tiến độ', importProgress:'Nhập tiến độ', resetProgress:'Xóa tiến độ',
@@ -19,8 +19,8 @@ const I18N = {
     newWords:n=>`${n} từ mới`, allDays:'Tất cả ngày', dayOption:n=>`Ngày ${n}`, searchPlaceholder:'Tìm chữ, pinyin hoặc nghĩa…',
     loadingEnglish:'Đang tải nghĩa English…', englishUnavailable:'Chưa lấy được nghĩa English.', sourceWarning:'Lưu ý dữ liệu nguồn:', likelyForm:'Ví dụ dùng dạng được suy đoán theo pinyin/nghĩa:',
     recordIdle:'Giọng ghi âm chỉ lưu tạm trên thiết bị.', recording:'🔴 Đang ghi âm… hãy đọc từ hiện tại.', recordDone:'Đã ghi xong. Bạn có thể phát lại hoặc kiểm tra phát âm.', micDenied:'Không truy cập được microphone. Hãy cấp quyền microphone cho website.', recorderUnsupported:'Thiết bị/trình duyệt này chưa hỗ trợ ghi âm bằng MediaRecorder.',
-    speechUnsupported:'Trình duyệt này không hỗ trợ nhận dạng giọng nói để chấm phát âm.', speechListening:'🎧 Đang nghe… hãy nói từ mẫu một lần ngay bây giờ.', noRecognition:'Không nhận được chữ từ hệ thống nhận dạng.', recognitionDone:'✅ Đã nhận dạng xong. Kết quả ở bên dưới.', recognitionTimeout:'⚠️ Trình duyệt không trả kết quả nhận dạng sau 8 giây. Đây không có nghĩa là bạn phát âm sai.', speechNoSpeech:'🎤 Không phát hiện tiếng nói. Hãy bấm kiểm tra rồi nói ngay, rõ và đủ gần microphone.', speechNetworkError:'🌐 Dịch vụ nhận dạng giọng nói gặp lỗi mạng. Hãy kiểm tra Internet rồi thử lại.', speechPermissionDenied:'🔒 Trình duyệt chưa cho phép nhận dạng bằng microphone. Hãy cấp quyền Microphone cho trang này.', speechAudioCapture:'🎙 Không lấy được tín hiệu từ microphone. Hãy kiểm tra quyền hoặc thiết bị thu âm.', speechLanguageUnsupported:'🈶 Trình duyệt không hỗ trợ nhận dạng tiếng Hoa zh-TW trên thiết bị này.', speechAborted:'Đã dừng nhận dạng giọng nói.', speechGenericError:'⚠️ Nhận dạng giọng nói gặp lỗi. Hãy thử lại.',
-    feedbackExcellent:'Rất tốt — máy nhận đúng từ.', feedbackGood:'Khá gần. Hãy nghe mẫu và thử lại một lần nữa.', feedbackRetry:'Chưa khớp với từ mẫu. Hãy nghe chậm rồi đọc lại.',
+    speechUnsupported:'Chưa tải được Azure Speech SDK. Hãy kiểm tra kết nối mạng và tải lại trang.', speechListening:'🎧 Azure đang nghe… hãy nói từ mẫu một lần ngay bây giờ.', noRecognition:'Azure không nhận được chữ. Hãy nói lại rõ hơn.', recognitionDone:'✅ Azure đã chấm xong. Kết quả ở bên dưới.', speechNoSpeech:'🎤 Azure không phát hiện tiếng nói. Hãy bấm kiểm tra rồi nói ngay.', speechPermissionDenied:'🔒 Chưa có quyền microphone. Hãy cho phép website dùng microphone.', speechGenericError:'⚠️ Không chấm được phát âm bằng Azure. Hãy thử lại.', azureLoginRequired:'🔐 Hãy đăng nhập trước khi kiểm tra phát âm.', azureNotConnected:'☁️ Tài khoản chưa kết nối Azure Speech cá nhân. Mở Tài khoản → Azure Speech cá nhân để nhập Key và Region.', azureTokenError:'Không lấy được quyền truy cập Azure Speech.',
+    feedbackExcellent:'Rất tốt — Azure đánh giá phát âm chính xác.', feedbackGood:'Khá tốt. Hãy nghe mẫu và thử lại để tăng độ chính xác.', feedbackRetry:'Phát âm chưa đủ chính xác. Hãy nghe chậm rồi đọc lại.',
     quizMeaning:q=>`“${q}” nghĩa là gì?`, quizPinyin:q=>`Pinyin của “${q}” là gì?`, quizEnglish:q=>`English của “${q}” là gì?`, correct:'✅ Chính xác!', answer:a=>`❌ Đáp án: ${a}`, noVocab:'Không tìm thấy từ phù hợp.',
     exportDone:'Đã xuất file tiến độ.', importDone:'Đã nhập tiến độ thành công.', resetConfirm:'Xóa toàn bộ tiến độ và từ đã đánh dấu trên thiết bị này?', resetDone:'Đã xóa tiến độ.', invalidFile:'File không đúng định dạng.',
     generatedExample:'Ví dụ bổ sung tự động mức A1', curatedExample:'Ví dụ đã biên soạn'
@@ -29,7 +29,7 @@ const I18N = {
     day:'Day', navToday:'Today', navVocab:'Vocabulary', navQuiz:'Quiz', navProgress:'Progress', goal:'Goal',
     favorite:'Favorite word', listenWord:'Listen', slow:'Slow', hidePinyin:'Hide Pinyin', showPinyin:'Show Pinyin',
     pronunciationPractice:'🎙 Pronunciation practice', startRecording:'Start recording', stop:'Stop', playback:'Playback', checkPronunciation:'Check pronunciation',
-    target:'Target:', recognized:'Recognized:', assessmentNote:'This score is based on browser speech recognition. It tells you whether the browser recognized the target word, but it is not a detailed phoneme/tone assessment.',
+    target:'Target:', recognized:'Azure recognized:', assessmentNote:'Pronunciation checking uses your signed-in account’s own Azure Speech Pronunciation Assessment resource with zh-TW.', accuracyLabel:'Accuracy', fluencyLabel:'Fluency', completenessLabel:'Completeness',
     examples:'💬 Example sentences', examplesHint:'Tap the speaker to hear the full sentence in zh-TW.', rememberLevel:'How well do you remember this word?', notRemembered:'Not yet', learning:'Learning', remembered:'Remembered', previous:'Previous', next:'Next',
     writingPractice:'✍️ Writing practice', writingDevices:'Mouse · finger · Apple Pencil', clear:'Clear', showGuide:'Show faint guide', writingTip:'<strong>Practice:</strong> trace the guide → hide it → write from memory → say the character aloud.',
     creatingQuestion:'Creating a question…', anotherQuestion:'Another question', reviewed:'Reviewed', backupTitle:'💾 Progress backup', backupDesc:'Progress is stored in the browser on each device. Export a file to move it to another device.', exportProgress:'Export progress', importProgress:'Import progress', resetProgress:'Reset progress',
@@ -37,8 +37,8 @@ const I18N = {
     newWords:n=>`${n} new words`, allDays:'All days', dayOption:n=>`Day ${n}`, searchPlaceholder:'Search Hanzi, Pinyin or meaning…',
     loadingEnglish:'Loading English definition…', englishUnavailable:'English definition unavailable.', sourceWarning:'Source-data note:', likelyForm:'Examples use the likely intended form based on the source pinyin/meaning:',
     recordIdle:'The recording is kept only temporarily on this device.', recording:'🔴 Recording… say the current word.', recordDone:'Recording complete. Play it back or check pronunciation.', micDenied:'Microphone access failed. Allow microphone permission for this site.', recorderUnsupported:'This browser/device does not support MediaRecorder.',
-    speechUnsupported:'This browser does not support speech recognition for pronunciation checking.', speechListening:'🎧 Listening… say the target word once now.', noRecognition:'The recognition service returned no text.', recognitionDone:'✅ Recognition complete. See the result below.', recognitionTimeout:'⚠️ The browser returned no recognition result after 8 seconds. This does not mean your pronunciation was wrong.', speechNoSpeech:'🎤 No speech was detected. Tap check and speak immediately, clearly, and close enough to the microphone.', speechNetworkError:'🌐 The speech recognition service had a network error. Check your Internet connection and try again.', speechPermissionDenied:'🔒 Microphone recognition permission is not available. Allow Microphone access for this site.', speechAudioCapture:'🎙 No microphone audio could be captured. Check the microphone and site permission.', speechLanguageUnsupported:'🈶 zh-TW speech recognition is not supported on this device/browser.', speechAborted:'Speech recognition was stopped.', speechGenericError:'⚠️ Speech recognition failed. Please try again.',
-    feedbackExcellent:'Very good — the browser recognized the target word.', feedbackGood:'Close. Listen to the model and try once more.', feedbackRetry:'It did not match the target. Listen slowly and try again.',
+    speechUnsupported:'Azure Speech SDK is not loaded. Check your connection and reload the page.', speechListening:'🎧 Azure is listening… say the target word once now.', noRecognition:'Azure did not return recognized text. Please try again clearly.', recognitionDone:'✅ Azure assessment complete. See the result below.', speechNoSpeech:'🎤 Azure did not detect speech. Tap check and speak immediately.', speechPermissionDenied:'🔒 Microphone permission is not available. Allow microphone access for this site.', speechGenericError:'⚠️ Azure pronunciation assessment failed. Please try again.', azureLoginRequired:'🔐 Sign in before checking pronunciation.', azureNotConnected:'☁️ This account has not connected its personal Azure Speech resource. Open Account → Personal Azure Speech and enter the Key and Region.', azureTokenError:'Could not obtain Azure Speech access.',
+    feedbackExcellent:'Excellent — Azure rated the pronunciation as accurate.', feedbackGood:'Good. Listen to the model and try again to improve accuracy.', feedbackRetry:'Pronunciation needs improvement. Listen slowly and try again.',
     quizMeaning:q=>`What does “${q}” mean in Vietnamese?`, quizPinyin:q=>`What is the Pinyin for “${q}”?`, quizEnglish:q=>`What does “${q}” mean in English?`, correct:'✅ Correct!', answer:a=>`❌ Answer: ${a}`, noVocab:'No matching vocabulary found.',
     exportDone:'Progress file exported.', importDone:'Progress imported successfully.', resetConfirm:'Delete all progress and favorites on this device?', resetDone:'Progress deleted.', invalidFile:'Invalid progress file.',
     generatedExample:'Auto-generated A1 study example', curatedExample:'Curated example'
@@ -47,7 +47,7 @@ const I18N = {
     day:'第', navToday:'今天', navVocab:'詞彙', navQuiz:'測驗', navProgress:'進度', goal:'今日目標',
     favorite:'收藏單字', listenWord:'聽單字', slow:'慢速', hidePinyin:'隱藏拼音', showPinyin:'顯示拼音',
     pronunciationPractice:'🎙 發音練習', startRecording:'開始錄音', stop:'停止', playback:'播放錄音', checkPronunciation:'檢查發音',
-    target:'目標：', recognized:'辨識結果：', assessmentNote:'此分數依瀏覽器語音辨識結果計算，可判斷系統是否辨識到目標詞，但不能取代專業的聲母、韻母與聲調評分。',
+    target:'目標：', recognized:'Azure 辨識：', assessmentNote:'發音檢查使用目前登入帳號自己的 Azure Speech Pronunciation Assessment（zh-TW）。', accuracyLabel:'準確度', fluencyLabel:'流暢度', completenessLabel:'完整度',
     examples:'💬 例句', examplesHint:'按喇叭可用 zh-TW 聽完整句子。', rememberLevel:'你記得這個詞嗎？', notRemembered:'還不會', learning:'不太熟', remembered:'記住了', previous:'上一個', next:'下一個',
     writingPractice:'✍️ 寫字練習', writingDevices:'滑鼠 · 手指 · Apple Pencil', clear:'清除', showGuide:'顯示淡色範字', writingTip:'<strong>練習方式：</strong>描字 → 關閉範字 → 默寫 → 大聲讀出剛寫的字。',
     creatingQuestion:'正在出題…', anotherQuestion:'下一題', reviewed:'已評估', backupTitle:'💾 備份學習進度', backupDesc:'進度儲存在每台裝置的瀏覽器中。可匯出檔案，再匯入另一台裝置。', exportProgress:'匯出進度', importProgress:'匯入進度', resetProgress:'清除進度',
@@ -55,8 +55,8 @@ const I18N = {
     newWords:n=>`${n} 個新詞`, allDays:'全部', dayOption:n=>`第 ${n} 天`, searchPlaceholder:'搜尋漢字、拼音或意思…',
     loadingEnglish:'正在載入英文釋義…', englishUnavailable:'暫時無法取得英文釋義。', sourceWarning:'原始資料提醒：', likelyForm:'例句依原始拼音／意思採用推測的詞形：',
     recordIdle:'錄音只會暫時保留在此裝置。', recording:'🔴 錄音中……請讀目前的詞。', recordDone:'錄音完成。可播放錄音或檢查發音。', micDenied:'無法使用麥克風，請允許此網站使用麥克風。', recorderUnsupported:'此瀏覽器／裝置不支援 MediaRecorder。',
-    speechUnsupported:'此瀏覽器不支援用語音辨識檢查發音。', speechListening:'🎧 正在聽……請現在讀一次目標詞。', noRecognition:'語音辨識服務沒有回傳文字。', recognitionDone:'✅ 辨識完成，結果如下。', recognitionTimeout:'⚠️ 8 秒後瀏覽器仍未回傳辨識結果。這不代表你的發音錯誤。', speechNoSpeech:'🎤 沒有偵測到語音。請按下檢查後立即清楚地說出目標詞。', speechNetworkError:'🌐 語音辨識服務發生網路錯誤，請檢查網路後再試。', speechPermissionDenied:'🔒 尚未允許麥克風辨識權限，請允許此網站使用麥克風。', speechAudioCapture:'🎙 無法取得麥克風聲音，請檢查麥克風與網站權限。', speechLanguageUnsupported:'🈶 此裝置／瀏覽器不支援 zh-TW 語音辨識。', speechAborted:'語音辨識已停止。', speechGenericError:'⚠️ 語音辨識發生錯誤，請再試一次。',
-    feedbackExcellent:'很好，系統辨識到正確的目標詞。', feedbackGood:'很接近。再聽一次示範後重試。', feedbackRetry:'與目標詞不太相符，請先聽慢速示範再讀一次。',
+    speechUnsupported:'Azure Speech SDK 尚未載入，請檢查網路並重新載入頁面。', speechListening:'🎧 Azure 正在聽……請現在讀一次目標詞。', noRecognition:'Azure 沒有回傳辨識文字，請清楚地再試一次。', recognitionDone:'✅ Azure 發音評估完成，結果如下。', speechNoSpeech:'🎤 Azure 沒有偵測到語音，請按下檢查後立即說出目標詞。', speechPermissionDenied:'🔒 尚未允許麥克風權限，請允許此網站使用麥克風。', speechGenericError:'⚠️ Azure 發音評估失敗，請再試一次。', azureLoginRequired:'🔐 請先登入再檢查發音。', azureNotConnected:'☁️ 此帳號尚未連接自己的 Azure Speech。請到「帳號 → 個人 Azure Speech」輸入 Key 與 Region。', azureTokenError:'無法取得 Azure Speech 存取權。',
+    feedbackExcellent:'很好——Azure 評估此發音相當準確。', feedbackGood:'不錯。再聽一次示範並重試，可以提高準確度。', feedbackRetry:'發音還需要改善。請慢速聽完後再讀一次。',
     quizMeaning:q=>`「${q}」的越南文意思是什麼？`, quizPinyin:q=>`「${q}」的拼音是什麼？`, quizEnglish:q=>`「${q}」的英文意思是什麼？`, correct:'✅ 答對了！', answer:a=>`❌ 答案：${a}`, noVocab:'找不到符合的詞。',
     exportDone:'已匯出進度檔。', importDone:'已成功匯入進度。', resetConfirm:'要清除這台裝置上的全部進度與收藏嗎？', resetDone:'已清除進度。', invalidFile:'檔案格式不正確。',
     generatedExample:'A1 自動補充例句', curatedExample:'人工整理例句'
@@ -67,8 +67,7 @@ const state = {
   allWords: [], enrich: {}, day: 1, dayWords: [], index: 0, pinyinVisible: true,
   progress: {}, favorites: new Set(), lang: 'vi', englishDefs: {}, englishLoaded: false,
   mediaRecorder: null, recordedChunks: [], recordingUrl: null, stream: null,
-  recognition: null, recognitionAlternatives: [], recognitionRunning: false,
-  recognitionTimer: null, recognitionGotResult: false,
+  azureRecognitionRunning: false,
   pinyinMap: new Map()
 };
 
@@ -577,29 +576,22 @@ function bindRecorder(){
   $('recordBtn').addEventListener('click',startRecording);
   $('stopRecordBtn').addEventListener('click',stopRecording);
   $('playRecordBtn').addEventListener('click',()=>{const a=$('recordingAudio');a.currentTime=0;a.play();});
-  $('checkPronunciationBtn').addEventListener('click',checkPronunciationFresh);
-  // Pronunciation checking is independent from recording. Recording is only for self-playback.
-  $('checkPronunciationBtn').disabled=!speechRecognitionCtor();
+  $('checkPronunciationBtn').addEventListener('click',checkPronunciationAzure);
+  $('checkPronunciationBtn').disabled=false;
 }
 async function startRecording(){
   if(!navigator.mediaDevices?.getUserMedia||!window.MediaRecorder){$('recordStatus').textContent=t('recorderUnsupported');return;}
   try{
-    resetPronunciationResult();
-    if(state.recognitionRunning&&state.recognition)try{state.recognition.abort();}catch{}
-    cleanupRecordingStream();
+    resetPronunciationResult(); cleanupRecordingStream();
     state.stream=await navigator.mediaDevices.getUserMedia({audio:true});
     state.recordedChunks=[];
-    state.recognitionAlternatives=[];
     let recorder;
     try{recorder=new MediaRecorder(state.stream,{mimeType:'audio/webm'});}catch{recorder=new MediaRecorder(state.stream);}
     state.mediaRecorder=recorder;
     recorder.addEventListener('dataavailable',e=>{if(e.data?.size)state.recordedChunks.push(e.data);});
     recorder.addEventListener('stop',finalizeRecording);
     recorder.start();
-    $('recordBtn').disabled=true;
-    $('stopRecordBtn').disabled=false;
-    $('playRecordBtn').disabled=true;
-    $('checkPronunciationBtn').disabled=true;
+    $('recordBtn').disabled=true;$('stopRecordBtn').disabled=false;$('playRecordBtn').disabled=true;$('checkPronunciationBtn').disabled=true;
     $('recordStatus').textContent=t('recording');
   }catch(err){console.error(err);$('recordStatus').textContent=t('micDenied');}
 }
@@ -609,153 +601,105 @@ function finalizeRecording(){
   const type=state.mediaRecorder?.mimeType||'audio/webm';
   const blob=new Blob(state.recordedChunks,{type});
   state.recordingUrl=URL.createObjectURL(blob);
-  const audio=$('recordingAudio');
-  audio.src=state.recordingUrl;audio.hidden=false;
-  $('recordBtn').disabled=false;$('stopRecordBtn').disabled=true;$('playRecordBtn').disabled=false;
-  $('checkPronunciationBtn').disabled=!speechRecognitionCtor();
-  cleanupRecordingStream();
-  $('recordStatus').textContent=t('recordDone');
+  const audio=$('recordingAudio');audio.src=state.recordingUrl;audio.hidden=false;
+  $('recordBtn').disabled=false;$('stopRecordBtn').disabled=true;$('playRecordBtn').disabled=false;$('checkPronunciationBtn').disabled=false;
+  cleanupRecordingStream();$('recordStatus').textContent=t('recordDone');
 }
 function cleanupRecordingStream(){if(state.stream)state.stream.getTracks().forEach(t=>t.stop());state.stream=null;}
 function resetRecordingForNewWord(){
   if(state.mediaRecorder?.state==='recording')state.mediaRecorder.stop();
-  if(state.recognitionTimer){clearTimeout(state.recognitionTimer);state.recognitionTimer=null;}
-  if(state.recognitionRunning&&state.recognition)try{state.recognition.abort();}catch{}
-  state.recognitionRunning=false;state.recognitionGotResult=false;cleanupRecordingStream();
-  if(state.recordingUrl)URL.revokeObjectURL(state.recordingUrl);state.recordingUrl=null;state.recordedChunks=[];state.recognitionAlternatives=[];
+  cleanupRecordingStream();state.azureRecognitionRunning=false;
+  if(state.recordingUrl)URL.revokeObjectURL(state.recordingUrl);state.recordingUrl=null;state.recordedChunks=[];
   const audio=$('recordingAudio');audio.hidden=true;audio.removeAttribute('src');audio.load();
-  $('recordBtn').disabled=false;$('stopRecordBtn').disabled=true;$('playRecordBtn').disabled=true;
-  $('checkPronunciationBtn').disabled=!speechRecognitionCtor();
+  $('recordBtn').disabled=false;$('stopRecordBtn').disabled=true;$('playRecordBtn').disabled=true;$('checkPronunciationBtn').disabled=false;
   $('recordStatus').textContent=t('recordIdle');resetPronunciationResult();
 }
-function resetPronunciationResult(){$('pronunciationResult').hidden=true;$('pronunciationScore').textContent='—';$('recognizedText').textContent='';$('pronunciationFeedback').textContent='';}
-function speechRecognitionCtor(){return window.SpeechRecognition||window.webkitSpeechRecognition||null;}
-function showRecognitionFailure(key='noRecognition'){
-  const w=currentWord();
-  $('pronunciationResult').hidden=false;
-  $('pronunciationScore').textContent='—';
-  $('pronunciationTarget').textContent=`${primaryForm(w)} · ${w.pinyin}`;
-  $('recognizedText').textContent='—';
-  $('pronunciationFeedback').textContent=t(key);
+function resetPronunciationResult(){
+  $('pronunciationResult').hidden=true;$('pronunciationScore').textContent='—';$('recognizedText').textContent='';$('pronunciationFeedback').textContent='';
+  if($('azureScoreGrid'))$('azureScoreGrid').hidden=true;
+  ['accuracyScore','fluencyScore','completenessScore'].forEach(id=>{if($(id))$(id).textContent='—';});
 }
-function recognitionErrorKey(error){
-  switch(String(error||'')){
-    case 'no-speech': return 'speechNoSpeech';
-    case 'network': return 'speechNetworkError';
-    case 'not-allowed':
-    case 'service-not-allowed': return 'speechPermissionDenied';
-    case 'audio-capture': return 'speechAudioCapture';
-    case 'language-not-supported': return 'speechLanguageUnsupported';
-    case 'aborted': return 'speechAborted';
-    default: return 'speechGenericError';
-  }
-}
-function setRecognitionBusy(busy){
-  state.recognitionRunning=busy;
-  // Never let speech checking compete with an active recording session.
+function setAzureRecognitionBusy(busy){
+  state.azureRecognitionRunning=busy;
   const recording=state.mediaRecorder?.state==='recording';
-  $('checkPronunciationBtn').disabled=Boolean(busy||recording||!speechRecognitionCtor());
+  $('checkPronunciationBtn').disabled=Boolean(busy||recording);
 }
-function startRecognition(showStatus=true){
-  const SR=speechRecognitionCtor();
-  if(!SR){if(showStatus){$('recordStatus').textContent=t('speechUnsupported');showRecognitionFailure('speechUnsupported');}return false;}
-  try{
-    if(state.recognitionTimer){clearTimeout(state.recognitionTimer);state.recognitionTimer=null;}
-    if(state.recognitionRunning&&state.recognition)try{state.recognition.abort();}catch{}
-
-    // Speech checking listens live. The saved recording is intentionally not submitted for scoring.
-    // Pause any page audio first to reduce microphone/audio-session conflicts on mobile Safari.
-    const audio=$('recordingAudio');
-    if(audio&&!audio.paused)audio.pause();
-    if('speechSynthesis'in window)try{speechSynthesis.cancel();}catch{}
-    cleanupRecordingStream();
-
-    const rec=new SR();
-    state.recognition=rec;state.recognitionGotResult=false;state.recognitionAlternatives=[];
-    rec.lang='zh-TW';rec.continuous=false;rec.interimResults=false;rec.maxAlternatives=5;
-    let timedOut=false;
-
-    const finishTimer=()=>{if(state.recognitionTimer){clearTimeout(state.recognitionTimer);state.recognitionTimer=null;}};
-    rec.onstart=()=>{setRecognitionBusy(true);if(showStatus)$('recordStatus').textContent=t('speechListening');};
-    rec.onresult=e=>{
-      finishTimer();state.recognitionGotResult=true;
-      const alts=[];
-      for(let r=0;r<(e.results?.length||0);r++){
-        const result=e.results[r];
-        for(let i=0;i<result.length;i++)alts.push({transcript:result[i].transcript,confidence:Number.isFinite(result[i].confidence)?result[i].confidence:0});
-      }
-      state.recognitionAlternatives=alts;
-      if(alts.length){evaluatePronunciation(alts);if(showStatus)$('recordStatus').textContent=t('recognitionDone');}
-      else if(showStatus){$('recordStatus').textContent=t('noRecognition');showRecognitionFailure('noRecognition');}
-    };
-    rec.onnomatch=()=>{finishTimer();if(showStatus){$('recordStatus').textContent=t('noRecognition');showRecognitionFailure('noRecognition');}};
-    rec.onerror=e=>{
-      finishTimer();
-      if(timedOut)return;
-      const key=recognitionErrorKey(e.error);
-      console.warn('Speech recognition:',e.error,e.message||'');
-      if(showStatus){$('recordStatus').textContent=t(key);showRecognitionFailure(key);}
-    };
-    rec.onspeechend=()=>{setTimeout(()=>{if(state.recognitionRunning)try{rec.stop();}catch{}},180);};
-    rec.onend=()=>{
-      finishTimer();setRecognitionBusy(false);
-      if(showStatus&&!timedOut&&!state.recognitionGotResult&&$('recordStatus').textContent===t('speechListening')){
-        $('recordStatus').textContent=t('noRecognition');showRecognitionFailure('noRecognition');
-      }
-    };
-
-    // A tiny delay after stopping page audio helps some mobile browsers release the audio session.
-    setRecognitionBusy(true);
-    setTimeout(()=>{
-      try{rec.start();}
-      catch(err){
-        console.warn('Speech recognition start:',err);setRecognitionBusy(false);
-        if(showStatus){$('recordStatus').textContent=t('speechGenericError');showRecognitionFailure('speechGenericError');}
-      }
-    },180);
-
-    state.recognitionTimer=setTimeout(()=>{
-      if(state.recognitionGotResult)return;
-      timedOut=true;
-      try{rec.abort();}catch{}
-      setRecognitionBusy(false);state.recognitionTimer=null;
-      if(showStatus){$('recordStatus').textContent=t('recognitionTimeout');showRecognitionFailure('recognitionTimeout');}
-    },8000);
-    return true;
-  }catch(err){
-    console.warn(err);setRecognitionBusy(false);
-    if(state.recognitionTimer){clearTimeout(state.recognitionTimer);state.recognitionTimer=null;}
-    if(showStatus){$('recordStatus').textContent=t('speechGenericError');showRecognitionFailure('speechGenericError');}
-    return false;
-  }
+function showAzureFailure(messageKey,messageOverride=''){
+  const w=currentWord();$('pronunciationResult').hidden=false;$('pronunciationScore').textContent='—';
+  $('pronunciationTarget').textContent=`${primaryForm(w)} · ${w.pinyin}`;$('recognizedText').textContent='—';
+  if($('azureScoreGrid'))$('azureScoreGrid').hidden=true;
+  $('pronunciationFeedback').textContent=messageOverride||t(messageKey);
 }
-function checkPronunciationFresh(){
+async function ensureMicrophonePermission(){
+  if(!navigator.mediaDevices?.getUserMedia)throw new Error('MIC_UNSUPPORTED');
+  const permissionStream=await navigator.mediaDevices.getUserMedia({audio:true});
+  permissionStream.getTracks().forEach(track=>track.stop());
+}
+async function checkPronunciationAzure(){
   resetPronunciationResult();
-  // Always perform a fresh live recognition pass. Recording/playback is a separate self-review feature.
-  startRecognition(true);
+  if(state.azureRecognitionRunning)return;
+  if(!window.SpeechSDK){$('recordStatus').textContent=t('speechUnsupported');showAzureFailure('speechUnsupported');return;}
+  if(!window.TOCFLAuth?.getSession?.()?.user){$('recordStatus').textContent=t('azureLoginRequired');showAzureFailure('azureLoginRequired');window.TOCFLAuth?.openAuth?.('login');return;}
+  try{
+    setAzureRecognitionBusy(true);
+    const audio=$('recordingAudio');if(audio&&!audio.paused)audio.pause();if('speechSynthesis'in window)try{speechSynthesis.cancel();}catch{}
+    $('recordStatus').textContent=t('speechListening');
+    try{await ensureMicrophonePermission();}catch(err){throw Object.assign(new Error(t('speechPermissionDenied')),{code:'MIC_PERMISSION'});}
+    const tokenInfo=await window.TOCFLAuth.getAzureSpeechToken();
+    if(!tokenInfo?.token||!tokenInfo?.region)throw Object.assign(new Error(t('azureTokenError')),{code:tokenInfo?.code||'AZURE_TOKEN'});
+    await runAzurePronunciationAssessment(tokenInfo.token,tokenInfo.region);
+  }catch(err){
+    console.warn('Azure pronunciation:',err);
+    const code=String(err?.code||'');
+    let key='speechGenericError';
+    if(code==='NOT_CONNECTED')key='azureNotConnected'; else if(code==='NOT_SIGNED_IN')key='azureLoginRequired'; else if(code==='MIC_PERMISSION')key='speechPermissionDenied';
+    $('recordStatus').textContent=err?.message||t(key);showAzureFailure(key,err?.message||'');
+  }finally{setAzureRecognitionBusy(false);}
 }
-function evaluatePronunciation(alts){
-  if(!alts?.length)return;
-  const w=currentWord(),targets=candidateForms(w).concat(INFERRED_FORMS[w.id]?[INFERRED_FORMS[w.id]]:[]).map(normalizeChinese).filter(Boolean);
-  let best={score:0,transcript:'',confidence:0};
-  for(const alt of alts){
-    const r=normalizeChinese(alt.transcript);
-    for(const target of targets){
-      let sim=similarity(r,target);
-      const conf=Number.isFinite(alt.confidence)?Math.max(0,Math.min(1,alt.confidence)):0;
-      let score;
-      if(r===target){score=100;sim=1;}
-      else if(r.includes(target)||target.includes(r)){score=Math.round(92+conf*6);sim=Math.max(sim,.9);}
-      else score=Math.round(Math.min(100,(sim*.9+conf*.1)*100));
-      if(score>best.score)best={score,transcript:alt.transcript,confidence:conf};
-    }
-  }
-  const score=best.score;
+function runAzurePronunciationAssessment(token,region){
+  return new Promise((resolve,reject)=>{
+    const SDK=window.SpeechSDK;let recognizer=null;
+    try{
+      const w=currentWord(),referenceText=primaryForm(w);
+      const speechConfig=SDK.SpeechConfig.fromAuthorizationToken(token,region);
+      speechConfig.speechRecognitionLanguage='zh-TW';
+      speechConfig.outputFormat=SDK.OutputFormat.Detailed;
+      const audioConfig=SDK.AudioConfig.fromDefaultMicrophoneInput();
+      recognizer=new SDK.SpeechRecognizer(speechConfig,audioConfig);
+      const paConfig=new SDK.PronunciationAssessmentConfig(
+        referenceText,
+        SDK.PronunciationAssessmentGradingSystem.HundredMark,
+        SDK.PronunciationAssessmentGranularity.Phoneme,
+        true
+      );
+      paConfig.applyTo(recognizer);
+      recognizer.recognizeOnceAsync(result=>{
+        try{
+          if(result.reason===SDK.ResultReason.RecognizedSpeech){
+            const pa=SDK.PronunciationAssessmentResult.fromResult(result);
+            renderAzurePronunciationResult(w,result.text||'',pa);
+            $('recordStatus').textContent=t('recognitionDone');resolve();
+          }else if(result.reason===SDK.ResultReason.NoMatch){
+            const e=Object.assign(new Error(t('noRecognition')),{code:'NO_MATCH'});reject(e);
+          }else{
+            const e=Object.assign(new Error(t('speechGenericError')),{code:'AZURE_RESULT'});reject(e);
+          }
+        }catch(e){reject(e);}finally{try{recognizer?.close();}catch{}}
+      },error=>{try{recognizer?.close();}catch{};reject(Object.assign(new Error(String(error||t('speechGenericError'))),{code:'AZURE_SDK'}));});
+    }catch(e){try{recognizer?.close();}catch{};reject(e);}
+  });
+}
+function renderAzurePronunciationResult(w,recognized,pa){
+  const safe=n=>Number.isFinite(Number(n))?Math.max(0,Math.min(100,Math.round(Number(n)))):null;
+  const pronunciation=safe(pa?.pronunciationScore),accuracy=safe(pa?.accuracyScore),fluency=safe(pa?.fluencyScore),completeness=safe(pa?.completenessScore);
+  const score=pronunciation??accuracy??0;
   $('pronunciationResult').hidden=false;$('pronunciationScore').textContent=String(score);
-  $('pronunciationTarget').textContent=`${primaryForm(w)} · ${w.pinyin}`;
-  $('recognizedText').textContent=best.transcript||'—';
+  $('pronunciationTarget').textContent=`${primaryForm(w)} · ${w.pinyin}`;$('recognizedText').textContent=recognized||'—';
+  if($('azureScoreGrid'))$('azureScoreGrid').hidden=false;
+  if($('accuracyScore'))$('accuracyScore').textContent=accuracy??'—';if($('fluencyScore'))$('fluencyScore').textContent=fluency??'—';if($('completenessScore'))$('completenessScore').textContent=completeness??'—';
   $('pronunciationFeedback').textContent=score>=90?t('feedbackExcellent'):score>=70?t('feedbackGood'):t('feedbackRetry');
-  state.progress[w.id]={...(state.progress[w.id]||{}),lastPronunciationScore:score,lastRecognized:best.transcript,pronunciationCheckedAt:new Date().toISOString()};saveLocalState();
+  state.progress[w.id]={...(state.progress[w.id]||{}),lastPronunciationScore:score,lastPronunciationAccuracy:accuracy,lastPronunciationFluency:fluency,lastPronunciationCompleteness:completeness,lastRecognized:recognized,pronunciationProvider:'azure-zh-TW',pronunciationCheckedAt:new Date().toISOString()};
+  saveLocalState();
 }
 function normalizeChinese(s){return String(s||'').normalize('NFKC').replace(/[\s，。！？,.!?;；:：、'"“”‘’()（）/]/g,'').toLowerCase();}
 function similarity(a,b){if(!a&&!b)return 1;if(!a||!b)return 0;const d=levenshtein(a,b);return 1-d/Math.max(a.length,b.length);}

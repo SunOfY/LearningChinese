@@ -882,6 +882,7 @@ function levenshtein(a,b){const prev=Array.from({length:b.length+1},(_,i)=>i),cu
 
 let writingCanvases=[];
 let strokeGuideInstances=[];
+let writingGuideInstances=[];
 let writingInteractionCount=0;
 function clearBrowserSelection(){
   try{ window.getSelection?.()?.removeAllRanges?.(); }catch{}
@@ -896,7 +897,7 @@ function setWritingInteractionLock(active){
 function bindCanvas(){
   $('clearCanvasBtn').addEventListener('click',clearWritingCanvas);
   $('showGuideCheckbox').addEventListener('change',e=>{
-    document.querySelectorAll('#writingGrid .trace-char').forEach(el=>{el.style.display=e.target.checked?'flex':'none';});
+    document.querySelectorAll('#writingGrid .trace-char').forEach(el=>{el.style.display=e.target.checked?'block':'none';});
   });
   document.addEventListener('selectionchange',()=>{ if(document.body.classList.contains('writing-active')) clearBrowserSelection(); });
   const grid=$('writingGrid');
@@ -918,16 +919,26 @@ function writingCharacters(word){
 }
 function renderWritingBoxes(word){
   const grid=$('writingGrid'); if(!grid)return;
-  grid.innerHTML=''; writingCanvases=[];
+  grid.innerHTML=''; writingCanvases=[]; writingGuideInstances=[];
   const chars=writingCharacters(word);
   const label=$('writingWordLabel'); if(label)label.textContent=chars.join('');
   chars.forEach((ch,idx)=>{
     const square=document.createElement('div'); square.className='writing-square';
     const lines=document.createElement('div'); lines.className='grid-lines'; lines.setAttribute('aria-hidden','true');
-    const guide=document.createElement('div'); guide.className='trace-char'; guide.textContent=ch;
-    guide.style.display=$('showGuideCheckbox').checked?'flex':'none';
+    const guide=document.createElement('div'); guide.className='trace-char trace-vector';
+    guide.style.display=$('showGuideCheckbox').checked?'block':'none';
+    const fallback=document.createElement('div'); fallback.className='trace-font-fallback'; fallback.textContent=ch; fallback.hidden=true;
+    guide.append(fallback);
     const canvas=document.createElement('canvas'); canvas.className='writing-canvas'; canvas.setAttribute('aria-label',`Luyện viết chữ ${ch}, ô ${idx+1}`);
     square.append(lines,guide,canvas); grid.append(square);
+    try{
+      const writer=makeWritingGuideWriter(guide,ch,()=>{},()=>{fallback.hidden=false;});
+      if(!writer) throw new Error('HanziWriter unavailable');
+      writingGuideInstances.push({char:ch,writer,host:guide});
+    }catch(err){
+      console.warn('Vector writing guide unavailable:',ch,err);
+      fallback.hidden=false;
+    }
     const ctx=canvas.getContext('2d');
     const item={canvas,ctx,dpr:1,drawing:false,lastPoint:[0,0],baseLineWidth:6,pointerId:null}; writingCanvases.push(item);
     resizeWritingCanvas(item);
@@ -1017,6 +1028,41 @@ function resetStrokeGuideInstances(){
 function strokeDataUrl(ch){
   return `https://cdn.jsdelivr.net/npm/hanzi-writer-data@2.0.1/${encodeURIComponent(ch)}.json`;
 }
+function loadStrokeData(char,onComplete,onError,onData){
+  fetch(strokeDataUrl(char), { cache:'force-cache' })
+    .then(res=>{ if(!res.ok) throw new Error(`Stroke data HTTP ${res.status}`); return res.json(); })
+    .then(data=>{ onData?.(data); onComplete(data); })
+    .catch(err=>{ onError?.(err); });
+}
+function makeWritingGuideWriter(host,ch,onData,onError){
+  if(typeof window.HanziWriter==='undefined') return null;
+  return window.HanziWriter.create(host,ch,{
+    width:220,
+    height:220,
+    padding:12,
+    showOutline:false,
+    showCharacter:true,
+    strokeColor:'#0f766e',
+    charDataLoader:(char,onComplete,loaderError)=>{
+      loadStrokeData(char,onComplete,err=>{ onError?.(err); loaderError?.(err); },onData);
+    }
+  });
+}
+function makeStrokeGuideMiniWriter(host,ch,onData,onError){
+  if(typeof window.HanziWriter==='undefined') return null;
+  return window.HanziWriter.create(host, ch, {
+    width: host.clientWidth || 40,
+    height: host.clientHeight || 40,
+    padding: 1,
+    showOutline: false,
+    showCharacter: true,
+    strokeColor: '#1f2937',
+    delayBetweenStrokes: 0,
+    charDataLoader: (char, onComplete, loaderError) => {
+      loadStrokeData(char,onComplete,err=>{ onError?.(err); loaderError?.(err); },onData);
+    }
+  });
+}
 function makeStrokeGuideWriter(host,ch,onData,onError){
   if(typeof window.HanziWriter==='undefined') return null;
   return window.HanziWriter.create(host, ch, {
@@ -1031,10 +1077,7 @@ function makeStrokeGuideWriter(host,ch,onData,onError){
     outlineColor: 'rgba(15,118,110,.18)',
     drawingColor: '#0f766e',
     charDataLoader: (char, onComplete, loaderError) => {
-      fetch(strokeDataUrl(char), { cache:'force-cache' })
-        .then(res => { if(!res.ok) throw new Error(`Stroke data HTTP ${res.status}`); return res.json(); })
-        .then(data => { onData?.(data); onComplete(data); })
-        .catch(err => { onError?.(err); loaderError?.(err); });
+      loadStrokeData(char,onComplete,err=>{ onError?.(err); loaderError?.(err); },onData);
     }
   });
 }
@@ -1055,9 +1098,12 @@ function renderStrokeGuides(word){
   chars.forEach((ch,idx)=>{
     const card=document.createElement('article'); card.className='stroke-guide-card';
     const head=document.createElement('div'); head.className='stroke-guide-head';
-    const hanzi=document.createElement('strong'); hanzi.textContent=ch;
+    const headCharWrap=document.createElement('div'); headCharWrap.className='stroke-guide-char-wrap';
+    const headChar=document.createElement('div'); headChar.className='stroke-guide-char';
+    const headCharFallback=document.createElement('strong'); headCharFallback.className='stroke-guide-char-fallback'; headCharFallback.textContent=ch; headCharFallback.hidden=true;
+    headCharWrap.append(headChar,headCharFallback);
     const order=document.createElement('span'); order.textContent=t('strokeOrderLabel',idx+1);
-    head.append(hanzi,order);
+    head.append(headCharWrap,order);
 
     const stage=document.createElement('div'); stage.className='stroke-guide-stage';
     const writerHost=document.createElement('div'); writerHost.className='stroke-writer';
@@ -1077,6 +1123,11 @@ function renderStrokeGuides(word){
 
     let item=null;
     try{
+      const miniWriter=makeStrokeGuideMiniWriter(headChar,ch,null,()=>{
+        headChar.hidden=true;
+        headCharFallback.hidden=false;
+      });
+      if(!miniWriter) throw new Error('HanziWriter unavailable');
       const writer=makeStrokeGuideWriter(writerHost,ch,(data)=>{
         const n=Array.isArray(data?.strokes)?data.strokes.length:0;
         if(n) count.textContent=state.lang==='zh-Hant'?`共 ${n} 畫`:state.lang==='en'?`${n} strokes`:`${n} nét`;
@@ -1087,12 +1138,14 @@ function renderStrokeGuides(word){
         playBtn.disabled=true; replayBtn.disabled=true;
       });
       if(!writer) throw new Error('HanziWriter unavailable');
-      item={char:ch,writer,host:writerHost};
+      item={char:ch,writer,miniWriter,host:writerHost};
       strokeGuideInstances.push(item);
       playBtn.addEventListener('click',()=>playStrokeGuide(item));
       replayBtn.addEventListener('click',()=>playStrokeGuide(item));
     }catch(err){
       console.warn('Stroke guide unavailable:', ch, err);
+      headChar.hidden=true;
+      headCharFallback.hidden=false;
       writerHost.hidden=true; fallback.hidden=false; count.textContent='';
       playBtn.disabled=true; replayBtn.disabled=true;
     }

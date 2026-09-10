@@ -1,4 +1,4 @@
-const CACHE = 'tocfl-v4-8-1-auto-strokes';
+const CACHE = 'tocfl-v4-8-2-unified-shape';
 const ASSETS = [
   './',
   './index.html',

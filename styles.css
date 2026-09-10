@@ -195,3 +195,27 @@ body.writing-active, body.writing-active *{ -webkit-user-select:none !important;
 .stroke-guide-actions button{ flex:1 1 120px; min-height:40px; }
 .stroke-guide-note{ font-size:.9rem; color:var(--muted); line-height:1.45; }
 @media (max-width: 720px){ .stroke-guide-cards{ grid-template-columns:1fr; } }
+
+
+/* v4.8.2 unified vector reference: tracing guide and animation use the exact same HanziWriter data */
+.trace-char.trace-vector{
+  position:absolute; inset:0; display:block; opacity:.16; pointer-events:none; user-select:none;
+  font-size:0; line-height:0; z-index:1;
+}
+.trace-char.trace-vector svg{width:100% !important;height:100% !important;display:block;}
+.trace-font-fallback{
+  position:absolute; inset:0; display:flex; align-items:center; justify-content:center;
+  font-family:"BiauKai","DFKai-SB","Kaiti TC","Noto Serif TC",serif;
+  font-size:clamp(110px,15vw,205px); font-weight:700; line-height:1;
+}
+.writing-canvas{z-index:2;}
+.grid-lines{z-index:0;}
+@media (max-width:720px){.trace-font-fallback{font-size:clamp(150px,52vw,220px);}}
+
+
+/* v4.8.3 mini preview uses the same vector data as the animation */
+.stroke-guide-head{align-items:center;}
+.stroke-guide-char-wrap{display:flex; align-items:center; min-height:44px; min-width:44px;}
+.stroke-guide-char{width:44px; height:44px; flex:0 0 44px;}
+.stroke-guide-char > svg{width:100%; height:100%; display:block;}
+.stroke-guide-char-fallback{font-size:1.5rem; line-height:1; color:#1f2937;}

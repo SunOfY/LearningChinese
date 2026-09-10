@@ -1,4 +1,4 @@
-const CACHE = 'tocfl-v4-8-6-ipad-preview-tap';
+const CACHE = 'tocfl-v4-8-7-progress-import-fix';
 const ASSETS = [
   './',
   './index.html',

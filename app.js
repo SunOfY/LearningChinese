@@ -257,11 +257,11 @@ function loadLocalState(){
   loadEnglishCacheForLevel(state.activeLevel);
 }
 
-async function applyLevel(levelId,{notify=true,close=true}={}){
+async function applyLevel(levelId,{notify=true,close=true,skipSnapshot=false}={}){
   const id=String(levelId||'').toUpperCase();
   const pack=await loadLevelData(id,{force:false});
   if(!pack) return false;
-  saveCurrentLevelSnapshot();
+  if(!skipSnapshot) saveCurrentLevelSnapshot();
   state.activeLevel=id; state.allWords=pack.words; state.enrich=pack.enrich||{};
   const saved=normalizeLevelState(state.levelStates[id]||emptyLevelState());
   state.levelStates[id]=saved; state.progress=saved.progress; state.favorites=new Set(saved.favorites); state.day=saved.lastDay; state.index=0;
@@ -1299,11 +1299,11 @@ async function importProgress(e){
       if(!state.levelStates.A1) state.levelStates.A1=emptyLevelState();
       state.rememberLevel=Boolean(data.settings?.rememberLevel); const wanted=levelConfig(data.settings?.activeLevel)?data.settings.activeLevel:'A1';
       if(I18N[data.language]){state.lang=data.language;localStorage.setItem(LANGUAGE_KEY,state.lang);}
-      await applyLevel(wanted,{notify:false,close:false}); persistMultiState(); document.dispatchEvent(new CustomEvent('tocfl:state-changed'));
+      await applyLevel(wanted,{notify:false,close:false,skipSnapshot:true}); persistMultiState(); document.dispatchEvent(new CustomEvent('tocfl:state-changed'));
     }else if(data.progress && typeof data.progress==='object'){
       state.levelStates.A1=normalizeLevelState({progress:data.progress,favorites:Array.isArray(data.favorites)?data.favorites:[],lastDay:data.lastDay||1});
       if(I18N[data.language]){state.lang=data.language;localStorage.setItem(LANGUAGE_KEY,state.lang);}
-      await applyLevel('A1',{notify:false,close:false}); persistMultiState(); document.dispatchEvent(new CustomEvent('tocfl:state-changed'));
+      await applyLevel('A1',{notify:false,close:false,skipSnapshot:true}); persistMultiState(); document.dispatchEvent(new CustomEvent('tocfl:state-changed'));
     }else throw new Error(t('invalidFile'));
     applyLanguage(); $('backupStatus').textContent=t('importDone');
   }catch(err){$('backupStatus').textContent=`Error: ${err.message}`;} e.target.value='';
@@ -1336,8 +1336,8 @@ async function applyCloudState(data={}){
   }
   if(I18N[data.language]){state.lang=data.language;localStorage.setItem(LANGUAGE_KEY,state.lang);}
   let desired=state.activeLevel||'A1';
-  let ok=await applyLevel(desired,{notify:false,close:false});
-  if(!ok){desired='A1';state.activeLevel='A1';await applyLevel('A1',{notify:false,close:false});state.rememberLevel=false;}
+  let ok=await applyLevel(desired,{notify:false,close:false,skipSnapshot:true});
+  if(!ok){desired='A1';state.activeLevel='A1';await applyLevel('A1',{notify:false,close:false,skipSnapshot:true});state.rememberLevel=false;}
   persistMultiState(); applyLanguage(); document.dispatchEvent(new CustomEvent('tocfl:language-changed'));
   renderCurrentWord(); renderVocabList(); makeQuiz(); updateProgressUI();
 }

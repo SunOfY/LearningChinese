@@ -1,4 +1,4 @@
-const CACHE = 'tocfl-v4-7-1-branding';
+const CACHE = 'tocfl-v4-8-1-auto-strokes';
 const ASSETS = [
   './',
   './index.html',

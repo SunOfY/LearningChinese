@@ -28,7 +28,7 @@ const I18N = {
     pronunciationPractice:'🎙 Luyện phát âm', startRecording:'Bắt đầu ghi âm', stop:'Dừng', playback:'Phát lại', checkPronunciation:'Kiểm tra phát âm',
     target:'Mẫu:', recognized:'AI nhận ra:', assessmentNote:'Groq Whisper AI nhận dạng giọng nói tiếng Trung. Điểm là độ khớp giữa chữ AI nghe được và từ mẫu; không phải điểm thanh điệu/âm vị chuyên sâu.', accuracyLabel:'Độ chính xác', fluencyLabel:'Độ trôi chảy', completenessLabel:'Độ đầy đủ',
     examples:'💬 Câu ví dụ', examplesHint:'Bấm loa để nghe cả câu bằng giọng zh-TW.', rememberLevel:'Bạn nhớ từ này mức nào?', notRemembered:'Chưa nhớ', learning:'Tạm nhớ', remembered:'Đã nhớ', previous:'Trước', next:'Tiếp theo',
-    writingPractice:'✍️ Luyện viết', writingDevices:'Chuột · ngón tay · Apple Pencil', clear:'Xóa', showGuide:'Hiện chữ mẫu mờ', writingTip:'<strong>Cách luyện:</strong> tô theo mẫu → tắt mẫu → tự viết → đọc thành tiếng chữ vừa viết.', strokeGuideTitle:'🧭 Hướng dẫn thứ tự nét', strokeGuideHint:'Xem thứ tự nét của từng chữ trước khi viết. Website tự tải dữ liệu thứ tự nét, bạn không cần tự tìm hay upload GIF.', strokeGuideRules:'<strong>Quy tắc nhanh:</strong><ul><li>Từ trên xuống dưới.</li><li>Từ trái sang phải.</li><li>Ngang trước, sổ sau.</li><li>Bên ngoài trước, bên trong sau.</li><li>Khung ngoài đóng sau cùng.</li></ul>', strokeAnimate:'Xem thứ tự nét', strokeReplay:'Phát lại', strokeOrderLabel:n=>`Chữ ${n}`, strokeGuideNote:'Bắt đầu từ nét 1 và đi theo hoạt ảnh đến nét cuối cùng.', strokeAnimationUnavailable:'Không tải được hoạt ảnh thứ tự nét cho chữ này.',
+    writingPractice:'✍️ Luyện viết', writingDevices:'Chuột · ngón tay · Apple Pencil', clear:'Xóa', showGuide:'Hiện chữ mẫu mờ', writingTip:'<strong>Cách luyện:</strong> bấm ▶ trong ô để xem thứ tự nét → tô theo mẫu → tắt mẫu → tự viết → đọc thành tiếng chữ vừa viết.', strokeGuideTitle:'🧭 Hướng dẫn thứ tự nét', strokeGuideHint:'Xem thứ tự nét của từng chữ trước khi viết. Website tự tải dữ liệu thứ tự nét, bạn không cần tự tìm hay upload GIF.', strokeGuideRules:'<strong>Quy tắc nhanh:</strong><ul><li>Từ trên xuống dưới.</li><li>Từ trái sang phải.</li><li>Ngang trước, sổ sau.</li><li>Bên ngoài trước, bên trong sau.</li><li>Khung ngoài đóng sau cùng.</li></ul>', strokeAnimate:'Xem thứ tự nét', strokeReplay:'Phát lại', strokeOrderLabel:n=>`Chữ ${n}`, strokeGuideNote:'Bắt đầu từ nét 1 và đi theo hoạt ảnh đến nét cuối cùng.', strokeAnimationUnavailable:'Không tải được hoạt ảnh thứ tự nét cho chữ này.',
     creatingQuestion:'Đang tạo câu hỏi…', anotherQuestion:'Câu khác', reviewed:'Đã đánh giá', backupTitle:'💾 Sao lưu tiến độ', backupDesc:'Tiến độ được lưu trong trình duyệt của từng thiết bị. Bạn có thể xuất file để chuyển sang thiết bị khác.', exportProgress:'Xuất tiến độ', importProgress:'Nhập tiến độ', resetProgress:'Xóa tiến độ',
     footerNote:'Dữ liệu từ vựng của từng trình độ được tải từ thư mục data. English có thể được bổ sung từ CC-CEDICT khi có mạng; câu ví dụ bổ sung phục vụ học tập và không phải câu mẫu chính thức của TOCFL.',
     newWords:n=>`${n} từ mới`, allDays:'Tất cả ngày', dayOption:n=>`Ngày ${n}`, searchPlaceholder:'Tìm chữ, pinyin hoặc nghĩa…',
@@ -46,7 +46,7 @@ const I18N = {
     pronunciationPractice:'🎙 Pronunciation practice', startRecording:'Start recording', stop:'Stop', playback:'Playback', checkPronunciation:'Check pronunciation',
     target:'Target:', recognized:'AI recognized:', assessmentNote:'Groq Whisper AI transcribes your Chinese speech. The score is text-match similarity, not a professional tone/phoneme pronunciation score.', accuracyLabel:'Accuracy', fluencyLabel:'Fluency', completenessLabel:'Completeness',
     examples:'💬 Example sentences', examplesHint:'Tap the speaker to hear the full sentence in zh-TW.', rememberLevel:'How well do you remember this word?', notRemembered:'Not yet', learning:'Learning', remembered:'Remembered', previous:'Previous', next:'Next',
-    writingPractice:'✍️ Writing practice', writingDevices:'Mouse · finger · Apple Pencil', clear:'Clear', showGuide:'Show faint guide', writingTip:'<strong>Practice:</strong> trace the guide → hide it → write from memory → say the character aloud.', strokeGuideTitle:'🧭 Stroke-order guide', strokeGuideHint:'Preview the stroke order before writing. The website loads stroke-order data automatically; you do not need to find or upload GIFs.', strokeGuideRules:'<strong>Quick rules:</strong><ul><li>Top to bottom.</li><li>Left to right.</li><li>Horizontal before vertical.</li><li>Outside before inside.</li><li>Close outer frames last.</li></ul>', strokeAnimate:'Show stroke order', strokeReplay:'Replay', strokeOrderLabel:n=>`Character ${n}`, strokeGuideNote:'Start with stroke 1 and follow the animation until the last stroke.', strokeAnimationUnavailable:'Stroke-order animation could not be loaded for this character.',
+    writingPractice:'✍️ Writing practice', writingDevices:'Mouse · finger · Apple Pencil', clear:'Clear', showGuide:'Show faint guide', writingTip:'<strong>Practice:</strong> tap ▶ inside the box to preview stroke order → trace the guide → hide it → write from memory → say the character aloud.', strokeGuideTitle:'🧭 Stroke-order guide', strokeGuideHint:'Preview the stroke order before writing. The website loads stroke-order data automatically; you do not need to find or upload GIFs.', strokeGuideRules:'<strong>Quick rules:</strong><ul><li>Top to bottom.</li><li>Left to right.</li><li>Horizontal before vertical.</li><li>Outside before inside.</li><li>Close outer frames last.</li></ul>', strokeAnimate:'Show stroke order', strokeReplay:'Replay', strokeOrderLabel:n=>`Character ${n}`, strokeGuideNote:'Start with stroke 1 and follow the animation until the last stroke.', strokeAnimationUnavailable:'Stroke-order animation could not be loaded for this character.',
     creatingQuestion:'Creating a question…', anotherQuestion:'Another question', reviewed:'Reviewed', backupTitle:'💾 Progress backup', backupDesc:'Progress is stored in the browser on each device. Export a file to move it to another device.', exportProgress:'Export progress', importProgress:'Import progress', resetProgress:'Reset progress',
     footerNote:'Vocabulary for each level is loaded from the data folder. English glosses may be supplemented from CC-CEDICT when online; example sentences are study supplements and are not official TOCFL examples.',
     newWords:n=>`${n} new words`, allDays:'All days', dayOption:n=>`Day ${n}`, searchPlaceholder:'Search Hanzi, Pinyin or meaning…',
@@ -64,7 +64,7 @@ const I18N = {
     pronunciationPractice:'🎙 發音練習', startRecording:'開始錄音', stop:'停止', playback:'播放錄音', checkPronunciation:'檢查發音',
     target:'目標：', recognized:'AI 辨識：', assessmentNote:'Groq Whisper AI 會轉寫你的中文語音。分數代表 AI 文字辨識與目標詞的相似度，不是專業聲調／音位評分。', accuracyLabel:'準確度', fluencyLabel:'流暢度', completenessLabel:'完整度',
     examples:'💬 例句', examplesHint:'按喇叭可用 zh-TW 聽完整句子。', rememberLevel:'你記得這個詞嗎？', notRemembered:'還不會', learning:'不太熟', remembered:'記住了', previous:'上一個', next:'下一個',
-    writingPractice:'✍️ 寫字練習', writingDevices:'滑鼠 · 手指 · Apple Pencil', clear:'清除', showGuide:'顯示淡色範字', writingTip:'<strong>練習方式：</strong>描字 → 關閉範字 → 默寫 → 大聲讀出剛寫的字。', strokeGuideTitle:'🧭 筆順提示', strokeGuideHint:'寫字前先看每個字的筆順。網站會自動載入筆順資料，不需要另外找或上傳 GIF。', strokeGuideRules:'<strong>快速規則：</strong><ul><li>由上到下。</li><li>由左到右。</li><li>先橫後豎。</li><li>先外後內。</li><li>外框最後封口。</li></ul>', strokeAnimate:'看筆順', strokeReplay:'再播一次', strokeOrderLabel:n=>`第 ${n} 個字`, strokeGuideNote:'從第 1 畫開始，依照動畫一路看到最後一畫。', strokeAnimationUnavailable:'目前無法載入這個字的筆順動畫。',
+    writingPractice:'✍️ 寫字練習', writingDevices:'滑鼠 · 手指 · Apple Pencil', clear:'清除', showGuide:'顯示淡色範字', writingTip:'<strong>練習方式：</strong>先按方格內的 ▶ 看筆順 → 描字 → 關閉範字 → 默寫 → 大聲讀出剛寫的字。', strokeGuideTitle:'🧭 筆順提示', strokeGuideHint:'寫字前先看每個字的筆順。網站會自動載入筆順資料，不需要另外找或上傳 GIF。', strokeGuideRules:'<strong>快速規則：</strong><ul><li>由上到下。</li><li>由左到右。</li><li>先橫後豎。</li><li>先外後內。</li><li>外框最後封口。</li></ul>', strokeAnimate:'看筆順', strokeReplay:'再播一次', strokeOrderLabel:n=>`第 ${n} 個字`, strokeGuideNote:'從第 1 畫開始，依照動畫一路看到最後一畫。', strokeAnimationUnavailable:'目前無法載入這個字的筆順動畫。',
     creatingQuestion:'正在出題…', anotherQuestion:'下一題', reviewed:'已評估', backupTitle:'💾 備份學習進度', backupDesc:'進度儲存在每台裝置的瀏覽器中。可匯出檔案，再匯入另一台裝置。', exportProgress:'匯出進度', importProgress:'匯入進度', resetProgress:'清除進度',
     footerNote:'各級詞彙從 data 資料夾載入。連網時可由 CC-CEDICT 補充英文釋義；例句為學習補充，並非 TOCFL 官方例句。',
     newWords:n=>`${n} 個新詞`, allDays:'全部', dayOption:n=>`第 ${n} 天`, searchPlaceholder:'搜尋漢字、拼音或意思…',
@@ -368,7 +368,7 @@ function renderCurrentWord(){
   $('meaningVi').textContent=w.meaning_vi||'—'; $('meaningEn').textContent=englishFor(w); $('meaningEn').classList.toggle('loading-shimmer',isEnglishPending(w));
   $('levelPos').textContent=`${w.level||'A1'}${w.pos?' · '+w.pos:''}`; $('wordIndex').textContent=`${state.index+1} / ${state.dayWords.length}`;
   $('favoriteBtn').textContent=state.favorites.has(w.id)?'★':'☆'; $('togglePinyinBtn').textContent=state.pinyinVisible?t('hidePinyin'):t('showPinyin');
-  renderSourceNote(w); renderExamples(w); renderMemoryButtons(w); renderWritingBoxes(w); renderStrokeGuides(w); resetRecordingForNewWord();
+  renderSourceNote(w); renderExamples(w); renderMemoryButtons(w); renderWritingBoxes(w); resetRecordingForNewWord();
 }
 function renderSourceNote(w){
   const box=$('dictionaryNote'); box.textContent='';
@@ -881,8 +881,8 @@ function similarity(a,b){if(!a&&!b)return 1;if(!a||!b)return 0;const d=levenshte
 function levenshtein(a,b){const prev=Array.from({length:b.length+1},(_,i)=>i),cur=new Array(b.length+1);for(let i=1;i<=a.length;i++){cur[0]=i;for(let j=1;j<=b.length;j++)cur[j]=Math.min(cur[j-1]+1,prev[j]+1,prev[j-1]+(a[i-1]===b[j-1]?0:1));for(let j=0;j<=b.length;j++)prev[j]=cur[j];}return prev[b.length];}
 
 let writingCanvases=[];
-let strokeGuideInstances=[];
 let writingGuideInstances=[];
+let writingLabelInstances=[];
 let writingInteractionCount=0;
 function clearBrowserSelection(){
   try{ window.getSelection?.()?.removeAllRanges?.(); }catch{}
@@ -897,7 +897,12 @@ function setWritingInteractionLock(active){
 function bindCanvas(){
   $('clearCanvasBtn').addEventListener('click',clearWritingCanvas);
   $('showGuideCheckbox').addEventListener('change',e=>{
-    document.querySelectorAll('#writingGrid .trace-char').forEach(el=>{el.style.display=e.target.checked?'block':'none';});
+    const show=e.target.checked;
+    writingGuideInstances.forEach(inst=>{
+      if(inst.previewing)return;
+      inst.host.style.display=show?'block':'none';
+      if(inst.fallback) inst.fallback.style.display=show && inst.fallback.dataset.failed==='1' ? 'flex' : 'none';
+    });
   });
   document.addEventListener('selectionchange',()=>{ if(document.body.classList.contains('writing-active')) clearBrowserSelection(); });
   const grid=$('writingGrid');
@@ -909,7 +914,7 @@ function bindCanvas(){
   window.addEventListener('blur',()=>setWritingInteractionLock(false));
   window.addEventListener('resize',()=>{
     writingCanvases.forEach(resizeWritingCanvas);
-    strokeGuideInstances.forEach(x=>x?.writer?.resize?.());
+    writingGuideInstances.forEach(x=>x?.writer?.resize?.());
   });
 }
 function writingCharacters(word){
@@ -917,31 +922,75 @@ function writingCharacters(word){
   const chars=Array.from(raw).filter(ch=>/[\u3400-\u9FFF\uF900-\uFAFF]/.test(ch));
   return chars.length?chars:Array.from(raw);
 }
+function renderWritingWordLabel(chars){
+  const label=$('writingWordLabel'); if(!label)return;
+  label.innerHTML=''; writingLabelInstances=[];
+  for(const ch of chars){
+    const cell=document.createElement('span'); cell.className='writing-word-vector';
+    const fallback=document.createElement('span'); fallback.className='writing-word-vector-fallback'; fallback.textContent=ch; fallback.hidden=true;
+    label.append(cell,fallback);
+    try{
+      const writer=makeStrokeGuideMiniWriter(cell,ch,null,()=>{ cell.hidden=true; fallback.hidden=false; });
+      if(!writer) throw new Error('HanziWriter unavailable');
+      writingLabelInstances.push({char:ch,writer,host:cell});
+    }catch(err){
+      cell.hidden=true; fallback.hidden=false;
+    }
+  }
+}
+
 function renderWritingBoxes(word){
   const grid=$('writingGrid'); if(!grid)return;
   grid.innerHTML=''; writingCanvases=[]; writingGuideInstances=[];
   const chars=writingCharacters(word);
-  const label=$('writingWordLabel'); if(label)label.textContent=chars.join('');
+  renderWritingWordLabel(chars);
   chars.forEach((ch,idx)=>{
     const square=document.createElement('div'); square.className='writing-square';
     const lines=document.createElement('div'); lines.className='grid-lines'; lines.setAttribute('aria-hidden','true');
     const guide=document.createElement('div'); guide.className='trace-char trace-vector';
     guide.style.display=$('showGuideCheckbox').checked?'block':'none';
-    const fallback=document.createElement('div'); fallback.className='trace-font-fallback'; fallback.textContent=ch; fallback.hidden=true;
-    guide.append(fallback);
+    const fallback=document.createElement('div'); fallback.className='trace-font-fallback'; fallback.textContent=ch; fallback.hidden=true; fallback.dataset.failed='0';
     const canvas=document.createElement('canvas'); canvas.className='writing-canvas'; canvas.setAttribute('aria-label',`Luyện viết chữ ${ch}, ô ${idx+1}`);
-    square.append(lines,guide,canvas); grid.append(square);
+
+    const previewBtn=document.createElement('button');
+    previewBtn.type='button'; previewBtn.className='writing-preview-btn'; previewBtn.textContent='▶';
+    previewBtn.title=t('strokeAnimate'); previewBtn.setAttribute('aria-label',`${t('strokeAnimate')}: ${ch}`); previewBtn.disabled=true;
+
+    const strokeBadge=document.createElement('span'); strokeBadge.className='writing-stroke-badge'; strokeBadge.textContent='…';
+    square.append(lines,guide,fallback,canvas,previewBtn,strokeBadge); grid.append(square);
+
+    const ctx=canvas.getContext('2d');
+    const item={canvas,ctx,dpr:1,drawing:false,lastPoint:[0,0],baseLineWidth:6,pointerId:null,previewing:false}; writingCanvases.push(item);
+    resizeWritingCanvas(item);
+
+    let guideInst={char:ch,writer:null,host:guide,fallback,square,canvasItem:item,previewBtn,strokeBadge,previewing:false};
+    writingGuideInstances.push(guideInst);
     try{
-      const writer=makeWritingGuideWriter(guide,ch,()=>{},()=>{fallback.hidden=false;});
+      const writer=makeWritingGuideWriter(guide,ch,(data)=>{
+        guideInst.writer=writer;
+        fallback.hidden=true; fallback.dataset.failed='0';
+        const n=Array.isArray(data?.strokes)?data.strokes.length:0;
+        strokeBadge.textContent=n ? (state.lang==='zh-Hant'?`${n} 畫`:state.lang==='en'?`${n} strokes`:`${n} nét`) : '';
+        previewBtn.disabled=false;
+      },()=>{
+        fallback.hidden=false; fallback.dataset.failed='1';
+        fallback.style.display=$('showGuideCheckbox').checked?'flex':'none';
+        strokeBadge.textContent=''; previewBtn.disabled=true;
+      });
       if(!writer) throw new Error('HanziWriter unavailable');
-      writingGuideInstances.push({char:ch,writer,host:guide});
+      guideInst.writer=writer;
     }catch(err){
       console.warn('Vector writing guide unavailable:',ch,err);
-      fallback.hidden=false;
+      fallback.hidden=false; fallback.dataset.failed='1';
+      fallback.style.display=$('showGuideCheckbox').checked?'flex':'none';
+      strokeBadge.textContent=''; previewBtn.disabled=true;
     }
-    const ctx=canvas.getContext('2d');
-    const item={canvas,ctx,dpr:1,drawing:false,lastPoint:[0,0],baseLineWidth:6,pointerId:null}; writingCanvases.push(item);
-    resizeWritingCanvas(item);
+
+    previewBtn.addEventListener('pointerdown',e=>{ if(e.cancelable)e.preventDefault(); e.stopPropagation(); },{passive:false});
+    previewBtn.addEventListener('click',e=>{
+      e.preventDefault(); e.stopPropagation();
+      previewWritingStrokeOrder(guideInst);
+    });
 
     // Safari/iPad: do not let a Pencil/finger stroke turn into text selection,
     // long-press callout, drag, or page scrolling while the pointer is inside the canvas.
@@ -956,13 +1005,13 @@ function renderWritingBoxes(word){
     });
 
     canvas.addEventListener('pointerdown',e=>{
+      if(item.previewing)return;
       if(e.pointerType==='mouse' && e.button!==0)return;
       stopBrowserGesture(e);
       setWritingInteractionLock(true);
       item.drawing=true; item.pointerId=e.pointerId;
       try{canvas.setPointerCapture(e.pointerId);}catch{}
       item.lastPoint=writingCanvasPoint(item,e);
-      // Draw a tiny dot so a tap / very short stroke is visible.
       item.ctx.save();
       item.ctx.lineWidth=writingLineWidth(item,e);
       item.ctx.beginPath();
@@ -972,7 +1021,7 @@ function renderWritingBoxes(word){
     },{passive:false});
 
     canvas.addEventListener('pointermove',e=>{
-      if(!item.drawing || (item.pointerId!==null && e.pointerId!==item.pointerId))return;
+      if(item.previewing || !item.drawing || (item.pointerId!==null && e.pointerId!==item.pointerId))return;
       stopBrowserGesture(e);
       const samples=typeof e.getCoalescedEvents==='function' ? e.getCoalescedEvents() : [e];
       for(const pe of samples){
@@ -995,6 +1044,40 @@ function renderWritingBoxes(word){
     ['pointerup','pointercancel','pointerleave'].forEach(name=>canvas.addEventListener(name,finishStroke,{passive:false}));
     canvas.addEventListener('lostpointercapture',()=>{item.drawing=false;item.pointerId=null;setWritingInteractionLock(false);});
   });
+}
+async function previewWritingStrokeOrder(inst){
+  if(!inst?.writer || inst.previewing)return;
+  inst.previewing=true;
+  if(inst.canvasItem) inst.canvasItem.previewing=true;
+  inst.square?.classList.add('is-previewing');
+  inst.previewBtn.disabled=true;
+  inst.previewBtn.textContent='⏳';
+  inst.host.style.display='block';
+  inst.host.classList.add('is-animating');
+  try{
+    await inst.writer.hideCharacter({duration:0});
+    await new Promise(resolve=>{
+      inst.writer.animateCharacter({
+        onComplete:resolve
+      });
+    });
+  }catch(err){
+    console.warn('Writing stroke preview:',err);
+  }finally{
+    inst.host.classList.remove('is-animating');
+    if($('showGuideCheckbox')?.checked){
+      try{ await inst.writer.showCharacter({duration:120}); }catch{}
+      inst.host.style.display='block';
+    }else{
+      try{ await inst.writer.hideCharacter({duration:0}); }catch{}
+      inst.host.style.display='none';
+    }
+    inst.previewBtn.textContent='▶';
+    inst.previewBtn.disabled=false;
+    inst.square?.classList.remove('is-previewing');
+    if(inst.canvasItem) inst.canvasItem.previewing=false;
+    inst.previewing=false;
+  }
 }
 function resizeWritingCanvas(item){
   if(!item?.canvas||!item.ctx)return;
@@ -1019,12 +1102,6 @@ function clearWritingCanvas(){
   });
 }
 
-function resetStrokeGuideInstances(){
-  strokeGuideInstances.forEach(item=>{
-    try{ item?.writer?.cancelQuiz?.(); }catch{}
-  });
-  strokeGuideInstances=[];
-}
 function strokeDataUrl(ch){
   return `https://cdn.jsdelivr.net/npm/hanzi-writer-data@2.0.1/${encodeURIComponent(ch)}.json`;
 }
@@ -1036,10 +1113,12 @@ function loadStrokeData(char,onComplete,onError,onData){
 }
 function makeWritingGuideWriter(host,ch,onData,onError){
   if(typeof window.HanziWriter==='undefined') return null;
+  const rect=host.getBoundingClientRect();
+  const size=Math.max(160,Math.round(Math.min(rect.width||220,rect.height||rect.width||220)));
   return window.HanziWriter.create(host,ch,{
-    width:220,
-    height:220,
-    padding:12,
+    width:size,
+    height:size,
+    padding:10,
     showOutline:false,
     showCharacter:true,
     strokeColor:'#0f766e',
@@ -1086,72 +1165,6 @@ function playStrokeGuide(item){
     try{ item.writer.animateCharacter(); }catch(err){ console.warn('Stroke animation:',err); }
   }
 }
-function renderStrokeGuides(word){
-  const wrap=$('strokeGuideCards'); if(!wrap) return;
-  wrap.innerHTML='';
-  resetStrokeGuideInstances();
-  const chars=writingCharacters(word);
-  if(!chars.length){
-    wrap.innerHTML=`<div class="muted small">${escapeHtml(t('strokeAnimationUnavailable'))}</div>`;
-    return;
-  }
-  chars.forEach((ch,idx)=>{
-    const card=document.createElement('article'); card.className='stroke-guide-card';
-    const head=document.createElement('div'); head.className='stroke-guide-head';
-    const headCharWrap=document.createElement('div'); headCharWrap.className='stroke-guide-char-wrap';
-    const headChar=document.createElement('div'); headChar.className='stroke-guide-char';
-    const headCharFallback=document.createElement('strong'); headCharFallback.className='stroke-guide-char-fallback'; headCharFallback.textContent=ch; headCharFallback.hidden=true;
-    headCharWrap.append(headChar,headCharFallback);
-    const order=document.createElement('span'); order.textContent=t('strokeOrderLabel',idx+1);
-    head.append(headCharWrap,order);
-
-    const stage=document.createElement('div'); stage.className='stroke-guide-stage';
-    const writerHost=document.createElement('div'); writerHost.className='stroke-writer';
-    const fallback=document.createElement('div'); fallback.className='stroke-guide-note'; fallback.hidden=true; fallback.style.padding='12px';
-    fallback.textContent=t('strokeAnimationUnavailable');
-    stage.append(writerHost,fallback);
-
-    const actions=document.createElement('div'); actions.className='stroke-guide-actions';
-    const playBtn=document.createElement('button'); playBtn.type='button'; playBtn.textContent=`▶ ${t('strokeAnimate')}`;
-    const replayBtn=document.createElement('button'); replayBtn.type='button'; replayBtn.textContent=`↻ ${t('strokeReplay')}`;
-    playBtn.disabled=true; replayBtn.disabled=true;
-    actions.append(playBtn,replayBtn);
-
-    const note=document.createElement('div'); note.className='stroke-guide-note'; note.textContent=t('strokeGuideNote');
-    const count=document.createElement('div'); count.className='stroke-count small muted'; count.textContent='…';
-    card.append(head,stage,actions,count,note); wrap.append(card);
-
-    let item=null;
-    try{
-      const miniWriter=makeStrokeGuideMiniWriter(headChar,ch,null,()=>{
-        headChar.hidden=true;
-        headCharFallback.hidden=false;
-      });
-      if(!miniWriter) throw new Error('HanziWriter unavailable');
-      const writer=makeStrokeGuideWriter(writerHost,ch,(data)=>{
-        const n=Array.isArray(data?.strokes)?data.strokes.length:0;
-        if(n) count.textContent=state.lang==='zh-Hant'?`共 ${n} 畫`:state.lang==='en'?`${n} strokes`:`${n} nét`;
-        playBtn.disabled=false; replayBtn.disabled=false;
-        setTimeout(()=>playStrokeGuide(item),120);
-      },()=>{
-        writerHost.hidden=true; fallback.hidden=false; count.textContent='';
-        playBtn.disabled=true; replayBtn.disabled=true;
-      });
-      if(!writer) throw new Error('HanziWriter unavailable');
-      item={char:ch,writer,miniWriter,host:writerHost};
-      strokeGuideInstances.push(item);
-      playBtn.addEventListener('click',()=>playStrokeGuide(item));
-      replayBtn.addEventListener('click',()=>playStrokeGuide(item));
-    }catch(err){
-      console.warn('Stroke guide unavailable:', ch, err);
-      headChar.hidden=true;
-      headCharFallback.hidden=false;
-      writerHost.hidden=true; fallback.hidden=false; count.textContent='';
-      playBtn.disabled=true; replayBtn.disabled=true;
-    }
-  });
-}
-
 function updateBranding(){
   const id=state.activeLevel||'A1';
   const h1=document.getElementById('appTitle'); if(h1) h1.textContent='LEARNING TOCFL';

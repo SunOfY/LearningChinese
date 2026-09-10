@@ -256,3 +256,13 @@ body.writing-active, body.writing-active *{ -webkit-user-select:none !important;
   .writing-preview-btn{width:42px;height:42px;min-height:42px;right:9px;bottom:9px;}
   .writing-stroke-badge{left:9px;top:9px;}
 }
+
+
+/* v4.8.6 iPad preview-button tap fix */
+.writing-preview-btn{
+  touch-action:manipulation !important;
+  -webkit-tap-highlight-color:transparent;
+  pointer-events:auto !important;
+  cursor:pointer;
+}
+.writing-preview-btn:not(:disabled):active{transform:scale(.94);}

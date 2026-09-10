@@ -907,7 +907,10 @@ function bindCanvas(){
   document.addEventListener('selectionchange',()=>{ if(document.body.classList.contains('writing-active')) clearBrowserSelection(); });
   const grid=$('writingGrid');
   ['touchstart','touchmove','touchend','touchcancel'].forEach(name=>{
-    grid.addEventListener(name,e=>{ if(document.body.classList.contains('writing-active') && e.cancelable) e.preventDefault(); },{passive:false});
+    grid.addEventListener(name,e=>{
+      if(e.target?.closest?.('.writing-preview-btn'))return;
+      if(document.body.classList.contains('writing-active') && e.cancelable)e.preventDefault();
+    },{passive:false});
   });
   window.addEventListener('pointerup',()=>setWritingInteractionLock(false));
   window.addEventListener('pointercancel',()=>setWritingInteractionLock(false));
@@ -986,11 +989,22 @@ function renderWritingBoxes(word){
       strokeBadge.textContent=''; previewBtn.disabled=true;
     }
 
-    previewBtn.addEventListener('pointerdown',e=>{ if(e.cancelable)e.preventDefault(); e.stopPropagation(); },{passive:false});
-    previewBtn.addEventListener('click',e=>{
-      e.preventDefault(); e.stopPropagation();
+    // Keep the preview button tappable on iPad/iPhone. Safari may suppress the
+    // synthetic click when an ancestor prevents touchstart/touchend, so trigger
+    // from pointerup/touchend as well and de-duplicate the event burst.
+    let lastPreviewTrigger=0;
+    const triggerPreview=e=>{
+      if(e?.cancelable)e.preventDefault();
+      e?.stopPropagation?.();
+      const now=(window.performance?.now?.() ?? Date.now());
+      if(now-lastPreviewTrigger<450)return;
+      lastPreviewTrigger=now;
       previewWritingStrokeOrder(guideInst);
-    });
+    };
+    previewBtn.addEventListener('pointerdown',e=>{ e.stopPropagation(); clearBrowserSelection(); },{passive:true});
+    previewBtn.addEventListener('pointerup',triggerPreview,{passive:false});
+    previewBtn.addEventListener('touchend',triggerPreview,{passive:false});
+    previewBtn.addEventListener('click',triggerPreview,{passive:false});
 
     // Safari/iPad: do not let a Pencil/finger stroke turn into text selection,
     // long-press callout, drag, or page scrolling while the pointer is inside the canvas.
@@ -1000,7 +1014,12 @@ function renderWritingBoxes(word){
       canvas.addEventListener(name,e=>e.preventDefault());
     });
     ['touchstart','touchmove','touchend','touchcancel'].forEach(name=>{
-      square.addEventListener(name,stopBrowserGesture,{passive:false});
+      square.addEventListener(name,e=>{
+        // Do not cancel the native button gesture; cancelling the ancestor
+        // touch event can make the ▶ preview button inert in Safari/iPadOS.
+        if(e.target?.closest?.('.writing-preview-btn'))return;
+        stopBrowserGesture(e);
+      },{passive:false});
       canvas.addEventListener(name,stopBrowserGesture,{passive:false});
     });
 

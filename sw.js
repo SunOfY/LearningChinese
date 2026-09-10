@@ -1,4 +1,4 @@
-const CACHE = 'tocfl-v4-8-5-integrated-writing-preview';
+const CACHE = 'tocfl-v4-8-6-ipad-preview-tap';
 const ASSETS = [
   './',
   './index.html',

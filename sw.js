@@ -1,15 +1,59 @@
-const CACHE = 'tocfl-v4-8-7-progress-import-fix';
+const CACHE = 'tocfl-v4-11-homework1-pinyin-tone';
 const ASSETS = [
   './',
   './index.html',
   './styles.css',
   './app.js',
+  './homework.js',
   './auth.js',
   './data/a1.json',
   './data/enrichment_day1.json',
   './manifest.webmanifest',
   './icons/icon-192.png',
-  './icons/icon-512.png'
+  './icons/icon-512.png',
+  './homework/homework-1-page-1.png',
+  './homework/homework-1-page-2.png',
+  './homework/homework-1-page-3.png',
+  './homework/pinyin-items/p2-r1-i1.png',
+  './homework/pinyin-items/p2-r1-i2.png',
+  './homework/pinyin-items/p2-r1-i3.png',
+  './homework/pinyin-items/p2-r1-i4.png',
+  './homework/pinyin-items/p2-r1-i5.png',
+  './homework/pinyin-items/p2-r1-i6.png',
+  './homework/pinyin-items/p2-r1-i7.png',
+  './homework/pinyin-items/p2-r2-i1.png',
+  './homework/pinyin-items/p2-r2-i2.png',
+  './homework/pinyin-items/p2-r2-i3.png',
+  './homework/pinyin-items/p2-r2-i4.png',
+  './homework/pinyin-items/p2-r2-i5.png',
+  './homework/pinyin-items/p2-r2-i6.png',
+  './homework/pinyin-items/p2-r3-i1.png',
+  './homework/pinyin-items/p2-r3-i2.png',
+  './homework/pinyin-items/p2-r3-i3.png',
+  './homework/pinyin-items/p2-r3-i4.png',
+  './homework/pinyin-items/p2-r3-i5.png',
+  './homework/pinyin-items/p2-r3-i6.png',
+  './homework/pinyin-items/p2-r3-i7.png',
+  './homework/pinyin-items/p3-r1-i1.png',
+  './homework/pinyin-items/p3-r1-i2.png',
+  './homework/pinyin-items/p3-r1-i3.png',
+  './homework/pinyin-items/p3-r1-i4.png',
+  './homework/pinyin-items/p3-r1-i5.png',
+  './homework/pinyin-items/p3-r1-i6.png',
+  './homework/pinyin-items/p3-r1-i7.png',
+  './homework/pinyin-items/p3-r2-i1.png',
+  './homework/pinyin-items/p3-r2-i2.png',
+  './homework/pinyin-items/p3-r2-i3.png',
+  './homework/pinyin-items/p3-r2-i4.png',
+  './homework/pinyin-items/p3-r2-i5.png',
+  './homework/pinyin-items/p3-r2-i6.png',
+  './homework/pinyin-items/p3-r3-i1.png',
+  './homework/pinyin-items/p3-r3-i2.png',
+  './homework/pinyin-items/p3-r3-i3.png',
+  './homework/pinyin-items/p3-r3-i4.png',
+  './homework/pinyin-items/p3-r3-i5.png',
+  './homework/pinyin-items/p3-r3-i6.png',
+  './homework/pinyin-items/p3-r3-i7.png'
 ];
 
 self.addEventListener('install', event => {
@@ -49,6 +93,7 @@ self.addEventListener('fetch', event => {
     url.pathname.endsWith('/index.html') ||
     url.pathname.endsWith('/styles.css') ||
     url.pathname.endsWith('/app.js') ||
+    url.pathname.endsWith('/homework.js') ||
     url.pathname.endsWith('/auth.js') ||
     url.pathname.includes('/data/') && url.pathname.endsWith('.json') ||
     url.pathname.endsWith('/sw.js');

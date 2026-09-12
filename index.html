@@ -42,6 +42,7 @@
       <button class="tab is-active" data-view="today" type="button"><span>🏠</span> <span data-i18n="navToday">Hôm nay</span></button>
       <button class="tab" data-view="vocab" type="button"><span>📚</span> <span data-i18n="navVocab">Từ vựng</span></button>
       <button class="tab" data-view="quiz" type="button"><span>🧠</span> <span data-i18n="navQuiz">Quiz</span></button>
+      <button class="tab homework-tab" data-view="homework" type="button"><span>📝</span> <span>HomeWork</span></button>
       <button class="tab" data-view="progress" type="button"><span>📊</span> <span data-i18n="navProgress">Tiến độ</span></button>
     </nav>
 
@@ -181,6 +182,10 @@
         </div>
       </section>
 
+      <section id="view-homework" class="view">
+        <div id="homeworkApp" class="homework-app" aria-live="polite"></div>
+      </section>
+
       <section id="view-progress" class="view">
         <div class="stats-grid">
           <div class="card stat"><span data-i18n="reviewed">Đã đánh giá</span><strong id="statReviewed">0</strong></div>
@@ -310,6 +315,7 @@
 
   <script src="./config.js"></script>
   <script src="./app.js" defer></script>
+  <script src="./homework.js" defer></script>
   <script type="module" src="./auth.js"></script>
 </body>
 </html>

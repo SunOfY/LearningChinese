@@ -1,6 +1,17 @@
-# TOCFL Traditional Chinese · Multi-level v4.7
+# TOCFL Traditional Chinese · Multi-level + HomeWork v4.9
 
 Website học TOCFL Phồn thể chạy trên GitHub Pages, hỗ trợ Laptop/iPad/iPhone, Supabase Auth + cloud sync và Groq Speech BYOK.
+
+
+## HomeWork 1 · Mandarin Pinyin
+
+- Thêm nút **HomeWork** trên thanh điều hướng.
+- Bài tập 1 được dựng từ file `Chinese tone and pronunciation learning.pdf`.
+- Có luyện 4 thanh `mā / má / mǎ / mà`, bài chọn vị trí đặt dấu theo `a > o > e > i > u > ü` và quy tắc `iu/ui`.
+- Có luyện số 0–10 và tạo cách đọc số điện thoại.
+- Nút **AI kiểm tra** dùng lại Groq Speech cá nhân đang có trong website. AI chấm theo chữ nhận dạng được; không phải máy phân tích đường cao độ thanh điệu chuyên sâu.
+- PDF gốc và ảnh 3 trang nằm trong thư mục `homework/` để xem trực tiếp từ trang HomeWork.
+- Các QR/video của bài được gom thành link trong HomeWork.
 
 ## Điểm mới v4.7
 
@@ -42,3 +53,13 @@ Không cần chạy schema mới cho multi-level. Website vẫn dùng `public.us
 ## Lưu ý quan trọng
 
 Giữ `id` của từng từ ổn định sau khi phát hành dữ liệu. Nếu đổi ID, tiến độ đã lưu của người học sẽ không còn khớp với từ đó.
+
+## HomeWork 1 v4.10 - Pinyin fill-in worksheet
+
+The HomeWork tab now includes an interactive reconstruction of the blank **pinyin** rows from pages 2-3 of the attached worksheet:
+
+- original worksheet pictures are cropped into individual answer cells;
+- each QR-separated group has an inline **Nghe bài QR** YouTube player;
+- every picture has a blank Pinyin input saved automatically in `localStorage`;
+- `ni3`-style numbered Pinyin can be converted to tone marks (`nǐ`) with one button;
+- the picture rows are deliberately not auto-graded because the source PDF does not include a written answer key for those picture cells.

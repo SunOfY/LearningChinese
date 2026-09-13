@@ -1,0 +1,5 @@
+# groq-guest must accept visitors who are not signed in.
+# The function performs its own origin / publishable-key checks and server-side quota check.
+[functions.groq-guest]
+verify_jwt = false
+entrypoint = './functions/groq-guest/index.js'

@@ -34,7 +34,7 @@ const I18N = {
     newWords:n=>`${n} từ mới`, allDays:'Tất cả ngày', dayOption:n=>`Ngày ${n}`, searchPlaceholder:'Tìm chữ, pinyin hoặc nghĩa…',
     loadingEnglish:'Đang tải nghĩa English…', englishUnavailable:'Chưa lấy được nghĩa English.', sourceWarning:'Lưu ý dữ liệu nguồn:', likelyForm:'Ví dụ dùng dạng được suy đoán theo pinyin/nghĩa:',
     recordIdle:'Giọng ghi âm chỉ lưu tạm trên thiết bị.', recording:'🔴 Đang ghi âm… hãy đọc từ hiện tại.', recordDone:'Đã ghi xong. Bạn có thể phát lại hoặc kiểm tra phát âm.', micDenied:'Không truy cập được microphone. Hãy cấp quyền microphone cho website.', recorderUnsupported:'Thiết bị/trình duyệt này chưa hỗ trợ ghi âm bằng MediaRecorder.',
-    speechUnsupported:'Thiết bị/trình duyệt này chưa hỗ trợ thu âm để gửi AI.', speechListening:'🎧 Đang thu âm khoảng 3,5 giây… hãy nói từ mẫu một lần ngay bây giờ.', noRecognition:'AI không nhận được chữ. Hãy nói lại rõ hơn.', recognitionDone:'✅ Groq AI đã nhận dạng xong. Kết quả ở bên dưới.', speechNoSpeech:'🎤 Không phát hiện được tiếng nói. Hãy bấm kiểm tra rồi nói ngay.', speechPermissionDenied:'🔒 Chưa có quyền microphone. Hãy cho phép website dùng microphone.', speechGenericError:'⚠️ Không nhận dạng được bằng Groq AI. Hãy thử lại.', groqLoginRequired:'🔐 Hãy đăng nhập trước khi kiểm tra phát âm.', groqNotConnected:'☁️ Tài khoản chưa kết nối Groq API Key cá nhân. Mở Tài khoản → Groq AI Speech cá nhân để nhập Key.', groqTranscriptionError:'Không lấy được kết quả từ Groq AI.',
+    speechUnsupported:'Thiết bị/trình duyệt này chưa hỗ trợ thu âm để gửi AI.', speechListening:'🎧 Đang thu âm khoảng 3,5 giây… hãy nói từ mẫu một lần ngay bây giờ.', noRecognition:'AI không nhận được chữ. Hãy nói lại rõ hơn.', recognitionDone:'✅ Groq AI đã nhận dạng xong. Kết quả ở bên dưới.', aiRecognizing:'🤖 AI đang nhận dạng…', speechNoSpeech:'🎤 Không phát hiện được tiếng nói. Hãy bấm kiểm tra rồi nói ngay.', speechPermissionDenied:'🔒 Chưa có quyền microphone. Hãy cho phép website dùng microphone.', speechGenericError:'⚠️ Không nhận dạng được bằng Groq AI. Hãy thử lại.', groqLoginRequired:'🔐 Hãy đăng nhập trước khi kiểm tra phát âm.', groqNotConnected:'☁️ Tài khoản chưa kết nối Groq API Key cá nhân. Mở Tài khoản → Groq AI Speech cá nhân để nhập Key.', groqTranscriptionError:'Không lấy được kết quả từ Groq AI.', guestTrialExhausted:'🎁 Bạn đã dùng hết 20 lượt AI miễn phí trên trình duyệt này. Đăng nhập để tiếp tục bằng Groq Key cá nhân.', guestTrialRemaining:(n,l)=>`✅ Groq AI đã nhận dạng xong · Guest còn ${n}/${l} lượt.`,
     feedbackExcellent:'AI nghe đúng từ mẫu.', feedbackGood:'AI nghe gần đúng. Hãy nghe mẫu và thử lại.', feedbackRetry:'AI nghe thành từ khác. Hãy nghe chậm rồi đọc lại.',
     quizMeaning:q=>`“${q}” nghĩa là gì?`, quizPinyin:q=>`Pinyin của “${q}” là gì?`, quizEnglish:q=>`English của “${q}” là gì?`, correct:'✅ Chính xác!', answer:a=>`❌ Đáp án: ${a}`, noVocab:'Không tìm thấy từ phù hợp.',
     exportDone:'Đã xuất file tiến độ.', importDone:'Đã nhập tiến độ thành công.', resetConfirm:'Xóa toàn bộ tiến độ và từ đã đánh dấu trên thiết bị này?', resetDone:'Đã xóa tiến độ.', invalidFile:'File không đúng định dạng.',
@@ -52,7 +52,7 @@ const I18N = {
     newWords:n=>`${n} new words`, allDays:'All days', dayOption:n=>`Day ${n}`, searchPlaceholder:'Search Hanzi, Pinyin or meaning…',
     loadingEnglish:'Loading English definition…', englishUnavailable:'English definition unavailable.', sourceWarning:'Source-data note:', likelyForm:'Examples use the likely intended form based on the source pinyin/meaning:',
     recordIdle:'The recording is kept only temporarily on this device.', recording:'🔴 Recording… say the current word.', recordDone:'Recording complete. Play it back or check pronunciation.', micDenied:'Microphone access failed. Allow microphone permission for this site.', recorderUnsupported:'This browser/device does not support MediaRecorder.',
-    speechUnsupported:'This browser/device cannot record audio for AI transcription.', speechListening:'🎧 Recording for about 3.5 seconds… say the target word once now.', noRecognition:'AI did not return recognized text. Please try again clearly.', recognitionDone:'✅ Groq AI transcription complete. See the result below.', speechNoSpeech:'🎤 No speech was detected. Tap check and speak immediately.', speechPermissionDenied:'🔒 Microphone permission is not available. Allow microphone access for this site.', speechGenericError:'⚠️ Groq AI transcription failed. Please try again.', groqLoginRequired:'🔐 Sign in before checking pronunciation.', groqNotConnected:'☁️ This account has not connected its personal Groq API Key. Open Account → Personal Groq AI Speech and enter the key.', groqTranscriptionError:'Could not obtain a result from Groq AI.',
+    speechUnsupported:'This browser/device cannot record audio for AI transcription.', speechListening:'🎧 Recording for about 3.5 seconds… say the target word once now.', noRecognition:'AI did not return recognized text. Please try again clearly.', recognitionDone:'✅ Groq AI transcription complete. See the result below.', aiRecognizing:'🤖 AI is transcribing…', speechNoSpeech:'🎤 No speech was detected. Tap check and speak immediately.', speechPermissionDenied:'🔒 Microphone permission is not available. Allow microphone access for this site.', speechGenericError:'⚠️ Groq AI transcription failed. Please try again.', groqLoginRequired:'🔐 Sign in before checking pronunciation.', groqNotConnected:'☁️ This account has not connected its personal Groq API Key. Open Account → Personal Groq AI Speech and enter the key.', groqTranscriptionError:'Could not obtain a result from Groq AI.', guestTrialExhausted:'🎁 This browser has used all 20 free AI checks. Sign in to continue with a personal Groq key.', guestTrialRemaining:(n,l)=>`✅ Groq AI complete · Guest has ${n}/${l} checks left.`,
     feedbackExcellent:'AI recognized the target word exactly.', feedbackGood:'AI recognized something close. Listen to the model and try again.', feedbackRetry:'AI recognized a different word. Listen slowly and try again.',
     quizMeaning:q=>`What does “${q}” mean in Vietnamese?`, quizPinyin:q=>`What is the Pinyin for “${q}”?`, quizEnglish:q=>`What does “${q}” mean in English?`, correct:'✅ Correct!', answer:a=>`❌ Answer: ${a}`, noVocab:'No matching vocabulary found.',
     exportDone:'Progress file exported.', importDone:'Progress imported successfully.', resetConfirm:'Delete all progress and favorites on this device?', resetDone:'Progress deleted.', invalidFile:'Invalid progress file.',
@@ -70,7 +70,7 @@ const I18N = {
     newWords:n=>`${n} 個新詞`, allDays:'全部', dayOption:n=>`第 ${n} 天`, searchPlaceholder:'搜尋漢字、拼音或意思…',
     loadingEnglish:'正在載入英文釋義…', englishUnavailable:'暫時無法取得英文釋義。', sourceWarning:'原始資料提醒：', likelyForm:'例句依原始拼音／意思採用推測的詞形：',
     recordIdle:'錄音只會暫時保留在此裝置。', recording:'🔴 錄音中……請讀目前的詞。', recordDone:'錄音完成。可播放錄音或檢查發音。', micDenied:'無法使用麥克風，請允許此網站使用麥克風。', recorderUnsupported:'此瀏覽器／裝置不支援 MediaRecorder。',
-    speechUnsupported:'此瀏覽器／裝置無法錄音給 AI 辨識。', speechListening:'🎧 正在錄音約 3.5 秒……請現在讀一次目標詞。', noRecognition:'AI 沒有回傳辨識文字，請清楚地再試一次。', recognitionDone:'✅ Groq AI 已完成辨識，結果如下。', speechNoSpeech:'🎤 沒有偵測到語音，請按檢查後立即說話。', speechPermissionDenied:'🔒 尚未取得麥克風權限，請允許此網站使用麥克風。', speechGenericError:'⚠️ Groq AI 辨識失敗，請再試一次。', groqLoginRequired:'🔐 請先登入再檢查發音。', groqNotConnected:'☁️ 此帳號尚未連接個人的 Groq API Key。請到帳號 → 個人 Groq AI Speech 輸入 Key。', groqTranscriptionError:'無法取得 Groq AI 的辨識結果。',
+    speechUnsupported:'此瀏覽器／裝置無法錄音給 AI 辨識。', speechListening:'🎧 正在錄音約 3.5 秒……請現在讀一次目標詞。', noRecognition:'AI 沒有回傳辨識文字，請清楚地再試一次。', recognitionDone:'✅ Groq AI 已完成辨識，結果如下。', aiRecognizing:'🤖 AI 正在辨識…', speechNoSpeech:'🎤 沒有偵測到語音，請按檢查後立即說話。', speechPermissionDenied:'🔒 尚未取得麥克風權限，請允許此網站使用麥克風。', speechGenericError:'⚠️ Groq AI 辨識失敗，請再試一次。', groqLoginRequired:'🔐 請先登入再檢查發音。', groqNotConnected:'☁️ 此帳號尚未連接個人的 Groq API Key。請到帳號 → 個人 Groq AI Speech 輸入 Key。', groqTranscriptionError:'無法取得 Groq AI 的辨識結果。', guestTrialExhausted:'🎁 此瀏覽器的 20 次免費 AI 檢查已用完。登入後可使用個人 Groq Key 繼續。', guestTrialRemaining:(n,l)=>`✅ Groq AI 完成 · 訪客還有 ${n}/${l} 次。`,
     feedbackExcellent:'AI 正確辨識出目標詞。', feedbackGood:'AI 辨識結果接近，請聽範例後再試一次。', feedbackRetry:'AI 辨識成其他詞，請慢速聆聽後再試一次。',
     quizMeaning:q=>`「${q}」的越南文意思是什麼？`, quizPinyin:q=>`「${q}」的拼音是什麼？`, quizEnglish:q=>`「${q}」的英文意思是什麼？`, correct:'✅ 答對了！', answer:a=>`❌ 答案：${a}`, noVocab:'找不到符合的詞。',
     exportDone:'已匯出進度檔。', importDone:'已成功匯入進度。', resetConfirm:'要清除這台裝置上的全部進度與收藏嗎？', resetDone:'已清除進度。', invalidFile:'檔案格式不正確。',
@@ -844,7 +844,6 @@ async function capturePronunciationClip(durationMs=3500){
 async function checkPronunciationGroq(){
   resetPronunciationResult();
   if(state.groqRecognitionRunning)return;
-  if(!window.TOCFLAuth?.getSession?.()?.user){$('recordStatus').textContent=t('groqLoginRequired');showGroqFailure('groqLoginRequired');window.TOCFLAuth?.openAuth?.('login');return;}
   if(!window.TOCFLAuth?.transcribeWithGroq){$('recordStatus').textContent=t('speechGenericError');showGroqFailure('speechGenericError');return;}
   try{
     setGroqRecognitionBusy(true);
@@ -852,18 +851,19 @@ async function checkPronunciationGroq(){
     $('recordStatus').textContent=t('speechListening');
     const w=currentWord(),target=primaryForm(w);
     const clip=await capturePronunciationClip(3500);
-    $('recordStatus').textContent='🤖 AI đang nhận dạng…';
+    $('recordStatus').textContent=t('aiRecognizing');
     const result=await window.TOCFLAuth.transcribeWithGroq(clip,target);
     const recognized=String(result?.text||'').trim();
     if(!recognized)throw Object.assign(new Error(t('noRecognition')),{code:'NO_TRANSCRIPT'});
     renderGroqPronunciationResult(w,recognized);
-    $('recordStatus').textContent=t('recognitionDone');
+    $('recordStatus').textContent=result?.guest ? t('guestTrialRemaining',result.remaining,result.limit||20) : t('recognitionDone');
   }catch(err){
     console.warn('Groq pronunciation:',err);
     const code=String(err?.code||'');
     let key='speechGenericError';
-    if(code==='NOT_CONNECTED')key='groqNotConnected'; else if(code==='NOT_SIGNED_IN')key='groqLoginRequired'; else if(code==='MIC_PERMISSION')key='speechPermissionDenied'; else if(code==='NO_TRANSCRIPT'||code==='EMPTY_AUDIO')key='noRecognition';
-    $('recordStatus').textContent=err?.message||t(key);showGroqFailure(key,err?.message||'');
+    if(code==='GUEST_LIMIT_REACHED')key='guestTrialExhausted'; else if(code==='NOT_CONNECTED')key='groqNotConnected'; else if(code==='NOT_SIGNED_IN')key='groqLoginRequired'; else if(code==='MIC_PERMISSION')key='speechPermissionDenied'; else if(code==='NO_TRANSCRIPT'||code==='EMPTY_AUDIO')key='noRecognition';
+    const friendlyMessage=code==='GUEST_LIMIT_REACHED'?t(key):(err?.message||t(key));
+    $('recordStatus').textContent=friendlyMessage;showGroqFailure(key,friendlyMessage);
   }finally{setGroqRecognitionBusy(false);}
 }
 function renderGroqPronunciationResult(w,recognized){

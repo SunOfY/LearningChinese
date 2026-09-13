@@ -63,3 +63,7 @@ The HomeWork tab now includes an interactive reconstruction of the blank **pinyi
 - every picture has a blank Pinyin input saved automatically in `localStorage`;
 - `ni3`-style numbered Pinyin can be converted to tone marks (`nǐ`) with one button;
 - the picture rows are deliberately not auto-graded because the source PDF does not include a written answer key for those picture cells.
+
+## Guest Groq AI trial (20 lượt)
+
+Bản này có thêm `supabase/functions/groq-guest` để khách chưa đăng nhập được thử Groq Speech tối đa 20 lượt theo Guest ID của trình duyệt. Xem `GUEST_AI_SETUP.md` để chạy SQL, thêm `GROQ_GUEST_API_KEY` vào Supabase Secrets và deploy Edge Function. Không đặt Guest Groq key trong frontend/GitHub.

@@ -1,0 +1,20 @@
+LearningChinese · Guest Groq AI trial · 2026-09-13
+
+Đã sửa:
+1. Người chưa đăng nhập có thể dùng AI kiểm tra phát âm.
+2. Guest dùng Supabase Edge Function `groq-guest`; GROQ_GUEST_API_KEY không xuất hiện ở frontend/GitHub.
+3. Giới hạn mặc định 20 lượt trên mỗi Guest ID của trình duyệt; bộ đếm lưu server-side trong Supabase.
+4. Phần từ vựng và HomeWork dùng chung 20 lượt Guest.
+5. Hiển thị số lượt còn lại trên màn hình luyện phát âm và trong kết quả HomeWork.
+6. Hết 20 lượt: không gọi Groq nữa và báo đăng nhập để tiếp tục bằng Groq key cá nhân.
+7. Người đã đăng nhập vẫn giữ luồng `groq-speech`/BYOK cũ.
+8. Thêm SQL `supabase/guest_trial.sql`, Edge Function `supabase/functions/groq-guest/index.js`, cấu hình `supabase/config.toml` và hướng dẫn `GUEST_AI_SETUP.md`.
+9. Sửa lỗi cú pháp lặp `const password2` trong auth.js.
+10. Tăng service-worker cache lên `tocfl-v4-14-guest-groq-20`.
+
+Cần làm sau khi upload source:
+- Run `supabase/guest_trial.sql` trong Supabase SQL Editor.
+- Thêm secret `GROQ_GUEST_API_KEY` trong Supabase.
+- Deploy Edge Function `groq-guest` với verify_jwt=false.
+
+Lưu ý: 20 lượt là theo Guest ID lưu trong browser; xóa toàn bộ browser storage hoặc dùng browser khác có thể tạo Guest ID mới.

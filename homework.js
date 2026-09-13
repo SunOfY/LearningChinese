@@ -105,7 +105,7 @@ const HW_I18N = {
     groupTitles:{p2r1:'Trang 2 · Hàng 1',p2r2:'Trang 2 · Hàng 2',p2r3:'Trang 2 · Hàng 3',p3animals:'Trang 3 · Nhóm hình đầu',p3last:'Trang 3 · Nhóm sau QR thứ hai'},
     videoTitles:['Giới thiệu Mandarin Pinyin','Pinyin · Number','Pinyin · Part 1','Pinyin · Part 2','Pinyin · Part 3','Pinyin · Part 4','Bài luyện bổ sung','Interactive Pinyin Chart'],
     pictureAlt:(g,i)=>`Bài Pinyin ${g} hình ${i}`, toneAria:(i,s)=>`Chọn tone cho âm tiết ${i}: ${s}`,
-    phoneEmpty:'Hãy nhập số điện thoại trước.', loginFirst:'🔐 Hãy đăng nhập trước. Sau đó kiểm tra lại.', groqNotReady:'⚠️ Chưa sẵn sàng Groq AI Speech.', speakNow:'🎧 Nói ngay…', listening:isDigits=>`🎧 Đang nghe ${isDigits?'dãy số':'mẫu'}…`, aiRecognizing:'🤖 AI đang nhận dạng…', noTranscript:'AI không nhận được chữ.', sample:'Mẫu', heard:'AI nghe', exact:'✅ AI nhận đúng mẫu.', close:'🟡 Khá gần — nghe mẫu và thử lại.', different:'❌ AI nghe thành từ khác — đọc chậm, rõ rồi thử lại.', notConnected:'☁️ Chưa kết nối Groq API Key. Mở Tài khoản → Groq AI Speech cá nhân.', micPermission:'🔒 Hãy cấp quyền microphone cho website.', genericError:'Không kiểm tra được. Hãy thử lại.',
+    phoneEmpty:'Hãy nhập số điện thoại trước.', loginFirst:'🔐 Hãy đăng nhập trước. Sau đó kiểm tra lại.', groqNotReady:'⚠️ Chưa sẵn sàng Groq AI Speech.', speakNow:'🎧 Nói ngay…', listening:isDigits=>`🎧 Đang nghe ${isDigits?'dãy số':'mẫu'}…`, aiRecognizing:'🤖 AI đang nhận dạng…', noTranscript:'AI không nhận được chữ.', sample:'Mẫu', heard:'AI nghe', exact:'✅ AI nhận đúng mẫu.', close:'🟡 Khá gần — nghe mẫu và thử lại.', different:'❌ AI nghe thành từ khác — đọc chậm, rõ rồi thử lại.', notConnected:'☁️ Chưa kết nối Groq API Key. Mở Tài khoản → Groq AI Speech cá nhân.', micPermission:'🔒 Hãy cấp quyền microphone cho website.', genericError:'Không kiểm tra được. Hãy thử lại.', guestLimit:'🎁 Bạn đã dùng hết 20 lượt AI miễn phí trên trình duyệt này. Đăng nhập để tiếp tục.', guestRemaining:(n,l)=>`🎁 Guest còn ${n}/${l} lượt AI miễn phí.`,
     hanzi:'Hán tự:', enterPhone:'Nhập số điện thoại để tạo cách đọc.', converted:n=>`✅ Đã đổi ${n} ô`, nothingToConvert:'Không có số thanh cần đổi', progress:(a,b)=>`${a} / ${b} mục`
   },
   en: {
@@ -131,7 +131,7 @@ const HW_I18N = {
     groupTitles:{p2r1:'Page 2 · Row 1',p2r2:'Page 2 · Row 2',p2r3:'Page 2 · Row 3',p3animals:'Page 3 · First picture group',p3last:'Page 3 · Group after the second QR'},
     videoTitles:['Mandarin Pinyin introduction','Pinyin · Numbers','Pinyin · Part 1','Pinyin · Part 2','Pinyin · Part 3','Pinyin · Part 4','Extra QR practice','Interactive Pinyin Chart'],
     pictureAlt:(g,i)=>`Pinyin exercise ${g}, picture ${i}`, toneAria:(i,s)=>`Choose tone for syllable ${i}: ${s}`,
-    phoneEmpty:'Enter a phone number first.', loginFirst:'🔐 Sign in first, then try again.', groqNotReady:'⚠️ Groq AI Speech is not ready.', speakNow:'🎧 Speak now…', listening:isDigits=>`🎧 Listening to ${isDigits?'the digit sequence':'the target'}…`, aiRecognizing:'🤖 AI is transcribing…', noTranscript:'AI did not recognize any text.', sample:'Target', heard:'AI heard', exact:'✅ AI recognized the target.', close:'🟡 Quite close — listen to the sample and try again.', different:'❌ AI heard a different word — speak slowly and clearly, then try again.', notConnected:'☁️ No Groq API Key connected. Open Account → Personal Groq AI Speech.', micPermission:'🔒 Allow microphone access for this website.', genericError:'Could not check pronunciation. Please try again.',
+    phoneEmpty:'Enter a phone number first.', loginFirst:'🔐 Sign in first, then try again.', groqNotReady:'⚠️ Groq AI Speech is not ready.', speakNow:'🎧 Speak now…', listening:isDigits=>`🎧 Listening to ${isDigits?'the digit sequence':'the target'}…`, aiRecognizing:'🤖 AI is transcribing…', noTranscript:'AI did not recognize any text.', sample:'Target', heard:'AI heard', exact:'✅ AI recognized the target.', close:'🟡 Quite close — listen to the sample and try again.', different:'❌ AI heard a different word — speak slowly and clearly, then try again.', notConnected:'☁️ No Groq API Key connected. Open Account → Personal Groq AI Speech.', micPermission:'🔒 Allow microphone access for this website.', genericError:'Could not check pronunciation. Please try again.', guestLimit:'🎁 This browser has used all 20 free AI checks. Sign in to continue.', guestRemaining:(n,l)=>`🎁 Guest has ${n}/${l} free AI checks left.`,
     hanzi:'Hanzi:', enterPhone:'Enter a phone number to build the reading.', converted:n=>`✅ Converted ${n} box${n===1?'':'es'}`, nothingToConvert:'No tone numbers to convert', progress:(a,b)=>`${a} / ${b} items`
   },
   'zh-Hant': {
@@ -157,7 +157,7 @@ const HW_I18N = {
     groupTitles:{p2r1:'第 2 頁 · 第 1 排',p2r2:'第 2 頁 · 第 2 排',p2r3:'第 2 頁 · 第 3 排',p3animals:'第 3 頁 · 第一組圖片',p3last:'第 3 頁 · 第二個 QR 後的圖片'},
     videoTitles:['Mandarin Pinyin 拼音介紹','拼音 · 數字','拼音 · Part 1','拼音 · Part 2','拼音 · Part 3','拼音 · Part 4','QR 補充練習','互動拼音表'],
     pictureAlt:(g,i)=>`拼音練習 ${g}，第 ${i} 張圖`, toneAria:(i,s)=>`為第 ${i} 個音節 ${s} 選聲調`,
-    phoneEmpty:'請先輸入電話號碼。', loginFirst:'🔐 請先登入，再重新檢查。', groqNotReady:'⚠️ Groq AI Speech 尚未準備好。', speakNow:'🎧 現在請說…', listening:isDigits=>`🎧 正在聽${isDigits?'號碼':'目標詞'}…`, aiRecognizing:'🤖 AI 正在辨識…', noTranscript:'AI 沒有辨識到文字。', sample:'目標', heard:'AI 聽到', exact:'✅ AI 正確辨識目標。', close:'🟡 很接近 — 請再聽一次後重試。', different:'❌ AI 辨識成其他詞 — 請慢一點、清楚一點再試。', notConnected:'☁️ 尚未連接 Groq API Key。請開啟「帳號 → 個人 Groq AI Speech」。', micPermission:'🔒 請允許網站使用麥克風。', genericError:'無法檢查，請再試一次。',
+    phoneEmpty:'請先輸入電話號碼。', loginFirst:'🔐 請先登入，再重新檢查。', groqNotReady:'⚠️ Groq AI Speech 尚未準備好。', speakNow:'🎧 現在請說…', listening:isDigits=>`🎧 正在聽${isDigits?'號碼':'目標詞'}…`, aiRecognizing:'🤖 AI 正在辨識…', noTranscript:'AI 沒有辨識到文字。', sample:'目標', heard:'AI 聽到', exact:'✅ AI 正確辨識目標。', close:'🟡 很接近 — 請再聽一次後重試。', different:'❌ AI 辨識成其他詞 — 請慢一點、清楚一點再試。', notConnected:'☁️ 尚未連接 Groq API Key。請開啟「帳號 → 個人 Groq AI Speech」。', micPermission:'🔒 請允許網站使用麥克風。', genericError:'無法檢查，請再試一次。', guestLimit:'🎁 此瀏覽器的 20 次免費 AI 檢查已用完，請登入後繼續。', guestRemaining:(n,l)=>`🎁 訪客還有 ${n}/${l} 次免費 AI 檢查。`,
     hanzi:'漢字：', enterPhone:'輸入電話號碼後產生讀法。', converted:n=>`✅ 已轉換 ${n} 格`, nothingToConvert:'沒有需要轉換的聲調數字', progress:(a,b)=>`${a} / ${b} 項`
   }
 };
@@ -538,7 +538,6 @@ async function checkPhone(button){
 }
 
 async function runHomeworkSpeechCheck({target,pinyin,out,button,onPass,duration=3500}){
-  if(!window.TOCFLAuth?.getSession?.()?.user){out.textContent=hwt('loginFirst');window.TOCFLAuth?.openAuth?.('login');return;}
   if(!window.TOCFLAuth?.transcribeWithGroq){out.textContent=hwt('groqNotReady');return;}
   hwBusy=true; const old=button?.textContent; if(button){button.disabled=true;button.textContent=hwt('speakNow');}
   out.textContent=hwt('listening',duration>4000);
@@ -551,11 +550,12 @@ async function runHomeworkSpeechCheck({target,pinyin,out,button,onPass,duration=
     if(!recognized) throw Object.assign(new Error(hwt('noTranscript')),{code:'NO_TRANSCRIPT'});
     const a=normalizeChinese(target), b=normalizeChinese(recognized);
     const score=Math.max(0,Math.min(100,Math.round(similarity(a,b)*100)));
-    out.innerHTML=`<strong>${score}/100</strong> · ${hwt('sample')}: <strong>${esc(target)} ${esc(pinyin||'')}</strong> · ${hwt('heard')}: <strong>${esc(recognized)}</strong><br>${score>=95?hwt('exact'):score>=60?hwt('close'):hwt('different')}`;
+    out.innerHTML=`<strong>${score}/100</strong> · ${hwt('sample')}: <strong>${esc(target)} ${esc(pinyin||'')}</strong> · ${hwt('heard')}: <strong>${esc(recognized)}</strong><br>${score>=95?hwt('exact'):score>=60?hwt('close'):hwt('different')}${result?.guest?`<br>${esc(hwt('guestRemaining',result.remaining,result.limit||20))}`:''}`;
     if(score>=95 && onPass)onPass();
   }catch(err){
     const code=String(err?.code||'');
-    if(code==='NOT_CONNECTED')out.textContent=hwt('notConnected');
+    if(code==='GUEST_LIMIT_REACHED')out.textContent=hwt('guestLimit');
+    else if(code==='NOT_CONNECTED')out.textContent=hwt('notConnected');
     else if(code==='MIC_PERMISSION')out.textContent=hwt('micPermission');
     else out.textContent='⚠️ '+(err?.message||hwt('genericError'));
   }finally{hwBusy=false;if(button){button.disabled=false;button.textContent=old;}}

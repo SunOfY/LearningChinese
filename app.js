@@ -23,7 +23,7 @@ const CEDICT_URL = 'https://raw.githubusercontent.com/jtoy/crdict/refs/heads/mas
 
 const I18N = {
   vi: {
-    day:'Ngày', navToday:'Hôm nay', navVocab:'Từ vựng', navQuiz:'Quiz', navProgress:'Tiến độ', goal:'Mục tiêu',
+    day:'Ngày', navToday:'Hôm nay', navVocab:'Từ vựng', navQuiz:'Quiz', navHomework:'Bài tập', navProgress:'Tiến độ', goal:'Mục tiêu',
     favorite:'Đánh dấu từ', listenWord:'Nghe từ', slow:'Chậm', hidePinyin:'Ẩn Pinyin', showPinyin:'Hiện Pinyin',
     pronunciationPractice:'🎙 Luyện phát âm', startRecording:'Bắt đầu ghi âm', stop:'Dừng', playback:'Phát lại', checkPronunciation:'Kiểm tra phát âm',
     target:'Mẫu:', recognized:'AI nhận ra:', assessmentNote:'Groq Whisper AI nhận dạng giọng nói tiếng Trung. Điểm là độ khớp giữa chữ AI nghe được và từ mẫu; không phải điểm thanh điệu/âm vị chuyên sâu.', accuracyLabel:'Độ chính xác', fluencyLabel:'Độ trôi chảy', completenessLabel:'Độ đầy đủ',
@@ -41,7 +41,7 @@ const I18N = {
     generatedExample:'Ví dụ bổ sung tự động', curatedExample:'Ví dụ đã biên soạn'
   },
   en: {
-    day:'Day', navToday:'Today', navVocab:'Vocabulary', navQuiz:'Quiz', navProgress:'Progress', goal:'Goal',
+    day:'Day', navToday:'Today', navVocab:'Vocabulary', navQuiz:'Quiz', navHomework:'Homework', navProgress:'Progress', goal:'Goal',
     favorite:'Favorite word', listenWord:'Listen', slow:'Slow', hidePinyin:'Hide Pinyin', showPinyin:'Show Pinyin',
     pronunciationPractice:'🎙 Pronunciation practice', startRecording:'Start recording', stop:'Stop', playback:'Playback', checkPronunciation:'Check pronunciation',
     target:'Target:', recognized:'AI recognized:', assessmentNote:'Groq Whisper AI transcribes your Chinese speech. The score is text-match similarity, not a professional tone/phoneme pronunciation score.', accuracyLabel:'Accuracy', fluencyLabel:'Fluency', completenessLabel:'Completeness',
@@ -59,7 +59,7 @@ const I18N = {
     generatedExample:'Auto-generated study example', curatedExample:'Curated example'
   },
   'zh-Hant': {
-    day:'第', navToday:'今天', navVocab:'詞彙', navQuiz:'測驗', navProgress:'進度', goal:'今日目標',
+    day:'第', navToday:'今天', navVocab:'詞彙', navQuiz:'測驗', navHomework:'作業', navProgress:'進度', goal:'今日目標',
     favorite:'收藏單字', listenWord:'聽單字', slow:'慢速', hidePinyin:'隱藏拼音', showPinyin:'顯示拼音',
     pronunciationPractice:'🎙 發音練習', startRecording:'開始錄音', stop:'停止', playback:'播放錄音', checkPronunciation:'檢查發音',
     target:'目標：', recognized:'AI 辨識：', assessmentNote:'Groq Whisper AI 會轉寫你的中文語音。分數代表 AI 文字辨識與目標詞的相似度，不是專業聲調／音位評分。', accuracyLabel:'準確度', fluencyLabel:'流暢度', completenessLabel:'完整度',

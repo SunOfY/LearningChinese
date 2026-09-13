@@ -287,3 +287,17 @@ body.writing-active, body.writing-active *{ -webkit-user-select:none !important;
 .hw-tone-preview{min-height:34px;line-height:1.35;text-align:center;padding:6px 5px;border-radius:9px;background:#f7faf9}
 .hw-tone-preview strong:last-child{font-size:17px;color:var(--accent)}
 @media(max-width:620px){.hw-tone-choice{font-size:12px;padding:6px 2px}.hw-tone-preview{font-size:12px}}
+
+/* HomeWork 1: ü input + per-syllable tone selection for compound words */
+.hw-pinyin-entry{display:grid;grid-template-columns:minmax(0,1fr) 42px;gap:6px;align-items:stretch}
+.hw-umlaut-btn{border:1px solid var(--border);border-radius:10px;background:#f7faf9;color:var(--text);font-size:20px;font-weight:900;line-height:1;padding:0;min-height:42px}
+.hw-umlaut-btn:hover{border-color:var(--accent);background:#eef9f6}
+.hw-pinyin-hint{text-align:center;line-height:1.35;margin-top:-2px}
+.hw-syllable-tone-editor{display:grid;gap:7px}
+.hw-syllable-tone-row{border:1px solid var(--border);border-radius:10px;padding:7px;background:#fafcfb;display:grid;gap:6px}
+.hw-syllable-name{display:flex;align-items:center;justify-content:center;gap:6px;font-size:14px}
+.hw-syllable-name span{width:20px;height:20px;border-radius:999px;display:inline-flex;align-items:center;justify-content:center;background:#eef4f2;color:var(--muted);font-size:10px;font-weight:900}
+.hw-syllable-name strong{font-size:16px;letter-spacing:.2px}
+.hw-no-syllable{text-align:center;padding:6px 0}
+.hw-tone-preview{line-height:1.45;text-align:center}
+@media(max-width:620px){.hw-pinyin-entry{grid-template-columns:minmax(0,1fr) 38px}.hw-umlaut-btn{font-size:19px;min-height:40px}.hw-pinyin-hint{font-size:11px}.hw-syllable-tone-row{padding:6px}.hw-syllable-name strong{font-size:15px}}

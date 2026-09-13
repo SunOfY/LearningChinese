@@ -1,0 +1,20 @@
+HomeWork 1 fixes
+
+1) ü input
+- Added a dedicated ü button next to every Pinyin input.
+- Typing v or u: is automatically converted to ü.
+- Examples: lv -> lü, lu: -> lü.
+
+2) Compound-word tones
+- Pinyin is split into syllables by spaces/hyphens.
+- Each syllable receives its own Tone 1/2/3/4 selector.
+- Example: hong lv deng + 2 / 4 / 1 -> hóng lǜ dēng.
+- Previous single-tone progress is migrated safely for one-syllable entries.
+
+3) HomeWork language switching
+- HomeWork now follows Vietnamese / English / Traditional Chinese.
+- Changing the global language immediately rerenders HomeWork without deleting progress.
+- The HomeWork tab label also changes language.
+
+4) Cache
+- Service-worker cache version bumped so GitHub Pages clients fetch the updated files.

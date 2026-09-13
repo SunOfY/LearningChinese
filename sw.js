@@ -1,4 +1,4 @@
-const CACHE = 'tocfl-v4-11-homework1-pinyin-tone';
+const CACHE = 'tocfl-v4-13-homework1-multitone-umlaut-i18n';
 const ASSETS = [
   './',
   './index.html',

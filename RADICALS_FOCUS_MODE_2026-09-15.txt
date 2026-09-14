@@ -1,0 +1,8 @@
+Radicals Focus Mode update
+- Semantic radical mode now shows only one selected radical at a time.
+- Inside a radical, only one core character or developed word is displayed at a time.
+- Previous / Got it & Next controls move through the lesson sequence.
+- Per-radical learning position and completed items are saved in localStorage.
+- Full pronunciation, Vietnamese sound bridge, structure explanation, deep-learning breakdown, and handwriting shortcut remain available inside each lesson.
+- Writing practice stays in its own collapsible panel.
+- Old “All radicals” view is removed from the selector to reduce visual overload.

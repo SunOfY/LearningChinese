@@ -1,4 +1,4 @@
-const CACHE = 'tocfl-v4-20-deep-word-learning';
+const CACHE = 'tocfl-v4-21-single-word-focus';
 const ASSETS = [
   './',
   './index.html',

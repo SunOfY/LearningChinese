@@ -1,0 +1,13 @@
+BỘ THỦ v4.17 - LUYỆN VIẾT & TÁCH TỪNG BỘ
+
+1. Tab Bộ thủ nay có bảng chọn riêng từng bộ. Mặc định chỉ hiển thị một bộ để học tập trung; vẫn có nút Tất cả.
+2. Mỗi bộ có mục "Luyện viết bộ này".
+3. Có thể chọn chữ chính hoặc từ mở rộng của chính bộ đó để luyện.
+4. Dùng Hanzi Writer để:
+   - xem thứ tự nét,
+   - bật bài luyện nét có kiểm tra thứ tự,
+   - viết lại,
+   - ẩn/hiện chữ mẫu.
+5. Tiến độ viết từng bộ được lưu trong localStorage và hiển thị ngay trên nút chọn bộ.
+6. Hỗ trợ Tiếng Việt / English / 中文繁體.
+7. Cache service worker đã tăng lên v4.17 để GitHub Pages nhận bản mới.

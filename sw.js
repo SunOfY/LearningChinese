@@ -1,4 +1,4 @@
-const CACHE = 'tocfl-v4-15-radicals-slower-pronunciation';
+const CACHE = 'tocfl-v4-17-radicals-writing-practice';
 const ASSETS = [
   './',
   './index.html',

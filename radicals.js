@@ -6,9 +6,9 @@
   const pick=(obj,lang=getLang())=>obj?.[lang]??obj?.vi??obj?.en??'';
 
   const UI={
-    vi:{tab:'Bộ thủ',title:'Bộ thủ & Họ chữ',sub:'Học từ cấu tạo: phần gợi nghĩa + phần gợi âm → chữ → từ → câu.',semantic:'Bộ gợi nghĩa',phonetic:'Họ âm',pinyin:'Pinyin gần âm Việt',search:'Tìm bộ, chữ, pinyin hoặc nghĩa…',listen:'Nghe',listenWord:'Nghe chữ',listenSentence:'Nghe câu',slow:'Chậm',initialTitle:'Thanh mẫu (âm đầu)',finalTitle:'Vận mẫu (phần vần)',specialTitle:'Quy tắc đặc biệt dễ nhầm',demoTitle:'Thử nhanh một Pinyin',demoHint:'Nhập ví dụ: qǐng, xué, lǜ, zhōngwén…',analyze:'Phân tích',why:'Vì sao dễ nhớ?',structure:'Cấu tạo',example:'Ví dụ',note:'Lưu ý: đây là cách phân tích để học và ghi nhớ. Không phải mọi chữ đều “sinh ra” trực tiếp từ bộ theo cách hiện đại; nhiều chữ là hình thanh, trong đó một phần gợi nghĩa và một phần gợi âm.',soundNote:'Gợi âm tiếng Việt chỉ là cầu nối ban đầu. Hãy ưu tiên nghe giọng zh-TW vì nhiều âm Mandarin không có bản tương đương chính xác trong tiếng Việt.',familyNote:'Họ âm cho thấy cùng một thành phần có thể lặp lại để gợi cách đọc, còn bộ bên trái/bên dưới thường đổi để gợi nghĩa.',all:'Tất cả'},
-    en:{tab:'Components',title:'Radicals & Character Families',sub:'Learn structure: semantic clue + sound clue → character → word → sentence.',semantic:'Semantic radicals',phonetic:'Sound families',pinyin:'Vietnamese sound bridge',search:'Search radical, character, pinyin or meaning…',listen:'Listen',listenWord:'Character',listenSentence:'Sentence',slow:'Slow',initialTitle:'Initials',finalTitle:'Finals',specialTitle:'Easy-to-miss spelling rules',demoTitle:'Try a Pinyin',demoHint:'Type e.g. qǐng, xué, lǜ, zhōngwén…',analyze:'Analyze',why:'Why it helps',structure:'Structure',example:'Example',note:'This is a learning-oriented structural analysis. Not every character literally “grew” from its radical in a modern step-by-step way; many characters combine a semantic component with a phonetic component.',soundNote:'Vietnamese approximations are only a bridge. Prefer the zh-TW audio because many Mandarin sounds do not have exact Vietnamese equivalents.',familyNote:'Sound families show how one component can hint at pronunciation while another component changes the semantic field.',all:'All'},
-    'zh-Hant':{tab:'部件',title:'部首・部件與字族',sub:'從結構學習：義符 + 聲符 → 字 → 詞 → 句子。',semantic:'義符部件',phonetic:'聲符字族',pinyin:'越南語近似音提示',search:'搜尋部件、字、拼音或意思…',listen:'聽',listenWord:'聽單字',listenSentence:'聽例句',slow:'慢速',initialTitle:'聲母',finalTitle:'韻母',specialTitle:'容易混淆的拼音規則',demoTitle:'快速分析拼音',demoHint:'例如輸入：qǐng、xué、lǜ、zhōngwén…',analyze:'分析',why:'為什麼好記？',structure:'結構',example:'例句',note:'這裡以學習與記憶為目的分析字形。不是所有漢字都能用現代「加一個部首就產生新字」來解釋；很多漢字屬於形聲結構，由義符提示意思、聲符提示讀音。',soundNote:'越南語近似音只作為入門橋樑。許多華語語音沒有完全相同的越南語對應音，請以 zh-TW 音檔為準。',familyNote:'聲符字族可以看出同一聲符如何提示讀音，而其他部件改變字義範圍。',all:'全部'}
+    vi:{tab:'Bộ thủ',title:'Bộ thủ & Họ chữ',sub:'Học từ cấu tạo: phần gợi nghĩa + phần gợi âm → chữ → từ → câu.',semantic:'Bộ gợi nghĩa',phonetic:'Họ âm',pinyin:'Pinyin gần âm Việt',search:'Tìm bộ, chữ, pinyin hoặc nghĩa…',listen:'Nghe',listenWord:'Nghe chữ',listenSentence:'Nghe câu',slow:'Chậm',initialTitle:'Thanh mẫu (âm đầu)',finalTitle:'Vận mẫu (phần vần)',specialTitle:'Quy tắc đặc biệt dễ nhầm',demoTitle:'Thử nhanh một Pinyin',demoHint:'Nhập ví dụ: qǐng, xué, lǜ, zhōngwén…',analyze:'Phân tích',why:'Vì sao dễ nhớ?',structure:'Cấu tạo',example:'Ví dụ',note:'Lưu ý: đây là cách phân tích để học và ghi nhớ. Không phải mọi chữ đều “sinh ra” trực tiếp từ bộ theo cách hiện đại; nhiều chữ là hình thanh, trong đó một phần gợi nghĩa và một phần gợi âm.',soundNote:'Gợi âm tiếng Việt chỉ là cầu nối ban đầu. Hãy ưu tiên nghe giọng zh-TW vì nhiều âm Mandarin không có bản tương đương chính xác trong tiếng Việt.',familyNote:'Họ âm cho thấy cùng một thành phần có thể lặp lại để gợi cách đọc, còn bộ bên trái/bên dưới thường đổi để gợi nghĩa.',all:'Tất cả',chooseRadical:'Chọn từng bộ để luyện',chooseHint:'Mỗi bộ được tách riêng. Chọn một bộ để học chữ, từ mở rộng và luyện viết riêng bộ đó.',practiceWriting:'Luyện viết bộ này',practiceHint:'Chọn chữ hoặc từ → xem thứ tự nét → bật Luyện nét để web kiểm tra thứ tự viết.',practiceTarget:'Chữ / từ muốn luyện',strokeOrder:'Thứ tự nét',startQuiz:'Luyện nét',rewrite:'Viết lại',showGuide:'Hiện mẫu',hideGuide:'Ẩn mẫu',writingReady:'Bấm “Luyện nét” rồi viết trực tiếp lên ô.',writingGood:'Hoàn thành đúng thứ tự nét!',writingMistake:'Nét này chưa đúng, thử lại nhé.',writerUnavailable:'Không tải được dữ liệu nét chữ. Hãy kiểm tra mạng rồi thử lại.',progress:'Tiến độ viết',coreChars:'Chữ chính',expandedWords:'Từ mở rộng',singleRadical:'Từng bộ'},
+    en:{tab:'Components',title:'Radicals & Character Families',sub:'Learn structure: semantic clue + sound clue → character → word → sentence.',semantic:'Semantic radicals',phonetic:'Sound families',pinyin:'Vietnamese sound bridge',search:'Search radical, character, pinyin or meaning…',listen:'Listen',listenWord:'Character',listenSentence:'Sentence',slow:'Slow',initialTitle:'Initials',finalTitle:'Finals',specialTitle:'Easy-to-miss spelling rules',demoTitle:'Try a Pinyin',demoHint:'Type e.g. qǐng, xué, lǜ, zhōngwén…',analyze:'Analyze',why:'Why it helps',structure:'Structure',example:'Example',note:'This is a learning-oriented structural analysis. Not every character literally “grew” from its radical in a modern step-by-step way; many characters combine a semantic component with a phonetic component.',soundNote:'Vietnamese approximations are only a bridge. Prefer the zh-TW audio because many Mandarin sounds do not have exact Vietnamese equivalents.',familyNote:'Sound families show how one component can hint at pronunciation while another component changes the semantic field.',all:'All',chooseRadical:'Choose one radical to practise',chooseHint:'Each radical is separated. Pick one to study its characters, expanded vocabulary, and handwriting.',practiceWriting:'Practise writing this radical',practiceHint:'Choose a character or word → view stroke order → start stroke quiz to check your writing order.',practiceTarget:'Character / word',strokeOrder:'Stroke order',startQuiz:'Stroke quiz',rewrite:'Rewrite',showGuide:'Show model',hideGuide:'Hide model',writingReady:'Press “Stroke quiz” and write directly in the box.',writingGood:'Correct stroke order completed!',writingMistake:'That stroke is not right yet—try again.',writerUnavailable:'Stroke data could not be loaded. Check your connection and try again.',progress:'Writing progress',coreChars:'Core characters',expandedWords:'Expanded words',singleRadical:'One radical'},
+    'zh-Hant':{tab:'部件',title:'部首・部件與字族',sub:'從結構學習：義符 + 聲符 → 字 → 詞 → 句子。',semantic:'義符部件',phonetic:'聲符字族',pinyin:'越南語近似音提示',search:'搜尋部件、字、拼音或意思…',listen:'聽',listenWord:'聽單字',listenSentence:'聽例句',slow:'慢速',initialTitle:'聲母',finalTitle:'韻母',specialTitle:'容易混淆的拼音規則',demoTitle:'快速分析拼音',demoHint:'例如輸入：qǐng、xué、lǜ、zhōngwén…',analyze:'分析',why:'為什麼好記？',structure:'結構',example:'例句',note:'這裡以學習與記憶為目的分析字形。不是所有漢字都能用現代「加一個部首就產生新字」來解釋；很多漢字屬於形聲結構，由義符提示意思、聲符提示讀音。',soundNote:'越南語近似音只作為入門橋樑。許多華語語音沒有完全相同的越南語對應音，請以 zh-TW 音檔為準。',familyNote:'聲符字族可以看出同一聲符如何提示讀音，而其他部件改變字義範圍。',all:'全部',chooseRadical:'選一個部件單獨練習',chooseHint:'每個部件已分開。選一個部件，集中學習相關字、延伸詞與書寫。',practiceWriting:'練寫這個部件',practiceHint:'選擇單字或詞語 → 看筆順 → 開始筆順練習，系統會檢查書寫順序。',practiceTarget:'要練的字／詞',strokeOrder:'筆順',startQuiz:'筆順練習',rewrite:'重寫',showGuide:'顯示字形',hideGuide:'隱藏字形',writingReady:'按「筆順練習」後，直接在方格內書寫。',writingGood:'筆順完成正確！',writingMistake:'這一筆還不對，再試一次。',writerUnavailable:'無法載入筆順資料，請檢查網路後再試。',progress:'書寫進度',coreChars:'核心字',expandedWords:'延伸詞',singleRadical:'單一部件'}
   };
 
   const radicals=[
@@ -75,6 +75,9 @@
     ]}
   ];
 
+  const expansionUI={"vi":{"title":"Mở rộng từ vựng","hint":"Mỗi nhánh lấy một chữ làm gốc rồi phát triển thành các từ ghép thường dùng. Hãy học theo cây thay vì học rời từng từ.","words":"từ"},"en":{"title":"Vocabulary expansion","hint":"Each branch uses one character as a root and expands into common compounds. Learn it as a tree instead of isolated words.","words":"words"},"zh-Hant":{"title":"詞彙擴展","hint":"每個分支以一個核心字出發，再延伸成常用複合詞。用樹狀方式學，比孤立背單字更好記。","words":"個詞"}};
+  const expansionTrees={"person":[["你","nǐ","bạn","you","你",[["你好","nǐ hǎo","xin chào","hello","你好"],["你們","nǐmen","các bạn","you (plural)","你們"],["你的","nǐ de","của bạn","your; yours","你的"],["你呢","nǐ ne","còn bạn thì sao?","and you?","你呢？"]]],["他","tā","anh ấy","he","他",[["他們","tāmen","họ","they","他們"],["他的","tā de","của anh ấy","his","他的"],["他家","tā jiā","nhà anh ấy","his home","他家"],["他說","tā shuō","anh ấy nói","he says","他說"]]],["住","zhù","ở, cư trú","live; reside","居住",[["住址","zhùzhǐ","địa chỉ cư trú","residential address","住址"],["住宿","zhùsù","lưu trú, chỗ ở","lodging; accommodation","住宿"],["居住","jūzhù","cư trú","reside","居住"],["住院","zhùyuàn","nằm viện","be hospitalized","住院"]]],["休","xiū","nghỉ","rest","休息",[["休息","xiūxi","nghỉ ngơi","rest","休息"],["休假","xiūjià","nghỉ phép","take leave; vacation","休假"],["休閒","xiūxián","thư giãn, giải trí","leisure","休閒"],["午休","wǔxiū","nghỉ trưa","noon break","午休"]]]],"mouth":[["吃","chī","ăn","eat","吃",[["吃飯","chīfàn","ăn cơm, ăn bữa","eat a meal","吃飯"],["吃完","chīwán","ăn xong","finish eating","吃完"],["好吃","hǎochī","ngon","delicious","好吃"],["小吃","xiǎochī","đồ ăn vặt, món ăn nhẹ","snack; local eats","小吃"]]],["喝","hē","uống","drink","喝",[["喝水","hē shuǐ","uống nước","drink water","喝水"],["喝茶","hē chá","uống trà","drink tea","喝茶"],["喝咖啡","hē kāfēi","uống cà phê","drink coffee","喝咖啡"],["好喝","hǎohē","ngon, dễ uống","tasty (drink)","好喝"]]],["唱","chàng","hát","sing","唱",[["唱歌","chànggē","hát","sing a song","唱歌"],["合唱","héchàng","hợp xướng, hát chung","chorus; sing together","合唱"],["演唱","yǎnchàng","biểu diễn ca hát","perform singing","演唱"],["唱片","chàngpiàn","đĩa nhạc","record; album","唱片"]]],["叫","jiào","gọi, kêu","call; be called","叫",[["叫做","jiàozuò","được gọi là","be called","叫做"],["大叫","dàjiào","kêu to","shout","大叫"],["叫人","jiào rén","gọi người","call someone","叫人"],["名叫","míngjiào","tên là","be named","名叫"]]]],"female":[["媽","mā","mẹ","mother","媽媽",[["媽媽","māma","mẹ","mom","媽媽"],["爸媽","bàmā","bố mẹ","parents; dad and mom","爸媽"],["媽媽們","māmamen","các bà mẹ","mothers","媽媽們"],["媽咪","māmī","mẹ, mommy","mommy","媽咪"]]],["姐","jiě","chị gái","older sister","姐姐",[["姐姐","jiějie","chị gái","older sister","姐姐"],["小姐","xiǎojiě","cô, tiểu thư","Miss; young lady","小姐"],["姐妹","jiěmèi","chị em gái","sisters","姐妹"],["大姐","dàjiě","chị cả","eldest sister","大姐"]]],["妹","mèi","em gái","younger sister","妹妹",[["妹妹","mèimei","em gái","younger sister","妹妹"],["姐妹","jiěmèi","chị em gái","sisters","姐妹"],["小妹","xiǎomèi","em gái nhỏ","little sister","小妹"],["弟妹","dìmèi","em trai/em gái; em dâu tùy ngữ cảnh","younger siblings; sister-in-law (contextual)","弟妹"]]],["好","hǎo","tốt","good","好",[["很好","hěn hǎo","rất tốt","very good","很好"],["好吃","hǎochī","ngon","delicious","好吃"],["好喝","hǎohē","ngon (đồ uống)","tasty (drink)","好喝"],["好看","hǎokàn","đẹp, dễ nhìn","good-looking","好看"]]]],"water":[["海","hǎi","biển","sea","海",[["海水","hǎishuǐ","nước biển","seawater","海水"],["海邊","hǎibiān","bờ biển","seaside","海邊"],["海洋","hǎiyáng","đại dương","ocean","海洋"],["海鮮","hǎixiān","hải sản","seafood","海鮮"]]],["洗","xǐ","rửa","wash","洗",[["洗手","xǐshǒu","rửa tay","wash hands","洗手"],["洗澡","xǐzǎo","tắm","take a shower/bath","洗澡"],["洗臉","xǐliǎn","rửa mặt","wash one's face","洗臉"],["洗衣服","xǐ yīfu","giặt quần áo","wash clothes","洗衣服"]]],["清","qīng","trong, sạch","clear; clean","清",[["清楚","qīngchu","rõ ràng","clear","清楚"],["清水","qīngshuǐ","nước sạch","clean water","清水"],["清潔","qīngjié","sạch sẽ, vệ sinh","clean; cleaning","清潔"],["清晨","qīngchén","sáng sớm","early morning","清晨"]]],["流","liú","chảy","flow","流",[["流水","liúshuǐ","nước chảy","running water","流水"],["河流","héliú","sông, dòng sông","river; stream","河流"],["流汗","liúhàn","đổ mồ hôi","sweat","流汗"],["流行","liúxíng","thịnh hành","popular; in fashion","流行"]]]],"heart":[["情","qíng","tình cảm, tình trạng","feeling; situation","情",[["心情","xīnqíng","tâm trạng","mood","心情"],["感情","gǎnqíng","tình cảm","feelings; relationship","感情"],["情況","qíngkuàng","tình hình","situation","情況"],["熱情","rèqíng","nhiệt tình","enthusiastic; warm","熱情"]]],["快","kuài","nhanh; vui trong 快樂","fast; happy in 快樂","快",[["快樂","kuàilè","vui vẻ","happy","快樂"],["很快","hěn kuài","rất nhanh","very fast","很快"],["快點","kuài diǎn","nhanh lên","hurry up","快點"],["快車","kuàichē","xe/tàu nhanh","express vehicle/train","快車"]]],["怕","pà","sợ","fear; be afraid","怕",[["害怕","hàipà","sợ hãi","be afraid","害怕"],["可怕","kěpà","đáng sợ","scary","可怕"],["不怕","bú pà","không sợ","not afraid","不怕"],["怕冷","pà lěng","sợ lạnh","be sensitive to cold","怕冷"]]],["忙","máng","bận","busy","忙",[["很忙","hěn máng","rất bận","very busy","很忙"],["忙碌","mánglù","bận rộn","busy","忙碌"],["幫忙","bāngmáng","giúp đỡ","help","幫忙"],["忙完","mángwán","xong việc đang bận","finish the task","忙完"]]]],"speech":[["說","shuō","nói","speak; say","說",[["說話","shuōhuà","nói chuyện","speak; talk","說話"],["說中文","shuō Zhōngwén","nói tiếng Trung","speak Chinese","說中文"],["聽說","tīngshuō","nghe nói","hear that; reportedly","聽說"],["小說","xiǎoshuō","tiểu thuyết","novel","小說"]]],["請","qǐng","mời, xin vui lòng","please; invite","請",[["請問","qǐngwèn","xin hỏi","excuse me; may I ask","請問"],["請坐","qǐng zuò","mời ngồi","please sit","請坐"],["請假","qǐngjià","xin nghỉ","ask for leave","請假"],["請客","qǐngkè","mời/bao ai ăn","treat someone","請客"]]],["話","huà","lời nói, câu chuyện","speech; words","話",[["電話","diànhuà","điện thoại","telephone","電話"],["對話","duìhuà","đối thoại","dialogue","對話"],["笑話","xiàohuà","truyện cười","joke","笑話"],["一句話","yí jù huà","một câu nói","one sentence/remark","一句話"]]],["語","yǔ","ngôn ngữ","language","語",[["語言","yǔyán","ngôn ngữ","language","語言"],["國語","guóyǔ","Mandarin/Quốc ngữ ở Đài Loan","Mandarin (Taiwan usage)","國語"],["英語","Yīngyǔ","tiếng Anh","English","英語"],["語法","yǔfǎ","ngữ pháp","grammar","語法"]]]],"hand":[["打","dǎ","đánh; thao tác bằng tay","hit; do with the hand","打",[["打電話","dǎ diànhuà","gọi điện thoại","make a phone call","打電話"],["打球","dǎqiú","chơi bóng","play ball","打球"],["打開","dǎkāi","mở ra","open","打開"],["打字","dǎzì","gõ chữ","type","打字"]]],["拿","ná","cầm, lấy","take; hold","拿",[["拿走","ná zǒu","mang/lấy đi","take away","拿走"],["拿來","ná lái","mang/lấy lại đây","bring here","拿來"],["拿到","ná dào","lấy được, nhận được","get; obtain","拿到"],["拿東西","ná dōngxi","cầm/lấy đồ","take things","拿東西"]]],["找","zhǎo","tìm","look for","找",[["找到","zhǎodào","tìm thấy","find","找到"],["找人","zhǎo rén","tìm người","look for someone","找人"],["找工作","zhǎo gōngzuò","tìm việc","look for a job","找工作"],["找東西","zhǎo dōngxi","tìm đồ","look for something","找東西"]]],["抱","bào","ôm, bế","hug; hold","抱",[["擁抱","yǒngbào","ôm","hug","擁抱"],["抱小孩","bào xiǎohái","bế trẻ nhỏ","hold a child","抱小孩"],["抱著","bàozhe","đang ôm/cầm","be holding","抱著"],["抱歉","bàoqiàn","xin lỗi","sorry","抱歉"]]]],"food":[["飯","fàn","cơm, bữa ăn","rice; meal","飯",[["吃飯","chīfàn","ăn cơm/ăn bữa","eat a meal","吃飯"],["米飯","mǐfàn","cơm trắng","cooked rice","米飯"],["炒飯","chǎofàn","cơm rang","fried rice","炒飯"],["飯店","fàndiàn","khách sạn; nhà hàng tùy ngữ cảnh","hotel; restaurant (contextual)","飯店"]]],["餐","cān","bữa ăn","meal","餐",[["早餐","zǎocān","bữa sáng","breakfast","早餐"],["午餐","wǔcān","bữa trưa","lunch","午餐"],["晚餐","wǎncān","bữa tối","dinner","晚餐"],["餐廳","cāntīng","nhà hàng","restaurant","餐廳"]]],["飲","yǐn","uống","drink; beverage","飲",[["飲料","yǐnliào","đồ uống","beverage","飲料"],["飲用","yǐnyòng","dùng để uống","for drinking","飲用"],["飲食","yǐnshí","ăn uống, chế độ ăn","diet; food and drink","飲食"],["飲水","yǐnshuǐ","uống nước","drink water","飲水"]]],["飽","bǎo","no","full; satiated","飽",[["吃飽","chībǎo","ăn no","eat until full","吃飽"],["很飽","hěn bǎo","rất no","very full","很飽"],["飽了","bǎo le","no rồi","I'm full","飽了"],["飽滿","bǎomǎn","đầy đặn, đầy đủ","full; plump","飽滿"]]]],"wood":[["林","lín","rừng nhỏ, lùm cây","woods; grove","林",[["森林","sēnlín","rừng","forest","森林"],["樹林","shùlín","rừng cây","grove; woods","樹林"],["林木","línmù","cây rừng","forest trees","林木"],["園林","yuánlín","vườn cảnh","gardens; landscaping","園林"]]],["校","xiào","trường học trong 學校","school in 學校","校",[["學校","xuéxiào","trường học","school","學校"],["校園","xiàoyuán","khuôn viên trường","campus","校園"],["校長","xiàozhǎng","hiệu trưởng","principal","校長"],["校門","xiàomén","cổng trường","school gate","校門"]]],["桌","zhuō","bàn","table; desk","桌",[["桌子","zhuōzi","cái bàn","table","桌子"],["書桌","shūzhuō","bàn học/bàn viết","desk","書桌"],["餐桌","cānzhuō","bàn ăn","dining table","餐桌"],["桌上","zhuōshàng","trên bàn","on the table","桌上"]]],["機","jī","máy, cơ hội","machine; opportunity","機",[["手機","shǒujī","điện thoại di động","mobile phone","手機"],["飛機","fēijī","máy bay","airplane","飛機"],["機場","jīchǎng","sân bay","airport","機場"],["機會","jīhuì","cơ hội","opportunity","機會"]]]],"sun":[["時","shí","thời gian","time","時間",[["時間","shíjiān","thời gian","time","時間"],["小時","xiǎoshí","giờ (đơn vị)","hour","小時"],["有時候","yǒushíhou","đôi khi","sometimes","有時候"],["時候","shíhou","lúc, thời điểm","time; moment","時候"]]],["明","míng","sáng, rõ","bright; clear","明",[["明天","míngtiān","ngày mai","tomorrow","明天"],["明白","míngbai","hiểu, rõ","understand; clear","明白"],["說明","shuōmíng","giải thích","explain; description","說明"],["明年","míngnián","năm sau","next year","明年"]]],["晚","wǎn","muộn, tối","late; evening","晚",[["晚上","wǎnshàng","buổi tối","evening","晚上"],["晚飯","wǎnfàn","bữa tối","dinner","晚飯"],["晚安","wǎn'ān","chúc ngủ ngon","good night","晚安"],["太晚","tài wǎn","quá muộn","too late","太晚"]]],["晴","qíng","trời quang","sunny; clear weather","晴",[["晴天","qíngtiān","trời nắng, trời quang","sunny day","晴天"],["晴朗","qínglǎng","quang đãng","clear and sunny","晴朗"],["放晴","fàngqíng","trời quang lại","clear up (weather)","放晴"],["晴空","qíngkōng","bầu trời quang","clear sky","晴空"]]]],"fire":[["熱","rè","nóng, nhiệt","hot; heat","熱",[["很熱","hěn rè","rất nóng","very hot","很熱"],["熱水","rèshuǐ","nước nóng","hot water","熱水"],["熱情","rèqíng","nhiệt tình","enthusiastic","熱情"],["熱門","rèmén","phổ biến, hot","popular; hot","熱門"]]],["煮","zhǔ","nấu, luộc","cook; boil","煮",[["煮飯","zhǔfàn","nấu cơm","cook rice/a meal","煮飯"],["煮水","zhǔ shuǐ","đun nước","boil water","煮水"],["煮菜","zhǔ cài","nấu món ăn","cook dishes","煮菜"],["水煮","shuǐzhǔ","luộc bằng nước","boiled in water","水煮"]]],["烤","kǎo","nướng","bake; roast; grill","烤",[["烤肉","kǎoròu","thịt nướng","grilled meat","烤肉"],["烤雞","kǎojī","gà nướng","roast chicken","烤雞"],["烤箱","kǎoxiāng","lò nướng","oven","烤箱"],["燒烤","shāokǎo","đồ nướng, barbecue","barbecue","燒烤"]]],["燈","dēng","đèn","lamp; light","燈",[["電燈","diàndēng","đèn điện","electric light","電燈"],["紅綠燈","hónglǜdēng","đèn giao thông","traffic light","紅綠燈"],["燈光","dēngguāng","ánh đèn","lamplight","燈光"],["開燈","kāi dēng","bật đèn","turn on the light","開燈"]]]],"eye":[["看","kàn","nhìn, xem","look; watch","看",[["看書","kànshū","đọc sách","read a book","看書"],["看見","kànjiàn","nhìn thấy","see","看見"],["看電影","kàn diànyǐng","xem phim","watch a movie","看電影"],["好看","hǎokàn","đẹp, hay để xem","good-looking; nice to watch","好看"]]],["眼","yǎn","mắt","eye","眼",[["眼睛","yǎnjīng","mắt","eyes","眼睛"],["眼鏡","yǎnjìng","kính mắt","glasses","眼鏡"],["眼前","yǎnqián","trước mắt","in front of one's eyes","眼前"],["閉眼","bì yǎn","nhắm mắt","close one's eyes","閉眼"]]],["睡","shuì","ngủ","sleep","睡",[["睡覺","shuìjiào","ngủ","sleep","睡覺"],["睡著","shuìzháo","ngủ thiếp đi","fall asleep","睡著"],["睡衣","shuìyī","đồ ngủ","pajamas","睡衣"],["午睡","wǔshuì","ngủ trưa","nap","午睡"]]],["盲","máng","mù","blind","盲",[["盲人","mángrén","người mù","blind person","盲人"],["色盲","sèmáng","mù màu","color blindness","色盲"],["盲點","mángdiǎn","điểm mù","blind spot","盲點"],["文盲","wénmáng","người mù chữ","illiterate person","文盲"]]]]};
+
   const soundFamilies=[
     {base:'青',p:'qīng',meaning:{vi:'họ âm “qing/jing”',en:'qing/jing sound family','zh-Hant':'qing／jing 聲符字族'},items:[
       ['清','qīng','氵 + 青',{vi:'nước → trong/sạch',en:'water → clear','zh-Hant':'水 → 清澈'}],
@@ -138,6 +141,239 @@
     else box.hidden=true;
     return box;
   }
+
+  function expansionMeaning(word){
+    const lang=getLang();
+    return lang==='en'?word[3]:lang==='zh-Hant'?word[4]:word[2];
+  }
+  function branchMeaning(branch){
+    const lang=getLang();
+    return lang==='en'?branch[3]:lang==='zh-Hant'?branch[4]:branch[2];
+  }
+  function branchWhy(branch){
+    const lang=getLang(), root=branch[0];
+    if(lang==='en')return `Keep ${root} as the root, then combine it with other characters to grow a practical vocabulary branch.`;
+    if(lang==='zh-Hant')return `保留「${root}」作為核心字，再和其他字組合，形成一組實用詞彙。`;
+    return `Giữ chữ ${root} làm gốc rồi ghép thêm chữ khác để phát triển thành một nhánh từ vựng thực dụng.`;
+  }
+  function expansionSection(r,ui){
+    const branches=expansionTrees[r.key]||[];
+    if(!branches.length)return document.createDocumentFragment();
+    const lang=getLang();
+    const labels=expansionUI[lang]||expansionUI.vi;
+    const total=branches.reduce((n,b)=>n+b[5].length,0);
+    const details=document.createElement('details');
+    details.className='rad-word-expansion';
+    const summary=document.createElement('summary');
+    summary.innerHTML=`<span>🌱 ${labels.title}</span><strong>${total} ${labels.words}</strong>`;
+    details.append(summary);
+    const intro=document.createElement('p');intro.className='rad-expansion-hint';intro.textContent=labels.hint;details.append(intro);
+    const grid=document.createElement('div');grid.className='rad-expansion-grid';
+    branches.forEach(branch=>{
+      const group=document.createElement('section');group.className='rad-expansion-branch';
+      const head=document.createElement('div');head.className='rad-expansion-branch-head';
+      const core=document.createElement('div');core.className='rad-expansion-root';core.textContent=branch[0];
+      const meta=document.createElement('div');meta.innerHTML=`<strong>${branch[1]}</strong><span>${branchMeaning(branch)}</span>`;
+      head.append(core,meta,audioButtons(branch[0],ui,'word'));
+      const why=document.createElement('p');why.className='rad-expansion-why';why.textContent=branchWhy(branch);
+      const list=document.createElement('div');list.className='rad-expansion-words';
+      branch[5].forEach(word=>{
+        const row=document.createElement('div');row.className='rad-expansion-word';
+        const main=document.createElement('div');main.className='rad-expansion-word-main';
+        main.innerHTML=`<strong>${word[0]}</strong><span>${word[1]}</span><small>${expansionMeaning(word)}</small>`;
+        row.append(main,audioButtons(word[0],ui));
+        list.append(row);
+      });
+      group.append(head,why,list);grid.append(group);
+    });
+    details.append(grid);
+    return details;
+  }
+
+  const WRITING_PROGRESS_KEY='tocfl-radical-writing-v1';
+  const SELECTED_RADICAL_KEY='tocfl-radical-selected-v1';
+  let selectedRadicalKey=localStorage.getItem(SELECTED_RADICAL_KEY)||'person';
+  const radicalWriterInstances=[];
+
+  function hanziChars(text){
+    return Array.from(String(text||'')).filter(ch=>/[\u3400-\u9FFF\uF900-\uFAFF]/.test(ch));
+  }
+  function uniqueTexts(items){
+    const seen=new Set();
+    return items.filter(item=>{const key=item.text;if(!key||seen.has(key))return false;seen.add(key);return true;});
+  }
+  function writingTargets(r){
+    const items=[];
+    const primary=r.radical.split('/')[0].trim();
+    if(primary)items.push({text:primary,p:r.pinyin,m:pick(r.meaning),group:'core'});
+    r.chars.forEach(ch=>items.push({text:ch.h,p:ch.p,m:pick(ch.m),group:'core'}));
+    (expansionTrees[r.key]||[]).forEach(branch=>{
+      items.push({text:branch[0],p:branch[1],m:branchMeaning(branch),group:'core'});
+      branch[5].forEach(word=>items.push({text:word[0],p:word[1],m:expansionMeaning(word),group:'expanded'}));
+    });
+    return uniqueTexts(items);
+  }
+  function coreWritingChars(r){
+    const chars=[];
+    chars.push(...hanziChars(r.radical.split('/')[0].trim()));
+    r.chars.forEach(ch=>chars.push(...hanziChars(ch.h)));
+    (expansionTrees[r.key]||[]).forEach(branch=>chars.push(...hanziChars(branch[0])));
+    return [...new Set(chars)];
+  }
+  function loadWritingProgress(){
+    try{return JSON.parse(localStorage.getItem(WRITING_PROGRESS_KEY)||'{}')||{};}catch{return {};}
+  }
+  function saveWritingProgress(data){
+    try{localStorage.setItem(WRITING_PROGRESS_KEY,JSON.stringify(data));}catch{}
+  }
+  function markWritingComplete(radicalKey,ch){
+    const data=loadWritingProgress();
+    data[radicalKey]=data[radicalKey]||{};
+    data[radicalKey][ch]=(data[radicalKey][ch]||0)+1;
+    saveWritingProgress(data);
+  }
+  function writingProgress(r){
+    const data=loadWritingProgress()[r.key]||{};
+    const core=coreWritingChars(r);
+    return {done:core.filter(ch=>data[ch]>0).length,total:core.length};
+  }
+  function progressText(r,ui){
+    const p=writingProgress(r);
+    return `${ui.progress}: ${p.done}/${p.total}`;
+  }
+  function updateWritingProgressBadges(r,ui){
+    document.querySelectorAll(`[data-rad-progress="${r.key}"]`).forEach(el=>{el.textContent=progressText(r,ui);});
+  }
+  function radicalCharDataLoader(char,onComplete,onError){
+    fetch(`https://cdn.jsdelivr.net/npm/hanzi-writer-data@2.0.1/${encodeURIComponent(char)}.json`,{cache:'force-cache'})
+      .then(res=>{if(!res.ok)throw new Error(`HTTP ${res.status}`);return res.json();})
+      .then(onComplete).catch(onError);
+  }
+  function makePracticeWriter(host,ch,ui,r,status){
+    if(typeof window.HanziWriter==='undefined'){
+      status.textContent=ui.writerUnavailable;status.className='rad-writing-status is-error';return null;
+    }
+    const size=Math.max(170,Math.min(238,(window.innerWidth||320)-86));
+    let writer;
+    try{
+      writer=window.HanziWriter.create(host,ch,{
+        width:size,height:size,padding:12,
+        showOutline:true,showCharacter:true,
+        strokeAnimationSpeed:1,delayBetweenStrokes:180,
+        strokeColor:'#173b37',radicalColor:'#0f766e',outlineColor:'#cbded9',
+        drawingColor:'#db3a34',drawingWidth:5,
+        charDataLoader:radicalCharDataLoader,
+        onLoadCharDataError:()=>{status.textContent=ui.writerUnavailable;status.className='rad-writing-status is-error';}
+      });
+      radicalWriterInstances.push(writer);
+      return writer;
+    }catch(err){
+      console.warn('Radical writing writer unavailable:',ch,err);
+      status.textContent=ui.writerUnavailable;status.className='rad-writing-status is-error';return null;
+    }
+  }
+  function renderWritingTarget(container,target,r,ui){
+    container.innerHTML='';
+    const targetHead=document.createElement('div');targetHead.className='rad-writing-target-head';
+    targetHead.innerHTML=`<div><strong>${target.text}</strong><span>${target.p||''}</span><small>${target.m||''}</small></div>`;
+    targetHead.append(audioButtons(target.text,ui,'word'));container.append(targetHead);
+    const chars=hanziChars(target.text);
+    const grid=document.createElement('div');grid.className='rad-writing-grid';container.append(grid);
+    chars.forEach(ch=>{
+      const unit=document.createElement('article');unit.className='rad-writing-unit';
+      const label=document.createElement('div');label.className='rad-writing-unit-label';label.textContent=ch;
+      const host=document.createElement('div');host.className='rad-writing-box';
+      const status=document.createElement('div');status.className='rad-writing-status';status.textContent=ui.writingReady;
+      const actions=document.createElement('div');actions.className='rad-writing-actions';
+      const animate=document.createElement('button');animate.type='button';animate.textContent=`▶ ${ui.strokeOrder}`;
+      const quiz=document.createElement('button');quiz.type='button';quiz.className='primary';quiz.textContent=`✍ ${ui.startQuiz}`;
+      const reset=document.createElement('button');reset.type='button';reset.textContent=`↺ ${ui.rewrite}`;
+      const guide=document.createElement('button');guide.type='button';guide.textContent=`👁 ${ui.hideGuide}`;
+      actions.append(animate,quiz,reset,guide);unit.append(label,host,actions,status);grid.append(unit);
+      let guideVisible=true;
+      const writer=makePracticeWriter(host,ch,ui,r,status);
+      if(!writer){animate.disabled=quiz.disabled=reset.disabled=guide.disabled=true;return;}
+      animate.addEventListener('click',()=>{
+        try{writer.cancelQuiz();writer.showOutline({duration:0});writer.showCharacter({duration:0});writer.animateCharacter();status.textContent=ui.strokeOrder;}catch{}
+      });
+      quiz.addEventListener('click',()=>{
+        status.textContent=ui.writingReady;status.className='rad-writing-status';
+        try{
+          writer.cancelQuiz();
+          writer.quiz({
+            showHintAfterMisses:2,highlightOnComplete:true,
+            onMistake:()=>{status.textContent=ui.writingMistake;status.className='rad-writing-status is-warn';},
+            onCorrectStroke:()=>{status.textContent=ui.writingReady;status.className='rad-writing-status';},
+            onComplete:()=>{status.textContent=ui.writingGood;status.className='rad-writing-status is-good';markWritingComplete(r.key,ch);updateWritingProgressBadges(r,ui);}
+          });
+        }catch(err){console.warn('Hanzi quiz error',err);status.textContent=ui.writerUnavailable;status.className='rad-writing-status is-error';}
+      });
+      reset.addEventListener('click',()=>{
+        try{writer.cancelQuiz();writer.showOutline({duration:0});if(guideVisible)writer.showCharacter({duration:0});else writer.hideCharacter({duration:0});status.textContent=ui.writingReady;status.className='rad-writing-status';}catch{}
+      });
+      guide.addEventListener('click',()=>{
+        guideVisible=!guideVisible;
+        try{guideVisible?writer.showCharacter({duration:120}):writer.hideCharacter({duration:120});}catch{}
+        guide.textContent=`👁 ${guideVisible?ui.hideGuide:ui.showGuide}`;
+      });
+    });
+  }
+  function writingPracticePanel(r,ui){
+    const details=document.createElement('details');details.className='rad-writing-panel';
+    const summary=document.createElement('summary');
+    summary.innerHTML=`<span>✍ ${ui.practiceWriting}</span><strong data-rad-progress="${r.key}">${progressText(r,ui)}</strong>`;
+    details.append(summary);
+    const body=document.createElement('div');body.className='rad-writing-panel-body';details.append(body);
+    let built=false;
+    details.addEventListener('toggle',()=>{
+      if(!details.open||built)return;built=true;
+      const hint=document.createElement('p');hint.className='rad-writing-hint';hint.textContent=ui.practiceHint;
+      const row=document.createElement('label');row.className='rad-writing-select-row';
+      const title=document.createElement('span');title.textContent=ui.practiceTarget;
+      const select=document.createElement('select');
+      const targets=writingTargets(r);
+      const coreGroup=document.createElement('optgroup');coreGroup.label=ui.coreChars;
+      const expGroup=document.createElement('optgroup');expGroup.label=ui.expandedWords;
+      targets.forEach((target,idx)=>{
+        const option=document.createElement('option');option.value=String(idx);option.textContent=`${target.text} · ${target.p||''} · ${target.m||''}`;
+        (target.group==='expanded'?expGroup:coreGroup).append(option);
+      });
+      select.append(coreGroup,expGroup);
+      const saved=localStorage.getItem(`tocfl-radical-writing-target-${r.key}`);
+      if(saved!==null&&targets[Number(saved)])select.value=saved;
+      row.append(title,select);body.append(hint,row);
+      const stage=document.createElement('div');stage.className='rad-writing-stage';body.append(stage);
+      const draw=()=>{
+        const idx=Number(select.value)||0;
+        try{localStorage.setItem(`tocfl-radical-writing-target-${r.key}`,String(idx));}catch{}
+        renderWritingTarget(stage,targets[idx]||targets[0],r,ui);
+      };
+      select.addEventListener('change',draw);draw();
+    });
+    return details;
+  }
+  function radicalSearchText(r){
+    const exp=(expansionTrees[r.key]||[]).map(b=>`${b.slice(0,5).join(' ')} ${b[5].flat().join(' ')}`).join(' ');
+    return `${r.radical} ${r.pinyin} ${pick(r.meaning)} ${r.chars.map(x=>`${x.h} ${x.p} ${pick(x.m)}`).join(' ')} ${exp}`.toLowerCase();
+  }
+  function radicalChooser(ui,query=''){
+    const section=document.createElement('section');section.className='rad-picker card';
+    const intro=document.createElement('div');intro.className='rad-picker-head';intro.innerHTML=`<div><h3>${ui.chooseRadical}</h3><p>${ui.chooseHint}</p></div>`;section.append(intro);
+    const grid=document.createElement('div');grid.className='rad-picker-grid';
+    const visible=radicals.filter(r=>!query||radicalSearchText(r).includes(query));
+    if(!query){
+      const all=document.createElement('button');all.type='button';all.className='rad-picker-item rad-picker-all';all.classList.toggle('is-active',selectedRadicalKey==='all');all.innerHTML=`<strong>∞</strong><span>${ui.all}</span>`;
+      all.addEventListener('click',()=>{selectedRadicalKey='all';localStorage.setItem(SELECTED_RADICAL_KEY,'all');renderContent();});grid.append(all);
+    }
+    visible.forEach(r=>{
+      const b=document.createElement('button');b.type='button';b.className='rad-picker-item';b.classList.toggle('is-active',selectedRadicalKey===r.key);
+      const p=writingProgress(r);
+      b.innerHTML=`<strong>${r.radical}</strong><span>${r.pinyin} · ${pick(r.meaning)}</span><small data-rad-progress="${r.key}">${ui.progress}: ${p.done}/${p.total}</small>`;
+      b.addEventListener('click',()=>{selectedRadicalKey=r.key;localStorage.setItem(SELECTED_RADICAL_KEY,r.key);renderContent();});grid.append(b);
+    });
+    section.append(grid);return section;
+  }
+
   function charCard(ch,ui){
     const card=document.createElement('article');card.className='rad-char-card';
     const top=document.createElement('div');top.className='rad-char-top';
@@ -153,20 +389,23 @@
     return card;
   }
   function radicalCard(r,ui){
-    const card=document.createElement('section');card.className='rad-group-card';card.dataset.search=`${r.radical} ${r.pinyin} ${pick(r.meaning)} ${r.chars.map(x=>`${x.h} ${x.p} ${pick(x.m)}`).join(' ')}`.toLowerCase();
+    const card=document.createElement('section');card.className='rad-group-card';const expSearch=(expansionTrees[r.key]||[]).map(b=>`${b.slice(0,5).join(' ')} ${b[5].flat().join(' ')}`).join(' ');card.dataset.search=`${r.radical} ${r.pinyin} ${pick(r.meaning)} ${r.chars.map(x=>`${x.h} ${x.p} ${pick(x.m)}`).join(' ')} ${expSearch}`.toLowerCase();
     const head=document.createElement('div');head.className='rad-group-head';
     const symbol=document.createElement('div');symbol.className='rad-symbol';symbol.textContent=r.radical;
     const meta=document.createElement('div');meta.innerHTML=`<div class="rad-icon">${r.icon}</div><strong>${r.pinyin}</strong><span>${pick(r.meaning)}</span>`;
     head.append(symbol,meta,audioButtons(r.radical.split('/')[0].trim(),ui,'word'));
     const origin=document.createElement('p');origin.className='rad-origin';origin.textContent=pick(r.origin);
     const chars=document.createElement('div');chars.className='rad-char-grid';r.chars.forEach(ch=>chars.append(charCard(ch,ui)));
-    card.append(head,origin,chars);return card;
+    card.append(head,origin,writingPracticePanel(r,ui),chars,expansionSection(r,ui));return card;
   }
   function renderSemantic(root,ui,query=''){
     root.innerHTML='';
-    const note=document.createElement('div');note.className='rad-learning-note';note.textContent=ui.note;root.append(note);
+    const note=document.createElement('div');note.className='rad-learning-note';note.textContent=ui.note;root.append(note,radicalChooser(ui,query));
     const grid=document.createElement('div');grid.className='rad-group-grid';
-    radicals.forEach(r=>{const card=radicalCard(r,ui);if(!query||card.dataset.search.includes(query))grid.append(card);});
+    let list=radicals.filter(r=>!query||radicalSearchText(r).includes(query));
+    if(!query&&selectedRadicalKey!=='all')list=list.filter(r=>r.key===selectedRadicalKey);
+    list.forEach(r=>grid.append(radicalCard(r,ui)));
+    if(!list.length){const empty=document.createElement('div');empty.className='rad-learning-note';empty.textContent=getLang()==='en'?'No matching radical found.':getLang()==='zh-Hant'?'找不到符合的部件。':'Không tìm thấy bộ phù hợp.';grid.append(empty);}
     root.append(grid);
   }
   function renderFamilies(root,ui,query=''){

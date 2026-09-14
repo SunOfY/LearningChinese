@@ -1,0 +1,14 @@
+RADICALS VOCABULARY EXPANSION — 2026-09-15
+
+- Kept the existing 12 radical/component groups.
+- Added 48 vocabulary branches (4 branches per group).
+- Added 192 practical compound words total (16 per group).
+- Each expansion branch shows:
+  * root character + Pinyin + meaning
+  * short explanation of how to learn the branch
+  * four related compound words
+  * normal and slow zh-TW pronunciation buttons
+- Expansion is collapsed by default to keep each radical card readable.
+- Search now also finds words inside the expanded vocabulary tree.
+- Vietnamese / English / Traditional Chinese meanings supported.
+- Service worker cache bumped to v4-16.

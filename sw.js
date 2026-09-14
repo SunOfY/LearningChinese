@@ -1,4 +1,4 @@
-const CACHE = 'tocfl-v4-19-full-writing-fast-audio';
+const CACHE = 'tocfl-v4-20-deep-word-learning';
 const ASSETS = [
   './',
   './index.html',

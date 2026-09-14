@@ -355,3 +355,22 @@ body.writing-active, body.writing-active *{ -webkit-user-select:none !important;
   .rad-expansion-word>.rad-audio-actions{grid-column:1/2}
   .rad-expansion-word>.rad-write-shortcut{grid-column:2/3;align-self:center}
 }
+
+/* Deep-learning layer for every vocabulary branch/word */
+.rad-expansion-word{grid-template-columns:minmax(0,1fr) auto;align-items:start}
+.rad-expansion-actions{display:flex;gap:6px;align-items:center;justify-content:flex-end;flex-wrap:wrap}
+.rad-expansion-actions .rad-audio-actions{margin:0;flex-wrap:nowrap}.rad-expansion-actions .rad-audio-actions button{padding:5px 7px;min-height:30px;font-size:11px}
+.rad-root-study{margin:9px 0 10px;padding:9px 10px;border-radius:11px;background:#f3faf8;border:1px solid #d8ebe6;color:#46645f;font-size:12px;line-height:1.5}
+.rad-root-study>strong{display:block;color:#173b37;margin-bottom:5px}.rad-root-study p{margin:5px 0 0}.rad-root-structure{display:flex;align-items:center;gap:7px;flex-wrap:wrap}.rad-root-structure span{color:var(--muted)}.rad-root-structure b{background:#fff;border:1px solid #cfe4df;border-radius:999px;padding:3px 8px;color:var(--accent)}
+.rad-deep-word{grid-column:1/-1;margin-top:2px;border-top:1px dashed #d8e6e2;padding-top:5px}
+.rad-deep-word>summary{cursor:pointer;list-style:none;display:flex;align-items:center;justify-content:space-between;gap:8px;color:#315f58;font-size:12px;font-weight:850;padding:4px 2px}
+.rad-deep-word>summary::-webkit-details-marker{display:none}.rad-deep-word>summary:hover{color:var(--accent)}
+.rad-relation-tag{font-style:normal;font-size:10px;border-radius:999px;padding:3px 7px;background:#eef5f3;color:#58706c;border:1px solid #d8e6e2;white-space:nowrap}
+.rad-relation-tag.is-grammar{background:#fff6e8;color:#8a5b13;border-color:#f1d8a9}.rad-relation-tag.is-result{background:#eef3ff;color:#405b9d;border-color:#d4ddf5}.rad-relation-tag.is-fixed{background:#f6eefb;color:#71518c;border-color:#e5d2ef}.rad-relation-tag.is-redup{background:#fff0f2;color:#914b5a;border-color:#f0d0d6}
+.rad-deep-body{display:grid;grid-template-columns:1fr 1fr;gap:8px;padding:8px 0 2px}
+.rad-deep-block{border:1px solid #e0ece9;background:#fff;border-radius:10px;padding:9px;min-width:0}.rad-deep-block h5{margin:0 0 6px;font-size:12px;color:#214f48}.rad-deep-block p{margin:0;color:#526b67;font-size:12px;line-height:1.55}
+.rad-word-formula{display:flex;align-items:center;gap:6px;flex-wrap:wrap}.rad-word-formula>b{color:#8aa09c}
+.rad-formula-chip,.rad-formula-result{display:grid;gap:1px;padding:5px 8px;border-radius:9px;background:#f6faf9;border:1px solid #dbe9e6;min-width:0}.rad-formula-chip strong,.rad-formula-result strong{font-family:"BiauKai","DFKai-SB","Kaiti TC","Noto Serif TC",serif;font-size:20px}.rad-formula-chip small,.rad-formula-result small{font-size:10px;color:var(--muted);line-height:1.3}.rad-formula-result{background:#eaf7f4;border-color:#b9ddd5}.rad-formula-result strong{color:var(--accent)}
+.rad-pronunciation-breakdown{display:grid;gap:5px}.rad-syllable-chip{display:grid;grid-template-columns:auto 1fr;gap:8px;text-align:left;align-items:start;padding:6px 8px;border:1px solid #dbe9e6;border-radius:9px;background:#f8fbfa;color:#355b55}.rad-syllable-chip:hover{background:#eef8f5}.rad-syllable-chip strong{color:var(--accent);font-size:13px}.rad-syllable-chip span{font-size:11px;line-height:1.4;color:#607772}.rad-deep-mini{font-size:10px!important;color:#879995!important;margin-bottom:6px!important}
+.rad-study-flow{grid-column:1/-1;display:flex;align-items:center;gap:8px;flex-wrap:wrap;padding:8px 10px;border-radius:10px;background:#fff9e9;border:1px solid #efe1b5;font-size:11px;color:#6e5b28}.rad-study-flow strong{color:#614b10}.rad-study-flow span{line-height:1.45}
+@media(max-width:760px){.rad-expansion-word{grid-template-columns:1fr}.rad-expansion-actions{justify-content:flex-start}.rad-deep-body{grid-template-columns:1fr}.rad-study-flow{grid-column:auto}.rad-word-formula{align-items:stretch}.rad-formula-chip,.rad-formula-result{min-width:72px}.rad-expansion-word>.rad-write-shortcut{grid-column:auto}}

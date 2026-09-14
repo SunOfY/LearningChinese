@@ -1,5 +1,5 @@
 {
-  "version": "2026-09-15-data-v1",
+  "version": "2026-09-15-deep-learning-v1",
   "radicals": [
     {
       "key": "person",
@@ -3321,5 +3321,1391 @@
         "Trong hội thoại thường phần “thấp” quan trọng hơn việc phải lên đầy đủ."
       ]
     ]
+  },
+  "learningChunks": {
+    "一句": {
+      "vi": "một câu",
+      "en": "one sentence",
+      "zh-Hant": "一句話"
+    },
+    "上": {
+      "vi": "trên / khoảng thời gian",
+      "en": "on / time period",
+      "zh-Hant": "上、時段"
+    },
+    "不": {
+      "vi": "không",
+      "en": "not",
+      "zh-Hant": "不"
+    },
+    "中文": {
+      "vi": "tiếng Trung",
+      "en": "Chinese language",
+      "zh-Hant": "中文"
+    },
+    "了": {
+      "vi": "rồi / đã",
+      "en": "completed-state particle",
+      "zh-Hant": "了"
+    },
+    "人": {
+      "vi": "người",
+      "en": "person",
+      "zh-Hant": "人"
+    },
+    "來": {
+      "vi": "đến / lại đây",
+      "en": "come / toward speaker",
+      "zh-Hant": "來"
+    },
+    "們": {
+      "vi": "hậu tố số nhiều cho người",
+      "en": "plural suffix for people",
+      "zh-Hant": "人的複數後綴"
+    },
+    "候": {
+      "vi": "khoảng/lúc (trong 時候)",
+      "en": "time element in 時候",
+      "zh-Hant": "「時候」中的時間成分"
+    },
+    "假": {
+      "vi": "nghỉ / kỳ nghỉ",
+      "en": "leave / holiday",
+      "zh-Hant": "假期、請假"
+    },
+    "做": {
+      "vi": "làm / trở thành",
+      "en": "do / make / be called",
+      "zh-Hant": "做"
+    },
+    "光": {
+      "vi": "ánh sáng",
+      "en": "light",
+      "zh-Hant": "光"
+    },
+    "冷": {
+      "vi": "lạnh",
+      "en": "cold",
+      "zh-Hant": "冷"
+    },
+    "到": {
+      "vi": "đến / đạt được",
+      "en": "reach / obtain",
+      "zh-Hant": "到、達成"
+    },
+    "前": {
+      "vi": "trước",
+      "en": "front / before",
+      "zh-Hant": "前"
+    },
+    "午": {
+      "vi": "buổi trưa",
+      "en": "noon",
+      "zh-Hant": "午"
+    },
+    "可": {
+      "vi": "có thể / đáng",
+      "en": "can / worthy of",
+      "zh-Hant": "可"
+    },
+    "吃": {
+      "vi": "ăn",
+      "en": "eat",
+      "zh-Hant": "吃"
+    },
+    "合": {
+      "vi": "hợp / cùng nhau",
+      "en": "combine / together",
+      "zh-Hant": "合、一起"
+    },
+    "名": {
+      "vi": "tên",
+      "en": "name",
+      "zh-Hant": "名字"
+    },
+    "呢": {
+      "vi": "trợ từ hỏi “còn…?”",
+      "en": "topic-question particle",
+      "zh-Hant": "語氣助詞「呢」"
+    },
+    "咖啡": {
+      "vi": "cà phê",
+      "en": "coffee",
+      "zh-Hant": "咖啡"
+    },
+    "咪": {
+      "vi": "âm thân mật trong “mami”",
+      "en": "affectionate sound in “mommy”",
+      "zh-Hant": "親暱音「咪」"
+    },
+    "問": {
+      "vi": "hỏi",
+      "en": "ask",
+      "zh-Hant": "問"
+    },
+    "喝": {
+      "vi": "uống",
+      "en": "drink",
+      "zh-Hant": "喝"
+    },
+    "國": {
+      "vi": "quốc gia",
+      "en": "country / national",
+      "zh-Hant": "國"
+    },
+    "園": {
+      "vi": "vườn / khuôn viên",
+      "en": "garden / campus",
+      "zh-Hant": "園"
+    },
+    "址": {
+      "vi": "địa điểm / địa chỉ",
+      "en": "site / address",
+      "zh-Hant": "地址、位置"
+    },
+    "坐": {
+      "vi": "ngồi",
+      "en": "sit",
+      "zh-Hant": "坐"
+    },
+    "場": {
+      "vi": "sân / nơi chốn",
+      "en": "field / place",
+      "zh-Hant": "場地"
+    },
+    "大": {
+      "vi": "lớn",
+      "en": "big / elder",
+      "zh-Hant": "大"
+    },
+    "天": {
+      "vi": "ngày / trời",
+      "en": "day / sky",
+      "zh-Hant": "天"
+    },
+    "太": {
+      "vi": "quá",
+      "en": "too / very",
+      "zh-Hant": "太"
+    },
+    "好": {
+      "vi": "tốt",
+      "en": "good",
+      "zh-Hant": "好"
+    },
+    "妹": {
+      "vi": "em gái",
+      "en": "younger sister",
+      "zh-Hant": "妹妹"
+    },
+    "姐": {
+      "vi": "chị gái",
+      "en": "older sister",
+      "zh-Hant": "姐姐"
+    },
+    "媽": {
+      "vi": "mẹ",
+      "en": "mother",
+      "zh-Hant": "媽媽"
+    },
+    "媽們": {
+      "vi": "các bà mẹ",
+      "en": "mothers",
+      "zh-Hant": "媽媽們"
+    },
+    "子": {
+      "vi": "hậu tố danh từ / con",
+      "en": "noun suffix / child",
+      "zh-Hant": "名詞後綴、孩子"
+    },
+    "字": {
+      "vi": "chữ",
+      "en": "character / typing",
+      "zh-Hant": "字"
+    },
+    "學": {
+      "vi": "học",
+      "en": "study",
+      "zh-Hant": "學"
+    },
+    "安": {
+      "vi": "yên / an",
+      "en": "peace / safe",
+      "zh-Hant": "安"
+    },
+    "完": {
+      "vi": "xong / hoàn tất",
+      "en": "finish / complete",
+      "zh-Hant": "完"
+    },
+    "客": {
+      "vi": "khách",
+      "en": "guest",
+      "zh-Hant": "客"
+    },
+    "害": {
+      "vi": "hại / làm cho",
+      "en": "harm / cause",
+      "zh-Hant": "害"
+    },
+    "家": {
+      "vi": "nhà / gia đình",
+      "en": "home / family",
+      "zh-Hant": "家"
+    },
+    "宿": {
+      "vi": "ngủ lại / lưu trú",
+      "en": "stay overnight / lodging",
+      "zh-Hant": "住宿"
+    },
+    "對": {
+      "vi": "đối / qua lại",
+      "en": "opposite / reciprocal",
+      "zh-Hant": "對"
+    },
+    "小": {
+      "vi": "nhỏ",
+      "en": "small",
+      "zh-Hant": "小"
+    },
+    "小孩": {
+      "vi": "trẻ nhỏ",
+      "en": "child",
+      "zh-Hant": "小孩"
+    },
+    "居": {
+      "vi": "ở / cư trú",
+      "en": "reside",
+      "zh-Hant": "居住"
+    },
+    "工作": {
+      "vi": "công việc",
+      "en": "work / job",
+      "zh-Hant": "工作"
+    },
+    "幫": {
+      "vi": "giúp",
+      "en": "help",
+      "zh-Hant": "幫"
+    },
+    "年": {
+      "vi": "năm",
+      "en": "year",
+      "zh-Hant": "年"
+    },
+    "店": {
+      "vi": "cửa hàng / cơ sở",
+      "en": "shop / establishment",
+      "zh-Hant": "店"
+    },
+    "廳": {
+      "vi": "sảnh / phòng lớn",
+      "en": "hall / dining room",
+      "zh-Hant": "廳"
+    },
+    "弟": {
+      "vi": "em trai",
+      "en": "younger brother",
+      "zh-Hant": "弟弟"
+    },
+    "很": {
+      "vi": "rất",
+      "en": "very",
+      "zh-Hant": "很"
+    },
+    "心": {
+      "vi": "tim / tâm",
+      "en": "heart / mind",
+      "zh-Hant": "心"
+    },
+    "息": {
+      "vi": "nghỉ / hơi thở",
+      "en": "rest / breath",
+      "zh-Hant": "息"
+    },
+    "情": {
+      "vi": "tình cảm / tình trạng",
+      "en": "feeling / situation",
+      "zh-Hant": "情"
+    },
+    "感": {
+      "vi": "cảm nhận",
+      "en": "feel / feeling",
+      "zh-Hant": "感"
+    },
+    "手": {
+      "vi": "tay",
+      "en": "hand",
+      "zh-Hant": "手"
+    },
+    "擁": {
+      "vi": "ôm / bao quanh",
+      "en": "embrace",
+      "zh-Hant": "擁"
+    },
+    "放": {
+      "vi": "thả / làm cho",
+      "en": "release / let",
+      "zh-Hant": "放"
+    },
+    "文": {
+      "vi": "văn / ngôn ngữ",
+      "en": "writing / language",
+      "zh-Hant": "文"
+    },
+    "料": {
+      "vi": "nguyên liệu / thứ để dùng",
+      "en": "material / stuff",
+      "zh-Hant": "材料、料"
+    },
+    "早": {
+      "vi": "sớm",
+      "en": "early / morning",
+      "zh-Hant": "早"
+    },
+    "晚": {
+      "vi": "tối / muộn",
+      "en": "evening / late",
+      "zh-Hant": "晚"
+    },
+    "晨": {
+      "vi": "sáng sớm",
+      "en": "early morning",
+      "zh-Hant": "晨"
+    },
+    "書": {
+      "vi": "sách",
+      "en": "book",
+      "zh-Hant": "書"
+    },
+    "會": {
+      "vi": "gặp / hội / cơ hội",
+      "en": "meet / meeting / chance",
+      "zh-Hant": "會、機會"
+    },
+    "有": {
+      "vi": "có",
+      "en": "have / there is",
+      "zh-Hant": "有"
+    },
+    "朗": {
+      "vi": "sáng sủa / quang",
+      "en": "bright / clear",
+      "zh-Hant": "朗"
+    },
+    "木": {
+      "vi": "cây / gỗ",
+      "en": "wood / tree",
+      "zh-Hant": "木"
+    },
+    "東西": {
+      "vi": "đồ vật",
+      "en": "thing / object",
+      "zh-Hant": "東西"
+    },
+    "森": {
+      "vi": "rừng rậm",
+      "en": "dense forest",
+      "zh-Hant": "森"
+    },
+    "楚": {
+      "vi": "rõ / phân minh",
+      "en": "clear / distinct",
+      "zh-Hant": "楚、清楚"
+    },
+    "樂": {
+      "vi": "vui",
+      "en": "joy / happy",
+      "zh-Hant": "樂"
+    },
+    "樹": {
+      "vi": "cây",
+      "en": "tree",
+      "zh-Hant": "樹"
+    },
+    "歉": {
+      "vi": "hối tiếc / áy náy",
+      "en": "regret / apology",
+      "zh-Hant": "歉意"
+    },
+    "歌": {
+      "vi": "bài hát",
+      "en": "song",
+      "zh-Hant": "歌"
+    },
+    "水": {
+      "vi": "nước",
+      "en": "water",
+      "zh-Hant": "水"
+    },
+    "汗": {
+      "vi": "mồ hôi",
+      "en": "sweat",
+      "zh-Hant": "汗"
+    },
+    "河": {
+      "vi": "sông",
+      "en": "river",
+      "zh-Hant": "河"
+    },
+    "況": {
+      "vi": "tình trạng",
+      "en": "condition / situation",
+      "zh-Hant": "況"
+    },
+    "法": {
+      "vi": "cách / quy tắc",
+      "en": "method / rule",
+      "zh-Hant": "方法、規則"
+    },
+    "洋": {
+      "vi": "đại dương / rộng lớn",
+      "en": "ocean / foreign",
+      "zh-Hant": "洋"
+    },
+    "滿": {
+      "vi": "đầy",
+      "en": "full",
+      "zh-Hant": "滿"
+    },
+    "演": {
+      "vi": "diễn / biểu diễn",
+      "en": "perform",
+      "zh-Hant": "演"
+    },
+    "潔": {
+      "vi": "sạch",
+      "en": "clean",
+      "zh-Hant": "潔"
+    },
+    "澡": {
+      "vi": "tắm",
+      "en": "bathe",
+      "zh-Hant": "澡"
+    },
+    "炒": {
+      "vi": "xào / rang",
+      "en": "stir-fry",
+      "zh-Hant": "炒"
+    },
+    "熱": {
+      "vi": "nóng",
+      "en": "hot",
+      "zh-Hant": "熱"
+    },
+    "燒": {
+      "vi": "đốt / nướng",
+      "en": "burn / roast",
+      "zh-Hant": "燒"
+    },
+    "爸": {
+      "vi": "bố",
+      "en": "father",
+      "zh-Hant": "爸爸"
+    },
+    "片": {
+      "vi": "tấm / đĩa / mảnh",
+      "en": "slice / disc / piece",
+      "zh-Hant": "片"
+    },
+    "球": {
+      "vi": "bóng",
+      "en": "ball",
+      "zh-Hant": "球"
+    },
+    "用": {
+      "vi": "dùng",
+      "en": "use",
+      "zh-Hant": "用"
+    },
+    "白": {
+      "vi": "trắng / rõ",
+      "en": "white / clear",
+      "zh-Hant": "白"
+    },
+    "的": {
+      "vi": "trợ từ sở hữu / bổ nghĩa",
+      "en": "possessive / modifier particle",
+      "zh-Hant": "結構助詞「的」"
+    },
+    "看": {
+      "vi": "nhìn / xem",
+      "en": "look / watch",
+      "zh-Hant": "看"
+    },
+    "睛": {
+      "vi": "tròng mắt",
+      "en": "eyeball / eye element",
+      "zh-Hant": "眼睛"
+    },
+    "碌": {
+      "vi": "bận bịu",
+      "en": "busy / occupied",
+      "zh-Hant": "忙碌"
+    },
+    "空": {
+      "vi": "trống / bầu trời",
+      "en": "empty / sky",
+      "zh-Hant": "空"
+    },
+    "笑": {
+      "vi": "cười",
+      "en": "laugh",
+      "zh-Hant": "笑"
+    },
+    "箱": {
+      "vi": "hộp / thùng",
+      "en": "box",
+      "zh-Hant": "箱"
+    },
+    "米": {
+      "vi": "gạo",
+      "en": "rice",
+      "zh-Hant": "米"
+    },
+    "紅綠": {
+      "vi": "đỏ + xanh",
+      "en": "red + green",
+      "zh-Hant": "紅＋綠"
+    },
+    "聽": {
+      "vi": "nghe",
+      "en": "listen / hear",
+      "zh-Hant": "聽"
+    },
+    "肉": {
+      "vi": "thịt",
+      "en": "meat",
+      "zh-Hant": "肉"
+    },
+    "臉": {
+      "vi": "mặt",
+      "en": "face",
+      "zh-Hant": "臉"
+    },
+    "色": {
+      "vi": "màu",
+      "en": "color",
+      "zh-Hant": "色"
+    },
+    "英": {
+      "vi": "Anh / tiếng Anh",
+      "en": "English / Britain",
+      "zh-Hant": "英"
+    },
+    "茶": {
+      "vi": "trà",
+      "en": "tea",
+      "zh-Hant": "茶"
+    },
+    "菜": {
+      "vi": "rau / món ăn",
+      "en": "vegetable / dish",
+      "zh-Hant": "菜"
+    },
+    "著": {
+      "vi": "trạng thái đang/đạt được",
+      "en": "state/result marker",
+      "zh-Hant": "狀態／結果「著」"
+    },
+    "行": {
+      "vi": "đi / lưu hành",
+      "en": "go / circulate",
+      "zh-Hant": "行"
+    },
+    "衣": {
+      "vi": "áo / quần áo",
+      "en": "clothes",
+      "zh-Hant": "衣"
+    },
+    "衣服": {
+      "vi": "quần áo",
+      "en": "clothes",
+      "zh-Hant": "衣服"
+    },
+    "見": {
+      "vi": "thấy",
+      "en": "see / result of seeing",
+      "zh-Hant": "見"
+    },
+    "覺": {
+      "vi": "giấc / cảm giác",
+      "en": "sleep / sense",
+      "zh-Hant": "覺"
+    },
+    "言": {
+      "vi": "lời nói",
+      "en": "speech / words",
+      "zh-Hant": "言"
+    },
+    "話": {
+      "vi": "lời / câu chuyện",
+      "en": "speech / words",
+      "zh-Hant": "話"
+    },
+    "說": {
+      "vi": "nói",
+      "en": "say / explain",
+      "zh-Hant": "說"
+    },
+    "走": {
+      "vi": "đi / rời đi",
+      "en": "go / away",
+      "zh-Hant": "走"
+    },
+    "車": {
+      "vi": "xe",
+      "en": "vehicle",
+      "zh-Hant": "車"
+    },
+    "邊": {
+      "vi": "bên / rìa",
+      "en": "side / edge",
+      "zh-Hant": "邊"
+    },
+    "鏡": {
+      "vi": "gương / kính",
+      "en": "mirror / lens",
+      "zh-Hant": "鏡"
+    },
+    "長": {
+      "vi": "trưởng / dài",
+      "en": "head / long",
+      "zh-Hant": "長"
+    },
+    "門": {
+      "vi": "cửa / cổng",
+      "en": "door / gate",
+      "zh-Hant": "門"
+    },
+    "閉": {
+      "vi": "đóng",
+      "en": "close",
+      "zh-Hant": "閉"
+    },
+    "開": {
+      "vi": "mở",
+      "en": "open",
+      "zh-Hant": "開"
+    },
+    "閒": {
+      "vi": "nhàn / rảnh",
+      "en": "leisure / free",
+      "zh-Hant": "閒"
+    },
+    "間": {
+      "vi": "khoảng / phòng",
+      "en": "interval / room",
+      "zh-Hant": "間"
+    },
+    "院": {
+      "vi": "viện / cơ sở",
+      "en": "institution / courtyard",
+      "zh-Hant": "院"
+    },
+    "雞": {
+      "vi": "gà",
+      "en": "chicken",
+      "zh-Hant": "雞"
+    },
+    "電": {
+      "vi": "điện",
+      "en": "electricity",
+      "zh-Hant": "電"
+    },
+    "電影": {
+      "vi": "phim",
+      "en": "movie",
+      "zh-Hant": "電影"
+    },
+    "電話": {
+      "vi": "điện thoại",
+      "en": "telephone",
+      "zh-Hant": "電話"
+    },
+    "飛": {
+      "vi": "bay",
+      "en": "fly",
+      "zh-Hant": "飛"
+    },
+    "食": {
+      "vi": "ăn / thức ăn",
+      "en": "eat / food",
+      "zh-Hant": "食"
+    },
+    "飯": {
+      "vi": "cơm / bữa ăn",
+      "en": "rice / meal",
+      "zh-Hant": "飯"
+    },
+    "餐": {
+      "vi": "bữa ăn",
+      "en": "meal",
+      "zh-Hant": "餐"
+    },
+    "鮮": {
+      "vi": "tươi",
+      "en": "fresh",
+      "zh-Hant": "鮮"
+    },
+    "點": {
+      "vi": "điểm / một chút / nhanh lên",
+      "en": "point / a bit",
+      "zh-Hant": "點"
+    }
+  },
+  "branchDetails": {
+    "他": {
+      "s": "亻 + 也",
+      "w": {
+        "vi": "亻 cho biết đây là người; 也 là phần gợi âm lịch sử. Hãy nhớ “một người khác” = anh ấy.",
+        "en": "亻 marks a person; 也 historically supplies a sound clue. Think “another person” = he.",
+        "zh-Hant": "亻提示「人」；也在歷史上提供聲音線索，可把它記成「另一個人＝他」。"
+      }
+    },
+    "吃": {
+      "s": "口 + 乞",
+      "w": {
+        "vi": "口 kéo nghĩa về miệng/ăn; 乞 là phần gợi âm lịch sử. Nhìn 口 trước để đoán đây là hành động bằng miệng.",
+        "en": "口 points to mouth/eating; 乞 historically contributes sound.",
+        "zh-Hant": "口提示嘴巴／吃的動作；乞在歷史上提供聲音線索。"
+      }
+    },
+    "叫": {
+      "s": "口 + 丩",
+      "w": {
+        "vi": "口 cho biết liên quan phát âm bằng miệng; phần bên phải gợi âm trong lịch sử.",
+        "en": "口 marks a mouth/voice action; the right side historically gives a sound clue.",
+        "zh-Hant": "口表示用嘴發聲；右側在歷史上提供聲音提示。"
+      }
+    },
+    "姐": {
+      "s": "女 + 且",
+      "w": {
+        "vi": "女 cho biết quan hệ nữ giới; 且 là phần gợi âm. Vì vậy 姐 thuộc nhóm người nữ trong gia đình.",
+        "en": "女 marks a female relation; 且 gives a sound clue.",
+        "zh-Hant": "女提示女性親屬；且提供聲音線索。"
+      }
+    },
+    "妹": {
+      "s": "女 + 未",
+      "w": {
+        "vi": "女 cho biết nữ giới; 未 gợi âm. Hãy gắn 妹 với “em gái” trong nhóm gia đình.",
+        "en": "女 marks female; 未 gives a sound clue.",
+        "zh-Hant": "女提示女性；未提供聲音線索，可記成家庭中的妹妹。"
+      }
+    },
+    "流": {
+      "s": "氵 + 㐬",
+      "w": {
+        "vi": "氵 đặt chữ vào nhóm nước; phần còn lại gợi âm. Hình dung dòng nước đang chảy để nhớ 流.",
+        "en": "氵 places it in the water domain; the rest gives a sound clue. Imagine flowing water.",
+        "zh-Hant": "氵提示與水有關；其餘部分提示讀音，可用「流水」來記。"
+      }
+    },
+    "快": {
+      "s": "忄 + 夬",
+      "w": {
+        "vi": "忄 liên quan trạng thái/cảm xúc; 夬 gợi âm. Trong 快樂, 快 nghiêng về trạng thái vui; ở nghĩa khác là nhanh.",
+        "en": "忄 relates to state/feeling; 夬 gives a sound clue. In 快樂 it contributes a happy state; elsewhere 快 means fast.",
+        "zh-Hant": "忄與心理狀態有關；夬提示讀音。「快」可表示快，也可在「快樂」中表示愉快。"
+      }
+    },
+    "怕": {
+      "s": "忄 + 白",
+      "w": {
+        "vi": "忄 báo hiệu cảm xúc; 白 là phần gợi âm lịch sử. Vì vậy 怕 là trạng thái sợ.",
+        "en": "忄 signals emotion; 白 historically contributes sound.",
+        "zh-Hant": "忄提示情緒；白在歷史上提供聲音線索，因此「怕」表示害怕。"
+      }
+    },
+    "說": {
+      "s": "訁 + 兌",
+      "w": {
+        "vi": "訁 kéo nghĩa về lời nói; 兌 là phần gợi âm lịch sử. Đây là mẫu điển hình “nghĩa + âm”.",
+        "en": "訁 supplies the speech meaning; 兌 historically gives a sound clue.",
+        "zh-Hant": "訁提示說話；兌在歷史上提供聲音線索，是典型形聲結構。"
+      }
+    },
+    "話": {
+      "s": "訁 + 舌",
+      "w": {
+        "vi": "訁 cho biết liên quan lời nói; 舌 gợi hình cái lưỡi nên rất dễ liên tưởng tới “lời/câu nói”.",
+        "en": "訁 marks speech; 舌 (tongue) makes a useful mnemonic for spoken words.",
+        "zh-Hant": "訁提示語言；舌可作為「用舌頭說話」的記憶聯想。"
+      }
+    },
+    "拿": {
+      "s": "合 + 手",
+      "w": {
+        "vi": "Có 手 ở dưới nên dễ liên tưởng tới thao tác bằng tay. Hãy hình dung hai phần “hợp lại trong tay” → cầm/lấy.",
+        "en": "手 at the bottom suggests a hand action. Think “bring together in the hand” → take/hold.",
+        "zh-Hant": "下方有手，容易聯想到手部動作；可記成「合在手中＝拿」。"
+      }
+    },
+    "找": {
+      "s": "扌 + 戈",
+      "w": {
+        "vi": "扌 báo hiệu thao tác bằng tay. Hãy tưởng tượng dùng tay lục tìm một vật → 找.",
+        "en": "扌 signals a hand action. Imagine searching around with your hand.",
+        "zh-Hant": "扌提示手部動作，可想像用手翻找東西。"
+      }
+    },
+    "餐": {
+      "s": "食-related form",
+      "w": {
+        "vi": "Chữ 餐 gắn trực tiếp với việc ăn/bữa ăn. Hãy coi đây là “đơn vị bữa ăn” để phát triển 早餐、午餐、晚餐.",
+        "en": "餐 directly refers to a meal; treat it as the “meal” unit for 早餐/午餐/晚餐.",
+        "zh-Hant": "「餐」直接表示一餐，可由此延伸早餐、午餐、晚餐。"
+      }
+    },
+    "飲": {
+      "s": "飠 + 欠",
+      "w": {
+        "vi": "飠 kéo nghĩa về ăn uống; 欠 là phần còn lại của cấu tạo. Hãy nhớ 飲 là hành động uống ở văn viết/trang trọng hơn 喝.",
+        "en": "飠 points to food/drink. 飲 is a more written/formal “drink” than 喝.",
+        "zh-Hant": "飠提示飲食；「飲」比「喝」較書面，可記成飲用、飲料。"
+      }
+    },
+    "校": {
+      "s": "木 + 交",
+      "w": {
+        "vi": "木 là bộ của chữ; 交 gợi âm xiào trong lịch sử. Học 校 qua cụm 學校 sẽ thực dụng hơn học riêng.",
+        "en": "木 is the semantic component; 交 historically hints at the sound. Learn 校 through 學校.",
+        "zh-Hant": "木為部件；交在歷史上提示讀音。實際學習可從「學校」記起。"
+      }
+    },
+    "桌": {
+      "s": "桌 (có 木 ở dưới)",
+      "w": {
+        "vi": "Phần 木 ở dưới giúp liên tưởng vật bằng gỗ. Hãy hình dung một chiếc bàn gỗ → 桌.",
+        "en": "木 at the bottom suggests a wooden object; picture a wooden table.",
+        "zh-Hant": "下方的木可幫助聯想到木製家具，記成「木桌」。"
+      }
+    },
+    "機": {
+      "s": "木 + 幾",
+      "w": {
+        "vi": "木 là bộ; 幾 gợi âm jī. Nghĩa hiện đại “máy/cơ hội” nên nên học qua 手機、飛機、機會.",
+        "en": "木 is the radical and 幾 hints at jī. Learn the modern meanings through 手機/飛機/機會.",
+        "zh-Hant": "木為部首，幾提示 jī 的讀音；現代義可從手機、飛機、機會來記。"
+      }
+    },
+    "明": {
+      "s": "日 + 月",
+      "w": {
+        "vi": "Mặt trời 日 + mặt trăng 月 → sáng/rõ. Đây là một hình ảnh ghi nhớ rất mạnh.",
+        "en": "Sun 日 + moon 月 → bright/clear, a very strong mnemonic.",
+        "zh-Hant": "日＋月容易聯想到「明亮、明白」。"
+      }
+    },
+    "熱": {
+      "s": "… + 灬",
+      "w": {
+        "vi": "灬 ở dưới thường gợi lửa/nhiệt. Thấy 灬 hãy liên tưởng “nóng” trước → 熱.",
+        "en": "灬 often hints at fire/heat. Use that visual cue to remember 熱.",
+        "zh-Hant": "下方灬常提示火／熱，可直接聯想到「熱」。"
+      }
+    },
+    "烤": {
+      "s": "火 + 考",
+      "w": {
+        "vi": "火 cho biết liên quan nhiệt; 考 gợi âm kǎo. Vì vậy 烤 = làm chín bằng nhiệt khô/nướng.",
+        "en": "火 gives the heat meaning; 考 gives the kǎo sound clue.",
+        "zh-Hant": "火提示加熱；考提示 kǎo 的讀音，因此「烤」表示烘烤。"
+      }
+    },
+    "睡": {
+      "s": "目 + 垂",
+      "w": {
+        "vi": "目 kéo nghĩa về mắt; khi ngủ mắt khép xuống. 垂 gợi âm. Hình dung “mắt rũ xuống” → 睡.",
+        "en": "目 points to the eyes; 垂 gives a sound clue. Picture drooping eyes → sleep.",
+        "zh-Hant": "目提示眼睛；垂提供聲音線索，可記成「眼皮垂下＝睡」。"
+      }
+    },
+    "盲": {
+      "s": "亡 + 目",
+      "w": {
+        "vi": "Có 目 = mắt; hãy dùng 亡 + 目 như hình ảnh “mất khả năng nhìn” để nhớ 盲.",
+        "en": "With 目 = eye, use 亡 + 目 as a mnemonic for loss of sight.",
+        "zh-Hant": "有目表示眼睛；可用「亡＋目＝失去視覺」來記憶「盲」。"
+      }
+    }
+  },
+  "learningOverrides": {
+    "你好": {
+      "relation": "fixed",
+      "memory": {
+        "vi": "你 = bạn + 好 = tốt. Nghĩ đơn giản “chúc bạn tốt” → lời chào 你好. Đây là cách nhớ, không cần dịch từng chữ khi sử dụng.",
+        "en": "你 = you + 好 = good. Think “wish you well” → hello; use it as a fixed greeting.",
+        "zh-Hant": "你＋好可用「祝你好」來記，但實際上直接把「你好」當固定問候語。"
+      },
+      "usage": {
+        "vi": "Dùng như lời chào cơ bản. Không dịch máy móc thành “bạn tốt”.",
+        "en": "Use it as a basic greeting, not literally “you good”.",
+        "zh-Hant": "基本問候語，不要逐字翻成「你很好」。"
+      }
+    },
+    "你們": {
+      "relation": "grammar",
+      "memory": {
+        "vi": "們 là hậu tố số nhiều cho người: 你 + 們 → nhiều “bạn” → các bạn.",
+        "en": "們 pluralizes people: 你 + 們 → you-plural.",
+        "zh-Hant": "們是人的複數後綴：你＋們＝你們。"
+      },
+      "usage": {
+        "vi": "Chỉ dùng 們 chủ yếu với người/đại từ chỉ người.",
+        "en": "們 is mainly used with people and person pronouns.",
+        "zh-Hant": "們主要用在人或人稱代詞後。"
+      }
+    },
+    "你的": {
+      "relation": "grammar",
+      "memory": {
+        "vi": "的 biến “bạn” thành cụm sở hữu: 你的 = của bạn.",
+        "en": "的 makes a possessive modifier: 你的 = your/yours.",
+        "zh-Hant": "的形成所有／修飾：你的＝你的、屬於你的。"
+      },
+      "usage": {
+        "vi": "Mẫu: 你的 + danh từ, ví dụ 你的書.",
+        "en": "Pattern: 你的 + noun, e.g. 你的書.",
+        "zh-Hant": "句型：你的＋名詞，例如「你的書」。"
+      }
+    },
+    "你呢": {
+      "relation": "grammar",
+      "memory": {
+        "vi": "呢 kéo chủ đề “bạn” ra để hỏi tiếp: “còn bạn thì sao?”.",
+        "en": "呢 returns the topic to “you”: “and you?”.",
+        "zh-Hant": "呢用來追問同一話題：「你呢？」＝那你呢？"
+      },
+      "usage": {
+        "vi": "Dùng khi người khác vừa nói về họ và bạn muốn hỏi ngược lại.",
+        "en": "Use it to ask the other person the same topic back.",
+        "zh-Hant": "對方說完後，用「你呢？」把同一話題問回去。"
+      }
+    },
+    "他們": {
+      "relation": "grammar"
+    },
+    "他的": {
+      "relation": "grammar"
+    },
+    "住宿": {
+      "relation": "fixed",
+      "memory": {
+        "vi": "住 = ở + 宿 = ngủ lại → chỗ/việc ở qua đêm → lưu trú.",
+        "en": "住 = stay + 宿 = lodge overnight → accommodation.",
+        "zh-Hant": "住＋宿＝住下過夜，因此是住宿。"
+      }
+    },
+    "休息": {
+      "relation": "fixed",
+      "memory": {
+        "vi": "休 = nghỉ + 息 = hơi thở/nghỉ → dừng lại để hồi sức → nghỉ ngơi.",
+        "en": "休 = rest + 息 = breath/rest → take a break.",
+        "zh-Hant": "休＋息可聯想到停下來恢復氣力＝休息。"
+      }
+    },
+    "休閒": {
+      "relation": "fixed",
+      "memory": {
+        "vi": "休 = nghỉ + 閒 = rảnh → thời gian rảnh để thư giãn/giải trí.",
+        "en": "休 = rest + 閒 = leisure → leisure/relaxation.",
+        "zh-Hant": "休＋閒＝有空休息、從事休閒活動。"
+      }
+    },
+    "小吃": {
+      "relation": "fixed",
+      "memory": {
+        "vi": "小 = nhỏ + 吃 = ăn → “món ăn nhỏ” → đồ ăn nhẹ/đặc sản ăn vặt.",
+        "en": "小 = small + 吃 = eat → small eats/snacks.",
+        "zh-Hant": "小＋吃可記成「小份、隨手吃的食物」＝小吃。"
+      }
+    },
+    "唱片": {
+      "relation": "fixed",
+      "memory": {
+        "vi": "唱 = hát + 片 = đĩa/tấm → “đĩa để nghe ca hát” → đĩa nhạc/album.",
+        "en": "唱 = sing + 片 = disc → record/album.",
+        "zh-Hant": "唱＋片可聯想到「收錄歌唱的唱片」。"
+      }
+    },
+    "叫做": {
+      "relation": "grammar",
+      "memory": {
+        "vi": "叫 = gọi + 做 = làm/thành → “gọi là…”; học cả cụm như một mẫu giới thiệu tên.",
+        "en": "叫 = call + 做 = do → “be called…”, learn it as a naming pattern.",
+        "zh-Hant": "叫＋做形成固定句型「叫做…」＝被稱為…。"
+      },
+      "usage": {
+        "vi": "Mẫu: A 叫做 B = A được gọi là B.",
+        "en": "Pattern: A 叫做 B = A is called B.",
+        "zh-Hant": "句型：A 叫做 B＝A 被稱為 B。"
+      }
+    },
+    "名叫": {
+      "relation": "fixed",
+      "memory": {
+        "vi": "名 = tên + 叫 = gọi → tên gọi là…",
+        "en": "名 = name + 叫 = be called → be named…",
+        "zh-Hant": "名＋叫＝名字叫做…。"
+      }
+    },
+    "媽媽": {
+      "relation": "redup",
+      "memory": {
+        "vi": "Lặp 媽 → cách gọi tự nhiên/thân mật “mẹ”.",
+        "en": "Reduplicating 媽 gives the natural kinship form “mom”.",
+        "zh-Hant": "媽重疊成「媽媽」，是最自然的親屬稱呼。"
+      }
+    },
+    "姐姐": {
+      "relation": "redup"
+    },
+    "妹妹": {
+      "relation": "redup"
+    },
+    "媽咪": {
+      "relation": "fixed",
+      "memory": {
+        "vi": "媽 + 咪 tạo cách gọi thân mật, gần “mommy”.",
+        "en": "媽 + 咪 gives an affectionate “mommy”.",
+        "zh-Hant": "媽＋咪是較親暱的「媽咪」。"
+      }
+    },
+    "弟妹": {
+      "relation": "fixed",
+      "memory": {
+        "vi": "弟 = em trai + 妹 = em gái → “các em”; trong vài ngữ cảnh gia đình có thể chỉ em dâu.",
+        "en": "弟 = younger brother + 妹 = younger sister → younger siblings; context can broaden the family meaning.",
+        "zh-Hant": "弟＋妹可指弟弟妹妹；家庭語境中也可能有其他親屬義，需看上下文。"
+      }
+    },
+    "好吃": {
+      "relation": "result",
+      "memory": {
+        "vi": "好 + 吃 không phải “tốt ăn” mà là “ăn thấy ngon” → ngon (đồ ăn).",
+        "en": "好 + 吃 means “good to eat” → delicious food.",
+        "zh-Hant": "好＋吃＝好吃，形容食物味道好。"
+      }
+    },
+    "好喝": {
+      "relation": "result",
+      "memory": {
+        "vi": "好 + 喝 = uống thấy ngon/dễ uống → ngon (đồ uống).",
+        "en": "好 + 喝 = good to drink → tasty drink.",
+        "zh-Hant": "好＋喝＝好喝，形容飲料好喝。"
+      }
+    },
+    "好看": {
+      "relation": "result",
+      "memory": {
+        "vi": "好 + 看 = nhìn thấy đẹp/dễ xem → đẹp, hay để xem.",
+        "en": "好 + 看 = good to look at/watch → good-looking/watchable.",
+        "zh-Hant": "好＋看＝好看，可形容外觀漂亮或內容值得看。"
+      }
+    },
+    "海鮮": {
+      "relation": "fixed",
+      "memory": {
+        "vi": "海 = biển + 鮮 = tươi → đồ tươi từ biển → hải sản.",
+        "en": "海 = sea + 鮮 = fresh → seafood.",
+        "zh-Hant": "海＋鮮＝來自海裡的新鮮食物＝海鮮。"
+      }
+    },
+    "清楚": {
+      "relation": "fixed",
+      "memory": {
+        "vi": "清 = trong + 楚 = rõ/phân minh → nhìn/nghe “trong và rõ” → rõ ràng.",
+        "en": "清 = clear + 楚 = distinct → clear/understandable.",
+        "zh-Hant": "清＋楚都帶有清楚分明的感覺，因此「清楚」＝明確。"
+      }
+    },
+    "清晨": {
+      "relation": "fixed",
+      "memory": {
+        "vi": "清 = trong lành + 晨 = sáng sớm → buổi sáng sớm trong trẻo.",
+        "en": "清 = clear/fresh + 晨 = early morning → early morning.",
+        "zh-Hant": "清＋晨可聯想到清新的一早＝清晨。"
+      }
+    },
+    "流行": {
+      "relation": "fixed",
+      "memory": {
+        "vi": "流 = lan/chảy + 行 = lưu hành → thứ đang “lan và lưu hành” → thịnh hành.",
+        "en": "流 = flow/spread + 行 = circulate → fashionable/popular.",
+        "zh-Hant": "流＋行＝流傳、通行，因此「流行」＝熱門、盛行。"
+      }
+    },
+    "心情": {
+      "relation": "fixed",
+      "memory": {
+        "vi": "心 = tim/tâm + 情 = cảm xúc → trạng thái cảm xúc trong lòng → tâm trạng.",
+        "en": "心 = heart/mind + 情 = feeling → mood.",
+        "zh-Hant": "心＋情＝心裡的情緒狀態＝心情。"
+      }
+    },
+    "感情": {
+      "relation": "fixed",
+      "memory": {
+        "vi": "感 = cảm nhận + 情 = tình cảm → tình cảm giữa người với người.",
+        "en": "感 = feel + 情 = feeling → emotion/relationship.",
+        "zh-Hant": "感＋情＝感受到的情意＝感情。"
+      }
+    },
+    "情況": {
+      "relation": "fixed",
+      "memory": {
+        "vi": "情 = tình trạng + 況 = trạng thái → hai phần cùng kéo về “tình hình”.",
+        "en": "情 + 況 both point toward condition/situation → 情況.",
+        "zh-Hant": "情＋況都可指狀況，因此「情況」＝情形、狀況。"
+      }
+    },
+    "熱情": {
+      "relation": "fixed",
+      "memory": {
+        "vi": "熱 = nóng + 情 = tình cảm → “cảm xúc nóng” → nhiệt tình.",
+        "en": "熱 = hot + 情 = feeling → warm/enthusiastic.",
+        "zh-Hant": "熱＋情＝熱烈的情感與態度＝熱情。"
+      }
+    },
+    "快樂": {
+      "relation": "fixed",
+      "memory": {
+        "vi": "快 ở đây là vui/sảng khoái + 樂 = vui → vui vẻ.",
+        "en": "快 here carries a pleased sense + 樂 = joy → happy.",
+        "zh-Hant": "快＋樂都指愉快感受，因此「快樂」＝開心。"
+      }
+    },
+    "快點": {
+      "relation": "grammar",
+      "memory": {
+        "vi": "快 = nhanh + 點 = một chút → “nhanh hơn một chút” → nhanh lên.",
+        "en": "快 = fast + 點 = a bit → “a bit faster” → hurry up.",
+        "zh-Hant": "快＋點＝再快一點，口語中就是「快點！」。"
+      }
+    },
+    "害怕": {
+      "relation": "fixed",
+      "memory": {
+        "vi": "害 + 怕 cùng tăng sắc thái sợ → sợ hãi.",
+        "en": "害 + 怕 combine into a stronger “be afraid”.",
+        "zh-Hant": "害＋怕組成固定詞「害怕」＝感到恐懼。"
+      }
+    },
+    "可怕": {
+      "relation": "fixed",
+      "memory": {
+        "vi": "可 = đáng/có thể + 怕 = sợ → “đáng để sợ” → đáng sợ.",
+        "en": "可 = worthy/can + 怕 = fear → frightening.",
+        "zh-Hant": "可＋怕＝令人覺得害怕＝可怕。"
+      }
+    },
+    "幫忙": {
+      "relation": "fixed",
+      "memory": {
+        "vi": "幫 = giúp + 忙 = bận/việc → giúp một tay vào việc → giúp đỡ.",
+        "en": "幫 = help + 忙 = busy/work → lend a hand.",
+        "zh-Hant": "幫＋忙＝在別人忙時幫一把＝幫忙。"
+      }
+    },
+    "小說": {
+      "relation": "fixed",
+      "memory": {
+        "vi": "小說 là từ cố định nghĩa “tiểu thuyết”; không nên suy ra nghĩa hiện đại chỉ bằng 小 + 說. Hãy học cả cụm.",
+        "en": "小說 is a lexicalized word meaning “novel”; do not infer the modern meaning literally from 小 + 說.",
+        "zh-Hant": "「小說」是固定詞，現代義為 novel，不宜只用小＋說逐字推導。"
+      },
+      "usage": {
+        "vi": "Học như một đơn vị từ vựng hoàn chỉnh.",
+        "en": "Learn it as one lexical unit.",
+        "zh-Hant": "把「小說」當成完整詞彙記憶。"
+      }
+    },
+    "請客": {
+      "relation": "fixed",
+      "memory": {
+        "vi": "請 = mời + 客 = khách → mời khách, thường hàm ý mình trả tiền/bao ăn.",
+        "en": "請 = invite + 客 = guest → treat/invite someone, often paying for the meal.",
+        "zh-Hant": "請＋客＝請別人吃飯／作客，常有「我請客」的意思。"
+      }
+    },
+    "電話": {
+      "relation": "fixed",
+      "memory": {
+        "vi": "電 = điện + 話 = lời nói → lời nói truyền bằng điện → điện thoại.",
+        "en": "電 = electricity + 話 = speech → telephone.",
+        "zh-Hant": "電＋話＝用電傳送話語＝電話。"
+      }
+    },
+    "對話": {
+      "relation": "fixed",
+      "memory": {
+        "vi": "對 = đối/qua lại + 話 = lời nói → hai bên nói qua lại → đối thoại.",
+        "en": "對 = reciprocal + 話 = speech → dialogue.",
+        "zh-Hant": "對＋話＝雙方來回說話＝對話。"
+      }
+    },
+    "抱歉": {
+      "relation": "fixed",
+      "memory": {
+        "vi": "抱歉 là từ cố định nghĩa “xin lỗi/áy náy”; đừng dịch máy móc 抱 = ôm + 歉 = tiếc. Hãy học cả cụm.",
+        "en": "抱歉 is a fixed word meaning “sorry”; do not literally combine 抱 + 歉.",
+        "zh-Hant": "「抱歉」是固定詞，表示不好意思／道歉，不要逐字解成抱＋歉。"
+      }
+    },
+    "飯店": {
+      "relation": "fixed",
+      "memory": {
+        "vi": "飯 + 店 theo mặt chữ là “cửa hàng cơm”, nhưng ở Đài Loan 飯店 rất thường nghĩa là khách sạn; ngữ cảnh quyết định.",
+        "en": "飯 + 店 is literally “meal establishment”, but in Taiwan 飯店 very often means hotel; context matters.",
+        "zh-Hant": "飯＋店字面與餐飲有關；在臺灣「飯店」很常指 hotel，需看語境。"
+      }
+    },
+    "飲料": {
+      "relation": "fixed",
+      "memory": {
+        "vi": "飲 = uống + 料 = thứ/nguyên liệu → “thứ để uống” → đồ uống.",
+        "en": "飲 = drink + 料 = material/stuff → beverage.",
+        "zh-Hant": "飲＋料＝可以喝的東西＝飲料。"
+      }
+    },
+    "飲食": {
+      "relation": "fixed",
+      "memory": {
+        "vi": "飲 = uống + 食 = ăn → gộp cả ăn và uống → ăn uống/chế độ ăn.",
+        "en": "飲 = drink + 食 = eat → food and drink / diet.",
+        "zh-Hant": "飲＋食＝喝與吃的總稱＝飲食。"
+      }
+    },
+    "飽滿": {
+      "relation": "fixed",
+      "memory": {
+        "vi": "飽 = đầy/no + 滿 = đầy → ý “đầy đặn, sung mãn, đầy đủ”.",
+        "en": "飽 = full + 滿 = full → plump/full/abundant.",
+        "zh-Hant": "飽＋滿都表示充足，因此「飽滿」＝充實、豐滿。"
+      }
+    },
+    "機會": {
+      "relation": "fixed",
+      "memory": {
+        "vi": "機 trong 機會 không mang nghĩa “máy”; cả cụm 機會 là từ cố định nghĩa “cơ hội”.",
+        "en": "機 in 機會 is not “machine”; 機會 is a fixed word meaning opportunity.",
+        "zh-Hant": "「機會」是固定詞，「機」在這裡不是機器義，整體表示 opportunity。"
+      }
+    },
+    "有時候": {
+      "relation": "grammar",
+      "memory": {
+        "vi": "有 + 時候 = “có những lúc” → đôi khi. Hãy học cả cụm thời gian.",
+        "en": "有 + 時候 = “there are times” → sometimes.",
+        "zh-Hant": "有＋時候＝有些時候，因此「有時候」＝sometimes。"
+      }
+    },
+    "時候": {
+      "relation": "fixed",
+      "memory": {
+        "vi": "時 = thời + 候 = khoảng/lúc → thời điểm/lúc.",
+        "en": "時 = time + 候 = moment element → time/moment.",
+        "zh-Hant": "時＋候組成「時候」＝某個時間點或時段。"
+      }
+    },
+    "明白": {
+      "relation": "fixed",
+      "memory": {
+        "vi": "明 = sáng/rõ + 白 = trắng/rõ → mọi thứ trở nên sáng rõ → hiểu.",
+        "en": "明 = bright/clear + 白 = clear/white → understand clearly.",
+        "zh-Hant": "明＋白＝變得清楚，因此「明白」＝理解。"
+      }
+    },
+    "說明": {
+      "relation": "fixed",
+      "memory": {
+        "vi": "說 = nói + 明 = làm rõ → nói để làm rõ → giải thích.",
+        "en": "說 = say + 明 = make clear → explain.",
+        "zh-Hant": "說＋明＝用說話把事情弄清楚＝說明。"
+      }
+    },
+    "晚安": {
+      "relation": "fixed",
+      "memory": {
+        "vi": "晚 = tối + 安 = yên → chúc một buổi tối/buổi ngủ yên → chúc ngủ ngon.",
+        "en": "晚 = evening + 安 = peace → good night.",
+        "zh-Hant": "晚＋安＝祝夜晚平安，因此是睡前問候「晚安」。"
+      }
+    },
+    "放晴": {
+      "relation": "fixed",
+      "memory": {
+        "vi": "放 = chuyển/thả ra + 晴 = quang → mây mưa “buông ra”, trời trở quang → trời quang lại.",
+        "en": "放 = release/change + 晴 = clear weather → clear up.",
+        "zh-Hant": "放＋晴＝天氣轉為晴朗＝放晴。"
+      }
+    },
+    "熱門": {
+      "relation": "fixed",
+      "memory": {
+        "vi": "熱 = nóng + 門 = lĩnh vực/cửa → “mảng đang nóng” → phổ biến/hot.",
+        "en": "熱 = hot + 門 = field/category → popular/hot.",
+        "zh-Hant": "熱＋門可記成「很熱的門類／話題」＝熱門。"
+      }
+    },
+    "紅綠燈": {
+      "relation": "fixed",
+      "memory": {
+        "vi": "紅 = đỏ + 綠 = xanh + 燈 = đèn → đèn đỏ-xanh → đèn giao thông.",
+        "en": "紅 = red + 綠 = green + 燈 = light → traffic light.",
+        "zh-Hant": "紅＋綠＋燈＝紅綠燈，也就是交通號誌。"
+      }
+    },
+    "看見": {
+      "relation": "result",
+      "memory": {
+        "vi": "看 = nhìn + 見 = thấy → nhìn và đạt kết quả “thấy” → nhìn thấy.",
+        "en": "看 = look + 見 = see/result → manage to see.",
+        "zh-Hant": "看＋見＝看而且有「看到了」的結果＝看見。"
+      }
+    },
+    "眼睛": {
+      "relation": "fixed",
+      "memory": {
+        "vi": "眼 + 睛 đều thuộc trường nghĩa mắt → ghép thành từ thông dụng “mắt”.",
+        "en": "眼 + 睛 together form the everyday word “eyes”.",
+        "zh-Hant": "眼＋睛組成最常用的「眼睛」。"
+      }
+    },
+    "眼鏡": {
+      "relation": "fixed",
+      "memory": {
+        "vi": "眼 = mắt + 鏡 = kính → kính dùng cho mắt → kính mắt.",
+        "en": "眼 = eye + 鏡 = lens/glass → eyeglasses.",
+        "zh-Hant": "眼＋鏡＝戴在眼睛前的鏡片＝眼鏡。"
+      }
+    },
+    "睡著": {
+      "relation": "result",
+      "memory": {
+        "vi": "睡 = ngủ + 著 = đạt/trạng thái → đi vào được trạng thái ngủ → ngủ thiếp đi.",
+        "en": "睡 = sleep + 著 = result/state → fall asleep.",
+        "zh-Hant": "睡＋著表示進入並達到睡眠狀態＝睡著。"
+      }
+    },
+    "色盲": {
+      "relation": "fixed",
+      "memory": {
+        "vi": "色 = màu + 盲 = mù → không phân biệt màu bình thường → mù màu.",
+        "en": "色 = color + 盲 = blind → color blindness.",
+        "zh-Hant": "色＋盲＝對顏色辨識有障礙＝色盲。"
+      }
+    },
+    "文盲": {
+      "relation": "fixed",
+      "memory": {
+        "vi": "文 = chữ/văn + 盲 = mù → “mù chữ” → người không biết chữ.",
+        "en": "文 = writing + 盲 = blind → illiterate person.",
+        "zh-Hant": "文＋盲＝對文字不識／不會讀寫的人＝文盲。"
+      }
+    }
   }
 }

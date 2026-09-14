@@ -1,0 +1,25 @@
+RADICALS DEEP-LEARNING UPDATE — 2026-09-15
+
+Mục tiêu
+- Không chỉ hiển thị chữ + nghĩa, mà giúp người học hiểu vì sao có thể liên tưởng và nhớ từng từ.
+- Giữ cách học Bộ → chữ gốc → từ phát triển → phát âm → viết.
+
+Đã thêm cho toàn bộ 192 từ phát triển hiện tại:
+1. 🧩 Ghép nghĩa dạng trực quan: [phần A + nghĩa] + [chữ gốc + nghĩa] → [từ hoàn chỉnh + nghĩa].
+2. 🎬 Hình dung để nhớ: giải thích cách nối các ý trong đầu.
+3. 💬 Cách dùng: phân biệt ghép nghĩa, ngữ pháp, kết quả/hướng, từ cố định, lặp từ.
+4. 🗣 Tách phát âm: chia Pinyin thành âm tiết; bấm từng âm để nghe chậm.
+5. 🎯 Quy trình 4 bước: nhìn cấu tạo → nghe → nói theo → viết lại từ trí nhớ.
+
+Đã thêm giải thích cho 22 chữ gốc trước đây chỉ có trong nhánh mở rộng nhưng chưa có phần “vì sao thuộc bộ này”.
+
+Dữ liệu mới vẫn nằm trong data/radicals.json:
+- learningChunks: nghĩa của các mảnh ghép dùng để dựng công thức.
+- branchDetails: cấu tạo/ghi nhớ cho chữ gốc còn thiếu.
+- learningOverrides: ghi chú riêng cho các từ cố định hoặc dễ hiểu sai như 小說, 抱歉, 飯店, 機會, 流行, 明白...
+
+Lưu ý học thuật
+- Các câu “hình dung” được ghi rõ là cầu nối ghi nhớ, không phải lúc nào cũng là từ nguyên lịch sử.
+- Với từ cố định/đã từ vựng hóa, giao diện nhắc người học không dịch máy móc từng chữ.
+
+Service Worker cache: tocfl-v4-20-deep-word-learning

@@ -1,4 +1,4 @@
-const CACHE = 'tocfl-v4-23-examples-font-controls';
+const CACHE = 'tocfl-v4-24-radical-ai-pronunciation';
 const ASSETS = [
   './',
   './index.html',

@@ -6,9 +6,9 @@
   const pick=(obj,lang=getLang())=>obj?.[lang]??obj?.vi??obj?.en??'';
 
   const UI={
-    vi:{tab:'Bộ thủ',title:'Bộ thủ & Họ chữ',sub:'Học từ cấu tạo: phần gợi nghĩa + phần gợi âm → chữ → từ → câu.',semantic:'Bộ gợi nghĩa',phonetic:'Họ âm',pinyin:'Pinyin gần âm Việt',search:'Tìm bộ, chữ, pinyin hoặc nghĩa…',listen:'Nghe',listenWord:'Nghe chữ',listenSentence:'Nghe câu',slow:'Chậm',fast:'Nhanh',writeThis:'Viết',initialTitle:'Thanh mẫu (âm đầu)',finalTitle:'Vận mẫu (phần vần)',specialTitle:'Quy tắc đặc biệt dễ nhầm',demoTitle:'Thử nhanh một Pinyin',demoHint:'Nhập ví dụ: qǐng, xué, lǜ, zhōngwén…',analyze:'Phân tích',why:'Vì sao dễ nhớ?',structure:'Cấu tạo',example:'Ví dụ',examples:'Câu ví dụ',examplesHint:'Xem cách dùng trong câu. Mỗi câu có Pinyin, nghĩa và nút nghe.',fontSize:'Cỡ chữ',fontSmaller:'Nhỏ hơn',fontLarger:'Lớn hơn',fontReset:'Mặc định',note:'Lưu ý: đây là cách phân tích để học và ghi nhớ. Không phải mọi chữ đều “sinh ra” trực tiếp từ bộ theo cách hiện đại; nhiều chữ là hình thanh, trong đó một phần gợi nghĩa và một phần gợi âm.',soundNote:'Gợi âm tiếng Việt chỉ là cầu nối ban đầu. Hãy ưu tiên nghe giọng zh-TW vì nhiều âm Mandarin không có bản tương đương chính xác trong tiếng Việt.',familyNote:'Họ âm cho thấy cùng một thành phần có thể lặp lại để gợi cách đọc, còn bộ bên trái/bên dưới thường đổi để gợi nghĩa.',all:'Tất cả',chooseRadical:'Chọn từng bộ để luyện',chooseHint:'Mỗi bộ được tách riêng. Chọn một bộ để học chữ, từ mở rộng và luyện viết riêng bộ đó.',practiceWriting:'Luyện viết bộ này',practiceHint:'Chọn chữ hoặc từ → xem thứ tự nét → bật Luyện nét để web kiểm tra thứ tự viết.',practiceTarget:'Chữ / từ muốn luyện',strokeOrder:'Thứ tự nét',startQuiz:'Luyện nét',rewrite:'Viết lại',showGuide:'Hiện mẫu',hideGuide:'Ẩn mẫu',writingReady:'Bấm “Luyện nét” rồi viết trực tiếp lên ô.',writingGood:'Hoàn thành đúng thứ tự nét!',writingMistake:'Nét này chưa đúng, thử lại nhé.',writerUnavailable:'Không tải được dữ liệu nét chữ. Hãy kiểm tra mạng rồi thử lại.',progress:'Tiến độ viết',coreChars:'Toàn bộ chữ',expandedWords:'Từ / cụm từ phát triển',singleRadical:'Từng bộ',deepStudy:'Học kỹ từ này',formula:'Ghép nghĩa',visualize:'Hình dung để nhớ',usage:'Cách dùng',pronunciation:'Tách phát âm',rootRole:'Vì sao chữ gốc thuộc bộ này?',studyFlow:'Cách học 4 bước',studyFlowText:'1. Nhìn cấu tạo → 2. Nghe 2–3 lần → 3. Nói theo → 4. Viết lại từ trí nhớ',compoundTag:'ghép nghĩa',grammarTag:'ngữ pháp',resultTag:'kết quả / hướng',fixedTag:'từ cố định',redupTag:'lặp từ',soundEach:'Bấm từng âm để nghe chậm',literalTip:'Dùng phép ghép để nhớ nghĩa, nhưng khi nói hãy nhớ cả từ như một khối.',lesson:'Bài học',learned:'Đã học',previous:'Trước',next:'Tiếp',understoodNext:'Đã hiểu · Tiếp',finishRadical:'Hoàn thành bộ',completed:'Đã hoàn thành',lessonHint:'Học từng chữ/từ một. Khi hiểu xong, bấm Tiếp để chuyển sang mục kế tiếp.',coreLesson:'Chữ nền tảng',wordLesson:'Từ phát triển',branchFrom:'Phát triển từ',resume:'Tiếp tục từ lần trước',restart:'Học lại từ đầu'},
-    en:{tab:'Components',title:'Radicals & Character Families',sub:'Learn structure: semantic clue + sound clue → character → word → sentence.',semantic:'Semantic radicals',phonetic:'Sound families',pinyin:'Vietnamese sound bridge',search:'Search radical, character, pinyin or meaning…',listen:'Listen',listenWord:'Character',listenSentence:'Sentence',slow:'Slow',fast:'Fast',writeThis:'Write',initialTitle:'Initials',finalTitle:'Finals',specialTitle:'Easy-to-miss spelling rules',demoTitle:'Try a Pinyin',demoHint:'Type e.g. qǐng, xué, lǜ, zhōngwén…',analyze:'Analyze',why:'Why it helps',structure:'Structure',example:'Example',examples:'Example sentences',examplesHint:'See the word in context. Each sentence includes Pinyin, meaning, and audio.',fontSize:'Text size',fontSmaller:'Smaller',fontLarger:'Larger',fontReset:'Default',note:'This is a learning-oriented structural analysis. Not every character literally “grew” from its radical in a modern step-by-step way; many characters combine a semantic component with a phonetic component.',soundNote:'Vietnamese approximations are only a bridge. Prefer the zh-TW audio because many Mandarin sounds do not have exact Vietnamese equivalents.',familyNote:'Sound families show how one component can hint at pronunciation while another component changes the semantic field.',all:'All',chooseRadical:'Choose one radical to practise',chooseHint:'Each radical is separated. Pick one to study its characters, expanded vocabulary, and handwriting.',practiceWriting:'Practise writing this radical',practiceHint:'Choose a character or word → view stroke order → start stroke quiz to check your writing order.',practiceTarget:'Character / word',strokeOrder:'Stroke order',startQuiz:'Stroke quiz',rewrite:'Rewrite',showGuide:'Show model',hideGuide:'Hide model',writingReady:'Press “Stroke quiz” and write directly in the box.',writingGood:'Correct stroke order completed!',writingMistake:'That stroke is not right yet—try again.',writerUnavailable:'Stroke data could not be loaded. Check your connection and try again.',progress:'Writing progress',coreChars:'All characters',expandedWords:'Expanded words / phrases',singleRadical:'One radical',deepStudy:'Study this word deeply',formula:'Meaning formula',visualize:'Memory image',usage:'How to use it',pronunciation:'Pronunciation breakdown',rootRole:'Why this root belongs here',studyFlow:'4-step study flow',studyFlowText:'1. See the structure → 2. Listen 2–3 times → 3. Repeat → 4. Write from memory',compoundTag:'semantic compound',grammarTag:'grammar pattern',resultTag:'result / direction',fixedTag:'lexicalized word',redupTag:'reduplication',soundEach:'Tap each syllable to hear it slowly',literalTip:'Use the combination as a memory bridge, but learn the spoken word as one unit.',lesson:'Lesson',learned:'Learned',previous:'Previous',next:'Next',understoodNext:'Got it · Next',finishRadical:'Finish radical',completed:'Completed',lessonHint:'Study one character or word at a time. When it makes sense, press Next to move on.',coreLesson:'Core character',wordLesson:'Developed word',branchFrom:'Built from',resume:'Resume where you left off',restart:'Restart from beginning'},
-    'zh-Hant':{tab:'部件',title:'部首・部件與字族',sub:'從結構學習：義符 + 聲符 → 字 → 詞 → 句子。',semantic:'義符部件',phonetic:'聲符字族',pinyin:'越南語近似音提示',search:'搜尋部件、字、拼音或意思…',listen:'聽',listenWord:'聽單字',listenSentence:'聽例句',slow:'慢速',fast:'加速',writeThis:'練寫',initialTitle:'聲母',finalTitle:'韻母',specialTitle:'容易混淆的拼音規則',demoTitle:'快速分析拼音',demoHint:'例如輸入：qǐng、xué、lǜ、zhōngwén…',analyze:'分析',why:'為什麼好記？',structure:'結構',example:'例句',examples:'例句',examplesHint:'用短句理解實際用法；每句都有拼音、意思與朗讀。',fontSize:'字體大小',fontSmaller:'縮小',fontLarger:'放大',fontReset:'預設',note:'這裡以學習與記憶為目的分析字形。不是所有漢字都能用現代「加一個部首就產生新字」來解釋；很多漢字屬於形聲結構，由義符提示意思、聲符提示讀音。',soundNote:'越南語近似音只作為入門橋樑。許多華語語音沒有完全相同的越南語對應音，請以 zh-TW 音檔為準。',familyNote:'聲符字族可以看出同一聲符如何提示讀音，而其他部件改變字義範圍。',all:'全部',chooseRadical:'選一個部件單獨練習',chooseHint:'每個部件已分開。選一個部件，集中學習相關字、延伸詞與書寫。',practiceWriting:'練寫這個部件',practiceHint:'選擇單字或詞語 → 看筆順 → 開始筆順練習，系統會檢查書寫順序。',practiceTarget:'要練的字／詞',strokeOrder:'筆順',startQuiz:'筆順練習',rewrite:'重寫',showGuide:'顯示字形',hideGuide:'隱藏字形',writingReady:'按「筆順練習」後，直接在方格內書寫。',writingGood:'筆順完成正確！',writingMistake:'這一筆還不對，再試一次。',writerUnavailable:'無法載入筆順資料，請檢查網路後再試。',progress:'書寫進度',coreChars:'全部漢字',expandedWords:'延伸詞／詞組',singleRadical:'單一部件',deepStudy:'深入學這個詞',formula:'組合意思',visualize:'記憶畫面',usage:'用法',pronunciation:'拆分發音',rootRole:'為什麼核心字屬於這個部件？',studyFlow:'四步學習法',studyFlowText:'1. 看結構 → 2. 聽 2–3 次 → 3. 跟讀 → 4. 不看答案寫出來',compoundTag:'語義組合',grammarTag:'語法結構',resultTag:'結果／方向',fixedTag:'固定詞',redupTag:'重疊詞',soundEach:'點每個音節可慢速聽',literalTip:'用字義組合幫助記憶，但實際說話時要把整個詞當成一個單位。',lesson:'學習項目',learned:'已學',previous:'上一個',next:'下一個',understoodNext:'懂了 · 下一個',finishRadical:'完成本部件',completed:'已完成',lessonHint:'一次只學一個字或詞。理解後按「下一個」再進入下一項。',coreLesson:'核心字',wordLesson:'延伸詞',branchFrom:'由此延伸',resume:'從上次進度繼續',restart:'從頭學習'}
+    vi:{tab:'Bộ thủ',title:'Bộ thủ & Họ chữ',sub:'Học từ cấu tạo: phần gợi nghĩa + phần gợi âm → chữ → từ → câu.',semantic:'Bộ gợi nghĩa',phonetic:'Họ âm',pinyin:'Pinyin gần âm Việt',search:'Tìm bộ, chữ, pinyin hoặc nghĩa…',listen:'Nghe',listenWord:'Nghe chữ',listenSentence:'Nghe câu',slow:'Chậm',fast:'Nhanh',writeThis:'Viết',initialTitle:'Thanh mẫu (âm đầu)',finalTitle:'Vận mẫu (phần vần)',specialTitle:'Quy tắc đặc biệt dễ nhầm',demoTitle:'Thử nhanh một Pinyin',demoHint:'Nhập ví dụ: qǐng, xué, lǜ, zhōngwén…',analyze:'Phân tích',why:'Vì sao dễ nhớ?',structure:'Cấu tạo',example:'Ví dụ',examples:'Câu ví dụ',examplesHint:'Xem cách dùng trong câu. Mỗi câu có Pinyin, nghĩa và nút nghe.',fontSize:'Cỡ chữ',fontSmaller:'Nhỏ hơn',fontLarger:'Lớn hơn',fontReset:'Mặc định',note:'Lưu ý: đây là cách phân tích để học và ghi nhớ. Không phải mọi chữ đều “sinh ra” trực tiếp từ bộ theo cách hiện đại; nhiều chữ là hình thanh, trong đó một phần gợi nghĩa và một phần gợi âm.',soundNote:'Gợi âm tiếng Việt chỉ là cầu nối ban đầu. Hãy ưu tiên nghe giọng zh-TW vì nhiều âm Mandarin không có bản tương đương chính xác trong tiếng Việt.',familyNote:'Họ âm cho thấy cùng một thành phần có thể lặp lại để gợi cách đọc, còn bộ bên trái/bên dưới thường đổi để gợi nghĩa.',all:'Tất cả',chooseRadical:'Chọn từng bộ để luyện',chooseHint:'Mỗi bộ được tách riêng. Chọn một bộ để học chữ, từ mở rộng và luyện viết riêng bộ đó.',practiceWriting:'Luyện viết bộ này',practiceHint:'Chọn chữ hoặc từ → xem thứ tự nét → bật Luyện nét để web kiểm tra thứ tự viết.',practiceTarget:'Chữ / từ muốn luyện',strokeOrder:'Thứ tự nét',startQuiz:'Luyện nét',rewrite:'Viết lại',showGuide:'Hiện mẫu',hideGuide:'Ẩn mẫu',writingReady:'Bấm “Luyện nét” rồi viết trực tiếp lên ô.',writingGood:'Hoàn thành đúng thứ tự nét!',writingMistake:'Nét này chưa đúng, thử lại nhé.',writerUnavailable:'Không tải được dữ liệu nét chữ. Hãy kiểm tra mạng rồi thử lại.',progress:'Tiến độ viết',coreChars:'Toàn bộ chữ',expandedWords:'Từ / cụm từ phát triển',singleRadical:'Từng bộ',deepStudy:'Học kỹ từ này',formula:'Ghép nghĩa',visualize:'Hình dung để nhớ',usage:'Cách dùng',pronunciation:'Tách phát âm',rootRole:'Vì sao chữ gốc thuộc bộ này?',studyFlow:'Cách học 4 bước',studyFlowText:'1. Nhìn cấu tạo → 2. Nghe 2–3 lần → 3. Nói theo → 4. Viết lại từ trí nhớ',compoundTag:'ghép nghĩa',grammarTag:'ngữ pháp',resultTag:'kết quả / hướng',fixedTag:'từ cố định',redupTag:'lặp từ',soundEach:'Bấm từng âm để nghe chậm',literalTip:'Dùng phép ghép để nhớ nghĩa, nhưng khi nói hãy nhớ cả từ như một khối.',lesson:'Bài học',learned:'Đã học',previous:'Trước',next:'Tiếp',understoodNext:'Đã hiểu · Tiếp',finishRadical:'Hoàn thành bộ',completed:'Đã hoàn thành',lessonHint:'Học từng chữ/từ một. Khi hiểu xong, bấm Tiếp để chuyển sang mục kế tiếp.',coreLesson:'Chữ nền tảng',wordLesson:'Từ phát triển',branchFrom:'Phát triển từ',resume:'Tiếp tục từ lần trước',restart:'Học lại từ đầu',aiCheck:'AI kiểm tra phát âm',aiSentenceCheck:'AI kiểm tra câu',aiListening:'Đang nghe… hãy đọc ngay bây giờ.',aiRecognizing:'AI đang nhận dạng…',aiTarget:'Mẫu',aiRecognized:'AI nghe được',aiScore:'Độ khớp',aiNote:'Groq AI kiểm tra xem hệ thống có nghe ra đúng chữ/câu hay không; đây chưa phải chấm thanh điệu chuyên sâu.',aiExcellent:'AI nghe đúng mẫu.',aiGood:'AI nghe khá gần. Hãy nghe lại và thử chậm hơn.',aiRetry:'AI nghe thành nội dung khác. Hãy nghe mẫu rồi thử lại.',aiUnavailable:'Chưa thể dùng AI kiểm tra phát âm.',aiMicDenied:'Không truy cập được microphone. Hãy cấp quyền microphone cho website.',aiGuestRemaining:(n,l)=>`Guest còn ${n}/${l} lượt AI`},
+    en:{tab:'Components',title:'Radicals & Character Families',sub:'Learn structure: semantic clue + sound clue → character → word → sentence.',semantic:'Semantic radicals',phonetic:'Sound families',pinyin:'Vietnamese sound bridge',search:'Search radical, character, pinyin or meaning…',listen:'Listen',listenWord:'Character',listenSentence:'Sentence',slow:'Slow',fast:'Fast',writeThis:'Write',initialTitle:'Initials',finalTitle:'Finals',specialTitle:'Easy-to-miss spelling rules',demoTitle:'Try a Pinyin',demoHint:'Type e.g. qǐng, xué, lǜ, zhōngwén…',analyze:'Analyze',why:'Why it helps',structure:'Structure',example:'Example',examples:'Example sentences',examplesHint:'See the word in context. Each sentence includes Pinyin, meaning, and audio.',fontSize:'Text size',fontSmaller:'Smaller',fontLarger:'Larger',fontReset:'Default',note:'This is a learning-oriented structural analysis. Not every character literally “grew” from its radical in a modern step-by-step way; many characters combine a semantic component with a phonetic component.',soundNote:'Vietnamese approximations are only a bridge. Prefer the zh-TW audio because many Mandarin sounds do not have exact Vietnamese equivalents.',familyNote:'Sound families show how one component can hint at pronunciation while another component changes the semantic field.',all:'All',chooseRadical:'Choose one radical to practise',chooseHint:'Each radical is separated. Pick one to study its characters, expanded vocabulary, and handwriting.',practiceWriting:'Practise writing this radical',practiceHint:'Choose a character or word → view stroke order → start stroke quiz to check your writing order.',practiceTarget:'Character / word',strokeOrder:'Stroke order',startQuiz:'Stroke quiz',rewrite:'Rewrite',showGuide:'Show model',hideGuide:'Hide model',writingReady:'Press “Stroke quiz” and write directly in the box.',writingGood:'Correct stroke order completed!',writingMistake:'That stroke is not right yet—try again.',writerUnavailable:'Stroke data could not be loaded. Check your connection and try again.',progress:'Writing progress',coreChars:'All characters',expandedWords:'Expanded words / phrases',singleRadical:'One radical',deepStudy:'Study this word deeply',formula:'Meaning formula',visualize:'Memory image',usage:'How to use it',pronunciation:'Pronunciation breakdown',rootRole:'Why this root belongs here',studyFlow:'4-step study flow',studyFlowText:'1. See the structure → 2. Listen 2–3 times → 3. Repeat → 4. Write from memory',compoundTag:'semantic compound',grammarTag:'grammar pattern',resultTag:'result / direction',fixedTag:'lexicalized word',redupTag:'reduplication',soundEach:'Tap each syllable to hear it slowly',literalTip:'Use the combination as a memory bridge, but learn the spoken word as one unit.',lesson:'Lesson',learned:'Learned',previous:'Previous',next:'Next',understoodNext:'Got it · Next',finishRadical:'Finish radical',completed:'Completed',lessonHint:'Study one character or word at a time. When it makes sense, press Next to move on.',coreLesson:'Core character',wordLesson:'Developed word',branchFrom:'Built from',resume:'Resume where you left off',restart:'Restart from beginning',aiCheck:'AI pronunciation check',aiSentenceCheck:'Check sentence',aiListening:'Listening… speak now.',aiRecognizing:'AI is transcribing…',aiTarget:'Target',aiRecognized:'AI heard',aiScore:'Match',aiNote:'Groq AI checks whether the speech is recognized as the target text; this is not a professional tone/phoneme score.',aiExcellent:'AI recognized the target.',aiGood:'AI heard something close. Listen again and try more slowly.',aiRetry:'AI heard different text. Listen to the model and try again.',aiUnavailable:'AI pronunciation check is unavailable.',aiMicDenied:'Microphone access failed. Allow microphone permission for this site.',aiGuestRemaining:(n,l)=>`Guest has ${n}/${l} AI checks left`},
+    'zh-Hant':{tab:'部件',title:'部首・部件與字族',sub:'從結構學習：義符 + 聲符 → 字 → 詞 → 句子。',semantic:'義符部件',phonetic:'聲符字族',pinyin:'越南語近似音提示',search:'搜尋部件、字、拼音或意思…',listen:'聽',listenWord:'聽單字',listenSentence:'聽例句',slow:'慢速',fast:'加速',writeThis:'練寫',initialTitle:'聲母',finalTitle:'韻母',specialTitle:'容易混淆的拼音規則',demoTitle:'快速分析拼音',demoHint:'例如輸入：qǐng、xué、lǜ、zhōngwén…',analyze:'分析',why:'為什麼好記？',structure:'結構',example:'例句',examples:'例句',examplesHint:'用短句理解實際用法；每句都有拼音、意思與朗讀。',fontSize:'字體大小',fontSmaller:'縮小',fontLarger:'放大',fontReset:'預設',note:'這裡以學習與記憶為目的分析字形。不是所有漢字都能用現代「加一個部首就產生新字」來解釋；很多漢字屬於形聲結構，由義符提示意思、聲符提示讀音。',soundNote:'越南語近似音只作為入門橋樑。許多華語語音沒有完全相同的越南語對應音，請以 zh-TW 音檔為準。',familyNote:'聲符字族可以看出同一聲符如何提示讀音，而其他部件改變字義範圍。',all:'全部',chooseRadical:'選一個部件單獨練習',chooseHint:'每個部件已分開。選一個部件，集中學習相關字、延伸詞與書寫。',practiceWriting:'練寫這個部件',practiceHint:'選擇單字或詞語 → 看筆順 → 開始筆順練習，系統會檢查書寫順序。',practiceTarget:'要練的字／詞',strokeOrder:'筆順',startQuiz:'筆順練習',rewrite:'重寫',showGuide:'顯示字形',hideGuide:'隱藏字形',writingReady:'按「筆順練習」後，直接在方格內書寫。',writingGood:'筆順完成正確！',writingMistake:'這一筆還不對，再試一次。',writerUnavailable:'無法載入筆順資料，請檢查網路後再試。',progress:'書寫進度',coreChars:'全部漢字',expandedWords:'延伸詞／詞組',singleRadical:'單一部件',deepStudy:'深入學這個詞',formula:'組合意思',visualize:'記憶畫面',usage:'用法',pronunciation:'拆分發音',rootRole:'為什麼核心字屬於這個部件？',studyFlow:'四步學習法',studyFlowText:'1. 看結構 → 2. 聽 2–3 次 → 3. 跟讀 → 4. 不看答案寫出來',compoundTag:'語義組合',grammarTag:'語法結構',resultTag:'結果／方向',fixedTag:'固定詞',redupTag:'重疊詞',soundEach:'點每個音節可慢速聽',literalTip:'用字義組合幫助記憶，但實際說話時要把整個詞當成一個單位。',lesson:'學習項目',learned:'已學',previous:'上一個',next:'下一個',understoodNext:'懂了 · 下一個',finishRadical:'完成本部件',completed:'已完成',lessonHint:'一次只學一個字或詞。理解後按「下一個」再進入下一項。',coreLesson:'核心字',wordLesson:'延伸詞',branchFrom:'由此延伸',resume:'從上次進度繼續',restart:'從頭學習',aiCheck:'AI 發音檢查',aiSentenceCheck:'檢查整句',aiListening:'正在聆聽……請現在朗讀。',aiRecognizing:'AI 正在辨識……',aiTarget:'目標',aiRecognized:'AI 聽到',aiScore:'匹配度',aiNote:'Groq AI 檢查語音是否被辨識成目標文字；這不是專業的聲調／音位評分。',aiExcellent:'AI 正確辨識出目標。',aiGood:'AI 辨識結果接近，請再聽一次並放慢速度重試。',aiRetry:'AI 辨識成其他內容，請聽範例後再試。',aiUnavailable:'目前無法使用 AI 發音檢查。',aiMicDenied:'無法使用麥克風，請允許此網站使用麥克風。',aiGuestRemaining:(n,l)=>`訪客還有 ${n}/${l} 次 AI 檢查`}
   };
 
   let radicals=[];
@@ -96,6 +96,97 @@
     const slow=document.createElement('button');slow.type='button';slow.textContent=`🐢 ${ui.slow}`;slow.addEventListener('click',()=>speak(text,.55));
     const fast=document.createElement('button');fast.type='button';fast.className='rad-fast';fast.textContent=`⚡ ${ui.fast}`;fast.addEventListener('click',()=>speak(text,1.0));
     wrap.append(normal,slow,fast);return wrap;
+  }
+  function preferredRadRecorderMime(){
+    const choices=['audio/webm;codecs=opus','audio/webm','audio/mp4','audio/ogg;codecs=opus'];
+    return choices.find(type=>window.MediaRecorder?.isTypeSupported?.(type))||'';
+  }
+  async function captureRadPronunciationClip(durationMs=4000){
+    if(!navigator.mediaDevices?.getUserMedia||!window.MediaRecorder)throw Object.assign(new Error('Recorder unsupported'),{code:'RECORDER_UNSUPPORTED'});
+    let stream=null,recorder=null,timer=null;
+    try{
+      stream=await navigator.mediaDevices.getUserMedia({audio:true});
+      const mime=preferredRadRecorderMime();
+      recorder=mime?new MediaRecorder(stream,{mimeType:mime}):new MediaRecorder(stream);
+      const chunks=[];
+      const done=new Promise((resolve,reject)=>{
+        recorder.addEventListener('dataavailable',e=>{if(e.data?.size)chunks.push(e.data);});
+        recorder.addEventListener('error',e=>reject(e.error||new Error('Recorder error')),{once:true});
+        recorder.addEventListener('stop',()=>{
+          const type=recorder.mimeType||chunks[0]?.type||mime||'audio/webm';
+          const blob=new Blob(chunks,{type});
+          blob.size?resolve(blob):reject(Object.assign(new Error('No speech'),{code:'EMPTY_AUDIO'}));
+        },{once:true});
+      });
+      recorder.start(250);
+      timer=setTimeout(()=>{if(recorder?.state==='recording')recorder.stop();},durationMs);
+      return await done;
+    }catch(err){
+      if(err?.name==='NotAllowedError'||err?.name==='PermissionDeniedError')throw Object.assign(new Error('Microphone denied'),{code:'MIC_PERMISSION'});
+      throw err;
+    }finally{
+      if(timer)clearTimeout(timer);
+      if(recorder?.state==='recording')try{recorder.stop();}catch{}
+      stream?.getTracks?.().forEach(track=>track.stop());
+    }
+  }
+  function normalizeRadChinese(s){return String(s||'').normalize('NFKC').replace(/[\s，。！？,.!?;；:：、'"“”‘’()（）/]/g,'').toLowerCase();}
+  function radLevenshtein(a,b){
+    const m=a.length,n=b.length,dp=Array.from({length:m+1},()=>Array(n+1).fill(0));
+    for(let i=0;i<=m;i++)dp[i][0]=i;for(let j=0;j<=n;j++)dp[0][j]=j;
+    for(let i=1;i<=m;i++)for(let j=1;j<=n;j++)dp[i][j]=Math.min(dp[i-1][j]+1,dp[i][j-1]+1,dp[i-1][j-1]+(a[i-1]===b[j-1]?0:1));
+    return dp[m][n];
+  }
+  function radSimilarity(a,b){if(!a&&!b)return 1;if(!a||!b)return 0;return 1-radLevenshtein(a,b)/Math.max(a.length,b.length);}
+  function saveRadPronunciation(r,target,recognized,score,kind='word'){
+    if(!r?.key)return;
+    const all=loadLearningState();const saved=all[r.key]||{};
+    const pronunciation=saved.pronunciation&&typeof saved.pronunciation==='object'?saved.pronunciation:{};
+    pronunciation[`${kind}:${target}`]={score,recognized,checkedAt:new Date().toISOString()};
+    all[r.key]={...saved,pronunciation};saveLearningState(all);
+  }
+  function lastRadPronunciation(r,target,kind='word'){
+    if(!r?.key)return null;return loadLearningState()?.[r.key]?.pronunciation?.[`${kind}:${target}`]||null;
+  }
+  async function runRadPronunciationCheck({target,pinyin='',ui,r,sentence=false,button,status,result}){
+    if(!window.TOCFLAuth?.transcribeWithGroq){status.textContent=ui.aiUnavailable;status.className='rad-ai-status is-error';return;}
+    button.disabled=true;status.textContent=ui.aiListening;status.className='rad-ai-status';result.hidden=true;
+    try{
+      if('speechSynthesis'in window)try{speechSynthesis.cancel();}catch{}
+      const chars=hanziChars(target).length;
+      const duration=sentence?Math.min(10000,Math.max(5000,3000+chars*650)):Math.min(5500,Math.max(3500,2800+chars*550));
+      const clip=await captureRadPronunciationClip(duration);
+      status.textContent=ui.aiRecognizing;
+      const data=await window.TOCFLAuth.transcribeWithGroq(clip,target);
+      const recognized=String(data?.text||'').trim();
+      if(!recognized)throw Object.assign(new Error('No transcript'),{code:'NO_TRANSCRIPT'});
+      const a=normalizeRadChinese(target),b=normalizeRadChinese(recognized);
+      const score=Math.max(0,Math.min(100,Math.round(radSimilarity(a,b)*100)));
+      const feedback=score>=95?ui.aiExcellent:score>=60?ui.aiGood:ui.aiRetry;
+      result.innerHTML=`<div class="rad-ai-score"><b>${score}%</b><span>${ui.aiScore}</span></div><div class="rad-ai-lines"><div><small>${ui.aiTarget}</small><strong>${target}${pinyin?` · ${pinyin}`:''}</strong></div><div><small>${ui.aiRecognized}</small><strong>${recognized}</strong></div><p>${feedback}</p></div>`;
+      result.hidden=false;
+      status.textContent=data?.guest?`✅ ${ui.aiGuestRemaining(data.remaining,data.limit||20)}`:'✅';
+      saveRadPronunciation(r,target,recognized,score,sentence?'sentence':'word');
+    }catch(err){
+      console.warn('Radical pronunciation AI:',err);
+      const code=String(err?.code||'');
+      if(code==='MIC_PERMISSION')status.textContent=ui.aiMicDenied;
+      else if(code==='GUEST_LIMIT_REACHED')status.textContent=getLang()==='en'?'The 20 free guest AI checks have been used. Sign in to continue.':getLang()==='zh-Hant'?'20 次訪客免費 AI 檢查已用完，請登入後繼續。':'Bạn đã dùng hết 20 lượt AI miễn phí. Hãy đăng nhập để tiếp tục.';
+      else status.textContent=err?.message||ui.aiUnavailable;
+      status.className='rad-ai-status is-error';
+    }finally{button.disabled=false;}
+  }
+  function pronunciationTestNode(text,pinyin,ui,r,{sentence=false,compact=false}={}){
+    const box=document.createElement('section');box.className=`rad-ai-pronunciation${compact?' is-compact':''}`;
+    const button=document.createElement('button');button.type='button';button.className='rad-ai-check';button.textContent=`🎙 ${sentence?ui.aiSentenceCheck:ui.aiCheck}`;
+    const status=document.createElement('div');status.className='rad-ai-status';
+    const result=document.createElement('div');result.className='rad-ai-result';result.hidden=true;
+    const previous=lastRadPronunciation(r,text,sentence?'sentence':'word');
+    if(previous){status.textContent=`↺ ${ui.aiScore}: ${previous.score}% · ${previous.recognized||''}`;}
+    button.addEventListener('click',()=>runRadPronunciationCheck({target:text,pinyin,ui,r,sentence,button,status,result}));
+    box.append(button,status,result);
+    if(!compact){const note=document.createElement('small');note.className='rad-ai-note';note.textContent=ui.aiNote;box.append(note);}
+    return box;
   }
   function pinyinHintNode(pinyin){
     const box=document.createElement('div');box.className='rad-pinyin-hint';
@@ -223,7 +314,7 @@
     if(lang==='zh-Hant')return ex['zh-Hant']||ex.zh||'';
     return ex[lang]||ex.vi||ex.en||'';
   }
-  function exampleListNode(term,ui,fallback=[]){
+  function exampleListNode(term,ui,fallback=[],r=null){
     const wrap=document.createElement('section');wrap.className='rad-examples-block';
     const title=document.createElement('div');title.className='rad-examples-title';title.innerHTML=`<strong>💬 ${ui.examples}</strong><span>${ui.examplesHint}</span>`;wrap.append(title);
     const list=document.createElement('div');list.className='rad-example-list';
@@ -236,8 +327,10 @@
       const num=document.createElement('span');num.className='rad-example-number';num.textContent=String(i+1);
       const text=document.createElement('div');text.className='rad-example-sentence-text';
       text.innerHTML=`<div class="rad-example-zh">${ex.zh||''}</div>${ex.pinyin?`<div class="rad-example-py">${ex.pinyin}</div>`:''}<div class="rad-example-meaning">${exampleTranslation(ex)}</div>`;
+      const actions=document.createElement('div');actions.className='rad-example-actions';
       const btn=document.createElement('button');btn.type='button';btn.className='rad-example-listen';btn.textContent='🔊';btn.title=ui.listenSentence;btn.addEventListener('click',()=>speak(ex.zh||term,.70));
-      row.append(num,text,btn);list.append(row);
+      actions.append(btn,pronunciationTestNode(ex.zh||term,ex.pinyin||'',ui,r,{sentence:true,compact:true}));
+      row.append(num,text,actions);list.append(row);
     });
     if(!list.children.length){
       const empty=document.createElement('div');empty.className='rad-example-empty';empty.textContent=getLang()==='en'?'Example sentences are being prepared.':getLang()==='zh-Hant'?'例句準備中。':'Ví dụ đang được bổ sung.';list.append(empty);
@@ -245,7 +338,7 @@
     wrap.append(list);return wrap;
   }
 
-  function deepWordLesson(branch,word,ui){
+  function deepWordLesson(branch,word,ui,r=null){
     const relation=relationFor(branch,word);
     const override=learningOverrides[word[0]]||{};
     const details=document.createElement('details');details.className='rad-deep-word';
@@ -255,7 +348,7 @@
     const memory=document.createElement('section');memory.className='rad-deep-block';memory.innerHTML=`<h5>🎬 ${ui.visualize}</h5><p>${localized(override.memory)||genericMemory(branch,word)}</p>`;
     const usage=document.createElement('section');usage.className='rad-deep-block';usage.innerHTML=`<h5>💬 ${ui.usage}</h5><p>${usageFor(branch,word,relation)}</p>`;
     const pron=document.createElement('section');pron.className='rad-deep-block';pron.innerHTML=`<h5>🗣 ${ui.pronunciation}</h5><p class="rad-deep-mini">${ui.soundEach}</p>`;pron.append(pronunciationBreakdown(word,ui));
-    const examples=exampleListNode(word[0],ui);
+    const examples=exampleListNode(word[0],ui,[],r);
     const flow=document.createElement('section');flow.className='rad-study-flow';flow.innerHTML=`<strong>🎯 ${ui.studyFlow}</strong><span>${ui.studyFlowText}</span>`;
     body.append(formula,memory,usage,pron,examples,flow);details.append(body);return details;
   }
@@ -296,7 +389,7 @@
         const main=document.createElement('div');main.className='rad-expansion-word-main';
         main.innerHTML=`<strong>${word[0]}</strong><span>${word[1]}</span><small>${expansionMeaning(word)}</small>`;
         const actions=document.createElement('div');actions.className='rad-expansion-actions';actions.append(audioButtons(word[0],ui),writeTargetButton(r,word[0],ui));
-        row.append(main,actions,deepWordLesson(branch,word,ui));
+        row.append(main,actions,deepWordLesson(branch,word,ui,r));
         list.append(row);
       });
       group.append(head,why,list);grid.append(group);
@@ -543,9 +636,9 @@
     const structure=document.createElement('div');structure.className='rad-structure';structure.innerHTML=`<span>${ui.structure}</span><strong>${ch.s}</strong>`;
     const why=document.createElement('div');why.className='rad-why';why.innerHTML=`<strong>${ui.why}</strong><p>${pick(ch.w)}</p>`;
     const fallback=ch.ex?[{zh:ch.ex[0],pinyin:ch.ex[1],vi:ch.ex[2]?.vi||'',en:ch.ex[2]?.en||'', 'zh-Hant':ch.ex[2]?.['zh-Hant']||ch.ex[0]}]:[];
-    const ex=exampleListNode(ch.h,ui,fallback);
+    const ex=exampleListNode(ch.h,ui,fallback,r);
     const charActions=document.createElement('div');charActions.className='rad-char-actions';charActions.append(audioButtons(ch.h,ui,'word'),writeTargetButton(r,ch.h,ui));
-    card.append(top,pinyinHintNode(ch.p),charActions,structure,why,ex);
+    card.append(top,pinyinHintNode(ch.p),charActions,pronunciationTestNode(ch.h,ch.p,ui,r),structure,why,ex);
     return card;
   }
   const RADICAL_LEARNING_KEY='tocfl-radical-learning-flow-v1';
@@ -577,8 +670,8 @@
     const main=document.createElement('div');main.innerHTML=`<strong>${word[0]}</strong><span>${word[1]}</span><small>${expansionMeaning(word)}</small>`;
     top.append(main,audioButtons(word[0],ui,'word'),writeTargetButton(r,word[0],ui));
     const root=rootStudyNode(r,branch,ui);root.classList.add('rad-single-root-note');
-    const lesson=deepWordLesson(branch,word,ui);lesson.open=true;lesson.classList.add('is-single-lesson');
-    card.append(eyebrow,top,pinyinHintNode(word[1]),root,lesson);
+    const lesson=deepWordLesson(branch,word,ui,r);lesson.open=true;lesson.classList.add('is-single-lesson');
+    card.append(eyebrow,top,pinyinHintNode(word[1]),pronunciationTestNode(word[0],word[1],ui,r),root,lesson);
     return card;
   }
   function singleLessonNode(r,item,ui){
@@ -610,7 +703,7 @@
     nav.append(prev,restart,next);
     section.append(head,progress,stage,nav);
     const persist=()=>{
-      const all=loadLearningState();all[r.key]={index,done:[...done]};saveLearningState(all);
+      const all=loadLearningState();all[r.key]={...(all[r.key]||{}),index,done:[...done]};saveLearningState(all);
     };
     const draw=()=>{
       stage.innerHTML='';

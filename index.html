@@ -41,6 +41,7 @@
     <nav class="tabs" aria-label="Điều hướng chính">
       <button class="tab is-active" data-view="today" type="button"><span>🏠</span> <span data-i18n="navToday">Hôm nay</span></button>
       <button class="tab" data-view="vocab" type="button"><span>📚</span> <span data-i18n="navVocab">Từ vựng</span></button>
+      <button class="tab radicals-tab" data-view="radicals" type="button"><span>🧩</span> <span id="radicalsTabLabel">Bộ thủ</span></button>
       <button class="tab" data-view="quiz" type="button"><span>🧠</span> <span data-i18n="navQuiz">Quiz</span></button>
       <button class="tab homework-tab" data-view="homework" type="button"><span>📝</span> <span data-i18n="navHomework">Bài tập</span></button>
       <button class="tab" data-view="progress" type="button"><span>📊</span> <span data-i18n="navProgress">Tiến độ</span></button>
@@ -66,6 +67,7 @@
                 <div class="meta-line"><span id="levelPos">A1</span><span id="wordIndex">1 / 20</span></div>
                 <div id="hanzi" class="hanzi">啊</div>
                 <div id="pinyin" class="pinyin">ā</div>
+                <div id="pinyinViHint" class="pinyin-vi-hint" aria-live="polite"></div>
               </div>
               <button id="favoriteBtn" type="button" class="icon-btn" data-i18n-title="favorite" title="Đánh dấu từ">☆</button>
             </div>
@@ -161,6 +163,10 @@
 
           </aside>
         </div>
+      </section>
+
+      <section id="view-radicals" class="view">
+        <div id="radicalsApp" class="radicals-app"></div>
       </section>
 
       <section id="view-vocab" class="view">
@@ -315,7 +321,9 @@
   </div>
 
   <script src="./config.js"></script>
+  <script src="./pinyin-helper.js" defer></script>
   <script src="./app.js" defer></script>
+  <script src="./radicals.js" defer></script>
   <script src="./homework.js" defer></script>
   <script type="module" src="./auth.js"></script>
 </body>

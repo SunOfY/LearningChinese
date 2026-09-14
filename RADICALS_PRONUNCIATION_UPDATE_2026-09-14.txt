@@ -1,0 +1,12 @@
+LEARNING TOCFL – Radicals / Character Families / Pronunciation update
+
+1. Added a new “Bộ thủ / Components / 部件” tab without removing any existing feature.
+2. Added semantic-radical groups with Traditional Chinese examples, structure breakdowns, memory explanations, example sentences and zh-TW playback.
+3. Added phonetic-family view (青, 馬, 包, 方) to show how a sound component can recur while the semantic component changes.
+4. Added a Vietnamese Pinyin bridge: initial/final approximations, special spelling rules (including j/q/x + u = ü sound), and tone-shape reminders. These are explicitly marked as approximations rather than exact Vietnamese equivalents.
+5. Added a Vietnamese Pinyin hint under the main study-card Pinyin.
+6. Slowed default word playback from 0.92x to 0.76x; slow playback from 0.58x to 0.50x; example sentences and homework playback were also slowed for learners.
+7. Updated service-worker cache to v4.15 and added the new JS files to offline assets.
+
+Important learning note:
+Character explanations are learning-oriented structural analyses. Many Chinese characters are phonosemantic (semantic clue + sound clue), but not every character literally developed by simply adding a modern radical. Historical sound changes mean some phonetic components no longer match modern Mandarin perfectly.

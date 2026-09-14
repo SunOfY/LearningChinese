@@ -397,7 +397,7 @@ function bindHomework(){
   document.querySelectorAll('[data-hw-insert-umlaut]').forEach(button=>button.addEventListener('click',()=>insertUmlaut(button)));
   hwEl('hwConvertToneBtn')?.addEventListener('click',convertAllNumberedPinyin);
   hwEl('hwBuildPhoneBtn')?.addEventListener('click',buildPhoneReading);
-  hwEl('hwListenPhoneBtn')?.addEventListener('click',()=>{const x=phoneTarget(); if(x.hanzi) speak(x.hanzi,.82);});
+  hwEl('hwListenPhoneBtn')?.addEventListener('click',()=>{const x=phoneTarget(); if(x.hanzi) speak(x.hanzi,.72);});
   hwEl('hwCheckPhoneBtn')?.addEventListener('click',e=>checkPhone(e.currentTarget));
   hwEl('hwPhoneNumber')?.addEventListener('input',buildPhoneReading);
   hwEl('hwResetBtn')?.addEventListener('click',()=>{if(confirm(hwt('resetConfirm'))){localStorage.removeItem(HOMEWORK_STORAGE_KEY);localStorage.removeItem('tocfl-homework-1-v3');localStorage.removeItem('tocfl-homework-1-v2');localStorage.removeItem('tocfl-homework-1-v1');hwState=loadHomeworkState();renderHomework();}});
@@ -516,8 +516,8 @@ function checkTonePlacement(btn){
 
 function homeworkListen(key){
   const [type,s]=key.split(':'); const i=Number(s);
-  if(type==='tone') speak(HW1.tones[i].hanzi,.8);
-  if(type==='number') speak(HW1.numbers[i].h,.82);
+  if(type==='tone') speak(HW1.tones[i].hanzi,.70);
+  if(type==='number') speak(HW1.numbers[i].h,.72);
 }
 
 async function homeworkCheck(key,button){

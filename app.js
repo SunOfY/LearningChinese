@@ -365,6 +365,7 @@ function renderCurrentWord(){
   if(!state.dayWords.length)return;
   const w=currentWord();
   $('hanzi').textContent=w.traditional; $('pinyin').textContent=state.pinyinVisible?w.pinyin:'••••';
+  const pinyinHint=$('pinyinViHint'); if(pinyinHint){ const guide=state.pinyinVisible && state.lang==='vi' ? window.TOCFLPinyin?.compactGuide?.(w.pinyin) : ''; pinyinHint.textContent=guide ? `🇻🇳 Gợi âm: ${guide}` : ''; pinyinHint.hidden=!guide; }
   $('meaningVi').textContent=w.meaning_vi||'—'; $('meaningEn').textContent=englishFor(w); $('meaningEn').classList.toggle('loading-shimmer',isEnglishPending(w));
   $('levelPos').textContent=`${w.level||'A1'}${w.pos?' · '+w.pos:''}`; $('wordIndex').textContent=`${state.index+1} / ${state.dayWords.length}`;
   $('favoriteBtn').textContent=state.favorites.has(w.id)?'★':'☆'; $('togglePinyinBtn').textContent=state.pinyinVisible?t('hidePinyin'):t('showPinyin');
@@ -422,7 +423,7 @@ function renderExamples(w){
     const zh=document.createElement('div');zh.className='example-zh';zh.textContent=ex.zh;
     const py=document.createElement('div');py.className='example-pinyin';py.textContent=state.pinyinVisible?(ex.pinyin||sentencePinyin(ex.zh,w)):'••••••••';
     text.append(zh,py);
-    const btn=document.createElement('button');btn.type='button';btn.className='icon-btn';btn.textContent='🔊';btn.title=`Listen ${idx+1}`;btn.addEventListener('click',()=>speak(ex.zh,.88));
+    const btn=document.createElement('button');btn.type='button';btn.className='icon-btn';btn.textContent='🔊';btn.title=`Listen ${idx+1}`;btn.addEventListener('click',()=>speak(ex.zh,.76));
     top.append(text,btn);
     const trans=document.createElement('div');trans.className='example-translations';
     const vi=document.createElement('div');vi.textContent=`🇻🇳 ${ex.vi}`;const en=document.createElement('div');en.textContent=`🇬🇧 ${ex.en}`;
@@ -739,8 +740,8 @@ function sentencePinyin(sentence,w){
 }
 
 function bindStudyControls(){
-  $('speakBtn').addEventListener('click',()=>speak(primaryForm(currentWord()),.92));
-  $('slowBtn').addEventListener('click',()=>speak(primaryForm(currentWord()),.58));
+  $('speakBtn').addEventListener('click',()=>speak(primaryForm(currentWord()),.76));
+  $('slowBtn').addEventListener('click',()=>speak(primaryForm(currentWord()),.50));
   $('togglePinyinBtn').addEventListener('click',()=>{state.pinyinVisible=!state.pinyinVisible;renderCurrentWord();});
   $('prevBtn').addEventListener('click',()=>{state.index=(state.index-1+state.dayWords.length)%state.dayWords.length;renderCurrentWord();});
   $('nextBtn').addEventListener('click',()=>{state.index=(state.index+1)%state.dayWords.length;renderCurrentWord();});

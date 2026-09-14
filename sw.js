@@ -1,9 +1,11 @@
-const CACHE = 'tocfl-v4-14-guest-groq-20';
+const CACHE = 'tocfl-v4-15-radicals-slower-pronunciation';
 const ASSETS = [
   './',
   './index.html',
   './styles.css',
   './app.js',
+  './pinyin-helper.js',
+  './radicals.js',
   './homework.js',
   './auth.js',
   './data/a1.json',
@@ -93,6 +95,8 @@ self.addEventListener('fetch', event => {
     url.pathname.endsWith('/index.html') ||
     url.pathname.endsWith('/styles.css') ||
     url.pathname.endsWith('/app.js') ||
+    url.pathname.endsWith('/pinyin-helper.js') ||
+    url.pathname.endsWith('/radicals.js') ||
     url.pathname.endsWith('/homework.js') ||
     url.pathname.endsWith('/auth.js') ||
     url.pathname.includes('/data/') && url.pathname.endsWith('.json') ||

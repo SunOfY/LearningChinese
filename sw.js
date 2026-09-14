@@ -1,4 +1,4 @@
-const CACHE = 'tocfl-v4-17-radicals-writing-practice';
+const CACHE = 'tocfl-v4-18-radicals-data-driven';
 const ASSETS = [
   './',
   './index.html',
@@ -6,6 +6,7 @@ const ASSETS = [
   './app.js',
   './pinyin-helper.js',
   './radicals.js',
+  './data/radicals.json',
   './homework.js',
   './auth.js',
   './data/a1.json',

@@ -1,0 +1,18 @@
+Cập nhật 2026-09-15
+
+1) Luyện viết toàn bộ chữ trong cây của từng bộ
+- Không còn chỉ tính chữ bộ/chữ gốc.
+- Mọi chữ Hán xuất hiện trong các từ phát triển đều được đưa vào danh sách "Toàn bộ chữ".
+- Mọi từ/cụm từ phát triển cũng có thể chọn để luyện viết cả từ; hệ thống tạo một ô Hanzi Writer cho từng chữ.
+- Thêm nút "✍ Viết" ngay trên từng chữ và từng từ phát triển để mở thẳng bài luyện viết tương ứng.
+- Tiến độ viết của từng bộ giờ tính trên toàn bộ chữ Hán xuất hiện trong cây từ vựng của bộ đó.
+
+2) Tốc độ phát âm
+- Chậm: khoảng 0.55x.
+- Bình thường: khoảng 0.78x.
+- Nhanh: 1.0x.
+- Thêm nút "⚡ Nhanh" trong phần Bộ thủ và ở thẻ học từ vựng chính.
+
+3) Dữ liệu bộ thủ vẫn tách riêng
+- Tiếp tục cập nhật bộ/chữ/từ mới chỉ bằng data/radicals.json.
+- Không cần sửa radicals.js khi chỉ bổ sung dữ liệu theo đúng cấu trúc hiện tại.

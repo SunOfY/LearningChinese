@@ -1,4 +1,4 @@
-const CACHE = 'tocfl-v4-18-radicals-data-driven';
+const CACHE = 'tocfl-v4-19-full-writing-fast-audio';
 const ASSETS = [
   './',
   './index.html',

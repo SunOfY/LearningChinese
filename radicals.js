@@ -6,9 +6,9 @@
   const pick=(obj,lang=getLang())=>obj?.[lang]??obj?.vi??obj?.en??'';
 
   const UI={
-    vi:{tab:'Bộ thủ',title:'Bộ thủ & Họ chữ',sub:'Học từ cấu tạo: phần gợi nghĩa + phần gợi âm → chữ → từ → câu.',semantic:'Bộ gợi nghĩa',phonetic:'Họ âm',pinyin:'Pinyin gần âm Việt',search:'Tìm bộ, chữ, pinyin hoặc nghĩa…',listen:'Nghe',listenWord:'Nghe chữ',listenSentence:'Nghe câu',slow:'Chậm',initialTitle:'Thanh mẫu (âm đầu)',finalTitle:'Vận mẫu (phần vần)',specialTitle:'Quy tắc đặc biệt dễ nhầm',demoTitle:'Thử nhanh một Pinyin',demoHint:'Nhập ví dụ: qǐng, xué, lǜ, zhōngwén…',analyze:'Phân tích',why:'Vì sao dễ nhớ?',structure:'Cấu tạo',example:'Ví dụ',note:'Lưu ý: đây là cách phân tích để học và ghi nhớ. Không phải mọi chữ đều “sinh ra” trực tiếp từ bộ theo cách hiện đại; nhiều chữ là hình thanh, trong đó một phần gợi nghĩa và một phần gợi âm.',soundNote:'Gợi âm tiếng Việt chỉ là cầu nối ban đầu. Hãy ưu tiên nghe giọng zh-TW vì nhiều âm Mandarin không có bản tương đương chính xác trong tiếng Việt.',familyNote:'Họ âm cho thấy cùng một thành phần có thể lặp lại để gợi cách đọc, còn bộ bên trái/bên dưới thường đổi để gợi nghĩa.',all:'Tất cả',chooseRadical:'Chọn từng bộ để luyện',chooseHint:'Mỗi bộ được tách riêng. Chọn một bộ để học chữ, từ mở rộng và luyện viết riêng bộ đó.',practiceWriting:'Luyện viết bộ này',practiceHint:'Chọn chữ hoặc từ → xem thứ tự nét → bật Luyện nét để web kiểm tra thứ tự viết.',practiceTarget:'Chữ / từ muốn luyện',strokeOrder:'Thứ tự nét',startQuiz:'Luyện nét',rewrite:'Viết lại',showGuide:'Hiện mẫu',hideGuide:'Ẩn mẫu',writingReady:'Bấm “Luyện nét” rồi viết trực tiếp lên ô.',writingGood:'Hoàn thành đúng thứ tự nét!',writingMistake:'Nét này chưa đúng, thử lại nhé.',writerUnavailable:'Không tải được dữ liệu nét chữ. Hãy kiểm tra mạng rồi thử lại.',progress:'Tiến độ viết',coreChars:'Chữ chính',expandedWords:'Từ mở rộng',singleRadical:'Từng bộ'},
-    en:{tab:'Components',title:'Radicals & Character Families',sub:'Learn structure: semantic clue + sound clue → character → word → sentence.',semantic:'Semantic radicals',phonetic:'Sound families',pinyin:'Vietnamese sound bridge',search:'Search radical, character, pinyin or meaning…',listen:'Listen',listenWord:'Character',listenSentence:'Sentence',slow:'Slow',initialTitle:'Initials',finalTitle:'Finals',specialTitle:'Easy-to-miss spelling rules',demoTitle:'Try a Pinyin',demoHint:'Type e.g. qǐng, xué, lǜ, zhōngwén…',analyze:'Analyze',why:'Why it helps',structure:'Structure',example:'Example',note:'This is a learning-oriented structural analysis. Not every character literally “grew” from its radical in a modern step-by-step way; many characters combine a semantic component with a phonetic component.',soundNote:'Vietnamese approximations are only a bridge. Prefer the zh-TW audio because many Mandarin sounds do not have exact Vietnamese equivalents.',familyNote:'Sound families show how one component can hint at pronunciation while another component changes the semantic field.',all:'All',chooseRadical:'Choose one radical to practise',chooseHint:'Each radical is separated. Pick one to study its characters, expanded vocabulary, and handwriting.',practiceWriting:'Practise writing this radical',practiceHint:'Choose a character or word → view stroke order → start stroke quiz to check your writing order.',practiceTarget:'Character / word',strokeOrder:'Stroke order',startQuiz:'Stroke quiz',rewrite:'Rewrite',showGuide:'Show model',hideGuide:'Hide model',writingReady:'Press “Stroke quiz” and write directly in the box.',writingGood:'Correct stroke order completed!',writingMistake:'That stroke is not right yet—try again.',writerUnavailable:'Stroke data could not be loaded. Check your connection and try again.',progress:'Writing progress',coreChars:'Core characters',expandedWords:'Expanded words',singleRadical:'One radical'},
-    'zh-Hant':{tab:'部件',title:'部首・部件與字族',sub:'從結構學習：義符 + 聲符 → 字 → 詞 → 句子。',semantic:'義符部件',phonetic:'聲符字族',pinyin:'越南語近似音提示',search:'搜尋部件、字、拼音或意思…',listen:'聽',listenWord:'聽單字',listenSentence:'聽例句',slow:'慢速',initialTitle:'聲母',finalTitle:'韻母',specialTitle:'容易混淆的拼音規則',demoTitle:'快速分析拼音',demoHint:'例如輸入：qǐng、xué、lǜ、zhōngwén…',analyze:'分析',why:'為什麼好記？',structure:'結構',example:'例句',note:'這裡以學習與記憶為目的分析字形。不是所有漢字都能用現代「加一個部首就產生新字」來解釋；很多漢字屬於形聲結構，由義符提示意思、聲符提示讀音。',soundNote:'越南語近似音只作為入門橋樑。許多華語語音沒有完全相同的越南語對應音，請以 zh-TW 音檔為準。',familyNote:'聲符字族可以看出同一聲符如何提示讀音，而其他部件改變字義範圍。',all:'全部',chooseRadical:'選一個部件單獨練習',chooseHint:'每個部件已分開。選一個部件，集中學習相關字、延伸詞與書寫。',practiceWriting:'練寫這個部件',practiceHint:'選擇單字或詞語 → 看筆順 → 開始筆順練習，系統會檢查書寫順序。',practiceTarget:'要練的字／詞',strokeOrder:'筆順',startQuiz:'筆順練習',rewrite:'重寫',showGuide:'顯示字形',hideGuide:'隱藏字形',writingReady:'按「筆順練習」後，直接在方格內書寫。',writingGood:'筆順完成正確！',writingMistake:'這一筆還不對，再試一次。',writerUnavailable:'無法載入筆順資料，請檢查網路後再試。',progress:'書寫進度',coreChars:'核心字',expandedWords:'延伸詞',singleRadical:'單一部件'}
+    vi:{tab:'Bộ thủ',title:'Bộ thủ & Họ chữ',sub:'Học từ cấu tạo: phần gợi nghĩa + phần gợi âm → chữ → từ → câu.',semantic:'Bộ gợi nghĩa',phonetic:'Họ âm',pinyin:'Pinyin gần âm Việt',search:'Tìm bộ, chữ, pinyin hoặc nghĩa…',listen:'Nghe',listenWord:'Nghe chữ',listenSentence:'Nghe câu',slow:'Chậm',fast:'Nhanh',writeThis:'Viết',initialTitle:'Thanh mẫu (âm đầu)',finalTitle:'Vận mẫu (phần vần)',specialTitle:'Quy tắc đặc biệt dễ nhầm',demoTitle:'Thử nhanh một Pinyin',demoHint:'Nhập ví dụ: qǐng, xué, lǜ, zhōngwén…',analyze:'Phân tích',why:'Vì sao dễ nhớ?',structure:'Cấu tạo',example:'Ví dụ',note:'Lưu ý: đây là cách phân tích để học và ghi nhớ. Không phải mọi chữ đều “sinh ra” trực tiếp từ bộ theo cách hiện đại; nhiều chữ là hình thanh, trong đó một phần gợi nghĩa và một phần gợi âm.',soundNote:'Gợi âm tiếng Việt chỉ là cầu nối ban đầu. Hãy ưu tiên nghe giọng zh-TW vì nhiều âm Mandarin không có bản tương đương chính xác trong tiếng Việt.',familyNote:'Họ âm cho thấy cùng một thành phần có thể lặp lại để gợi cách đọc, còn bộ bên trái/bên dưới thường đổi để gợi nghĩa.',all:'Tất cả',chooseRadical:'Chọn từng bộ để luyện',chooseHint:'Mỗi bộ được tách riêng. Chọn một bộ để học chữ, từ mở rộng và luyện viết riêng bộ đó.',practiceWriting:'Luyện viết bộ này',practiceHint:'Chọn chữ hoặc từ → xem thứ tự nét → bật Luyện nét để web kiểm tra thứ tự viết.',practiceTarget:'Chữ / từ muốn luyện',strokeOrder:'Thứ tự nét',startQuiz:'Luyện nét',rewrite:'Viết lại',showGuide:'Hiện mẫu',hideGuide:'Ẩn mẫu',writingReady:'Bấm “Luyện nét” rồi viết trực tiếp lên ô.',writingGood:'Hoàn thành đúng thứ tự nét!',writingMistake:'Nét này chưa đúng, thử lại nhé.',writerUnavailable:'Không tải được dữ liệu nét chữ. Hãy kiểm tra mạng rồi thử lại.',progress:'Tiến độ viết',coreChars:'Toàn bộ chữ',expandedWords:'Từ / cụm từ phát triển',singleRadical:'Từng bộ'},
+    en:{tab:'Components',title:'Radicals & Character Families',sub:'Learn structure: semantic clue + sound clue → character → word → sentence.',semantic:'Semantic radicals',phonetic:'Sound families',pinyin:'Vietnamese sound bridge',search:'Search radical, character, pinyin or meaning…',listen:'Listen',listenWord:'Character',listenSentence:'Sentence',slow:'Slow',fast:'Fast',writeThis:'Write',initialTitle:'Initials',finalTitle:'Finals',specialTitle:'Easy-to-miss spelling rules',demoTitle:'Try a Pinyin',demoHint:'Type e.g. qǐng, xué, lǜ, zhōngwén…',analyze:'Analyze',why:'Why it helps',structure:'Structure',example:'Example',note:'This is a learning-oriented structural analysis. Not every character literally “grew” from its radical in a modern step-by-step way; many characters combine a semantic component with a phonetic component.',soundNote:'Vietnamese approximations are only a bridge. Prefer the zh-TW audio because many Mandarin sounds do not have exact Vietnamese equivalents.',familyNote:'Sound families show how one component can hint at pronunciation while another component changes the semantic field.',all:'All',chooseRadical:'Choose one radical to practise',chooseHint:'Each radical is separated. Pick one to study its characters, expanded vocabulary, and handwriting.',practiceWriting:'Practise writing this radical',practiceHint:'Choose a character or word → view stroke order → start stroke quiz to check your writing order.',practiceTarget:'Character / word',strokeOrder:'Stroke order',startQuiz:'Stroke quiz',rewrite:'Rewrite',showGuide:'Show model',hideGuide:'Hide model',writingReady:'Press “Stroke quiz” and write directly in the box.',writingGood:'Correct stroke order completed!',writingMistake:'That stroke is not right yet—try again.',writerUnavailable:'Stroke data could not be loaded. Check your connection and try again.',progress:'Writing progress',coreChars:'All characters',expandedWords:'Expanded words / phrases',singleRadical:'One radical'},
+    'zh-Hant':{tab:'部件',title:'部首・部件與字族',sub:'從結構學習：義符 + 聲符 → 字 → 詞 → 句子。',semantic:'義符部件',phonetic:'聲符字族',pinyin:'越南語近似音提示',search:'搜尋部件、字、拼音或意思…',listen:'聽',listenWord:'聽單字',listenSentence:'聽例句',slow:'慢速',fast:'加速',writeThis:'練寫',initialTitle:'聲母',finalTitle:'韻母',specialTitle:'容易混淆的拼音規則',demoTitle:'快速分析拼音',demoHint:'例如輸入：qǐng、xué、lǜ、zhōngwén…',analyze:'分析',why:'為什麼好記？',structure:'結構',example:'例句',note:'這裡以學習與記憶為目的分析字形。不是所有漢字都能用現代「加一個部首就產生新字」來解釋；很多漢字屬於形聲結構，由義符提示意思、聲符提示讀音。',soundNote:'越南語近似音只作為入門橋樑。許多華語語音沒有完全相同的越南語對應音，請以 zh-TW 音檔為準。',familyNote:'聲符字族可以看出同一聲符如何提示讀音，而其他部件改變字義範圍。',all:'全部',chooseRadical:'選一個部件單獨練習',chooseHint:'每個部件已分開。選一個部件，集中學習相關字、延伸詞與書寫。',practiceWriting:'練寫這個部件',practiceHint:'選擇單字或詞語 → 看筆順 → 開始筆順練習，系統會檢查書寫順序。',practiceTarget:'要練的字／詞',strokeOrder:'筆順',startQuiz:'筆順練習',rewrite:'重寫',showGuide:'顯示字形',hideGuide:'隱藏字形',writingReady:'按「筆順練習」後，直接在方格內書寫。',writingGood:'筆順完成正確！',writingMistake:'這一筆還不對，再試一次。',writerUnavailable:'無法載入筆順資料，請檢查網路後再試。',progress:'書寫進度',coreChars:'全部漢字',expandedWords:'延伸詞／詞組',singleRadical:'單一部件'}
   };
 
   let radicals=[];
@@ -55,7 +55,7 @@
   }
 
 
-  function speak(text,rate=.74){
+  function speak(text,rate=.78){
     if(!('speechSynthesis' in window))return;
     speechSynthesis.cancel();
     const u=new SpeechSynthesisUtterance(text);u.lang='zh-TW';u.rate=rate;u.pitch=1;
@@ -65,9 +65,10 @@
   }
   function audioButtons(text,ui,kind='listen'){
     const wrap=document.createElement('div');wrap.className='rad-audio-actions';
-    const normal=document.createElement('button');normal.type='button';normal.className='rad-listen';normal.textContent=`🔊 ${kind==='word'?ui.listenWord:kind==='sentence'?ui.listenSentence:ui.listen}`;normal.addEventListener('click',()=>speak(text,.74));
-    const slow=document.createElement('button');slow.type='button';slow.textContent=`🐢 ${ui.slow}`;slow.addEventListener('click',()=>speak(text,.5));
-    wrap.append(normal,slow);return wrap;
+    const normal=document.createElement('button');normal.type='button';normal.className='rad-listen';normal.textContent=`🔊 ${kind==='word'?ui.listenWord:kind==='sentence'?ui.listenSentence:ui.listen}`;normal.addEventListener('click',()=>speak(text,.78));
+    const slow=document.createElement('button');slow.type='button';slow.textContent=`🐢 ${ui.slow}`;slow.addEventListener('click',()=>speak(text,.55));
+    const fast=document.createElement('button');fast.type='button';fast.className='rad-fast';fast.textContent=`⚡ ${ui.fast}`;fast.addEventListener('click',()=>speak(text,1.0));
+    wrap.append(normal,slow,fast);return wrap;
   }
   function pinyinHintNode(pinyin){
     const box=document.createElement('div');box.className='rad-pinyin-hint';
@@ -108,14 +109,14 @@
       const head=document.createElement('div');head.className='rad-expansion-branch-head';
       const core=document.createElement('div');core.className='rad-expansion-root';core.textContent=branch[0];
       const meta=document.createElement('div');meta.innerHTML=`<strong>${branch[1]}</strong><span>${branchMeaning(branch)}</span>`;
-      head.append(core,meta,audioButtons(branch[0],ui,'word'));
+      head.append(core,meta,audioButtons(branch[0],ui,'word'),writeTargetButton(r,branch[0],ui));
       const why=document.createElement('p');why.className='rad-expansion-why';why.textContent=branchWhy(branch);
       const list=document.createElement('div');list.className='rad-expansion-words';
       branch[5].forEach(word=>{
         const row=document.createElement('div');row.className='rad-expansion-word';
         const main=document.createElement('div');main.className='rad-expansion-word-main';
         main.innerHTML=`<strong>${word[0]}</strong><span>${word[1]}</span><small>${expansionMeaning(word)}</small>`;
-        row.append(main,audioButtons(word[0],ui));
+        row.append(main,audioButtons(word[0],ui),writeTargetButton(r,word[0],ui));
         list.append(row);
       });
       group.append(head,why,list);grid.append(group);
@@ -128,6 +129,7 @@
   const SELECTED_RADICAL_KEY='tocfl-radical-selected-v1';
   let selectedRadicalKey=localStorage.getItem(SELECTED_RADICAL_KEY)||'person';
   const radicalWriterInstances=[];
+  const writingPanels=new Map();
 
   function hanziChars(text){
     return Array.from(String(text||'')).filter(ch=>/[\u3400-\u9FFF\uF900-\uFAFF]/.test(ch));
@@ -136,23 +138,51 @@
     const seen=new Set();
     return items.filter(item=>{const key=item.text;if(!key||seen.has(key))return false;seen.add(key);return true;});
   }
-  function writingTargets(r){
-    const items=[];
+  function allWritingChars(r){
+    const chars=[];
     const primary=r.radical.split('/')[0].trim();
-    if(primary)items.push({text:primary,p:r.pinyin,m:pick(r.meaning),group:'core'});
-    r.chars.forEach(ch=>items.push({text:ch.h,p:ch.p,m:pick(ch.m),group:'core'}));
+    chars.push(...hanziChars(primary));
+    r.chars.forEach(ch=>chars.push(...hanziChars(ch.h)));
     (expansionTrees[r.key]||[]).forEach(branch=>{
-      items.push({text:branch[0],p:branch[1],m:branchMeaning(branch),group:'core'});
+      chars.push(...hanziChars(branch[0]));
+      branch[5].forEach(word=>chars.push(...hanziChars(word[0])));
+    });
+    return [...new Set(chars)];
+  }
+  function writingTargets(r){
+    const meta=new Map();
+    const primary=r.radical.split('/')[0].trim();
+    if(primary)meta.set(primary,{p:r.pinyin,m:pick(r.meaning)});
+    r.chars.forEach(ch=>meta.set(ch.h,{p:ch.p,m:pick(ch.m)}));
+    (expansionTrees[r.key]||[]).forEach(branch=>{
+      meta.set(branch[0],{p:branch[1],m:branchMeaning(branch)});
+    });
+
+    const items=[];
+    // Every Hanzi that appears anywhere in this radical tree can be practised individually.
+    allWritingChars(r).forEach(ch=>{
+      const m=meta.get(ch)||{};
+      items.push({text:ch,p:m.p||'',m:m.m||'',group:'core'});
+    });
+    // Keep every developed compound/phrase as a whole target too, so all of its characters
+    // appear side-by-side in the handwriting trainer.
+    (expansionTrees[r.key]||[]).forEach(branch=>{
       branch[5].forEach(word=>items.push({text:word[0],p:word[1],m:expansionMeaning(word),group:'expanded'}));
     });
     return uniqueTexts(items);
   }
   function coreWritingChars(r){
-    const chars=[];
-    chars.push(...hanziChars(r.radical.split('/')[0].trim()));
-    r.chars.forEach(ch=>chars.push(...hanziChars(ch.h)));
-    (expansionTrees[r.key]||[]).forEach(branch=>chars.push(...hanziChars(branch[0])));
-    return [...new Set(chars)];
+    return allWritingChars(r);
+  }
+  function openWritingTarget(radicalKey,text){
+    const panel=writingPanels.get(radicalKey);
+    if(panel)panel.openTarget(text);
+  }
+  function writeTargetButton(r,text,ui){
+    const b=document.createElement('button');
+    b.type='button';b.className='rad-write-shortcut';b.textContent=`✍ ${ui.writeThis}`;
+    b.addEventListener('click',()=>openWritingTarget(r.key,text));
+    return b;
   }
   function loadWritingProgress(){
     try{return JSON.parse(localStorage.getItem(WRITING_PROGRESS_KEY)||'{}')||{};}catch{return {};}
@@ -253,19 +283,25 @@
     });
   }
   function writingPracticePanel(r,ui){
-    const details=document.createElement('details');details.className='rad-writing-panel';
+    const details=document.createElement('details');details.className='rad-writing-panel';details.dataset.radWritingPanel=r.key;
     const summary=document.createElement('summary');
     summary.innerHTML=`<span>✍ ${ui.practiceWriting}</span><strong data-rad-progress="${r.key}">${progressText(r,ui)}</strong>`;
     details.append(summary);
     const body=document.createElement('div');body.className='rad-writing-panel-body';details.append(body);
-    let built=false;
-    details.addEventListener('toggle',()=>{
-      if(!details.open||built)return;built=true;
+    let built=false,targets=[],select=null,stage=null;
+    const draw=()=>{
+      if(!select||!stage||!targets.length)return;
+      const idx=Number(select.value)||0;
+      try{localStorage.setItem(`tocfl-radical-writing-target-${r.key}`,String(idx));}catch{}
+      renderWritingTarget(stage,targets[idx]||targets[0],r,ui);
+    };
+    const build=()=>{
+      if(built)return;built=true;
       const hint=document.createElement('p');hint.className='rad-writing-hint';hint.textContent=ui.practiceHint;
       const row=document.createElement('label');row.className='rad-writing-select-row';
       const title=document.createElement('span');title.textContent=ui.practiceTarget;
-      const select=document.createElement('select');
-      const targets=writingTargets(r);
+      select=document.createElement('select');
+      targets=writingTargets(r);
       const coreGroup=document.createElement('optgroup');coreGroup.label=ui.coreChars;
       const expGroup=document.createElement('optgroup');expGroup.label=ui.expandedWords;
       targets.forEach((target,idx)=>{
@@ -276,14 +312,17 @@
       const saved=localStorage.getItem(`tocfl-radical-writing-target-${r.key}`);
       if(saved!==null&&targets[Number(saved)])select.value=saved;
       row.append(title,select);body.append(hint,row);
-      const stage=document.createElement('div');stage.className='rad-writing-stage';body.append(stage);
-      const draw=()=>{
-        const idx=Number(select.value)||0;
-        try{localStorage.setItem(`tocfl-radical-writing-target-${r.key}`,String(idx));}catch{}
-        renderWritingTarget(stage,targets[idx]||targets[0],r,ui);
-      };
+      stage=document.createElement('div');stage.className='rad-writing-stage';body.append(stage);
       select.addEventListener('change',draw);draw();
-    });
+    };
+    const openTarget=text=>{
+      details.open=true;build();
+      const idx=targets.findIndex(t=>t.text===text);
+      if(idx>=0){select.value=String(idx);draw();}
+      requestAnimationFrame(()=>details.scrollIntoView({behavior:'smooth',block:'start'}));
+    };
+    writingPanels.set(r.key,{details,openTarget});
+    details.addEventListener('toggle',()=>{if(details.open)build();});
     return details;
   }
   function radicalSearchText(r){
@@ -308,7 +347,7 @@
     section.append(grid);return section;
   }
 
-  function charCard(ch,ui){
+  function charCard(ch,ui,r){
     const card=document.createElement('article');card.className='rad-char-card';
     const top=document.createElement('div');top.className='rad-char-top';
     const hanzi=document.createElement('div');hanzi.className='rad-char-hanzi';hanzi.textContent=ch.h;
@@ -319,7 +358,8 @@
     const structure=document.createElement('div');structure.className='rad-structure';structure.innerHTML=`<span>${ui.structure}</span><strong>${ch.s}</strong>`;
     const why=document.createElement('div');why.className='rad-why';why.innerHTML=`<strong>${ui.why}</strong><p>${pick(ch.w)}</p>`;
     const ex=document.createElement('div');ex.className='rad-example';ex.innerHTML=`<strong>${ui.example}</strong><div class="rad-example-zh">${ch.ex[0]}</div><div class="rad-example-py">${ch.ex[1]}</div><div>${pick(ch.ex[2])}</div>`;
-    card.append(top,pinyinHintNode(ch.p),audioButtons(ch.h,ui,'word'),structure,why,ex,audioButtons(ch.ex[0],ui,'sentence'));
+    const charActions=document.createElement('div');charActions.className='rad-char-actions';charActions.append(audioButtons(ch.h,ui,'word'),writeTargetButton(r,ch.h,ui));
+    card.append(top,pinyinHintNode(ch.p),charActions,structure,why,ex,audioButtons(ch.ex[0],ui,'sentence'));
     return card;
   }
   function radicalCard(r,ui){
@@ -329,11 +369,11 @@
     const meta=document.createElement('div');meta.innerHTML=`<div class="rad-icon">${r.icon}</div><strong>${r.pinyin}</strong><span>${pick(r.meaning)}</span>`;
     head.append(symbol,meta,audioButtons(r.radical.split('/')[0].trim(),ui,'word'));
     const origin=document.createElement('p');origin.className='rad-origin';origin.textContent=pick(r.origin);
-    const chars=document.createElement('div');chars.className='rad-char-grid';r.chars.forEach(ch=>chars.append(charCard(ch,ui)));
+    const chars=document.createElement('div');chars.className='rad-char-grid';r.chars.forEach(ch=>chars.append(charCard(ch,ui,r)));
     card.append(head,origin,writingPracticePanel(r,ui),chars,expansionSection(r,ui));return card;
   }
   function renderSemantic(root,ui,query=''){
-    root.innerHTML='';
+    root.innerHTML='';writingPanels.clear();
     const note=document.createElement('div');note.className='rad-learning-note';note.textContent=ui.note;root.append(note,radicalChooser(ui,query));
     const grid=document.createElement('div');grid.className='rad-group-grid';
     let list=radicals.filter(r=>!query||radicalSearchText(r).includes(query));

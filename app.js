@@ -1313,28 +1313,83 @@ async function importProgress(e){
 
 function registerServiceWorker(){if('serviceWorker'in navigator)navigator.serviceWorker.register('./sw.js').catch(err=>console.warn('SW:',err));}
 function escapeHtml(s){return String(s).replace(/[&<>'"]/g,c=>({'&':'&amp;','<':'&lt;','>':'&gt;',"'":'&#39;','"':'&quot;'}[c]));}
+const RADICAL_CLOUD_KEYS={
+  learning:'tocfl-radical-learning-flow-v1',
+  writing:'tocfl-radical-writing-v1',
+  selected:'tocfl-radical-selected-v1',
+  writingTargetPrefix:'tocfl-radical-writing-target-',
+  fontScale:'tocfl-radical-font-scale-v1'
+};
+function readLocalJsonForCloud(key){
+  try{const value=JSON.parse(localStorage.getItem(key)||'{}');return value&&typeof value==='object'&&!Array.isArray(value)?value:{};}catch{return {};}
+}
+function getRadicalCloudState(){
+  const writingTargets={};
+  try{
+    for(let i=0;i<localStorage.length;i++){
+      const key=localStorage.key(i)||'';
+      if(!key.startsWith(RADICAL_CLOUD_KEYS.writingTargetPrefix))continue;
+      const radicalKey=key.slice(RADICAL_CLOUD_KEYS.writingTargetPrefix.length);
+      if(radicalKey)writingTargets[radicalKey]=String(localStorage.getItem(key)??'0');
+    }
+  }catch{}
+  return {
+    version:1,
+    selectedRadicalKey:String(localStorage.getItem(RADICAL_CLOUD_KEYS.selected)||'person'),
+    learning:readLocalJsonForCloud(RADICAL_CLOUD_KEYS.learning),
+    writing:readLocalJsonForCloud(RADICAL_CLOUD_KEYS.writing),
+    writingTargets,
+    fontScale:Number(localStorage.getItem(RADICAL_CLOUD_KEYS.fontScale)||1)
+  };
+}
+function applyRadicalCloudState(radicalState){
+  if(!radicalState||typeof radicalState!=='object'||Array.isArray(radicalState))return false;
+  try{
+    if(typeof radicalState.selectedRadicalKey==='string'&&radicalState.selectedRadicalKey.trim())localStorage.setItem(RADICAL_CLOUD_KEYS.selected,radicalState.selectedRadicalKey.trim());
+    if(radicalState.learning&&typeof radicalState.learning==='object')localStorage.setItem(RADICAL_CLOUD_KEYS.learning,JSON.stringify(radicalState.learning));
+    if(radicalState.writing&&typeof radicalState.writing==='object')localStorage.setItem(RADICAL_CLOUD_KEYS.writing,JSON.stringify(radicalState.writing));
+    if(Number.isFinite(Number(radicalState.fontScale)))localStorage.setItem(RADICAL_CLOUD_KEYS.fontScale,String(Math.max(.9,Math.min(1.6,Number(radicalState.fontScale)))));
+    if(radicalState.writingTargets&&typeof radicalState.writingTargets==='object'){
+      const remove=[];
+      for(let i=0;i<localStorage.length;i++){
+        const key=localStorage.key(i)||'';
+        if(key.startsWith(RADICAL_CLOUD_KEYS.writingTargetPrefix))remove.push(key);
+      }
+      remove.forEach(key=>localStorage.removeItem(key));
+      for(const [radicalKey,value] of Object.entries(radicalState.writingTargets)){
+        if(radicalKey)localStorage.setItem(`${RADICAL_CLOUD_KEYS.writingTargetPrefix}${radicalKey}`,String(value));
+      }
+    }
+    document.dispatchEvent(new CustomEvent('tocfl:radical-cloud-applied'));
+    return true;
+  }catch{return false;}
+}
 function getCloudState(){
   saveCurrentLevelSnapshot(); persistMultiState();
   const levels={}; for(const cfg of LEVEL_CATALOG) if(state.levelStates[cfg.id]) levels[cfg.id]=normalizeLevelState(state.levelStates[cfg.id]);
   const a1=normalizeLevelState(levels.A1||emptyLevelState());
   return {
-    progress:{__format:'tocfl-multilevel-v1',levels,settings:{activeLevel:state.activeLevel,rememberLevel:Boolean(state.rememberLevel)}},
+    progress:{__format:'tocfl-multilevel-v1',levels,settings:{activeLevel:state.activeLevel,rememberLevel:Boolean(state.rememberLevel)},radicals:getRadicalCloudState()},
     // Legacy mirrors keep the existing database schema and make migration reversible.
     favorites:a1.favorites,lastDay:a1.lastDay,language:state.lang
   };
 }
 async function applyCloudState(data={}){
   const cloudProgress=data.progress && typeof data.progress==='object' ? data.progress : {};
+  let needsCloudUpgrade=false;
   if(cloudProgress.__format==='tocfl-multilevel-v1' && cloudProgress.levels){
     state.levelStates={};
     for(const [id,value] of Object.entries(cloudProgress.levels)) if(levelConfig(id)) state.levelStates[id]=normalizeLevelState(value);
     if(!state.levelStates.A1) state.levelStates.A1=emptyLevelState();
     state.rememberLevel=Boolean(cloudProgress.settings?.rememberLevel);
     const desired=String(cloudProgress.settings?.activeLevel||'A1').toUpperCase(); state.activeLevel=levelConfig(desired)?desired:'A1';
+    if(cloudProgress.radicals&&typeof cloudProgress.radicals==='object')applyRadicalCloudState(cloudProgress.radicals);
+    else needsCloudUpgrade=true;
   }else{
     // Existing users: migrate the old single-level cloud row into A1 without touching future local levels.
     state.levelStates.A1=normalizeLevelState({progress:cloudProgress,favorites:Array.isArray(data.favorites)?data.favorites:[],lastDay:data.lastDay||1});
     if(!state.activeLevel) state.activeLevel='A1';
+    needsCloudUpgrade=true;
   }
   if(I18N[data.language]){state.lang=data.language;localStorage.setItem(LANGUAGE_KEY,state.lang);}
   let desired=state.activeLevel||'A1';
@@ -1342,6 +1397,7 @@ async function applyCloudState(data={}){
   if(!ok){desired='A1';state.activeLevel='A1';await applyLevel('A1',{notify:false,close:false,skipSnapshot:true});state.rememberLevel=false;}
   persistMultiState(); applyLanguage(); document.dispatchEvent(new CustomEvent('tocfl:language-changed'));
   renderCurrentWord(); renderVocabList(); makeQuiz(); updateProgressUI();
+  return {needsCloudUpgrade};
 }
 window.TOCFLApp={
   getCloudState,applyCloudState,getLanguage:()=>state.lang,isReady:()=>Boolean(window.TOCFL_APP_READY),

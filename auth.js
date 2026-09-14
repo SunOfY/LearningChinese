@@ -294,8 +294,9 @@ async function loadCloudState() {
     return;
   }
   suppressSync = true;
+  let applyResult = null;
   try {
-    await window.TOCFLApp.applyCloudState({
+    applyResult = await window.TOCFLApp.applyCloudState({
       progress: data.progress || {},
       favorites: Array.isArray(data.favorites) ? data.favorites : [],
       lastDay: data.last_day || 1,
@@ -304,7 +305,10 @@ async function loadCloudState() {
   } finally {
     suppressSync = false;
   }
-  setCloudStatus(tr('cloudLoaded'));
+  // Existing accounts created before Radical cloud sync keep their local Radical
+  // progress once, then the upgraded payload is uploaded automatically.
+  if (applyResult?.needsCloudUpgrade) await syncNow();
+  else setCloudStatus(tr('cloudLoaded'));
   await window.TOCFLApp?.afterAccountReady?.(session.user.id);
 }
 

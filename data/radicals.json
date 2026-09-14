@@ -1,5 +1,5 @@
 {
-  "version": "2026-09-15-deep-learning-v1",
+  "version": "2026-09-15-examples-v1",
   "radicals": [
     {
       "key": "person",
@@ -4707,5 +4707,3316 @@
         "zh-Hant": "文＋盲＝對文字不識／不會讀寫的人＝文盲。"
       }
     }
+  },
+  "exampleSets": {
+    "你好": [
+      {
+        "zh": "你好，我是小安。",
+        "pinyin": "Nǐ hǎo, wǒ shì Xiǎo Ān.",
+        "vi": "Xin chào, tôi là Tiểu An.",
+        "en": "Hello, I am Xiao An.",
+        "zh-Hant": "你好，我是小安。"
+      },
+      {
+        "zh": "老師，你好！",
+        "pinyin": "Lǎoshī, nǐ hǎo!",
+        "vi": "Chào thầy/cô ạ!",
+        "en": "Hello, teacher!",
+        "zh-Hant": "老師，你好！"
+      }
+    ],
+    "你們": [
+      {
+        "zh": "你們今天有課嗎？",
+        "pinyin": "Nǐmen jīntiān yǒu kè ma?",
+        "vi": "Hôm nay các bạn có lớp không?",
+        "en": "Do you have class today?",
+        "zh-Hant": "你們今天有課嗎？"
+      },
+      {
+        "zh": "你們都是學生嗎？",
+        "pinyin": "Nǐmen dōu shì xuéshēng ma?",
+        "vi": "Các bạn đều là sinh viên/học sinh phải không?",
+        "en": "Are you all students?",
+        "zh-Hant": "你們都是學生嗎？"
+      }
+    ],
+    "你的": [
+      {
+        "zh": "這是你的書嗎？",
+        "pinyin": "Zhè shì nǐ de shū ma?",
+        "vi": "Đây là sách của bạn phải không?",
+        "en": "Is this your book?",
+        "zh-Hant": "這是你的書嗎？"
+      },
+      {
+        "zh": "你的名字很好聽。",
+        "pinyin": "Nǐ de míngzi hěn hǎotīng.",
+        "vi": "Tên của bạn nghe rất hay.",
+        "en": "Your name sounds nice.",
+        "zh-Hant": "你的名字很好聽。"
+      }
+    ],
+    "你呢": [
+      {
+        "zh": "我很好，你呢？",
+        "pinyin": "Wǒ hěn hǎo, nǐ ne?",
+        "vi": "Tôi khỏe, còn bạn thì sao?",
+        "en": "I am fine. How about you?",
+        "zh-Hant": "我很好，你呢？"
+      },
+      {
+        "zh": "我想喝茶，你呢？",
+        "pinyin": "Wǒ xiǎng hē chá, nǐ ne?",
+        "vi": "Tôi muốn uống trà, còn bạn?",
+        "en": "I want tea. What about you?",
+        "zh-Hant": "我想喝茶，你呢？"
+      }
+    ],
+    "他們": [
+      {
+        "zh": "他們都是我的朋友。",
+        "pinyin": "Tāmen dōu shì wǒ de péngyou.",
+        "vi": "Họ đều là bạn của tôi.",
+        "en": "They are all my friends.",
+        "zh-Hant": "他們都是我的朋友。"
+      },
+      {
+        "zh": "他們今天不來。",
+        "pinyin": "Tāmen jīntiān bù lái.",
+        "vi": "Hôm nay họ không đến.",
+        "en": "They are not coming today.",
+        "zh-Hant": "他們今天不來。"
+      }
+    ],
+    "他的": [
+      {
+        "zh": "這是他的手機。",
+        "pinyin": "Zhè shì tā de shǒujī.",
+        "vi": "Đây là điện thoại của anh ấy.",
+        "en": "This is his phone.",
+        "zh-Hant": "這是他的手機。"
+      },
+      {
+        "zh": "他的中文很好。",
+        "pinyin": "Tā de Zhōngwén hěn hǎo.",
+        "vi": "Tiếng Trung của anh ấy rất tốt.",
+        "en": "His Chinese is very good.",
+        "zh-Hant": "他的中文很好。"
+      }
+    ],
+    "他家": [
+      {
+        "zh": "我今天去他家。",
+        "pinyin": "Wǒ jīntiān qù tā jiā.",
+        "vi": "Hôm nay tôi đến nhà anh ấy.",
+        "en": "I am going to his home today.",
+        "zh-Hant": "我今天去他家。"
+      },
+      {
+        "zh": "他家離學校很近。",
+        "pinyin": "Tā jiā lí xuéxiào hěn jìn.",
+        "vi": "Nhà anh ấy rất gần trường.",
+        "en": "His home is close to the school.",
+        "zh-Hant": "他家離學校很近。"
+      }
+    ],
+    "他說": [
+      {
+        "zh": "他說他今天很忙。",
+        "pinyin": "Tā shuō tā jīntiān hěn máng.",
+        "vi": "Anh ấy nói hôm nay anh ấy rất bận.",
+        "en": "He says he is very busy today.",
+        "zh-Hant": "他說他今天很忙。"
+      },
+      {
+        "zh": "他說中文說得很好。",
+        "pinyin": "Tā shuō Zhōngwén shuō de hěn hǎo.",
+        "vi": "Anh ấy nói tiếng Trung rất tốt.",
+        "en": "He speaks Chinese very well.",
+        "zh-Hant": "他說中文說得很好。"
+      }
+    ],
+    "住址": [
+      {
+        "zh": "請寫下你的住址。",
+        "pinyin": "Qǐng xiě xià nǐ de zhùzhǐ.",
+        "vi": "Hãy viết địa chỉ cư trú của bạn.",
+        "en": "Please write down your residential address.",
+        "zh-Hant": "請寫下你的住址。"
+      },
+      {
+        "zh": "我的住址沒有改。",
+        "pinyin": "Wǒ de zhùzhǐ méiyǒu gǎi.",
+        "vi": "Địa chỉ cư trú của tôi không thay đổi.",
+        "en": "My residential address has not changed.",
+        "zh-Hant": "我的住址沒有改。"
+      }
+    ],
+    "住宿": [
+      {
+        "zh": "我們在高雄住宿兩晚。",
+        "pinyin": "Wǒmen zài Gāoxióng zhùsù liǎng wǎn.",
+        "vi": "Chúng tôi lưu trú ở Cao Hùng hai đêm.",
+        "en": "We are staying in Kaohsiung for two nights.",
+        "zh-Hant": "我們在高雄住宿兩晚。"
+      },
+      {
+        "zh": "這間學校有住宿。",
+        "pinyin": "Zhè jiān xuéxiào yǒu zhùsù.",
+        "vi": "Trường này có chỗ ở/ký túc xá.",
+        "en": "This school provides accommodation.",
+        "zh-Hant": "這間學校有住宿。"
+      }
+    ],
+    "居住": [
+      {
+        "zh": "我目前居住在高雄。",
+        "pinyin": "Wǒ mùqián jūzhù zài Gāoxióng.",
+        "vi": "Hiện tôi đang cư trú ở Cao Hùng.",
+        "en": "I currently reside in Kaohsiung.",
+        "zh-Hant": "我目前居住在高雄。"
+      },
+      {
+        "zh": "這裡適合長期居住。",
+        "pinyin": "Zhèlǐ shìhé chángqī jūzhù.",
+        "vi": "Nơi này thích hợp để cư trú lâu dài.",
+        "en": "This place is suitable for long-term living.",
+        "zh-Hant": "這裡適合長期居住。"
+      }
+    ],
+    "住院": [
+      {
+        "zh": "他生病住院了。",
+        "pinyin": "Tā shēngbìng zhùyuàn le.",
+        "vi": "Anh ấy bị bệnh và phải nằm viện.",
+        "en": "He got sick and was hospitalized.",
+        "zh-Hant": "他生病住院了。"
+      },
+      {
+        "zh": "醫生說我不用住院。",
+        "pinyin": "Yīshēng shuō wǒ bú yòng zhùyuàn.",
+        "vi": "Bác sĩ nói tôi không cần nằm viện.",
+        "en": "The doctor said I do not need to be hospitalized.",
+        "zh-Hant": "醫生說我不用住院。"
+      }
+    ],
+    "休息": [
+      {
+        "zh": "我想休息一下。",
+        "pinyin": "Wǒ xiǎng xiūxi yíxià.",
+        "vi": "Tôi muốn nghỉ một chút.",
+        "en": "I want to rest for a while.",
+        "zh-Hant": "我想休息一下。"
+      },
+      {
+        "zh": "累了就休息吧。",
+        "pinyin": "Lèi le jiù xiūxi ba.",
+        "vi": "Mệt thì nghỉ nhé.",
+        "en": "Rest if you are tired.",
+        "zh-Hant": "累了就休息吧。"
+      }
+    ],
+    "休假": [
+      {
+        "zh": "我下週要休假。",
+        "pinyin": "Wǒ xià zhōu yào xiūjià.",
+        "vi": "Tuần sau tôi sẽ nghỉ phép.",
+        "en": "I am taking leave next week.",
+        "zh-Hant": "我下週要休假。"
+      },
+      {
+        "zh": "他休假三天。",
+        "pinyin": "Tā xiūjià sān tiān.",
+        "vi": "Anh ấy nghỉ phép ba ngày.",
+        "en": "He is on leave for three days.",
+        "zh-Hant": "他休假三天。"
+      }
+    ],
+    "休閒": [
+      {
+        "zh": "週末是我的休閒時間。",
+        "pinyin": "Zhōumò shì wǒ de xiūxián shíjiān.",
+        "vi": "Cuối tuần là thời gian thư giãn của tôi.",
+        "en": "The weekend is my leisure time.",
+        "zh-Hant": "週末是我的休閒時間。"
+      },
+      {
+        "zh": "我喜歡休閒活動。",
+        "pinyin": "Wǒ xǐhuān xiūxián huódòng.",
+        "vi": "Tôi thích các hoạt động giải trí.",
+        "en": "I like leisure activities.",
+        "zh-Hant": "我喜歡休閒活動。"
+      }
+    ],
+    "午休": [
+      {
+        "zh": "中午我會午休半小時。",
+        "pinyin": "Zhōngwǔ wǒ huì wǔxiū bàn xiǎoshí.",
+        "vi": "Buổi trưa tôi nghỉ khoảng nửa giờ.",
+        "en": "I take a half-hour noon break.",
+        "zh-Hant": "中午我會午休半小時。"
+      },
+      {
+        "zh": "午休以後比較有精神。",
+        "pinyin": "Wǔxiū yǐhòu bǐjiào yǒu jīngshén.",
+        "vi": "Sau khi nghỉ trưa tôi tỉnh táo hơn.",
+        "en": "I feel more energetic after a noon break.",
+        "zh-Hant": "午休以後比較有精神。"
+      }
+    ],
+    "吃飯": [
+      {
+        "zh": "我今天要吃飯。",
+        "pinyin": "Wǒ jīntiān yào chīfàn.",
+        "vi": "Hôm nay tôi sẽ ăn cơm, ăn bữa.",
+        "en": "Today I am going to eat a meal.",
+        "zh-Hant": "我今天要吃飯。"
+      },
+      {
+        "zh": "他也想吃飯。",
+        "pinyin": "Tā yě xiǎng chīfàn.",
+        "vi": "Anh ấy cũng muốn ăn cơm, ăn bữa.",
+        "en": "He also wants to eat a meal.",
+        "zh-Hant": "他也想吃飯。"
+      }
+    ],
+    "吃完": [
+      {
+        "zh": "我已經吃完了。",
+        "pinyin": "Wǒ yǐjīng chīwán le.",
+        "vi": "Tôi đã ăn xong rồi.",
+        "en": "I have already finish eating.",
+        "zh-Hant": "我已經吃完了。"
+      },
+      {
+        "zh": "他還沒吃完。",
+        "pinyin": "Tā hái méi chīwán.",
+        "vi": "Anh ấy vẫn chưa ăn xong.",
+        "en": "He has not finish eating yet.",
+        "zh-Hant": "他還沒吃完。"
+      }
+    ],
+    "好吃": [
+      {
+        "zh": "這個蛋糕很好吃。",
+        "pinyin": "Zhège dàngāo hěn hǎochī.",
+        "vi": "Cái bánh này rất ngon.",
+        "en": "This cake is delicious.",
+        "zh-Hant": "這個蛋糕很好吃。"
+      },
+      {
+        "zh": "台灣小吃很好吃。",
+        "pinyin": "Táiwān xiǎochī hěn hǎochī.",
+        "vi": "Đồ ăn vặt Đài Loan rất ngon.",
+        "en": "Taiwanese snacks are delicious.",
+        "zh-Hant": "台灣小吃很好吃。"
+      }
+    ],
+    "小吃": [
+      {
+        "zh": "我想吃小吃。",
+        "pinyin": "Wǒ xiǎng chī xiǎochī.",
+        "vi": "Tôi muốn ăn đồ ăn vặt, món ăn nhẹ.",
+        "en": "I want to eat snack; local eats.",
+        "zh-Hant": "我想吃小吃。"
+      },
+      {
+        "zh": "這裡的小吃很好吃。",
+        "pinyin": "Zhèlǐ de xiǎochī hěn hǎochī.",
+        "vi": "Đồ ăn vặt, món ăn nhẹ ở đây rất ngon.",
+        "en": "The snack; local eats here is delicious.",
+        "zh-Hant": "這裡的小吃很好吃。"
+      }
+    ],
+    "喝水": [
+      {
+        "zh": "我今天要喝水。",
+        "pinyin": "Wǒ jīntiān yào hē shuǐ.",
+        "vi": "Hôm nay tôi sẽ uống nước.",
+        "en": "Today I am going to drink water.",
+        "zh-Hant": "我今天要喝水。"
+      },
+      {
+        "zh": "他也想喝水。",
+        "pinyin": "Tā yě xiǎng hē shuǐ.",
+        "vi": "Anh ấy cũng muốn uống nước.",
+        "en": "He also wants to drink water.",
+        "zh-Hant": "他也想喝水。"
+      }
+    ],
+    "喝茶": [
+      {
+        "zh": "我今天要喝茶。",
+        "pinyin": "Wǒ jīntiān yào hē chá.",
+        "vi": "Hôm nay tôi sẽ uống trà.",
+        "en": "Today I am going to drink tea.",
+        "zh-Hant": "我今天要喝茶。"
+      },
+      {
+        "zh": "他也想喝茶。",
+        "pinyin": "Tā yě xiǎng hē chá.",
+        "vi": "Anh ấy cũng muốn uống trà.",
+        "en": "He also wants to drink tea.",
+        "zh-Hant": "他也想喝茶。"
+      }
+    ],
+    "喝咖啡": [
+      {
+        "zh": "我今天要喝咖啡。",
+        "pinyin": "Wǒ jīntiān yào hē kāfēi.",
+        "vi": "Hôm nay tôi sẽ uống cà phê.",
+        "en": "Today I am going to drink coffee.",
+        "zh-Hant": "我今天要喝咖啡。"
+      },
+      {
+        "zh": "他也想喝咖啡。",
+        "pinyin": "Tā yě xiǎng hē kāfēi.",
+        "vi": "Anh ấy cũng muốn uống cà phê.",
+        "en": "He also wants to drink coffee.",
+        "zh-Hant": "他也想喝咖啡。"
+      }
+    ],
+    "好喝": [
+      {
+        "zh": "這杯茶很好喝。",
+        "pinyin": "Zhè bēi chá hěn hǎohē.",
+        "vi": "Cốc trà này rất ngon/dễ uống.",
+        "en": "This tea tastes very good.",
+        "zh-Hant": "這杯茶很好喝。"
+      },
+      {
+        "zh": "你覺得這個飲料好喝嗎？",
+        "pinyin": "Nǐ juéde zhège yǐnliào hǎohē ma?",
+        "vi": "Bạn thấy đồ uống này ngon không?",
+        "en": "Do you think this drink tastes good?",
+        "zh-Hant": "你覺得這個飲料好喝嗎？"
+      }
+    ],
+    "唱歌": [
+      {
+        "zh": "我今天要唱歌。",
+        "pinyin": "Wǒ jīntiān yào chànggē.",
+        "vi": "Hôm nay tôi sẽ hát.",
+        "en": "Today I am going to sing a song.",
+        "zh-Hant": "我今天要唱歌。"
+      },
+      {
+        "zh": "他也想唱歌。",
+        "pinyin": "Tā yě xiǎng chànggē.",
+        "vi": "Anh ấy cũng muốn hát.",
+        "en": "He also wants to sing a song.",
+        "zh-Hant": "他也想唱歌。"
+      }
+    ],
+    "合唱": [
+      {
+        "zh": "我今天要合唱。",
+        "pinyin": "Wǒ jīntiān yào héchàng.",
+        "vi": "Hôm nay tôi sẽ hợp xướng, hát chung.",
+        "en": "Today I am going to chorus; sing together.",
+        "zh-Hant": "我今天要合唱。"
+      },
+      {
+        "zh": "他也想合唱。",
+        "pinyin": "Tā yě xiǎng héchàng.",
+        "vi": "Anh ấy cũng muốn hợp xướng, hát chung.",
+        "en": "He also wants to chorus; sing together.",
+        "zh-Hant": "他也想合唱。"
+      }
+    ],
+    "演唱": [
+      {
+        "zh": "我今天要演唱。",
+        "pinyin": "Wǒ jīntiān yào yǎnchàng.",
+        "vi": "Hôm nay tôi sẽ biểu diễn ca hát.",
+        "en": "Today I am going to perform singing.",
+        "zh-Hant": "我今天要演唱。"
+      },
+      {
+        "zh": "他也想演唱。",
+        "pinyin": "Tā yě xiǎng yǎnchàng.",
+        "vi": "Anh ấy cũng muốn biểu diễn ca hát.",
+        "en": "He also wants to perform singing.",
+        "zh-Hant": "他也想演唱。"
+      }
+    ],
+    "唱片": [
+      {
+        "zh": "我看到唱片了。",
+        "pinyin": "Wǒ kàndào chàngpiàn le.",
+        "vi": "Tôi đã nhìn thấy đĩa nhạc.",
+        "en": "I saw the record; album.",
+        "zh-Hant": "我看到唱片了。"
+      },
+      {
+        "zh": "這裡有唱片。",
+        "pinyin": "Zhèlǐ yǒu chàngpiàn.",
+        "vi": "Ở đây có đĩa nhạc.",
+        "en": "There is record; album here.",
+        "zh-Hant": "這裡有唱片。"
+      }
+    ],
+    "叫做": [
+      {
+        "zh": "這個東西叫做什麼？",
+        "pinyin": "Zhège dōngxi jiàozuò shénme?",
+        "vi": "Thứ này được gọi là gì?",
+        "en": "What is this thing called?",
+        "zh-Hant": "這個東西叫做什麼？"
+      },
+      {
+        "zh": "這種水果叫做芒果。",
+        "pinyin": "Zhè zhǒng shuǐguǒ jiàozuò mángguǒ.",
+        "vi": "Loại trái cây này gọi là xoài.",
+        "en": "This kind of fruit is called mango.",
+        "zh-Hant": "這種水果叫做芒果。"
+      }
+    ],
+    "大叫": [
+      {
+        "zh": "我今天要大叫。",
+        "pinyin": "Wǒ jīntiān yào dàjiào.",
+        "vi": "Hôm nay tôi sẽ kêu to.",
+        "en": "Today I am going to shout.",
+        "zh-Hant": "我今天要大叫。"
+      },
+      {
+        "zh": "他也想大叫。",
+        "pinyin": "Tā yě xiǎng dàjiào.",
+        "vi": "Anh ấy cũng muốn kêu to.",
+        "en": "He also wants to shout.",
+        "zh-Hant": "他也想大叫。"
+      }
+    ],
+    "叫人": [
+      {
+        "zh": "我今天要叫人。",
+        "pinyin": "Wǒ jīntiān yào jiào rén.",
+        "vi": "Hôm nay tôi sẽ gọi người.",
+        "en": "Today I am going to call someone.",
+        "zh-Hant": "我今天要叫人。"
+      },
+      {
+        "zh": "他也想叫人。",
+        "pinyin": "Tā yě xiǎng jiào rén.",
+        "vi": "Anh ấy cũng muốn gọi người.",
+        "en": "He also wants to call someone.",
+        "zh-Hant": "他也想叫人。"
+      }
+    ],
+    "名叫": [
+      {
+        "zh": "我有一個朋友名叫小美。",
+        "pinyin": "Wǒ yǒu yí ge péngyou míngjiào Xiǎoměi.",
+        "vi": "Tôi có một người bạn tên là Tiểu Mỹ.",
+        "en": "I have a friend named Xiaomei.",
+        "zh-Hant": "我有一個朋友名叫小美。"
+      },
+      {
+        "zh": "這隻狗名叫豆豆。",
+        "pinyin": "Zhè zhī gǒu míngjiào Dòudou.",
+        "vi": "Con chó này tên là Đậu Đậu.",
+        "en": "This dog is named Doudou.",
+        "zh-Hant": "這隻狗名叫豆豆。"
+      }
+    ],
+    "媽媽": [
+      {
+        "zh": "我的媽媽今天很忙。",
+        "pinyin": "Wǒ de māma jīntiān hěn máng.",
+        "vi": "Mẹ của tôi hôm nay rất bận.",
+        "en": "My mom is very busy today.",
+        "zh-Hant": "我的媽媽今天很忙。"
+      },
+      {
+        "zh": "我跟媽媽一起吃飯。",
+        "pinyin": "Wǒ gēn māma yìqǐ chīfàn.",
+        "vi": "Tôi ăn cơm cùng mẹ.",
+        "en": "I eat with my mom.",
+        "zh-Hant": "我跟媽媽一起吃飯。"
+      }
+    ],
+    "爸媽": [
+      {
+        "zh": "我的爸媽今天很忙。",
+        "pinyin": "Wǒ de bàmā jīntiān hěn máng.",
+        "vi": "Bố mẹ của tôi hôm nay rất bận.",
+        "en": "My parents; dad and mom is very busy today.",
+        "zh-Hant": "我的爸媽今天很忙。"
+      },
+      {
+        "zh": "我跟爸媽一起吃飯。",
+        "pinyin": "Wǒ gēn bàmā yìqǐ chīfàn.",
+        "vi": "Tôi ăn cơm cùng bố mẹ.",
+        "en": "I eat with my parents; dad and mom.",
+        "zh-Hant": "我跟爸媽一起吃飯。"
+      }
+    ],
+    "媽媽們": [
+      {
+        "zh": "媽媽們在門口聊天。",
+        "pinyin": "Māmamen zài ménkǒu liáotiān.",
+        "vi": "Các bà mẹ đang nói chuyện ở cửa.",
+        "en": "The mothers are chatting at the entrance.",
+        "zh-Hant": "媽媽們在門口聊天。"
+      },
+      {
+        "zh": "媽媽們都很關心孩子。",
+        "pinyin": "Māmamen dōu hěn guānxīn háizi.",
+        "vi": "Các bà mẹ đều rất quan tâm đến con cái.",
+        "en": "The mothers all care a lot about their children.",
+        "zh-Hant": "媽媽們都很關心孩子。"
+      }
+    ],
+    "媽咪": [
+      {
+        "zh": "我的媽咪今天很忙。",
+        "pinyin": "Wǒ de māmī jīntiān hěn máng.",
+        "vi": "Mẹ, mommy của tôi hôm nay rất bận.",
+        "en": "My mommy is very busy today.",
+        "zh-Hant": "我的媽咪今天很忙。"
+      },
+      {
+        "zh": "我跟媽咪一起吃飯。",
+        "pinyin": "Wǒ gēn māmī yìqǐ chīfàn.",
+        "vi": "Tôi ăn cơm cùng mẹ, mommy.",
+        "en": "I eat with my mommy.",
+        "zh-Hant": "我跟媽咪一起吃飯。"
+      }
+    ],
+    "姐姐": [
+      {
+        "zh": "我的姐姐今天很忙。",
+        "pinyin": "Wǒ de jiějie jīntiān hěn máng.",
+        "vi": "Chị gái của tôi hôm nay rất bận.",
+        "en": "My older sister is very busy today.",
+        "zh-Hant": "我的姐姐今天很忙。"
+      },
+      {
+        "zh": "我跟姐姐一起吃飯。",
+        "pinyin": "Wǒ gēn jiějie yìqǐ chīfàn.",
+        "vi": "Tôi ăn cơm cùng chị gái.",
+        "en": "I eat with my older sister.",
+        "zh-Hant": "我跟姐姐一起吃飯。"
+      }
+    ],
+    "小姐": [
+      {
+        "zh": "請問，這位小姐是誰？",
+        "pinyin": "Qǐngwèn, zhè wèi xiǎojiě shì shéi?",
+        "vi": "Xin hỏi, cô gái này là ai?",
+        "en": "Excuse me, who is this young lady?",
+        "zh-Hant": "請問，這位小姐是誰？"
+      },
+      {
+        "zh": "那位小姐在等朋友。",
+        "pinyin": "Nà wèi xiǎojiě zài děng péngyou.",
+        "vi": "Cô gái kia đang đợi bạn.",
+        "en": "That young lady is waiting for a friend.",
+        "zh-Hant": "那位小姐在等朋友。"
+      }
+    ],
+    "姐妹": [
+      {
+        "zh": "我的姐妹今天很忙。",
+        "pinyin": "Wǒ de jiěmèi jīntiān hěn máng.",
+        "vi": "Chị em gái của tôi hôm nay rất bận.",
+        "en": "My sisters is very busy today.",
+        "zh-Hant": "我的姐妹今天很忙。"
+      },
+      {
+        "zh": "我跟姐妹一起吃飯。",
+        "pinyin": "Wǒ gēn jiěmèi yìqǐ chīfàn.",
+        "vi": "Tôi ăn cơm cùng chị em gái.",
+        "en": "I eat with my sisters.",
+        "zh-Hant": "我跟姐妹一起吃飯。"
+      }
+    ],
+    "大姐": [
+      {
+        "zh": "我的大姐今天很忙。",
+        "pinyin": "Wǒ de dàjiě jīntiān hěn máng.",
+        "vi": "Chị cả của tôi hôm nay rất bận.",
+        "en": "My eldest sister is very busy today.",
+        "zh-Hant": "我的大姐今天很忙。"
+      },
+      {
+        "zh": "我跟大姐一起吃飯。",
+        "pinyin": "Wǒ gēn dàjiě yìqǐ chīfàn.",
+        "vi": "Tôi ăn cơm cùng chị cả.",
+        "en": "I eat with my eldest sister.",
+        "zh-Hant": "我跟大姐一起吃飯。"
+      }
+    ],
+    "妹妹": [
+      {
+        "zh": "我的妹妹今天很忙。",
+        "pinyin": "Wǒ de mèimei jīntiān hěn máng.",
+        "vi": "Em gái của tôi hôm nay rất bận.",
+        "en": "My younger sister is very busy today.",
+        "zh-Hant": "我的妹妹今天很忙。"
+      },
+      {
+        "zh": "我跟妹妹一起吃飯。",
+        "pinyin": "Wǒ gēn mèimei yìqǐ chīfàn.",
+        "vi": "Tôi ăn cơm cùng em gái.",
+        "en": "I eat with my younger sister.",
+        "zh-Hant": "我跟妹妹一起吃飯。"
+      }
+    ],
+    "小妹": [
+      {
+        "zh": "我的小妹今天很忙。",
+        "pinyin": "Wǒ de xiǎomèi jīntiān hěn máng.",
+        "vi": "Em gái nhỏ của tôi hôm nay rất bận.",
+        "en": "My little sister is very busy today.",
+        "zh-Hant": "我的小妹今天很忙。"
+      },
+      {
+        "zh": "我跟小妹一起吃飯。",
+        "pinyin": "Wǒ gēn xiǎomèi yìqǐ chīfàn.",
+        "vi": "Tôi ăn cơm cùng em gái nhỏ.",
+        "en": "I eat with my little sister.",
+        "zh-Hant": "我跟小妹一起吃飯。"
+      }
+    ],
+    "弟妹": [
+      {
+        "zh": "我的弟妹都還在上學。",
+        "pinyin": "Wǒ de dìmèi dōu hái zài shàngxué.",
+        "vi": "Các em trai/em gái của tôi vẫn đang đi học.",
+        "en": "My younger siblings are still in school.",
+        "zh-Hant": "我的弟妹都還在上學。"
+      },
+      {
+        "zh": "「弟妹」在不同情況下意思可能不同。",
+        "pinyin": "“Dìmèi” zài bùtóng qíngkuàng xià yìsi kěnéng bùtóng.",
+        "vi": "“弟妹” có thể mang nghĩa khác nhau tùy ngữ cảnh.",
+        "en": "弟妹 can have different meanings depending on context.",
+        "zh-Hant": "「弟妹」在不同情況下意思可能不同。"
+      }
+    ],
+    "很好": [
+      {
+        "zh": "今天的天氣很好。",
+        "pinyin": "Jīntiān de tiānqì hěn hǎo.",
+        "vi": "Thời tiết hôm nay rất đẹp/tốt.",
+        "en": "The weather is very nice today.",
+        "zh-Hant": "今天的天氣很好。"
+      },
+      {
+        "zh": "你的發音很好。",
+        "pinyin": "Nǐ de fāyīn hěn hǎo.",
+        "vi": "Phát âm của bạn rất tốt.",
+        "en": "Your pronunciation is very good.",
+        "zh-Hant": "你的發音很好。"
+      }
+    ],
+    "好看": [
+      {
+        "zh": "這件衣服很好看。",
+        "pinyin": "Zhè jiàn yīfu hěn hǎokàn.",
+        "vi": "Bộ quần áo này rất đẹp.",
+        "en": "These clothes look very nice.",
+        "zh-Hant": "這件衣服很好看。"
+      },
+      {
+        "zh": "這部電影很好看。",
+        "pinyin": "Zhè bù diànyǐng hěn hǎokàn.",
+        "vi": "Bộ phim này rất hay/dễ xem.",
+        "en": "This movie is very good to watch.",
+        "zh-Hant": "這部電影很好看。"
+      }
+    ],
+    "海水": [
+      {
+        "zh": "海水是鹹的。",
+        "pinyin": "Hǎishuǐ shì xián de.",
+        "vi": "Nước biển có vị mặn.",
+        "en": "Seawater is salty.",
+        "zh-Hant": "海水是鹹的。"
+      },
+      {
+        "zh": "今天的海水很冷。",
+        "pinyin": "Jīntiān de hǎishuǐ hěn lěng.",
+        "vi": "Nước biển hôm nay rất lạnh.",
+        "en": "The seawater is cold today.",
+        "zh-Hant": "今天的海水很冷。"
+      }
+    ],
+    "海邊": [
+      {
+        "zh": "我現在在海邊。",
+        "pinyin": "Wǒ xiànzài zài hǎibiān.",
+        "vi": "Bây giờ tôi đang ở bờ biển.",
+        "en": "I am at the seaside now.",
+        "zh-Hant": "我現在在海邊。"
+      },
+      {
+        "zh": "我們在海邊見。",
+        "pinyin": "Wǒmen zài hǎibiān jiàn.",
+        "vi": "Chúng ta gặp nhau ở bờ biển.",
+        "en": "Let us meet at the seaside.",
+        "zh-Hant": "我們在海邊見。"
+      }
+    ],
+    "海洋": [
+      {
+        "zh": "海洋裡有很多生物。",
+        "pinyin": "Hǎiyáng lǐ yǒu hěn duō shēngwù.",
+        "vi": "Trong đại dương có rất nhiều sinh vật.",
+        "en": "There are many living things in the ocean.",
+        "zh-Hant": "海洋裡有很多生物。"
+      },
+      {
+        "zh": "我們要保護海洋。",
+        "pinyin": "Wǒmen yào bǎohù hǎiyáng.",
+        "vi": "Chúng ta cần bảo vệ đại dương.",
+        "en": "We need to protect the ocean.",
+        "zh-Hant": "我們要保護海洋。"
+      }
+    ],
+    "海鮮": [
+      {
+        "zh": "我想吃海鮮。",
+        "pinyin": "Wǒ xiǎng chī hǎixiān.",
+        "vi": "Tôi muốn ăn hải sản.",
+        "en": "I want to eat seafood.",
+        "zh-Hant": "我想吃海鮮。"
+      },
+      {
+        "zh": "這裡的海鮮很好吃。",
+        "pinyin": "Zhèlǐ de hǎixiān hěn hǎochī.",
+        "vi": "Hải sản ở đây rất ngon.",
+        "en": "The seafood here is delicious.",
+        "zh-Hant": "這裡的海鮮很好吃。"
+      }
+    ],
+    "洗手": [
+      {
+        "zh": "我今天要洗手。",
+        "pinyin": "Wǒ jīntiān yào xǐshǒu.",
+        "vi": "Hôm nay tôi sẽ rửa tay.",
+        "en": "Today I am going to wash hands.",
+        "zh-Hant": "我今天要洗手。"
+      },
+      {
+        "zh": "他也想洗手。",
+        "pinyin": "Tā yě xiǎng xǐshǒu.",
+        "vi": "Anh ấy cũng muốn rửa tay.",
+        "en": "He also wants to wash hands.",
+        "zh-Hant": "他也想洗手。"
+      }
+    ],
+    "洗澡": [
+      {
+        "zh": "我今天要洗澡。",
+        "pinyin": "Wǒ jīntiān yào xǐzǎo.",
+        "vi": "Hôm nay tôi sẽ tắm.",
+        "en": "Today I am going to take a shower/bath.",
+        "zh-Hant": "我今天要洗澡。"
+      },
+      {
+        "zh": "他也想洗澡。",
+        "pinyin": "Tā yě xiǎng xǐzǎo.",
+        "vi": "Anh ấy cũng muốn tắm.",
+        "en": "He also wants to take a shower/bath.",
+        "zh-Hant": "他也想洗澡。"
+      }
+    ],
+    "洗臉": [
+      {
+        "zh": "我今天要洗臉。",
+        "pinyin": "Wǒ jīntiān yào xǐliǎn.",
+        "vi": "Hôm nay tôi sẽ rửa mặt.",
+        "en": "Today I am going to wash one's face.",
+        "zh-Hant": "我今天要洗臉。"
+      },
+      {
+        "zh": "他也想洗臉。",
+        "pinyin": "Tā yě xiǎng xǐliǎn.",
+        "vi": "Anh ấy cũng muốn rửa mặt.",
+        "en": "He also wants to wash one's face.",
+        "zh-Hant": "他也想洗臉。"
+      }
+    ],
+    "洗衣服": [
+      {
+        "zh": "我今天要洗衣服。",
+        "pinyin": "Wǒ jīntiān yào xǐ yīfu.",
+        "vi": "Hôm nay tôi sẽ giặt quần áo.",
+        "en": "Today I am going to wash clothes.",
+        "zh-Hant": "我今天要洗衣服。"
+      },
+      {
+        "zh": "他也想洗衣服。",
+        "pinyin": "Tā yě xiǎng xǐ yīfu.",
+        "vi": "Anh ấy cũng muốn giặt quần áo.",
+        "en": "He also wants to wash clothes.",
+        "zh-Hant": "他也想洗衣服。"
+      }
+    ],
+    "清楚": [
+      {
+        "zh": "老師說得很清楚。",
+        "pinyin": "Lǎoshī shuō de hěn qīngchu.",
+        "vi": "Giáo viên nói rất rõ ràng.",
+        "en": "The teacher explains it very clearly.",
+        "zh-Hant": "老師說得很清楚。"
+      },
+      {
+        "zh": "你看清楚了嗎？",
+        "pinyin": "Nǐ kàn qīngchu le ma?",
+        "vi": "Bạn đã nhìn rõ chưa?",
+        "en": "Did you see it clearly?",
+        "zh-Hant": "你看清楚了嗎？"
+      }
+    ],
+    "清水": [
+      {
+        "zh": "我想喝清水。",
+        "pinyin": "Wǒ xiǎng hē qīngshuǐ.",
+        "vi": "Tôi muốn uống nước sạch.",
+        "en": "I want to drink clean water.",
+        "zh-Hant": "我想喝清水。"
+      },
+      {
+        "zh": "這裡有清水。",
+        "pinyin": "Zhèlǐ yǒu qīngshuǐ.",
+        "vi": "Ở đây có nước sạch.",
+        "en": "There is clean water here.",
+        "zh-Hant": "這裡有清水。"
+      }
+    ],
+    "清潔": [
+      {
+        "zh": "請保持教室清潔。",
+        "pinyin": "Qǐng bǎochí jiàoshì qīngjié.",
+        "vi": "Hãy giữ lớp học sạch sẽ.",
+        "en": "Please keep the classroom clean.",
+        "zh-Hant": "請保持教室清潔。"
+      },
+      {
+        "zh": "我們每天都會清潔桌子。",
+        "pinyin": "Wǒmen měitiān dōu huì qīngjié zhuōzi.",
+        "vi": "Chúng tôi lau dọn bàn mỗi ngày.",
+        "en": "We clean the tables every day.",
+        "zh-Hant": "我們每天都會清潔桌子。"
+      }
+    ],
+    "清晨": [
+      {
+        "zh": "清晨的空氣很舒服。",
+        "pinyin": "Qīngchén de kōngqì hěn shūfu.",
+        "vi": "Không khí sáng sớm rất dễ chịu.",
+        "en": "The early-morning air is pleasant.",
+        "zh-Hant": "清晨的空氣很舒服。"
+      },
+      {
+        "zh": "我清晨六點起床。",
+        "pinyin": "Wǒ qīngchén liù diǎn qǐchuáng.",
+        "vi": "Tôi thức dậy lúc sáu giờ sáng sớm.",
+        "en": "I get up at six in the early morning.",
+        "zh-Hant": "我清晨六點起床。"
+      }
+    ],
+    "流水": [
+      {
+        "zh": "這裡可以聽到流水的聲音。",
+        "pinyin": "Zhèlǐ kěyǐ tīngdào liúshuǐ de shēngyīn.",
+        "vi": "Ở đây có thể nghe tiếng nước chảy.",
+        "en": "You can hear running water here.",
+        "zh-Hant": "這裡可以聽到流水的聲音。"
+      },
+      {
+        "zh": "請用流水把手洗乾淨。",
+        "pinyin": "Qǐng yòng liúshuǐ bǎ shǒu xǐ gānjìng.",
+        "vi": "Hãy rửa tay sạch dưới vòi nước chảy.",
+        "en": "Please wash your hands clean under running water.",
+        "zh-Hant": "請用流水把手洗乾淨。"
+      }
+    ],
+    "河流": [
+      {
+        "zh": "這條河流很長。",
+        "pinyin": "Zhè tiáo héliú hěn cháng.",
+        "vi": "Con sông này rất dài.",
+        "en": "This river is very long.",
+        "zh-Hant": "這條河流很長。"
+      },
+      {
+        "zh": "城市旁邊有一條河流。",
+        "pinyin": "Chéngshì pángbiān yǒu yì tiáo héliú.",
+        "vi": "Bên cạnh thành phố có một con sông.",
+        "en": "There is a river beside the city.",
+        "zh-Hant": "城市旁邊有一條河流。"
+      }
+    ],
+    "流汗": [
+      {
+        "zh": "天氣太熱，我一直流汗。",
+        "pinyin": "Tiānqì tài rè, wǒ yìzhí liúhàn.",
+        "vi": "Trời quá nóng, tôi cứ đổ mồ hôi.",
+        "en": "It is so hot that I keep sweating.",
+        "zh-Hant": "天氣太熱，我一直流汗。"
+      },
+      {
+        "zh": "運動以後會流汗。",
+        "pinyin": "Yùndòng yǐhòu huì liúhàn.",
+        "vi": "Sau khi vận động sẽ đổ mồ hôi.",
+        "en": "You sweat after exercising.",
+        "zh-Hant": "運動以後會流汗。"
+      }
+    ],
+    "流行": [
+      {
+        "zh": "這首歌現在很流行。",
+        "pinyin": "Zhè shǒu gē xiànzài hěn liúxíng.",
+        "vi": "Bài hát này hiện đang rất thịnh hành.",
+        "en": "This song is very popular now.",
+        "zh-Hant": "這首歌現在很流行。"
+      },
+      {
+        "zh": "今年流行這種顏色。",
+        "pinyin": "Jīnnián liúxíng zhè zhǒng yánsè.",
+        "vi": "Năm nay màu này đang thịnh hành.",
+        "en": "This color is in fashion this year.",
+        "zh-Hant": "今年流行這種顏色。"
+      }
+    ],
+    "心情": [
+      {
+        "zh": "我想了解心情。",
+        "pinyin": "Wǒ xiǎng liǎojiě xīnqíng.",
+        "vi": "Tôi muốn hiểu thêm về tâm trạng.",
+        "en": "I want to understand mood better.",
+        "zh-Hant": "我想了解心情。"
+      },
+      {
+        "zh": "這個心情很重要。",
+        "pinyin": "Zhège xīnqíng hěn zhòngyào.",
+        "vi": "Tâm trạng này rất quan trọng.",
+        "en": "This mood is important.",
+        "zh-Hant": "這個心情很重要。"
+      }
+    ],
+    "感情": [
+      {
+        "zh": "我想了解感情。",
+        "pinyin": "Wǒ xiǎng liǎojiě gǎnqíng.",
+        "vi": "Tôi muốn hiểu thêm về tình cảm.",
+        "en": "I want to understand feelings; relationship better.",
+        "zh-Hant": "我想了解感情。"
+      },
+      {
+        "zh": "這個感情很重要。",
+        "pinyin": "Zhège gǎnqíng hěn zhòngyào.",
+        "vi": "Tình cảm này rất quan trọng.",
+        "en": "This feelings; relationship is important.",
+        "zh-Hant": "這個感情很重要。"
+      }
+    ],
+    "情況": [
+      {
+        "zh": "我想了解情況。",
+        "pinyin": "Wǒ xiǎng liǎojiě qíngkuàng.",
+        "vi": "Tôi muốn hiểu thêm về tình hình.",
+        "en": "I want to understand situation better.",
+        "zh-Hant": "我想了解情況。"
+      },
+      {
+        "zh": "這個情況很重要。",
+        "pinyin": "Zhège qíngkuàng hěn zhòngyào.",
+        "vi": "Tình hình này rất quan trọng.",
+        "en": "This situation is important.",
+        "zh-Hant": "這個情況很重要。"
+      }
+    ],
+    "熱情": [
+      {
+        "zh": "台灣人對客人很熱情。",
+        "pinyin": "Táiwān rén duì kèrén hěn rèqíng.",
+        "vi": "Người Đài Loan rất nhiệt tình với khách.",
+        "en": "Taiwanese people are very warm toward guests.",
+        "zh-Hant": "台灣人對客人很熱情。"
+      },
+      {
+        "zh": "她很熱情地幫助我。",
+        "pinyin": "Tā hěn rèqíng de bāngzhù wǒ.",
+        "vi": "Cô ấy nhiệt tình giúp tôi.",
+        "en": "She helped me warmly and enthusiastically.",
+        "zh-Hant": "她很熱情地幫助我。"
+      }
+    ],
+    "快樂": [
+      {
+        "zh": "我今天快樂。",
+        "pinyin": "Wǒ jīntiān kuàilè.",
+        "vi": "Hôm nay tôi vui vẻ.",
+        "en": "Today I am happy.",
+        "zh-Hant": "我今天快樂。"
+      },
+      {
+        "zh": "他最近也快樂。",
+        "pinyin": "Tā zuìjìn yě kuàilè.",
+        "vi": "Gần đây anh ấy cũng vui vẻ.",
+        "en": "Lately he is also happy.",
+        "zh-Hant": "他最近也快樂。"
+      }
+    ],
+    "很快": [
+      {
+        "zh": "他跑得很快。",
+        "pinyin": "Tā pǎo de hěn kuài.",
+        "vi": "Anh ấy chạy rất nhanh.",
+        "en": "He runs very fast.",
+        "zh-Hant": "他跑得很快。"
+      },
+      {
+        "zh": "時間過得很快。",
+        "pinyin": "Shíjiān guò de hěn kuài.",
+        "vi": "Thời gian trôi rất nhanh.",
+        "en": "Time passes very quickly.",
+        "zh-Hant": "時間過得很快。"
+      }
+    ],
+    "快點": [
+      {
+        "zh": "快點，我們要遲到了！",
+        "pinyin": "Kuài diǎn, wǒmen yào chídào le!",
+        "vi": "Nhanh lên, chúng ta sắp muộn rồi!",
+        "en": "Hurry up, we are going to be late!",
+        "zh-Hant": "快點，我們要遲到了！"
+      },
+      {
+        "zh": "請快點回來。",
+        "pinyin": "Qǐng kuài diǎn huílái.",
+        "vi": "Hãy quay lại nhanh nhé.",
+        "en": "Please come back quickly.",
+        "zh-Hant": "請快點回來。"
+      }
+    ],
+    "快車": [
+      {
+        "zh": "我們坐快車去台北。",
+        "pinyin": "Wǒmen zuò kuàichē qù Táiběi.",
+        "vi": "Chúng tôi đi tàu/xe nhanh đến Đài Bắc.",
+        "en": "We take the express train/vehicle to Taipei.",
+        "zh-Hant": "我們坐快車去台北。"
+      },
+      {
+        "zh": "這班快車不停小站。",
+        "pinyin": "Zhè bān kuàichē bù tíng xiǎo zhàn.",
+        "vi": "Chuyến tàu nhanh này không dừng ở ga nhỏ.",
+        "en": "This express train does not stop at small stations.",
+        "zh-Hant": "這班快車不停小站。"
+      }
+    ],
+    "害怕": [
+      {
+        "zh": "我有一點害怕。",
+        "pinyin": "Wǒ yǒu yìdiǎn hàipà.",
+        "vi": "Tôi hơi sợ.",
+        "en": "I am a little afraid.",
+        "zh-Hant": "我有一點害怕。"
+      },
+      {
+        "zh": "小孩子害怕黑。",
+        "pinyin": "Xiǎoháizi hàipà hēi.",
+        "vi": "Trẻ nhỏ sợ bóng tối.",
+        "en": "Children are afraid of the dark.",
+        "zh-Hant": "小孩子害怕黑。"
+      }
+    ],
+    "可怕": [
+      {
+        "zh": "那個故事很可怕。",
+        "pinyin": "Nàge gùshi hěn kěpà.",
+        "vi": "Câu chuyện đó rất đáng sợ.",
+        "en": "That story is scary.",
+        "zh-Hant": "那個故事很可怕。"
+      },
+      {
+        "zh": "別怕，沒有那麼可怕。",
+        "pinyin": "Bié pà, méiyǒu nàme kěpà.",
+        "vi": "Đừng sợ, không đáng sợ đến thế đâu.",
+        "en": "Do not be afraid; it is not that scary.",
+        "zh-Hant": "別怕，沒有那麼可怕。"
+      }
+    ],
+    "不怕": [
+      {
+        "zh": "我不怕冷。",
+        "pinyin": "Wǒ bú pà lěng.",
+        "vi": "Tôi không sợ lạnh.",
+        "en": "I am not afraid of the cold.",
+        "zh-Hant": "我不怕冷。"
+      },
+      {
+        "zh": "他不怕一個人去。",
+        "pinyin": "Tā bú pà yí ge rén qù.",
+        "vi": "Anh ấy không sợ đi một mình.",
+        "en": "He is not afraid to go alone.",
+        "zh-Hant": "他不怕一個人去。"
+      }
+    ],
+    "怕冷": [
+      {
+        "zh": "我很怕冷。",
+        "pinyin": "Wǒ hěn pà lěng.",
+        "vi": "Tôi rất sợ lạnh.",
+        "en": "I am very sensitive to the cold.",
+        "zh-Hant": "我很怕冷。"
+      },
+      {
+        "zh": "她怕冷，所以穿很多衣服。",
+        "pinyin": "Tā pà lěng, suǒyǐ chuān hěn duō yīfu.",
+        "vi": "Cô ấy sợ lạnh nên mặc rất nhiều quần áo.",
+        "en": "She gets cold easily, so she wears many layers.",
+        "zh-Hant": "她怕冷，所以穿很多衣服。"
+      }
+    ],
+    "很忙": [
+      {
+        "zh": "我今天很忙。",
+        "pinyin": "Wǒ jīntiān hěn máng.",
+        "vi": "Hôm nay tôi rất bận.",
+        "en": "I am very busy today.",
+        "zh-Hant": "我今天很忙。"
+      },
+      {
+        "zh": "老師最近很忙。",
+        "pinyin": "Lǎoshī zuìjìn hěn máng.",
+        "vi": "Gần đây giáo viên rất bận.",
+        "en": "The teacher has been very busy lately.",
+        "zh-Hant": "老師最近很忙。"
+      }
+    ],
+    "忙碌": [
+      {
+        "zh": "這是一個忙碌的星期。",
+        "pinyin": "Zhè shì yí ge mánglù de xīngqí.",
+        "vi": "Đây là một tuần bận rộn.",
+        "en": "This is a busy week.",
+        "zh-Hant": "這是一個忙碌的星期。"
+      },
+      {
+        "zh": "他每天工作很忙碌。",
+        "pinyin": "Tā měitiān gōngzuò hěn mánglù.",
+        "vi": "Mỗi ngày anh ấy làm việc rất bận rộn.",
+        "en": "He is very busy with work every day.",
+        "zh-Hant": "他每天工作很忙碌。"
+      }
+    ],
+    "幫忙": [
+      {
+        "zh": "可以幫我一個忙嗎？",
+        "pinyin": "Kěyǐ bāng wǒ yí ge máng ma?",
+        "vi": "Bạn có thể giúp tôi một việc không?",
+        "en": "Could you help me with something?",
+        "zh-Hant": "可以幫我一個忙嗎？"
+      },
+      {
+        "zh": "謝謝你來幫忙。",
+        "pinyin": "Xièxie nǐ lái bāngmáng.",
+        "vi": "Cảm ơn bạn đã đến giúp.",
+        "en": "Thank you for coming to help.",
+        "zh-Hant": "謝謝你來幫忙。"
+      }
+    ],
+    "忙完": [
+      {
+        "zh": "我忙完就打電話給你。",
+        "pinyin": "Wǒ mángwán jiù dǎ diànhuà gěi nǐ.",
+        "vi": "Tôi làm xong việc sẽ gọi cho bạn.",
+        "en": "I will call you after I finish my work.",
+        "zh-Hant": "我忙完就打電話給你。"
+      },
+      {
+        "zh": "你忙完了嗎？",
+        "pinyin": "Nǐ mángwán le ma?",
+        "vi": "Bạn làm xong việc chưa?",
+        "en": "Have you finished what you were busy with?",
+        "zh-Hant": "你忙完了嗎？"
+      }
+    ],
+    "說話": [
+      {
+        "zh": "我今天要說話。",
+        "pinyin": "Wǒ jīntiān yào shuōhuà.",
+        "vi": "Hôm nay tôi sẽ nói chuyện.",
+        "en": "Today I am going to speak; talk.",
+        "zh-Hant": "我今天要說話。"
+      },
+      {
+        "zh": "他也想說話。",
+        "pinyin": "Tā yě xiǎng shuōhuà.",
+        "vi": "Anh ấy cũng muốn nói chuyện.",
+        "en": "He also wants to speak; talk.",
+        "zh-Hant": "他也想說話。"
+      }
+    ],
+    "說中文": [
+      {
+        "zh": "我今天要說中文。",
+        "pinyin": "Wǒ jīntiān yào shuō Zhōngwén.",
+        "vi": "Hôm nay tôi sẽ nói tiếng Trung.",
+        "en": "Today I am going to speak Chinese.",
+        "zh-Hant": "我今天要說中文。"
+      },
+      {
+        "zh": "他也想說中文。",
+        "pinyin": "Tā yě xiǎng shuō Zhōngwén.",
+        "vi": "Anh ấy cũng muốn nói tiếng Trung.",
+        "en": "He also wants to speak Chinese.",
+        "zh-Hant": "他也想說中文。"
+      }
+    ],
+    "聽說": [
+      {
+        "zh": "我聽說他要去台北。",
+        "pinyin": "Wǒ tīngshuō tā yào qù Táiběi.",
+        "vi": "Tôi nghe nói anh ấy sẽ đi Đài Bắc.",
+        "en": "I heard that he is going to Taipei.",
+        "zh-Hant": "我聽說他要去台北。"
+      },
+      {
+        "zh": "聽說這家店很好吃。",
+        "pinyin": "Tīngshuō zhè jiā diàn hěn hǎochī.",
+        "vi": "Nghe nói quán này rất ngon.",
+        "en": "I heard this restaurant is very good.",
+        "zh-Hant": "聽說這家店很好吃。"
+      }
+    ],
+    "小說": [
+      {
+        "zh": "我喜歡看中文小說。",
+        "pinyin": "Wǒ xǐhuān kàn Zhōngwén xiǎoshuō.",
+        "vi": "Tôi thích đọc tiểu thuyết tiếng Trung.",
+        "en": "I like reading Chinese novels.",
+        "zh-Hant": "我喜歡看中文小說。"
+      },
+      {
+        "zh": "這本小說很有意思。",
+        "pinyin": "Zhè běn xiǎoshuō hěn yǒuyìsi.",
+        "vi": "Cuốn tiểu thuyết này rất thú vị.",
+        "en": "This novel is very interesting.",
+        "zh-Hant": "這本小說很有意思。"
+      }
+    ],
+    "請問": [
+      {
+        "zh": "請問，洗手間在哪裡？",
+        "pinyin": "Qǐngwèn, xǐshǒujiān zài nǎlǐ?",
+        "vi": "Xin hỏi, nhà vệ sinh ở đâu?",
+        "en": "Excuse me, where is the restroom?",
+        "zh-Hant": "請問，洗手間在哪裡？"
+      },
+      {
+        "zh": "請問你叫什麼名字？",
+        "pinyin": "Qǐngwèn nǐ jiào shénme míngzi?",
+        "vi": "Xin hỏi bạn tên là gì?",
+        "en": "May I ask your name?",
+        "zh-Hant": "請問你叫什麼名字？"
+      }
+    ],
+    "請坐": [
+      {
+        "zh": "請坐，不要客氣。",
+        "pinyin": "Qǐng zuò, bú yào kèqi.",
+        "vi": "Mời ngồi, đừng khách sáo.",
+        "en": "Please sit down; make yourself at home.",
+        "zh-Hant": "請坐，不要客氣。"
+      },
+      {
+        "zh": "老師說：「請坐。」",
+        "pinyin": "Lǎoshī shuō: “Qǐng zuò.”",
+        "vi": "Giáo viên nói: “Mời ngồi.”",
+        "en": "The teacher said, “Please sit.”",
+        "zh-Hant": "老師說：「請坐。」"
+      }
+    ],
+    "請假": [
+      {
+        "zh": "我明天想請假。",
+        "pinyin": "Wǒ míngtiān xiǎng qǐngjià.",
+        "vi": "Ngày mai tôi muốn xin nghỉ.",
+        "en": "I want to ask for leave tomorrow.",
+        "zh-Hant": "我明天想請假。"
+      },
+      {
+        "zh": "他生病，所以請假一天。",
+        "pinyin": "Tā shēngbìng, suǒyǐ qǐngjià yì tiān.",
+        "vi": "Anh ấy bị ốm nên xin nghỉ một ngày.",
+        "en": "He is sick, so he took one day off.",
+        "zh-Hant": "他生病，所以請假一天。"
+      }
+    ],
+    "請客": [
+      {
+        "zh": "今天我請客。",
+        "pinyin": "Jīntiān wǒ qǐngkè.",
+        "vi": "Hôm nay tôi mời/bao mọi người.",
+        "en": "It is my treat today.",
+        "zh-Hant": "今天我請客。"
+      },
+      {
+        "zh": "考試結束後，他請我們吃飯。",
+        "pinyin": "Kǎoshì jiéshù hòu, tā qǐng wǒmen chīfàn.",
+        "vi": "Sau khi thi xong, anh ấy mời chúng tôi ăn cơm.",
+        "en": "After the exam, he treated us to a meal.",
+        "zh-Hant": "考試結束後，他請我們吃飯。"
+      }
+    ],
+    "電話": [
+      {
+        "zh": "我的電話響了。",
+        "pinyin": "Wǒ de diànhuà xiǎng le.",
+        "vi": "Điện thoại của tôi reo rồi.",
+        "en": "My phone rang.",
+        "zh-Hant": "我的電話響了。"
+      },
+      {
+        "zh": "請留下你的電話。",
+        "pinyin": "Qǐng liúxià nǐ de diànhuà.",
+        "vi": "Hãy để lại số điện thoại của bạn.",
+        "en": "Please leave your phone number.",
+        "zh-Hant": "請留下你的電話。"
+      }
+    ],
+    "對話": [
+      {
+        "zh": "我們先練習這段對話。",
+        "pinyin": "Wǒmen xiān liànxí zhè duàn duìhuà.",
+        "vi": "Chúng ta luyện đoạn hội thoại này trước.",
+        "en": "Let us practice this dialogue first.",
+        "zh-Hant": "我們先練習這段對話。"
+      },
+      {
+        "zh": "課本裡有很多日常對話。",
+        "pinyin": "Kèběn lǐ yǒu hěn duō rìcháng duìhuà.",
+        "vi": "Trong giáo trình có nhiều hội thoại hằng ngày.",
+        "en": "The textbook has many everyday dialogues.",
+        "zh-Hant": "課本裡有很多日常對話。"
+      }
+    ],
+    "笑話": [
+      {
+        "zh": "他講了一個笑話。",
+        "pinyin": "Tā jiǎng le yí ge xiàohuà.",
+        "vi": "Anh ấy kể một câu chuyện cười.",
+        "en": "He told a joke.",
+        "zh-Hant": "他講了一個笑話。"
+      },
+      {
+        "zh": "這個笑話很好笑。",
+        "pinyin": "Zhège xiàohuà hěn hǎoxiào.",
+        "vi": "Câu chuyện cười này rất buồn cười.",
+        "en": "This joke is very funny.",
+        "zh-Hant": "這個笑話很好笑。"
+      }
+    ],
+    "一句話": [
+      {
+        "zh": "請用一句話回答。",
+        "pinyin": "Qǐng yòng yí jù huà huídá.",
+        "vi": "Hãy trả lời bằng một câu.",
+        "en": "Please answer in one sentence.",
+        "zh-Hant": "請用一句話回答。"
+      },
+      {
+        "zh": "他只說了一句話。",
+        "pinyin": "Tā zhǐ shuō le yí jù huà.",
+        "vi": "Anh ấy chỉ nói một câu.",
+        "en": "He said only one sentence.",
+        "zh-Hant": "他只說了一句話。"
+      }
+    ],
+    "語言": [
+      {
+        "zh": "中文是一種語言。",
+        "pinyin": "Zhōngwén shì yì zhǒng yǔyán.",
+        "vi": "Tiếng Trung là một ngôn ngữ.",
+        "en": "Chinese is a language.",
+        "zh-Hant": "中文是一種語言。"
+      },
+      {
+        "zh": "學語言要多聽多說。",
+        "pinyin": "Xué yǔyán yào duō tīng duō shuō.",
+        "vi": "Học ngôn ngữ cần nghe và nói nhiều.",
+        "en": "To learn a language, listen and speak a lot.",
+        "zh-Hant": "學語言要多聽多說。"
+      }
+    ],
+    "國語": [
+      {
+        "zh": "老師上課用國語。",
+        "pinyin": "Lǎoshī shàngkè yòng guóyǔ.",
+        "vi": "Giáo viên dùng Quốc ngữ/Mandarin khi lên lớp.",
+        "en": "The teacher uses Mandarin in class.",
+        "zh-Hant": "老師上課用國語。"
+      },
+      {
+        "zh": "在台灣，「國語」通常指華語。",
+        "pinyin": "Zài Táiwān, “guóyǔ” tōngcháng zhǐ Huáyǔ.",
+        "vi": "Ở Đài Loan, “國語” thường chỉ tiếng Hoa phổ thông.",
+        "en": "In Taiwan, 國語 usually refers to Mandarin.",
+        "zh-Hant": "在台灣，「國語」通常指華語。"
+      }
+    ],
+    "英語": [
+      {
+        "zh": "她會說英語。",
+        "pinyin": "Tā huì shuō Yīngyǔ.",
+        "vi": "Cô ấy biết nói tiếng Anh.",
+        "en": "She can speak English.",
+        "zh-Hant": "她會說英語。"
+      },
+      {
+        "zh": "我每天學一點英語。",
+        "pinyin": "Wǒ měitiān xué yìdiǎn Yīngyǔ.",
+        "vi": "Mỗi ngày tôi học một chút tiếng Anh.",
+        "en": "I study a little English every day.",
+        "zh-Hant": "我每天學一點英語。"
+      }
+    ],
+    "語法": [
+      {
+        "zh": "這個語法不難。",
+        "pinyin": "Zhège yǔfǎ bù nán.",
+        "vi": "Ngữ pháp này không khó.",
+        "en": "This grammar point is not difficult.",
+        "zh-Hant": "這個語法不難。"
+      },
+      {
+        "zh": "老師正在教新的語法。",
+        "pinyin": "Lǎoshī zhèngzài jiāo xīn de yǔfǎ.",
+        "vi": "Giáo viên đang dạy ngữ pháp mới.",
+        "en": "The teacher is teaching a new grammar point.",
+        "zh-Hant": "老師正在教新的語法。"
+      }
+    ],
+    "打電話": [
+      {
+        "zh": "我今天要打電話。",
+        "pinyin": "Wǒ jīntiān yào dǎ diànhuà.",
+        "vi": "Hôm nay tôi sẽ gọi điện thoại.",
+        "en": "Today I am going to make a phone call.",
+        "zh-Hant": "我今天要打電話。"
+      },
+      {
+        "zh": "他也想打電話。",
+        "pinyin": "Tā yě xiǎng dǎ diànhuà.",
+        "vi": "Anh ấy cũng muốn gọi điện thoại.",
+        "en": "He also wants to make a phone call.",
+        "zh-Hant": "他也想打電話。"
+      }
+    ],
+    "打球": [
+      {
+        "zh": "我今天要打球。",
+        "pinyin": "Wǒ jīntiān yào dǎqiú.",
+        "vi": "Hôm nay tôi sẽ chơi bóng.",
+        "en": "Today I am going to play ball.",
+        "zh-Hant": "我今天要打球。"
+      },
+      {
+        "zh": "他也想打球。",
+        "pinyin": "Tā yě xiǎng dǎqiú.",
+        "vi": "Anh ấy cũng muốn chơi bóng.",
+        "en": "He also wants to play ball.",
+        "zh-Hant": "他也想打球。"
+      }
+    ],
+    "打開": [
+      {
+        "zh": "我已經打開了。",
+        "pinyin": "Wǒ yǐjīng dǎkāi le.",
+        "vi": "Tôi đã mở ra rồi.",
+        "en": "I have already open.",
+        "zh-Hant": "我已經打開了。"
+      },
+      {
+        "zh": "他還沒打開。",
+        "pinyin": "Tā hái méi dǎkāi.",
+        "vi": "Anh ấy vẫn chưa mở ra.",
+        "en": "He has not open yet.",
+        "zh-Hant": "他還沒打開。"
+      }
+    ],
+    "打字": [
+      {
+        "zh": "我今天要打字。",
+        "pinyin": "Wǒ jīntiān yào dǎzì.",
+        "vi": "Hôm nay tôi sẽ gõ chữ.",
+        "en": "Today I am going to type.",
+        "zh-Hant": "我今天要打字。"
+      },
+      {
+        "zh": "他也想打字。",
+        "pinyin": "Tā yě xiǎng dǎzì.",
+        "vi": "Anh ấy cũng muốn gõ chữ.",
+        "en": "He also wants to type.",
+        "zh-Hant": "他也想打字。"
+      }
+    ],
+    "拿走": [
+      {
+        "zh": "我已經拿走了。",
+        "pinyin": "Wǒ yǐjīng ná zǒu le.",
+        "vi": "Tôi đã mang/lấy đi rồi.",
+        "en": "I have already take away.",
+        "zh-Hant": "我已經拿走了。"
+      },
+      {
+        "zh": "他還沒拿走。",
+        "pinyin": "Tā hái méi ná zǒu.",
+        "vi": "Anh ấy vẫn chưa mang/lấy đi.",
+        "en": "He has not take away yet.",
+        "zh-Hant": "他還沒拿走。"
+      }
+    ],
+    "拿來": [
+      {
+        "zh": "我已經拿來了。",
+        "pinyin": "Wǒ yǐjīng ná lái le.",
+        "vi": "Tôi đã mang/lấy lại đây rồi.",
+        "en": "I have already bring here.",
+        "zh-Hant": "我已經拿來了。"
+      },
+      {
+        "zh": "他還沒拿來。",
+        "pinyin": "Tā hái méi ná lái.",
+        "vi": "Anh ấy vẫn chưa mang/lấy lại đây.",
+        "en": "He has not bring here yet.",
+        "zh-Hant": "他還沒拿來。"
+      }
+    ],
+    "拿到": [
+      {
+        "zh": "我已經拿到了。",
+        "pinyin": "Wǒ yǐjīng ná dào le.",
+        "vi": "Tôi đã lấy được, nhận được rồi.",
+        "en": "I have already get; obtain.",
+        "zh-Hant": "我已經拿到了。"
+      },
+      {
+        "zh": "他還沒拿到。",
+        "pinyin": "Tā hái méi ná dào.",
+        "vi": "Anh ấy vẫn chưa lấy được, nhận được.",
+        "en": "He has not get; obtain yet.",
+        "zh-Hant": "他還沒拿到。"
+      }
+    ],
+    "拿東西": [
+      {
+        "zh": "我今天要拿東西。",
+        "pinyin": "Wǒ jīntiān yào ná dōngxi.",
+        "vi": "Hôm nay tôi sẽ cầm/lấy đồ.",
+        "en": "Today I am going to take things.",
+        "zh-Hant": "我今天要拿東西。"
+      },
+      {
+        "zh": "他也想拿東西。",
+        "pinyin": "Tā yě xiǎng ná dōngxi.",
+        "vi": "Anh ấy cũng muốn cầm/lấy đồ.",
+        "en": "He also wants to take things.",
+        "zh-Hant": "他也想拿東西。"
+      }
+    ],
+    "找到": [
+      {
+        "zh": "我已經找到了。",
+        "pinyin": "Wǒ yǐjīng zhǎodào le.",
+        "vi": "Tôi đã tìm thấy rồi.",
+        "en": "I have already find.",
+        "zh-Hant": "我已經找到了。"
+      },
+      {
+        "zh": "他還沒找到。",
+        "pinyin": "Tā hái méi zhǎodào.",
+        "vi": "Anh ấy vẫn chưa tìm thấy.",
+        "en": "He has not find yet.",
+        "zh-Hant": "他還沒找到。"
+      }
+    ],
+    "找人": [
+      {
+        "zh": "我今天要找人。",
+        "pinyin": "Wǒ jīntiān yào zhǎo rén.",
+        "vi": "Hôm nay tôi sẽ tìm người.",
+        "en": "Today I am going to look for someone.",
+        "zh-Hant": "我今天要找人。"
+      },
+      {
+        "zh": "他也想找人。",
+        "pinyin": "Tā yě xiǎng zhǎo rén.",
+        "vi": "Anh ấy cũng muốn tìm người.",
+        "en": "He also wants to look for someone.",
+        "zh-Hant": "他也想找人。"
+      }
+    ],
+    "找工作": [
+      {
+        "zh": "我今天要找工作。",
+        "pinyin": "Wǒ jīntiān yào zhǎo gōngzuò.",
+        "vi": "Hôm nay tôi sẽ tìm việc.",
+        "en": "Today I am going to look for a job.",
+        "zh-Hant": "我今天要找工作。"
+      },
+      {
+        "zh": "他也想找工作。",
+        "pinyin": "Tā yě xiǎng zhǎo gōngzuò.",
+        "vi": "Anh ấy cũng muốn tìm việc.",
+        "en": "He also wants to look for a job.",
+        "zh-Hant": "他也想找工作。"
+      }
+    ],
+    "找東西": [
+      {
+        "zh": "我今天要找東西。",
+        "pinyin": "Wǒ jīntiān yào zhǎo dōngxi.",
+        "vi": "Hôm nay tôi sẽ tìm đồ.",
+        "en": "Today I am going to look for something.",
+        "zh-Hant": "我今天要找東西。"
+      },
+      {
+        "zh": "他也想找東西。",
+        "pinyin": "Tā yě xiǎng zhǎo dōngxi.",
+        "vi": "Anh ấy cũng muốn tìm đồ.",
+        "en": "He also wants to look for something.",
+        "zh-Hant": "他也想找東西。"
+      }
+    ],
+    "擁抱": [
+      {
+        "zh": "我今天要擁抱。",
+        "pinyin": "Wǒ jīntiān yào yǒngbào.",
+        "vi": "Hôm nay tôi sẽ ôm.",
+        "en": "Today I am going to hug.",
+        "zh-Hant": "我今天要擁抱。"
+      },
+      {
+        "zh": "他也想擁抱。",
+        "pinyin": "Tā yě xiǎng yǒngbào.",
+        "vi": "Anh ấy cũng muốn ôm.",
+        "en": "He also wants to hug.",
+        "zh-Hant": "他也想擁抱。"
+      }
+    ],
+    "抱小孩": [
+      {
+        "zh": "我今天要抱小孩。",
+        "pinyin": "Wǒ jīntiān yào bào xiǎohái.",
+        "vi": "Hôm nay tôi sẽ bế trẻ nhỏ.",
+        "en": "Today I am going to hold a child.",
+        "zh-Hant": "我今天要抱小孩。"
+      },
+      {
+        "zh": "他也想抱小孩。",
+        "pinyin": "Tā yě xiǎng bào xiǎohái.",
+        "vi": "Anh ấy cũng muốn bế trẻ nhỏ.",
+        "en": "He also wants to hold a child.",
+        "zh-Hant": "他也想抱小孩。"
+      }
+    ],
+    "抱著": [
+      {
+        "zh": "我已經抱著了。",
+        "pinyin": "Wǒ yǐjīng bàozhe le.",
+        "vi": "Tôi đã đang ôm/cầm rồi.",
+        "en": "I have already be holding.",
+        "zh-Hant": "我已經抱著了。"
+      },
+      {
+        "zh": "他還沒抱著。",
+        "pinyin": "Tā hái méi bàozhe.",
+        "vi": "Anh ấy vẫn chưa đang ôm/cầm.",
+        "en": "He has not be holding yet.",
+        "zh-Hant": "他還沒抱著。"
+      }
+    ],
+    "抱歉": [
+      {
+        "zh": "抱歉，我遲到了。",
+        "pinyin": "Bàoqiàn, wǒ chídào le.",
+        "vi": "Xin lỗi, tôi đến muộn.",
+        "en": "Sorry, I am late.",
+        "zh-Hant": "抱歉，我遲到了。"
+      },
+      {
+        "zh": "真的很抱歉。",
+        "pinyin": "Zhēn de hěn bàoqiàn.",
+        "vi": "Tôi thật sự rất xin lỗi.",
+        "en": "I am really sorry.",
+        "zh-Hant": "真的很抱歉。"
+      }
+    ],
+    "米飯": [
+      {
+        "zh": "我想吃米飯。",
+        "pinyin": "Wǒ xiǎng chī mǐfàn.",
+        "vi": "Tôi muốn ăn cơm trắng.",
+        "en": "I want to eat cooked rice.",
+        "zh-Hant": "我想吃米飯。"
+      },
+      {
+        "zh": "這裡的米飯很好吃。",
+        "pinyin": "Zhèlǐ de mǐfàn hěn hǎochī.",
+        "vi": "Cơm trắng ở đây rất ngon.",
+        "en": "The cooked rice here is delicious.",
+        "zh-Hant": "這裡的米飯很好吃。"
+      }
+    ],
+    "炒飯": [
+      {
+        "zh": "我想吃炒飯。",
+        "pinyin": "Wǒ xiǎng chī chǎofàn.",
+        "vi": "Tôi muốn ăn cơm rang.",
+        "en": "I want to eat fried rice.",
+        "zh-Hant": "我想吃炒飯。"
+      },
+      {
+        "zh": "這裡的炒飯很好吃。",
+        "pinyin": "Zhèlǐ de chǎofàn hěn hǎochī.",
+        "vi": "Cơm rang ở đây rất ngon.",
+        "en": "The fried rice here is delicious.",
+        "zh-Hant": "這裡的炒飯很好吃。"
+      }
+    ],
+    "飯店": [
+      {
+        "zh": "我們住在車站附近的飯店。",
+        "pinyin": "Wǒmen zhù zài chēzhàn fùjìn de fàndiàn.",
+        "vi": "Chúng tôi ở khách sạn gần ga.",
+        "en": "We are staying at a hotel near the station.",
+        "zh-Hant": "我們住在車站附近的飯店。"
+      },
+      {
+        "zh": "在台灣，「飯店」常常是指旅館。",
+        "pinyin": "Zài Táiwān, “fàndiàn” chángcháng shì zhǐ lǚguǎn.",
+        "vi": "Ở Đài Loan, “飯店” thường có nghĩa là khách sạn.",
+        "en": "In Taiwan, 飯店 often means a hotel.",
+        "zh-Hant": "在台灣，「飯店」常常是指旅館。"
+      }
+    ],
+    "早餐": [
+      {
+        "zh": "我想吃早餐。",
+        "pinyin": "Wǒ xiǎng chī zǎocān.",
+        "vi": "Tôi muốn ăn bữa sáng.",
+        "en": "I want to eat breakfast.",
+        "zh-Hant": "我想吃早餐。"
+      },
+      {
+        "zh": "這裡的早餐很好吃。",
+        "pinyin": "Zhèlǐ de zǎocān hěn hǎochī.",
+        "vi": "Bữa sáng ở đây rất ngon.",
+        "en": "The breakfast here is delicious.",
+        "zh-Hant": "這裡的早餐很好吃。"
+      }
+    ],
+    "午餐": [
+      {
+        "zh": "我想吃午餐。",
+        "pinyin": "Wǒ xiǎng chī wǔcān.",
+        "vi": "Tôi muốn ăn bữa trưa.",
+        "en": "I want to eat lunch.",
+        "zh-Hant": "我想吃午餐。"
+      },
+      {
+        "zh": "這裡的午餐很好吃。",
+        "pinyin": "Zhèlǐ de wǔcān hěn hǎochī.",
+        "vi": "Bữa trưa ở đây rất ngon.",
+        "en": "The lunch here is delicious.",
+        "zh-Hant": "這裡的午餐很好吃。"
+      }
+    ],
+    "晚餐": [
+      {
+        "zh": "我想吃晚餐。",
+        "pinyin": "Wǒ xiǎng chī wǎncān.",
+        "vi": "Tôi muốn ăn bữa tối.",
+        "en": "I want to eat dinner.",
+        "zh-Hant": "我想吃晚餐。"
+      },
+      {
+        "zh": "這裡的晚餐很好吃。",
+        "pinyin": "Zhèlǐ de wǎncān hěn hǎochī.",
+        "vi": "Bữa tối ở đây rất ngon.",
+        "en": "The dinner here is delicious.",
+        "zh-Hant": "這裡的晚餐很好吃。"
+      }
+    ],
+    "餐廳": [
+      {
+        "zh": "我現在在餐廳。",
+        "pinyin": "Wǒ xiànzài zài cāntīng.",
+        "vi": "Bây giờ tôi đang ở nhà hàng.",
+        "en": "I am at the restaurant now.",
+        "zh-Hant": "我現在在餐廳。"
+      },
+      {
+        "zh": "我們在餐廳見。",
+        "pinyin": "Wǒmen zài cāntīng jiàn.",
+        "vi": "Chúng ta gặp nhau ở nhà hàng.",
+        "en": "Let us meet at the restaurant.",
+        "zh-Hant": "我們在餐廳見。"
+      }
+    ],
+    "飲料": [
+      {
+        "zh": "我想喝飲料。",
+        "pinyin": "Wǒ xiǎng hē yǐnliào.",
+        "vi": "Tôi muốn uống đồ uống.",
+        "en": "I want to drink beverage.",
+        "zh-Hant": "我想喝飲料。"
+      },
+      {
+        "zh": "這裡有飲料。",
+        "pinyin": "Zhèlǐ yǒu yǐnliào.",
+        "vi": "Ở đây có đồ uống.",
+        "en": "There is beverage here.",
+        "zh-Hant": "這裡有飲料。"
+      }
+    ],
+    "飲用": [
+      {
+        "zh": "這裡的水可以直接飲用。",
+        "pinyin": "Zhèlǐ de shuǐ kěyǐ zhíjiē yǐnyòng.",
+        "vi": "Nước ở đây có thể uống trực tiếp.",
+        "en": "The water here is safe to drink directly.",
+        "zh-Hant": "這裡的水可以直接飲用。"
+      },
+      {
+        "zh": "這不是飲用水。",
+        "pinyin": "Zhè bú shì yǐnyòngshuǐ.",
+        "vi": "Đây không phải là nước uống.",
+        "en": "This is not drinking water.",
+        "zh-Hant": "這不是飲用水。"
+      }
+    ],
+    "飲食": [
+      {
+        "zh": "健康的飲食很重要。",
+        "pinyin": "Jiànkāng de yǐnshí hěn zhòngyào.",
+        "vi": "Chế độ ăn uống lành mạnh rất quan trọng.",
+        "en": "A healthy diet is important.",
+        "zh-Hant": "健康的飲食很重要。"
+      },
+      {
+        "zh": "我最近在注意飲食。",
+        "pinyin": "Wǒ zuìjìn zài zhùyì yǐnshí.",
+        "vi": "Gần đây tôi chú ý đến chế độ ăn uống.",
+        "en": "I have been watching my diet lately.",
+        "zh-Hant": "我最近在注意飲食。"
+      }
+    ],
+    "飲水": [
+      {
+        "zh": "我今天要飲水。",
+        "pinyin": "Wǒ jīntiān yào yǐnshuǐ.",
+        "vi": "Hôm nay tôi sẽ uống nước.",
+        "en": "Today I am going to drink water.",
+        "zh-Hant": "我今天要飲水。"
+      },
+      {
+        "zh": "他也想飲水。",
+        "pinyin": "Tā yě xiǎng yǐnshuǐ.",
+        "vi": "Anh ấy cũng muốn uống nước.",
+        "en": "He also wants to drink water.",
+        "zh-Hant": "他也想飲水。"
+      }
+    ],
+    "吃飽": [
+      {
+        "zh": "我已經吃飽了。",
+        "pinyin": "Wǒ yǐjīng chībǎo le.",
+        "vi": "Tôi đã ăn no rồi.",
+        "en": "I have already eat until full.",
+        "zh-Hant": "我已經吃飽了。"
+      },
+      {
+        "zh": "他還沒吃飽。",
+        "pinyin": "Tā hái méi chībǎo.",
+        "vi": "Anh ấy vẫn chưa ăn no.",
+        "en": "He has not eat until full yet.",
+        "zh-Hant": "他還沒吃飽。"
+      }
+    ],
+    "很飽": [
+      {
+        "zh": "我今天很飽。",
+        "pinyin": "Wǒ jīntiān hěn bǎo.",
+        "vi": "Hôm nay tôi rất no.",
+        "en": "Today I am very full.",
+        "zh-Hant": "我今天很飽。"
+      },
+      {
+        "zh": "他最近也很飽。",
+        "pinyin": "Tā zuìjìn yě hěn bǎo.",
+        "vi": "Gần đây anh ấy cũng rất no.",
+        "en": "Lately he is also very full.",
+        "zh-Hant": "他最近也很飽。"
+      }
+    ],
+    "飽了": [
+      {
+        "zh": "我吃飽了。",
+        "pinyin": "Wǒ chībǎo le.",
+        "vi": "Tôi ăn no rồi.",
+        "en": "I am full now.",
+        "zh-Hant": "我吃飽了。"
+      },
+      {
+        "zh": "謝謝，我已經飽了。",
+        "pinyin": "Xièxie, wǒ yǐjīng bǎo le.",
+        "vi": "Cảm ơn, tôi no rồi.",
+        "en": "Thanks, I am already full.",
+        "zh-Hant": "謝謝，我已經飽了。"
+      }
+    ],
+    "飽滿": [
+      {
+        "zh": "這顆水果很飽滿。",
+        "pinyin": "Zhè kē shuǐguǒ hěn bǎomǎn.",
+        "vi": "Quả này trông rất đầy đặn.",
+        "en": "This fruit looks plump and full.",
+        "zh-Hant": "這顆水果很飽滿。"
+      },
+      {
+        "zh": "他的精神很飽滿。",
+        "pinyin": "Tā de jīngshén hěn bǎomǎn.",
+        "vi": "Tinh thần của anh ấy rất sung mãn.",
+        "en": "He is full of energy.",
+        "zh-Hant": "他的精神很飽滿。"
+      }
+    ],
+    "森林": [
+      {
+        "zh": "我看到森林了。",
+        "pinyin": "Wǒ kàndào sēnlín le.",
+        "vi": "Tôi đã nhìn thấy rừng.",
+        "en": "I saw the forest.",
+        "zh-Hant": "我看到森林了。"
+      },
+      {
+        "zh": "這裡有森林。",
+        "pinyin": "Zhèlǐ yǒu sēnlín.",
+        "vi": "Ở đây có rừng.",
+        "en": "There is forest here.",
+        "zh-Hant": "這裡有森林。"
+      }
+    ],
+    "樹林": [
+      {
+        "zh": "我看到樹林了。",
+        "pinyin": "Wǒ kàndào shùlín le.",
+        "vi": "Tôi đã nhìn thấy rừng cây.",
+        "en": "I saw the grove; woods.",
+        "zh-Hant": "我看到樹林了。"
+      },
+      {
+        "zh": "這裡有樹林。",
+        "pinyin": "Zhèlǐ yǒu shùlín.",
+        "vi": "Ở đây có rừng cây.",
+        "en": "There is grove; woods here.",
+        "zh-Hant": "這裡有樹林。"
+      }
+    ],
+    "林木": [
+      {
+        "zh": "我看到林木了。",
+        "pinyin": "Wǒ kàndào línmù le.",
+        "vi": "Tôi đã nhìn thấy cây rừng.",
+        "en": "I saw the forest trees.",
+        "zh-Hant": "我看到林木了。"
+      },
+      {
+        "zh": "這裡有林木。",
+        "pinyin": "Zhèlǐ yǒu línmù.",
+        "vi": "Ở đây có cây rừng.",
+        "en": "There is forest trees here.",
+        "zh-Hant": "這裡有林木。"
+      }
+    ],
+    "園林": [
+      {
+        "zh": "我看到園林了。",
+        "pinyin": "Wǒ kàndào yuánlín le.",
+        "vi": "Tôi đã nhìn thấy vườn cảnh.",
+        "en": "I saw the gardens; landscaping.",
+        "zh-Hant": "我看到園林了。"
+      },
+      {
+        "zh": "這裡有園林。",
+        "pinyin": "Zhèlǐ yǒu yuánlín.",
+        "vi": "Ở đây có vườn cảnh.",
+        "en": "There is gardens; landscaping here.",
+        "zh-Hant": "這裡有園林。"
+      }
+    ],
+    "學校": [
+      {
+        "zh": "我現在在學校。",
+        "pinyin": "Wǒ xiànzài zài xuéxiào.",
+        "vi": "Bây giờ tôi đang ở trường học.",
+        "en": "I am at the school now.",
+        "zh-Hant": "我現在在學校。"
+      },
+      {
+        "zh": "我們在學校見。",
+        "pinyin": "Wǒmen zài xuéxiào jiàn.",
+        "vi": "Chúng ta gặp nhau ở trường học.",
+        "en": "Let us meet at the school.",
+        "zh-Hant": "我們在學校見。"
+      }
+    ],
+    "校園": [
+      {
+        "zh": "我現在在校園。",
+        "pinyin": "Wǒ xiànzài zài xiàoyuán.",
+        "vi": "Bây giờ tôi đang ở khuôn viên trường.",
+        "en": "I am at the campus now.",
+        "zh-Hant": "我現在在校園。"
+      },
+      {
+        "zh": "我們在校園見。",
+        "pinyin": "Wǒmen zài xiàoyuán jiàn.",
+        "vi": "Chúng ta gặp nhau ở khuôn viên trường.",
+        "en": "Let us meet at the campus.",
+        "zh-Hant": "我們在校園見。"
+      }
+    ],
+    "校長": [
+      {
+        "zh": "我認識一位校長。",
+        "pinyin": "Wǒ rènshi yí wèi xiàozhǎng.",
+        "vi": "Tôi biết một hiệu trưởng.",
+        "en": "I know a principal.",
+        "zh-Hant": "我認識一位校長。"
+      },
+      {
+        "zh": "那位校長正在說話。",
+        "pinyin": "Nà wèi xiàozhǎng zhèngzài shuōhuà.",
+        "vi": "Hiệu trưởng kia đang nói chuyện.",
+        "en": "That principal is speaking.",
+        "zh-Hant": "那位校長正在說話。"
+      }
+    ],
+    "校門": [
+      {
+        "zh": "我現在在校門。",
+        "pinyin": "Wǒ xiànzài zài xiàomén.",
+        "vi": "Bây giờ tôi đang ở cổng trường.",
+        "en": "I am at the school gate now.",
+        "zh-Hant": "我現在在校門。"
+      },
+      {
+        "zh": "我們在校門見。",
+        "pinyin": "Wǒmen zài xiàomén jiàn.",
+        "vi": "Chúng ta gặp nhau ở cổng trường.",
+        "en": "Let us meet at the school gate.",
+        "zh-Hant": "我們在校門見。"
+      }
+    ],
+    "桌子": [
+      {
+        "zh": "我看到桌子了。",
+        "pinyin": "Wǒ kàndào zhuōzi le.",
+        "vi": "Tôi đã nhìn thấy cái bàn.",
+        "en": "I saw the table.",
+        "zh-Hant": "我看到桌子了。"
+      },
+      {
+        "zh": "這裡有桌子。",
+        "pinyin": "Zhèlǐ yǒu zhuōzi.",
+        "vi": "Ở đây có cái bàn.",
+        "en": "There is table here.",
+        "zh-Hant": "這裡有桌子。"
+      }
+    ],
+    "書桌": [
+      {
+        "zh": "我看到書桌了。",
+        "pinyin": "Wǒ kàndào shūzhuō le.",
+        "vi": "Tôi đã nhìn thấy bàn học/bàn viết.",
+        "en": "I saw the desk.",
+        "zh-Hant": "我看到書桌了。"
+      },
+      {
+        "zh": "這裡有書桌。",
+        "pinyin": "Zhèlǐ yǒu shūzhuō.",
+        "vi": "Ở đây có bàn học/bàn viết.",
+        "en": "There is desk here.",
+        "zh-Hant": "這裡有書桌。"
+      }
+    ],
+    "餐桌": [
+      {
+        "zh": "我看到餐桌了。",
+        "pinyin": "Wǒ kàndào cānzhuō le.",
+        "vi": "Tôi đã nhìn thấy bàn ăn.",
+        "en": "I saw the dining table.",
+        "zh-Hant": "我看到餐桌了。"
+      },
+      {
+        "zh": "這裡有餐桌。",
+        "pinyin": "Zhèlǐ yǒu cānzhuō.",
+        "vi": "Ở đây có bàn ăn.",
+        "en": "There is dining table here.",
+        "zh-Hant": "這裡有餐桌。"
+      }
+    ],
+    "桌上": [
+      {
+        "zh": "手機在桌上。",
+        "pinyin": "Shǒujī zài zhuōshàng.",
+        "vi": "Điện thoại ở trên bàn.",
+        "en": "The phone is on the table.",
+        "zh-Hant": "手機在桌上。"
+      },
+      {
+        "zh": "請把書放在桌上。",
+        "pinyin": "Qǐng bǎ shū fàng zài zhuōshàng.",
+        "vi": "Hãy đặt sách lên bàn.",
+        "en": "Please put the book on the table.",
+        "zh-Hant": "請把書放在桌上。"
+      }
+    ],
+    "手機": [
+      {
+        "zh": "我看到手機了。",
+        "pinyin": "Wǒ kàndào shǒujī le.",
+        "vi": "Tôi đã nhìn thấy điện thoại di động.",
+        "en": "I saw the mobile phone.",
+        "zh-Hant": "我看到手機了。"
+      },
+      {
+        "zh": "這裡有手機。",
+        "pinyin": "Zhèlǐ yǒu shǒujī.",
+        "vi": "Ở đây có điện thoại di động.",
+        "en": "There is mobile phone here.",
+        "zh-Hant": "這裡有手機。"
+      }
+    ],
+    "飛機": [
+      {
+        "zh": "飛機快要起飛了。",
+        "pinyin": "Fēijī kuài yào qǐfēi le.",
+        "vi": "Máy bay sắp cất cánh.",
+        "en": "The airplane is about to take off.",
+        "zh-Hant": "飛機快要起飛了。"
+      },
+      {
+        "zh": "我第一次坐飛機。",
+        "pinyin": "Wǒ dì yī cì zuò fēijī.",
+        "vi": "Đây là lần đầu tôi đi máy bay.",
+        "en": "This is my first time taking a plane.",
+        "zh-Hant": "我第一次坐飛機。"
+      }
+    ],
+    "機場": [
+      {
+        "zh": "我現在在機場。",
+        "pinyin": "Wǒ xiànzài zài jīchǎng.",
+        "vi": "Bây giờ tôi đang ở sân bay.",
+        "en": "I am at the airport now.",
+        "zh-Hant": "我現在在機場。"
+      },
+      {
+        "zh": "我們在機場見。",
+        "pinyin": "Wǒmen zài jīchǎng jiàn.",
+        "vi": "Chúng ta gặp nhau ở sân bay.",
+        "en": "Let us meet at the airport.",
+        "zh-Hant": "我們在機場見。"
+      }
+    ],
+    "機會": [
+      {
+        "zh": "這是一個很好的機會。",
+        "pinyin": "Zhè shì yí ge hěn hǎo de jīhuì.",
+        "vi": "Đây là một cơ hội rất tốt.",
+        "en": "This is a very good opportunity.",
+        "zh-Hant": "這是一個很好的機會。"
+      },
+      {
+        "zh": "有機會我想去台南。",
+        "pinyin": "Yǒu jīhuì wǒ xiǎng qù Táinán.",
+        "vi": "Nếu có cơ hội tôi muốn đi Đài Nam.",
+        "en": "If I get the chance, I want to go to Tainan.",
+        "zh-Hant": "有機會我想去台南。"
+      }
+    ],
+    "時間": [
+      {
+        "zh": "我今天沒有時間。",
+        "pinyin": "Wǒ jīntiān méiyǒu shíjiān.",
+        "vi": "Hôm nay tôi không có thời gian.",
+        "en": "I do not have time today.",
+        "zh-Hant": "我今天沒有時間。"
+      },
+      {
+        "zh": "你什麼時間有空？",
+        "pinyin": "Nǐ shénme shíjiān yǒu kòng?",
+        "vi": "Bạn rảnh vào lúc nào?",
+        "en": "What time are you free?",
+        "zh-Hant": "你什麼時間有空？"
+      }
+    ],
+    "小時": [
+      {
+        "zh": "我每天學中文一個小時。",
+        "pinyin": "Wǒ měitiān xué Zhōngwén yí ge xiǎoshí.",
+        "vi": "Mỗi ngày tôi học tiếng Trung một giờ.",
+        "en": "I study Chinese for one hour every day.",
+        "zh-Hant": "我每天學中文一個小時。"
+      },
+      {
+        "zh": "從這裡到台北要兩個小時。",
+        "pinyin": "Cóng zhèlǐ dào Táiběi yào liǎng ge xiǎoshí.",
+        "vi": "Từ đây đến Đài Bắc mất hai giờ.",
+        "en": "It takes two hours from here to Taipei.",
+        "zh-Hant": "從這裡到台北要兩個小時。"
+      }
+    ],
+    "有時候": [
+      {
+        "zh": "我有時候喝咖啡。",
+        "pinyin": "Wǒ yǒushíhou hē kāfēi.",
+        "vi": "Đôi khi tôi uống cà phê.",
+        "en": "I sometimes drink coffee.",
+        "zh-Hant": "我有時候喝咖啡。"
+      },
+      {
+        "zh": "他有時候坐公車上班。",
+        "pinyin": "Tā yǒushíhou zuò gōngchē shàngbān.",
+        "vi": "Đôi khi anh ấy đi làm bằng xe buýt.",
+        "en": "He sometimes takes the bus to work.",
+        "zh-Hant": "他有時候坐公車上班。"
+      }
+    ],
+    "時候": [
+      {
+        "zh": "吃飯的時候不要看手機。",
+        "pinyin": "Chīfàn de shíhou bú yào kàn shǒujī.",
+        "vi": "Khi ăn đừng xem điện thoại.",
+        "en": "Do not look at your phone while eating.",
+        "zh-Hant": "吃飯的時候不要看手機。"
+      },
+      {
+        "zh": "小時候我住在台南。",
+        "pinyin": "Xiǎoshíhou wǒ zhù zài Táinán.",
+        "vi": "Khi còn nhỏ tôi sống ở Đài Nam.",
+        "en": "I lived in Tainan when I was little.",
+        "zh-Hant": "小時候我住在台南。"
+      }
+    ],
+    "明天": [
+      {
+        "zh": "明天我要上課。",
+        "pinyin": "Míngtiān wǒ yào shàngkè.",
+        "vi": "Ngày mai tôi phải đi học.",
+        "en": "I have class tomorrow.",
+        "zh-Hant": "明天我要上課。"
+      },
+      {
+        "zh": "我們明天見。",
+        "pinyin": "Wǒmen míngtiān jiàn.",
+        "vi": "Ngày mai gặp nhé.",
+        "en": "See you tomorrow.",
+        "zh-Hant": "我們明天見。"
+      }
+    ],
+    "明白": [
+      {
+        "zh": "我明白你的意思了。",
+        "pinyin": "Wǒ míngbai nǐ de yìsi le.",
+        "vi": "Tôi hiểu ý của bạn rồi.",
+        "en": "I understand what you mean now.",
+        "zh-Hant": "我明白你的意思了。"
+      },
+      {
+        "zh": "你明白嗎？",
+        "pinyin": "Nǐ míngbai ma?",
+        "vi": "Bạn hiểu không?",
+        "en": "Do you understand?",
+        "zh-Hant": "你明白嗎？"
+      }
+    ],
+    "說明": [
+      {
+        "zh": "老師正在說明這個問題。",
+        "pinyin": "Lǎoshī zhèngzài shuōmíng zhège wèntí.",
+        "vi": "Giáo viên đang giải thích vấn đề này.",
+        "en": "The teacher is explaining this problem.",
+        "zh-Hant": "老師正在說明這個問題。"
+      },
+      {
+        "zh": "請看下面的說明。",
+        "pinyin": "Qǐng kàn xiàmian de shuōmíng.",
+        "vi": "Hãy xem phần hướng dẫn/giải thích bên dưới.",
+        "en": "Please read the explanation below.",
+        "zh-Hant": "請看下面的說明。"
+      }
+    ],
+    "明年": [
+      {
+        "zh": "我明年想去日本。",
+        "pinyin": "Wǒ míngnián xiǎng qù Rìběn.",
+        "vi": "Năm sau tôi muốn đi Nhật Bản.",
+        "en": "I want to go to Japan next year.",
+        "zh-Hant": "我明年想去日本。"
+      },
+      {
+        "zh": "他明年要畢業。",
+        "pinyin": "Tā míngnián yào bìyè.",
+        "vi": "Năm sau anh ấy sẽ tốt nghiệp.",
+        "en": "He will graduate next year.",
+        "zh-Hant": "他明年要畢業。"
+      }
+    ],
+    "晚上": [
+      {
+        "zh": "我晚上八點回家。",
+        "pinyin": "Wǒ wǎnshàng bā diǎn huíjiā.",
+        "vi": "Buổi tối tôi về nhà lúc tám giờ.",
+        "en": "I go home at eight in the evening.",
+        "zh-Hant": "我晚上八點回家。"
+      },
+      {
+        "zh": "晚上我們一起吃飯吧。",
+        "pinyin": "Wǎnshàng wǒmen yìqǐ chīfàn ba.",
+        "vi": "Tối nay chúng ta ăn cùng nhau nhé.",
+        "en": "Let us have dinner together tonight.",
+        "zh-Hant": "晚上我們一起吃飯吧。"
+      }
+    ],
+    "晚飯": [
+      {
+        "zh": "我想吃晚飯。",
+        "pinyin": "Wǒ xiǎng chī wǎnfàn.",
+        "vi": "Tôi muốn ăn bữa tối.",
+        "en": "I want to eat dinner.",
+        "zh-Hant": "我想吃晚飯。"
+      },
+      {
+        "zh": "這裡的晚飯很好吃。",
+        "pinyin": "Zhèlǐ de wǎnfàn hěn hǎochī.",
+        "vi": "Bữa tối ở đây rất ngon.",
+        "en": "The dinner here is delicious.",
+        "zh-Hant": "這裡的晚飯很好吃。"
+      }
+    ],
+    "晚安": [
+      {
+        "zh": "我要睡了，晚安。",
+        "pinyin": "Wǒ yào shuì le, wǎn’ān.",
+        "vi": "Tôi đi ngủ đây, chúc ngủ ngon.",
+        "en": "I am going to sleep. Good night.",
+        "zh-Hant": "我要睡了，晚安。"
+      },
+      {
+        "zh": "晚安，明天見。",
+        "pinyin": "Wǎn’ān, míngtiān jiàn.",
+        "vi": "Chúc ngủ ngon, mai gặp nhé.",
+        "en": "Good night. See you tomorrow.",
+        "zh-Hant": "晚安，明天見。"
+      }
+    ],
+    "太晚": [
+      {
+        "zh": "現在太晚了，我們回家吧。",
+        "pinyin": "Xiànzài tài wǎn le, wǒmen huíjiā ba.",
+        "vi": "Bây giờ quá muộn rồi, chúng ta về nhà nhé.",
+        "en": "It is too late now; let us go home.",
+        "zh-Hant": "現在太晚了，我們回家吧。"
+      },
+      {
+        "zh": "別睡得太晚。",
+        "pinyin": "Bié shuì de tài wǎn.",
+        "vi": "Đừng ngủ quá muộn.",
+        "en": "Do not go to sleep too late.",
+        "zh-Hant": "別睡得太晚。"
+      }
+    ],
+    "晴天": [
+      {
+        "zh": "我喜歡晴天。",
+        "pinyin": "Wǒ xǐhuān qíngtiān.",
+        "vi": "Tôi thích ngày trời nắng.",
+        "en": "I like sunny days.",
+        "zh-Hant": "我喜歡晴天。"
+      },
+      {
+        "zh": "晴天很適合出去走走。",
+        "pinyin": "Qíngtiān hěn shìhé chūqù zǒuzou.",
+        "vi": "Ngày trời nắng rất thích hợp để ra ngoài đi dạo.",
+        "en": "Sunny days are great for going for a walk.",
+        "zh-Hant": "晴天很適合出去走走。"
+      }
+    ],
+    "晴朗": [
+      {
+        "zh": "今天天氣很晴朗。",
+        "pinyin": "Jīntiān tiānqì hěn qínglǎng.",
+        "vi": "Thời tiết hôm nay rất quang đãng.",
+        "en": "The weather is clear and sunny today.",
+        "zh-Hant": "今天天氣很晴朗。"
+      },
+      {
+        "zh": "天空看起來很晴朗。",
+        "pinyin": "Tiānkōng kàn qǐlái hěn qínglǎng.",
+        "vi": "Bầu trời trông rất quang đãng.",
+        "en": "The sky looks clear and bright.",
+        "zh-Hant": "天空看起來很晴朗。"
+      }
+    ],
+    "放晴": [
+      {
+        "zh": "下午天氣會放晴。",
+        "pinyin": "Xiàwǔ tiānqì huì fàngqíng.",
+        "vi": "Buổi chiều trời sẽ quang lại.",
+        "en": "The weather will clear up in the afternoon.",
+        "zh-Hant": "下午天氣會放晴。"
+      },
+      {
+        "zh": "下了兩天雨，終於放晴了。",
+        "pinyin": "Xià le liǎng tiān yǔ, zhōngyú fàngqíng le.",
+        "vi": "Mưa hai ngày rồi, cuối cùng trời cũng quang.",
+        "en": "After two days of rain, it finally cleared up.",
+        "zh-Hant": "下了兩天雨，終於放晴了。"
+      }
+    ],
+    "晴空": [
+      {
+        "zh": "晴空下的海很漂亮。",
+        "pinyin": "Qíngkōng xià de hǎi hěn piàoliang.",
+        "vi": "Biển dưới bầu trời quang rất đẹp.",
+        "en": "The sea looks beautiful under a clear sky.",
+        "zh-Hant": "晴空下的海很漂亮。"
+      },
+      {
+        "zh": "抬頭可以看到一片晴空。",
+        "pinyin": "Táitóu kěyǐ kàndào yí piàn qíngkōng.",
+        "vi": "Ngẩng đầu lên có thể thấy một bầu trời trong xanh.",
+        "en": "Look up and you can see a clear blue sky.",
+        "zh-Hant": "抬頭可以看到一片晴空。"
+      }
+    ],
+    "很熱": [
+      {
+        "zh": "高雄夏天很熱。",
+        "pinyin": "Gāoxióng xiàtiān hěn rè.",
+        "vi": "Mùa hè ở Cao Hùng rất nóng.",
+        "en": "Kaohsiung is very hot in summer.",
+        "zh-Hant": "高雄夏天很熱。"
+      },
+      {
+        "zh": "今天外面很熱。",
+        "pinyin": "Jīntiān wàimian hěn rè.",
+        "vi": "Hôm nay bên ngoài rất nóng.",
+        "en": "It is very hot outside today.",
+        "zh-Hant": "今天外面很熱。"
+      }
+    ],
+    "熱水": [
+      {
+        "zh": "我想喝熱水。",
+        "pinyin": "Wǒ xiǎng hē rèshuǐ.",
+        "vi": "Tôi muốn uống nước nóng.",
+        "en": "I want to drink hot water.",
+        "zh-Hant": "我想喝熱水。"
+      },
+      {
+        "zh": "這裡有熱水。",
+        "pinyin": "Zhèlǐ yǒu rèshuǐ.",
+        "vi": "Ở đây có nước nóng.",
+        "en": "There is hot water here.",
+        "zh-Hant": "這裡有熱水。"
+      }
+    ],
+    "熱門": [
+      {
+        "zh": "這是一家熱門餐廳。",
+        "pinyin": "Zhè shì yì jiā rèmén cāntīng.",
+        "vi": "Đây là một nhà hàng rất nổi tiếng/phổ biến.",
+        "en": "This is a popular restaurant.",
+        "zh-Hant": "這是一家熱門餐廳。"
+      },
+      {
+        "zh": "這個話題最近很熱門。",
+        "pinyin": "Zhège huàtí zuìjìn hěn rèmén.",
+        "vi": "Chủ đề này gần đây rất “hot”.",
+        "en": "This topic has been very popular lately.",
+        "zh-Hant": "這個話題最近很熱門。"
+      }
+    ],
+    "煮飯": [
+      {
+        "zh": "我今天要煮飯。",
+        "pinyin": "Wǒ jīntiān yào zhǔfàn.",
+        "vi": "Hôm nay tôi sẽ nấu cơm.",
+        "en": "Today I am going to cook rice/a meal.",
+        "zh-Hant": "我今天要煮飯。"
+      },
+      {
+        "zh": "他也想煮飯。",
+        "pinyin": "Tā yě xiǎng zhǔfàn.",
+        "vi": "Anh ấy cũng muốn nấu cơm.",
+        "en": "He also wants to cook rice/a meal.",
+        "zh-Hant": "他也想煮飯。"
+      }
+    ],
+    "煮水": [
+      {
+        "zh": "我今天要煮水。",
+        "pinyin": "Wǒ jīntiān yào zhǔ shuǐ.",
+        "vi": "Hôm nay tôi sẽ đun nước.",
+        "en": "Today I am going to boil water.",
+        "zh-Hant": "我今天要煮水。"
+      },
+      {
+        "zh": "他也想煮水。",
+        "pinyin": "Tā yě xiǎng zhǔ shuǐ.",
+        "vi": "Anh ấy cũng muốn đun nước.",
+        "en": "He also wants to boil water.",
+        "zh-Hant": "他也想煮水。"
+      }
+    ],
+    "煮菜": [
+      {
+        "zh": "我今天要煮菜。",
+        "pinyin": "Wǒ jīntiān yào zhǔ cài.",
+        "vi": "Hôm nay tôi sẽ nấu món ăn.",
+        "en": "Today I am going to cook dishes.",
+        "zh-Hant": "我今天要煮菜。"
+      },
+      {
+        "zh": "他也想煮菜。",
+        "pinyin": "Tā yě xiǎng zhǔ cài.",
+        "vi": "Anh ấy cũng muốn nấu món ăn.",
+        "en": "He also wants to cook dishes.",
+        "zh-Hant": "他也想煮菜。"
+      }
+    ],
+    "水煮": [
+      {
+        "zh": "我今天想吃水煮蛋。",
+        "pinyin": "Wǒ jīntiān xiǎng chī shuǐzhǔdàn.",
+        "vi": "Hôm nay tôi muốn ăn trứng luộc.",
+        "en": "I want to eat a boiled egg today.",
+        "zh-Hant": "我今天想吃水煮蛋。"
+      },
+      {
+        "zh": "這道菜是用水煮的。",
+        "pinyin": "Zhè dào cài shì yòng shuǐ zhǔ de.",
+        "vi": "Món này được nấu bằng cách luộc trong nước.",
+        "en": "This dish is cooked by boiling it in water.",
+        "zh-Hant": "這道菜是用水煮的。"
+      }
+    ],
+    "烤肉": [
+      {
+        "zh": "我想吃烤肉。",
+        "pinyin": "Wǒ xiǎng chī kǎoròu.",
+        "vi": "Tôi muốn ăn thịt nướng.",
+        "en": "I want to eat grilled meat.",
+        "zh-Hant": "我想吃烤肉。"
+      },
+      {
+        "zh": "這裡的烤肉很好吃。",
+        "pinyin": "Zhèlǐ de kǎoròu hěn hǎochī.",
+        "vi": "Thịt nướng ở đây rất ngon.",
+        "en": "The grilled meat here is delicious.",
+        "zh-Hant": "這裡的烤肉很好吃。"
+      }
+    ],
+    "烤雞": [
+      {
+        "zh": "我想吃烤雞。",
+        "pinyin": "Wǒ xiǎng chī kǎojī.",
+        "vi": "Tôi muốn ăn gà nướng.",
+        "en": "I want to eat roast chicken.",
+        "zh-Hant": "我想吃烤雞。"
+      },
+      {
+        "zh": "這裡的烤雞很好吃。",
+        "pinyin": "Zhèlǐ de kǎojī hěn hǎochī.",
+        "vi": "Gà nướng ở đây rất ngon.",
+        "en": "The roast chicken here is delicious.",
+        "zh-Hant": "這裡的烤雞很好吃。"
+      }
+    ],
+    "烤箱": [
+      {
+        "zh": "我看到烤箱了。",
+        "pinyin": "Wǒ kàndào kǎoxiāng le.",
+        "vi": "Tôi đã nhìn thấy lò nướng.",
+        "en": "I saw the oven.",
+        "zh-Hant": "我看到烤箱了。"
+      },
+      {
+        "zh": "這裡有烤箱。",
+        "pinyin": "Zhèlǐ yǒu kǎoxiāng.",
+        "vi": "Ở đây có lò nướng.",
+        "en": "There is oven here.",
+        "zh-Hant": "這裡有烤箱。"
+      }
+    ],
+    "燒烤": [
+      {
+        "zh": "我想吃燒烤。",
+        "pinyin": "Wǒ xiǎng chī shāokǎo.",
+        "vi": "Tôi muốn ăn đồ nướng, barbecue.",
+        "en": "I want to eat barbecue.",
+        "zh-Hant": "我想吃燒烤。"
+      },
+      {
+        "zh": "這裡的燒烤很好吃。",
+        "pinyin": "Zhèlǐ de shāokǎo hěn hǎochī.",
+        "vi": "Đồ nướng, barbecue ở đây rất ngon.",
+        "en": "The barbecue here is delicious.",
+        "zh-Hant": "這裡的燒烤很好吃。"
+      }
+    ],
+    "電燈": [
+      {
+        "zh": "我看到電燈了。",
+        "pinyin": "Wǒ kàndào diàndēng le.",
+        "vi": "Tôi đã nhìn thấy đèn điện.",
+        "en": "I saw the electric light.",
+        "zh-Hant": "我看到電燈了。"
+      },
+      {
+        "zh": "這裡有電燈。",
+        "pinyin": "Zhèlǐ yǒu diàndēng.",
+        "vi": "Ở đây có đèn điện.",
+        "en": "There is electric light here.",
+        "zh-Hant": "這裡有電燈。"
+      }
+    ],
+    "紅綠燈": [
+      {
+        "zh": "前面有一個紅綠燈。",
+        "pinyin": "Qiánmiàn yǒu yí ge hónglǜdēng.",
+        "vi": "Phía trước có một đèn giao thông.",
+        "en": "There is a traffic light ahead.",
+        "zh-Hant": "前面有一個紅綠燈。"
+      },
+      {
+        "zh": "紅綠燈變綠了，我們走吧。",
+        "pinyin": "Hónglǜdēng biàn lǜ le, wǒmen zǒu ba.",
+        "vi": "Đèn giao thông chuyển xanh rồi, đi thôi.",
+        "en": "The traffic light turned green; let us go.",
+        "zh-Hant": "紅綠燈變綠了，我們走吧。"
+      }
+    ],
+    "燈光": [
+      {
+        "zh": "這裡的燈光很漂亮。",
+        "pinyin": "Zhèlǐ de dēngguāng hěn piàoliang.",
+        "vi": "Ánh đèn ở đây rất đẹp.",
+        "en": "The lighting here is beautiful.",
+        "zh-Hant": "這裡的燈光很漂亮。"
+      },
+      {
+        "zh": "晚上燈光太暗了。",
+        "pinyin": "Wǎnshàng dēngguāng tài àn le.",
+        "vi": "Buổi tối ánh đèn quá tối.",
+        "en": "The lighting is too dim at night.",
+        "zh-Hant": "晚上燈光太暗了。"
+      }
+    ],
+    "開燈": [
+      {
+        "zh": "我今天要開燈。",
+        "pinyin": "Wǒ jīntiān yào kāi dēng.",
+        "vi": "Hôm nay tôi sẽ bật đèn.",
+        "en": "Today I am going to turn on the light.",
+        "zh-Hant": "我今天要開燈。"
+      },
+      {
+        "zh": "他也想開燈。",
+        "pinyin": "Tā yě xiǎng kāi dēng.",
+        "vi": "Anh ấy cũng muốn bật đèn.",
+        "en": "He also wants to turn on the light.",
+        "zh-Hant": "他也想開燈。"
+      }
+    ],
+    "看書": [
+      {
+        "zh": "我今天要看書。",
+        "pinyin": "Wǒ jīntiān yào kànshū.",
+        "vi": "Hôm nay tôi sẽ đọc sách.",
+        "en": "Today I am going to read a book.",
+        "zh-Hant": "我今天要看書。"
+      },
+      {
+        "zh": "他也想看書。",
+        "pinyin": "Tā yě xiǎng kànshū.",
+        "vi": "Anh ấy cũng muốn đọc sách.",
+        "en": "He also wants to read a book.",
+        "zh-Hant": "他也想看書。"
+      }
+    ],
+    "看見": [
+      {
+        "zh": "我已經看見了。",
+        "pinyin": "Wǒ yǐjīng kànjiàn le.",
+        "vi": "Tôi đã nhìn thấy rồi.",
+        "en": "I have already see.",
+        "zh-Hant": "我已經看見了。"
+      },
+      {
+        "zh": "他還沒看見。",
+        "pinyin": "Tā hái méi kànjiàn.",
+        "vi": "Anh ấy vẫn chưa nhìn thấy.",
+        "en": "He has not see yet.",
+        "zh-Hant": "他還沒看見。"
+      }
+    ],
+    "看電影": [
+      {
+        "zh": "我今天要看電影。",
+        "pinyin": "Wǒ jīntiān yào kàn diànyǐng.",
+        "vi": "Hôm nay tôi sẽ xem phim.",
+        "en": "Today I am going to watch a movie.",
+        "zh-Hant": "我今天要看電影。"
+      },
+      {
+        "zh": "他也想看電影。",
+        "pinyin": "Tā yě xiǎng kàn diànyǐng.",
+        "vi": "Anh ấy cũng muốn xem phim.",
+        "en": "He also wants to watch a movie.",
+        "zh-Hant": "他也想看電影。"
+      }
+    ],
+    "眼睛": [
+      {
+        "zh": "我的眼睛有點累。",
+        "pinyin": "Wǒ de yǎnjīng yǒudiǎn lèi.",
+        "vi": "Mắt tôi hơi mỏi.",
+        "en": "My eyes are a little tired.",
+        "zh-Hant": "我的眼睛有點累。"
+      },
+      {
+        "zh": "她的眼睛很漂亮。",
+        "pinyin": "Tā de yǎnjīng hěn piàoliang.",
+        "vi": "Mắt cô ấy rất đẹp.",
+        "en": "Her eyes are beautiful.",
+        "zh-Hant": "她的眼睛很漂亮。"
+      }
+    ],
+    "眼鏡": [
+      {
+        "zh": "我看到眼鏡了。",
+        "pinyin": "Wǒ kàndào yǎnjìng le.",
+        "vi": "Tôi đã nhìn thấy kính mắt.",
+        "en": "I saw the glasses.",
+        "zh-Hant": "我看到眼鏡了。"
+      },
+      {
+        "zh": "這裡有眼鏡。",
+        "pinyin": "Zhèlǐ yǒu yǎnjìng.",
+        "vi": "Ở đây có kính mắt.",
+        "en": "There is glasses here.",
+        "zh-Hant": "這裡有眼鏡。"
+      }
+    ],
+    "眼前": [
+      {
+        "zh": "答案就在你眼前。",
+        "pinyin": "Dá’àn jiù zài nǐ yǎnqián.",
+        "vi": "Đáp án ở ngay trước mắt bạn.",
+        "en": "The answer is right in front of you.",
+        "zh-Hant": "答案就在你眼前。"
+      },
+      {
+        "zh": "眼前的風景很漂亮。",
+        "pinyin": "Yǎnqián de fēngjǐng hěn piàoliang.",
+        "vi": "Phong cảnh trước mắt rất đẹp.",
+        "en": "The view in front of me is beautiful.",
+        "zh-Hant": "眼前的風景很漂亮。"
+      }
+    ],
+    "閉眼": [
+      {
+        "zh": "我今天要閉眼。",
+        "pinyin": "Wǒ jīntiān yào bì yǎn.",
+        "vi": "Hôm nay tôi sẽ nhắm mắt.",
+        "en": "Today I am going to close one's eyes.",
+        "zh-Hant": "我今天要閉眼。"
+      },
+      {
+        "zh": "他也想閉眼。",
+        "pinyin": "Tā yě xiǎng bì yǎn.",
+        "vi": "Anh ấy cũng muốn nhắm mắt.",
+        "en": "He also wants to close one's eyes.",
+        "zh-Hant": "他也想閉眼。"
+      }
+    ],
+    "睡覺": [
+      {
+        "zh": "我今天要睡覺。",
+        "pinyin": "Wǒ jīntiān yào shuìjiào.",
+        "vi": "Hôm nay tôi sẽ ngủ.",
+        "en": "Today I am going to sleep.",
+        "zh-Hant": "我今天要睡覺。"
+      },
+      {
+        "zh": "他也想睡覺。",
+        "pinyin": "Tā yě xiǎng shuìjiào.",
+        "vi": "Anh ấy cũng muốn ngủ.",
+        "en": "He also wants to sleep.",
+        "zh-Hant": "他也想睡覺。"
+      }
+    ],
+    "睡著": [
+      {
+        "zh": "我已經睡著了。",
+        "pinyin": "Wǒ yǐjīng shuìzháo le.",
+        "vi": "Tôi đã ngủ thiếp đi rồi.",
+        "en": "I have already fall asleep.",
+        "zh-Hant": "我已經睡著了。"
+      },
+      {
+        "zh": "他還沒睡著。",
+        "pinyin": "Tā hái méi shuìzháo.",
+        "vi": "Anh ấy vẫn chưa ngủ thiếp đi.",
+        "en": "He has not fall asleep yet.",
+        "zh-Hant": "他還沒睡著。"
+      }
+    ],
+    "睡衣": [
+      {
+        "zh": "我看到睡衣了。",
+        "pinyin": "Wǒ kàndào shuìyī le.",
+        "vi": "Tôi đã nhìn thấy đồ ngủ.",
+        "en": "I saw the pajamas.",
+        "zh-Hant": "我看到睡衣了。"
+      },
+      {
+        "zh": "這裡有睡衣。",
+        "pinyin": "Zhèlǐ yǒu shuìyī.",
+        "vi": "Ở đây có đồ ngủ.",
+        "en": "There is pajamas here.",
+        "zh-Hant": "這裡有睡衣。"
+      }
+    ],
+    "午睡": [
+      {
+        "zh": "我今天要午睡。",
+        "pinyin": "Wǒ jīntiān yào wǔshuì.",
+        "vi": "Hôm nay tôi sẽ ngủ trưa.",
+        "en": "Today I am going to nap.",
+        "zh-Hant": "我今天要午睡。"
+      },
+      {
+        "zh": "他也想午睡。",
+        "pinyin": "Tā yě xiǎng wǔshuì.",
+        "vi": "Anh ấy cũng muốn ngủ trưa.",
+        "en": "He also wants to nap.",
+        "zh-Hant": "他也想午睡。"
+      }
+    ],
+    "盲人": [
+      {
+        "zh": "我認識一位盲人。",
+        "pinyin": "Wǒ rènshi yí wèi mángrén.",
+        "vi": "Tôi biết một người mù.",
+        "en": "I know a blind person.",
+        "zh-Hant": "我認識一位盲人。"
+      },
+      {
+        "zh": "那位盲人正在說話。",
+        "pinyin": "Nà wèi mángrén zhèngzài shuōhuà.",
+        "vi": "Người mù kia đang nói chuyện.",
+        "en": "That blind person is speaking.",
+        "zh-Hant": "那位盲人正在說話。"
+      }
+    ],
+    "色盲": [
+      {
+        "zh": "他有一點色盲。",
+        "pinyin": "Tā yǒu yìdiǎn sèmáng.",
+        "vi": "Anh ấy bị mù màu nhẹ.",
+        "en": "He has mild color blindness.",
+        "zh-Hant": "他有一點色盲。"
+      },
+      {
+        "zh": "色盲的人可能不容易分辨某些顏色。",
+        "pinyin": "Sèmáng de rén kěnéng bù róngyì fēnbiàn mǒuxiē yánsè.",
+        "vi": "Người mù màu có thể khó phân biệt một số màu.",
+        "en": "People with color blindness may have difficulty distinguishing some colors.",
+        "zh-Hant": "色盲的人可能不容易分辨某些顏色。"
+      }
+    ],
+    "盲點": [
+      {
+        "zh": "每個人都有自己的盲點。",
+        "pinyin": "Měi ge rén dōu yǒu zìjǐ de mángdiǎn.",
+        "vi": "Ai cũng có điểm mù của riêng mình.",
+        "en": "Everyone has their own blind spots.",
+        "zh-Hant": "每個人都有自己的盲點。"
+      },
+      {
+        "zh": "開車時要注意視線盲點。",
+        "pinyin": "Kāichē shí yào zhùyì shìxiàn mángdiǎn.",
+        "vi": "Khi lái xe phải chú ý điểm mù tầm nhìn.",
+        "en": "Watch out for visual blind spots while driving.",
+        "zh-Hant": "開車時要注意視線盲點。"
+      }
+    ],
+    "文盲": [
+      {
+        "zh": "過去有些地方的文盲比例很高。",
+        "pinyin": "Guòqù yǒuxiē dìfāng de wénmáng bǐlì hěn gāo.",
+        "vi": "Trước đây ở một số nơi tỷ lệ mù chữ rất cao.",
+        "en": "In the past, some places had a high illiteracy rate.",
+        "zh-Hant": "過去有些地方的文盲比例很高。"
+      },
+      {
+        "zh": "教育可以降低文盲人口。",
+        "pinyin": "Jiàoyù kěyǐ jiàngdī wénmáng rénkǒu.",
+        "vi": "Giáo dục có thể giảm số người mù chữ.",
+        "en": "Education can reduce the number of illiterate people.",
+        "zh-Hant": "教育可以降低文盲人口。"
+      }
+    ],
+    "休": [
+      {
+        "zh": "週末我想在家休息。",
+        "pinyin": "Zhōumò wǒ xiǎng zài jiā xiūxi.",
+        "vi": "Cuối tuần tôi muốn nghỉ ở nhà.",
+        "en": "I want to rest at home this weekend.",
+        "zh-Hant": "週末我想在家休息。"
+      }
+    ],
+    "住": [
+      {
+        "zh": "你住在哪裡？",
+        "pinyin": "Nǐ zhù zài nǎlǐ?",
+        "vi": "Bạn sống ở đâu?",
+        "en": "Where do you live?",
+        "zh-Hant": "你住在哪裡？"
+      }
+    ],
+    "你": [
+      {
+        "zh": "你今天有空嗎？",
+        "pinyin": "Nǐ jīntiān yǒu kòng ma?",
+        "vi": "Hôm nay bạn có rảnh không?",
+        "en": "Are you free today?",
+        "zh-Hant": "你今天有空嗎？"
+      }
+    ],
+    "嗎": [
+      {
+        "zh": "你是學生嗎？",
+        "pinyin": "Nǐ shì xuéshēng ma?",
+        "vi": "Bạn là sinh viên/học sinh phải không?",
+        "en": "Are you a student?",
+        "zh-Hant": "你是學生嗎？"
+      }
+    ],
+    "唱": [
+      {
+        "zh": "她很喜歡唱歌。",
+        "pinyin": "Tā hěn xǐhuān chànggē.",
+        "vi": "Cô ấy rất thích hát.",
+        "en": "She really likes singing.",
+        "zh-Hant": "她很喜歡唱歌。"
+      }
+    ],
+    "喝": [
+      {
+        "zh": "你想喝什麼？",
+        "pinyin": "Nǐ xiǎng hē shénme?",
+        "vi": "Bạn muốn uống gì?",
+        "en": "What would you like to drink?",
+        "zh-Hant": "你想喝什麼？"
+      }
+    ],
+    "媽": [
+      {
+        "zh": "我媽今天不上班。",
+        "pinyin": "Wǒ mā jīntiān bú shàngbān.",
+        "vi": "Hôm nay mẹ tôi không đi làm.",
+        "en": "My mom is not working today.",
+        "zh-Hant": "我媽今天不上班。"
+      }
+    ],
+    "好": [
+      {
+        "zh": "這個方法很好。",
+        "pinyin": "Zhège fāngfǎ hěn hǎo.",
+        "vi": "Cách này rất tốt.",
+        "en": "This method is very good.",
+        "zh-Hant": "這個方法很好。"
+      }
+    ],
+    "她": [
+      {
+        "zh": "她是我的同學。",
+        "pinyin": "Tā shì wǒ de tóngxué.",
+        "vi": "Cô ấy là bạn học của tôi.",
+        "en": "She is my classmate.",
+        "zh-Hant": "她是我的同學。"
+      }
+    ],
+    "清": [
+      {
+        "zh": "這杯水很清。",
+        "pinyin": "Zhè bēi shuǐ hěn qīng.",
+        "vi": "Cốc nước này rất trong.",
+        "en": "This water is very clear.",
+        "zh-Hant": "這杯水很清。"
+      }
+    ],
+    "河": [
+      {
+        "zh": "這條河很長。",
+        "pinyin": "Zhè tiáo hé hěn cháng.",
+        "vi": "Con sông này rất dài.",
+        "en": "This river is very long.",
+        "zh-Hant": "這條河很長。"
+      }
+    ],
+    "海": [
+      {
+        "zh": "我第一次看到海。",
+        "pinyin": "Wǒ dì yī cì kàndào hǎi.",
+        "vi": "Đây là lần đầu tôi nhìn thấy biển.",
+        "en": "This is my first time seeing the sea.",
+        "zh-Hant": "我第一次看到海。"
+      }
+    ],
+    "洗": [
+      {
+        "zh": "吃飯前要洗手。",
+        "pinyin": "Chīfàn qián yào xǐshǒu.",
+        "vi": "Trước khi ăn phải rửa tay.",
+        "en": "Wash your hands before eating.",
+        "zh-Hant": "吃飯前要洗手。"
+      }
+    ],
+    "情": [
+      {
+        "zh": "他的心情很好。",
+        "pinyin": "Tā de xīnqíng hěn hǎo.",
+        "vi": "Tâm trạng của anh ấy rất tốt.",
+        "en": "He is in a good mood.",
+        "zh-Hant": "他的心情很好。"
+      }
+    ],
+    "忙": [
+      {
+        "zh": "我今天有點忙。",
+        "pinyin": "Wǒ jīntiān yǒudiǎn máng.",
+        "vi": "Hôm nay tôi hơi bận.",
+        "en": "I am a little busy today.",
+        "zh-Hant": "我今天有點忙。"
+      }
+    ],
+    "想": [
+      {
+        "zh": "我想學中文。",
+        "pinyin": "Wǒ xiǎng xué Zhōngwén.",
+        "vi": "Tôi muốn học tiếng Trung.",
+        "en": "I want to learn Chinese.",
+        "zh-Hant": "我想學中文。"
+      }
+    ],
+    "請": [
+      {
+        "zh": "請進。",
+        "pinyin": "Qǐng jìn.",
+        "vi": "Mời vào.",
+        "en": "Please come in.",
+        "zh-Hant": "請進。"
+      }
+    ],
+    "訪": [
+      {
+        "zh": "明天我要去訪問老師。",
+        "pinyin": "Míngtiān wǒ yào qù fǎngwèn lǎoshī.",
+        "vi": "Ngày mai tôi sẽ đi thăm/phỏng vấn giáo viên.",
+        "en": "Tomorrow I am going to visit/interview the teacher.",
+        "zh-Hant": "明天我要去訪問老師。"
+      }
+    ],
+    "語": [
+      {
+        "zh": "語言可以幫助我們溝通。",
+        "pinyin": "Yǔyán kěyǐ bāngzhù wǒmen gōutōng.",
+        "vi": "Ngôn ngữ giúp chúng ta giao tiếp.",
+        "en": "Language helps us communicate.",
+        "zh-Hant": "語言可以幫助我們溝通。"
+      }
+    ],
+    "抱": [
+      {
+        "zh": "媽媽抱著小孩。",
+        "pinyin": "Māma bàozhe xiǎohái.",
+        "vi": "Người mẹ đang bế em bé.",
+        "en": "The mother is holding the child.",
+        "zh-Hant": "媽媽抱著小孩。"
+      }
+    ],
+    "打": [
+      {
+        "zh": "我晚上打電話給你。",
+        "pinyin": "Wǒ wǎnshàng dǎ diànhuà gěi nǐ.",
+        "vi": "Tối nay tôi sẽ gọi điện cho bạn.",
+        "en": "I will call you tonight.",
+        "zh-Hant": "我晚上打電話給你。"
+      }
+    ],
+    "推": [
+      {
+        "zh": "請不要推門。",
+        "pinyin": "Qǐng bú yào tuī mén.",
+        "vi": "Xin đừng đẩy cửa.",
+        "en": "Please do not push the door.",
+        "zh-Hant": "請不要推門。"
+      }
+    ],
+    "飯": [
+      {
+        "zh": "我們一起吃飯吧。",
+        "pinyin": "Wǒmen yìqǐ chīfàn ba.",
+        "vi": "Chúng ta ăn cơm cùng nhau nhé.",
+        "en": "Let us eat together.",
+        "zh-Hant": "我們一起吃飯吧。"
+      }
+    ],
+    "飽": [
+      {
+        "zh": "我吃得很飽。",
+        "pinyin": "Wǒ chī de hěn bǎo.",
+        "vi": "Tôi ăn rất no.",
+        "en": "I ate until I was very full.",
+        "zh-Hant": "我吃得很飽。"
+      }
+    ],
+    "餓": [
+      {
+        "zh": "我有點餓了。",
+        "pinyin": "Wǒ yǒudiǎn è le.",
+        "vi": "Tôi hơi đói rồi.",
+        "en": "I am getting a little hungry.",
+        "zh-Hant": "我有點餓了。"
+      }
+    ],
+    "林": [
+      {
+        "zh": "前面有一片樹林。",
+        "pinyin": "Qiánmiàn yǒu yí piàn shùlín.",
+        "vi": "Phía trước có một khu rừng cây.",
+        "en": "There is a grove ahead.",
+        "zh-Hant": "前面有一片樹林。"
+      }
+    ],
+    "森": [
+      {
+        "zh": "這裡的森林很大。",
+        "pinyin": "Zhèlǐ de sēnlín hěn dà.",
+        "vi": "Khu rừng ở đây rất lớn.",
+        "en": "The forest here is large.",
+        "zh-Hant": "這裡的森林很大。"
+      }
+    ],
+    "杯": [
+      {
+        "zh": "我想要一杯茶。",
+        "pinyin": "Wǒ xiǎng yào yì bēi chá.",
+        "vi": "Tôi muốn một cốc trà.",
+        "en": "I would like a cup of tea.",
+        "zh-Hant": "我想要一杯茶。"
+      }
+    ],
+    "晴": [
+      {
+        "zh": "今天終於放晴了。",
+        "pinyin": "Jīntiān zhōngyú fàngqíng le.",
+        "vi": "Hôm nay cuối cùng trời cũng quang.",
+        "en": "The weather finally cleared up today.",
+        "zh-Hant": "今天終於放晴了。"
+      }
+    ],
+    "時": [
+      {
+        "zh": "現在是上課時間。",
+        "pinyin": "Xiànzài shì shàngkè shíjiān.",
+        "vi": "Bây giờ là giờ học.",
+        "en": "It is class time now.",
+        "zh-Hant": "現在是上課時間。"
+      }
+    ],
+    "晚": [
+      {
+        "zh": "今天不要回家太晚。",
+        "pinyin": "Jīntiān bú yào huíjiā tài wǎn.",
+        "vi": "Hôm nay đừng về nhà quá muộn.",
+        "en": "Do not go home too late today.",
+        "zh-Hant": "今天不要回家太晚。"
+      }
+    ],
+    "燈": [
+      {
+        "zh": "房間的燈還亮著。",
+        "pinyin": "Fángjiān de dēng hái liàngzhe.",
+        "vi": "Đèn trong phòng vẫn đang sáng.",
+        "en": "The light in the room is still on.",
+        "zh-Hant": "房間的燈還亮著。"
+      }
+    ],
+    "炒": [
+      {
+        "zh": "媽媽正在炒菜。",
+        "pinyin": "Māma zhèngzài chǎo cài.",
+        "vi": "Mẹ đang xào thức ăn.",
+        "en": "Mom is stir-frying food.",
+        "zh-Hant": "媽媽正在炒菜。"
+      }
+    ],
+    "煮": [
+      {
+        "zh": "我在廚房煮飯。",
+        "pinyin": "Wǒ zài chúfáng zhǔfàn.",
+        "vi": "Tôi đang nấu ăn trong bếp.",
+        "en": "I am cooking in the kitchen.",
+        "zh-Hant": "我在廚房煮飯。"
+      }
+    ],
+    "睛": [
+      {
+        "zh": "「睛」常出現在「眼睛」這個詞裡。",
+        "pinyin": "“Jīng” cháng chūxiàn zài “yǎnjīng” zhège cí lǐ.",
+        "vi": "Chữ “睛” thường xuất hiện trong từ “眼睛” (mắt).",
+        "en": "睛 often appears in the word 眼睛, meaning eyes.",
+        "zh-Hant": "「睛」常出現在「眼睛」這個詞裡。"
+      }
+    ],
+    "看": [
+      {
+        "zh": "我每天看中文新聞。",
+        "pinyin": "Wǒ měitiān kàn Zhōngwén xīnwén.",
+        "vi": "Mỗi ngày tôi xem tin tức tiếng Trung.",
+        "en": "I watch Chinese news every day.",
+        "zh-Hant": "我每天看中文新聞。"
+      }
+    ],
+    "眼": [
+      {
+        "zh": "他的眼睛有點紅。",
+        "pinyin": "Tā de yǎnjīng yǒudiǎn hóng.",
+        "vi": "Mắt anh ấy hơi đỏ.",
+        "en": "His eyes are a little red.",
+        "zh-Hant": "他的眼睛有點紅。"
+      }
+    ]
   }
 }

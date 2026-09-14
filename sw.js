@@ -1,4 +1,4 @@
-const CACHE = 'tocfl-v4-21-single-word-focus';
+const CACHE = 'tocfl-v4-23-examples-font-controls';
 const ASSETS = [
   './',
   './index.html',

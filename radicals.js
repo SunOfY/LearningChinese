@@ -11,6 +11,12 @@
     'zh-Hant':{tab:'部件',title:'部首・部件與字族',sub:'從結構學習：義符 + 聲符 → 字 → 詞 → 句子。',semantic:'義符部件',phonetic:'聲符字族',pinyin:'越南語近似音提示',search:'搜尋部件、字、拼音或意思…',listen:'聽',listenWord:'聽單字',listenSentence:'聽例句',slow:'慢速',fast:'加速',writeThis:'練寫',initialTitle:'聲母',finalTitle:'韻母',specialTitle:'容易混淆的拼音規則',demoTitle:'快速分析拼音',demoHint:'例如輸入：qǐng、xué、lǜ、zhōngwén…',analyze:'分析',why:'為什麼好記？',structure:'結構',example:'例句',examples:'例句',examplesHint:'用短句理解實際用法；每句都有拼音、意思與朗讀。',fontSize:'字體大小',fontSmaller:'縮小',fontLarger:'放大',fontReset:'預設',note:'這裡以學習與記憶為目的分析字形。不是所有漢字都能用現代「加一個部首就產生新字」來解釋；很多漢字屬於形聲結構，由義符提示意思、聲符提示讀音。',soundNote:'越南語近似音只作為入門橋樑。許多華語語音沒有完全相同的越南語對應音，請以 zh-TW 音檔為準。',familyNote:'聲符字族可以看出同一聲符如何提示讀音，而其他部件改變字義範圍。',all:'全部',chooseRadical:'選一個部件單獨練習',chooseHint:'每個部件已分開。選一個部件，集中學習相關字、延伸詞與書寫。',practiceWriting:'練寫這個部件',practiceHint:'選擇單字或詞語 → 看筆順 → 開始筆順練習，系統會檢查書寫順序。',practiceTarget:'要練的字／詞',strokeOrder:'筆順',startQuiz:'筆順練習',rewrite:'重寫',showGuide:'顯示字形',hideGuide:'隱藏字形',writingReady:'按「筆順練習」後，直接在方格內書寫。',writingGood:'筆順完成正確！',writingMistake:'這一筆還不對，再試一次。',writerUnavailable:'無法載入筆順資料，請檢查網路後再試。',progress:'書寫進度',coreChars:'全部漢字',expandedWords:'延伸詞／詞組',singleRadical:'單一部件',deepStudy:'深入學這個詞',formula:'組合意思',visualize:'記憶畫面',usage:'用法',pronunciation:'拆分發音',rootRole:'為什麼核心字屬於這個部件？',studyFlow:'四步學習法',studyFlowText:'1. 看結構 → 2. 聽 2–3 次 → 3. 跟讀 → 4. 不看答案寫出來',compoundTag:'語義組合',grammarTag:'語法結構',resultTag:'結果／方向',fixedTag:'固定詞',redupTag:'重疊詞',soundEach:'點每個音節可慢速聽',literalTip:'用字義組合幫助記憶，但實際說話時要把整個詞當成一個單位。',lesson:'學習項目',learned:'已學',previous:'上一個',next:'下一個',understoodNext:'懂了 · 下一個',finishRadical:'完成本部件',completed:'已完成',lessonHint:'一次只學一個字或詞。理解後按「下一個」再進入下一項。',coreLesson:'核心字',wordLesson:'延伸詞',branchFrom:'由此延伸',resume:'從上次進度繼續',restart:'從頭學習',aiCheck:'AI 發音檢查',aiSentenceCheck:'檢查整句',aiListening:'正在聆聽……請現在朗讀。',aiRecognizing:'AI 正在辨識……',aiTarget:'目標',aiRecognized:'AI 聽到',aiScore:'匹配度',aiNote:'Groq AI 檢查語音是否被辨識成目標文字；這不是專業的聲調／音位評分。',aiExcellent:'AI 正確辨識出目標。',aiGood:'AI 辨識結果接近，請再聽一次並放慢速度重試。',aiRetry:'AI 辨識成其他內容，請聽範例後再試。',aiUnavailable:'目前無法使用 AI 發音檢查。',aiMicDenied:'無法使用麥克風，請允許此網站使用麥克風。',aiGuestRemaining:(n,l)=>`訪客還有 ${n}/${l} 次 AI 檢查`}
   };
 
+  const ORIGIN_UI={
+    vi:{mode:'Từ hình đến chữ',title:'Học chữ như trên lớp',sub:'Mỗi lần chỉ học 1 chữ: hình thật → chữ cổ → chữ hiện đại → từ → câu → nghe/nói/viết.',source:'Nguồn hình chữ cổ',pictogram:'1. Tượng hình · Pictograms',combined:'2. Hội ý · Combined Ideograms',phonosemantic:'3. Hình thanh · Phono-semantic',object:'Hình ban đầu',ancient:'Chữ cổ',modern:'Chữ hiện đại',step1:'Nhìn hình & sự biến đổi',step2:'Hiểu vì sao',step3:'Học từ phát triển',step4:'Đặt vào câu',step5:'Nghe · nói · viết',nextStep:'Tiếp bước',prevStep:'Bước trước',nextChar:'Đã hiểu · Chữ tiếp theo',finished:'Đã học xong',learned:'Đã hiểu',memory:'Hình dung để nhớ',explain:'Giải thích',vocab:'Từ phát triển',sentence:'Câu ví dụ',vocabPrev:'Từ trước',vocabNext:'Từ tiếp',sentencePrev:'Câu trước',sentenceNext:'Câu tiếp',writeWord:'Luyện viết từ này',writeChar:'Luyện viết chữ này',classStyle:'Trình bày theo đúng kiểu ảnh bài giảng bạn gửi: ít thông tin mỗi màn, tập trung vào một ý.',oracle:'Giáp cốt văn',meaningPart:'Phần gợi nghĩa',soundPart:'Phần gợi âm',neutralTone:'Lưu ý: men trong 們 thường là thanh nhẹ.',imageFallback:'Không tải được ảnh chữ cổ; vẫn có thể học bằng phần giải thích bên dưới.',jump:'Chọn chữ',reset:'Học lại từ đầu'},
+    en:{mode:'From image to character',title:'Learn characters like in class',sub:'One character at a time: object → ancient form → modern form → words → sentences → listen/speak/write.',source:'Ancient-form source',pictogram:'1. Pictograms',combined:'2. Combined Ideograms',phonosemantic:'3. Phono-semantic Compounds',object:'Original image',ancient:'Ancient form',modern:'Modern character',step1:'See the image & evolution',step2:'Understand why',step3:'Learn developed words',step4:'Use it in a sentence',step5:'Listen · speak · write',nextStep:'Next step',prevStep:'Previous step',nextChar:'Got it · Next character',finished:'Completed',learned:'Understood',memory:'Memory image',explain:'Explanation',vocab:'Developed word',sentence:'Example sentence',vocabPrev:'Previous word',vocabNext:'Next word',sentencePrev:'Previous sentence',sentenceNext:'Next sentence',writeWord:'Practise writing this word',writeChar:'Practise writing this character',classStyle:'Presented like the classroom photos you shared: one idea per screen with minimal clutter.',oracle:'Oracle-bone form',meaningPart:'Meaning clue',soundPart:'Sound clue',neutralTone:'Note: men in 們 is normally neutral tone.',imageFallback:'The ancient-form image could not load; use the explanation below instead.',jump:'Choose character',reset:'Restart'},
+    'zh-Hant':{mode:'從圖像到漢字',title:'像課堂一樣學漢字',sub:'一次一個字：實物 → 古文字 → 現代字 → 詞 → 句子 → 聽說寫。',source:'古文字來源',pictogram:'1. 象形字 · Pictograms',combined:'2. 會意字 · Combined Ideograms',phonosemantic:'3. 形聲字 · Phono-semantic',object:'原始圖像',ancient:'古文字',modern:'現代字',step1:'看圖與字形演變',step2:'理解為什麼',step3:'學延伸詞',step4:'放進句子',step5:'聽 · 說 · 寫',nextStep:'下一步',prevStep:'上一步',nextChar:'懂了 · 下一個字',finished:'已完成',learned:'已理解',memory:'記憶畫面',explain:'解釋',vocab:'延伸詞',sentence:'例句',vocabPrev:'上一個詞',vocabNext:'下一個詞',sentencePrev:'上一句',sentenceNext:'下一句',writeWord:'練寫這個詞',writeChar:'練寫這個字',classStyle:'依照你提供的課堂照片：每個畫面只放一個重點，避免一次出現太多資訊。',oracle:'甲骨文字形',meaningPart:'義符',soundPart:'聲符',neutralTone:'注意：們的 men 通常讀輕聲。',imageFallback:'古文字圖片載入失敗，可先看下方解釋。',jump:'選擇漢字',reset:'從頭學習'}
+  };
+
   let radicals=[];
   let expansionTrees={};
   let soundFamilies=[];
@@ -19,6 +25,9 @@
   let branchDetails={};
   let learningOverrides={};
   let exampleSets={};
+  let originData={version:'',sourceNote:{},lessons:[]};
+  let originDataLoaded=false;
+  let originDataError='';
   let radicalDataLoaded=false;
   let radicalDataError='';
 
@@ -46,6 +55,15 @@
       branchDetails=data.branchDetails||{};
       learningOverrides=data.learningOverrides||{};
       exampleSets=data.exampleSets||{};
+      try{
+        const originRes=await fetch('./data/character-origins.json',{cache:'no-store'});
+        if(!originRes.ok)throw new Error(`HTTP ${originRes.status}`);
+        const originJson=await originRes.json();
+        if(!originJson||!Array.isArray(originJson.lessons))throw new Error('Invalid character-origins.json structure');
+        originData=originJson;originDataLoaded=true;originDataError='';
+      }catch(originErr){
+        console.warn('Cannot load character origin data:',originErr);originDataLoaded=false;originDataError=String(originErr?.message||originErr||'Unknown error');
+      }
       radicalDataLoaded=true;
       radicalDataError='';
       if(selectedRadicalKey==='all' || !radicals.some(r=>r.key===selectedRadicalKey)){
@@ -758,6 +776,82 @@
     if(!list.length){const empty=document.createElement('div');empty.className='rad-learning-note';empty.textContent=getLang()==='en'?'No matching radical found.':getLang()==='zh-Hant'?'找不到符合的部件。':'Không tìm thấy bộ phù hợp.';grid.append(empty);}
     root.append(grid);
   }
+
+  const ORIGIN_FLOW_KEY='tocfl-character-origin-flow-v1';
+  function loadOriginState(){
+    try{const v=JSON.parse(localStorage.getItem(ORIGIN_FLOW_KEY)||'{}');return v&&typeof v==='object'&&!Array.isArray(v)?v:{};}catch{return {};}
+  }
+  function saveOriginState(state){saveJsonState(ORIGIN_FLOW_KEY,state);}
+  function originCategoryText(category,ou){return category==='combined'?ou.combined:category==='phonosemantic'?ou.phonosemantic:ou.pictogram;}
+  function originSearchText(lesson){
+    return [lesson.char,lesson.pinyin,pick(lesson.meaning),pick(lesson.explanation),pick(lesson.memory),...(lesson.vocab||[]).flatMap(v=>[v.h,v.p,pick(v.m)]),...(lesson.examples||[]).flatMap(e=>[e.zh,e.p,pick(e.m)])].join(' ').toLowerCase();
+  }
+  function originAncientImage(lesson,ou){
+    const box=document.createElement('div');box.className='origin-ancient-wrap';
+    if(!lesson.ancientImage){box.innerHTML=`<div class="origin-ancient-fallback">${lesson.char}</div>`;return box;}
+    const img=document.createElement('img');img.className='origin-ancient-image';img.alt=`${lesson.char} ${ou.oracle}`;img.loading='lazy';img.referrerPolicy='no-referrer';img.src=lesson.ancientImage;
+    const fallback=document.createElement('div');fallback.className='origin-image-error';fallback.hidden=true;fallback.textContent=ou.imageFallback;
+    img.addEventListener('error',()=>{img.hidden=true;fallback.hidden=false;});box.append(img,fallback);return box;
+  }
+  function originArrow(){const el=document.createElement('div');el.className='origin-arrow';el.textContent='→';return el;}
+  function originVisualSlide(lesson,ou){
+    const slide=document.createElement('section');slide.className='origin-slide origin-visual-slide';
+    const heading=document.createElement('div');heading.className='origin-slide-heading';heading.textContent=originCategoryText(lesson.category,ou);slide.append(heading);
+    const flow=document.createElement('div');flow.className=`origin-evolution origin-${lesson.category}`;
+    if(lesson.category==='pictogram'){
+      const object=document.createElement('div');object.className='origin-stage-card origin-object-card';object.innerHTML=`<span>${ou.object}</span><div class="origin-object-emoji">${lesson.objectEmoji||'🖼️'}</div><strong>${pick(lesson.objectLabel)}</strong>`;
+      const ancient=document.createElement('div');ancient.className='origin-stage-card';const al=document.createElement('span');al.textContent=ou.ancient;ancient.append(al,originAncientImage(lesson,ou));
+      const modern=document.createElement('div');modern.className='origin-stage-card origin-modern-card';modern.innerHTML=`<span>${ou.modern}</span><div class="origin-modern-char">${lesson.char}</div><strong>${lesson.pinyin}</strong><small>${pick(lesson.meaning)}</small>`;
+      flow.append(object,originArrow(),ancient,originArrow(),modern);
+    }else if(lesson.category==='combined'){
+      (lesson.components||[]).forEach((c,idx)=>{
+        const comp=document.createElement('div');comp.className='origin-stage-card origin-component-card';comp.innerHTML=`<div class="origin-object-emoji">${c.emoji||''}</div><div class="origin-component-char">${c.char}</div><strong>${c.p||''}</strong><small>${pick(c.m)}</small>`;flow.append(comp);if(idx<(lesson.components||[]).length-1){const plus=document.createElement('div');plus.className='origin-plus';plus.textContent='+';flow.append(plus);}
+      });
+      flow.append(originArrow());const modern=document.createElement('div');modern.className='origin-stage-card origin-modern-card';modern.innerHTML=`<span>${ou.modern}</span><div class="origin-modern-char">${lesson.char}</div><strong>${lesson.pinyin}</strong><small>${pick(lesson.meaning)}</small>`;flow.append(modern);
+    }else{
+      const sem=document.createElement('div');sem.className='origin-stage-card origin-semantic-card';sem.innerHTML=`<span>${ou.meaningPart}</span><div class="origin-component-char">${lesson.semantic?.char||''}</div><strong>${pick(lesson.semantic?.m)}</strong>`;
+      const pho=document.createElement('div');pho.className='origin-stage-card origin-phonetic-card';pho.innerHTML=`<span>${ou.soundPart}</span><div class="origin-component-char">${lesson.phonetic?.char||''}</div><strong>${lesson.phonetic?.p||''}</strong><small>${pick(lesson.phonetic?.m)}</small>`;
+      const modern=document.createElement('div');modern.className='origin-stage-card origin-modern-card';modern.innerHTML=`<span>${ou.modern}</span><div class="origin-modern-char">${lesson.char}</div><strong>${lesson.pinyin}</strong><small>${pick(lesson.meaning)}</small>`;
+      const plus=document.createElement('div');plus.className='origin-plus';plus.textContent='+';flow.append(sem,plus,pho,originArrow(),modern);
+    }
+    slide.append(flow);
+    const sound=document.createElement('div');sound.className='origin-main-actions';sound.append(audioButtons(lesson.char,UI[getLang()]||UI.vi,'word'),pinyinHintNode(lesson.pinyin));slide.append(sound);
+    return slide;
+  }
+  function originExplanationSlide(lesson,ou){
+    const slide=document.createElement('section');slide.className='origin-slide';
+    slide.innerHTML=`<div class="origin-slide-heading">${ou.step2}</div><div class="origin-explain-card"><div class="origin-explain-char">${lesson.char}</div><div><h3>${lesson.char} · ${lesson.pinyin} · ${pick(lesson.meaning)}</h3><h4>🧩 ${ou.explain}</h4><p>${pick(lesson.explanation)}</p><h4>🎬 ${ou.memory}</h4><p>${pick(lesson.memory)}</p>${lesson.id==='plural-men'?`<div class="origin-neutral-note">💡 ${ou.neutralTone}</div>`:''}</div></div>`;
+    return slide;
+  }
+  function originInlineWriting(text,pinyin,meaning,lesson,ui,label){
+    const details=document.createElement('details');details.className='origin-inline-writing';const summary=document.createElement('summary');summary.textContent=`✍ ${label}`;details.append(summary);const stage=document.createElement('div');stage.className='origin-inline-writing-stage';details.append(stage);let built=false;details.addEventListener('toggle',()=>{if(details.open&&!built){built=true;renderWritingTarget(stage,{text,p:pinyin,m:meaning,group:'core'},{key:`origin-${lesson.id}`,radical:text,pinyin,meaning:{vi:meaning,en:meaning,'zh-Hant':meaning},chars:[]},ui);}});return details;
+  }
+  function originVocabSlide(lesson,ou,ui,state,onState){
+    const slide=document.createElement('section');slide.className='origin-slide';const list=lesson.vocab||[];let i=Math.max(0,Math.min(Number(state.vocabIndex)||0,Math.max(0,list.length-1)));const shell=document.createElement('div');
+    const draw=()=>{shell.innerHTML='';const v=list[i];if(!v){shell.textContent='';return;}const head=document.createElement('div');head.className='origin-slide-heading';head.textContent=`${ou.step3} · ${i+1}/${list.length}`;const card=document.createElement('article');card.className='origin-focus-word';card.innerHTML=`<div class="origin-focus-word-hanzi">${v.h}</div><strong>${v.p}</strong><span>${pick(v.m)}</span>`;card.append(pinyinHintNode(v.p),audioButtons(v.h,ui,'word'),pronunciationTestNode(v.h,v.p,ui,{key:`origin-${lesson.id}`},{compact:true}),originInlineWriting(v.h,v.p,pick(v.m),lesson,ui,ou.writeWord));const nav=document.createElement('div');nav.className='origin-mini-nav';const prev=document.createElement('button');prev.type='button';prev.textContent=`← ${ou.vocabPrev}`;prev.disabled=i===0;const count=document.createElement('b');count.textContent=`${i+1}/${list.length}`;const next=document.createElement('button');next.type='button';next.textContent=`${ou.vocabNext} →`;next.disabled=i>=list.length-1;prev.addEventListener('click',()=>{i--;state.vocabIndex=i;onState();draw();});next.addEventListener('click',()=>{i++;state.vocabIndex=i;onState();draw();});nav.append(prev,count,next);shell.append(head,card,nav);};draw();slide.append(shell);return slide;
+  }
+  function originExampleSlide(lesson,ou,ui,state,onState){
+    const slide=document.createElement('section');slide.className='origin-slide';const list=lesson.examples||[];let i=Math.max(0,Math.min(Number(state.exampleIndex)||0,Math.max(0,list.length-1)));const shell=document.createElement('div');
+    const draw=()=>{shell.innerHTML='';const ex=list[i];if(!ex)return;const head=document.createElement('div');head.className='origin-slide-heading';head.textContent=`${ou.step4} · ${i+1}/${list.length}`;const card=document.createElement('article');card.className='origin-example-focus';card.innerHTML=`<div class="origin-example-zh">${ex.zh}</div><div class="origin-example-pinyin">${ex.p}</div><div class="origin-example-meaning">${pick(ex.m)}</div>`;card.append(audioButtons(ex.zh,ui,'sentence'),pronunciationTestNode(ex.zh,ex.p,ui,{key:`origin-${lesson.id}`},{sentence:true,compact:true}));const nav=document.createElement('div');nav.className='origin-mini-nav';const prev=document.createElement('button');prev.type='button';prev.textContent=`← ${ou.sentencePrev}`;prev.disabled=i===0;const count=document.createElement('b');count.textContent=`${i+1}/${list.length}`;const next=document.createElement('button');next.type='button';next.textContent=`${ou.sentenceNext} →`;next.disabled=i>=list.length-1;prev.addEventListener('click',()=>{i--;state.exampleIndex=i;onState();draw();});next.addEventListener('click',()=>{i++;state.exampleIndex=i;onState();draw();});nav.append(prev,count,next);shell.append(head,card,nav);};draw();slide.append(shell);return slide;
+  }
+  function originPracticeSlide(lesson,ou,ui){
+    const slide=document.createElement('section');slide.className='origin-slide';const head=document.createElement('div');head.className='origin-slide-heading';head.textContent=ou.step5;const hero=document.createElement('div');hero.className='origin-practice-hero';hero.innerHTML=`<div class="origin-practice-char">${lesson.char}</div><div><strong>${lesson.pinyin}</strong><span>${pick(lesson.meaning)}</span></div>`;hero.append(audioButtons(lesson.char,ui,'word'));slide.append(head,hero,pinyinHintNode(lesson.pinyin),pronunciationTestNode(lesson.char,lesson.pinyin,ui,{key:`origin-${lesson.id}`}),originInlineWriting(lesson.char,lesson.pinyin,pick(lesson.meaning),lesson,ui,ou.writeChar));return slide;
+  }
+  function renderOrigins(root,ui,query=''){
+    root.innerHTML='';const ou=ORIGIN_UI[getLang()]||ORIGIN_UI.vi;
+    if(!originDataLoaded){const err=document.createElement('div');err.className='rad-learning-note';err.textContent=`${ou.mode}: ${originDataError||'data unavailable'}`;root.append(err);return;}
+    let list=(originData.lessons||[]).filter(l=>!query||originSearchText(l).includes(query));if(!list.length){const empty=document.createElement('div');empty.className='rad-learning-note';empty.textContent=getLang()==='en'?'No matching character.':getLang()==='zh-Hant'?'找不到符合的漢字。':'Không tìm thấy chữ phù hợp.';root.append(empty);return;}
+    const state=loadOriginState();let index=Math.max(0,Math.min(Number(state.index)||0,list.length-1));if(state.lessonId){const found=list.findIndex(l=>l.id===state.lessonId);if(found>=0)index=found;}let step=Math.max(0,Math.min(Number(state.step)||0,4));let done=new Set(Array.isArray(state.done)?state.done:[]);state.vocabIndex=Number(state.vocabIndex)||0;state.exampleIndex=Number(state.exampleIndex)||0;
+    const note=document.createElement('div');note.className='origin-source-note';note.innerHTML=`<strong>🖼 ${ou.mode}</strong><span>${ou.classStyle}</span><small>${pick(originData.sourceNote)}</small>`;root.append(note);
+    const picker=document.createElement('div');picker.className='origin-character-picker';const pickLabel=document.createElement('span');pickLabel.textContent=`${ou.jump}:`;picker.append(pickLabel);list.forEach((l,i)=>{const b=document.createElement('button');b.type='button';b.textContent=l.char;b.classList.toggle('is-active',i===index);b.classList.toggle('is-done',done.has(l.id));b.addEventListener('click',()=>{index=i;step=0;state.vocabIndex=0;state.exampleIndex=0;persist();draw();});picker.append(b);});root.append(picker);
+    const player=document.createElement('section');player.className='origin-player card';const head=document.createElement('div');head.className='origin-player-head';const title=document.createElement('div');const counter=document.createElement('div');counter.className='origin-player-counter';head.append(title,counter);const progress=document.createElement('div');progress.className='origin-step-progress';for(let i=0;i<5;i++){const d=document.createElement('i');progress.append(d);}const stage=document.createElement('div');stage.className='origin-player-stage';const nav=document.createElement('div');nav.className='origin-player-nav';const prev=document.createElement('button');prev.type='button';const reset=document.createElement('button');reset.type='button';reset.textContent=`↺ ${ou.reset}`;const next=document.createElement('button');next.type='button';next.className='primary';nav.append(prev,reset,next);player.append(head,progress,stage,nav);root.append(player);
+    const persist=()=>{const lesson=list[index];saveOriginState({index,lessonId:lesson?.id||'',step,done:[...done],vocabIndex:Number(state.vocabIndex)||0,exampleIndex:Number(state.exampleIndex)||0});};
+    const draw=()=>{const lesson=list[index];if(!lesson)return;picker.querySelectorAll('button').forEach((b,i)=>{b.classList.toggle('is-active',i===index);b.classList.toggle('is-done',done.has(list[i]?.id));});title.innerHTML=`<span class="origin-category-badge">${originCategoryText(lesson.category,ou)}</span><h3>${lesson.char} <small>${lesson.pinyin} · ${pick(lesson.meaning)}</small></h3>`;counter.innerHTML=`<b>${index+1}/${list.length}</b><small>✓ ${done.size}/${list.length}</small>`;progress.querySelectorAll('i').forEach((el,i)=>el.classList.toggle('is-active',i<=step));stage.innerHTML='';const onState=()=>persist();if(step===0)stage.append(originVisualSlide(lesson,ou));else if(step===1)stage.append(originExplanationSlide(lesson,ou));else if(step===2)stage.append(originVocabSlide(lesson,ou,ui,state,onState));else if(step===3)stage.append(originExampleSlide(lesson,ou,ui,state,onState));else stage.append(originPracticeSlide(lesson,ou,ui));prev.disabled=step===0&&index===0;prev.textContent=step>0?`← ${ou.prevStep}`:`← ${ui.previous}`;next.textContent=step<4?`${ou.nextStep} →`:(done.has(lesson.id)?`${ui.next} →`:`✓ ${ou.nextChar} →`);next.disabled=step===4&&index===list.length-1&&done.has(lesson.id);persist();applyFontScale();};
+    prev.addEventListener('click',()=>{if(step>0)step--;else if(index>0){index--;step=4;}draw();player.scrollIntoView({behavior:'smooth',block:'start'});});
+    next.addEventListener('click',()=>{const lesson=list[index];if(step<4)step++;else{done.add(lesson.id);if(index<list.length-1){index++;step=0;state.vocabIndex=0;state.exampleIndex=0;}}draw();player.scrollIntoView({behavior:'smooth',block:'start'});});
+    reset.addEventListener('click',()=>{index=0;step=0;done=new Set();state.vocabIndex=0;state.exampleIndex=0;draw();});draw();
+  }
+
   function renderFamilies(root,ui,query=''){
     root.innerHTML=`<div class="rad-learning-note">${ui.familyNote}</div>`;
     const grid=document.createElement('div');grid.className='rad-family-grid';
@@ -791,11 +885,11 @@
     $('pinyinDemoBtn')?.addEventListener('click',run);$('pinyinDemoInput')?.addEventListener('input',run);run();
   }
 
-  let mode='semantic'; let query='';
+  let mode='origins'; let query='';
   function render(){
     const app=$('radicalsApp');if(!app)return;const lang=getLang();const ui=UI[lang]||UI.vi;
     const tab=$('radicalsTabLabel');if(tab)tab.textContent=ui.tab;
-    app.innerHTML=`<section class="rad-hero card"><div><div class="eyebrow">CHARACTER MAP</div><h2>${ui.title}</h2><p>${ui.sub}</p></div><div class="rad-hero-model"><span>義</span><b>+</b><span>音</span><b>→</b><strong>字</strong></div></section><section class="rad-controls card"><div class="rad-mode-tabs"><button data-rad-mode="semantic">🧩 ${ui.semantic}</button><button data-rad-mode="phonetic">🔊 ${ui.phonetic}</button><button data-rad-mode="pinyin">🇻🇳 ${ui.pinyin}</button></div><div class="rad-font-controls" aria-label="${ui.fontSize}"><span>${ui.fontSize}</span><button id="radFontMinus" type="button" title="${ui.fontSmaller}">A−</button><strong id="radFontScaleValue">100%</strong><button id="radFontPlus" type="button" title="${ui.fontLarger}">A+</button><button id="radFontReset" type="button" title="${ui.fontReset}">↺</button></div><input id="radicalSearch" type="search" placeholder="${ui.search}" value="${query.replace(/"/g,'&quot;')}" /></section><div id="radicalsContent"></div>`;
+    app.innerHTML=`<section class="rad-hero card"><div><div class="eyebrow">CHARACTER MAP</div><h2>${ui.title}</h2><p>${ui.sub}</p></div><div class="rad-hero-model"><span>義</span><b>+</b><span>音</span><b>→</b><strong>字</strong></div></section><section class="rad-controls card"><div class="rad-mode-tabs"><button data-rad-mode="origins">🖼 ${ORIGIN_UI[lang]?.mode||ORIGIN_UI.vi.mode}</button><button data-rad-mode="semantic">🧩 ${ui.semantic}</button><button data-rad-mode="phonetic">🔊 ${ui.phonetic}</button><button data-rad-mode="pinyin">🇻🇳 ${ui.pinyin}</button></div><div class="rad-font-controls" aria-label="${ui.fontSize}"><span>${ui.fontSize}</span><button id="radFontMinus" type="button" title="${ui.fontSmaller}">A−</button><strong id="radFontScaleValue">100%</strong><button id="radFontPlus" type="button" title="${ui.fontLarger}">A+</button><button id="radFontReset" type="button" title="${ui.fontReset}">↺</button></div><input id="radicalSearch" type="search" placeholder="${ui.search}" value="${query.replace(/"/g,'&quot;')}" /></section><div id="radicalsContent"></div>`;
     app.querySelectorAll('[data-rad-mode]').forEach(b=>{b.classList.toggle('is-active',b.dataset.radMode===mode);b.addEventListener('click',()=>{mode=b.dataset.radMode;renderContent();});});
     $('radFontMinus')?.addEventListener('click',()=>setFontScale(getFontScale()-.1));
     $('radFontPlus')?.addEventListener('click',()=>setFontScale(getFontScale()+.1));
@@ -803,7 +897,7 @@
     $('radicalSearch')?.addEventListener('input',e=>{query=String(e.target.value||'').trim().toLowerCase();renderContent();});
     renderContent();applyFontScale();
   }
-  function renderContent(){const root=$('radicalsContent');if(!root)return;const ui=UI[getLang()]||UI.vi;document.querySelectorAll('[data-rad-mode]').forEach(b=>b.classList.toggle('is-active',b.dataset.radMode===mode));if(mode==='semantic')renderSemantic(root,ui,query);else if(mode==='phonetic')renderFamilies(root,ui,query);else renderPinyin(root,ui,query);applyFontScale();}
+  function renderContent(){const root=$('radicalsContent');if(!root)return;const ui=UI[getLang()]||UI.vi;document.querySelectorAll('[data-rad-mode]').forEach(b=>b.classList.toggle('is-active',b.dataset.radMode===mode));if(mode==='origins')renderOrigins(root,ui,query);else if(mode==='semantic')renderSemantic(root,ui,query);else if(mode==='phonetic')renderFamilies(root,ui,query);else renderPinyin(root,ui,query);applyFontScale();}
   function renderDataError(){
     const app=$('radicalsApp');if(!app)return;
     const lang=getLang();

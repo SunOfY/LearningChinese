@@ -1,0 +1,206 @@
+{
+  "version": "1",
+  "sourceNote": {
+    "vi": "Cách trình bày mô phỏng đúng kiểu bài trên lớp: vật/hình ảnh → dạng chữ cổ → chữ hiện đại → cách dùng. Hình chữ cổ dùng ảnh oracle-script công khai từ Wikimedia Commons; phần ghép ý/ghép âm bám theo cách giảng trong ảnh bạn cung cấp.",
+    "en": "The presentation follows the classroom pattern: object/image → ancient form → modern character → use. Ancient forms use public-domain oracle-script images from Wikimedia Commons; compound explanations follow the classroom framing in your photos.",
+    "zh-Hant": "呈現方式依照課堂：實物／圖像 → 古文字 → 現代字 → 用法。古文字採用 Wikimedia Commons 的公有領域甲骨文字圖；會意與形聲說明依照你提供的課堂照片架構。"
+  },
+  "lessons": [
+    {
+      "id": "sun-ri",
+      "category": "pictogram",
+      "char": "日",
+      "pinyin": "rì",
+      "meaning": {"vi":"mặt trời; ngày","en":"sun; day","zh-Hant":"太陽；日"},
+      "objectEmoji": "☀️",
+      "objectLabel": {"vi":"Mặt trời","en":"Sun","zh-Hant":"太陽"},
+      "ancientImage": "https://commons.wikimedia.org/wiki/Special:Redirect/file/%E6%97%A5-oracle.svg",
+      "ancientSource": "https://commons.wikimedia.org/wiki/File:%E6%97%A5-oracle.svg",
+      "explanation": {"vi":"Theo bài học tượng hình: hình tròn/oval biểu diễn mặt trời, dấu ở giữa nhấn phần trung tâm. Qua thời gian nét được vuông hóa thành 日.","en":"In the pictographic lesson, a round/oval sun with a central mark gradually became the squared modern form 日.","zh-Hant":"象形學習中，以圓形／橢圓形表示太陽，中間加記號；後來筆畫方整化成「日」。"},
+      "memory": {"vi":"Nhìn 日 như một mặt trời được đặt vào khung vuông.","en":"See 日 as the sun placed inside a square frame.","zh-Hant":"把「日」想成被方框化的太陽。"},
+      "vocab": [
+        {"h":"今日","p":"jīnrì","m":{"vi":"hôm nay; ngày nay","en":"today; nowadays","zh-Hant":"今日"}},
+        {"h":"生日","p":"shēngrì","m":{"vi":"sinh nhật","en":"birthday","zh-Hant":"生日"}},
+        {"h":"星期日","p":"xīngqírì","m":{"vi":"Chủ nhật","en":"Sunday","zh-Hant":"星期日"}}
+      ],
+      "examples": [
+        {"zh":"今天是星期日。","p":"Jīntiān shì xīngqírì.","m":{"vi":"Hôm nay là Chủ nhật.","en":"Today is Sunday.","zh-Hant":"今天是星期日。"}},
+        {"zh":"我的生日是五月十日。","p":"Wǒ de shēngrì shì wǔ yuè shí rì.","m":{"vi":"Sinh nhật của tôi là ngày 10 tháng 5.","en":"My birthday is May 10.","zh-Hant":"我的生日是五月十日。"}}
+      ]
+    },
+    {
+      "id": "moon-yue",
+      "category": "pictogram",
+      "char": "月",
+      "pinyin": "yuè",
+      "meaning": {"vi":"mặt trăng; tháng","en":"moon; month","zh-Hant":"月亮；月份"},
+      "objectEmoji": "🌙",
+      "objectLabel": {"vi":"Mặt trăng","en":"Moon","zh-Hant":"月亮"},
+      "ancientImage": "https://commons.wikimedia.org/wiki/Special:Redirect/file/%E6%9C%88-oracle.svg",
+      "ancientSource": "https://commons.wikimedia.org/wiki/File:%E6%9C%88-oracle.svg",
+      "explanation": {"vi":"Dạng cổ của 月 gợi hình trăng khuyết. Các nét dần được thẳng và vuông hóa thành chữ 月 hiện đại.","en":"The ancient form of 月 resembles a crescent moon; its strokes gradually straightened into the modern form.","zh-Hant":"「月」的古文字像彎月，後來筆畫逐漸直線化、方整化成現代的「月」。"},
+      "memory": {"vi":"Hai nét bên trong như phần sáng/tối trên mặt trăng.","en":"Use the inner strokes as a cue for the moon's lit and dark areas.","zh-Hant":"把裡面的兩筆想成月亮的明暗區域。"},
+      "vocab": [
+        {"h":"月亮","p":"yuèliang","m":{"vi":"mặt trăng","en":"moon","zh-Hant":"月亮"}},
+        {"h":"下個月","p":"xià ge yuè","m":{"vi":"tháng sau","en":"next month","zh-Hant":"下個月"}},
+        {"h":"月份","p":"yuèfèn","m":{"vi":"tháng (trong năm)","en":"month (calendar)","zh-Hant":"月份"}}
+      ],
+      "examples": [
+        {"zh":"今晚的月亮很漂亮。","p":"Jīnwǎn de yuèliang hěn piàoliang.","m":{"vi":"Mặt trăng tối nay rất đẹp.","en":"The moon is beautiful tonight.","zh-Hant":"今晚的月亮很漂亮。"}},
+        {"zh":"下個月我要回家。","p":"Xià ge yuè wǒ yào huí jiā.","m":{"vi":"Tháng sau tôi sẽ về nhà.","en":"I am going home next month.","zh-Hant":"下個月我要回家。"}}
+      ]
+    },
+    {
+      "id": "eye-mu",
+      "category": "pictogram",
+      "char": "目",
+      "pinyin": "mù",
+      "meaning": {"vi":"mắt; mục","en":"eye; item","zh-Hant":"眼睛；目"},
+      "objectEmoji": "👁️",
+      "objectLabel": {"vi":"Con mắt","en":"Eye","zh-Hant":"眼睛"},
+      "ancientImage": "https://commons.wikimedia.org/wiki/Special:Redirect/file/%E7%9B%AE-oracle.svg",
+      "ancientSource": "https://commons.wikimedia.org/wiki/File:%E7%9B%AE-oracle.svg",
+      "explanation": {"vi":"Dạng giáp cốt của 目 nhìn rất giống một con mắt nằm ngang với phần con ngươi ở giữa. Khi chuẩn hóa chữ, hình được xoay/đóng khung thành 目.","en":"The oracle form of 目 clearly resembles a horizontal eye with a central pupil; the modern form regularized it into 目.","zh-Hant":"「目」的甲骨文字很像橫放的眼睛，中間是眼珠；字形規整後形成現代的「目」。"},
+      "memory": {"vi":"Hãy tưởng tượng 目 là một con mắt đã được dựng thẳng lên.","en":"Imagine 目 as an eye rotated upright.","zh-Hant":"把「目」想成被轉直、方整化的眼睛。"},
+      "vocab": [
+        {"h":"目前","p":"mùqián","m":{"vi":"hiện tại","en":"currently","zh-Hant":"目前"}},
+        {"h":"目的","p":"mùdì","m":{"vi":"mục đích","en":"purpose","zh-Hant":"目的"}},
+        {"h":"目標","p":"mùbiāo","m":{"vi":"mục tiêu","en":"goal; target","zh-Hant":"目標"}}
+      ],
+      "examples": [
+        {"zh":"目前我住在高雄。","p":"Mùqián wǒ zhù zài Gāoxióng.","m":{"vi":"Hiện tại tôi sống ở Cao Hùng.","en":"I currently live in Kaohsiung.","zh-Hant":"目前我住在高雄。"}},
+        {"zh":"我的目標是學好中文。","p":"Wǒ de mùbiāo shì xué hǎo Zhōngwén.","m":{"vi":"Mục tiêu của tôi là học tốt tiếng Trung.","en":"My goal is to learn Chinese well.","zh-Hant":"我的目標是學好中文。"}}
+      ]
+    },
+    {
+      "id": "hand-shou",
+      "category": "pictogram",
+      "char": "手",
+      "pinyin": "shǒu",
+      "meaning": {"vi":"tay","en":"hand","zh-Hant":"手"},
+      "objectEmoji": "✋",
+      "objectLabel": {"vi":"Bàn tay","en":"Hand","zh-Hant":"手"},
+      "ancientImage": "https://commons.wikimedia.org/wiki/Special:Redirect/file/%E6%89%8B-oracle.svg",
+      "ancientSource": "https://commons.wikimedia.org/wiki/File:%E6%89%8B-oracle.svg",
+      "explanation": {"vi":"Chữ cổ mô phỏng bàn tay với các ngón xòe ra; về sau được giản hóa thành các nét chuẩn của 手.","en":"The ancient form depicts a hand with spread fingers; it was later standardized into 手.","zh-Hant":"古文字像伸開的手掌與手指，後來逐漸規整成「手」。"},
+      "memory": {"vi":"Ba nét phía trên như các ngón tay, nét dọc dưới như cổ tay.","en":"Treat the upper strokes as fingers and the lower stroke as the wrist.","zh-Hant":"把上面的筆畫想成手指，下面的筆畫想成手腕。"},
+      "vocab": [
+        {"h":"手機","p":"shǒujī","m":{"vi":"điện thoại di động","en":"mobile phone","zh-Hant":"手機"}},
+        {"h":"洗手","p":"xǐshǒu","m":{"vi":"rửa tay","en":"wash hands","zh-Hant":"洗手"}},
+        {"h":"右手","p":"yòushǒu","m":{"vi":"tay phải","en":"right hand","zh-Hant":"右手"}}
+      ],
+      "examples": [
+        {"zh":"請先洗手。","p":"Qǐng xiān xǐshǒu.","m":{"vi":"Hãy rửa tay trước.","en":"Please wash your hands first.","zh-Hant":"請先洗手。"}},
+        {"zh":"我的手機在桌上。","p":"Wǒ de shǒujī zài zhuō shàng.","m":{"vi":"Điện thoại của tôi ở trên bàn.","en":"My phone is on the table.","zh-Hant":"我的手機在桌上。"}}
+      ]
+    },
+    {
+      "id": "gate-men",
+      "category": "pictogram",
+      "char": "門",
+      "pinyin": "mén",
+      "meaning": {"vi":"cửa; cổng","en":"door; gate","zh-Hant":"門"},
+      "objectEmoji": "🚪",
+      "objectLabel": {"vi":"Cánh cửa/cổng","en":"Door / gate","zh-Hant":"門／門扇"},
+      "ancientImage": "https://commons.wikimedia.org/wiki/Special:Redirect/file/%E9%96%80-oracle.svg",
+      "ancientSource": "https://commons.wikimedia.org/wiki/File:%E9%96%80-oracle.svg",
+      "explanation": {"vi":"Dạng cổ của 門 trông như hai cánh cửa đối xứng. Chữ hiện đại vẫn giữ cảm giác hai cánh cửa trong khung.","en":"The ancient form of 門 looks like two facing door leaves; the modern form still preserves that two-door structure.","zh-Hant":"「門」的古文字像左右兩扇門，現代字仍保留雙門扇的結構感。"},
+      "memory": {"vi":"Hãy nhìn 門 như hai cánh cửa đang khép lại.","en":"See 門 as two door leaves closing together.","zh-Hant":"把「門」看成左右兩扇門合在一起。"},
+      "vocab": [
+        {"h":"開門","p":"kāimén","m":{"vi":"mở cửa","en":"open the door","zh-Hant":"開門"}},
+        {"h":"關門","p":"guānmén","m":{"vi":"đóng cửa","en":"close the door","zh-Hant":"關門"}},
+        {"h":"門口","p":"ménkǒu","m":{"vi":"cửa ra vào; trước cửa","en":"doorway; entrance","zh-Hant":"門口"}}
+      ],
+      "examples": [
+        {"zh":"請幫我開門。","p":"Qǐng bāng wǒ kāimén.","m":{"vi":"Hãy giúp tôi mở cửa.","en":"Please open the door for me.","zh-Hant":"請幫我開門。"}},
+        {"zh":"我在門口等你。","p":"Wǒ zài ménkǒu děng nǐ.","m":{"vi":"Tôi đợi bạn ở cửa.","en":"I am waiting for you at the entrance.","zh-Hant":"我在門口等你。"}}
+      ]
+    },
+    {
+      "id": "horse-ma",
+      "category": "pictogram",
+      "char": "馬",
+      "pinyin": "mǎ",
+      "meaning": {"vi":"ngựa","en":"horse","zh-Hant":"馬"},
+      "objectEmoji": "🐎",
+      "objectLabel": {"vi":"Con ngựa","en":"Horse","zh-Hant":"馬"},
+      "ancientImage": "https://commons.wikimedia.org/wiki/Special:Redirect/file/%E9%A6%AC-oracle-5.svg",
+      "ancientSource": "https://commons.wikimedia.org/wiki/File:%E9%A6%AC-oracle-5.svg",
+      "explanation": {"vi":"Các dạng cổ của 馬 giữ những nét gợi đầu, thân, chân và đuôi ngựa. Qua nhiều giai đoạn, hình vẽ được quy tắc hóa thành 馬.","en":"Ancient forms of 馬 preserve cues for the horse's head, body, legs, and tail; repeated standardization produced the modern character.","zh-Hant":"「馬」的古文字保留馬頭、身體、四肢與尾巴的線索，逐步規整後成為現代的「馬」。"},
+      "memory": {"vi":"Nhìn bốn chấm/nét dưới như bốn chân, phần trên như đầu và bờm ngựa.","en":"Use the lower strokes as the legs and the upper shape as the horse's head and mane.","zh-Hant":"把下方筆畫想成馬腿，上方想成馬頭與鬃毛。"},
+      "vocab": [
+        {"h":"騎馬","p":"qímǎ","m":{"vi":"cưỡi ngựa","en":"ride a horse","zh-Hant":"騎馬"}},
+        {"h":"一匹馬","p":"yì pǐ mǎ","m":{"vi":"một con ngựa","en":"one horse","zh-Hant":"一匹馬"}},
+        {"h":"馬場","p":"mǎchǎng","m":{"vi":"trường đua/sân ngựa","en":"horse ranch / racecourse","zh-Hant":"馬場"}}
+      ],
+      "examples": [
+        {"zh":"我喜歡騎馬。","p":"Wǒ xǐhuān qímǎ.","m":{"vi":"Tôi thích cưỡi ngựa.","en":"I like riding horses.","zh-Hant":"我喜歡騎馬。"}},
+        {"zh":"那匹馬跑得很快。","p":"Nà pǐ mǎ pǎo de hěn kuài.","m":{"vi":"Con ngựa đó chạy rất nhanh.","en":"That horse runs very fast.","zh-Hant":"那匹馬跑得很快。"}}
+      ]
+    },
+    {
+      "id": "bright-ming",
+      "category": "combined",
+      "char": "明",
+      "pinyin": "míng",
+      "meaning": {"vi":"sáng; rõ","en":"bright; clear","zh-Hant":"明亮；清楚"},
+      "components": [
+        {"char":"日","emoji":"☀️","p":"rì","m":{"vi":"mặt trời","en":"sun","zh-Hant":"太陽"}},
+        {"char":"月","emoji":"🌙","p":"yuè","m":{"vi":"mặt trăng","en":"moon","zh-Hant":"月亮"}}
+      ],
+      "explanation": {"vi":"Theo cách học hội ý trên lớp: 日 (mặt trời) + 月 (mặt trăng) → hai nguồn sáng cùng gợi ý “sáng” → 明.","en":"Following the classroom combined-ideogram mnemonic: 日 (sun) + 月 (moon) → two lights suggest brightness → 明.","zh-Hant":"依照課堂的會意學法：日（太陽）＋月（月亮）→ 兩個光源聯想到「明亮」→ 明。"},
+      "memory": {"vi":"Mặt trời + mặt trăng cùng chiếu → rất sáng → 明.","en":"Sun + moon shining together → bright → 明.","zh-Hant":"太陽＋月亮一起發光 → 明亮 → 明。"},
+      "vocab": [
+        {"h":"明天","p":"míngtiān","m":{"vi":"ngày mai","en":"tomorrow","zh-Hant":"明天"}},
+        {"h":"明白","p":"míngbai","m":{"vi":"hiểu; rõ","en":"understand; clear","zh-Hant":"明白"}},
+        {"h":"明年","p":"míngnián","m":{"vi":"năm sau","en":"next year","zh-Hant":"明年"}}
+      ],
+      "examples": [
+        {"zh":"明天見！","p":"Míngtiān jiàn!","m":{"vi":"Hẹn gặp ngày mai!","en":"See you tomorrow!","zh-Hant":"明天見！"}},
+        {"zh":"我明白了。","p":"Wǒ míngbai le.","m":{"vi":"Tôi hiểu rồi.","en":"I understand now.","zh-Hant":"我明白了。"}}
+      ]
+    },
+    {
+      "id": "look-kan",
+      "category": "combined",
+      "char": "看",
+      "pinyin": "kàn",
+      "meaning": {"vi":"nhìn; xem; đọc","en":"look; watch; read","zh-Hant":"看；觀看"},
+      "components": [
+        {"char":"手","emoji":"✋","p":"shǒu","m":{"vi":"tay","en":"hand","zh-Hant":"手"}},
+        {"char":"目","emoji":"👁️","p":"mù","m":{"vi":"mắt","en":"eye","zh-Hant":"眼睛"}}
+      ],
+      "explanation": {"vi":"Theo hình trên lớp: đặt tay phía trên mắt để che nắng/nhìn xa → 手 + 目 → 看 “nhìn, xem”.","en":"As shown in class: put a hand above the eye to shade it and look into the distance → 手 + 目 → 看.","zh-Hant":"依課堂圖像：把手放在眼睛上方遮光、往遠處看 → 手＋目 → 看。"},
+      "memory": {"vi":"Tay ở trên, mắt ở dưới: đưa tay lên mắt để nhìn xa.","en":"Hand above, eye below: shade your eyes to look farther.","zh-Hant":"上面是手、下面是目：手放在眼睛上方往遠處看。"},
+      "vocab": [
+        {"h":"看書","p":"kànshū","m":{"vi":"đọc sách","en":"read a book","zh-Hant":"看書"}},
+        {"h":"看見","p":"kànjiàn","m":{"vi":"nhìn thấy","en":"see","zh-Hant":"看見"}},
+        {"h":"看電視","p":"kàn diànshì","m":{"vi":"xem TV","en":"watch TV","zh-Hant":"看電視"}}
+      ],
+      "examples": [
+        {"zh":"我每天看書。","p":"Wǒ měitiān kànshū.","m":{"vi":"Tôi đọc sách mỗi ngày.","en":"I read every day.","zh-Hant":"我每天看書。"}},
+        {"zh":"你在看什麼？","p":"Nǐ zài kàn shénme?","m":{"vi":"Bạn đang xem gì?","en":"What are you looking at?","zh-Hant":"你在看什麼？"}}
+      ]
+    },
+    {
+      "id": "plural-men",
+      "category": "phonosemantic",
+      "char": "們",
+      "pinyin": "men",
+      "meaning": {"vi":"hậu tố số nhiều cho người","en":"plural suffix for people","zh-Hant":"人的複數後綴"},
+      "semantic": {"char":"亻","label":{"vi":"GỢI NGHĨA","en":"MEANING","zh-Hant":"義符"},"m":{"vi":"người","en":"person","zh-Hant":"人"}},
+      "phonetic": {"char":"門","p":"mén","label":{"vi":"GỢI ÂM","en":"SOUND","zh-Hant":"聲符"},"m":{"vi":"mượn âm từ 門","en":"sound clue from 門","zh-Hant":"由「門」提示讀音"}},
+      "explanation": {"vi":"Theo bài hình thanh trên lớp: 亻 cho biết chữ liên quan đến người; 門 mén đóng vai trò gợi âm. Kết quả là 們 men, thường đọc thanh nhẹ trong 我們/你們/他們.","en":"Following the classroom phono-semantic analysis: 亻 gives the person-related meaning clue, while 門 mén supplies the sound clue. The result 們 men is usually neutral tone in pronouns.","zh-Hant":"依課堂形聲分析：亻提示與人有關，門 mén 提示讀音；組成「們 men」，在我們／你們／他們中通常讀輕聲。"},
+      "memory": {"vi":"Thấy 亻 → nghĩ tới người; thấy 門 → nhớ âm mén/men → 們 = nhiều người.","en":"亻 cues people; 門 cues the mén/men sound → 們 marks a group of people.","zh-Hant":"看到亻想到「人」，看到門想到 mén／men 的音 → 們表示多人。"},
+      "vocab": [
+        {"h":"我們","p":"wǒmen","m":{"vi":"chúng tôi/chúng ta","en":"we; us","zh-Hant":"我們"}},
+        {"h":"你們","p":"nǐmen","m":{"vi":"các bạn","en":"you (plural)","zh-Hant":"你們"}},
+        {"h":"他們","p":"tāmen","m":{"vi":"họ","en":"they; them","zh-Hant":"他們"}}
+      ],
+      "examples": [
+        {"zh":"我們一起學中文。","p":"Wǒmen yìqǐ xué Zhōngwén.","m":{"vi":"Chúng ta cùng học tiếng Trung.","en":"We study Chinese together.","zh-Hant":"我們一起學中文。"}},
+        {"zh":"你們好！","p":"Nǐmen hǎo!","m":{"vi":"Xin chào các bạn!","en":"Hello, everyone!","zh-Hant":"你們好！"}}
+      ]
+    }
+  ]
+}

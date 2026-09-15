@@ -1,4 +1,4 @@
-const CACHE = 'tocfl-v4-24-radical-ai-pronunciation';
+const CACHE = 'tocfl-v4-25-character-origins';
 const ASSETS = [
   './',
   './index.html',
@@ -7,6 +7,7 @@ const ASSETS = [
   './pinyin-helper.js',
   './radicals.js',
   './data/radicals.json',
+  './data/character-origins.json',
   './homework.js',
   './auth.js',
   './data/a1.json',

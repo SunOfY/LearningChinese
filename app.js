@@ -1318,7 +1318,8 @@ const RADICAL_CLOUD_KEYS={
   writing:'tocfl-radical-writing-v1',
   selected:'tocfl-radical-selected-v1',
   writingTargetPrefix:'tocfl-radical-writing-target-',
-  fontScale:'tocfl-radical-font-scale-v1'
+  fontScale:'tocfl-radical-font-scale-v1',
+  origins:'tocfl-character-origin-flow-v1'
 };
 function readLocalJsonForCloud(key){
   try{const value=JSON.parse(localStorage.getItem(key)||'{}');return value&&typeof value==='object'&&!Array.isArray(value)?value:{};}catch{return {};}
@@ -1339,7 +1340,8 @@ function getRadicalCloudState(){
     learning:readLocalJsonForCloud(RADICAL_CLOUD_KEYS.learning),
     writing:readLocalJsonForCloud(RADICAL_CLOUD_KEYS.writing),
     writingTargets,
-    fontScale:Number(localStorage.getItem(RADICAL_CLOUD_KEYS.fontScale)||1)
+    fontScale:Number(localStorage.getItem(RADICAL_CLOUD_KEYS.fontScale)||1),
+    origins:readLocalJsonForCloud(RADICAL_CLOUD_KEYS.origins)
   };
 }
 function applyRadicalCloudState(radicalState){
@@ -1349,6 +1351,7 @@ function applyRadicalCloudState(radicalState){
     if(radicalState.learning&&typeof radicalState.learning==='object')localStorage.setItem(RADICAL_CLOUD_KEYS.learning,JSON.stringify(radicalState.learning));
     if(radicalState.writing&&typeof radicalState.writing==='object')localStorage.setItem(RADICAL_CLOUD_KEYS.writing,JSON.stringify(radicalState.writing));
     if(Number.isFinite(Number(radicalState.fontScale)))localStorage.setItem(RADICAL_CLOUD_KEYS.fontScale,String(Math.max(.9,Math.min(1.6,Number(radicalState.fontScale)))));
+    if(radicalState.origins&&typeof radicalState.origins==='object')localStorage.setItem(RADICAL_CLOUD_KEYS.origins,JSON.stringify(radicalState.origins));
     if(radicalState.writingTargets&&typeof radicalState.writingTargets==='object'){
       const remove=[];
       for(let i=0;i<localStorage.length;i++){

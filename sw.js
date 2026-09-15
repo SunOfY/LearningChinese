@@ -1,4 +1,4 @@
-const CACHE = 'tocfl-v4-27-resume-ancient-ai-ui';
+const CACHE = 'tocfl-v4-29-compact-examples-writing';
 const ASSETS = [
   './',
   './index.html',

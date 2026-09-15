@@ -1,4 +1,4 @@
-const CACHE = 'tocfl-v4-30-responsive-device-fit';
+const CACHE = 'tocfl-v4-31-adaptive-no-inner-scroll';
 const ASSETS = [
   './',
   './index.html',

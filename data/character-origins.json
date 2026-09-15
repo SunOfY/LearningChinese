@@ -1,9 +1,9 @@
 {
-  "version": "2",
+  "version": "2026-09-15-v4.27",
   "sourceNote": {
-    "vi": "Mở rộng theo kiểu bài trên lớp: hình/vật thật → dạng chữ cổ → chữ hiện đại; sau đó học cấu tạo, từ vựng, câu ví dụ, phát âm và luyện viết. Các chữ ghép được phân biệt rõ giữa ghép ý và hình thanh để tránh học sai nguồn gốc.",
-    "en": "Expanded in the classroom style: object/image → ancient form → modern character, then structure, vocabulary, example sentences, pronunciation, and writing practice. Semantic compounds and phono-semantic compounds are distinguished to avoid misleading etymology.",
-    "zh-Hant": "依照課堂方式擴充：實物／圖像 → 古文字 → 現代字，再學構形、詞彙、例句、發音與書寫。會意字與形聲字分開呈現，避免誤解字源。"
+    "vi": "Dạng chữ cổ ưu tiên Giáp cốt văn; nếu không có, website tự thử Kim văn → Đại triện → Tiểu triện từ Wikimedia Commons. Vì vậy chữ hội ý/hình thanh cũng có thể xem dạng cổ như trên lớp.",
+    "en": "Ancient forms prefer oracle-bone script; when unavailable, the site automatically tries bronze → big-seal → small-seal forms from Wikimedia Commons. Combined and phono-semantic characters can therefore show historical forms too.",
+    "zh-Hant": "古文字優先顯示甲骨文；若無可用檔案，網站會自動嘗試金文 → 大篆 → 小篆（Wikimedia Commons），因此會意字與形聲字也能顯示古文字。"
   },
   "lessons": [
     {
@@ -42,6 +42,32 @@
             "vi": "hôm nay; ngày nay",
             "en": "today; nowadays",
             "zh-Hant": "今日"
+          },
+          "formation": {
+            "parts": [
+              {
+                "h": "今",
+                "m": {
+                  "vi": "nay; hiện tại",
+                  "en": "now; present",
+                  "zh-Hant": "現在"
+                }
+              },
+              {
+                "h": "日",
+                "m": {
+                  "vi": "ngày; mặt trời",
+                  "en": "day; sun",
+                  "zh-Hant": "日；太陽"
+                }
+              }
+            ],
+            "kind": "literal",
+            "memory": {
+              "vi": "Hình dung “ngày đang ở ngay lúc này” → hôm nay.",
+              "en": "Picture “the day right now” → today.",
+              "zh-Hant": "想像「現在這一天」→ 今日。"
+            }
           }
         },
         {
@@ -51,6 +77,32 @@
             "vi": "sinh nhật",
             "en": "birthday",
             "zh-Hant": "生日"
+          },
+          "formation": {
+            "parts": [
+              {
+                "h": "生",
+                "m": {
+                  "vi": "sinh; sinh ra",
+                  "en": "birth; be born",
+                  "zh-Hant": "生；出生"
+                }
+              },
+              {
+                "h": "日",
+                "m": {
+                  "vi": "ngày; mặt trời",
+                  "en": "day; sun",
+                  "zh-Hant": "日；太陽"
+                }
+              }
+            ],
+            "kind": "literal",
+            "memory": {
+              "vi": "Ngày mình được sinh ra → ngày sinh/sinh nhật.",
+              "en": "The day you were born → birthday.",
+              "zh-Hant": "出生的那一天 → 生日。"
+            }
           }
         },
         {
@@ -60,6 +112,32 @@
             "vi": "Chủ nhật",
             "en": "Sunday",
             "zh-Hant": "星期日"
+          },
+          "formation": {
+            "parts": [
+              {
+                "h": "星期",
+                "m": {
+                  "vi": "tuần; thứ trong tuần",
+                  "en": "week; weekday",
+                  "zh-Hant": "星期"
+                }
+              },
+              {
+                "h": "日",
+                "m": {
+                  "vi": "ngày; mặt trời",
+                  "en": "day; sun",
+                  "zh-Hant": "日；太陽"
+                }
+              }
+            ],
+            "kind": "lexicalized",
+            "note": {
+              "vi": "星期 là hệ thống tên các ngày trong tuần; 日 ở đây là ngày Mặt Trời → 星期日 là Chủ nhật.",
+              "en": "星期 names weekdays; 日 is the Sun/day element, so 星期日 is Sunday.",
+              "zh-Hant": "「星期」是星期制度；「日」代表太陽／日，因此「星期日」就是星期天。"
+            }
           }
         }
       ],
@@ -120,6 +198,32 @@
             "vi": "mặt trăng",
             "en": "moon",
             "zh-Hant": "月亮"
+          },
+          "formation": {
+            "parts": [
+              {
+                "h": "月",
+                "m": {
+                  "vi": "tháng; mặt trăng",
+                  "en": "month; moon",
+                  "zh-Hant": "月；月亮"
+                }
+              },
+              {
+                "h": "亮",
+                "m": {
+                  "vi": "sáng",
+                  "en": "bright",
+                  "zh-Hant": "亮"
+                }
+              }
+            ],
+            "kind": "literal",
+            "memory": {
+              "vi": "Mặt trăng 月 là vật sáng 亮 trên trời → 月亮.",
+              "en": "The moon 月 is a bright 亮 object in the sky → 月亮.",
+              "zh-Hant": "月在天空發亮 → 月亮。"
+            }
           }
         },
         {
@@ -129,6 +233,32 @@
             "vi": "tháng sau",
             "en": "next month",
             "zh-Hant": "下個月"
+          },
+          "formation": {
+            "parts": [
+              {
+                "h": "下個",
+                "m": {
+                  "vi": "kế tiếp",
+                  "en": "next",
+                  "zh-Hant": "下一個"
+                }
+              },
+              {
+                "h": "月",
+                "m": {
+                  "vi": "tháng; mặt trăng",
+                  "en": "month; moon",
+                  "zh-Hant": "月；月亮"
+                }
+              }
+            ],
+            "kind": "literal",
+            "memory": {
+              "vi": "“Tháng kế tiếp” ngay sau tháng này → tháng sau.",
+              "en": "The next month immediately after this one → next month.",
+              "zh-Hant": "這個月之後的下一個月 → 下個月。"
+            }
           }
         },
         {
@@ -138,6 +268,32 @@
             "vi": "tháng (trong năm)",
             "en": "month (calendar)",
             "zh-Hant": "月份"
+          },
+          "formation": {
+            "parts": [
+              {
+                "h": "月",
+                "m": {
+                  "vi": "tháng; mặt trăng",
+                  "en": "month; moon",
+                  "zh-Hant": "月；月亮"
+                }
+              },
+              {
+                "h": "份",
+                "m": {
+                  "vi": "phần; đơn vị",
+                  "en": "portion; unit",
+                  "zh-Hant": "份；單位"
+                }
+              }
+            ],
+            "kind": "lexicalized",
+            "note": {
+              "vi": "月 là tháng; 份 dùng để chỉ một phần/đơn vị. 月份 nhấn “tháng” như một đơn vị lịch.",
+              "en": "月 is month and 份 marks a unit/portion; 月份 treats a month as a calendar unit.",
+              "zh-Hant": "「月」是月份，「份」有單位／份額的感覺；「月份」強調曆法中的月份單位。"
+            }
           }
         }
       ],
@@ -198,6 +354,37 @@
             "vi": "hiện tại",
             "en": "currently",
             "zh-Hant": "目前"
+          },
+          "formation": {
+            "parts": [
+              {
+                "h": "目",
+                "m": {
+                  "vi": "mắt; mục/đích ngắm",
+                  "en": "eye; target/aim",
+                  "zh-Hant": "目；目標"
+                }
+              },
+              {
+                "h": "前",
+                "m": {
+                  "vi": "trước",
+                  "en": "before; front",
+                  "zh-Hant": "前"
+                }
+              }
+            ],
+            "kind": "lexicalized",
+            "note": {
+              "vi": "Nghĩa gốc dễ hình dung là “ở ngay trước mắt” → điều đang ở trước mắt → hiện tại.",
+              "en": "A useful image is “right before the eyes” → what is before you now → at present.",
+              "zh-Hant": "可用「就在眼前」來理解：眼前的事 → 現在、目前。"
+            },
+            "memory": {
+              "vi": "Hãy tưởng tượng việc đang nằm ngay trước mắt mình lúc này.",
+              "en": "Imagine something sitting right before your eyes at this moment.",
+              "zh-Hant": "想像事情就在眼前 → 目前。"
+            }
           }
         },
         {
@@ -207,6 +394,37 @@
             "vi": "mục đích",
             "en": "purpose",
             "zh-Hant": "目的"
+          },
+          "formation": {
+            "parts": [
+              {
+                "h": "目",
+                "m": {
+                  "vi": "mắt; mục/đích ngắm",
+                  "en": "eye; target/aim",
+                  "zh-Hant": "目；目標"
+                }
+              },
+              {
+                "h": "的",
+                "m": {
+                  "vi": "trợ từ / trong 目的 đọc dì",
+                  "en": "particle / dì in 目的",
+                  "zh-Hant": "的；目的中讀 dì"
+                }
+              }
+            ],
+            "kind": "lexicalized",
+            "note": {
+              "vi": "Trong 目的, 的 đọc dì và không phải trợ từ de. 目 mang ý đích ngắm; cả từ đã cố định thành “mục đích”.",
+              "en": "In 目的, 的 is read dì, not the particle de. 目 carries the idea of a target; the lexicalized word means “purpose.”",
+              "zh-Hant": "「目的」中的「的」讀 dì，不是助詞 de；「目」帶有目標／瞄準點的概念，整詞表示「目的」。"
+            },
+            "memory": {
+              "vi": "Tưởng tượng một điểm đang nhắm tới trước mắt → mục đích.",
+              "en": "Imagine a point you are aiming your eyes toward → purpose/goal.",
+              "zh-Hant": "想像眼睛瞄準的一個點 → 目的。"
+            }
           }
         },
         {
@@ -216,6 +434,32 @@
             "vi": "mục tiêu",
             "en": "goal; target",
             "zh-Hant": "目標"
+          },
+          "formation": {
+            "parts": [
+              {
+                "h": "目",
+                "m": {
+                  "vi": "mắt; mục/đích ngắm",
+                  "en": "eye; target/aim",
+                  "zh-Hant": "目；目標"
+                }
+              },
+              {
+                "h": "標",
+                "m": {
+                  "vi": "dấu; mốc; chuẩn",
+                  "en": "mark; sign; standard",
+                  "zh-Hant": "標記；標準"
+                }
+              }
+            ],
+            "kind": "literal",
+            "memory": {
+              "vi": "Mắt/đích ngắm 目 + dấu mốc 標 → điểm mình hướng tới = mục tiêu.",
+              "en": "An aim 目 plus a mark 標 → the point you are heading toward.",
+              "zh-Hant": "目標／瞄準點「目」＋標記「標」→ 目標。"
+            }
           }
         }
       ],
@@ -276,6 +520,32 @@
             "vi": "điện thoại di động",
             "en": "mobile phone",
             "zh-Hant": "手機"
+          },
+          "formation": {
+            "parts": [
+              {
+                "h": "手",
+                "m": {
+                  "vi": "tay",
+                  "en": "hand",
+                  "zh-Hant": "手"
+                }
+              },
+              {
+                "h": "機",
+                "m": {
+                  "vi": "máy; thiết bị",
+                  "en": "machine; device",
+                  "zh-Hant": "機器；裝置"
+                }
+              }
+            ],
+            "kind": "lexicalized",
+            "note": {
+              "vi": "手 nhấn thiết bị cầm trong tay; 機 là máy/thiết bị. 手機 = thiết bị cầm tay → điện thoại di động.",
+              "en": "手 highlights something held in the hand; 機 is a device. 手機 is a handheld device → mobile phone.",
+              "zh-Hant": "「手」強調拿在手上，「機」是機器／裝置；「手機」就是手持裝置 → 行動電話。"
+            }
           }
         },
         {
@@ -285,6 +555,32 @@
             "vi": "rửa tay",
             "en": "wash hands",
             "zh-Hant": "洗手"
+          },
+          "formation": {
+            "parts": [
+              {
+                "h": "洗",
+                "m": {
+                  "vi": "rửa",
+                  "en": "wash",
+                  "zh-Hant": "洗"
+                }
+              },
+              {
+                "h": "手",
+                "m": {
+                  "vi": "tay",
+                  "en": "hand",
+                  "zh-Hant": "手"
+                }
+              }
+            ],
+            "kind": "literal",
+            "memory": {
+              "vi": "Rửa 洗 chính đôi tay 手 → rửa tay.",
+              "en": "Wash 洗 your hands 手 → wash hands.",
+              "zh-Hant": "洗＋手 → 洗手。"
+            }
           }
         },
         {
@@ -294,6 +590,27 @@
             "vi": "tay phải",
             "en": "right hand",
             "zh-Hant": "右手"
+          },
+          "formation": {
+            "parts": [
+              {
+                "h": "右",
+                "m": {
+                  "vi": "phải",
+                  "en": "right side",
+                  "zh-Hant": "右"
+                }
+              },
+              {
+                "h": "手",
+                "m": {
+                  "vi": "tay",
+                  "en": "hand",
+                  "zh-Hant": "手"
+                }
+              }
+            ],
+            "kind": "literal"
           }
         }
       ],
@@ -354,6 +671,27 @@
             "vi": "mở cửa",
             "en": "open the door",
             "zh-Hant": "開門"
+          },
+          "formation": {
+            "parts": [
+              {
+                "h": "開",
+                "m": {
+                  "vi": "mở; trong 開水 gợi “đun sôi”",
+                  "en": "open; in 開水, boiled",
+                  "zh-Hant": "開；開水中指煮沸"
+                }
+              },
+              {
+                "h": "門",
+                "m": {
+                  "vi": "cửa",
+                  "en": "door",
+                  "zh-Hant": "門"
+                }
+              }
+            ],
+            "kind": "literal"
           }
         },
         {
@@ -363,6 +701,27 @@
             "vi": "đóng cửa",
             "en": "close the door",
             "zh-Hant": "關門"
+          },
+          "formation": {
+            "parts": [
+              {
+                "h": "關",
+                "m": {
+                  "vi": "đóng",
+                  "en": "close",
+                  "zh-Hant": "關"
+                }
+              },
+              {
+                "h": "門",
+                "m": {
+                  "vi": "cửa",
+                  "en": "door",
+                  "zh-Hant": "門"
+                }
+              }
+            ],
+            "kind": "literal"
           }
         },
         {
@@ -372,6 +731,32 @@
             "vi": "cửa ra vào; trước cửa",
             "en": "doorway; entrance",
             "zh-Hant": "門口"
+          },
+          "formation": {
+            "parts": [
+              {
+                "h": "門",
+                "m": {
+                  "vi": "cửa",
+                  "en": "door",
+                  "zh-Hant": "門"
+                }
+              },
+              {
+                "h": "口",
+                "m": {
+                  "vi": "miệng; cửa/miệng ra vào",
+                  "en": "mouth; opening/entrance",
+                  "zh-Hant": "口；出入口"
+                }
+              }
+            ],
+            "kind": "literal",
+            "memory": {
+              "vi": "“Miệng/cửa mở” của cánh cửa → chỗ ra vào/trước cửa.",
+              "en": "Think of the “opening/mouth” 口 of a door 門 → doorway/entrance.",
+              "zh-Hant": "把門的開口想成「口」→ 門口。"
+            }
           }
         }
       ],
@@ -432,6 +817,27 @@
             "vi": "cưỡi ngựa",
             "en": "ride a horse",
             "zh-Hant": "騎馬"
+          },
+          "formation": {
+            "parts": [
+              {
+                "h": "騎",
+                "m": {
+                  "vi": "cưỡi",
+                  "en": "ride",
+                  "zh-Hant": "騎"
+                }
+              },
+              {
+                "h": "馬",
+                "m": {
+                  "vi": "ngựa",
+                  "en": "horse",
+                  "zh-Hant": "馬"
+                }
+              }
+            ],
+            "kind": "literal"
           }
         },
         {
@@ -441,6 +847,32 @@
             "vi": "một con ngựa",
             "en": "one horse",
             "zh-Hant": "一匹馬"
+          },
+          "formation": {
+            "parts": [
+              {
+                "h": "一匹",
+                "m": {
+                  "vi": "một + lượng từ 匹 cho ngựa",
+                  "en": "one + classifier 匹 for horses",
+                  "zh-Hant": "一＋馬的量詞「匹」"
+                }
+              },
+              {
+                "h": "馬",
+                "m": {
+                  "vi": "ngựa",
+                  "en": "horse",
+                  "zh-Hant": "馬"
+                }
+              }
+            ],
+            "kind": "classifier",
+            "note": {
+              "vi": "匹 là lượng từ thường dùng cho ngựa. 一匹馬 = một + lượng từ 匹 + ngựa.",
+              "en": "匹 is a common classifier for horses: 一匹馬 = one + classifier 匹 + horse.",
+              "zh-Hant": "「匹」是馬常用的量詞；一匹馬＝一＋量詞「匹」＋馬。"
+            }
           }
         },
         {
@@ -450,6 +882,32 @@
             "vi": "trường đua/sân ngựa",
             "en": "horse ranch / racecourse",
             "zh-Hant": "馬場"
+          },
+          "formation": {
+            "parts": [
+              {
+                "h": "馬",
+                "m": {
+                  "vi": "ngựa",
+                  "en": "horse",
+                  "zh-Hant": "馬"
+                }
+              },
+              {
+                "h": "場",
+                "m": {
+                  "vi": "sân; nơi",
+                  "en": "field; place",
+                  "zh-Hant": "場地"
+                }
+              }
+            ],
+            "kind": "literal",
+            "memory": {
+              "vi": "Nơi/sân 場 dành cho ngựa 馬 → sân ngựa/trường đua.",
+              "en": "A place/field 場 for horses 馬 → horse field/racetrack.",
+              "zh-Hant": "馬＋場地 → 馬場。"
+            }
           }
         }
       ],
@@ -524,6 +982,37 @@
             "vi": "ngày mai",
             "en": "tomorrow",
             "zh-Hant": "明天"
+          },
+          "formation": {
+            "parts": [
+              {
+                "h": "明",
+                "m": {
+                  "vi": "sáng; trong 明天/明年 chỉ thời gian kế tiếp",
+                  "en": "bright; in 明天/明年 marks the coming time",
+                  "zh-Hant": "明；在明天／明年中表示下一個時間"
+                }
+              },
+              {
+                "h": "天",
+                "m": {
+                  "vi": "ngày; trời",
+                  "en": "day; sky",
+                  "zh-Hant": "天"
+                }
+              }
+            ],
+            "kind": "lexicalized",
+            "note": {
+              "vi": "明天 là từ cố định nghĩa “ngày mai”; đừng dịch máy móc thành “ngày sáng”. Có thể nhớ là “ngày kế tiếp sẽ sáng lên”.",
+              "en": "明天 is a lexicalized word meaning “tomorrow”; do not translate it literally as “bright day.”",
+              "zh-Hant": "「明天」是固定詞，表示「明日／明天」，不要逐字理解成「明亮的天」。"
+            },
+            "memory": {
+              "vi": "Hôm nay kết thúc, ngày mới sáng lên → ngày mai.",
+              "en": "Today ends and a new day lights up → tomorrow.",
+              "zh-Hant": "今天結束，新的日子亮起 → 明天。"
+            }
           }
         },
         {
@@ -533,6 +1022,32 @@
             "vi": "hiểu; rõ",
             "en": "understand; clear",
             "zh-Hant": "明白"
+          },
+          "formation": {
+            "parts": [
+              {
+                "h": "明",
+                "m": {
+                  "vi": "sáng; trong 明天/明年 chỉ thời gian kế tiếp",
+                  "en": "bright; in 明天/明年 marks the coming time",
+                  "zh-Hant": "明；在明天／明年中表示下一個時間"
+                }
+              },
+              {
+                "h": "白",
+                "m": {
+                  "vi": "trắng; rõ",
+                  "en": "white; clear",
+                  "zh-Hant": "白；清楚"
+                }
+              }
+            ],
+            "kind": "parallel",
+            "note": {
+              "vi": "明 và 白 đều có thể gợi “sáng/rõ”. Ghép lại nhấn mạnh “rõ ra” → hiểu rõ.",
+              "en": "明 and 白 can both suggest brightness/clarity; together they emphasize becoming clear → understand.",
+              "zh-Hant": "「明」和「白」都可聯想到清楚、明亮；合起來加強「弄清楚」的感覺 → 明白。"
+            }
           }
         },
         {
@@ -542,6 +1057,32 @@
             "vi": "năm sau",
             "en": "next year",
             "zh-Hant": "明年"
+          },
+          "formation": {
+            "parts": [
+              {
+                "h": "明",
+                "m": {
+                  "vi": "sáng; trong 明天/明年 chỉ thời gian kế tiếp",
+                  "en": "bright; in 明天/明年 marks the coming time",
+                  "zh-Hant": "明；在明天／明年中表示下一個時間"
+                }
+              },
+              {
+                "h": "年",
+                "m": {
+                  "vi": "năm",
+                  "en": "year",
+                  "zh-Hant": "年"
+                }
+              }
+            ],
+            "kind": "lexicalized",
+            "note": {
+              "vi": "明年 là cách nói cố định “năm sau”; 明 ở đây không cần hiểu là “sáng”.",
+              "en": "明年 is the fixed expression for “next year”; 明 is not meant literally as “bright” here.",
+              "zh-Hant": "「明年」是固定用法，表示「下一年」；此處「明」不必按「明亮」理解。"
+            }
           }
         }
       ],
@@ -616,6 +1157,32 @@
             "vi": "đọc sách",
             "en": "read a book",
             "zh-Hant": "看書"
+          },
+          "formation": {
+            "parts": [
+              {
+                "h": "看",
+                "m": {
+                  "vi": "nhìn; xem; đọc",
+                  "en": "look; watch; read",
+                  "zh-Hant": "看"
+                }
+              },
+              {
+                "h": "書",
+                "m": {
+                  "vi": "sách",
+                  "en": "book",
+                  "zh-Hant": "書"
+                }
+              }
+            ],
+            "kind": "literal",
+            "memory": {
+              "vi": "Nhìn/đọc 看 nội dung trong sách 書 → đọc sách.",
+              "en": "Look/read 看 the content in a book 書 → read a book.",
+              "zh-Hant": "看＋書 → 看書。"
+            }
           }
         },
         {
@@ -625,6 +1192,32 @@
             "vi": "nhìn thấy",
             "en": "see",
             "zh-Hant": "看見"
+          },
+          "formation": {
+            "parts": [
+              {
+                "h": "看",
+                "m": {
+                  "vi": "nhìn; xem; đọc",
+                  "en": "look; watch; read",
+                  "zh-Hant": "看"
+                }
+              },
+              {
+                "h": "見",
+                "m": {
+                  "vi": "thấy; kết quả “nhìn thấy”",
+                  "en": "see; result of seeing",
+                  "zh-Hant": "見；看見的結果"
+                }
+              }
+            ],
+            "kind": "result",
+            "note": {
+              "vi": "看 là hành động nhìn; 見 là kết quả “thấy được”. 看見 = nhìn và kết quả là thấy.",
+              "en": "看 is the act of looking; 見 is the result “to see.” 看見 = look and successfully see.",
+              "zh-Hant": "「看」是看的動作，「見」是「看到了」的結果；看見＝看而且看到了。"
+            }
           }
         },
         {
@@ -634,6 +1227,27 @@
             "vi": "xem TV",
             "en": "watch TV",
             "zh-Hant": "看電視"
+          },
+          "formation": {
+            "parts": [
+              {
+                "h": "看",
+                "m": {
+                  "vi": "nhìn; xem; đọc",
+                  "en": "look; watch; read",
+                  "zh-Hant": "看"
+                }
+              },
+              {
+                "h": "電視",
+                "m": {
+                  "vi": "truyền hình; TV",
+                  "en": "television; TV",
+                  "zh-Hant": "電視"
+                }
+              }
+            ],
+            "kind": "literal"
           }
         }
       ],
@@ -713,6 +1327,32 @@
             "vi": "chúng tôi/chúng ta",
             "en": "we; us",
             "zh-Hant": "我們"
+          },
+          "formation": {
+            "parts": [
+              {
+                "h": "我",
+                "m": {
+                  "vi": "tôi/chúng ta (gốc đại từ)",
+                  "en": "I/we base pronoun",
+                  "zh-Hant": "我"
+                }
+              },
+              {
+                "h": "們",
+                "m": {
+                  "vi": "hậu tố số nhiều cho người",
+                  "en": "plural suffix for people",
+                  "zh-Hant": "人的複數後綴"
+                }
+              }
+            ],
+            "kind": "grammar",
+            "note": {
+              "vi": "們 là hậu tố số nhiều cho người. 我 + 們 biến “tôi” thành “chúng tôi/chúng ta”.",
+              "en": "們 is the plural suffix for people. 我 + 們 turns “I” into “we/us.”",
+              "zh-Hant": "「們」是人的複數後綴；我＋們 → 我們。"
+            }
           }
         },
         {
@@ -722,6 +1362,32 @@
             "vi": "các bạn",
             "en": "you (plural)",
             "zh-Hant": "你們"
+          },
+          "formation": {
+            "parts": [
+              {
+                "h": "你",
+                "m": {
+                  "vi": "bạn",
+                  "en": "you",
+                  "zh-Hant": "你"
+                }
+              },
+              {
+                "h": "們",
+                "m": {
+                  "vi": "hậu tố số nhiều cho người",
+                  "en": "plural suffix for people",
+                  "zh-Hant": "人的複數後綴"
+                }
+              }
+            ],
+            "kind": "grammar",
+            "note": {
+              "vi": "你 = bạn; thêm 們 để tạo số nhiều → các bạn.",
+              "en": "你 = you; add 們 for plural → you all.",
+              "zh-Hant": "你＋複數後綴「們」→ 你們。"
+            }
           }
         },
         {
@@ -731,6 +1397,32 @@
             "vi": "họ",
             "en": "they; them",
             "zh-Hant": "他們"
+          },
+          "formation": {
+            "parts": [
+              {
+                "h": "他",
+                "m": {
+                  "vi": "anh ấy/họ (gốc đại từ)",
+                  "en": "he/they base pronoun",
+                  "zh-Hant": "他"
+                }
+              },
+              {
+                "h": "們",
+                "m": {
+                  "vi": "hậu tố số nhiều cho người",
+                  "en": "plural suffix for people",
+                  "zh-Hant": "人的複數後綴"
+                }
+              }
+            ],
+            "kind": "grammar",
+            "note": {
+              "vi": "他 = anh ấy; thêm 們 → một nhóm người “họ”.",
+              "en": "他 = he; add 們 → they/them.",
+              "zh-Hant": "他＋複數後綴「們」→ 他們。"
+            }
           }
         }
       ],
@@ -791,6 +1483,27 @@
             "vi": "núi cao",
             "en": "high mountain",
             "zh-Hant": "高山"
+          },
+          "formation": {
+            "parts": [
+              {
+                "h": "高",
+                "m": {
+                  "vi": "cao",
+                  "en": "high",
+                  "zh-Hant": "高"
+                }
+              },
+              {
+                "h": "山",
+                "m": {
+                  "vi": "núi",
+                  "en": "mountain",
+                  "zh-Hant": "山"
+                }
+              }
+            ],
+            "kind": "literal"
           }
         },
         {
@@ -800,6 +1513,27 @@
             "vi": "trên núi",
             "en": "on the mountain",
             "zh-Hant": "山上"
+          },
+          "formation": {
+            "parts": [
+              {
+                "h": "山",
+                "m": {
+                  "vi": "núi",
+                  "en": "mountain",
+                  "zh-Hant": "山"
+                }
+              },
+              {
+                "h": "上",
+                "m": {
+                  "vi": "trên",
+                  "en": "on; above",
+                  "zh-Hant": "上"
+                }
+              }
+            ],
+            "kind": "literal"
           }
         },
         {
@@ -809,6 +1543,27 @@
             "vi": "leo núi",
             "en": "hike; climb a mountain",
             "zh-Hant": "爬山"
+          },
+          "formation": {
+            "parts": [
+              {
+                "h": "爬",
+                "m": {
+                  "vi": "leo",
+                  "en": "climb",
+                  "zh-Hant": "爬"
+                }
+              },
+              {
+                "h": "山",
+                "m": {
+                  "vi": "núi",
+                  "en": "mountain",
+                  "zh-Hant": "山"
+                }
+              }
+            ],
+            "kind": "literal"
           }
         }
       ],
@@ -869,6 +1624,27 @@
             "vi": "uống nước",
             "en": "drink water",
             "zh-Hant": "喝水"
+          },
+          "formation": {
+            "parts": [
+              {
+                "h": "喝",
+                "m": {
+                  "vi": "uống",
+                  "en": "drink",
+                  "zh-Hant": "喝"
+                }
+              },
+              {
+                "h": "水",
+                "m": {
+                  "vi": "nước",
+                  "en": "water",
+                  "zh-Hant": "水"
+                }
+              }
+            ],
+            "kind": "literal"
           }
         },
         {
@@ -878,6 +1654,37 @@
             "vi": "trái cây",
             "en": "fruit",
             "zh-Hant": "水果"
+          },
+          "formation": {
+            "parts": [
+              {
+                "h": "水",
+                "m": {
+                  "vi": "nước",
+                  "en": "water",
+                  "zh-Hant": "水"
+                }
+              },
+              {
+                "h": "果",
+                "m": {
+                  "vi": "quả; trái",
+                  "en": "fruit",
+                  "zh-Hant": "果實"
+                }
+              }
+            ],
+            "kind": "lexicalized",
+            "note": {
+              "vi": "水果 là từ cố định nghĩa “trái cây”. Không nên suy nghĩa máy móc “nước + quả”; chỉ có thể dùng hình ảnh “quả mọng/nhiều nước” để hỗ trợ nhớ.",
+              "en": "水果 is a lexicalized word meaning “fruit.” Do not analyze it literally as “water + fruit”; “juicy fruit” is only a mnemonic.",
+              "zh-Hant": "「水果」是固定詞，表示「水果／果物」，不要機械地解成「水＋果」；可用「多汁的果實」作記憶聯想。"
+            },
+            "memory": {
+              "vi": "Tưởng tượng trái cây mọng nước → nhớ 水果 = trái cây.",
+              "en": "Picture juicy fruit to remember 水果 = fruit.",
+              "zh-Hant": "把水果想成多汁的果實，幫助記住「水果」。"
+            }
           }
         },
         {
@@ -887,6 +1694,32 @@
             "vi": "nước đun sôi",
             "en": "boiled water",
             "zh-Hant": "開水"
+          },
+          "formation": {
+            "parts": [
+              {
+                "h": "開",
+                "m": {
+                  "vi": "mở; trong 開水 gợi “đun sôi”",
+                  "en": "open; in 開水, boiled",
+                  "zh-Hant": "開；開水中指煮沸"
+                }
+              },
+              {
+                "h": "水",
+                "m": {
+                  "vi": "nước",
+                  "en": "water",
+                  "zh-Hant": "水"
+                }
+              }
+            ],
+            "kind": "lexicalized",
+            "note": {
+              "vi": "Trong 開水, 開 mang nghĩa liên quan “đun sôi”, không phải “mở”. 開水 = nước đã đun sôi.",
+              "en": "In 開水, 開 is associated with boiling rather than “open.” 開水 means boiled water.",
+              "zh-Hant": "「開水」中的「開」和煮沸有關，不是單純的「打開」；開水＝煮沸過的水。"
+            }
           }
         }
       ],
@@ -947,6 +1780,32 @@
             "vi": "tàu hỏa",
             "en": "train",
             "zh-Hant": "火車"
+          },
+          "formation": {
+            "parts": [
+              {
+                "h": "火",
+                "m": {
+                  "vi": "lửa",
+                  "en": "fire",
+                  "zh-Hant": "火"
+                }
+              },
+              {
+                "h": "車",
+                "m": {
+                  "vi": "xe; phương tiện",
+                  "en": "vehicle",
+                  "zh-Hant": "車"
+                }
+              }
+            ],
+            "kind": "historical",
+            "note": {
+              "vi": "Tên này gắn với tàu hơi nước thời đầu: xe 車 chạy nhờ lửa 火/động cơ hơi nước → 火車 = tàu hỏa.",
+              "en": "The name reflects early steam trains: a vehicle 車 powered by fire 火/steam → 火車 = train.",
+              "zh-Hant": "名稱可聯想到早期蒸汽火車：車靠火／蒸汽驅動 → 火車。"
+            }
           }
         },
         {
@@ -956,6 +1815,27 @@
             "vi": "đám cháy lớn",
             "en": "large fire",
             "zh-Hant": "大火"
+          },
+          "formation": {
+            "parts": [
+              {
+                "h": "大",
+                "m": {
+                  "vi": "lớn",
+                  "en": "big",
+                  "zh-Hant": "大"
+                }
+              },
+              {
+                "h": "火",
+                "m": {
+                  "vi": "lửa",
+                  "en": "fire",
+                  "zh-Hant": "火"
+                }
+              }
+            ],
+            "kind": "literal"
           }
         },
         {
@@ -965,6 +1845,32 @@
             "vi": "nhóm lửa",
             "en": "make a fire",
             "zh-Hant": "生火"
+          },
+          "formation": {
+            "parts": [
+              {
+                "h": "生",
+                "m": {
+                  "vi": "sinh; sinh ra",
+                  "en": "birth; be born",
+                  "zh-Hant": "生；出生"
+                }
+              },
+              {
+                "h": "火",
+                "m": {
+                  "vi": "lửa",
+                  "en": "fire",
+                  "zh-Hant": "火"
+                }
+              }
+            ],
+            "kind": "lexicalized",
+            "note": {
+              "vi": "生 ngoài “sinh ra” còn có ý làm phát sinh. 生火 = làm cho lửa xuất hiện → nhóm/đốt lửa.",
+              "en": "生 can mean “bring into being.” 生火 = make fire come into existence → start a fire.",
+              "zh-Hant": "「生」也有「使產生」的意思；生火＝讓火產生 → 點火。"
+            }
           }
         }
       ],
@@ -1025,6 +1931,32 @@
             "vi": "gỗ; khúc gỗ",
             "en": "wood; log",
             "zh-Hant": "木頭"
+          },
+          "formation": {
+            "parts": [
+              {
+                "h": "木",
+                "m": {
+                  "vi": "gỗ; cây",
+                  "en": "wood; tree",
+                  "zh-Hant": "木；樹"
+                }
+              },
+              {
+                "h": "頭",
+                "m": {
+                  "vi": "đầu; khúc",
+                  "en": "head; piece/end",
+                  "zh-Hant": "頭"
+                }
+              }
+            ],
+            "kind": "lexicalized",
+            "note": {
+              "vi": "木 là gỗ; 頭 ở đây giúp tạo danh từ tự nhiên chỉ khúc/miếng gỗ. 木頭 = gỗ/khúc gỗ.",
+              "en": "木 is wood; 頭 helps form the everyday noun for a piece/material of wood. 木頭 = wood/log.",
+              "zh-Hant": "「木」是木材；「頭」在這裡形成日常名詞「木頭」，指木材／木塊。"
+            }
           }
         },
         {
@@ -1034,6 +1966,32 @@
             "vi": "cây cối",
             "en": "trees",
             "zh-Hant": "樹木"
+          },
+          "formation": {
+            "parts": [
+              {
+                "h": "樹",
+                "m": {
+                  "vi": "cây",
+                  "en": "tree",
+                  "zh-Hant": "樹"
+                }
+              },
+              {
+                "h": "木",
+                "m": {
+                  "vi": "gỗ; cây",
+                  "en": "wood; tree",
+                  "zh-Hant": "木；樹"
+                }
+              }
+            ],
+            "kind": "parallel",
+            "note": {
+              "vi": "樹 và 木 đều liên quan cây/gỗ; ghép lại thành cách gọi chung “cây cối”.",
+              "en": "樹 and 木 both relate to trees/wood; together they form a collective term “trees/vegetation.”",
+              "zh-Hant": "「樹」和「木」都與樹木有關，合起來成為總稱「樹木」。"
+            }
           }
         },
         {
@@ -1043,6 +2001,27 @@
             "vi": "cửa gỗ",
             "en": "wooden door",
             "zh-Hant": "木門"
+          },
+          "formation": {
+            "parts": [
+              {
+                "h": "木",
+                "m": {
+                  "vi": "gỗ; cây",
+                  "en": "wood; tree",
+                  "zh-Hant": "木；樹"
+                }
+              },
+              {
+                "h": "門",
+                "m": {
+                  "vi": "cửa",
+                  "en": "door",
+                  "zh-Hant": "門"
+                }
+              }
+            ],
+            "kind": "literal"
           }
         }
       ],
@@ -1103,6 +2082,27 @@
             "vi": "người Trung Quốc",
             "en": "Chinese person",
             "zh-Hant": "中國人"
+          },
+          "formation": {
+            "parts": [
+              {
+                "h": "中國",
+                "m": {
+                  "vi": "Trung Quốc",
+                  "en": "China",
+                  "zh-Hant": "中國"
+                }
+              },
+              {
+                "h": "人",
+                "m": {
+                  "vi": "người",
+                  "en": "person",
+                  "zh-Hant": "人"
+                }
+              }
+            ],
+            "kind": "literal"
           }
         },
         {
@@ -1112,6 +2112,32 @@
             "vi": "người nhà; gia đình",
             "en": "family members",
             "zh-Hant": "家人"
+          },
+          "formation": {
+            "parts": [
+              {
+                "h": "家",
+                "m": {
+                  "vi": "nhà; gia đình",
+                  "en": "home; family",
+                  "zh-Hant": "家"
+                }
+              },
+              {
+                "h": "人",
+                "m": {
+                  "vi": "người",
+                  "en": "person",
+                  "zh-Hant": "人"
+                }
+              }
+            ],
+            "kind": "literal",
+            "memory": {
+              "vi": "Những người 人 thuộc cùng một nhà/gia đình 家 → người nhà.",
+              "en": "People 人 who belong to the same home/family 家 → family members.",
+              "zh-Hant": "同一個家裡的人 → 家人。"
+            }
           }
         },
         {
@@ -1121,6 +2147,27 @@
             "vi": "người khác",
             "en": "other people",
             "zh-Hant": "別人"
+          },
+          "formation": {
+            "parts": [
+              {
+                "h": "別",
+                "m": {
+                  "vi": "khác",
+                  "en": "other",
+                  "zh-Hant": "別；其他"
+                }
+              },
+              {
+                "h": "人",
+                "m": {
+                  "vi": "người",
+                  "en": "person",
+                  "zh-Hant": "人"
+                }
+              }
+            ],
+            "kind": "literal"
           }
         }
       ],
@@ -1181,6 +2228,32 @@
             "vi": "cửa ra vào",
             "en": "entrance",
             "zh-Hant": "門口"
+          },
+          "formation": {
+            "parts": [
+              {
+                "h": "門",
+                "m": {
+                  "vi": "cửa",
+                  "en": "door",
+                  "zh-Hant": "門"
+                }
+              },
+              {
+                "h": "口",
+                "m": {
+                  "vi": "miệng; cửa/miệng ra vào",
+                  "en": "mouth; opening/entrance",
+                  "zh-Hant": "口；出入口"
+                }
+              }
+            ],
+            "kind": "literal",
+            "memory": {
+              "vi": "“Miệng/cửa mở” của cánh cửa → chỗ ra vào/trước cửa.",
+              "en": "Think of the “opening/mouth” 口 of a door 門 → doorway/entrance.",
+              "zh-Hant": "把門的開口想成「口」→ 門口。"
+            }
           }
         },
         {
@@ -1190,6 +2263,32 @@
             "vi": "dân số",
             "en": "population",
             "zh-Hant": "人口"
+          },
+          "formation": {
+            "parts": [
+              {
+                "h": "人",
+                "m": {
+                  "vi": "người",
+                  "en": "person",
+                  "zh-Hant": "人"
+                }
+              },
+              {
+                "h": "口",
+                "m": {
+                  "vi": "miệng; cửa/miệng ra vào",
+                  "en": "mouth; opening/entrance",
+                  "zh-Hant": "口；出入口"
+                }
+              }
+            ],
+            "kind": "historical",
+            "note": {
+              "vi": "口 từng được dùng để đếm “miệng ăn/người” trong hộ gia đình; 人 + 口 dần trở thành khái niệm dân số.",
+              "en": "口 was historically used when counting mouths/people in households; 人 + 口 developed into the concept “population.”",
+              "zh-Hant": "「口」過去常用來計算家庭中的人口／吃飯的嘴；人＋口逐漸形成「人口」的概念。"
+            }
           }
         },
         {
@@ -1199,6 +2298,32 @@
             "vi": "một ngụm; một miếng",
             "en": "one mouthful",
             "zh-Hant": "一口"
+          },
+          "formation": {
+            "parts": [
+              {
+                "h": "一",
+                "m": {
+                  "vi": "một",
+                  "en": "one",
+                  "zh-Hant": "一"
+                }
+              },
+              {
+                "h": "口",
+                "m": {
+                  "vi": "miệng; cửa/miệng ra vào",
+                  "en": "mouth; opening/entrance",
+                  "zh-Hant": "口；出入口"
+                }
+              }
+            ],
+            "kind": "classifier",
+            "note": {
+              "vi": "口 ở đây là lượng từ cho một ngụm/một miếng. 一口 = một ngụm hoặc một miếng, tùy động từ phía trước.",
+              "en": "口 here is a classifier for a sip or bite. 一口 means one sip/bite depending on context.",
+              "zh-Hant": "「口」在這裡是量詞，可表示一口水、一口飯等；一口＝一個入口的份量。"
+            }
           }
         }
       ],
@@ -1259,6 +2384,27 @@
             "vi": "đất nông nghiệp; ruộng",
             "en": "farmland",
             "zh-Hant": "農田"
+          },
+          "formation": {
+            "parts": [
+              {
+                "h": "農",
+                "m": {
+                  "vi": "nông nghiệp",
+                  "en": "agriculture",
+                  "zh-Hant": "農業"
+                }
+              },
+              {
+                "h": "田",
+                "m": {
+                  "vi": "ruộng",
+                  "en": "field",
+                  "zh-Hant": "田"
+                }
+              }
+            ],
+            "kind": "literal"
           }
         },
         {
@@ -1268,6 +2414,32 @@
             "vi": "ruộng đất",
             "en": "fields; farmland",
             "zh-Hant": "田地"
+          },
+          "formation": {
+            "parts": [
+              {
+                "h": "田",
+                "m": {
+                  "vi": "ruộng",
+                  "en": "field",
+                  "zh-Hant": "田"
+                }
+              },
+              {
+                "h": "地",
+                "m": {
+                  "vi": "đất; vùng đất",
+                  "en": "land; ground",
+                  "zh-Hant": "地"
+                }
+              }
+            ],
+            "kind": "parallel",
+            "note": {
+              "vi": "田 = ruộng, 地 = đất. Ghép lại chỉ ruộng đất/đất canh tác.",
+              "en": "田 = field and 地 = land; together they mean farmland/fields.",
+              "zh-Hant": "田＝田，地＝土地；合起來表示田地、耕地。"
+            }
           }
         },
         {
@@ -1277,6 +2449,32 @@
             "vi": "ruộng nước",
             "en": "paddy field",
             "zh-Hant": "水田"
+          },
+          "formation": {
+            "parts": [
+              {
+                "h": "水",
+                "m": {
+                  "vi": "nước",
+                  "en": "water",
+                  "zh-Hant": "水"
+                }
+              },
+              {
+                "h": "田",
+                "m": {
+                  "vi": "ruộng",
+                  "en": "field",
+                  "zh-Hant": "田"
+                }
+              }
+            ],
+            "kind": "literal",
+            "memory": {
+              "vi": "Ruộng 田 có nước 水 → ruộng nước.",
+              "en": "A field 田 filled with water 水 → paddy field.",
+              "zh-Hant": "有水的田 → 水田。"
+            }
           }
         }
       ],
@@ -1337,6 +2535,32 @@
             "vi": "sông ngòi",
             "en": "rivers",
             "zh-Hant": "河川"
+          },
+          "formation": {
+            "parts": [
+              {
+                "h": "河",
+                "m": {
+                  "vi": "sông",
+                  "en": "river",
+                  "zh-Hant": "河"
+                }
+              },
+              {
+                "h": "川",
+                "m": {
+                  "vi": "sông; dòng nước / địa danh",
+                  "en": "river; stream / place-name element",
+                  "zh-Hant": "川；河流／地名"
+                }
+              }
+            ],
+            "kind": "parallel",
+            "note": {
+              "vi": "河 và 川 đều chỉ dòng nước/sông; ghép lại thành cách gọi chung “sông ngòi”.",
+              "en": "河 and 川 both refer to rivers/streams; together they form a collective term “rivers and waterways.”",
+              "zh-Hant": "「河」和「川」都指河流，合起來成為「河川」的總稱。"
+            }
           }
         },
         {
@@ -1346,6 +2570,32 @@
             "vi": "Tứ Xuyên",
             "en": "Sichuan",
             "zh-Hant": "四川"
+          },
+          "formation": {
+            "parts": [
+              {
+                "h": "四",
+                "m": {
+                  "vi": "bốn",
+                  "en": "four",
+                  "zh-Hant": "四"
+                }
+              },
+              {
+                "h": "川",
+                "m": {
+                  "vi": "sông; dòng nước / địa danh",
+                  "en": "river; stream / place-name element",
+                  "zh-Hant": "川；河流／地名"
+                }
+              }
+            ],
+            "kind": "proper",
+            "note": {
+              "vi": "四川 là tên riêng tỉnh Tứ Xuyên. Không nên học bằng cách dịch thẳng “bốn con sông”; tên gọi có lịch sử hành chính phức tạp.",
+              "en": "四川 is the proper name Sichuan. Do not learn it as a literal “four rivers”; the place-name has a more complex administrative history.",
+              "zh-Hant": "「四川」是地名，不宜直接理解成「四條河」；其名稱有較複雜的歷史行政來源。"
+            }
           }
         },
         {
@@ -1355,6 +2605,32 @@
             "vi": "núi sông; cảnh quan",
             "en": "mountains and rivers",
             "zh-Hant": "山川"
+          },
+          "formation": {
+            "parts": [
+              {
+                "h": "山",
+                "m": {
+                  "vi": "núi",
+                  "en": "mountain",
+                  "zh-Hant": "山"
+                }
+              },
+              {
+                "h": "川",
+                "m": {
+                  "vi": "sông; dòng nước / địa danh",
+                  "en": "river; stream / place-name element",
+                  "zh-Hant": "川；河流／地名"
+                }
+              }
+            ],
+            "kind": "parallel",
+            "memory": {
+              "vi": "Núi 山 + sông 川 → toàn cảnh thiên nhiên núi sông.",
+              "en": "Mountains 山 + rivers 川 → the natural landscape.",
+              "zh-Hant": "山＋川 → 山川、自然景色。"
+            }
           }
         }
       ],
@@ -1415,6 +2691,27 @@
             "vi": "thịt cá",
             "en": "fish meat",
             "zh-Hant": "魚肉"
+          },
+          "formation": {
+            "parts": [
+              {
+                "h": "魚",
+                "m": {
+                  "vi": "cá",
+                  "en": "fish",
+                  "zh-Hant": "魚"
+                }
+              },
+              {
+                "h": "肉",
+                "m": {
+                  "vi": "thịt",
+                  "en": "meat",
+                  "zh-Hant": "肉"
+                }
+              }
+            ],
+            "kind": "literal"
           }
         },
         {
@@ -1424,6 +2721,32 @@
             "vi": "cá vàng",
             "en": "goldfish",
             "zh-Hant": "金魚"
+          },
+          "formation": {
+            "parts": [
+              {
+                "h": "金",
+                "m": {
+                  "vi": "vàng; màu vàng",
+                  "en": "gold; golden",
+                  "zh-Hant": "金；金色"
+                }
+              },
+              {
+                "h": "魚",
+                "m": {
+                  "vi": "cá",
+                  "en": "fish",
+                  "zh-Hant": "魚"
+                }
+              }
+            ],
+            "kind": "lexicalized",
+            "note": {
+              "vi": "金 gợi màu vàng/ánh kim; 魚 là cá. 金魚 là tên loài cá vàng, không nhất thiết con nào cũng vàng hoàn toàn.",
+              "en": "金 suggests a golden color and 魚 means fish. 金魚 is the established name “goldfish,” not a literal color description of every fish.",
+              "zh-Hant": "「金」聯想到金黃色，「魚」是魚；「金魚」是固定魚名，不代表每一條都完全金色。"
+            }
           }
         },
         {
@@ -1433,6 +2756,27 @@
             "vi": "ăn cá",
             "en": "eat fish",
             "zh-Hant": "吃魚"
+          },
+          "formation": {
+            "parts": [
+              {
+                "h": "吃",
+                "m": {
+                  "vi": "ăn",
+                  "en": "eat",
+                  "zh-Hant": "吃"
+                }
+              },
+              {
+                "h": "魚",
+                "m": {
+                  "vi": "cá",
+                  "en": "fish",
+                  "zh-Hant": "魚"
+                }
+              }
+            ],
+            "kind": "literal"
           }
         }
       ],
@@ -1493,6 +2837,27 @@
             "vi": "chim nhỏ",
             "en": "small bird",
             "zh-Hant": "小鳥"
+          },
+          "formation": {
+            "parts": [
+              {
+                "h": "小",
+                "m": {
+                  "vi": "nhỏ",
+                  "en": "small",
+                  "zh-Hant": "小"
+                }
+              },
+              {
+                "h": "鳥",
+                "m": {
+                  "vi": "chim",
+                  "en": "bird",
+                  "zh-Hant": "鳥"
+                }
+              }
+            ],
+            "kind": "literal"
           }
         },
         {
@@ -1502,6 +2867,32 @@
             "vi": "tiếng chim hót",
             "en": "birdsong",
             "zh-Hant": "鳥叫"
+          },
+          "formation": {
+            "parts": [
+              {
+                "h": "鳥",
+                "m": {
+                  "vi": "chim",
+                  "en": "bird",
+                  "zh-Hant": "鳥"
+                }
+              },
+              {
+                "h": "叫",
+                "m": {
+                  "vi": "kêu; gọi",
+                  "en": "call; cry",
+                  "zh-Hant": "叫"
+                }
+              }
+            ],
+            "kind": "literal",
+            "memory": {
+              "vi": "Chim 鳥 phát ra tiếng kêu 叫 → tiếng chim hót/kêu.",
+              "en": "A bird 鳥 makes a cry 叫 → bird call/song.",
+              "zh-Hant": "鳥發出叫聲 → 鳥叫。"
+            }
           }
         },
         {
@@ -1511,6 +2902,27 @@
             "vi": "chim bay",
             "en": "flying bird",
             "zh-Hant": "飛鳥"
+          },
+          "formation": {
+            "parts": [
+              {
+                "h": "飛",
+                "m": {
+                  "vi": "bay",
+                  "en": "fly",
+                  "zh-Hant": "飛"
+                }
+              },
+              {
+                "h": "鳥",
+                "m": {
+                  "vi": "chim",
+                  "en": "bird",
+                  "zh-Hant": "鳥"
+                }
+              }
+            ],
+            "kind": "literal"
           }
         }
       ],
@@ -1571,6 +2983,27 @@
             "vi": "thịt bò",
             "en": "beef",
             "zh-Hant": "牛肉"
+          },
+          "formation": {
+            "parts": [
+              {
+                "h": "牛",
+                "m": {
+                  "vi": "bò",
+                  "en": "cow; cattle",
+                  "zh-Hant": "牛"
+                }
+              },
+              {
+                "h": "肉",
+                "m": {
+                  "vi": "thịt",
+                  "en": "meat",
+                  "zh-Hant": "肉"
+                }
+              }
+            ],
+            "kind": "literal"
           }
         },
         {
@@ -1580,6 +3013,27 @@
             "vi": "sữa bò",
             "en": "milk",
             "zh-Hant": "牛奶"
+          },
+          "formation": {
+            "parts": [
+              {
+                "h": "牛",
+                "m": {
+                  "vi": "bò",
+                  "en": "cow; cattle",
+                  "zh-Hant": "牛"
+                }
+              },
+              {
+                "h": "奶",
+                "m": {
+                  "vi": "sữa",
+                  "en": "milk",
+                  "zh-Hant": "奶"
+                }
+              }
+            ],
+            "kind": "literal"
           }
         },
         {
@@ -1589,6 +3043,27 @@
             "vi": "bê con",
             "en": "calf",
             "zh-Hant": "小牛"
+          },
+          "formation": {
+            "parts": [
+              {
+                "h": "小",
+                "m": {
+                  "vi": "nhỏ",
+                  "en": "small",
+                  "zh-Hant": "小"
+                }
+              },
+              {
+                "h": "牛",
+                "m": {
+                  "vi": "bò",
+                  "en": "cow; cattle",
+                  "zh-Hant": "牛"
+                }
+              }
+            ],
+            "kind": "literal"
           }
         }
       ],
@@ -1649,6 +3124,27 @@
             "vi": "thịt cừu/dê",
             "en": "mutton",
             "zh-Hant": "羊肉"
+          },
+          "formation": {
+            "parts": [
+              {
+                "h": "羊",
+                "m": {
+                  "vi": "cừu/dê",
+                  "en": "sheep/goat",
+                  "zh-Hant": "羊"
+                }
+              },
+              {
+                "h": "肉",
+                "m": {
+                  "vi": "thịt",
+                  "en": "meat",
+                  "zh-Hant": "肉"
+                }
+              }
+            ],
+            "kind": "literal"
           }
         },
         {
@@ -1658,6 +3154,32 @@
             "vi": "dê núi",
             "en": "goat",
             "zh-Hant": "山羊"
+          },
+          "formation": {
+            "parts": [
+              {
+                "h": "山",
+                "m": {
+                  "vi": "núi",
+                  "en": "mountain",
+                  "zh-Hant": "山"
+                }
+              },
+              {
+                "h": "羊",
+                "m": {
+                  "vi": "cừu/dê",
+                  "en": "sheep/goat",
+                  "zh-Hant": "羊"
+                }
+              }
+            ],
+            "kind": "literal",
+            "memory": {
+              "vi": "Loài dê/cừu 羊 sống/leo trên núi 山 → 山羊 = dê núi/dê.",
+              "en": "A sheep/goat 羊 on the mountain 山 → goat.",
+              "zh-Hant": "山上的羊 → 山羊。"
+            }
           }
         },
         {
@@ -1667,6 +3189,32 @@
             "vi": "cừu",
             "en": "sheep",
             "zh-Hant": "綿羊"
+          },
+          "formation": {
+            "parts": [
+              {
+                "h": "綿",
+                "m": {
+                  "vi": "mềm, bông; trong 綿羊 chỉ cừu lông",
+                  "en": "soft/cottony; in 綿羊, woolly sheep",
+                  "zh-Hant": "綿；綿羊指有羊毛的羊"
+                }
+              },
+              {
+                "h": "羊",
+                "m": {
+                  "vi": "cừu/dê",
+                  "en": "sheep/goat",
+                  "zh-Hant": "羊"
+                }
+              }
+            ],
+            "kind": "lexicalized",
+            "note": {
+              "vi": "綿 gợi cảm giác mềm/bông/lông; 羊 là cừu/dê. 綿羊 là tên chỉ cừu có lông dày.",
+              "en": "綿 suggests soft/cottony wool; 羊 is sheep/goat. 綿羊 is the established word for woolly sheep.",
+              "zh-Hant": "「綿」讓人想到柔軟、綿毛，「羊」是羊；「綿羊」指有厚羊毛的羊。"
+            }
           }
         }
       ],
@@ -1741,6 +3289,32 @@
             "vi": "rừng",
             "en": "forest",
             "zh-Hant": "森林"
+          },
+          "formation": {
+            "parts": [
+              {
+                "h": "森",
+                "m": {
+                  "vi": "rừng rậm; dày",
+                  "en": "dense forest",
+                  "zh-Hant": "森"
+                }
+              },
+              {
+                "h": "林",
+                "m": {
+                  "vi": "rừng cây",
+                  "en": "woods; grove",
+                  "zh-Hant": "林"
+                }
+              }
+            ],
+            "kind": "parallel",
+            "note": {
+              "vi": "森 và 林 đều là hình ảnh nhiều cây. Ghép lại nhấn mạnh một khu rừng lớn/dày.",
+              "en": "森 and 林 both evoke many trees; together they emphasize a full, dense forest.",
+              "zh-Hant": "「森」和「林」都表示很多樹，合起來更強調完整、茂密的森林。"
+            }
           }
         },
         {
@@ -1750,6 +3324,27 @@
             "vi": "rừng cây; lùm cây",
             "en": "woods",
             "zh-Hant": "樹林"
+          },
+          "formation": {
+            "parts": [
+              {
+                "h": "樹",
+                "m": {
+                  "vi": "cây",
+                  "en": "tree",
+                  "zh-Hant": "樹"
+                }
+              },
+              {
+                "h": "林",
+                "m": {
+                  "vi": "rừng cây",
+                  "en": "woods; grove",
+                  "zh-Hant": "林"
+                }
+              }
+            ],
+            "kind": "literal"
           }
         },
         {
@@ -1759,6 +3354,27 @@
             "vi": "trong rừng",
             "en": "in the woods",
             "zh-Hant": "林裡"
+          },
+          "formation": {
+            "parts": [
+              {
+                "h": "林",
+                "m": {
+                  "vi": "rừng cây",
+                  "en": "woods; grove",
+                  "zh-Hant": "林"
+                }
+              },
+              {
+                "h": "裡",
+                "m": {
+                  "vi": "bên trong",
+                  "en": "inside",
+                  "zh-Hant": "裡"
+                }
+              }
+            ],
+            "kind": "literal"
           }
         }
       ],
@@ -1833,6 +3449,32 @@
             "vi": "rừng",
             "en": "forest",
             "zh-Hant": "森林"
+          },
+          "formation": {
+            "parts": [
+              {
+                "h": "森",
+                "m": {
+                  "vi": "rừng rậm; dày",
+                  "en": "dense forest",
+                  "zh-Hant": "森"
+                }
+              },
+              {
+                "h": "林",
+                "m": {
+                  "vi": "rừng cây",
+                  "en": "woods; grove",
+                  "zh-Hant": "林"
+                }
+              }
+            ],
+            "kind": "parallel",
+            "note": {
+              "vi": "森 và 林 đều là hình ảnh nhiều cây. Ghép lại nhấn mạnh một khu rừng lớn/dày.",
+              "en": "森 and 林 both evoke many trees; together they emphasize a full, dense forest.",
+              "zh-Hant": "「森」和「林」都表示很多樹，合起來更強調完整、茂密的森林。"
+            }
           }
         },
         {
@@ -1842,6 +3484,27 @@
             "vi": "công viên rừng",
             "en": "forest park",
             "zh-Hant": "森林公園"
+          },
+          "formation": {
+            "parts": [
+              {
+                "h": "森林",
+                "m": {
+                  "vi": "rừng",
+                  "en": "forest",
+                  "zh-Hant": "森林"
+                }
+              },
+              {
+                "h": "公園",
+                "m": {
+                  "vi": "công viên",
+                  "en": "park",
+                  "zh-Hant": "公園"
+                }
+              }
+            ],
+            "kind": "literal"
           }
         },
         {
@@ -1851,6 +3514,32 @@
             "vi": "rậm rạp; âm u",
             "en": "dense; gloomy",
             "zh-Hant": "森森"
+          },
+          "formation": {
+            "parts": [
+              {
+                "h": "森",
+                "m": {
+                  "vi": "rừng rậm; dày",
+                  "en": "dense forest",
+                  "zh-Hant": "森"
+                }
+              },
+              {
+                "h": "森",
+                "m": {
+                  "vi": "rừng rậm; dày",
+                  "en": "dense forest",
+                  "zh-Hant": "森"
+                }
+              }
+            ],
+            "kind": "redup",
+            "note": {
+              "vi": "Lặp 森 làm tăng cảm giác dày, sâu, âm u. Đây là cách dùng mang tính miêu tả/văn chương hơn từ cơ bản.",
+              "en": "Repeating 森 intensifies the sense of density, depth, or gloom; it is more descriptive/literary.",
+              "zh-Hant": "重疊「森」可加強茂密、幽深、陰森的感覺，較偏描寫／文學用法。"
+            }
           }
         }
       ],
@@ -1925,6 +3614,32 @@
             "vi": "nghỉ ngơi",
             "en": "rest",
             "zh-Hant": "休息"
+          },
+          "formation": {
+            "parts": [
+              {
+                "h": "休",
+                "m": {
+                  "vi": "nghỉ",
+                  "en": "rest",
+                  "zh-Hant": "休"
+                }
+              },
+              {
+                "h": "息",
+                "m": {
+                  "vi": "nghỉ; hơi thở",
+                  "en": "rest; breath",
+                  "zh-Hant": "息"
+                }
+              }
+            ],
+            "kind": "parallel",
+            "note": {
+              "vi": "休 = nghỉ; 息 = hơi thở/nghỉ. Hai ý gần nhau ghép thành động từ thông dụng “nghỉ ngơi”.",
+              "en": "休 = rest and 息 = breath/rest; the two similar ideas combine into the common verb “to rest.”",
+              "zh-Hant": "休＝休息，息＝氣息／休息；兩個相近概念合成常用詞「休息」。"
+            }
           }
         },
         {
@@ -1934,6 +3649,27 @@
             "vi": "nghỉ trưa",
             "en": "lunch break",
             "zh-Hant": "午休"
+          },
+          "formation": {
+            "parts": [
+              {
+                "h": "午",
+                "m": {
+                  "vi": "buổi trưa",
+                  "en": "noon",
+                  "zh-Hant": "午"
+                }
+              },
+              {
+                "h": "休",
+                "m": {
+                  "vi": "nghỉ",
+                  "en": "rest",
+                  "zh-Hant": "休"
+                }
+              }
+            ],
+            "kind": "literal"
           }
         },
         {
@@ -1943,6 +3679,27 @@
             "vi": "nghỉ phép",
             "en": "take leave",
             "zh-Hant": "休假"
+          },
+          "formation": {
+            "parts": [
+              {
+                "h": "休",
+                "m": {
+                  "vi": "nghỉ",
+                  "en": "rest",
+                  "zh-Hant": "休"
+                }
+              },
+              {
+                "h": "假",
+                "m": {
+                  "vi": "nghỉ; kỳ nghỉ",
+                  "en": "leave; holiday",
+                  "zh-Hant": "假期；請假"
+                }
+              }
+            ],
+            "kind": "literal"
           }
         }
       ],
@@ -2017,6 +3774,32 @@
             "vi": "bị viêm",
             "en": "be inflamed",
             "zh-Hant": "發炎"
+          },
+          "formation": {
+            "parts": [
+              {
+                "h": "發",
+                "m": {
+                  "vi": "phát sinh; xuất hiện",
+                  "en": "develop; occur",
+                  "zh-Hant": "發生；出現"
+                }
+              },
+              {
+                "h": "炎",
+                "m": {
+                  "vi": "viêm; nóng rực",
+                  "en": "inflammation; blazing heat",
+                  "zh-Hant": "炎；發炎"
+                }
+              }
+            ],
+            "kind": "lexicalized",
+            "note": {
+              "vi": "發 có nghĩa “phát sinh/xảy ra”; 炎 là viêm. 發炎 = tình trạng viêm phát sinh → bị viêm.",
+              "en": "發 can mean “develop/occur” and 炎 means inflammation. 發炎 = inflammation develops → become inflamed.",
+              "zh-Hant": "「發」可表示發生、產生；「炎」是發炎；發炎＝產生炎症。"
+            }
           }
         },
         {
@@ -2026,6 +3809,32 @@
             "vi": "nóng bức",
             "en": "scorching hot",
             "zh-Hant": "炎熱"
+          },
+          "formation": {
+            "parts": [
+              {
+                "h": "炎",
+                "m": {
+                  "vi": "viêm; nóng rực",
+                  "en": "inflammation; blazing heat",
+                  "zh-Hant": "炎；發炎"
+                }
+              },
+              {
+                "h": "熱",
+                "m": {
+                  "vi": "nóng",
+                  "en": "hot",
+                  "zh-Hant": "熱"
+                }
+              }
+            ],
+            "kind": "parallel",
+            "note": {
+              "vi": "炎 gợi lửa/nhiệt mạnh; 熱 = nóng. Ghép lại nhấn mạnh “nóng bức”.",
+              "en": "炎 evokes intense heat/flames and 熱 means hot; together they intensify “scorching hot.”",
+              "zh-Hant": "「炎」讓人想到強烈熱氣，「熱」就是熱；合起來加強「炎熱、酷熱」。"
+            }
           }
         },
         {
@@ -2035,6 +3844,27 @@
             "vi": "viêm phổi",
             "en": "pneumonia",
             "zh-Hant": "肺炎"
+          },
+          "formation": {
+            "parts": [
+              {
+                "h": "肺",
+                "m": {
+                  "vi": "phổi",
+                  "en": "lung",
+                  "zh-Hant": "肺"
+                }
+              },
+              {
+                "h": "炎",
+                "m": {
+                  "vi": "viêm; nóng rực",
+                  "en": "inflammation; blazing heat",
+                  "zh-Hant": "炎；發炎"
+                }
+              }
+            ],
+            "kind": "literal"
           }
         }
       ],
@@ -2109,6 +3939,32 @@
             "vi": "hét lên",
             "en": "scream",
             "zh-Hant": "尖叫"
+          },
+          "formation": {
+            "parts": [
+              {
+                "h": "尖",
+                "m": {
+                  "vi": "nhọn; sắc/cao chói",
+                  "en": "pointed; sharp/high-pitched",
+                  "zh-Hant": "尖；尖銳"
+                }
+              },
+              {
+                "h": "叫",
+                "m": {
+                  "vi": "kêu; gọi",
+                  "en": "call; cry",
+                  "zh-Hant": "叫"
+                }
+              }
+            ],
+            "kind": "lexicalized",
+            "note": {
+              "vi": "尖 không chỉ “nhọn” mà còn gợi âm thanh cao/chói; 叫 = kêu. 尖叫 = tiếng kêu cao chói → hét/scream.",
+              "en": "尖 can describe a high/sharp sound, and 叫 means cry/call. 尖叫 = a sharp high cry → scream.",
+              "zh-Hant": "「尖」也可形容聲音尖銳，「叫」是叫喊；尖叫＝尖銳的叫聲。"
+            }
           }
         },
         {
@@ -2118,6 +3974,27 @@
             "vi": "đầu bút",
             "en": "pen tip",
             "zh-Hant": "筆尖"
+          },
+          "formation": {
+            "parts": [
+              {
+                "h": "筆",
+                "m": {
+                  "vi": "bút",
+                  "en": "pen",
+                  "zh-Hant": "筆"
+                }
+              },
+              {
+                "h": "尖",
+                "m": {
+                  "vi": "nhọn; sắc/cao chói",
+                  "en": "pointed; sharp/high-pitched",
+                  "zh-Hant": "尖；尖銳"
+                }
+              }
+            ],
+            "kind": "literal"
           }
         },
         {
@@ -2127,6 +4004,32 @@
             "vi": "sắc bén; gay gắt",
             "en": "sharp",
             "zh-Hant": "尖銳"
+          },
+          "formation": {
+            "parts": [
+              {
+                "h": "尖",
+                "m": {
+                  "vi": "nhọn; sắc/cao chói",
+                  "en": "pointed; sharp/high-pitched",
+                  "zh-Hant": "尖；尖銳"
+                }
+              },
+              {
+                "h": "銳",
+                "m": {
+                  "vi": "sắc; bén",
+                  "en": "sharp; keen",
+                  "zh-Hant": "銳利"
+                }
+              }
+            ],
+            "kind": "parallel",
+            "note": {
+              "vi": "尖 = nhọn; 銳 = bén/sắc. Hai ý cùng nhấn độ sắc → sắc bén; mở rộng thành nhận xét gay gắt.",
+              "en": "尖 = pointed and 銳 = sharp; together they intensify sharpness, also extending to “incisive/harsh.”",
+              "zh-Hant": "尖＝尖，銳＝銳利；兩個「尖銳」概念疊加，可表示鋒利，也可形容言論尖銳。"
+            }
           }
         }
       ],
@@ -2196,6 +4099,32 @@
             "vi": "mẹ",
             "en": "mom",
             "zh-Hant": "媽媽"
+          },
+          "formation": {
+            "parts": [
+              {
+                "h": "媽",
+                "m": {
+                  "vi": "mẹ",
+                  "en": "mother",
+                  "zh-Hant": "媽"
+                }
+              },
+              {
+                "h": "媽",
+                "m": {
+                  "vi": "mẹ",
+                  "en": "mother",
+                  "zh-Hant": "媽"
+                }
+              }
+            ],
+            "kind": "redup",
+            "note": {
+              "vi": "Lặp 媽 tạo cách gọi thân mật/tự nhiên “mẹ, mama”.",
+              "en": "Repeating 媽 gives the familiar everyday kinship form “mom/mama.”",
+              "zh-Hant": "「媽」重疊成「媽媽」，是日常親暱的稱呼。"
+            }
           }
         },
         {
@@ -2205,6 +4134,32 @@
             "vi": "bố mẹ",
             "en": "parents",
             "zh-Hant": "爸媽"
+          },
+          "formation": {
+            "parts": [
+              {
+                "h": "爸",
+                "m": {
+                  "vi": "bố",
+                  "en": "father",
+                  "zh-Hant": "爸"
+                }
+              },
+              {
+                "h": "媽",
+                "m": {
+                  "vi": "mẹ",
+                  "en": "mother",
+                  "zh-Hant": "媽"
+                }
+              }
+            ],
+            "kind": "parallel",
+            "memory": {
+              "vi": "Bố 爸 + mẹ 媽 → bố mẹ.",
+              "en": "Dad 爸 + mom 媽 → parents.",
+              "zh-Hant": "爸爸＋媽媽 → 爸媽。"
+            }
           }
         },
         {
@@ -2214,6 +4169,32 @@
             "vi": "của mẹ",
             "en": "mother's",
             "zh-Hant": "媽媽的"
+          },
+          "formation": {
+            "parts": [
+              {
+                "h": "媽",
+                "m": {
+                  "vi": "mẹ",
+                  "en": "mother",
+                  "zh-Hant": "媽"
+                }
+              },
+              {
+                "h": "的",
+                "m": {
+                  "vi": "trợ từ / trong 目的 đọc dì",
+                  "en": "particle / dì in 目的",
+                  "zh-Hant": "的；目的中讀 dì"
+                }
+              }
+            ],
+            "kind": "grammar",
+            "note": {
+              "vi": "的 đặt sau danh từ để tạo quan hệ sở hữu/bổ nghĩa. 媽媽 + 的 → “của mẹ”.",
+              "en": "的 after a noun marks possession/modification. 媽媽 + 的 → “mother’s.”",
+              "zh-Hant": "名詞後加「的」可表示所有／修飾；媽媽＋的 → 媽媽的。"
+            }
           }
         }
       ],
@@ -2283,6 +4264,32 @@
             "vi": "được không?",
             "en": "okay?",
             "zh-Hant": "好嗎"
+          },
+          "formation": {
+            "parts": [
+              {
+                "h": "好",
+                "m": {
+                  "vi": "tốt; ổn",
+                  "en": "good; okay",
+                  "zh-Hant": "好"
+                }
+              },
+              {
+                "h": "嗎",
+                "m": {
+                  "vi": "trợ từ câu hỏi yes/no",
+                  "en": "yes/no question particle",
+                  "zh-Hant": "疑問語氣助詞「嗎」"
+                }
+              }
+            ],
+            "kind": "grammar",
+            "note": {
+              "vi": "嗎 biến một câu khẳng định thành câu hỏi yes/no. 好 + 嗎 → “ổn không?/được không?”.",
+              "en": "嗎 turns a statement into a yes/no question. 好 + 嗎 → “okay?/is it good?”.",
+              "zh-Hant": "「嗎」把陳述句變成是非問句；好＋嗎 → 好嗎？"
+            }
           }
         },
         {
@@ -2292,6 +4299,32 @@
             "vi": "thật sao?",
             "en": "is that so?",
             "zh-Hant": "是嗎"
+          },
+          "formation": {
+            "parts": [
+              {
+                "h": "是",
+                "m": {
+                  "vi": "là; đúng",
+                  "en": "be; yes/correct",
+                  "zh-Hant": "是"
+                }
+              },
+              {
+                "h": "嗎",
+                "m": {
+                  "vi": "trợ từ câu hỏi yes/no",
+                  "en": "yes/no question particle",
+                  "zh-Hant": "疑問語氣助詞「嗎」"
+                }
+              }
+            ],
+            "kind": "grammar",
+            "note": {
+              "vi": "是 = là/đúng; thêm 嗎 để hỏi → “thật sao?/có phải vậy không?”.",
+              "en": "是 = be/yes; adding 嗎 makes a yes/no question → “is that so?/really?”.",
+              "zh-Hant": "是＋疑問助詞「嗎」→ 是嗎？"
+            }
           }
         },
         {
@@ -2301,6 +4334,32 @@
             "vi": "có được không?",
             "en": "is it okay?",
             "zh-Hant": "可以嗎"
+          },
+          "formation": {
+            "parts": [
+              {
+                "h": "可以",
+                "m": {
+                  "vi": "có thể; được phép",
+                  "en": "can; be allowed",
+                  "zh-Hant": "可以"
+                }
+              },
+              {
+                "h": "嗎",
+                "m": {
+                  "vi": "trợ từ câu hỏi yes/no",
+                  "en": "yes/no question particle",
+                  "zh-Hant": "疑問語氣助詞「嗎」"
+                }
+              }
+            ],
+            "kind": "grammar",
+            "note": {
+              "vi": "可以 = có thể/được phép; thêm 嗎 → hỏi xin phép “có được không?”.",
+              "en": "可以 = can/be allowed; add 嗎 → ask permission “is it okay/can I?”.",
+              "zh-Hant": "可以＋疑問助詞「嗎」→ 可以嗎？"
+            }
           }
         }
       ],
@@ -2370,6 +4429,32 @@
             "vi": "rõ ràng",
             "en": "clear",
             "zh-Hant": "清楚"
+          },
+          "formation": {
+            "parts": [
+              {
+                "h": "清",
+                "m": {
+                  "vi": "trong; sạch",
+                  "en": "clear; clean",
+                  "zh-Hant": "清"
+                }
+              },
+              {
+                "h": "楚",
+                "m": {
+                  "vi": "rõ; phân minh",
+                  "en": "clear; distinct",
+                  "zh-Hant": "楚；清楚"
+                }
+              }
+            ],
+            "kind": "parallel",
+            "note": {
+              "vi": "清 và 楚 đều gợi sự rõ/rành mạch. Ghép lại thành “rõ ràng, hiểu rõ”.",
+              "en": "清 and 楚 both suggest clarity/distinctness; together they mean “clear; clearly understood.”",
+              "zh-Hant": "「清」和「楚」都能聯想到清楚、分明；合起來表示「清楚」。"
+            }
           }
         },
         {
@@ -2379,6 +4464,27 @@
             "vi": "nước sạch",
             "en": "clean water",
             "zh-Hant": "清水"
+          },
+          "formation": {
+            "parts": [
+              {
+                "h": "清",
+                "m": {
+                  "vi": "trong; sạch",
+                  "en": "clear; clean",
+                  "zh-Hant": "清"
+                }
+              },
+              {
+                "h": "水",
+                "m": {
+                  "vi": "nước",
+                  "en": "water",
+                  "zh-Hant": "水"
+                }
+              }
+            ],
+            "kind": "literal"
           }
         },
         {
@@ -2388,6 +4494,32 @@
             "vi": "sạch sẽ; vệ sinh",
             "en": "clean; cleaning",
             "zh-Hant": "清潔"
+          },
+          "formation": {
+            "parts": [
+              {
+                "h": "清",
+                "m": {
+                  "vi": "trong; sạch",
+                  "en": "clear; clean",
+                  "zh-Hant": "清"
+                }
+              },
+              {
+                "h": "潔",
+                "m": {
+                  "vi": "sạch",
+                  "en": "clean",
+                  "zh-Hant": "潔"
+                }
+              }
+            ],
+            "kind": "parallel",
+            "note": {
+              "vi": "清 = trong/sạch; 潔 = sạch. Hai ý gần nhau tạo nghĩa “sạch sẽ/vệ sinh”.",
+              "en": "清 = clear/clean and 潔 = clean; together they form “cleanliness/clean.”",
+              "zh-Hant": "清＝清、乾淨；潔＝潔淨；合起來表示清潔。"
+            }
           }
         }
       ],
@@ -2457,6 +4589,32 @@
             "vi": "tâm trạng",
             "en": "mood",
             "zh-Hant": "心情"
+          },
+          "formation": {
+            "parts": [
+              {
+                "h": "心",
+                "m": {
+                  "vi": "tim; tâm trí",
+                  "en": "heart; mind",
+                  "zh-Hant": "心"
+                }
+              },
+              {
+                "h": "情",
+                "m": {
+                  "vi": "tình cảm; trạng thái cảm xúc",
+                  "en": "feeling; emotional state",
+                  "zh-Hant": "情；情感"
+                }
+              }
+            ],
+            "kind": "lexicalized",
+            "note": {
+              "vi": "心 = tâm/trái tim; 情 = cảm xúc. Ghép lại chỉ “trạng thái cảm xúc trong lòng” → tâm trạng.",
+              "en": "心 = heart/mind and 情 = feeling; together they mean the emotional state in one’s heart → mood.",
+              "zh-Hant": "心＝內心，情＝情緒；合起來表示內心的情緒狀態 → 心情。"
+            }
           }
         },
         {
@@ -2466,6 +4624,32 @@
             "vi": "tình cảm",
             "en": "feelings",
             "zh-Hant": "感情"
+          },
+          "formation": {
+            "parts": [
+              {
+                "h": "感",
+                "m": {
+                  "vi": "cảm nhận",
+                  "en": "feel; sense",
+                  "zh-Hant": "感"
+                }
+              },
+              {
+                "h": "情",
+                "m": {
+                  "vi": "tình cảm; trạng thái cảm xúc",
+                  "en": "feeling; emotional state",
+                  "zh-Hant": "情；情感"
+                }
+              }
+            ],
+            "kind": "parallel",
+            "note": {
+              "vi": "感 = cảm nhận; 情 = tình cảm. Ghép lại chỉ tình cảm/cảm xúc giữa người với người.",
+              "en": "感 = feel/sense and 情 = emotion; together they mean feelings/affection.",
+              "zh-Hant": "感＝感受，情＝情感；合起來表示感情。"
+            }
           }
         },
         {
@@ -2475,6 +4659,32 @@
             "vi": "tình hình",
             "en": "situation",
             "zh-Hant": "情況"
+          },
+          "formation": {
+            "parts": [
+              {
+                "h": "情",
+                "m": {
+                  "vi": "tình cảm; trạng thái cảm xúc",
+                  "en": "feeling; emotional state",
+                  "zh-Hant": "情；情感"
+                }
+              },
+              {
+                "h": "況",
+                "m": {
+                  "vi": "tình trạng",
+                  "en": "condition; situation",
+                  "zh-Hant": "況"
+                }
+              }
+            ],
+            "kind": "lexicalized",
+            "note": {
+              "vi": "情況 là từ cố định chỉ tình hình/trạng thái. Có thể nhớ 情 = trạng thái/tình thế + 況 = tình trạng, nhưng khi dùng nên nhớ cả cụm.",
+              "en": "情況 is a lexicalized word for a situation/condition. The components both relate to state/circumstance, but learn the whole word as one unit.",
+              "zh-Hant": "「情況」是固定詞，表示情形／狀況；可用兩個「狀態」相關概念幫助記憶，但使用時要整詞記。"
+            }
           }
         }
       ],
@@ -2544,6 +4754,32 @@
             "vi": "xin hỏi",
             "en": "excuse me; may I ask",
             "zh-Hant": "請問"
+          },
+          "formation": {
+            "parts": [
+              {
+                "h": "請",
+                "m": {
+                  "vi": "xin; mời",
+                  "en": "please; invite/request",
+                  "zh-Hant": "請"
+                }
+              },
+              {
+                "h": "問",
+                "m": {
+                  "vi": "hỏi",
+                  "en": "ask",
+                  "zh-Hant": "問"
+                }
+              }
+            ],
+            "kind": "grammar",
+            "note": {
+              "vi": "請 = xin/mời (lịch sự); 問 = hỏi. 請問 = “xin phép hỏi…” — công thức mở đầu câu hỏi lịch sự.",
+              "en": "請 = please/request politely and 問 = ask. 請問 is the polite formula “May I ask…?”.",
+              "zh-Hant": "請＝禮貌請求，問＝詢問；請問＝「請問一下……」的禮貌開頭。"
+            }
           }
         },
         {
@@ -2553,6 +4789,32 @@
             "vi": "mời ngồi",
             "en": "please sit",
             "zh-Hant": "請坐"
+          },
+          "formation": {
+            "parts": [
+              {
+                "h": "請",
+                "m": {
+                  "vi": "xin; mời",
+                  "en": "please; invite/request",
+                  "zh-Hant": "請"
+                }
+              },
+              {
+                "h": "坐",
+                "m": {
+                  "vi": "ngồi",
+                  "en": "sit",
+                  "zh-Hant": "坐"
+                }
+              }
+            ],
+            "kind": "literal",
+            "memory": {
+              "vi": "請 = mời + 坐 = ngồi → mời ngồi.",
+              "en": "Please/invite 請 + sit 坐 → please sit down.",
+              "zh-Hant": "請＋坐 → 請坐。"
+            }
           }
         },
         {
@@ -2562,6 +4824,32 @@
             "vi": "mời vào",
             "en": "please come in",
             "zh-Hant": "請進"
+          },
+          "formation": {
+            "parts": [
+              {
+                "h": "請",
+                "m": {
+                  "vi": "xin; mời",
+                  "en": "please; invite/request",
+                  "zh-Hant": "請"
+                }
+              },
+              {
+                "h": "進",
+                "m": {
+                  "vi": "vào; tiến vào",
+                  "en": "enter; go in",
+                  "zh-Hant": "進"
+                }
+              }
+            ],
+            "kind": "literal",
+            "memory": {
+              "vi": "請 = mời + 進 = vào → mời vào.",
+              "en": "Please/invite 請 + enter 進 → please come in.",
+              "zh-Hant": "請＋進 → 請進。"
+            }
           }
         }
       ],
@@ -2631,6 +4919,27 @@
             "vi": "trời nắng/quang",
             "en": "sunny day",
             "zh-Hant": "晴天"
+          },
+          "formation": {
+            "parts": [
+              {
+                "h": "晴",
+                "m": {
+                  "vi": "trời quang/nắng",
+                  "en": "clear/sunny weather",
+                  "zh-Hant": "晴"
+                }
+              },
+              {
+                "h": "天",
+                "m": {
+                  "vi": "ngày; trời",
+                  "en": "day; sky",
+                  "zh-Hant": "天"
+                }
+              }
+            ],
+            "kind": "literal"
           }
         },
         {
@@ -2640,6 +4949,32 @@
             "vi": "trời quang trở lại",
             "en": "clear up",
             "zh-Hant": "放晴"
+          },
+          "formation": {
+            "parts": [
+              {
+                "h": "放",
+                "m": {
+                  "vi": "thả; chuyển sang trạng thái",
+                  "en": "release; let/change into",
+                  "zh-Hant": "放"
+                }
+              },
+              {
+                "h": "晴",
+                "m": {
+                  "vi": "trời quang/nắng",
+                  "en": "clear/sunny weather",
+                  "zh-Hant": "晴"
+                }
+              }
+            ],
+            "kind": "lexicalized",
+            "note": {
+              "vi": "放晴 là cách nói cố định “trời chuyển quang”. Hãy hiểu 放 như “thả/mở ra” trạng thái quang 晴, chứ không dịch từng chữ cứng nhắc.",
+              "en": "放晴 is the fixed expression “the weather clears up.” Think of the clear sky 晴 being released/opened, rather than translating mechanically.",
+              "zh-Hant": "「放晴」是固定說法，表示天氣轉晴；可把「放」理解成轉入／放開晴朗狀態，不宜死譯。"
+            }
           }
         },
         {
@@ -2649,6 +4984,32 @@
             "vi": "quang đãng",
             "en": "clear and bright",
             "zh-Hant": "晴朗"
+          },
+          "formation": {
+            "parts": [
+              {
+                "h": "晴",
+                "m": {
+                  "vi": "trời quang/nắng",
+                  "en": "clear/sunny weather",
+                  "zh-Hant": "晴"
+                }
+              },
+              {
+                "h": "朗",
+                "m": {
+                  "vi": "sáng sủa; quang",
+                  "en": "bright; clear",
+                  "zh-Hant": "朗"
+                }
+              }
+            ],
+            "kind": "parallel",
+            "note": {
+              "vi": "晴 = trời quang; 朗 = sáng sủa. Ghép lại nhấn mạnh thời tiết quang đãng/sáng rõ.",
+              "en": "晴 = clear weather and 朗 = bright/clear; together they emphasize a bright, clear sky.",
+              "zh-Hant": "晴＝天氣晴，朗＝明朗；合起來表示晴朗。"
+            }
           }
         }
       ],
@@ -2718,6 +5079,32 @@
             "vi": "mắt",
             "en": "eyes",
             "zh-Hant": "眼睛"
+          },
+          "formation": {
+            "parts": [
+              {
+                "h": "眼",
+                "m": {
+                  "vi": "mắt",
+                  "en": "eye",
+                  "zh-Hant": "眼"
+                }
+              },
+              {
+                "h": "睛",
+                "m": {
+                  "vi": "tròng mắt; mắt",
+                  "en": "eyeball; eye",
+                  "zh-Hant": "睛；眼珠"
+                }
+              }
+            ],
+            "kind": "parallel",
+            "note": {
+              "vi": "眼 và 睛 đều liên quan mắt; 睛 vốn chỉ phần con ngươi/nhãn cầu. Ghép lại thành từ thông dụng “mắt”.",
+              "en": "眼 and 睛 both relate to the eye; 睛 originally points to the eyeball/pupil area. Together 眼睛 is the everyday word “eyes.”",
+              "zh-Hant": "「眼」和「睛」都與眼睛有關；「睛」原本偏向眼球／眼珠，合成「眼睛」作為日常用語。"
+            }
           }
         },
         {
@@ -2727,6 +5114,27 @@
             "vi": "đôi mắt to",
             "en": "big eyes",
             "zh-Hant": "大眼睛"
+          },
+          "formation": {
+            "parts": [
+              {
+                "h": "大",
+                "m": {
+                  "vi": "lớn",
+                  "en": "big",
+                  "zh-Hant": "大"
+                }
+              },
+              {
+                "h": "眼睛",
+                "m": {
+                  "vi": "mắt",
+                  "en": "eyes",
+                  "zh-Hant": "眼睛"
+                }
+              }
+            ],
+            "kind": "literal"
           }
         },
         {
@@ -2736,6 +5144,32 @@
             "vi": "nhắm mắt lại",
             "en": "close one's eyes",
             "zh-Hant": "閉上眼睛"
+          },
+          "formation": {
+            "parts": [
+              {
+                "h": "閉上",
+                "m": {
+                  "vi": "nhắm/đóng lại",
+                  "en": "close/shut",
+                  "zh-Hant": "閉上"
+                }
+              },
+              {
+                "h": "眼睛",
+                "m": {
+                  "vi": "mắt",
+                  "en": "eyes",
+                  "zh-Hant": "眼睛"
+                }
+              }
+            ],
+            "kind": "result",
+            "note": {
+              "vi": "閉上 là “khép/đóng lại” (上 ở đây là bổ ngữ kết quả, không phải “ở trên”); + 眼睛 → nhắm mắt lại.",
+              "en": "閉上 means “close/shut” (上 here marks the resulting state, not “on top”); + 眼睛 → close one’s eyes.",
+              "zh-Hant": "「閉上」表示關閉到完成狀態（此處「上」不是「上面」）；＋眼睛 → 閉上眼睛。"
+            }
           }
         }
       ],
@@ -2805,6 +5239,27 @@
             "vi": "nước sông",
             "en": "river water",
             "zh-Hant": "河水"
+          },
+          "formation": {
+            "parts": [
+              {
+                "h": "河",
+                "m": {
+                  "vi": "sông",
+                  "en": "river",
+                  "zh-Hant": "河"
+                }
+              },
+              {
+                "h": "水",
+                "m": {
+                  "vi": "nước",
+                  "en": "water",
+                  "zh-Hant": "水"
+                }
+              }
+            ],
+            "kind": "literal"
           }
         },
         {
@@ -2814,6 +5269,27 @@
             "vi": "bờ sông",
             "en": "riverside",
             "zh-Hant": "河邊"
+          },
+          "formation": {
+            "parts": [
+              {
+                "h": "河",
+                "m": {
+                  "vi": "sông",
+                  "en": "river",
+                  "zh-Hant": "河"
+                }
+              },
+              {
+                "h": "邊",
+                "m": {
+                  "vi": "bên; bờ; rìa",
+                  "en": "side; bank; edge",
+                  "zh-Hant": "邊"
+                }
+              }
+            ],
+            "kind": "literal"
           }
         },
         {
@@ -2823,6 +5299,32 @@
             "vi": "sông; dòng sông",
             "en": "river; stream",
             "zh-Hant": "河流"
+          },
+          "formation": {
+            "parts": [
+              {
+                "h": "河",
+                "m": {
+                  "vi": "sông",
+                  "en": "river",
+                  "zh-Hant": "河"
+                }
+              },
+              {
+                "h": "流",
+                "m": {
+                  "vi": "chảy; dòng",
+                  "en": "flow; stream",
+                  "zh-Hant": "流"
+                }
+              }
+            ],
+            "kind": "parallel",
+            "note": {
+              "vi": "河 = sông; 流 = dòng chảy. Ghép lại chỉ sông/dòng sông như một dòng nước đang chảy.",
+              "en": "河 = river and 流 = flow/stream; together they refer to a river/watercourse.",
+              "zh-Hant": "河＝河流，流＝流動；合起來表示河流。"
+            }
           }
         }
       ],
@@ -2892,6 +5394,27 @@
             "vi": "nước hồ",
             "en": "lake water",
             "zh-Hant": "湖水"
+          },
+          "formation": {
+            "parts": [
+              {
+                "h": "湖",
+                "m": {
+                  "vi": "hồ",
+                  "en": "lake",
+                  "zh-Hant": "湖"
+                }
+              },
+              {
+                "h": "水",
+                "m": {
+                  "vi": "nước",
+                  "en": "water",
+                  "zh-Hant": "水"
+                }
+              }
+            ],
+            "kind": "literal"
           }
         },
         {
@@ -2901,6 +5424,27 @@
             "vi": "bờ hồ",
             "en": "lakeside",
             "zh-Hant": "湖邊"
+          },
+          "formation": {
+            "parts": [
+              {
+                "h": "湖",
+                "m": {
+                  "vi": "hồ",
+                  "en": "lake",
+                  "zh-Hant": "湖"
+                }
+              },
+              {
+                "h": "邊",
+                "m": {
+                  "vi": "bên; bờ; rìa",
+                  "en": "side; bank; edge",
+                  "zh-Hant": "邊"
+                }
+              }
+            ],
+            "kind": "literal"
           }
         },
         {
@@ -2910,6 +5454,40 @@
             "vi": "Hồ Nhật Nguyệt",
             "en": "Sun Moon Lake",
             "zh-Hant": "日月潭"
+          },
+          "formation": {
+            "parts": [
+              {
+                "h": "日",
+                "m": {
+                  "vi": "ngày; mặt trời",
+                  "en": "day; sun",
+                  "zh-Hant": "日；太陽"
+                }
+              },
+              {
+                "h": "月",
+                "m": {
+                  "vi": "tháng; mặt trăng",
+                  "en": "month; moon",
+                  "zh-Hant": "月；月亮"
+                }
+              },
+              {
+                "h": "潭",
+                "m": {
+                  "vi": "đầm/hồ sâu",
+                  "en": "deep pool; lake",
+                  "zh-Hant": "潭"
+                }
+              }
+            ],
+            "kind": "proper",
+            "note": {
+              "vi": "日月潭 là tên riêng Hồ Nhật Nguyệt ở Đài Loan. Tên gợi hình phần hồ giống mặt trời và phần giống trăng lưỡi liềm; 潭 là hồ/đầm sâu.",
+              "en": "日月潭 is the proper name Sun Moon Lake in Taiwan. The name evokes one part like the sun and another like a crescent moon; 潭 is a deep lake/pool.",
+              "zh-Hant": "「日月潭」是臺灣的專有地名；名稱聯想到一側如日、一側如月，潭表示較深的水域。"
+            }
           }
         }
       ],
@@ -2979,6 +5557,32 @@
             "vi": "đại dương",
             "en": "ocean",
             "zh-Hant": "海洋"
+          },
+          "formation": {
+            "parts": [
+              {
+                "h": "海",
+                "m": {
+                  "vi": "biển",
+                  "en": "sea",
+                  "zh-Hant": "海"
+                }
+              },
+              {
+                "h": "洋",
+                "m": {
+                  "vi": "đại dương; biển lớn",
+                  "en": "ocean",
+                  "zh-Hant": "洋"
+                }
+              }
+            ],
+            "kind": "parallel",
+            "note": {
+              "vi": "海 và 洋 đều chỉ vùng nước biển lớn. Ghép lại thành “đại dương/biển cả”.",
+              "en": "海 and 洋 both refer to large bodies of seawater; together they mean “ocean.”",
+              "zh-Hant": "海和洋都指大範圍海水，合起來表示海洋。"
+            }
           }
         },
         {
@@ -2988,6 +5592,32 @@
             "vi": "Thái Bình Dương",
             "en": "Pacific Ocean",
             "zh-Hant": "太平洋"
+          },
+          "formation": {
+            "parts": [
+              {
+                "h": "太平",
+                "m": {
+                  "vi": "thái bình; yên bình",
+                  "en": "peaceful",
+                  "zh-Hant": "太平"
+                }
+              },
+              {
+                "h": "洋",
+                "m": {
+                  "vi": "đại dương; biển lớn",
+                  "en": "ocean",
+                  "zh-Hant": "洋"
+                }
+              }
+            ],
+            "kind": "proper",
+            "note": {
+              "vi": "太平洋 là tên riêng “Thái Bình Dương/Pacific Ocean”: 太平 = thái bình/yên bình, 洋 = đại dương.",
+              "en": "太平洋 is the proper name “Pacific Ocean”: 太平 = peaceful, 洋 = ocean.",
+              "zh-Hant": "「太平洋」是專有名詞：太平＝和平安定，洋＝大洋。"
+            }
           }
         },
         {
@@ -2997,6 +5627,32 @@
             "vi": "phương Tây",
             "en": "the West",
             "zh-Hant": "西洋"
+          },
+          "formation": {
+            "parts": [
+              {
+                "h": "西",
+                "m": {
+                  "vi": "phía Tây",
+                  "en": "west",
+                  "zh-Hant": "西"
+                }
+              },
+              {
+                "h": "洋",
+                "m": {
+                  "vi": "đại dương; biển lớn",
+                  "en": "ocean",
+                  "zh-Hant": "洋"
+                }
+              }
+            ],
+            "kind": "lexicalized",
+            "note": {
+              "vi": "西 = phía Tây, 洋 = biển lớn. 西洋 là cách gọi lịch sử/đã cố định chỉ phương Tây/thế giới phương Tây, không chỉ “biển phía Tây”.",
+              "en": "西 = west and 洋 = ocean; 西洋 is a historical lexicalized term for the Western world, not simply “western ocean.”",
+              "zh-Hant": "西＝西方，洋＝大洋；「西洋」是歷史上固定化的稱呼，指西方世界，不只是「西邊的海」。"
+            }
           }
         }
       ],

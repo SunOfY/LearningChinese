@@ -287,6 +287,7 @@ async function init(){
     loadEnglishCacheForLevel(desired); buildPinyinMap();
     bindLanguage(); buildDaySelectors(); bindNavigation(); bindStudyControls(); bindRecorder(); bindCanvas(); bindVocab(); bindQuiz(); bindBackup(); bindLevelSelector();
     updateBranding(); applyLanguage(); selectDay(saved.lastDay,{notify:false});
+    showView(preferredView(),{persist:false,scroll:false});
     registerServiceWorker();
     window.TOCFL_APP_READY=true;
     document.dispatchEvent(new CustomEvent('tocfl:app-ready'));
@@ -1258,8 +1259,20 @@ async function afterAccountReady(userId){
 }
 function onSignedOut(){ state.currentUserId=null; closeLevelSelector(); }
 
+const LAST_VIEW_KEY='tocfl-last-view-v1';
+const VALID_VIEWS=new Set(['today','vocab','radicals','quiz','homework','progress']);
+function preferredView(){
+  try{const v=localStorage.getItem(LAST_VIEW_KEY);return VALID_VIEWS.has(v)?v:'radicals';}catch{return 'radicals';}
+}
 function bindNavigation(){document.querySelectorAll('.tab').forEach(btn=>btn.addEventListener('click',()=>showView(btn.dataset.view)));}
-function showView(name){document.querySelectorAll('.tab').forEach(x=>x.classList.toggle('is-active',x.dataset.view===name));document.querySelectorAll('.view').forEach(x=>x.classList.toggle('is-active',x.id===`view-${name}`));if(name==='progress')updateProgressUI();if(name==='quiz')makeQuiz();if(name==='vocab')renderVocabList();window.scrollTo({top:0,behavior:'smooth'});}
+function showView(name,{persist=true,scroll=true}={}){
+  name=VALID_VIEWS.has(name)?name:'radicals';
+  document.querySelectorAll('.tab').forEach(x=>x.classList.toggle('is-active',x.dataset.view===name));
+  document.querySelectorAll('.view').forEach(x=>x.classList.toggle('is-active',x.id===`view-${name}`));
+  if(name==='progress')updateProgressUI();if(name==='quiz')makeQuiz();if(name==='vocab')renderVocabList();
+  if(persist){try{localStorage.setItem(LAST_VIEW_KEY,name);}catch{}document.dispatchEvent(new CustomEvent('tocfl:state-changed'));}
+  if(scroll)window.scrollTo({top:0,behavior:'smooth'});
+}
 function bindVocab(){$('vocabSearch').addEventListener('input',renderVocabList);}
 function renderVocabList(){
   const wrap=$('vocabList');if(!wrap||!state.allWords.length)return;const q=$('vocabSearch').value.trim().toLowerCase(),day=$('vocabDayFilter').value;
@@ -1319,7 +1332,8 @@ const RADICAL_CLOUD_KEYS={
   selected:'tocfl-radical-selected-v1',
   writingTargetPrefix:'tocfl-radical-writing-target-',
   fontScale:'tocfl-radical-font-scale-v1',
-  origins:'tocfl-character-origin-flow-v1'
+  origins:'tocfl-character-origin-flow-v1',
+  mode:'tocfl-radical-mode-v1'
 };
 function readLocalJsonForCloud(key){
   try{const value=JSON.parse(localStorage.getItem(key)||'{}');return value&&typeof value==='object'&&!Array.isArray(value)?value:{};}catch{return {};}
@@ -1341,7 +1355,8 @@ function getRadicalCloudState(){
     writing:readLocalJsonForCloud(RADICAL_CLOUD_KEYS.writing),
     writingTargets,
     fontScale:Number(localStorage.getItem(RADICAL_CLOUD_KEYS.fontScale)||1),
-    origins:readLocalJsonForCloud(RADICAL_CLOUD_KEYS.origins)
+    origins:readLocalJsonForCloud(RADICAL_CLOUD_KEYS.origins),
+    mode:String(localStorage.getItem(RADICAL_CLOUD_KEYS.mode)||'origins')
   };
 }
 function applyRadicalCloudState(radicalState){
@@ -1352,6 +1367,7 @@ function applyRadicalCloudState(radicalState){
     if(radicalState.writing&&typeof radicalState.writing==='object')localStorage.setItem(RADICAL_CLOUD_KEYS.writing,JSON.stringify(radicalState.writing));
     if(Number.isFinite(Number(radicalState.fontScale)))localStorage.setItem(RADICAL_CLOUD_KEYS.fontScale,String(Math.max(.9,Math.min(1.6,Number(radicalState.fontScale)))));
     if(radicalState.origins&&typeof radicalState.origins==='object')localStorage.setItem(RADICAL_CLOUD_KEYS.origins,JSON.stringify(radicalState.origins));
+    if(['origins','semantic','phonetic','pinyin'].includes(radicalState.mode))localStorage.setItem(RADICAL_CLOUD_KEYS.mode,radicalState.mode);
     if(radicalState.writingTargets&&typeof radicalState.writingTargets==='object'){
       const remove=[];
       for(let i=0;i<localStorage.length;i++){
@@ -1372,7 +1388,7 @@ function getCloudState(){
   const levels={}; for(const cfg of LEVEL_CATALOG) if(state.levelStates[cfg.id]) levels[cfg.id]=normalizeLevelState(state.levelStates[cfg.id]);
   const a1=normalizeLevelState(levels.A1||emptyLevelState());
   return {
-    progress:{__format:'tocfl-multilevel-v1',levels,settings:{activeLevel:state.activeLevel,rememberLevel:Boolean(state.rememberLevel)},radicals:getRadicalCloudState()},
+    progress:{__format:'tocfl-multilevel-v1',levels,settings:{activeLevel:state.activeLevel,rememberLevel:Boolean(state.rememberLevel),lastView:preferredView()},radicals:getRadicalCloudState()},
     // Legacy mirrors keep the existing database schema and make migration reversible.
     favorites:a1.favorites,lastDay:a1.lastDay,language:state.lang
   };
@@ -1386,6 +1402,7 @@ async function applyCloudState(data={}){
     if(!state.levelStates.A1) state.levelStates.A1=emptyLevelState();
     state.rememberLevel=Boolean(cloudProgress.settings?.rememberLevel);
     const desired=String(cloudProgress.settings?.activeLevel||'A1').toUpperCase(); state.activeLevel=levelConfig(desired)?desired:'A1';
+    const cloudLastView=String(cloudProgress.settings?.lastView||''); if(VALID_VIEWS.has(cloudLastView)){try{localStorage.setItem(LAST_VIEW_KEY,cloudLastView);}catch{}}
     if(cloudProgress.radicals&&typeof cloudProgress.radicals==='object')applyRadicalCloudState(cloudProgress.radicals);
     else needsCloudUpgrade=true;
   }else{
@@ -1400,6 +1417,7 @@ async function applyCloudState(data={}){
   if(!ok){desired='A1';state.activeLevel='A1';await applyLevel('A1',{notify:false,close:false,skipSnapshot:true});state.rememberLevel=false;}
   persistMultiState(); applyLanguage(); document.dispatchEvent(new CustomEvent('tocfl:language-changed'));
   renderCurrentWord(); renderVocabList(); makeQuiz(); updateProgressUI();
+  showView(preferredView(),{persist:false,scroll:false});
   return {needsCloudUpgrade};
 }
 window.TOCFLApp={

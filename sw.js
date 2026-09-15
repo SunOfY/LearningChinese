@@ -1,4 +1,4 @@
-const CACHE = 'tocfl-v4-25-character-origins';
+const CACHE = 'tocfl-v4-27-resume-ancient-ai-ui';
 const ASSETS = [
   './',
   './index.html',

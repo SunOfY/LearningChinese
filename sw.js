@@ -1,4 +1,4 @@
-const CACHE = 'tocfl-v4-29-compact-examples-writing';
+const CACHE = 'tocfl-v4-30-responsive-device-fit';
 const ASSETS = [
   './',
   './index.html',

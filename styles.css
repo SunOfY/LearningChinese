@@ -441,3 +441,143 @@ body.writing-active, body.writing-active *{ -webkit-user-select:none !important;
 .origin-final-practice-layout{display:grid;grid-template-columns:minmax(280px,.75fr) minmax(360px,1.25fr);gap:12px;align-items:start;max-width:1050px;margin:auto}.origin-practice-hero-compact{margin:0;padding:13px;gap:12px;flex-wrap:wrap}.origin-practice-hero-compact .origin-practice-char{font-size:5.2rem}.origin-practice-hero-compact>.rad-pinyin-hint{width:100%;margin:0}.origin-practice-hero-compact>.rad-ai-pronunciation{width:100%;margin:0}
 @media(max-width:980px){.origin-player{height:calc(100dvh - 90px);min-height:520px}.origin-focus-word-compact{grid-template-columns:1fr}.origin-focus-word-practice{grid-template-columns:minmax(0,1fr) minmax(320px,1fr);align-items:start}.origin-word-actions{grid-column:1/-1}.origin-final-practice-layout{grid-template-columns:1fr 1fr}}
 @media(max-width:720px){.origin-player{height:auto;max-height:none;min-height:0}.origin-player-stage{overflow:visible}.origin-focus-word-practice{grid-template-columns:1fr}.origin-evolution{min-height:0}.origin-stage-card{min-height:150px}.origin-player-nav{position:sticky;bottom:0}.origin-final-practice-layout{grid-template-columns:1fr}.origin-writing-open .rad-writing-grid{grid-template-columns:repeat(auto-fit,minmax(105px,1fr))}}
+
+/* v4.30 — adaptive centering and viewport-fit layout for desktop / iPad / iPhone */
+html,body{width:100%;max-width:100%;overflow-x:hidden}
+body{min-width:0}
+.app-shell{
+  width:min(1440px,calc(100% - 24px));
+  max-width:1440px;
+  margin-inline:auto;
+  padding:16px clamp(10px,1.4vw,20px) 34px;
+}
+main,.view,.radicals-app,#radicalsContent{width:100%;min-width:0}
+.tabs{justify-content:center}
+.radicals-app{margin-inline:auto}
+
+/* The origin player measures its real remaining viewport height in JS. */
+.origin-player{
+  width:100%;
+  max-width:100%;
+  height:var(--origin-fit-height,620px);
+  min-height:205px;
+  max-height:min(720px,calc(100dvh - 10px));
+  margin-inline:auto;
+  scroll-margin-top:8px;
+}
+.origin-player-stage{
+  min-width:0;
+  display:grid;
+  place-items:safe center;
+  overflow:auto;
+  scrollbar-gutter:stable;
+}
+.origin-player-stage>.origin-slide{
+  width:min(100%,1150px);
+  max-width:1150px;
+  min-width:0;
+  margin:auto;
+}
+.origin-vocab-slide>div{width:100%;min-width:0}
+.origin-focus-word-compact{
+  width:100%;
+  max-width:1120px;
+  grid-template-columns:minmax(0,1.08fr) minmax(300px,.92fr);
+  grid-template-areas:
+    "top practice"
+    "main practice";
+  align-items:start;
+}
+.origin-word-top{grid-area:top;min-width:0}
+.origin-focus-word-main{grid-area:main;min-width:0}
+.origin-focus-word-practice{grid-area:practice;min-width:0;align-self:start}
+.origin-word-top>.rad-pinyin-hint{margin:0 0 5px}
+.origin-focus-word-compact>.origin-focus-word-main>.rad-pinyin-hint{margin:0}
+.origin-writing-open,.origin-writing-open-stage,.origin-writing-open .rad-writing-grid,.origin-writing-open .rad-writing-unit{min-width:0;max-width:100%}
+.origin-writing-open .rad-writing-box{max-width:100%}
+.origin-player-nav{width:100%;margin-top:auto}
+
+/* Tablet: use the full device width, put ready-to-write controls near the top. */
+@media(max-width:900px){
+  .app-shell{width:100%;padding-inline:max(10px,env(safe-area-inset-left));padding-right:max(10px,env(safe-area-inset-right))}
+  .tabs{justify-content:flex-start}
+  .origin-focus-word-compact{
+    grid-template-columns:1fr;
+    grid-template-areas:"top" "practice" "main";
+    max-width:760px;
+    margin-inline:auto;
+  }
+  .origin-focus-word-practice{display:grid;grid-template-columns:minmax(0,.72fr) minmax(280px,1.28fr);gap:8px;align-items:start}
+  .origin-word-actions{grid-column:1;align-self:start}
+  .origin-writing-open{grid-column:2;grid-row:1/span 2}
+  .origin-player{height:var(--origin-fit-height,560px);min-height:205px;max-height:calc(100dvh - 8px)}
+  .origin-player-stage{overflow:auto;padding-inline:10px}
+  .origin-player-nav{position:relative;bottom:auto}
+  .origin-source-note small{display:none}
+  .origin-source-note{padding:7px 10px}
+}
+
+/* Phones / narrow portrait screens: one centered column, no sideways layout. */
+@media(max-width:620px){
+  .app-shell{
+    width:100%;
+    padding-top:max(8px,env(safe-area-inset-top));
+    padding-left:max(8px,env(safe-area-inset-left));
+    padding-right:max(8px,env(safe-area-inset-right));
+    padding-bottom:max(22px,env(safe-area-inset-bottom));
+  }
+  .topbar{gap:8px;padding-bottom:9px}
+  .topbar h1{font-size:clamp(25px,8vw,34px)}
+  .tabs{gap:6px;padding-bottom:9px}
+  .tab{padding:8px 10px;min-height:39px}
+  .radicals-app{gap:8px}
+  .rad-hero,.rad-controls,.origin-source-note,.origin-character-picker{margin-bottom:0}
+  .rad-controls{gap:7px}
+  .origin-character-picker{padding:5px 7px;gap:5px}
+  .origin-character-picker button{width:34px;min-width:34px;height:34px;font-size:1.05rem}
+  .origin-player{height:var(--origin-fit-height,500px);min-height:190px;max-height:calc(100dvh - 6px);border-radius:14px}
+  .origin-player-head{padding:7px 9px 3px;gap:8px}
+  .origin-player-head h3{font-size:1.18rem;margin-top:2px}
+  .origin-player-head h3 small{display:block;margin:2px 0 0;font-size:.58em}
+  .origin-category-badge{font-size:.68rem;padding:2px 6px}
+  .origin-player-counter b{font-size:.95rem}.origin-player-counter small{font-size:.7rem}
+  .origin-step-progress{padding:0 9px 5px;gap:3px}
+  .origin-player-stage{padding:6px 7px 7px;overflow:auto;scrollbar-gutter:auto}
+  .origin-player-nav{padding:6px 7px;gap:5px;padding-bottom:max(6px,env(safe-area-inset-bottom));position:relative}
+  .origin-player-nav button{min-width:0;flex:1 1 0;padding:7px 5px;min-height:35px;font-size:.78rem}
+  .origin-slide-heading{font-size:1rem;margin:0 0 5px}
+  .origin-focus-word-compact{padding:7px;gap:7px;max-width:520px;grid-template-areas:"top" "practice" "main"}
+  .origin-word-summary{gap:8px;padding-bottom:3px}.origin-word-summary .origin-focus-word-hanzi{font-size:2.8rem}.origin-word-summary strong{font-size:1.08rem}.origin-word-summary span{font-size:.88rem}
+  .origin-focus-word-practice{display:grid;grid-template-columns:1fr;gap:6px}
+  .origin-word-actions,.origin-writing-open{grid-column:1;grid-row:auto}
+  .origin-word-actions{padding:4px;gap:4px}
+  .origin-writing-open-title{padding:5px 7px;font-size:.77rem}
+  .origin-writing-open-stage{padding:5px}
+  .origin-writing-open .rad-writing-grid{grid-template-columns:repeat(auto-fit,minmax(96px,1fr));gap:4px}
+  .origin-writing-open .rad-writing-unit{padding:3px;gap:2px}
+  .origin-writing-open .rad-writing-unit-label{font-size:15px}
+  .origin-writing-open .rad-writing-actions button{width:30px;min-height:27px;font-size:11px;padding:2px}
+  .origin-writing-open .rad-writing-status{min-height:17px;font-size:9px}
+  .origin-focus-word-compact .origin-word-formation{padding:6px;margin:2px 0}
+  .origin-focus-word-compact .origin-formation-title{font-size:.76rem;margin-bottom:3px}
+  .origin-focus-word-compact .origin-formation-formula{gap:3px;margin:2px 0 4px}
+  .origin-focus-word-compact .origin-formation-chip,.origin-focus-word-compact .origin-formation-result{min-width:68px;max-width:110px;padding:5px 6px}
+  .origin-focus-word-compact .origin-formation-chip strong,.origin-focus-word-compact .origin-formation-result strong{font-size:1.15rem}
+  .origin-focus-word-compact .origin-formation-chip small,.origin-focus-word-compact .origin-formation-result small{font-size:.66rem}
+  .origin-focus-word-compact .origin-formation-explain,.origin-focus-word-compact .origin-formation-memory{padding:5px 7px;margin-top:3px;font-size:.75rem}
+  .origin-word-example{padding:6px 7px;margin-top:4px}.origin-word-example-zh{font-size:1rem}.origin-word-example-pinyin,.origin-word-example-meaning{font-size:.75rem}
+  .origin-mini-nav-compact{margin-top:4px;gap:5px}.origin-mini-nav-compact button{min-width:0;flex:1;padding:6px 5px;min-height:33px;font-size:.76rem}.origin-mini-nav-compact b{min-width:38px;font-size:.78rem}
+  .origin-evolution{gap:5px;min-height:0;flex-wrap:nowrap;overflow-x:auto;justify-content:flex-start;padding:2px 0 4px;scroll-snap-type:x proximity}
+  .origin-stage-card,.origin-stage-card:last-child{width:min(145px,64vw);min-width:min(145px,64vw);min-height:140px;padding:7px;border-radius:12px;scroll-snap-align:center}
+  .origin-object-emoji{font-size:3.1rem}.origin-component-char{font-size:2.9rem}.origin-modern-char{font-size:3.8rem}.origin-ancient-wrap{width:95px;height:95px}.origin-arrow,.origin-plus{font-size:1.2rem}
+  .origin-main-actions{margin-top:5px;gap:4px}
+  .origin-explain-card{grid-template-columns:82px 1fr;gap:9px;padding:8px;margin:2px auto;align-items:start}.origin-explain-char{width:76px;height:76px;font-size:3rem;border-radius:12px}.origin-explain-card h3{font-size:1rem;margin-bottom:4px}.origin-explain-card h4{font-size:.8rem;margin:4px 0 2px}.origin-explain-card p{font-size:.75rem;line-height:1.38}
+}
+
+/* Very small iPhones: make controls usable without horizontal overflow. */
+@media(max-width:390px){
+  .origin-player-nav button{font-size:.72rem}
+  .origin-focus-word-compact{padding:5px}
+  .origin-writing-open .rad-writing-grid{grid-template-columns:repeat(auto-fit,minmax(88px,1fr))}
+  .origin-stage-card,.origin-stage-card:last-child{width:132px;min-width:132px}
+}

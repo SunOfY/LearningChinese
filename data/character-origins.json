@@ -1,9 +1,9 @@
 {
-  "version": "1",
+  "version": "2",
   "sourceNote": {
-    "vi": "Cách trình bày mô phỏng đúng kiểu bài trên lớp: vật/hình ảnh → dạng chữ cổ → chữ hiện đại → cách dùng. Hình chữ cổ dùng ảnh oracle-script công khai từ Wikimedia Commons; phần ghép ý/ghép âm bám theo cách giảng trong ảnh bạn cung cấp.",
-    "en": "The presentation follows the classroom pattern: object/image → ancient form → modern character → use. Ancient forms use public-domain oracle-script images from Wikimedia Commons; compound explanations follow the classroom framing in your photos.",
-    "zh-Hant": "呈現方式依照課堂：實物／圖像 → 古文字 → 現代字 → 用法。古文字採用 Wikimedia Commons 的公有領域甲骨文字圖；會意與形聲說明依照你提供的課堂照片架構。"
+    "vi": "Mở rộng theo kiểu bài trên lớp: hình/vật thật → dạng chữ cổ → chữ hiện đại; sau đó học cấu tạo, từ vựng, câu ví dụ, phát âm và luyện viết. Các chữ ghép được phân biệt rõ giữa ghép ý và hình thanh để tránh học sai nguồn gốc.",
+    "en": "Expanded in the classroom style: object/image → ancient form → modern character, then structure, vocabulary, example sentences, pronunciation, and writing practice. Semantic compounds and phono-semantic compounds are distinguished to avoid misleading etymology.",
+    "zh-Hant": "依照課堂方式擴充：實物／圖像 → 古文字 → 現代字，再學構形、詞彙、例句、發音與書寫。會意字與形聲字分開呈現，避免誤解字源。"
   },
   "lessons": [
     {
@@ -11,21 +11,77 @@
       "category": "pictogram",
       "char": "日",
       "pinyin": "rì",
-      "meaning": {"vi":"mặt trời; ngày","en":"sun; day","zh-Hant":"太陽；日"},
+      "meaning": {
+        "vi": "mặt trời; ngày",
+        "en": "sun; day",
+        "zh-Hant": "太陽；日"
+      },
       "objectEmoji": "☀️",
-      "objectLabel": {"vi":"Mặt trời","en":"Sun","zh-Hant":"太陽"},
+      "objectLabel": {
+        "vi": "Mặt trời",
+        "en": "Sun",
+        "zh-Hant": "太陽"
+      },
       "ancientImage": "https://commons.wikimedia.org/wiki/Special:Redirect/file/%E6%97%A5-oracle.svg",
       "ancientSource": "https://commons.wikimedia.org/wiki/File:%E6%97%A5-oracle.svg",
-      "explanation": {"vi":"Theo bài học tượng hình: hình tròn/oval biểu diễn mặt trời, dấu ở giữa nhấn phần trung tâm. Qua thời gian nét được vuông hóa thành 日.","en":"In the pictographic lesson, a round/oval sun with a central mark gradually became the squared modern form 日.","zh-Hant":"象形學習中，以圓形／橢圓形表示太陽，中間加記號；後來筆畫方整化成「日」。"},
-      "memory": {"vi":"Nhìn 日 như một mặt trời được đặt vào khung vuông.","en":"See 日 as the sun placed inside a square frame.","zh-Hant":"把「日」想成被方框化的太陽。"},
+      "explanation": {
+        "vi": "Theo bài học tượng hình: hình tròn/oval biểu diễn mặt trời, dấu ở giữa nhấn phần trung tâm. Qua thời gian nét được vuông hóa thành 日.",
+        "en": "In the pictographic lesson, a round/oval sun with a central mark gradually became the squared modern form 日.",
+        "zh-Hant": "象形學習中，以圓形／橢圓形表示太陽，中間加記號；後來筆畫方整化成「日」。"
+      },
+      "memory": {
+        "vi": "Nhìn 日 như một mặt trời được đặt vào khung vuông.",
+        "en": "See 日 as the sun placed inside a square frame.",
+        "zh-Hant": "把「日」想成被方框化的太陽。"
+      },
       "vocab": [
-        {"h":"今日","p":"jīnrì","m":{"vi":"hôm nay; ngày nay","en":"today; nowadays","zh-Hant":"今日"}},
-        {"h":"生日","p":"shēngrì","m":{"vi":"sinh nhật","en":"birthday","zh-Hant":"生日"}},
-        {"h":"星期日","p":"xīngqírì","m":{"vi":"Chủ nhật","en":"Sunday","zh-Hant":"星期日"}}
+        {
+          "h": "今日",
+          "p": "jīnrì",
+          "m": {
+            "vi": "hôm nay; ngày nay",
+            "en": "today; nowadays",
+            "zh-Hant": "今日"
+          }
+        },
+        {
+          "h": "生日",
+          "p": "shēngrì",
+          "m": {
+            "vi": "sinh nhật",
+            "en": "birthday",
+            "zh-Hant": "生日"
+          }
+        },
+        {
+          "h": "星期日",
+          "p": "xīngqírì",
+          "m": {
+            "vi": "Chủ nhật",
+            "en": "Sunday",
+            "zh-Hant": "星期日"
+          }
+        }
       ],
       "examples": [
-        {"zh":"今天是星期日。","p":"Jīntiān shì xīngqírì.","m":{"vi":"Hôm nay là Chủ nhật.","en":"Today is Sunday.","zh-Hant":"今天是星期日。"}},
-        {"zh":"我的生日是五月十日。","p":"Wǒ de shēngrì shì wǔ yuè shí rì.","m":{"vi":"Sinh nhật của tôi là ngày 10 tháng 5.","en":"My birthday is May 10.","zh-Hant":"我的生日是五月十日。"}}
+        {
+          "zh": "今天是星期日。",
+          "p": "Jīntiān shì xīngqírì.",
+          "m": {
+            "vi": "Hôm nay là Chủ nhật.",
+            "en": "Today is Sunday.",
+            "zh-Hant": "今天是星期日。"
+          }
+        },
+        {
+          "zh": "我的生日是五月十日。",
+          "p": "Wǒ de shēngrì shì wǔ yuè shí rì.",
+          "m": {
+            "vi": "Sinh nhật của tôi là ngày 10 tháng 5.",
+            "en": "My birthday is May 10.",
+            "zh-Hant": "我的生日是五月十日。"
+          }
+        }
       ]
     },
     {
@@ -33,21 +89,77 @@
       "category": "pictogram",
       "char": "月",
       "pinyin": "yuè",
-      "meaning": {"vi":"mặt trăng; tháng","en":"moon; month","zh-Hant":"月亮；月份"},
+      "meaning": {
+        "vi": "mặt trăng; tháng",
+        "en": "moon; month",
+        "zh-Hant": "月亮；月份"
+      },
       "objectEmoji": "🌙",
-      "objectLabel": {"vi":"Mặt trăng","en":"Moon","zh-Hant":"月亮"},
+      "objectLabel": {
+        "vi": "Mặt trăng",
+        "en": "Moon",
+        "zh-Hant": "月亮"
+      },
       "ancientImage": "https://commons.wikimedia.org/wiki/Special:Redirect/file/%E6%9C%88-oracle.svg",
       "ancientSource": "https://commons.wikimedia.org/wiki/File:%E6%9C%88-oracle.svg",
-      "explanation": {"vi":"Dạng cổ của 月 gợi hình trăng khuyết. Các nét dần được thẳng và vuông hóa thành chữ 月 hiện đại.","en":"The ancient form of 月 resembles a crescent moon; its strokes gradually straightened into the modern form.","zh-Hant":"「月」的古文字像彎月，後來筆畫逐漸直線化、方整化成現代的「月」。"},
-      "memory": {"vi":"Hai nét bên trong như phần sáng/tối trên mặt trăng.","en":"Use the inner strokes as a cue for the moon's lit and dark areas.","zh-Hant":"把裡面的兩筆想成月亮的明暗區域。"},
+      "explanation": {
+        "vi": "Dạng cổ của 月 gợi hình trăng khuyết. Các nét dần được thẳng và vuông hóa thành chữ 月 hiện đại.",
+        "en": "The ancient form of 月 resembles a crescent moon; its strokes gradually straightened into the modern form.",
+        "zh-Hant": "「月」的古文字像彎月，後來筆畫逐漸直線化、方整化成現代的「月」。"
+      },
+      "memory": {
+        "vi": "Hai nét bên trong như phần sáng/tối trên mặt trăng.",
+        "en": "Use the inner strokes as a cue for the moon's lit and dark areas.",
+        "zh-Hant": "把裡面的兩筆想成月亮的明暗區域。"
+      },
       "vocab": [
-        {"h":"月亮","p":"yuèliang","m":{"vi":"mặt trăng","en":"moon","zh-Hant":"月亮"}},
-        {"h":"下個月","p":"xià ge yuè","m":{"vi":"tháng sau","en":"next month","zh-Hant":"下個月"}},
-        {"h":"月份","p":"yuèfèn","m":{"vi":"tháng (trong năm)","en":"month (calendar)","zh-Hant":"月份"}}
+        {
+          "h": "月亮",
+          "p": "yuèliang",
+          "m": {
+            "vi": "mặt trăng",
+            "en": "moon",
+            "zh-Hant": "月亮"
+          }
+        },
+        {
+          "h": "下個月",
+          "p": "xià ge yuè",
+          "m": {
+            "vi": "tháng sau",
+            "en": "next month",
+            "zh-Hant": "下個月"
+          }
+        },
+        {
+          "h": "月份",
+          "p": "yuèfèn",
+          "m": {
+            "vi": "tháng (trong năm)",
+            "en": "month (calendar)",
+            "zh-Hant": "月份"
+          }
+        }
       ],
       "examples": [
-        {"zh":"今晚的月亮很漂亮。","p":"Jīnwǎn de yuèliang hěn piàoliang.","m":{"vi":"Mặt trăng tối nay rất đẹp.","en":"The moon is beautiful tonight.","zh-Hant":"今晚的月亮很漂亮。"}},
-        {"zh":"下個月我要回家。","p":"Xià ge yuè wǒ yào huí jiā.","m":{"vi":"Tháng sau tôi sẽ về nhà.","en":"I am going home next month.","zh-Hant":"下個月我要回家。"}}
+        {
+          "zh": "今晚的月亮很漂亮。",
+          "p": "Jīnwǎn de yuèliang hěn piàoliang.",
+          "m": {
+            "vi": "Mặt trăng tối nay rất đẹp.",
+            "en": "The moon is beautiful tonight.",
+            "zh-Hant": "今晚的月亮很漂亮。"
+          }
+        },
+        {
+          "zh": "下個月我要回家。",
+          "p": "Xià ge yuè wǒ yào huí jiā.",
+          "m": {
+            "vi": "Tháng sau tôi sẽ về nhà.",
+            "en": "I am going home next month.",
+            "zh-Hant": "下個月我要回家。"
+          }
+        }
       ]
     },
     {
@@ -55,21 +167,77 @@
       "category": "pictogram",
       "char": "目",
       "pinyin": "mù",
-      "meaning": {"vi":"mắt; mục","en":"eye; item","zh-Hant":"眼睛；目"},
+      "meaning": {
+        "vi": "mắt; mục",
+        "en": "eye; item",
+        "zh-Hant": "眼睛；目"
+      },
       "objectEmoji": "👁️",
-      "objectLabel": {"vi":"Con mắt","en":"Eye","zh-Hant":"眼睛"},
+      "objectLabel": {
+        "vi": "Con mắt",
+        "en": "Eye",
+        "zh-Hant": "眼睛"
+      },
       "ancientImage": "https://commons.wikimedia.org/wiki/Special:Redirect/file/%E7%9B%AE-oracle.svg",
       "ancientSource": "https://commons.wikimedia.org/wiki/File:%E7%9B%AE-oracle.svg",
-      "explanation": {"vi":"Dạng giáp cốt của 目 nhìn rất giống một con mắt nằm ngang với phần con ngươi ở giữa. Khi chuẩn hóa chữ, hình được xoay/đóng khung thành 目.","en":"The oracle form of 目 clearly resembles a horizontal eye with a central pupil; the modern form regularized it into 目.","zh-Hant":"「目」的甲骨文字很像橫放的眼睛，中間是眼珠；字形規整後形成現代的「目」。"},
-      "memory": {"vi":"Hãy tưởng tượng 目 là một con mắt đã được dựng thẳng lên.","en":"Imagine 目 as an eye rotated upright.","zh-Hant":"把「目」想成被轉直、方整化的眼睛。"},
+      "explanation": {
+        "vi": "Dạng giáp cốt của 目 nhìn rất giống một con mắt nằm ngang với phần con ngươi ở giữa. Khi chuẩn hóa chữ, hình được xoay/đóng khung thành 目.",
+        "en": "The oracle form of 目 clearly resembles a horizontal eye with a central pupil; the modern form regularized it into 目.",
+        "zh-Hant": "「目」的甲骨文字很像橫放的眼睛，中間是眼珠；字形規整後形成現代的「目」。"
+      },
+      "memory": {
+        "vi": "Hãy tưởng tượng 目 là một con mắt đã được dựng thẳng lên.",
+        "en": "Imagine 目 as an eye rotated upright.",
+        "zh-Hant": "把「目」想成被轉直、方整化的眼睛。"
+      },
       "vocab": [
-        {"h":"目前","p":"mùqián","m":{"vi":"hiện tại","en":"currently","zh-Hant":"目前"}},
-        {"h":"目的","p":"mùdì","m":{"vi":"mục đích","en":"purpose","zh-Hant":"目的"}},
-        {"h":"目標","p":"mùbiāo","m":{"vi":"mục tiêu","en":"goal; target","zh-Hant":"目標"}}
+        {
+          "h": "目前",
+          "p": "mùqián",
+          "m": {
+            "vi": "hiện tại",
+            "en": "currently",
+            "zh-Hant": "目前"
+          }
+        },
+        {
+          "h": "目的",
+          "p": "mùdì",
+          "m": {
+            "vi": "mục đích",
+            "en": "purpose",
+            "zh-Hant": "目的"
+          }
+        },
+        {
+          "h": "目標",
+          "p": "mùbiāo",
+          "m": {
+            "vi": "mục tiêu",
+            "en": "goal; target",
+            "zh-Hant": "目標"
+          }
+        }
       ],
       "examples": [
-        {"zh":"目前我住在高雄。","p":"Mùqián wǒ zhù zài Gāoxióng.","m":{"vi":"Hiện tại tôi sống ở Cao Hùng.","en":"I currently live in Kaohsiung.","zh-Hant":"目前我住在高雄。"}},
-        {"zh":"我的目標是學好中文。","p":"Wǒ de mùbiāo shì xué hǎo Zhōngwén.","m":{"vi":"Mục tiêu của tôi là học tốt tiếng Trung.","en":"My goal is to learn Chinese well.","zh-Hant":"我的目標是學好中文。"}}
+        {
+          "zh": "目前我住在高雄。",
+          "p": "Mùqián wǒ zhù zài Gāoxióng.",
+          "m": {
+            "vi": "Hiện tại tôi sống ở Cao Hùng.",
+            "en": "I currently live in Kaohsiung.",
+            "zh-Hant": "目前我住在高雄。"
+          }
+        },
+        {
+          "zh": "我的目標是學好中文。",
+          "p": "Wǒ de mùbiāo shì xué hǎo Zhōngwén.",
+          "m": {
+            "vi": "Mục tiêu của tôi là học tốt tiếng Trung.",
+            "en": "My goal is to learn Chinese well.",
+            "zh-Hant": "我的目標是學好中文。"
+          }
+        }
       ]
     },
     {
@@ -77,21 +245,77 @@
       "category": "pictogram",
       "char": "手",
       "pinyin": "shǒu",
-      "meaning": {"vi":"tay","en":"hand","zh-Hant":"手"},
+      "meaning": {
+        "vi": "tay",
+        "en": "hand",
+        "zh-Hant": "手"
+      },
       "objectEmoji": "✋",
-      "objectLabel": {"vi":"Bàn tay","en":"Hand","zh-Hant":"手"},
+      "objectLabel": {
+        "vi": "Bàn tay",
+        "en": "Hand",
+        "zh-Hant": "手"
+      },
       "ancientImage": "https://commons.wikimedia.org/wiki/Special:Redirect/file/%E6%89%8B-oracle.svg",
       "ancientSource": "https://commons.wikimedia.org/wiki/File:%E6%89%8B-oracle.svg",
-      "explanation": {"vi":"Chữ cổ mô phỏng bàn tay với các ngón xòe ra; về sau được giản hóa thành các nét chuẩn của 手.","en":"The ancient form depicts a hand with spread fingers; it was later standardized into 手.","zh-Hant":"古文字像伸開的手掌與手指，後來逐漸規整成「手」。"},
-      "memory": {"vi":"Ba nét phía trên như các ngón tay, nét dọc dưới như cổ tay.","en":"Treat the upper strokes as fingers and the lower stroke as the wrist.","zh-Hant":"把上面的筆畫想成手指，下面的筆畫想成手腕。"},
+      "explanation": {
+        "vi": "Chữ cổ mô phỏng bàn tay với các ngón xòe ra; về sau được giản hóa thành các nét chuẩn của 手.",
+        "en": "The ancient form depicts a hand with spread fingers; it was later standardized into 手.",
+        "zh-Hant": "古文字像伸開的手掌與手指，後來逐漸規整成「手」。"
+      },
+      "memory": {
+        "vi": "Ba nét phía trên như các ngón tay, nét dọc dưới như cổ tay.",
+        "en": "Treat the upper strokes as fingers and the lower stroke as the wrist.",
+        "zh-Hant": "把上面的筆畫想成手指，下面的筆畫想成手腕。"
+      },
       "vocab": [
-        {"h":"手機","p":"shǒujī","m":{"vi":"điện thoại di động","en":"mobile phone","zh-Hant":"手機"}},
-        {"h":"洗手","p":"xǐshǒu","m":{"vi":"rửa tay","en":"wash hands","zh-Hant":"洗手"}},
-        {"h":"右手","p":"yòushǒu","m":{"vi":"tay phải","en":"right hand","zh-Hant":"右手"}}
+        {
+          "h": "手機",
+          "p": "shǒujī",
+          "m": {
+            "vi": "điện thoại di động",
+            "en": "mobile phone",
+            "zh-Hant": "手機"
+          }
+        },
+        {
+          "h": "洗手",
+          "p": "xǐshǒu",
+          "m": {
+            "vi": "rửa tay",
+            "en": "wash hands",
+            "zh-Hant": "洗手"
+          }
+        },
+        {
+          "h": "右手",
+          "p": "yòushǒu",
+          "m": {
+            "vi": "tay phải",
+            "en": "right hand",
+            "zh-Hant": "右手"
+          }
+        }
       ],
       "examples": [
-        {"zh":"請先洗手。","p":"Qǐng xiān xǐshǒu.","m":{"vi":"Hãy rửa tay trước.","en":"Please wash your hands first.","zh-Hant":"請先洗手。"}},
-        {"zh":"我的手機在桌上。","p":"Wǒ de shǒujī zài zhuō shàng.","m":{"vi":"Điện thoại của tôi ở trên bàn.","en":"My phone is on the table.","zh-Hant":"我的手機在桌上。"}}
+        {
+          "zh": "請先洗手。",
+          "p": "Qǐng xiān xǐshǒu.",
+          "m": {
+            "vi": "Hãy rửa tay trước.",
+            "en": "Please wash your hands first.",
+            "zh-Hant": "請先洗手。"
+          }
+        },
+        {
+          "zh": "我的手機在桌上。",
+          "p": "Wǒ de shǒujī zài zhuō shàng.",
+          "m": {
+            "vi": "Điện thoại của tôi ở trên bàn.",
+            "en": "My phone is on the table.",
+            "zh-Hant": "我的手機在桌上。"
+          }
+        }
       ]
     },
     {
@@ -99,21 +323,77 @@
       "category": "pictogram",
       "char": "門",
       "pinyin": "mén",
-      "meaning": {"vi":"cửa; cổng","en":"door; gate","zh-Hant":"門"},
+      "meaning": {
+        "vi": "cửa; cổng",
+        "en": "door; gate",
+        "zh-Hant": "門"
+      },
       "objectEmoji": "🚪",
-      "objectLabel": {"vi":"Cánh cửa/cổng","en":"Door / gate","zh-Hant":"門／門扇"},
+      "objectLabel": {
+        "vi": "Cánh cửa/cổng",
+        "en": "Door / gate",
+        "zh-Hant": "門／門扇"
+      },
       "ancientImage": "https://commons.wikimedia.org/wiki/Special:Redirect/file/%E9%96%80-oracle.svg",
       "ancientSource": "https://commons.wikimedia.org/wiki/File:%E9%96%80-oracle.svg",
-      "explanation": {"vi":"Dạng cổ của 門 trông như hai cánh cửa đối xứng. Chữ hiện đại vẫn giữ cảm giác hai cánh cửa trong khung.","en":"The ancient form of 門 looks like two facing door leaves; the modern form still preserves that two-door structure.","zh-Hant":"「門」的古文字像左右兩扇門，現代字仍保留雙門扇的結構感。"},
-      "memory": {"vi":"Hãy nhìn 門 như hai cánh cửa đang khép lại.","en":"See 門 as two door leaves closing together.","zh-Hant":"把「門」看成左右兩扇門合在一起。"},
+      "explanation": {
+        "vi": "Dạng cổ của 門 trông như hai cánh cửa đối xứng. Chữ hiện đại vẫn giữ cảm giác hai cánh cửa trong khung.",
+        "en": "The ancient form of 門 looks like two facing door leaves; the modern form still preserves that two-door structure.",
+        "zh-Hant": "「門」的古文字像左右兩扇門，現代字仍保留雙門扇的結構感。"
+      },
+      "memory": {
+        "vi": "Hãy nhìn 門 như hai cánh cửa đang khép lại.",
+        "en": "See 門 as two door leaves closing together.",
+        "zh-Hant": "把「門」看成左右兩扇門合在一起。"
+      },
       "vocab": [
-        {"h":"開門","p":"kāimén","m":{"vi":"mở cửa","en":"open the door","zh-Hant":"開門"}},
-        {"h":"關門","p":"guānmén","m":{"vi":"đóng cửa","en":"close the door","zh-Hant":"關門"}},
-        {"h":"門口","p":"ménkǒu","m":{"vi":"cửa ra vào; trước cửa","en":"doorway; entrance","zh-Hant":"門口"}}
+        {
+          "h": "開門",
+          "p": "kāimén",
+          "m": {
+            "vi": "mở cửa",
+            "en": "open the door",
+            "zh-Hant": "開門"
+          }
+        },
+        {
+          "h": "關門",
+          "p": "guānmén",
+          "m": {
+            "vi": "đóng cửa",
+            "en": "close the door",
+            "zh-Hant": "關門"
+          }
+        },
+        {
+          "h": "門口",
+          "p": "ménkǒu",
+          "m": {
+            "vi": "cửa ra vào; trước cửa",
+            "en": "doorway; entrance",
+            "zh-Hant": "門口"
+          }
+        }
       ],
       "examples": [
-        {"zh":"請幫我開門。","p":"Qǐng bāng wǒ kāimén.","m":{"vi":"Hãy giúp tôi mở cửa.","en":"Please open the door for me.","zh-Hant":"請幫我開門。"}},
-        {"zh":"我在門口等你。","p":"Wǒ zài ménkǒu děng nǐ.","m":{"vi":"Tôi đợi bạn ở cửa.","en":"I am waiting for you at the entrance.","zh-Hant":"我在門口等你。"}}
+        {
+          "zh": "請幫我開門。",
+          "p": "Qǐng bāng wǒ kāimén.",
+          "m": {
+            "vi": "Hãy giúp tôi mở cửa.",
+            "en": "Please open the door for me.",
+            "zh-Hant": "請幫我開門。"
+          }
+        },
+        {
+          "zh": "我在門口等你。",
+          "p": "Wǒ zài ménkǒu děng nǐ.",
+          "m": {
+            "vi": "Tôi đợi bạn ở cửa.",
+            "en": "I am waiting for you at the entrance.",
+            "zh-Hant": "我在門口等你。"
+          }
+        }
       ]
     },
     {
@@ -121,21 +401,77 @@
       "category": "pictogram",
       "char": "馬",
       "pinyin": "mǎ",
-      "meaning": {"vi":"ngựa","en":"horse","zh-Hant":"馬"},
+      "meaning": {
+        "vi": "ngựa",
+        "en": "horse",
+        "zh-Hant": "馬"
+      },
       "objectEmoji": "🐎",
-      "objectLabel": {"vi":"Con ngựa","en":"Horse","zh-Hant":"馬"},
+      "objectLabel": {
+        "vi": "Con ngựa",
+        "en": "Horse",
+        "zh-Hant": "馬"
+      },
       "ancientImage": "https://commons.wikimedia.org/wiki/Special:Redirect/file/%E9%A6%AC-oracle-5.svg",
       "ancientSource": "https://commons.wikimedia.org/wiki/File:%E9%A6%AC-oracle-5.svg",
-      "explanation": {"vi":"Các dạng cổ của 馬 giữ những nét gợi đầu, thân, chân và đuôi ngựa. Qua nhiều giai đoạn, hình vẽ được quy tắc hóa thành 馬.","en":"Ancient forms of 馬 preserve cues for the horse's head, body, legs, and tail; repeated standardization produced the modern character.","zh-Hant":"「馬」的古文字保留馬頭、身體、四肢與尾巴的線索，逐步規整後成為現代的「馬」。"},
-      "memory": {"vi":"Nhìn bốn chấm/nét dưới như bốn chân, phần trên như đầu và bờm ngựa.","en":"Use the lower strokes as the legs and the upper shape as the horse's head and mane.","zh-Hant":"把下方筆畫想成馬腿，上方想成馬頭與鬃毛。"},
+      "explanation": {
+        "vi": "Các dạng cổ của 馬 giữ những nét gợi đầu, thân, chân và đuôi ngựa. Qua nhiều giai đoạn, hình vẽ được quy tắc hóa thành 馬.",
+        "en": "Ancient forms of 馬 preserve cues for the horse's head, body, legs, and tail; repeated standardization produced the modern character.",
+        "zh-Hant": "「馬」的古文字保留馬頭、身體、四肢與尾巴的線索，逐步規整後成為現代的「馬」。"
+      },
+      "memory": {
+        "vi": "Nhìn bốn chấm/nét dưới như bốn chân, phần trên như đầu và bờm ngựa.",
+        "en": "Use the lower strokes as the legs and the upper shape as the horse's head and mane.",
+        "zh-Hant": "把下方筆畫想成馬腿，上方想成馬頭與鬃毛。"
+      },
       "vocab": [
-        {"h":"騎馬","p":"qímǎ","m":{"vi":"cưỡi ngựa","en":"ride a horse","zh-Hant":"騎馬"}},
-        {"h":"一匹馬","p":"yì pǐ mǎ","m":{"vi":"một con ngựa","en":"one horse","zh-Hant":"一匹馬"}},
-        {"h":"馬場","p":"mǎchǎng","m":{"vi":"trường đua/sân ngựa","en":"horse ranch / racecourse","zh-Hant":"馬場"}}
+        {
+          "h": "騎馬",
+          "p": "qímǎ",
+          "m": {
+            "vi": "cưỡi ngựa",
+            "en": "ride a horse",
+            "zh-Hant": "騎馬"
+          }
+        },
+        {
+          "h": "一匹馬",
+          "p": "yì pǐ mǎ",
+          "m": {
+            "vi": "một con ngựa",
+            "en": "one horse",
+            "zh-Hant": "一匹馬"
+          }
+        },
+        {
+          "h": "馬場",
+          "p": "mǎchǎng",
+          "m": {
+            "vi": "trường đua/sân ngựa",
+            "en": "horse ranch / racecourse",
+            "zh-Hant": "馬場"
+          }
+        }
       ],
       "examples": [
-        {"zh":"我喜歡騎馬。","p":"Wǒ xǐhuān qímǎ.","m":{"vi":"Tôi thích cưỡi ngựa.","en":"I like riding horses.","zh-Hant":"我喜歡騎馬。"}},
-        {"zh":"那匹馬跑得很快。","p":"Nà pǐ mǎ pǎo de hěn kuài.","m":{"vi":"Con ngựa đó chạy rất nhanh.","en":"That horse runs very fast.","zh-Hant":"那匹馬跑得很快。"}}
+        {
+          "zh": "我喜歡騎馬。",
+          "p": "Wǒ xǐhuān qímǎ.",
+          "m": {
+            "vi": "Tôi thích cưỡi ngựa.",
+            "en": "I like riding horses.",
+            "zh-Hant": "我喜歡騎馬。"
+          }
+        },
+        {
+          "zh": "那匹馬跑得很快。",
+          "p": "Nà pǐ mǎ pǎo de hěn kuài.",
+          "m": {
+            "vi": "Con ngựa đó chạy rất nhanh.",
+            "en": "That horse runs very fast.",
+            "zh-Hant": "那匹馬跑得很快。"
+          }
+        }
       ]
     },
     {
@@ -143,21 +479,91 @@
       "category": "combined",
       "char": "明",
       "pinyin": "míng",
-      "meaning": {"vi":"sáng; rõ","en":"bright; clear","zh-Hant":"明亮；清楚"},
+      "meaning": {
+        "vi": "sáng; rõ",
+        "en": "bright; clear",
+        "zh-Hant": "明亮；清楚"
+      },
       "components": [
-        {"char":"日","emoji":"☀️","p":"rì","m":{"vi":"mặt trời","en":"sun","zh-Hant":"太陽"}},
-        {"char":"月","emoji":"🌙","p":"yuè","m":{"vi":"mặt trăng","en":"moon","zh-Hant":"月亮"}}
+        {
+          "char": "日",
+          "emoji": "☀️",
+          "p": "rì",
+          "m": {
+            "vi": "mặt trời",
+            "en": "sun",
+            "zh-Hant": "太陽"
+          }
+        },
+        {
+          "char": "月",
+          "emoji": "🌙",
+          "p": "yuè",
+          "m": {
+            "vi": "mặt trăng",
+            "en": "moon",
+            "zh-Hant": "月亮"
+          }
+        }
       ],
-      "explanation": {"vi":"Theo cách học hội ý trên lớp: 日 (mặt trời) + 月 (mặt trăng) → hai nguồn sáng cùng gợi ý “sáng” → 明.","en":"Following the classroom combined-ideogram mnemonic: 日 (sun) + 月 (moon) → two lights suggest brightness → 明.","zh-Hant":"依照課堂的會意學法：日（太陽）＋月（月亮）→ 兩個光源聯想到「明亮」→ 明。"},
-      "memory": {"vi":"Mặt trời + mặt trăng cùng chiếu → rất sáng → 明.","en":"Sun + moon shining together → bright → 明.","zh-Hant":"太陽＋月亮一起發光 → 明亮 → 明。"},
+      "explanation": {
+        "vi": "Theo cách học hội ý trên lớp: 日 (mặt trời) + 月 (mặt trăng) → hai nguồn sáng cùng gợi ý “sáng” → 明.",
+        "en": "Following the classroom combined-ideogram mnemonic: 日 (sun) + 月 (moon) → two lights suggest brightness → 明.",
+        "zh-Hant": "依照課堂的會意學法：日（太陽）＋月（月亮）→ 兩個光源聯想到「明亮」→ 明。"
+      },
+      "memory": {
+        "vi": "Mặt trời + mặt trăng cùng chiếu → rất sáng → 明.",
+        "en": "Sun + moon shining together → bright → 明.",
+        "zh-Hant": "太陽＋月亮一起發光 → 明亮 → 明。"
+      },
       "vocab": [
-        {"h":"明天","p":"míngtiān","m":{"vi":"ngày mai","en":"tomorrow","zh-Hant":"明天"}},
-        {"h":"明白","p":"míngbai","m":{"vi":"hiểu; rõ","en":"understand; clear","zh-Hant":"明白"}},
-        {"h":"明年","p":"míngnián","m":{"vi":"năm sau","en":"next year","zh-Hant":"明年"}}
+        {
+          "h": "明天",
+          "p": "míngtiān",
+          "m": {
+            "vi": "ngày mai",
+            "en": "tomorrow",
+            "zh-Hant": "明天"
+          }
+        },
+        {
+          "h": "明白",
+          "p": "míngbai",
+          "m": {
+            "vi": "hiểu; rõ",
+            "en": "understand; clear",
+            "zh-Hant": "明白"
+          }
+        },
+        {
+          "h": "明年",
+          "p": "míngnián",
+          "m": {
+            "vi": "năm sau",
+            "en": "next year",
+            "zh-Hant": "明年"
+          }
+        }
       ],
       "examples": [
-        {"zh":"明天見！","p":"Míngtiān jiàn!","m":{"vi":"Hẹn gặp ngày mai!","en":"See you tomorrow!","zh-Hant":"明天見！"}},
-        {"zh":"我明白了。","p":"Wǒ míngbai le.","m":{"vi":"Tôi hiểu rồi.","en":"I understand now.","zh-Hant":"我明白了。"}}
+        {
+          "zh": "明天見！",
+          "p": "Míngtiān jiàn!",
+          "m": {
+            "vi": "Hẹn gặp ngày mai!",
+            "en": "See you tomorrow!",
+            "zh-Hant": "明天見！"
+          }
+        },
+        {
+          "zh": "我明白了。",
+          "p": "Wǒ míngbai le.",
+          "m": {
+            "vi": "Tôi hiểu rồi.",
+            "en": "I understand now.",
+            "zh-Hant": "我明白了。"
+          }
+        }
       ]
     },
     {
@@ -165,21 +571,91 @@
       "category": "combined",
       "char": "看",
       "pinyin": "kàn",
-      "meaning": {"vi":"nhìn; xem; đọc","en":"look; watch; read","zh-Hant":"看；觀看"},
+      "meaning": {
+        "vi": "nhìn; xem; đọc",
+        "en": "look; watch; read",
+        "zh-Hant": "看；觀看"
+      },
       "components": [
-        {"char":"手","emoji":"✋","p":"shǒu","m":{"vi":"tay","en":"hand","zh-Hant":"手"}},
-        {"char":"目","emoji":"👁️","p":"mù","m":{"vi":"mắt","en":"eye","zh-Hant":"眼睛"}}
+        {
+          "char": "手",
+          "emoji": "✋",
+          "p": "shǒu",
+          "m": {
+            "vi": "tay",
+            "en": "hand",
+            "zh-Hant": "手"
+          }
+        },
+        {
+          "char": "目",
+          "emoji": "👁️",
+          "p": "mù",
+          "m": {
+            "vi": "mắt",
+            "en": "eye",
+            "zh-Hant": "眼睛"
+          }
+        }
       ],
-      "explanation": {"vi":"Theo hình trên lớp: đặt tay phía trên mắt để che nắng/nhìn xa → 手 + 目 → 看 “nhìn, xem”.","en":"As shown in class: put a hand above the eye to shade it and look into the distance → 手 + 目 → 看.","zh-Hant":"依課堂圖像：把手放在眼睛上方遮光、往遠處看 → 手＋目 → 看。"},
-      "memory": {"vi":"Tay ở trên, mắt ở dưới: đưa tay lên mắt để nhìn xa.","en":"Hand above, eye below: shade your eyes to look farther.","zh-Hant":"上面是手、下面是目：手放在眼睛上方往遠處看。"},
+      "explanation": {
+        "vi": "Theo hình trên lớp: đặt tay phía trên mắt để che nắng/nhìn xa → 手 + 目 → 看 “nhìn, xem”.",
+        "en": "As shown in class: put a hand above the eye to shade it and look into the distance → 手 + 目 → 看.",
+        "zh-Hant": "依課堂圖像：把手放在眼睛上方遮光、往遠處看 → 手＋目 → 看。"
+      },
+      "memory": {
+        "vi": "Tay ở trên, mắt ở dưới: đưa tay lên mắt để nhìn xa.",
+        "en": "Hand above, eye below: shade your eyes to look farther.",
+        "zh-Hant": "上面是手、下面是目：手放在眼睛上方往遠處看。"
+      },
       "vocab": [
-        {"h":"看書","p":"kànshū","m":{"vi":"đọc sách","en":"read a book","zh-Hant":"看書"}},
-        {"h":"看見","p":"kànjiàn","m":{"vi":"nhìn thấy","en":"see","zh-Hant":"看見"}},
-        {"h":"看電視","p":"kàn diànshì","m":{"vi":"xem TV","en":"watch TV","zh-Hant":"看電視"}}
+        {
+          "h": "看書",
+          "p": "kànshū",
+          "m": {
+            "vi": "đọc sách",
+            "en": "read a book",
+            "zh-Hant": "看書"
+          }
+        },
+        {
+          "h": "看見",
+          "p": "kànjiàn",
+          "m": {
+            "vi": "nhìn thấy",
+            "en": "see",
+            "zh-Hant": "看見"
+          }
+        },
+        {
+          "h": "看電視",
+          "p": "kàn diànshì",
+          "m": {
+            "vi": "xem TV",
+            "en": "watch TV",
+            "zh-Hant": "看電視"
+          }
+        }
       ],
       "examples": [
-        {"zh":"我每天看書。","p":"Wǒ měitiān kànshū.","m":{"vi":"Tôi đọc sách mỗi ngày.","en":"I read every day.","zh-Hant":"我每天看書。"}},
-        {"zh":"你在看什麼？","p":"Nǐ zài kàn shénme?","m":{"vi":"Bạn đang xem gì?","en":"What are you looking at?","zh-Hant":"你在看什麼？"}}
+        {
+          "zh": "我每天看書。",
+          "p": "Wǒ měitiān kànshū.",
+          "m": {
+            "vi": "Tôi đọc sách mỗi ngày.",
+            "en": "I read every day.",
+            "zh-Hant": "我每天看書。"
+          }
+        },
+        {
+          "zh": "你在看什麼？",
+          "p": "Nǐ zài kàn shénme?",
+          "m": {
+            "vi": "Bạn đang xem gì?",
+            "en": "What are you looking at?",
+            "zh-Hant": "你在看什麼？"
+          }
+        }
       ]
     },
     {
@@ -187,19 +663,2362 @@
       "category": "phonosemantic",
       "char": "們",
       "pinyin": "men",
-      "meaning": {"vi":"hậu tố số nhiều cho người","en":"plural suffix for people","zh-Hant":"人的複數後綴"},
-      "semantic": {"char":"亻","label":{"vi":"GỢI NGHĨA","en":"MEANING","zh-Hant":"義符"},"m":{"vi":"người","en":"person","zh-Hant":"人"}},
-      "phonetic": {"char":"門","p":"mén","label":{"vi":"GỢI ÂM","en":"SOUND","zh-Hant":"聲符"},"m":{"vi":"mượn âm từ 門","en":"sound clue from 門","zh-Hant":"由「門」提示讀音"}},
-      "explanation": {"vi":"Theo bài hình thanh trên lớp: 亻 cho biết chữ liên quan đến người; 門 mén đóng vai trò gợi âm. Kết quả là 們 men, thường đọc thanh nhẹ trong 我們/你們/他們.","en":"Following the classroom phono-semantic analysis: 亻 gives the person-related meaning clue, while 門 mén supplies the sound clue. The result 們 men is usually neutral tone in pronouns.","zh-Hant":"依課堂形聲分析：亻提示與人有關，門 mén 提示讀音；組成「們 men」，在我們／你們／他們中通常讀輕聲。"},
-      "memory": {"vi":"Thấy 亻 → nghĩ tới người; thấy 門 → nhớ âm mén/men → 們 = nhiều người.","en":"亻 cues people; 門 cues the mén/men sound → 們 marks a group of people.","zh-Hant":"看到亻想到「人」，看到門想到 mén／men 的音 → 們表示多人。"},
+      "meaning": {
+        "vi": "hậu tố số nhiều cho người",
+        "en": "plural suffix for people",
+        "zh-Hant": "人的複數後綴"
+      },
+      "semantic": {
+        "char": "亻",
+        "label": {
+          "vi": "GỢI NGHĨA",
+          "en": "MEANING",
+          "zh-Hant": "義符"
+        },
+        "m": {
+          "vi": "người",
+          "en": "person",
+          "zh-Hant": "人"
+        }
+      },
+      "phonetic": {
+        "char": "門",
+        "p": "mén",
+        "label": {
+          "vi": "GỢI ÂM",
+          "en": "SOUND",
+          "zh-Hant": "聲符"
+        },
+        "m": {
+          "vi": "mượn âm từ 門",
+          "en": "sound clue from 門",
+          "zh-Hant": "由「門」提示讀音"
+        }
+      },
+      "explanation": {
+        "vi": "Theo bài hình thanh trên lớp: 亻 cho biết chữ liên quan đến người; 門 mén đóng vai trò gợi âm. Kết quả là 們 men, thường đọc thanh nhẹ trong 我們/你們/他們.",
+        "en": "Following the classroom phono-semantic analysis: 亻 gives the person-related meaning clue, while 門 mén supplies the sound clue. The result 們 men is usually neutral tone in pronouns.",
+        "zh-Hant": "依課堂形聲分析：亻提示與人有關，門 mén 提示讀音；組成「們 men」，在我們／你們／他們中通常讀輕聲。"
+      },
+      "memory": {
+        "vi": "Thấy 亻 → nghĩ tới người; thấy 門 → nhớ âm mén/men → 們 = nhiều người.",
+        "en": "亻 cues people; 門 cues the mén/men sound → 們 marks a group of people.",
+        "zh-Hant": "看到亻想到「人」，看到門想到 mén／men 的音 → 們表示多人。"
+      },
       "vocab": [
-        {"h":"我們","p":"wǒmen","m":{"vi":"chúng tôi/chúng ta","en":"we; us","zh-Hant":"我們"}},
-        {"h":"你們","p":"nǐmen","m":{"vi":"các bạn","en":"you (plural)","zh-Hant":"你們"}},
-        {"h":"他們","p":"tāmen","m":{"vi":"họ","en":"they; them","zh-Hant":"他們"}}
+        {
+          "h": "我們",
+          "p": "wǒmen",
+          "m": {
+            "vi": "chúng tôi/chúng ta",
+            "en": "we; us",
+            "zh-Hant": "我們"
+          }
+        },
+        {
+          "h": "你們",
+          "p": "nǐmen",
+          "m": {
+            "vi": "các bạn",
+            "en": "you (plural)",
+            "zh-Hant": "你們"
+          }
+        },
+        {
+          "h": "他們",
+          "p": "tāmen",
+          "m": {
+            "vi": "họ",
+            "en": "they; them",
+            "zh-Hant": "他們"
+          }
+        }
       ],
       "examples": [
-        {"zh":"我們一起學中文。","p":"Wǒmen yìqǐ xué Zhōngwén.","m":{"vi":"Chúng ta cùng học tiếng Trung.","en":"We study Chinese together.","zh-Hant":"我們一起學中文。"}},
-        {"zh":"你們好！","p":"Nǐmen hǎo!","m":{"vi":"Xin chào các bạn!","en":"Hello, everyone!","zh-Hant":"你們好！"}}
+        {
+          "zh": "我們一起學中文。",
+          "p": "Wǒmen yìqǐ xué Zhōngwén.",
+          "m": {
+            "vi": "Chúng ta cùng học tiếng Trung.",
+            "en": "We study Chinese together.",
+            "zh-Hant": "我們一起學中文。"
+          }
+        },
+        {
+          "zh": "你們好！",
+          "p": "Nǐmen hǎo!",
+          "m": {
+            "vi": "Xin chào các bạn!",
+            "en": "Hello, everyone!",
+            "zh-Hant": "你們好！"
+          }
+        }
+      ]
+    },
+    {
+      "id": "mountain-shan",
+      "category": "pictogram",
+      "char": "山",
+      "pinyin": "shān",
+      "meaning": {
+        "vi": "núi",
+        "en": "mountain",
+        "zh-Hant": "山"
+      },
+      "objectEmoji": "⛰️",
+      "objectLabel": {
+        "vi": "Núi",
+        "en": "Mountain",
+        "zh-Hant": "山"
+      },
+      "ancientImage": "https://commons.wikimedia.org/wiki/Special:Redirect/file/%E5%B1%B1-oracle.svg",
+      "ancientSource": "https://commons.wikimedia.org/wiki/File:%E5%B1%B1-oracle.svg",
+      "explanation": {
+        "vi": "Dạng cổ của 山 mô phỏng các đỉnh núi nhô lên; nét giữa cao hơn như đỉnh chính. Qua thời gian hình được vuông hóa thành 山.",
+        "en": "The ancient form of 山 depicts several mountain peaks, with the middle peak higher. The shape gradually became squared into the modern 山.",
+        "zh-Hant": "把三條豎筆看成三座山峰，中間最高。"
+      },
+      "memory": {
+        "vi": "Nhìn ba nét đứng như ba đỉnh núi cạnh nhau.",
+        "en": "The three upright strokes look like three neighboring mountain peaks.",
+        "zh-Hant": "把三條豎筆想成三座相連的山峰。"
+      },
+      "vocab": [
+        {
+          "h": "高山",
+          "p": "gāoshān",
+          "m": {
+            "vi": "núi cao",
+            "en": "high mountain",
+            "zh-Hant": "高山"
+          }
+        },
+        {
+          "h": "山上",
+          "p": "shānshàng",
+          "m": {
+            "vi": "trên núi",
+            "en": "on the mountain",
+            "zh-Hant": "山上"
+          }
+        },
+        {
+          "h": "爬山",
+          "p": "páshān",
+          "m": {
+            "vi": "leo núi",
+            "en": "hike; climb a mountain",
+            "zh-Hant": "爬山"
+          }
+        }
+      ],
+      "examples": [
+        {
+          "zh": "我們星期六去爬山。",
+          "p": "Wǒmen xīngqíliù qù páshān.",
+          "m": {
+            "vi": "Thứ Bảy chúng tôi đi leo núi.",
+            "en": "We are going hiking on Saturday.",
+            "zh-Hant": "我們星期六去爬山。"
+          }
+        },
+        {
+          "zh": "山上很冷。",
+          "p": "Shānshàng hěn lěng.",
+          "m": {
+            "vi": "Trên núi rất lạnh.",
+            "en": "It is very cold on the mountain.",
+            "zh-Hant": "山上很冷。"
+          }
+        }
+      ]
+    },
+    {
+      "id": "water-shui",
+      "category": "pictogram",
+      "char": "水",
+      "pinyin": "shuǐ",
+      "meaning": {
+        "vi": "nước",
+        "en": "water",
+        "zh-Hant": "水"
+      },
+      "objectEmoji": "💧",
+      "objectLabel": {
+        "vi": "Nước",
+        "en": "Water",
+        "zh-Hant": "水"
+      },
+      "ancientImage": "https://commons.wikimedia.org/wiki/Special:Redirect/file/%E6%B0%B4-oracle.svg",
+      "ancientSource": "https://commons.wikimedia.org/wiki/File:%E6%B0%B4-oracle.svg",
+      "explanation": {
+        "vi": "Dạng cổ của 水 gợi dòng nước chính ở giữa và các dòng nhỏ hoặc giọt nước tỏa ra hai bên.",
+        "en": "The ancient form of 水 suggests a main stream in the center with smaller streams or splashes on both sides.",
+        "zh-Hant": "「水」的古文字像中央主水流，兩側有支流或水滴。"
+      },
+      "memory": {
+        "vi": "Nét giữa là dòng nước, các nét hai bên như nước bắn ra.",
+        "en": "See the middle stroke as the main stream and the side strokes as splashing water.",
+        "zh-Hant": "把中間看成主水流，兩邊看成濺出的水。"
+      },
+      "vocab": [
+        {
+          "h": "喝水",
+          "p": "hēshuǐ",
+          "m": {
+            "vi": "uống nước",
+            "en": "drink water",
+            "zh-Hant": "喝水"
+          }
+        },
+        {
+          "h": "水果",
+          "p": "shuǐguǒ",
+          "m": {
+            "vi": "trái cây",
+            "en": "fruit",
+            "zh-Hant": "水果"
+          }
+        },
+        {
+          "h": "開水",
+          "p": "kāishuǐ",
+          "m": {
+            "vi": "nước đun sôi",
+            "en": "boiled water",
+            "zh-Hant": "開水"
+          }
+        }
+      ],
+      "examples": [
+        {
+          "zh": "請多喝水。",
+          "p": "Qǐng duō hēshuǐ.",
+          "m": {
+            "vi": "Hãy uống nhiều nước.",
+            "en": "Please drink more water.",
+            "zh-Hant": "請多喝水。"
+          }
+        },
+        {
+          "zh": "我每天吃水果。",
+          "p": "Wǒ měitiān chī shuǐguǒ.",
+          "m": {
+            "vi": "Tôi ăn trái cây mỗi ngày.",
+            "en": "I eat fruit every day.",
+            "zh-Hant": "我每天吃水果。"
+          }
+        }
+      ]
+    },
+    {
+      "id": "fire-huo",
+      "category": "pictogram",
+      "char": "火",
+      "pinyin": "huǒ",
+      "meaning": {
+        "vi": "lửa",
+        "en": "fire",
+        "zh-Hant": "火"
+      },
+      "objectEmoji": "🔥",
+      "objectLabel": {
+        "vi": "Ngọn lửa",
+        "en": "Fire",
+        "zh-Hant": "火"
+      },
+      "ancientImage": "https://commons.wikimedia.org/wiki/Special:Redirect/file/%E7%81%AB-oracle.svg",
+      "ancientSource": "https://commons.wikimedia.org/wiki/File:%E7%81%AB-oracle.svg",
+      "explanation": {
+        "vi": "Dạng cổ của 火 trông như một ngọn lửa có lõi ở giữa và các tia lửa vươn sang hai bên.",
+        "en": "The ancient form of 火 resembles a flame with a central core and sparks extending to both sides.",
+        "zh-Hant": "「火」的古文字像火焰，中間是主火苗，兩側像火星。"
+      },
+      "memory": {
+        "vi": "Hãy tưởng tượng nét giữa là ngọn lửa chính, hai bên là tia lửa.",
+        "en": "Imagine the center as the main flame and the side strokes as sparks.",
+        "zh-Hant": "把中間想成主火苗，兩側想成火星。"
+      },
+      "vocab": [
+        {
+          "h": "火車",
+          "p": "huǒchē",
+          "m": {
+            "vi": "tàu hỏa",
+            "en": "train",
+            "zh-Hant": "火車"
+          }
+        },
+        {
+          "h": "大火",
+          "p": "dàhuǒ",
+          "m": {
+            "vi": "đám cháy lớn",
+            "en": "large fire",
+            "zh-Hant": "大火"
+          }
+        },
+        {
+          "h": "生火",
+          "p": "shēnghuǒ",
+          "m": {
+            "vi": "nhóm lửa",
+            "en": "make a fire",
+            "zh-Hant": "生火"
+          }
+        }
+      ],
+      "examples": [
+        {
+          "zh": "我坐火車去台北。",
+          "p": "Wǒ zuò huǒchē qù Táiběi.",
+          "m": {
+            "vi": "Tôi đi tàu hỏa đến Đài Bắc.",
+            "en": "I take the train to Taipei.",
+            "zh-Hant": "我坐火車去台北。"
+          }
+        },
+        {
+          "zh": "不要在這裡生火。",
+          "p": "Bú yào zài zhèlǐ shēnghuǒ.",
+          "m": {
+            "vi": "Đừng nhóm lửa ở đây.",
+            "en": "Do not make a fire here.",
+            "zh-Hant": "不要在這裡生火。"
+          }
+        }
+      ]
+    },
+    {
+      "id": "tree-mu",
+      "category": "pictogram",
+      "char": "木",
+      "pinyin": "mù",
+      "meaning": {
+        "vi": "cây; gỗ",
+        "en": "tree; wood",
+        "zh-Hant": "木"
+      },
+      "objectEmoji": "🌳",
+      "objectLabel": {
+        "vi": "Cái cây",
+        "en": "Tree",
+        "zh-Hant": "樹木"
+      },
+      "ancientImage": "https://commons.wikimedia.org/wiki/Special:Redirect/file/%E6%9C%A8-oracle.svg",
+      "ancientSource": "https://commons.wikimedia.org/wiki/File:%E6%9C%A8-oracle.svg",
+      "explanation": {
+        "vi": "Dạng cổ của 木 mô phỏng một cái cây: thân ở giữa, cành phía trên và rễ tỏa ra phía dưới.",
+        "en": "The ancient form of 木 depicts a tree: trunk in the center, branches above, and roots spreading below.",
+        "zh-Hant": "「木」的古文字像一棵樹：中間是樹幹，上方是枝條，下方像樹根。"
+      },
+      "memory": {
+        "vi": "Nhìn 木 như một cái cây có thân, cành và rễ.",
+        "en": "See 木 as a tree with trunk, branches, and roots.",
+        "zh-Hant": "把「木」看成有樹幹、樹枝和樹根的一棵樹。"
+      },
+      "vocab": [
+        {
+          "h": "木頭",
+          "p": "mùtou",
+          "m": {
+            "vi": "gỗ; khúc gỗ",
+            "en": "wood; log",
+            "zh-Hant": "木頭"
+          }
+        },
+        {
+          "h": "樹木",
+          "p": "shùmù",
+          "m": {
+            "vi": "cây cối",
+            "en": "trees",
+            "zh-Hant": "樹木"
+          }
+        },
+        {
+          "h": "木門",
+          "p": "mùmén",
+          "m": {
+            "vi": "cửa gỗ",
+            "en": "wooden door",
+            "zh-Hant": "木門"
+          }
+        }
+      ],
+      "examples": [
+        {
+          "zh": "這張桌子是木頭做的。",
+          "p": "Zhè zhāng zhuōzi shì mùtou zuò de.",
+          "m": {
+            "vi": "Cái bàn này làm bằng gỗ.",
+            "en": "This table is made of wood.",
+            "zh-Hant": "這張桌子是木頭做的。"
+          }
+        },
+        {
+          "zh": "公園裡有很多樹木。",
+          "p": "Gōngyuán lǐ yǒu hěn duō shùmù.",
+          "m": {
+            "vi": "Trong công viên có rất nhiều cây.",
+            "en": "There are many trees in the park.",
+            "zh-Hant": "公園裡有很多樹木。"
+          }
+        }
+      ]
+    },
+    {
+      "id": "person-ren",
+      "category": "pictogram",
+      "char": "人",
+      "pinyin": "rén",
+      "meaning": {
+        "vi": "người",
+        "en": "person",
+        "zh-Hant": "人"
+      },
+      "objectEmoji": "🚶",
+      "objectLabel": {
+        "vi": "Người đang đứng/đi",
+        "en": "Person",
+        "zh-Hant": "人"
+      },
+      "ancientImage": "https://commons.wikimedia.org/wiki/Special:Redirect/file/%E4%BA%BA-oracle.svg",
+      "ancientSource": "https://commons.wikimedia.org/wiki/File:%E4%BA%BA-oracle.svg",
+      "explanation": {
+        "vi": "Dạng cổ của 人 thường được nhìn như hình nghiêng của một người đang đứng hoặc bước đi; hai nét hiện đại giữ lại dáng thân và chân.",
+        "en": "The ancient form of 人 is commonly viewed as the side profile of a standing or walking person; the modern two strokes preserve the body-and-legs silhouette.",
+        "zh-Hant": "「人」的古文字常被看作側身站立或行走的人形；現代兩筆仍保留身體與腿的輪廓。"
+      },
+      "memory": {
+        "vi": "Hai nét như hai chân của một người đang bước.",
+        "en": "The two strokes can be imagined as the legs of a walking person.",
+        "zh-Hant": "把兩筆想成一個人向前走時的兩條腿。"
+      },
+      "vocab": [
+        {
+          "h": "中國人",
+          "p": "Zhōngguórén",
+          "m": {
+            "vi": "người Trung Quốc",
+            "en": "Chinese person",
+            "zh-Hant": "中國人"
+          }
+        },
+        {
+          "h": "家人",
+          "p": "jiārén",
+          "m": {
+            "vi": "người nhà; gia đình",
+            "en": "family members",
+            "zh-Hant": "家人"
+          }
+        },
+        {
+          "h": "別人",
+          "p": "biérén",
+          "m": {
+            "vi": "người khác",
+            "en": "other people",
+            "zh-Hant": "別人"
+          }
+        }
+      ],
+      "examples": [
+        {
+          "zh": "我的家人在越南。",
+          "p": "Wǒ de jiārén zài Yuènán.",
+          "m": {
+            "vi": "Gia đình tôi ở Việt Nam.",
+            "en": "My family is in Vietnam.",
+            "zh-Hant": "我的家人在越南。"
+          }
+        },
+        {
+          "zh": "這裡有很多人。",
+          "p": "Zhèlǐ yǒu hěn duō rén.",
+          "m": {
+            "vi": "Ở đây có rất nhiều người.",
+            "en": "There are many people here.",
+            "zh-Hant": "這裡有很多人。"
+          }
+        }
+      ]
+    },
+    {
+      "id": "mouth-kou",
+      "category": "pictogram",
+      "char": "口",
+      "pinyin": "kǒu",
+      "meaning": {
+        "vi": "miệng; cửa miệng",
+        "en": "mouth; opening",
+        "zh-Hant": "口"
+      },
+      "objectEmoji": "👄",
+      "objectLabel": {
+        "vi": "Miệng",
+        "en": "Mouth",
+        "zh-Hant": "嘴巴"
+      },
+      "ancientImage": "https://commons.wikimedia.org/wiki/Special:Redirect/file/%E5%8F%A3-oracle.svg",
+      "ancientSource": "https://commons.wikimedia.org/wiki/File:%E5%8F%A3-oracle.svg",
+      "explanation": {
+        "vi": "Dạng cổ của 口 là một hình mở giống miệng nhìn chính diện; sau này được vuông hóa thành 口.",
+        "en": "The ancient form of 口 is an open shape resembling a mouth seen from the front, later regularized into a square.",
+        "zh-Hant": "「口」的古文字像正面張開的嘴，後來規整成方形的「口」。"
+      },
+      "memory": {
+        "vi": "Hãy xem 口 như một cái miệng đang mở.",
+        "en": "See 口 as an open mouth.",
+        "zh-Hant": "把「口」想成一張張開的嘴。"
+      },
+      "vocab": [
+        {
+          "h": "門口",
+          "p": "ménkǒu",
+          "m": {
+            "vi": "cửa ra vào",
+            "en": "entrance",
+            "zh-Hant": "門口"
+          }
+        },
+        {
+          "h": "人口",
+          "p": "rénkǒu",
+          "m": {
+            "vi": "dân số",
+            "en": "population",
+            "zh-Hant": "人口"
+          }
+        },
+        {
+          "h": "一口",
+          "p": "yì kǒu",
+          "m": {
+            "vi": "một ngụm; một miếng",
+            "en": "one mouthful",
+            "zh-Hant": "一口"
+          }
+        }
+      ],
+      "examples": [
+        {
+          "zh": "我在門口等你。",
+          "p": "Wǒ zài ménkǒu děng nǐ.",
+          "m": {
+            "vi": "Tôi đợi bạn ở cửa.",
+            "en": "I will wait for you at the entrance.",
+            "zh-Hant": "我在門口等你。"
+          }
+        },
+        {
+          "zh": "請喝一口水。",
+          "p": "Qǐng hē yì kǒu shuǐ.",
+          "m": {
+            "vi": "Hãy uống một ngụm nước.",
+            "en": "Please take a sip of water.",
+            "zh-Hant": "請喝一口水。"
+          }
+        }
+      ]
+    },
+    {
+      "id": "field-tian",
+      "category": "pictogram",
+      "char": "田",
+      "pinyin": "tián",
+      "meaning": {
+        "vi": "ruộng; cánh đồng",
+        "en": "field",
+        "zh-Hant": "田"
+      },
+      "objectEmoji": "🧑‍🌾",
+      "objectLabel": {
+        "vi": "Ruộng chia ô",
+        "en": "Field",
+        "zh-Hant": "田地"
+      },
+      "ancientImage": "https://commons.wikimedia.org/wiki/Special:Redirect/file/%E7%94%B0-oracle.svg",
+      "ancientSource": "https://commons.wikimedia.org/wiki/File:%E7%94%B0-oracle.svg",
+      "explanation": {
+        "vi": "Dạng cổ của 田 gợi một thửa ruộng được chia thành các ô hoặc luống. Chữ hiện đại vẫn giữ rõ cấu trúc ô vuông bên trong.",
+        "en": "The ancient form of 田 suggests farmland divided into plots or furrows. The modern form still clearly shows the internal grid.",
+        "zh-Hant": "「田」的古文字像被分成小塊的田地，現代字仍保留清楚的格子結構。"
+      },
+      "memory": {
+        "vi": "Nhìn 田 như một mảnh ruộng chia thành bốn ô.",
+        "en": "Think of 田 as a field divided into four plots.",
+        "zh-Hant": "把「田」想成分成四小塊的田地。"
+      },
+      "vocab": [
+        {
+          "h": "農田",
+          "p": "nóngtián",
+          "m": {
+            "vi": "đất nông nghiệp; ruộng",
+            "en": "farmland",
+            "zh-Hant": "農田"
+          }
+        },
+        {
+          "h": "田地",
+          "p": "tiándì",
+          "m": {
+            "vi": "ruộng đất",
+            "en": "fields; farmland",
+            "zh-Hant": "田地"
+          }
+        },
+        {
+          "h": "水田",
+          "p": "shuǐtián",
+          "m": {
+            "vi": "ruộng nước",
+            "en": "paddy field",
+            "zh-Hant": "水田"
+          }
+        }
+      ],
+      "examples": [
+        {
+          "zh": "那邊有很多農田。",
+          "p": "Nàbiān yǒu hěn duō nóngtián.",
+          "m": {
+            "vi": "Bên kia có rất nhiều ruộng.",
+            "en": "There are many fields over there.",
+            "zh-Hant": "那邊有很多農田。"
+          }
+        },
+        {
+          "zh": "這裡以前是水田。",
+          "p": "Zhèlǐ yǐqián shì shuǐtián.",
+          "m": {
+            "vi": "Nơi đây trước kia là ruộng nước.",
+            "en": "This used to be a paddy field.",
+            "zh-Hant": "這裡以前是水田。"
+          }
+        }
+      ]
+    },
+    {
+      "id": "river-chuan",
+      "category": "pictogram",
+      "char": "川",
+      "pinyin": "chuān",
+      "meaning": {
+        "vi": "sông; dòng chảy",
+        "en": "river; stream",
+        "zh-Hant": "川"
+      },
+      "objectEmoji": "🏞️",
+      "objectLabel": {
+        "vi": "Dòng sông",
+        "en": "River",
+        "zh-Hant": "河川"
+      },
+      "ancientImage": "https://commons.wikimedia.org/wiki/Special:Redirect/file/%E5%B7%9D-oracle.svg",
+      "ancientSource": "https://commons.wikimedia.org/wiki/File:%E5%B7%9D-oracle.svg",
+      "explanation": {
+        "vi": "Dạng cổ của 川 mô phỏng các dòng nước chảy song song; ba nét dọc hiện đại giữ cảm giác dòng chảy.",
+        "en": "The ancient form of 川 depicts parallel streams of flowing water; the three modern vertical strokes preserve the sense of flow.",
+        "zh-Hant": "「川」的古文字像幾股平行流動的水，現代三條直筆仍保留水流感。"
+      },
+      "memory": {
+        "vi": "Ba nét dọc như ba dòng nước đang chảy xuống.",
+        "en": "The three vertical strokes look like three streams flowing downward.",
+        "zh-Hant": "把三條直筆想成三股向下流的水。"
+      },
+      "vocab": [
+        {
+          "h": "河川",
+          "p": "héchuān",
+          "m": {
+            "vi": "sông ngòi",
+            "en": "rivers",
+            "zh-Hant": "河川"
+          }
+        },
+        {
+          "h": "四川",
+          "p": "Sìchuān",
+          "m": {
+            "vi": "Tứ Xuyên",
+            "en": "Sichuan",
+            "zh-Hant": "四川"
+          }
+        },
+        {
+          "h": "山川",
+          "p": "shānchuān",
+          "m": {
+            "vi": "núi sông; cảnh quan",
+            "en": "mountains and rivers",
+            "zh-Hant": "山川"
+          }
+        }
+      ],
+      "examples": [
+        {
+          "zh": "台灣有很多河川。",
+          "p": "Táiwān yǒu hěn duō héchuān.",
+          "m": {
+            "vi": "Đài Loan có nhiều sông ngòi.",
+            "en": "Taiwan has many rivers.",
+            "zh-Hant": "台灣有很多河川。"
+          }
+        },
+        {
+          "zh": "四川的食物很有名。",
+          "p": "Sìchuān de shíwù hěn yǒumíng.",
+          "m": {
+            "vi": "Đồ ăn Tứ Xuyên rất nổi tiếng.",
+            "en": "Sichuan food is very famous.",
+            "zh-Hant": "四川的食物很有名。"
+          }
+        }
+      ]
+    },
+    {
+      "id": "fish-yu",
+      "category": "pictogram",
+      "char": "魚",
+      "pinyin": "yú",
+      "meaning": {
+        "vi": "cá",
+        "en": "fish",
+        "zh-Hant": "魚"
+      },
+      "objectEmoji": "🐟",
+      "objectLabel": {
+        "vi": "Con cá",
+        "en": "Fish",
+        "zh-Hant": "魚"
+      },
+      "ancientImage": "https://commons.wikimedia.org/wiki/Special:Redirect/file/%E9%AD%9A-oracle.svg",
+      "ancientSource": "https://commons.wikimedia.org/wiki/File:%E9%AD%9A-oracle.svg",
+      "explanation": {
+        "vi": "Dạng cổ của 魚 mô phỏng thân cá, đầu và đuôi; qua nhiều giai đoạn các đường cong được chuyển thành nét viết quy chuẩn.",
+        "en": "The ancient form of 魚 depicts a fish with head, body, and tail. Over time the curves were standardized into regular strokes.",
+        "zh-Hant": "「魚」的古文字描繪魚的頭、身體與尾巴，之後逐漸規整成現代筆畫。"
+      },
+      "memory": {
+        "vi": "Hãy nhìn phần dưới như đuôi cá và toàn chữ như một con cá dựng đứng.",
+        "en": "Imagine the lower part as the tail and the whole character as an upright fish.",
+        "zh-Hant": "把下方想成魚尾，整個字想成直立的魚。"
+      },
+      "vocab": [
+        {
+          "h": "魚肉",
+          "p": "yúròu",
+          "m": {
+            "vi": "thịt cá",
+            "en": "fish meat",
+            "zh-Hant": "魚肉"
+          }
+        },
+        {
+          "h": "金魚",
+          "p": "jīnyú",
+          "m": {
+            "vi": "cá vàng",
+            "en": "goldfish",
+            "zh-Hant": "金魚"
+          }
+        },
+        {
+          "h": "吃魚",
+          "p": "chī yú",
+          "m": {
+            "vi": "ăn cá",
+            "en": "eat fish",
+            "zh-Hant": "吃魚"
+          }
+        }
+      ],
+      "examples": [
+        {
+          "zh": "我很喜歡吃魚。",
+          "p": "Wǒ hěn xǐhuan chī yú.",
+          "m": {
+            "vi": "Tôi rất thích ăn cá.",
+            "en": "I really like eating fish.",
+            "zh-Hant": "我很喜歡吃魚。"
+          }
+        },
+        {
+          "zh": "他家有兩隻金魚。",
+          "p": "Tā jiā yǒu liǎng zhī jīnyú.",
+          "m": {
+            "vi": "Nhà anh ấy có hai con cá vàng.",
+            "en": "He has two goldfish at home.",
+            "zh-Hant": "他家有兩隻金魚。"
+          }
+        }
+      ]
+    },
+    {
+      "id": "bird-niao",
+      "category": "pictogram",
+      "char": "鳥",
+      "pinyin": "niǎo",
+      "meaning": {
+        "vi": "chim",
+        "en": "bird",
+        "zh-Hant": "鳥"
+      },
+      "objectEmoji": "🐦",
+      "objectLabel": {
+        "vi": "Con chim",
+        "en": "Bird",
+        "zh-Hant": "鳥"
+      },
+      "ancientImage": "https://commons.wikimedia.org/wiki/Special:Redirect/file/%E9%B3%A5-oracle.svg",
+      "ancientSource": "https://commons.wikimedia.org/wiki/File:%E9%B3%A5-oracle.svg",
+      "explanation": {
+        "vi": "Dạng cổ của 鳥 mô phỏng một con chim với đầu, mỏ, thân và đuôi. Chữ hiện đại giữ lại dấu vết của thân và đuôi chim.",
+        "en": "The ancient form of 鳥 depicts a bird with head, beak, body, and tail. The modern character still preserves traces of the body and tail.",
+        "zh-Hant": "「鳥」的古文字像有頭、嘴、身體與尾巴的鳥，現代字仍保留鳥身與尾巴的痕跡。"
+      },
+      "memory": {
+        "vi": "Nhìn 鳥 như một con chim đứng nghiêng với đuôi ở phía dưới.",
+        "en": "See 鳥 as a side-view bird with its tail below.",
+        "zh-Hant": "把「鳥」想成側身站立、尾巴在下方的一隻鳥。"
+      },
+      "vocab": [
+        {
+          "h": "小鳥",
+          "p": "xiǎoniǎo",
+          "m": {
+            "vi": "chim nhỏ",
+            "en": "small bird",
+            "zh-Hant": "小鳥"
+          }
+        },
+        {
+          "h": "鳥叫",
+          "p": "niǎojiào",
+          "m": {
+            "vi": "tiếng chim hót",
+            "en": "birdsong",
+            "zh-Hant": "鳥叫"
+          }
+        },
+        {
+          "h": "飛鳥",
+          "p": "fēiniǎo",
+          "m": {
+            "vi": "chim bay",
+            "en": "flying bird",
+            "zh-Hant": "飛鳥"
+          }
+        }
+      ],
+      "examples": [
+        {
+          "zh": "樹上有一隻小鳥。",
+          "p": "Shù shàng yǒu yì zhī xiǎoniǎo.",
+          "m": {
+            "vi": "Trên cây có một con chim nhỏ.",
+            "en": "There is a small bird in the tree.",
+            "zh-Hant": "樹上有一隻小鳥。"
+          }
+        },
+        {
+          "zh": "早上可以聽到鳥叫。",
+          "p": "Zǎoshang kěyǐ tīngdào niǎojiào.",
+          "m": {
+            "vi": "Buổi sáng có thể nghe tiếng chim hót.",
+            "en": "You can hear birds in the morning.",
+            "zh-Hant": "早上可以聽到鳥叫。"
+          }
+        }
+      ]
+    },
+    {
+      "id": "cow-niu",
+      "category": "pictogram",
+      "char": "牛",
+      "pinyin": "niú",
+      "meaning": {
+        "vi": "bò; trâu bò",
+        "en": "cow; cattle",
+        "zh-Hant": "牛"
+      },
+      "objectEmoji": "🐄",
+      "objectLabel": {
+        "vi": "Con bò",
+        "en": "Cow",
+        "zh-Hant": "牛"
+      },
+      "ancientImage": "https://commons.wikimedia.org/wiki/Special:Redirect/file/%E7%89%9B-oracle.svg",
+      "ancientSource": "https://commons.wikimedia.org/wiki/File:%E7%89%9B-oracle.svg",
+      "explanation": {
+        "vi": "Dạng cổ của 牛 tập trung vào đầu bò và cặp sừng; chữ hiện đại vẫn giữ nét ngang phía trên gợi cặp sừng.",
+        "en": "The ancient form of 牛 emphasizes a bovine head and horns; the top strokes of the modern form still suggest the horns.",
+        "zh-Hant": "「牛」的古文字突出牛頭與牛角，現代字上方仍可聯想到牛角。"
+      },
+      "memory": {
+        "vi": "Nét ngang trên cùng như hai chiếc sừng bò.",
+        "en": "The top horizontal stroke can remind you of a cow’s horns.",
+        "zh-Hant": "把上方的筆畫想成牛的兩隻角。"
+      },
+      "vocab": [
+        {
+          "h": "牛肉",
+          "p": "niúròu",
+          "m": {
+            "vi": "thịt bò",
+            "en": "beef",
+            "zh-Hant": "牛肉"
+          }
+        },
+        {
+          "h": "牛奶",
+          "p": "niúnǎi",
+          "m": {
+            "vi": "sữa bò",
+            "en": "milk",
+            "zh-Hant": "牛奶"
+          }
+        },
+        {
+          "h": "小牛",
+          "p": "xiǎoniú",
+          "m": {
+            "vi": "bê con",
+            "en": "calf",
+            "zh-Hant": "小牛"
+          }
+        }
+      ],
+      "examples": [
+        {
+          "zh": "我不吃牛肉。",
+          "p": "Wǒ bù chī niúròu.",
+          "m": {
+            "vi": "Tôi không ăn thịt bò.",
+            "en": "I do not eat beef.",
+            "zh-Hant": "我不吃牛肉。"
+          }
+        },
+        {
+          "zh": "早上我喝一杯牛奶。",
+          "p": "Zǎoshang wǒ hē yì bēi niúnǎi.",
+          "m": {
+            "vi": "Buổi sáng tôi uống một cốc sữa.",
+            "en": "I drink a glass of milk in the morning.",
+            "zh-Hant": "早上我喝一杯牛奶。"
+          }
+        }
+      ]
+    },
+    {
+      "id": "sheep-yang",
+      "category": "pictogram",
+      "char": "羊",
+      "pinyin": "yáng",
+      "meaning": {
+        "vi": "dê/cừu",
+        "en": "sheep; goat",
+        "zh-Hant": "羊"
+      },
+      "objectEmoji": "🐑",
+      "objectLabel": {
+        "vi": "Con cừu/dê",
+        "en": "Sheep / goat",
+        "zh-Hant": "羊"
+      },
+      "ancientImage": "https://commons.wikimedia.org/wiki/Special:Redirect/file/%E7%BE%8A-oracle.svg",
+      "ancientSource": "https://commons.wikimedia.org/wiki/File:%E7%BE%8A-oracle.svg",
+      "explanation": {
+        "vi": "Dạng cổ của 羊 mô phỏng đầu động vật với hai chiếc sừng nổi bật. Các nét phía trên của chữ hiện đại vẫn gợi cặp sừng.",
+        "en": "The ancient form of 羊 depicts an animal head with prominent horns. The upper strokes of the modern form still suggest a pair of horns.",
+        "zh-Hant": "「羊」的古文字像有明顯雙角的羊頭，現代字上方仍可聯想到一對角。"
+      },
+      "memory": {
+        "vi": "Hai nét chéo trên đầu chữ như hai chiếc sừng.",
+        "en": "The two upper slanting strokes can be seen as horns.",
+        "zh-Hant": "把上方兩筆想成羊的兩隻角。"
+      },
+      "vocab": [
+        {
+          "h": "羊肉",
+          "p": "yángròu",
+          "m": {
+            "vi": "thịt cừu/dê",
+            "en": "mutton",
+            "zh-Hant": "羊肉"
+          }
+        },
+        {
+          "h": "山羊",
+          "p": "shānyáng",
+          "m": {
+            "vi": "dê núi",
+            "en": "goat",
+            "zh-Hant": "山羊"
+          }
+        },
+        {
+          "h": "綿羊",
+          "p": "miányáng",
+          "m": {
+            "vi": "cừu",
+            "en": "sheep",
+            "zh-Hant": "綿羊"
+          }
+        }
+      ],
+      "examples": [
+        {
+          "zh": "這家店有羊肉麵。",
+          "p": "Zhè jiā diàn yǒu yángròumiàn.",
+          "m": {
+            "vi": "Quán này có mì thịt cừu.",
+            "en": "This restaurant has mutton noodles.",
+            "zh-Hant": "這家店有羊肉麵。"
+          }
+        },
+        {
+          "zh": "山上有很多山羊。",
+          "p": "Shān shàng yǒu hěn duō shānyáng.",
+          "m": {
+            "vi": "Trên núi có nhiều dê.",
+            "en": "There are many goats on the mountain.",
+            "zh-Hant": "山上有很多山羊。"
+          }
+        }
+      ]
+    },
+    {
+      "id": "woods-lin",
+      "category": "combined",
+      "char": "林",
+      "pinyin": "lín",
+      "meaning": {
+        "vi": "rừng; lùm cây",
+        "en": "woods; grove",
+        "zh-Hant": "樹林"
+      },
+      "components": [
+        {
+          "char": "木",
+          "emoji": "🌳",
+          "p": "mù",
+          "m": {
+            "vi": "cây",
+            "en": "tree",
+            "zh-Hant": "樹木"
+          }
+        },
+        {
+          "char": "木",
+          "emoji": "🌳",
+          "p": "mù",
+          "m": {
+            "vi": "cây",
+            "en": "tree",
+            "zh-Hant": "樹木"
+          }
+        }
+      ],
+      "explanation": {
+        "vi": "Hai cây 木 đứng cạnh nhau tạo cảm giác nhiều cây hơn một cây đơn lẻ, nên 林 gợi một khu cây/rừng.",
+        "en": "Two 木 “trees” side by side create the sense of more than one tree, so 林 represents woods or a grove.",
+        "zh-Hant": "兩個「木」並排，表示樹木變多，因此「林」可表示樹林。"
+      },
+      "memory": {
+        "vi": "Một cây là 木; hai cây cạnh nhau thành 林.",
+        "en": "One tree is 木; two trees together become 林.",
+        "zh-Hant": "一棵樹是「木」，兩棵樹並在一起就是「林」。"
+      },
+      "vocab": [
+        {
+          "h": "森林",
+          "p": "sēnlín",
+          "m": {
+            "vi": "rừng",
+            "en": "forest",
+            "zh-Hant": "森林"
+          }
+        },
+        {
+          "h": "樹林",
+          "p": "shùlín",
+          "m": {
+            "vi": "rừng cây; lùm cây",
+            "en": "woods",
+            "zh-Hant": "樹林"
+          }
+        },
+        {
+          "h": "林裡",
+          "p": "línlǐ",
+          "m": {
+            "vi": "trong rừng",
+            "en": "in the woods",
+            "zh-Hant": "林裡"
+          }
+        }
+      ],
+      "examples": [
+        {
+          "zh": "我們去森林散步。",
+          "p": "Wǒmen qù sēnlín sànbù.",
+          "m": {
+            "vi": "Chúng tôi đi dạo trong rừng.",
+            "en": "We are going for a walk in the forest.",
+            "zh-Hant": "我們去森林散步。"
+          }
+        },
+        {
+          "zh": "樹林裡很安靜。",
+          "p": "Shùlín lǐ hěn ānjìng.",
+          "m": {
+            "vi": "Trong rừng cây rất yên tĩnh.",
+            "en": "It is very quiet in the woods.",
+            "zh-Hant": "樹林裡很安靜。"
+          }
+        }
+      ]
+    },
+    {
+      "id": "forest-sen",
+      "category": "combined",
+      "char": "森",
+      "pinyin": "sēn",
+      "meaning": {
+        "vi": "rừng rậm; dày đặc",
+        "en": "dense forest",
+        "zh-Hant": "森林"
+      },
+      "components": [
+        {
+          "char": "木",
+          "emoji": "🌳",
+          "p": "mù",
+          "m": {
+            "vi": "cây",
+            "en": "tree",
+            "zh-Hant": "樹木"
+          }
+        },
+        {
+          "char": "林",
+          "emoji": "🌲🌲",
+          "p": "lín",
+          "m": {
+            "vi": "rừng nhỏ",
+            "en": "woods",
+            "zh-Hant": "樹林"
+          }
+        }
+      ],
+      "explanation": {
+        "vi": "森 chồng thêm cây lên 林, tạo cảm giác cây cối dày đặc hơn nữa; vì vậy thường gắn với ý rừng rậm.",
+        "en": "森 adds another tree to 林, creating an even denser image of trees and therefore the idea of a dense forest.",
+        "zh-Hant": "「森」在「林」的基礎上再增加一棵樹，形成更茂密的森林感。"
+      },
+      "memory": {
+        "vi": "木 → 林 → 森: càng thêm cây, khu rừng càng dày.",
+        "en": "木 → 林 → 森: the more trees, the denser the forest.",
+        "zh-Hant": "木 → 林 → 森：樹越多，森林越茂密。"
+      },
+      "vocab": [
+        {
+          "h": "森林",
+          "p": "sēnlín",
+          "m": {
+            "vi": "rừng",
+            "en": "forest",
+            "zh-Hant": "森林"
+          }
+        },
+        {
+          "h": "森林公園",
+          "p": "sēnlín gōngyuán",
+          "m": {
+            "vi": "công viên rừng",
+            "en": "forest park",
+            "zh-Hant": "森林公園"
+          }
+        },
+        {
+          "h": "森森",
+          "p": "sēnsēn",
+          "m": {
+            "vi": "rậm rạp; âm u",
+            "en": "dense; gloomy",
+            "zh-Hant": "森森"
+          }
+        }
+      ],
+      "examples": [
+        {
+          "zh": "這裡有一個森林公園。",
+          "p": "Zhèlǐ yǒu yí ge sēnlín gōngyuán.",
+          "m": {
+            "vi": "Ở đây có một công viên rừng.",
+            "en": "There is a forest park here.",
+            "zh-Hant": "這裡有一個森林公園。"
+          }
+        },
+        {
+          "zh": "森林裡有很多鳥。",
+          "p": "Sēnlín lǐ yǒu hěn duō niǎo.",
+          "m": {
+            "vi": "Trong rừng có nhiều chim.",
+            "en": "There are many birds in the forest.",
+            "zh-Hant": "森林裡有很多鳥。"
+          }
+        }
+      ]
+    },
+    {
+      "id": "rest-xiu",
+      "category": "combined",
+      "char": "休",
+      "pinyin": "xiū",
+      "meaning": {
+        "vi": "nghỉ",
+        "en": "rest",
+        "zh-Hant": "休息"
+      },
+      "components": [
+        {
+          "char": "亻",
+          "emoji": "🚶",
+          "p": "rén",
+          "m": {
+            "vi": "người",
+            "en": "person",
+            "zh-Hant": "人"
+          }
+        },
+        {
+          "char": "木",
+          "emoji": "🌳",
+          "p": "mù",
+          "m": {
+            "vi": "cây",
+            "en": "tree",
+            "zh-Hant": "樹木"
+          }
+        }
+      ],
+      "explanation": {
+        "vi": "Trong cách giảng dễ nhớ, 亻 là người và 木 là cây: người đứng/tựa cạnh cây để nghỉ → 休.",
+        "en": "For an easy mnemonic, 亻 is a person and 木 is a tree: a person leaning by a tree to rest → 休.",
+        "zh-Hant": "作為好記的聯想：亻是人、木是樹；人靠著樹休息 →「休」。"
+      },
+      "memory": {
+        "vi": "Tưởng tượng một người tựa vào gốc cây nghỉ mệt.",
+        "en": "Imagine a person leaning against a tree to rest.",
+        "zh-Hant": "想像一個人靠在樹旁休息。"
+      },
+      "vocab": [
+        {
+          "h": "休息",
+          "p": "xiūxi",
+          "m": {
+            "vi": "nghỉ ngơi",
+            "en": "rest",
+            "zh-Hant": "休息"
+          }
+        },
+        {
+          "h": "午休",
+          "p": "wǔxiū",
+          "m": {
+            "vi": "nghỉ trưa",
+            "en": "lunch break",
+            "zh-Hant": "午休"
+          }
+        },
+        {
+          "h": "休假",
+          "p": "xiūjià",
+          "m": {
+            "vi": "nghỉ phép",
+            "en": "take leave",
+            "zh-Hant": "休假"
+          }
+        }
+      ],
+      "examples": [
+        {
+          "zh": "你累了就休息一下。",
+          "p": "Nǐ lèi le jiù xiūxi yíxià.",
+          "m": {
+            "vi": "Nếu bạn mệt thì nghỉ một chút.",
+            "en": "If you are tired, take a short rest.",
+            "zh-Hant": "你累了就休息一下。"
+          }
+        },
+        {
+          "zh": "中午我會午休。",
+          "p": "Zhōngwǔ wǒ huì wǔxiū.",
+          "m": {
+            "vi": "Buổi trưa tôi sẽ nghỉ trưa.",
+            "en": "I take a lunch break at noon.",
+            "zh-Hant": "中午我會午休。"
+          }
+        }
+      ]
+    },
+    {
+      "id": "flames-yan",
+      "category": "combined",
+      "char": "炎",
+      "pinyin": "yán",
+      "meaning": {
+        "vi": "nóng; viêm",
+        "en": "flame; inflammation",
+        "zh-Hant": "炎"
+      },
+      "components": [
+        {
+          "char": "火",
+          "emoji": "🔥",
+          "p": "huǒ",
+          "m": {
+            "vi": "lửa",
+            "en": "fire",
+            "zh-Hant": "火"
+          }
+        },
+        {
+          "char": "火",
+          "emoji": "🔥",
+          "p": "huǒ",
+          "m": {
+            "vi": "lửa",
+            "en": "fire",
+            "zh-Hant": "火"
+          }
+        }
+      ],
+      "explanation": {
+        "vi": "Hai chữ 火 chồng lên nhau làm ý “nóng/lửa mạnh” tăng lên. Trong từ hiện đại, 炎 còn dùng trong nghĩa viêm.",
+        "en": "Two 火 characters stacked together intensify the idea of heat and flame. In modern words, 炎 also appears with the meaning “inflammation.”",
+        "zh-Hant": "兩個「火」疊在一起，加強炎熱、火焰的感覺；現代詞語中「炎」也常表示發炎。"
+      },
+      "memory": {
+        "vi": "Một ngọn lửa đã nóng; hai ngọn lửa chồng nhau càng nóng hơn.",
+        "en": "One fire is hot; two fires together feel even hotter.",
+        "zh-Hant": "一個火已經很熱，兩個火疊在一起更熱。"
+      },
+      "vocab": [
+        {
+          "h": "發炎",
+          "p": "fāyán",
+          "m": {
+            "vi": "bị viêm",
+            "en": "be inflamed",
+            "zh-Hant": "發炎"
+          }
+        },
+        {
+          "h": "炎熱",
+          "p": "yánrè",
+          "m": {
+            "vi": "nóng bức",
+            "en": "scorching hot",
+            "zh-Hant": "炎熱"
+          }
+        },
+        {
+          "h": "肺炎",
+          "p": "fèiyán",
+          "m": {
+            "vi": "viêm phổi",
+            "en": "pneumonia",
+            "zh-Hant": "肺炎"
+          }
+        }
+      ],
+      "examples": [
+        {
+          "zh": "今天的天氣很炎熱。",
+          "p": "Jīntiān de tiānqì hěn yánrè.",
+          "m": {
+            "vi": "Thời tiết hôm nay rất nóng bức.",
+            "en": "The weather is very hot today.",
+            "zh-Hant": "今天的天氣很炎熱。"
+          }
+        },
+        {
+          "zh": "我的喉嚨有點發炎。",
+          "p": "Wǒ de hóulóng yǒudiǎn fāyán.",
+          "m": {
+            "vi": "Cổ họng tôi hơi bị viêm.",
+            "en": "My throat is a little inflamed.",
+            "zh-Hant": "我的喉嚨有點發炎。"
+          }
+        }
+      ]
+    },
+    {
+      "id": "point-jian",
+      "category": "combined",
+      "char": "尖",
+      "pinyin": "jiān",
+      "meaning": {
+        "vi": "nhọn; sắc",
+        "en": "pointed; sharp",
+        "zh-Hant": "尖"
+      },
+      "components": [
+        {
+          "char": "小",
+          "emoji": "🔹",
+          "p": "xiǎo",
+          "m": {
+            "vi": "nhỏ",
+            "en": "small",
+            "zh-Hant": "小"
+          }
+        },
+        {
+          "char": "大",
+          "emoji": "🔺",
+          "p": "dà",
+          "m": {
+            "vi": "lớn",
+            "en": "big",
+            "zh-Hant": "大"
+          }
+        }
+      ],
+      "explanation": {
+        "vi": "Trong mẹo nhìn chữ, phần trên nhỏ 小 và phần dưới lớn 大 tạo một hình thu dần về phía trên, gợi đầu nhọn → 尖.",
+        "en": "As a visual mnemonic, 小 “small” above 大 “big” forms a shape that narrows upward, suggesting a pointed tip → 尖.",
+        "zh-Hant": "作為字形聯想，上面「小」、下面「大」，整體像由寬變窄而形成尖端 →「尖」。"
+      },
+      "memory": {
+        "vi": "Hãy nhìn chữ như một vật rộng ở đáy nhưng thu nhỏ dần thành mũi nhọn.",
+        "en": "Picture something wide at the bottom that narrows to a point at the top.",
+        "zh-Hant": "把字想成下寬上窄、最後收成尖端的形狀。"
+      },
+      "vocab": [
+        {
+          "h": "尖叫",
+          "p": "jiānjiào",
+          "m": {
+            "vi": "hét lên",
+            "en": "scream",
+            "zh-Hant": "尖叫"
+          }
+        },
+        {
+          "h": "筆尖",
+          "p": "bǐjiān",
+          "m": {
+            "vi": "đầu bút",
+            "en": "pen tip",
+            "zh-Hant": "筆尖"
+          }
+        },
+        {
+          "h": "尖銳",
+          "p": "jiānruì",
+          "m": {
+            "vi": "sắc bén; gay gắt",
+            "en": "sharp",
+            "zh-Hant": "尖銳"
+          }
+        }
+      ],
+      "examples": [
+        {
+          "zh": "這支筆的筆尖很細。",
+          "p": "Zhè zhī bǐ de bǐjiān hěn xì.",
+          "m": {
+            "vi": "Đầu cây bút này rất nhỏ.",
+            "en": "The tip of this pen is very fine.",
+            "zh-Hant": "這支筆的筆尖很細。"
+          }
+        },
+        {
+          "zh": "她突然尖叫了一聲。",
+          "p": "Tā tūrán jiānjiào le yì shēng.",
+          "m": {
+            "vi": "Cô ấy đột nhiên hét lên.",
+            "en": "She suddenly screamed.",
+            "zh-Hant": "她突然尖叫了一聲。"
+          }
+        }
+      ]
+    },
+    {
+      "id": "mother-ma",
+      "category": "phonosemantic",
+      "char": "媽",
+      "pinyin": "mā",
+      "meaning": {
+        "vi": "mẹ",
+        "en": "mother",
+        "zh-Hant": "媽媽"
+      },
+      "semantic": {
+        "char": "女",
+        "m": {
+          "vi": "nữ giới",
+          "en": "female",
+          "zh-Hant": "女性"
+        }
+      },
+      "phonetic": {
+        "char": "馬",
+        "p": "mǎ",
+        "m": {
+          "vi": "ngựa; phần gợi âm",
+          "en": "horse; phonetic cue",
+          "zh-Hant": "馬"
+        }
+      },
+      "explanation": {
+        "vi": "女 gợi phạm vi nghĩa liên quan nữ giới; 馬 chủ yếu gợi âm. Âm hiện đại đã thay đổi thanh điệu nhưng vẫn giữ phần âm gần “ma”.",
+        "en": "女 provides the semantic clue related to females; 馬 mainly provides the sound clue. The modern tone differs, but the “ma” sound family remains recognizable.",
+        "zh-Hant": "「女」提供女性相關的意義線索；「馬」主要提供讀音線索。現代聲調不同，但仍可看出 ma 的聲音關係。"
+      },
+      "memory": {
+        "vi": "Nhìn 女 để nhớ nghĩa “mẹ”, còn 馬 giúp nhớ âm ma.",
+        "en": "Use 女 to remember the meaning “mother,” and 馬 to cue the ma sound.",
+        "zh-Hant": "看到「女」記住母親的意義，看到「馬」提示 ma 的聲音。"
+      },
+      "vocab": [
+        {
+          "h": "媽媽",
+          "p": "māma",
+          "m": {
+            "vi": "mẹ",
+            "en": "mom",
+            "zh-Hant": "媽媽"
+          }
+        },
+        {
+          "h": "爸媽",
+          "p": "bàmā",
+          "m": {
+            "vi": "bố mẹ",
+            "en": "parents",
+            "zh-Hant": "爸媽"
+          }
+        },
+        {
+          "h": "媽媽的",
+          "p": "māma de",
+          "m": {
+            "vi": "của mẹ",
+            "en": "mother's",
+            "zh-Hant": "媽媽的"
+          }
+        }
+      ],
+      "examples": [
+        {
+          "zh": "我媽媽在家。",
+          "p": "Wǒ māma zài jiā.",
+          "m": {
+            "vi": "Mẹ tôi ở nhà.",
+            "en": "My mother is at home.",
+            "zh-Hant": "我媽媽在家。"
+          }
+        },
+        {
+          "zh": "我很想我的爸媽。",
+          "p": "Wǒ hěn xiǎng wǒ de bàmā.",
+          "m": {
+            "vi": "Tôi rất nhớ bố mẹ.",
+            "en": "I miss my parents very much.",
+            "zh-Hant": "我很想我的爸媽。"
+          }
+        }
+      ]
+    },
+    {
+      "id": "question-ma",
+      "category": "phonosemantic",
+      "char": "嗎",
+      "pinyin": "ma",
+      "meaning": {
+        "vi": "trợ từ nghi vấn",
+        "en": "question particle",
+        "zh-Hant": "嗎"
+      },
+      "semantic": {
+        "char": "口",
+        "m": {
+          "vi": "miệng/lời nói",
+          "en": "mouth; speech",
+          "zh-Hant": "口"
+        }
+      },
+      "phonetic": {
+        "char": "馬",
+        "p": "mǎ",
+        "m": {
+          "vi": "phần gợi âm ma",
+          "en": "phonetic cue ma",
+          "zh-Hant": "馬"
+        }
+      },
+      "explanation": {
+        "vi": "口 gợi chức năng liên quan lời nói/câu nói; 馬 gợi âm “ma”. Khi dùng ở cuối câu, 嗎 biến câu trần thuật thành câu hỏi yes/no.",
+        "en": "口 points to speech or an utterance, while 馬 provides the sound “ma.” At the end of a sentence, 嗎 turns a statement into a yes/no question.",
+        "zh-Hant": "「口」提示與說話、句子有關，「馬」提供 ma 的讀音；「嗎」放在句尾可把陳述句變成是非問句。"
+      },
+      "memory": {
+        "vi": "Thấy 口 thì nhớ đây là âm nói ra ở cuối câu; 馬 nhắc âm ma.",
+        "en": "Think “spoken at the end of the sentence”: 口 for speech, 馬 for ma.",
+        "zh-Hant": "把它想成句尾說出的語氣：口提示說話，馬提示 ma。"
+      },
+      "vocab": [
+        {
+          "h": "好嗎",
+          "p": "hǎo ma",
+          "m": {
+            "vi": "được không?",
+            "en": "okay?",
+            "zh-Hant": "好嗎"
+          }
+        },
+        {
+          "h": "是嗎",
+          "p": "shì ma",
+          "m": {
+            "vi": "thật sao?",
+            "en": "is that so?",
+            "zh-Hant": "是嗎"
+          }
+        },
+        {
+          "h": "可以嗎",
+          "p": "kěyǐ ma",
+          "m": {
+            "vi": "có được không?",
+            "en": "is it okay?",
+            "zh-Hant": "可以嗎"
+          }
+        }
+      ],
+      "examples": [
+        {
+          "zh": "你是學生嗎？",
+          "p": "Nǐ shì xuéshēng ma?",
+          "m": {
+            "vi": "Bạn là sinh viên phải không?",
+            "en": "Are you a student?",
+            "zh-Hant": "你是學生嗎？"
+          }
+        },
+        {
+          "zh": "我們現在走，可以嗎？",
+          "p": "Wǒmen xiànzài zǒu, kěyǐ ma?",
+          "m": {
+            "vi": "Bây giờ chúng ta đi, được không?",
+            "en": "Can we leave now?",
+            "zh-Hant": "我們現在走，可以嗎？"
+          }
+        }
+      ]
+    },
+    {
+      "id": "clear-qing",
+      "category": "phonosemantic",
+      "char": "清",
+      "pinyin": "qīng",
+      "meaning": {
+        "vi": "trong; sạch",
+        "en": "clear; clean",
+        "zh-Hant": "清"
+      },
+      "semantic": {
+        "char": "氵",
+        "m": {
+          "vi": "nước/chất lỏng",
+          "en": "water/liquid",
+          "zh-Hant": "水"
+        }
+      },
+      "phonetic": {
+        "char": "青",
+        "p": "qīng",
+        "m": {
+          "vi": "gợi âm qing",
+          "en": "phonetic cue qing",
+          "zh-Hant": "青"
+        }
+      },
+      "explanation": {
+        "vi": "氵 gợi nghĩa liên quan nước/chất lỏng; 青 gợi âm qīng. Vì vậy 清 dễ liên tưởng tới nước trong, sạch.",
+        "en": "氵 gives the semantic clue of water or liquid; 青 gives the sound qīng. This makes 清 easy to associate with clear, clean water.",
+        "zh-Hant": "「氵」提示水或液體的意義，「青」提供 qīng 的讀音，因此「清」很容易聯想到清澈、乾淨的水。"
+      },
+      "memory": {
+        "vi": "Nước 氵 + âm 青 qīng → nước trong sạch = 清.",
+        "en": "Water 氵 + sound 青 qīng → clear/clean = 清.",
+        "zh-Hant": "水「氵」＋讀音「青 qīng」→ 清澈、乾淨 =「清」。"
+      },
+      "vocab": [
+        {
+          "h": "清楚",
+          "p": "qīngchǔ",
+          "m": {
+            "vi": "rõ ràng",
+            "en": "clear",
+            "zh-Hant": "清楚"
+          }
+        },
+        {
+          "h": "清水",
+          "p": "qīngshuǐ",
+          "m": {
+            "vi": "nước sạch",
+            "en": "clean water",
+            "zh-Hant": "清水"
+          }
+        },
+        {
+          "h": "清潔",
+          "p": "qīngjié",
+          "m": {
+            "vi": "sạch sẽ; vệ sinh",
+            "en": "clean; cleaning",
+            "zh-Hant": "清潔"
+          }
+        }
+      ],
+      "examples": [
+        {
+          "zh": "老師說得很清楚。",
+          "p": "Lǎoshī shuō de hěn qīngchǔ.",
+          "m": {
+            "vi": "Giáo viên nói rất rõ.",
+            "en": "The teacher explained it clearly.",
+            "zh-Hant": "老師說得很清楚。"
+          }
+        },
+        {
+          "zh": "請保持教室清潔。",
+          "p": "Qǐng bǎochí jiàoshì qīngjié.",
+          "m": {
+            "vi": "Hãy giữ lớp học sạch sẽ.",
+            "en": "Please keep the classroom clean.",
+            "zh-Hant": "請保持教室清潔。"
+          }
+        }
+      ]
+    },
+    {
+      "id": "emotion-qing",
+      "category": "phonosemantic",
+      "char": "情",
+      "pinyin": "qíng",
+      "meaning": {
+        "vi": "tình cảm; tình hình",
+        "en": "feeling; situation",
+        "zh-Hant": "情"
+      },
+      "semantic": {
+        "char": "忄",
+        "m": {
+          "vi": "tim/cảm xúc",
+          "en": "heart/emotion",
+          "zh-Hant": "心"
+        }
+      },
+      "phonetic": {
+        "char": "青",
+        "p": "qīng",
+        "m": {
+          "vi": "gợi âm qing",
+          "en": "phonetic cue qing",
+          "zh-Hant": "青"
+        }
+      },
+      "explanation": {
+        "vi": "忄 là biến thể của 心, gợi nghĩa cảm xúc; 青 gợi âm gần qíng. Vì vậy 情 thường xuất hiện trong các từ liên quan cảm xúc hoặc tình trạng.",
+        "en": "忄, a form of 心, gives the semantic clue of heart and emotion; 青 gives a sound clue close to qíng. 情 often appears in words about feelings or situations.",
+        "zh-Hant": "「忄」是「心」的變形，提示內心、情感；「青」提供接近 qíng 的讀音。「情」常出現在情感或情況相關詞語中。"
+      },
+      "memory": {
+        "vi": "Tim 忄 + âm 青 → tình cảm/tình trạng = 情.",
+        "en": "Heart 忄 + sound 青 → feelings/situation = 情.",
+        "zh-Hant": "心「忄」＋讀音「青」→ 情感／情況 =「情」。"
+      },
+      "vocab": [
+        {
+          "h": "心情",
+          "p": "xīnqíng",
+          "m": {
+            "vi": "tâm trạng",
+            "en": "mood",
+            "zh-Hant": "心情"
+          }
+        },
+        {
+          "h": "感情",
+          "p": "gǎnqíng",
+          "m": {
+            "vi": "tình cảm",
+            "en": "feelings",
+            "zh-Hant": "感情"
+          }
+        },
+        {
+          "h": "情況",
+          "p": "qíngkuàng",
+          "m": {
+            "vi": "tình hình",
+            "en": "situation",
+            "zh-Hant": "情況"
+          }
+        }
+      ],
+      "examples": [
+        {
+          "zh": "我今天心情很好。",
+          "p": "Wǒ jīntiān xīnqíng hěn hǎo.",
+          "m": {
+            "vi": "Hôm nay tâm trạng tôi rất tốt.",
+            "en": "I am in a good mood today.",
+            "zh-Hant": "我今天心情很好。"
+          }
+        },
+        {
+          "zh": "現在的情況怎麼樣？",
+          "p": "Xiànzài de qíngkuàng zěnmeyàng?",
+          "m": {
+            "vi": "Tình hình hiện tại thế nào?",
+            "en": "How is the situation now?",
+            "zh-Hant": "現在的情況怎麼樣？"
+          }
+        }
+      ]
+    },
+    {
+      "id": "please-qing",
+      "category": "phonosemantic",
+      "char": "請",
+      "pinyin": "qǐng",
+      "meaning": {
+        "vi": "mời; xin vui lòng",
+        "en": "please; invite",
+        "zh-Hant": "請"
+      },
+      "semantic": {
+        "char": "訁",
+        "m": {
+          "vi": "lời nói",
+          "en": "speech",
+          "zh-Hant": "言"
+        }
+      },
+      "phonetic": {
+        "char": "青",
+        "p": "qīng",
+        "m": {
+          "vi": "gợi âm qing",
+          "en": "phonetic cue qing",
+          "zh-Hant": "青"
+        }
+      },
+      "explanation": {
+        "vi": "訁 gợi nghĩa liên quan lời nói/yêu cầu; 青 gợi âm gần qǐng. 請 vì thế rất hay dùng khi mời hoặc yêu cầu lịch sự.",
+        "en": "訁 points to speech or requests; 青 gives a sound clue close to qǐng. 請 is widely used for polite requests and invitations.",
+        "zh-Hant": "「訁」提示說話、請求；「青」提供接近 qǐng 的讀音。「請」常用於禮貌請求或邀請。"
+      },
+      "memory": {
+        "vi": "Lời nói 訁 + âm 青 → lời mời/yêu cầu lịch sự = 請.",
+        "en": "Speech 訁 + sound 青 → a polite request/invitation = 請.",
+        "zh-Hant": "言語「訁」＋讀音「青」→ 禮貌的請求／邀請 =「請」。"
+      },
+      "vocab": [
+        {
+          "h": "請問",
+          "p": "qǐngwèn",
+          "m": {
+            "vi": "xin hỏi",
+            "en": "excuse me; may I ask",
+            "zh-Hant": "請問"
+          }
+        },
+        {
+          "h": "請坐",
+          "p": "qǐngzuò",
+          "m": {
+            "vi": "mời ngồi",
+            "en": "please sit",
+            "zh-Hant": "請坐"
+          }
+        },
+        {
+          "h": "請進",
+          "p": "qǐngjìn",
+          "m": {
+            "vi": "mời vào",
+            "en": "please come in",
+            "zh-Hant": "請進"
+          }
+        }
+      ],
+      "examples": [
+        {
+          "zh": "請問，洗手間在哪裡？",
+          "p": "Qǐngwèn, xǐshǒujiān zài nǎlǐ?",
+          "m": {
+            "vi": "Xin hỏi, nhà vệ sinh ở đâu?",
+            "en": "Excuse me, where is the restroom?",
+            "zh-Hant": "請問，洗手間在哪裡？"
+          }
+        },
+        {
+          "zh": "請坐這裡。",
+          "p": "Qǐng zuò zhèlǐ.",
+          "m": {
+            "vi": "Mời ngồi ở đây.",
+            "en": "Please sit here.",
+            "zh-Hant": "請坐這裡。"
+          }
+        }
+      ]
+    },
+    {
+      "id": "sunny-qing",
+      "category": "phonosemantic",
+      "char": "晴",
+      "pinyin": "qíng",
+      "meaning": {
+        "vi": "trời quang; nắng",
+        "en": "clear; sunny",
+        "zh-Hant": "晴"
+      },
+      "semantic": {
+        "char": "日",
+        "m": {
+          "vi": "mặt trời",
+          "en": "sun",
+          "zh-Hant": "太陽"
+        }
+      },
+      "phonetic": {
+        "char": "青",
+        "p": "qīng",
+        "m": {
+          "vi": "gợi âm qing",
+          "en": "phonetic cue qing",
+          "zh-Hant": "青"
+        }
+      },
+      "explanation": {
+        "vi": "日 gợi nghĩa liên quan mặt trời/thời tiết sáng; 青 gợi âm gần qíng. 晴 vì vậy dùng cho trời quang, có nắng.",
+        "en": "日 gives the semantic clue of the sun and bright weather; 青 gives a sound clue close to qíng. 晴 therefore means clear or sunny weather.",
+        "zh-Hant": "「日」提示太陽、明亮天氣；「青」提供接近 qíng 的讀音，因此「晴」表示晴朗、天氣放晴。"
+      },
+      "memory": {
+        "vi": "Mặt trời 日 + âm 青 → trời quang = 晴.",
+        "en": "Sun 日 + sound 青 → clear sky = 晴.",
+        "zh-Hant": "太陽「日」＋讀音「青」→ 晴朗天空 =「晴」。"
+      },
+      "vocab": [
+        {
+          "h": "晴天",
+          "p": "qíngtiān",
+          "m": {
+            "vi": "trời nắng/quang",
+            "en": "sunny day",
+            "zh-Hant": "晴天"
+          }
+        },
+        {
+          "h": "放晴",
+          "p": "fàngqíng",
+          "m": {
+            "vi": "trời quang trở lại",
+            "en": "clear up",
+            "zh-Hant": "放晴"
+          }
+        },
+        {
+          "h": "晴朗",
+          "p": "qínglǎng",
+          "m": {
+            "vi": "quang đãng",
+            "en": "clear and bright",
+            "zh-Hant": "晴朗"
+          }
+        }
+      ],
+      "examples": [
+        {
+          "zh": "今天是晴天。",
+          "p": "Jīntiān shì qíngtiān.",
+          "m": {
+            "vi": "Hôm nay trời nắng.",
+            "en": "It is sunny today.",
+            "zh-Hant": "今天是晴天。"
+          }
+        },
+        {
+          "zh": "下午天氣會放晴。",
+          "p": "Xiàwǔ tiānqì huì fàngqíng.",
+          "m": {
+            "vi": "Buổi chiều trời sẽ quang.",
+            "en": "The weather will clear up this afternoon.",
+            "zh-Hant": "下午天氣會放晴。"
+          }
+        }
+      ]
+    },
+    {
+      "id": "eye-jing",
+      "category": "phonosemantic",
+      "char": "睛",
+      "pinyin": "jīng",
+      "meaning": {
+        "vi": "con ngươi; mắt (trong 眼睛)",
+        "en": "eye; eyeball",
+        "zh-Hant": "睛"
+      },
+      "semantic": {
+        "char": "目",
+        "m": {
+          "vi": "mắt/thị giác",
+          "en": "eye/vision",
+          "zh-Hant": "眼睛"
+        }
+      },
+      "phonetic": {
+        "char": "青",
+        "p": "qīng",
+        "m": {
+          "vi": "gợi âm gần jing/qing",
+          "en": "phonetic cue",
+          "zh-Hant": "青"
+        }
+      },
+      "explanation": {
+        "vi": "目 gợi nghĩa mắt/thị giác; 青 là phần gợi âm lịch sử. Ngày nay 睛 thường gặp nhất trong 眼睛 “mắt”.",
+        "en": "目 gives the semantic clue of eyes and vision; 青 is the historical phonetic component. Today 睛 is most often seen in 眼睛 “eyes.”",
+        "zh-Hant": "「目」提示眼睛、視覺；「青」是歷史上的聲符。現代「睛」最常見於「眼睛」。"
+      },
+      "memory": {
+        "vi": "Thấy 目 thì nhớ liên quan mắt; phần 青 giúp nhận họ chữ.",
+        "en": "When you see 目, think of eyes; 青 helps you recognize the character family.",
+        "zh-Hant": "看到「目」就想到眼睛；「青」幫助辨認同一字族。"
+      },
+      "vocab": [
+        {
+          "h": "眼睛",
+          "p": "yǎnjing",
+          "m": {
+            "vi": "mắt",
+            "en": "eyes",
+            "zh-Hant": "眼睛"
+          }
+        },
+        {
+          "h": "大眼睛",
+          "p": "dà yǎnjing",
+          "m": {
+            "vi": "đôi mắt to",
+            "en": "big eyes",
+            "zh-Hant": "大眼睛"
+          }
+        },
+        {
+          "h": "閉上眼睛",
+          "p": "bì shàng yǎnjing",
+          "m": {
+            "vi": "nhắm mắt lại",
+            "en": "close one's eyes",
+            "zh-Hant": "閉上眼睛"
+          }
+        }
+      ],
+      "examples": [
+        {
+          "zh": "她有一雙大眼睛。",
+          "p": "Tā yǒu yì shuāng dà yǎnjing.",
+          "m": {
+            "vi": "Cô ấy có đôi mắt to.",
+            "en": "She has big eyes.",
+            "zh-Hant": "她有一雙大眼睛。"
+          }
+        },
+        {
+          "zh": "請閉上眼睛。",
+          "p": "Qǐng bì shàng yǎnjing.",
+          "m": {
+            "vi": "Hãy nhắm mắt lại.",
+            "en": "Please close your eyes.",
+            "zh-Hant": "請閉上眼睛。"
+          }
+        }
+      ]
+    },
+    {
+      "id": "river-he",
+      "category": "phonosemantic",
+      "char": "河",
+      "pinyin": "hé",
+      "meaning": {
+        "vi": "sông",
+        "en": "river",
+        "zh-Hant": "河"
+      },
+      "semantic": {
+        "char": "氵",
+        "m": {
+          "vi": "nước",
+          "en": "water",
+          "zh-Hant": "水"
+        }
+      },
+      "phonetic": {
+        "char": "可",
+        "p": "kě",
+        "m": {
+          "vi": "gợi âm lịch sử",
+          "en": "historical phonetic cue",
+          "zh-Hant": "可"
+        }
+      },
+      "explanation": {
+        "vi": "氵 cho biết chữ liên quan nước; 可 là phần gợi âm lịch sử. Nghĩa hiện đại của 河 là sông.",
+        "en": "氵 shows that the character is related to water; 可 is the historical phonetic component. 河 means “river.”",
+        "zh-Hant": "「氵」表示與水有關，「可」是歷史上的聲符；「河」表示河流。"
+      },
+      "memory": {
+        "vi": "Thấy 氵 là nghĩ tới nước; cả chữ 河 = một dòng sông.",
+        "en": "See 氵 and think of water; the whole character 河 is a river.",
+        "zh-Hant": "看到「氵」先想到水；整個「河」就是河流。"
+      },
+      "vocab": [
+        {
+          "h": "河水",
+          "p": "héshuǐ",
+          "m": {
+            "vi": "nước sông",
+            "en": "river water",
+            "zh-Hant": "河水"
+          }
+        },
+        {
+          "h": "河邊",
+          "p": "hébiān",
+          "m": {
+            "vi": "bờ sông",
+            "en": "riverside",
+            "zh-Hant": "河邊"
+          }
+        },
+        {
+          "h": "河流",
+          "p": "héliú",
+          "m": {
+            "vi": "sông; dòng sông",
+            "en": "river; stream",
+            "zh-Hant": "河流"
+          }
+        }
+      ],
+      "examples": [
+        {
+          "zh": "我們在河邊散步。",
+          "p": "Wǒmen zài hébiān sànbù.",
+          "m": {
+            "vi": "Chúng tôi đi dạo bên bờ sông.",
+            "en": "We are walking by the river.",
+            "zh-Hant": "我們在河邊散步。"
+          }
+        },
+        {
+          "zh": "這條河很長。",
+          "p": "Zhè tiáo hé hěn cháng.",
+          "m": {
+            "vi": "Con sông này rất dài.",
+            "en": "This river is very long.",
+            "zh-Hant": "這條河很長。"
+          }
+        }
+      ]
+    },
+    {
+      "id": "lake-hu",
+      "category": "phonosemantic",
+      "char": "湖",
+      "pinyin": "hú",
+      "meaning": {
+        "vi": "hồ",
+        "en": "lake",
+        "zh-Hant": "湖"
+      },
+      "semantic": {
+        "char": "氵",
+        "m": {
+          "vi": "nước",
+          "en": "water",
+          "zh-Hant": "水"
+        }
+      },
+      "phonetic": {
+        "char": "胡",
+        "p": "hú",
+        "m": {
+          "vi": "gợi âm hu",
+          "en": "phonetic cue hu",
+          "zh-Hant": "胡"
+        }
+      },
+      "explanation": {
+        "vi": "氵 gợi nghĩa nước; 胡 gợi âm hú. Vì vậy 湖 là một chữ rất dễ nhận theo mô hình “nước + âm hu”.",
+        "en": "氵 gives the meaning clue “water,” while 胡 gives the sound hú. This makes 湖 an easy “water + hu sound” phono-semantic character.",
+        "zh-Hant": "「氵」提示水的意義，「胡」提供 hú 的讀音，因此「湖」很容易理解為「水＋hu 音」。"
+      },
+      "memory": {
+        "vi": "Nước 氵 + âm 胡 hú → hồ nước = 湖.",
+        "en": "Water 氵 + sound 胡 hú → lake = 湖.",
+        "zh-Hant": "水「氵」＋讀音「胡 hú」→ 湖泊 =「湖」。"
+      },
+      "vocab": [
+        {
+          "h": "湖水",
+          "p": "húshuǐ",
+          "m": {
+            "vi": "nước hồ",
+            "en": "lake water",
+            "zh-Hant": "湖水"
+          }
+        },
+        {
+          "h": "湖邊",
+          "p": "húbiān",
+          "m": {
+            "vi": "bờ hồ",
+            "en": "lakeside",
+            "zh-Hant": "湖邊"
+          }
+        },
+        {
+          "h": "日月潭",
+          "p": "Rìyuètán",
+          "m": {
+            "vi": "Hồ Nhật Nguyệt",
+            "en": "Sun Moon Lake",
+            "zh-Hant": "日月潭"
+          }
+        }
+      ],
+      "examples": [
+        {
+          "zh": "我們在湖邊拍照。",
+          "p": "Wǒmen zài húbiān pāizhào.",
+          "m": {
+            "vi": "Chúng tôi chụp ảnh bên hồ.",
+            "en": "We take photos by the lake.",
+            "zh-Hant": "我們在湖邊拍照。"
+          }
+        },
+        {
+          "zh": "日月潭是台灣有名的景點。",
+          "p": "Rìyuètán shì Táiwān yǒumíng de jǐngdiǎn.",
+          "m": {
+            "vi": "Hồ Nhật Nguyệt là điểm tham quan nổi tiếng ở Đài Loan.",
+            "en": "Sun Moon Lake is a famous attraction in Taiwan.",
+            "zh-Hant": "日月潭是台灣有名的景點。"
+          }
+        }
+      ]
+    },
+    {
+      "id": "ocean-yang",
+      "category": "phonosemantic",
+      "char": "洋",
+      "pinyin": "yáng",
+      "meaning": {
+        "vi": "đại dương; kiểu nước ngoài",
+        "en": "ocean; foreign-style",
+        "zh-Hant": "洋"
+      },
+      "semantic": {
+        "char": "氵",
+        "m": {
+          "vi": "nước",
+          "en": "water",
+          "zh-Hant": "水"
+        }
+      },
+      "phonetic": {
+        "char": "羊",
+        "p": "yáng",
+        "m": {
+          "vi": "gợi âm yang",
+          "en": "phonetic cue yang",
+          "zh-Hant": "羊"
+        }
+      },
+      "explanation": {
+        "vi": "氵 gợi nghĩa liên quan nước; 羊 gợi âm yáng. 洋 dùng cho đại dương và cũng xuất hiện trong một số từ mang nghĩa “Tây/nước ngoài”.",
+        "en": "氵 gives the water-related semantic clue, while 羊 gives the sound yáng. 洋 means ocean and also appears in words referring to Western or foreign things.",
+        "zh-Hant": "「氵」提示與水有關，「羊」提供 yáng 的讀音。「洋」可表示海洋，也出現在部分表示西方、外來事物的詞中。"
+      },
+      "memory": {
+        "vi": "Nước 氵 + âm 羊 yáng → vùng nước lớn = 洋.",
+        "en": "Water 氵 + sound 羊 yáng → a large body of water = 洋.",
+        "zh-Hant": "水「氵」＋讀音「羊 yáng」→ 大片水域 =「洋」。"
+      },
+      "vocab": [
+        {
+          "h": "海洋",
+          "p": "hǎiyáng",
+          "m": {
+            "vi": "đại dương",
+            "en": "ocean",
+            "zh-Hant": "海洋"
+          }
+        },
+        {
+          "h": "太平洋",
+          "p": "Tàipíngyáng",
+          "m": {
+            "vi": "Thái Bình Dương",
+            "en": "Pacific Ocean",
+            "zh-Hant": "太平洋"
+          }
+        },
+        {
+          "h": "西洋",
+          "p": "xīyáng",
+          "m": {
+            "vi": "phương Tây",
+            "en": "the West",
+            "zh-Hant": "西洋"
+          }
+        }
+      ],
+      "examples": [
+        {
+          "zh": "太平洋非常大。",
+          "p": "Tàipíngyáng fēicháng dà.",
+          "m": {
+            "vi": "Thái Bình Dương rất lớn.",
+            "en": "The Pacific Ocean is very large.",
+            "zh-Hant": "太平洋非常大。"
+          }
+        },
+        {
+          "zh": "我喜歡學海洋生物。",
+          "p": "Wǒ xǐhuan xué hǎiyáng shēngwù.",
+          "m": {
+            "vi": "Tôi thích học về sinh vật biển.",
+            "en": "I like learning about marine life.",
+            "zh-Hant": "我喜歡學海洋生物。"
+          }
+        }
       ]
     }
   ]

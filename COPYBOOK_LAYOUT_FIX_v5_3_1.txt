@@ -1,0 +1,14 @@
+v5.3.1 — Copybook model clipping/layout fix
+
+Root cause fixed:
+The repeated-practice grid uses auto-fit. Previous code created HanziWriter immediately
+while cells were still being appended. Early cells were temporarily much wider than their
+final size, so HanziWriter generated a large SVG. After all 8 cells were present the grid
+shrunk those cells, leaving clipped/offset pieces of the model glyph.
+
+Fix:
+- Build all 8 cells first.
+- Wait for the browser to finish the final grid layout (including iPad Safari).
+- Only then create the HanziWriter reference glyph using the exact final cell size.
+- Do not substitute a different font when vector data is unavailable.
+- Keep user ink completely separate and unchanged.

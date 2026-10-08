@@ -1,4 +1,4 @@
-const CACHE = 'tocfl-v5-3-0-radical-a4-guide-fix';
+const CACHE = 'tocfl-v5-3-1-copybook-layout-fix';
 const ASSETS = [
   './',
   './index.html',

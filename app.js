@@ -1206,9 +1206,13 @@ async function previewWritingStrokeOrder(inst){
 }
 function renderCopybookPractice(word){
   const wrap=$('copybookGrid'); if(!wrap)return;
+  // Invalidate any delayed writer initialization left by the previous word/render.
+  const renderToken=String(Date.now())+Math.random().toString(36).slice(2);
+  wrap.dataset.renderToken=renderToken;
   wrap.innerHTML=''; copybookCanvases=[]; copybookGuideInstances=[];
   const meta=$('copybookWordMeta'); if(meta)meta.textContent=`${primaryForm(word)} · ${word.pinyin||''}`;
   const chars=writingCharacters(word);
+
   chars.forEach((ch,rowIndex)=>{
     const row=document.createElement('section'); row.className='copybook-row';
     const head=document.createElement('div'); head.className='copybook-row-head';
@@ -1223,44 +1227,86 @@ function renderCopybookPractice(word){
     rowActions.append(rowLabel,clearBtn); head.append(title,rowActions);
     const cells=document.createElement('div'); cells.className='copybook-cells';
     const rowCanvasItems=[];
-    row.append(head,cells); wrap.append(row); // attach first so guide size is measured correctly
+    row.append(head,cells); wrap.append(row);
+
+    // IMPORTANT: create all 8 cells FIRST. With auto-fit CSS, the width of the first
+    // cells changes every time another cell is appended. Creating HanziWriter while
+    // that grid is still growing gives it the wrong pixel size; after the cells shrink,
+    // Safari/Chromium only shows a clipped fragment of the model glyph.
     const guideOpacities=[1,.32,.22,.13,0,0,0,0];
+    const guideJobs=[];
     guideOpacities.forEach((opacity,cellIndex)=>{
       const cell=document.createElement('div'); cell.className='copybook-cell';
       if(cellIndex===0)cell.classList.add('is-model');
       const lines=document.createElement('div'); lines.className='grid-lines';
-      const guide=document.createElement('div'); guide.className='copybook-guide'; guide.style.opacity=String(opacity||0); guide.style.display=(cellIndex===0 || ($('showGuideCheckbox').checked && opacity>0))?'block':'none';
+      const guide=document.createElement('div'); guide.className='copybook-guide';
+      guide.style.opacity=String(opacity||0);
+      guide.style.display=(cellIndex===0 || ($('showGuideCheckbox').checked && opacity>0))?'block':'none';
       const fontFallback=document.createElement('div'); fontFallback.className='copybook-font-fallback'; fontFallback.textContent=ch; fontFallback.hidden=true;
       cell.append(lines,guide,fontFallback);
-      // IMPORTANT: attach the cell before HanziWriter measures the guide.
-      // Detached cells report 0×0, which made the writer fall back to ~90 px
-      // and left the character stuck in the upper-left of larger practice boxes.
       cells.append(cell);
-      let item=null;
+
+      let item=null, play=null, inst=null;
       if(cellIndex>0){
-        const canvas=document.createElement('canvas'); canvas.className='copybook-canvas'; canvas.setAttribute('aria-label',`${ch} practice ${cellIndex}`); cell.append(canvas); item=createWritingCanvasItem(canvas,copybookCanvases,{owner:cell}); rowCanvasItems.push(item);
+        const canvas=document.createElement('canvas'); canvas.className='copybook-canvas'; canvas.setAttribute('aria-label',`${ch} practice ${cellIndex}`);
+        cell.append(canvas); item=createWritingCanvasItem(canvas,copybookCanvases,{owner:cell}); rowCanvasItems.push(item);
       }
       if(cellIndex===0){
         const badge=document.createElement('span'); badge.className='copybook-model-badge'; badge.textContent=t('sampleCell'); cell.append(badge);
-        const play=document.createElement('button'); play.type='button'; play.className='copybook-preview-btn'; play.textContent='▶'; play.title=t('strokeAnimate'); play.disabled=true; cell.append(play);
-        const inst={char:ch,writer:null,host:guide,fallback:fontFallback,square:cell,canvasItem:null,previewBtn:play,strokeBadge:null,previewing:false,guideOpacity:1,alwaysVisible:true}; copybookGuideInstances.push(inst);
-        try{
-          const writer=makeCopybookGuideWriter(guide,ch,{strokeColor:'#17211f'},()=>{inst.writer=writer;fontFallback.hidden=true;fontFallback.style.display='none';play.disabled=false;},()=>{fontFallback.hidden=true;fontFallback.style.display='none';cell.classList.add('guide-unavailable');play.disabled=true;});
-          if(!writer)throw new Error(); inst.writer=writer;
-          let last=0; const preview=e=>{if(e?.pointerType==='pen')return;if(e?.cancelable)e.preventDefault();e?.stopPropagation?.();const now=performance.now();if(now-last<450)return;last=now;previewWritingStrokeOrder(inst);};
-          play.addEventListener('pointerup',preview,{passive:false}); play.addEventListener('touchend',preview,{passive:false}); play.addEventListener('click',preview,{passive:false});
-        }catch{fontFallback.hidden=true;fontFallback.style.display='none';cell.classList.add('guide-unavailable');play.disabled=true;}
+        play=document.createElement('button'); play.type='button'; play.className='copybook-preview-btn'; play.textContent='▶'; play.title=t('strokeAnimate'); play.disabled=true; cell.append(play);
+        inst={char:ch,writer:null,host:guide,fallback:fontFallback,square:cell,canvasItem:null,previewBtn:play,strokeBadge:null,previewing:false,guideOpacity:1,alwaysVisible:true};
       }else{
-        const inst={char:ch,writer:null,host:guide,fallback:fontFallback,guideOpacity:opacity,alwaysVisible:false}; copybookGuideInstances.push(inst);
-        if(opacity>0){
-          try{const writer=makeCopybookGuideWriter(guide,ch,{strokeColor:'#0f766e'},()=>{fontFallback.hidden=true;fontFallback.style.display='none';},()=>{fontFallback.hidden=true;fontFallback.style.display='none';cell.classList.add('guide-unavailable');}); if(!writer)throw new Error();inst.writer=writer;}
-          catch{fontFallback.hidden=true;fontFallback.style.display='none';cell.classList.add('guide-unavailable');}
-        }
+        inst={char:ch,writer:null,host:guide,fallback:fontFallback,guideOpacity:opacity,alwaysVisible:false};
       }
+      copybookGuideInstances.push(inst);
+      if(opacity>0 || cellIndex===0) guideJobs.push({cellIndex,cell,guide,fontFallback,play,inst,opacity});
     });
+
     clearBtn.addEventListener('click',()=>rowCanvasItems.forEach(clearWritingItem));
+
+    // Wait until the completed grid has received its FINAL dimensions before creating
+    // any vector model. Two RAFs are intentional: the first commits grid layout and the
+    // second catches iPad Safari after orientation/sidebar width changes.
+    requestAnimationFrame(()=>requestAnimationFrame(()=>{
+      if(!wrap.isConnected || wrap.dataset.renderToken!==renderToken)return;
+      guideJobs.forEach(job=>{
+        const {cellIndex,cell,guide,fontFallback,play,inst}=job;
+        const rect=cell.getBoundingClientRect();
+        if(rect.width<20 || rect.height<20)return;
+        try{
+          const writer=makeCopybookGuideWriter(guide,ch,{strokeColor:cellIndex===0?'#17211f':'#0f766e'},()=>{
+            inst.writer=writer;
+            fontFallback.hidden=true; fontFallback.style.display='none';
+            if(play)play.disabled=false;
+          },()=>{
+            // Never overlay a different font glyph. A missing vector leaves this guide blank.
+            fontFallback.hidden=true; fontFallback.style.display='none';
+            cell.classList.add('guide-unavailable'); if(play)play.disabled=true;
+          });
+          if(!writer)throw new Error('HanziWriter unavailable');
+          inst.writer=writer;
+          if(play){
+            let last=0;
+            const preview=e=>{
+              if(e?.pointerType==='pen')return;
+              if(e?.cancelable)e.preventDefault();e?.stopPropagation?.();
+              const now=performance.now(); if(now-last<450)return; last=now;
+              previewWritingStrokeOrder(inst);
+            };
+            play.addEventListener('pointerup',preview,{passive:false});
+            play.addEventListener('touchend',preview,{passive:false});
+            play.addEventListener('click',preview,{passive:false});
+          }
+        }catch(err){
+          console.warn('Copybook guide unavailable:',ch,err);
+          fontFallback.hidden=true; fontFallback.style.display='none';
+          cell.classList.add('guide-unavailable'); if(play)play.disabled=true;
+        }
+      });
+    }));
   });
 }
+
 function resizeWritingCanvas(item){
   if(!item?.canvas||!item.ctx)return;
   const r=item.canvas.getBoundingClientRect(); if(!r.width||!r.height)return;
@@ -1307,17 +1353,21 @@ function makeWritingGuideWriter(host,ch,onData,onError){
 function makeCopybookGuideWriter(host,ch,options={},onData,onError){
   if(typeof window.HanziWriter==='undefined') return null;
   const rect=host.getBoundingClientRect();
-  const measured=Math.min(rect.width||0,rect.height||0);
-  const size=Math.max(68,Math.round(measured||host.parentElement?.getBoundingClientRect?.().width||96));
+  const parentRect=host.parentElement?.getBoundingClientRect?.();
+  const measured=Math.min(rect.width||parentRect?.width||0,rect.height||parentRect?.height||rect.width||parentRect?.width||0);
+  if(!measured || measured<20) throw new Error('Copybook guide has no final layout size');
+  const size=Math.round(measured);
   host.style.display='grid';
   host.style.placeItems='center';
-  const writer=window.HanziWriter.create(host,ch,{
-    width:size,height:size,padding:8,showOutline:false,showCharacter:true,
+  host.style.width='100%';
+  host.style.height='100%';
+  host.replaceChildren();
+  return window.HanziWriter.create(host,ch,{
+    width:size,height:size,padding:Math.max(6,Math.round(size*.075)),showOutline:false,showCharacter:true,
     strokeColor:options.strokeColor||'#0f766e',
     strokeAnimationSpeed:1,delayBetweenStrokes:150,
     charDataLoader:(char,onComplete,loaderError)=>loadStrokeData(char,onComplete,err=>{onError?.(err);loaderError?.(err);},onData)
   });
-  return writer;
 }
 function makeStrokeGuideMiniWriter(host,ch,onData,onError){
   if(typeof window.HanziWriter==='undefined') return null;

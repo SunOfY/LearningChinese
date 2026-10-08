@@ -1269,6 +1269,11 @@ function renderCopybookPractice(word){
     // second catches iPad Safari after orientation/sidebar width changes.
     requestAnimationFrame(()=>requestAnimationFrame(()=>{
       if(!wrap.isConnected || wrap.dataset.renderToken!==renderToken)return;
+      // Re-measure all handwriting canvases AFTER the final grid layout is settled.
+      // Without this second-pass resize, the first cells may keep a stale internal
+      // canvas size from when the row was still expanding, so Pencil strokes appear
+      // shifted away from the actual touch position.
+      rowCanvasItems.forEach(resizeWritingCanvas);
       guideJobs.forEach(job=>{
         const {cellIndex,cell,guide,fontFallback,play,inst}=job;
         const rect=cell.getBoundingClientRect();
@@ -1309,16 +1314,50 @@ function renderCopybookPractice(word){
 
 function resizeWritingCanvas(item){
   if(!item?.canvas||!item.ctx)return;
-  const r=item.canvas.getBoundingClientRect(); if(!r.width||!r.height)return;
-  let old=null;
-  try{if(item.canvas.width&&item.canvas.height)old=item.canvas.toDataURL();}catch{}
-  item.dpr=Math.max(1,Math.min(devicePixelRatio||1,2)); item.canvas.width=Math.round(r.width*item.dpr); item.canvas.height=Math.round(r.height*item.dpr);
-  item.ctx.setTransform(item.dpr,0,0,item.dpr,0,0); item.ctx.lineCap='round'; item.ctx.lineJoin='round'; item.baseLineWidth=Math.max(3.2,r.width/55); item.ctx.lineWidth=item.baseLineWidth; item.ctx.strokeStyle='#17211f'; item.ctx.fillStyle='#17211f';
-  if(old && !old.endsWith('AAAA')){const img=new Image();img.onload=()=>{item.ctx.drawImage(img,0,0,r.width,r.height);};img.src=old;}
+  const canvas=item.canvas,ctx=item.ctx;
+  const r=canvas.getBoundingClientRect(); if(!r.width||!r.height)return;
+
+  // Preserve existing ink synchronously. The previous implementation used an
+  // asynchronous data-URL/Image restore; on iPad that image could finish loading
+  // after the user pressed Clear and redraw old strokes back into the canvas.
+  let backup=null;
+  try{
+    if(canvas.width>0&&canvas.height>0){
+      backup=document.createElement('canvas');
+      backup.width=canvas.width; backup.height=canvas.height;
+      backup.getContext('2d')?.drawImage(canvas,0,0);
+    }
+  }catch{backup=null;}
+
+  item.dpr=Math.max(1,Math.min(devicePixelRatio||1,2));
+  canvas.width=Math.max(1,Math.round(r.width*item.dpr));
+  canvas.height=Math.max(1,Math.round(r.height*item.dpr));
+  ctx.setTransform(item.dpr,0,0,item.dpr,0,0);
+  ctx.lineCap='round'; ctx.lineJoin='round';
+  item.baseLineWidth=Math.max(3.2,r.width/55);
+  ctx.lineWidth=item.baseLineWidth; ctx.strokeStyle='#17211f'; ctx.fillStyle='#17211f';
+  if(backup)ctx.drawImage(backup,0,0,r.width,r.height);
 }
 function writingCanvasPoint(item,e){const r=item.canvas.getBoundingClientRect();return[e.clientX-r.left,e.clientY-r.top];}
 function clearWritingItem(item){
-  if(!item?.ctx||!item?.canvas)return; const r=item.canvas.getBoundingClientRect(); item.ctx.clearRect(0,0,r.width,r.height); item.canvas.closest('.writing-square,.copybook-cell')?.classList.remove('has-user-ink');
+  if(!item?.ctx||!item?.canvas)return;
+  const canvas=item.canvas,ctx=item.ctx;
+  // Stop any active Pencil stroke first.
+  item.drawing=false; item.pointerId=null; item.captureTarget=null; item.prevPoint=null;
+
+  // Clear the FULL backing bitmap, not only the visible CSS-size rectangle.
+  // This matters after a responsive resize because canvas.width/height are device pixels.
+  ctx.save();
+  ctx.setTransform(1,0,0,1,0,0);
+  ctx.clearRect(0,0,canvas.width,canvas.height);
+  ctx.restore();
+
+  // Re-apply the drawing transform/style explicitly for the next stroke.
+  const dpr=item.dpr||1;
+  ctx.setTransform(dpr,0,0,dpr,0,0);
+  ctx.lineCap='round'; ctx.lineJoin='round';
+  ctx.lineWidth=item.baseLineWidth||6; ctx.strokeStyle='#17211f'; ctx.fillStyle='#17211f';
+  canvas.closest('.writing-square,.copybook-cell')?.classList.remove('has-user-ink');
 }
 function clearWritingCanvas(){
   const list=state.writingPracticeMode==='copybook'?copybookCanvases:writingCanvases;

@@ -1,0 +1,17 @@
+v5.3.3 hotfix
+
+Fixed:
+- Pressing “Xóa hàng / Clear row” could leave pieces of handwriting behind or make old strokes reappear.
+
+Root causes:
+1. clearRect() was clearing in CSS coordinates while the canvas backing bitmap uses device-pixel dimensions.
+2. resizeWritingCanvas() restored old ink asynchronously through Image.onload. If that callback completed after Clear, old handwriting could be drawn back.
+
+Fix:
+- Clear the entire backing bitmap with an identity transform.
+- Preserve ink during resize synchronously with an offscreen canvas, eliminating the delayed redraw race.
+- Reset active Pencil state and drawing styles after clearing.
+
+Upload:
+- app.js
+- sw.js

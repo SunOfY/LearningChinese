@@ -1,0 +1,25 @@
+v5.3.0 — Writing guide fix + Radical A4 handwriting sheet
+
+1) Repeated writing guide fix
+- Fixed the mismatched hidden character in Repeat practice.
+- Cause: a font fallback layer could become visible at the same time as the HanziWriter vector layer.
+- The tracing boxes now use the HanziWriter vector only.
+- If vector data fails to load, the app leaves the tracing model blank instead of showing a different font shape.
+- User ink remains exactly as drawn and is never replaced/snapped/corrected.
+
+2) Radical A4 handwriting sheet
+- Kept the restored radical-learning module.
+- In each radical's Writing section there are now two modes:
+  * Single-character stroke-order practice
+  * A4 handwriting sheet
+- The A4 sheet shows multiple characters from the selected radical on one page.
+- Each row: model + pinyin/stroke count + 4 fading tracing boxes + 4 blank writing boxes.
+- Apple Pencil freehand drawing works directly in every practice cell.
+- Optional Apple Pencil calligraphy/pressure mode is synchronized with the main writing setting.
+- Includes Show/Hide faint guides, Clear page, Print/Save A4 PDF, and Finish & choose another radical.
+
+Quick upload files:
+- app.js
+- radicals.js
+- styles.css
+- sw.js

@@ -464,3 +464,35 @@ body.foundation-study-session:not(.foundation-writing-session) .set-writing-sess
 .copybook-guide{display:grid;place-items:center;overflow:hidden;}
 .copybook-guide>svg{display:block!important;width:100%!important;height:100%!important;margin:auto!important;}
 .copybook-font-fallback{display:flex;align-items:center;justify-content:center;}
+
+
+/* v5.3.0 — fix duplicate tracing glyph + A4 radical handwriting sheet */
+.copybook-font-fallback[hidden]{display:none!important}
+.copybook-font-fallback:not([hidden]){display:flex!important;align-items:center;justify-content:center}
+/* Never layer a different font over valid HanziWriter vector guides. */
+.copybook-cell .copybook-font-fallback{z-index:1}
+
+.rad-writing-mode-switch{display:grid;grid-template-columns:1fr 1fr;gap:6px;background:#eef4f2;border-radius:13px;padding:4px;margin-bottom:12px}
+.rad-writing-mode-btn{border:1px solid transparent;background:transparent;font-weight:850;min-height:42px}
+.rad-writing-mode-btn.is-active{background:#fff;border-color:#bdd8d2;box-shadow:0 1px 3px rgba(14,55,50,.08);color:var(--accent)}
+.rad-writing-a4-stage[hidden],.rad-writing-single-wrap[hidden]{display:none!important}
+.rad-a4-shell{display:grid;gap:12px}
+.rad-a4-toolbar{display:flex;flex-wrap:wrap;align-items:center;gap:8px;border:1px solid var(--border);border-radius:14px;padding:10px;background:#f8fbfa}
+.rad-a4-toolbar-title{flex:1 1 100%;display:grid;gap:4px}.rad-a4-toolbar-title strong{font-size:16px}.rad-a4-toolbar-title span{font-size:12px;color:var(--muted);line-height:1.45}
+.rad-a4-toggle{display:flex;align-items:center;gap:6px;border:1px solid var(--border);border-radius:10px;padding:8px 10px;background:#fff;font-size:12px;font-weight:800}
+.rad-a4-viewport{overflow-x:auto;-webkit-overflow-scrolling:touch;padding:4px 0 10px}
+.rad-a4-page{width:min(100%,980px);min-width:760px;margin:0 auto;background:#fff;border:1px solid #83a993;box-shadow:0 6px 22px rgba(23,59,55,.08);padding:13px;box-sizing:border-box}
+.rad-a4-page-head{display:flex;align-items:end;justify-content:space-between;border-bottom:2px solid #7ca58d;padding:2px 4px 8px;margin-bottom:7px}.rad-a4-page-head>div{display:flex;align-items:baseline;gap:10px}.rad-a4-page-head b{font-family:"BiauKai","DFKai-SB","Kaiti TC","Noto Serif TC",serif;font-size:30px}.rad-a4-page-head span{font-weight:800}.rad-a4-page-head small{color:var(--muted)}
+.rad-a4-row{display:grid;grid-template-columns:98px minmax(0,1fr);border:1px solid #7ca58d;border-bottom:0;min-height:92px}.rad-a4-row:last-child{border-bottom:1px solid #7ca58d}
+.rad-a4-info{position:relative;border-right:1px solid #7ca58d;display:grid;grid-template-columns:1fr auto;grid-template-rows:22px 1fr;align-items:center;padding:3px;overflow:hidden}.rad-a4-stroke{align-self:start;justify-self:start;background:#19833d;color:#fff;border-radius:4px;padding:2px 6px;font-size:10px;font-weight:900}.rad-a4-pinyin{align-self:start;justify-self:end;font-size:11px;color:#b73531;font-weight:800}.rad-a4-model{grid-column:1/-1;width:58px;height:58px;justify-self:center;align-self:center}.rad-a4-model>svg,.rad-a4-guide>svg{width:100%!important;height:100%!important;display:block!important}.rad-a4-fallback[hidden]{display:none!important}.rad-a4-fallback:not([hidden]){grid-column:1/-1;display:grid;place-items:center;font-family:"BiauKai","DFKai-SB","Kaiti TC","Noto Serif TC",serif;font-size:48px}.rad-a4-play{position:absolute;right:4px;bottom:4px;width:27px;height:27px;min-height:27px;padding:0;border-radius:50%;font-size:11px;background:rgba(255,255,255,.94)}
+.rad-a4-cells{display:grid;grid-template-columns:repeat(8,minmax(0,1fr))}.rad-a4-cell{position:relative;aspect-ratio:1;border-right:1px solid #a7c4b3;overflow:hidden;isolation:isolate;touch-action:none;-webkit-user-select:none;user-select:none;-webkit-touch-callout:none}.rad-a4-cell:last-child{border-right:0}.rad-a4-gridlines{position:absolute;inset:0;z-index:0;pointer-events:none;background-image:linear-gradient(to right,transparent calc(50% - .5px),#d9e7df calc(50% - .5px),#d9e7df calc(50% + .5px),transparent calc(50% + .5px)),linear-gradient(to bottom,transparent calc(50% - .5px),#d9e7df calc(50% - .5px),#d9e7df calc(50% + .5px),transparent calc(50% + .5px)),linear-gradient(45deg,transparent calc(50% - .4px),#edf3ef calc(50% - .4px),#edf3ef calc(50% + .4px),transparent calc(50% + .4px)),linear-gradient(-45deg,transparent calc(50% - .4px),#edf3ef calc(50% - .4px),#edf3ef calc(50% + .4px),transparent calc(50% + .4px))}.rad-a4-guide{position:absolute;inset:0;z-index:1;display:grid;place-items:center;pointer-events:none}.rad-a4-guide[hidden]{display:none!important}.rad-a4-nodata{position:absolute;inset:0;z-index:1}.rad-a4-nodata[hidden]{display:none!important}.rad-a4-canvas{position:absolute;inset:0;width:100%;height:100%;z-index:3;touch-action:none;cursor:crosshair}.rad-a4-cell.has-ink .rad-a4-guide{opacity:.08!important}
+@media(max-width:820px){.rad-a4-page{min-width:720px}.rad-a4-row{grid-template-columns:90px minmax(0,1fr)}}
+@media(max-width:560px){.rad-writing-mode-switch{grid-template-columns:1fr}.rad-a4-toolbar>*{flex:1 1 100%}.rad-a4-toggle{justify-content:center}}
+@media print{
+  body.rad-a4-printing>*:not(.app-shell){display:none!important}
+  body.rad-a4-printing .app-shell>*{display:none!important}
+  body.rad-a4-printing #view-radicals,body.rad-a4-printing #radicalsContent,body.rad-a4-printing .rad-group-grid,body.rad-a4-printing .rad-group-card,body.rad-a4-printing .rad-writing-panel,body.rad-a4-printing .rad-writing-panel-body,body.rad-a4-printing .rad-writing-a4-stage,body.rad-a4-printing .rad-a4-shell,body.rad-a4-printing .rad-a4-viewport,body.rad-a4-printing .rad-a4-page{display:block!important;visibility:visible!important}
+  body.rad-a4-printing .rad-a4-toolbar,body.rad-a4-printing .rad-picker,body.rad-a4-printing .rad-learning-note,body.rad-a4-printing .rad-group-head,body.rad-a4-printing .rad-origin,body.rad-a4-printing .rad-study-player,body.rad-a4-printing .rad-writing-panel>summary,body.rad-a4-printing .rad-writing-mode-switch,body.rad-a4-printing .rad-writing-single-wrap{display:none!important}
+  body.rad-a4-printing .rad-a4-page{width:190mm!important;min-width:190mm!important;border:0!important;box-shadow:none!important;padding:0!important;margin:0 auto!important}
+  @page{size:A4 portrait;margin:10mm}
+}

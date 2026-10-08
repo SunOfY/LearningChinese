@@ -6,9 +6,9 @@
   const pick=(obj,lang=getLang())=>obj?.[lang]??obj?.vi??obj?.en??'';
 
   const UI={
-    vi:{tab:'Bộ thủ',title:'Bộ thủ & Họ chữ',sub:'Học từ cấu tạo: phần gợi nghĩa + phần gợi âm → chữ → từ → câu.',semantic:'Bộ gợi nghĩa',phonetic:'Họ âm',pinyin:'Pinyin gần âm Việt',search:'Tìm bộ, chữ, pinyin hoặc nghĩa…',listen:'Nghe',listenWord:'Nghe chữ',listenSentence:'Nghe câu',slow:'Chậm',fast:'Nhanh',writeThis:'Viết',initialTitle:'Thanh mẫu (âm đầu)',finalTitle:'Vận mẫu (phần vần)',specialTitle:'Quy tắc đặc biệt dễ nhầm',demoTitle:'Thử nhanh một Pinyin',demoHint:'Nhập ví dụ: qǐng, xué, lǜ, zhōngwén…',analyze:'Phân tích',why:'Vì sao dễ nhớ?',structure:'Cấu tạo',example:'Ví dụ',examples:'Câu ví dụ',examplesHint:'Xem cách dùng trong câu. Mỗi câu có Pinyin, nghĩa và nút nghe.',fontSize:'Cỡ chữ',fontSmaller:'Nhỏ hơn',fontLarger:'Lớn hơn',fontReset:'Mặc định',note:'Lưu ý: đây là cách phân tích để học và ghi nhớ. Không phải mọi chữ đều “sinh ra” trực tiếp từ bộ theo cách hiện đại; nhiều chữ là hình thanh, trong đó một phần gợi nghĩa và một phần gợi âm.',soundNote:'Gợi âm tiếng Việt chỉ là cầu nối ban đầu. Hãy ưu tiên nghe giọng zh-TW vì nhiều âm Mandarin không có bản tương đương chính xác trong tiếng Việt.',familyNote:'Họ âm cho thấy cùng một thành phần có thể lặp lại để gợi cách đọc, còn bộ bên trái/bên dưới thường đổi để gợi nghĩa.',all:'Tất cả',chooseRadical:'Chọn từng bộ để luyện',chooseHint:'Mỗi bộ được tách riêng. Chọn một bộ để học chữ, từ mở rộng và luyện viết riêng bộ đó.',practiceWriting:'Luyện viết bộ này',practiceHint:'Chọn chữ hoặc từ → xem thứ tự nét → bật Luyện nét để web kiểm tra thứ tự viết.',practiceTarget:'Chữ / từ muốn luyện',strokeOrder:'Thứ tự nét',startQuiz:'Luyện nét',rewrite:'Viết lại',showGuide:'Hiện mẫu',hideGuide:'Ẩn mẫu',writingReady:'Bấm “Luyện nét” rồi viết trực tiếp lên ô.',writingGood:'Hoàn thành đúng thứ tự nét!',writingMistake:'Nét này chưa đúng, thử lại nhé.',writerUnavailable:'Không tải được dữ liệu nét chữ. Hãy kiểm tra mạng rồi thử lại.',progress:'Tiến độ viết',coreChars:'Toàn bộ chữ',expandedWords:'Từ / cụm từ phát triển',singleRadical:'Từng bộ',deepStudy:'Học kỹ từ này',formula:'Ghép nghĩa',visualize:'Hình dung để nhớ',usage:'Cách dùng',pronunciation:'Tách phát âm',rootRole:'Vì sao chữ gốc thuộc bộ này?',studyFlow:'Cách học 4 bước',studyFlowText:'1. Nhìn cấu tạo → 2. Nghe 2–3 lần → 3. Nói theo → 4. Viết lại từ trí nhớ',compoundTag:'ghép nghĩa',grammarTag:'ngữ pháp',resultTag:'kết quả / hướng',fixedTag:'từ cố định',redupTag:'lặp từ',soundEach:'Bấm từng âm để nghe chậm',literalTip:'Dùng phép ghép để nhớ nghĩa, nhưng khi nói hãy nhớ cả từ như một khối.',lesson:'Bài học',learned:'Đã học',previous:'Trước',next:'Tiếp',understoodNext:'Đã hiểu · Tiếp',finishRadical:'Hoàn thành bộ',completed:'Đã hoàn thành',lessonHint:'Học từng chữ/từ một. Khi hiểu xong, bấm Tiếp để chuyển sang mục kế tiếp.',coreLesson:'Chữ nền tảng',wordLesson:'Từ phát triển',branchFrom:'Phát triển từ',resume:'Tiếp tục từ lần trước',restart:'Học lại từ đầu',aiCheck:'AI kiểm tra phát âm',aiSentenceCheck:'AI kiểm tra câu',aiListening:'Đang nghe… hãy đọc ngay bây giờ.',aiRecognizing:'AI đang nhận dạng…',aiTarget:'Mẫu',aiRecognized:'AI nghe được',aiScore:'Độ khớp',aiNote:'Groq AI kiểm tra xem hệ thống có nghe ra đúng chữ/câu hay không; đây chưa phải chấm thanh điệu chuyên sâu.',aiExcellent:'AI nghe đúng mẫu.',aiGood:'AI nghe khá gần. Hãy nghe lại và thử chậm hơn.',aiRetry:'AI nghe thành nội dung khác. Hãy nghe mẫu rồi thử lại.',aiUnavailable:'Chưa thể dùng AI kiểm tra phát âm.',aiMicDenied:'Không truy cập được microphone. Hãy cấp quyền microphone cho website.',aiGuestRemaining:(n,l)=>`Guest còn ${n}/${l} lượt AI`},
-    en:{tab:'Components',title:'Radicals & Character Families',sub:'Learn structure: semantic clue + sound clue → character → word → sentence.',semantic:'Semantic radicals',phonetic:'Sound families',pinyin:'Vietnamese sound bridge',search:'Search radical, character, pinyin or meaning…',listen:'Listen',listenWord:'Character',listenSentence:'Sentence',slow:'Slow',fast:'Fast',writeThis:'Write',initialTitle:'Initials',finalTitle:'Finals',specialTitle:'Easy-to-miss spelling rules',demoTitle:'Try a Pinyin',demoHint:'Type e.g. qǐng, xué, lǜ, zhōngwén…',analyze:'Analyze',why:'Why it helps',structure:'Structure',example:'Example',examples:'Example sentences',examplesHint:'See the word in context. Each sentence includes Pinyin, meaning, and audio.',fontSize:'Text size',fontSmaller:'Smaller',fontLarger:'Larger',fontReset:'Default',note:'This is a learning-oriented structural analysis. Not every character literally “grew” from its radical in a modern step-by-step way; many characters combine a semantic component with a phonetic component.',soundNote:'Vietnamese approximations are only a bridge. Prefer the zh-TW audio because many Mandarin sounds do not have exact Vietnamese equivalents.',familyNote:'Sound families show how one component can hint at pronunciation while another component changes the semantic field.',all:'All',chooseRadical:'Choose one radical to practise',chooseHint:'Each radical is separated. Pick one to study its characters, expanded vocabulary, and handwriting.',practiceWriting:'Practise writing this radical',practiceHint:'Choose a character or word → view stroke order → start stroke quiz to check your writing order.',practiceTarget:'Character / word',strokeOrder:'Stroke order',startQuiz:'Stroke quiz',rewrite:'Rewrite',showGuide:'Show model',hideGuide:'Hide model',writingReady:'Press “Stroke quiz” and write directly in the box.',writingGood:'Correct stroke order completed!',writingMistake:'That stroke is not right yet—try again.',writerUnavailable:'Stroke data could not be loaded. Check your connection and try again.',progress:'Writing progress',coreChars:'All characters',expandedWords:'Expanded words / phrases',singleRadical:'One radical',deepStudy:'Study this word deeply',formula:'Meaning formula',visualize:'Memory image',usage:'How to use it',pronunciation:'Pronunciation breakdown',rootRole:'Why this root belongs here',studyFlow:'4-step study flow',studyFlowText:'1. See the structure → 2. Listen 2–3 times → 3. Repeat → 4. Write from memory',compoundTag:'semantic compound',grammarTag:'grammar pattern',resultTag:'result / direction',fixedTag:'lexicalized word',redupTag:'reduplication',soundEach:'Tap each syllable to hear it slowly',literalTip:'Use the combination as a memory bridge, but learn the spoken word as one unit.',lesson:'Lesson',learned:'Learned',previous:'Previous',next:'Next',understoodNext:'Got it · Next',finishRadical:'Finish radical',completed:'Completed',lessonHint:'Study one character or word at a time. When it makes sense, press Next to move on.',coreLesson:'Core character',wordLesson:'Developed word',branchFrom:'Built from',resume:'Resume where you left off',restart:'Restart from beginning',aiCheck:'AI pronunciation check',aiSentenceCheck:'Check sentence',aiListening:'Listening… speak now.',aiRecognizing:'AI is transcribing…',aiTarget:'Target',aiRecognized:'AI heard',aiScore:'Match',aiNote:'Groq AI checks whether the speech is recognized as the target text; this is not a professional tone/phoneme score.',aiExcellent:'AI recognized the target.',aiGood:'AI heard something close. Listen again and try more slowly.',aiRetry:'AI heard different text. Listen to the model and try again.',aiUnavailable:'AI pronunciation check is unavailable.',aiMicDenied:'Microphone access failed. Allow microphone permission for this site.',aiGuestRemaining:(n,l)=>`Guest has ${n}/${l} AI checks left`},
-    'zh-Hant':{tab:'部件',title:'部首・部件與字族',sub:'從結構學習：義符 + 聲符 → 字 → 詞 → 句子。',semantic:'義符部件',phonetic:'聲符字族',pinyin:'越南語近似音提示',search:'搜尋部件、字、拼音或意思…',listen:'聽',listenWord:'聽單字',listenSentence:'聽例句',slow:'慢速',fast:'加速',writeThis:'練寫',initialTitle:'聲母',finalTitle:'韻母',specialTitle:'容易混淆的拼音規則',demoTitle:'快速分析拼音',demoHint:'例如輸入：qǐng、xué、lǜ、zhōngwén…',analyze:'分析',why:'為什麼好記？',structure:'結構',example:'例句',examples:'例句',examplesHint:'用短句理解實際用法；每句都有拼音、意思與朗讀。',fontSize:'字體大小',fontSmaller:'縮小',fontLarger:'放大',fontReset:'預設',note:'這裡以學習與記憶為目的分析字形。不是所有漢字都能用現代「加一個部首就產生新字」來解釋；很多漢字屬於形聲結構，由義符提示意思、聲符提示讀音。',soundNote:'越南語近似音只作為入門橋樑。許多華語語音沒有完全相同的越南語對應音，請以 zh-TW 音檔為準。',familyNote:'聲符字族可以看出同一聲符如何提示讀音，而其他部件改變字義範圍。',all:'全部',chooseRadical:'選一個部件單獨練習',chooseHint:'每個部件已分開。選一個部件，集中學習相關字、延伸詞與書寫。',practiceWriting:'練寫這個部件',practiceHint:'選擇單字或詞語 → 看筆順 → 開始筆順練習，系統會檢查書寫順序。',practiceTarget:'要練的字／詞',strokeOrder:'筆順',startQuiz:'筆順練習',rewrite:'重寫',showGuide:'顯示字形',hideGuide:'隱藏字形',writingReady:'按「筆順練習」後，直接在方格內書寫。',writingGood:'筆順完成正確！',writingMistake:'這一筆還不對，再試一次。',writerUnavailable:'無法載入筆順資料，請檢查網路後再試。',progress:'書寫進度',coreChars:'全部漢字',expandedWords:'延伸詞／詞組',singleRadical:'單一部件',deepStudy:'深入學這個詞',formula:'組合意思',visualize:'記憶畫面',usage:'用法',pronunciation:'拆分發音',rootRole:'為什麼核心字屬於這個部件？',studyFlow:'四步學習法',studyFlowText:'1. 看結構 → 2. 聽 2–3 次 → 3. 跟讀 → 4. 不看答案寫出來',compoundTag:'語義組合',grammarTag:'語法結構',resultTag:'結果／方向',fixedTag:'固定詞',redupTag:'重疊詞',soundEach:'點每個音節可慢速聽',literalTip:'用字義組合幫助記憶，但實際說話時要把整個詞當成一個單位。',lesson:'學習項目',learned:'已學',previous:'上一個',next:'下一個',understoodNext:'懂了 · 下一個',finishRadical:'完成本部件',completed:'已完成',lessonHint:'一次只學一個字或詞。理解後按「下一個」再進入下一項。',coreLesson:'核心字',wordLesson:'延伸詞',branchFrom:'由此延伸',resume:'從上次進度繼續',restart:'從頭學習',aiCheck:'AI 發音檢查',aiSentenceCheck:'檢查整句',aiListening:'正在聆聽……請現在朗讀。',aiRecognizing:'AI 正在辨識……',aiTarget:'目標',aiRecognized:'AI 聽到',aiScore:'匹配度',aiNote:'Groq AI 檢查語音是否被辨識成目標文字；這不是專業的聲調／音位評分。',aiExcellent:'AI 正確辨識出目標。',aiGood:'AI 辨識結果接近，請再聽一次並放慢速度重試。',aiRetry:'AI 辨識成其他內容，請聽範例後再試。',aiUnavailable:'目前無法使用 AI 發音檢查。',aiMicDenied:'無法使用麥克風，請允許此網站使用麥克風。',aiGuestRemaining:(n,l)=>`訪客還有 ${n}/${l} 次 AI 檢查`}
+    vi:{tab:'Bộ thủ',title:'Bộ thủ & Họ chữ',sub:'Học từ cấu tạo: phần gợi nghĩa + phần gợi âm → chữ → từ → câu.',semantic:'Bộ gợi nghĩa',phonetic:'Họ âm',pinyin:'Pinyin gần âm Việt',search:'Tìm bộ, chữ, pinyin hoặc nghĩa…',listen:'Nghe',listenWord:'Nghe chữ',listenSentence:'Nghe câu',slow:'Chậm',fast:'Nhanh',writeThis:'Viết',initialTitle:'Thanh mẫu (âm đầu)',finalTitle:'Vận mẫu (phần vần)',specialTitle:'Quy tắc đặc biệt dễ nhầm',demoTitle:'Thử nhanh một Pinyin',demoHint:'Nhập ví dụ: qǐng, xué, lǜ, zhōngwén…',analyze:'Phân tích',why:'Vì sao dễ nhớ?',structure:'Cấu tạo',example:'Ví dụ',examples:'Câu ví dụ',examplesHint:'Xem cách dùng trong câu. Mỗi câu có Pinyin, nghĩa và nút nghe.',fontSize:'Cỡ chữ',fontSmaller:'Nhỏ hơn',fontLarger:'Lớn hơn',fontReset:'Mặc định',note:'Lưu ý: đây là cách phân tích để học và ghi nhớ. Không phải mọi chữ đều “sinh ra” trực tiếp từ bộ theo cách hiện đại; nhiều chữ là hình thanh, trong đó một phần gợi nghĩa và một phần gợi âm.',soundNote:'Gợi âm tiếng Việt chỉ là cầu nối ban đầu. Hãy ưu tiên nghe giọng zh-TW vì nhiều âm Mandarin không có bản tương đương chính xác trong tiếng Việt.',familyNote:'Họ âm cho thấy cùng một thành phần có thể lặp lại để gợi cách đọc, còn bộ bên trái/bên dưới thường đổi để gợi nghĩa.',all:'Tất cả',chooseRadical:'Chọn từng bộ để luyện',chooseHint:'Mỗi bộ được tách riêng. Chọn một bộ để học chữ, từ mở rộng và luyện viết riêng bộ đó.',practiceWriting:'Luyện viết bộ này',practiceHint:'Chọn chữ hoặc từ → xem thứ tự nét → bật Luyện nét để web kiểm tra thứ tự viết.',practiceTarget:'Chữ / từ muốn luyện',strokeOrder:'Thứ tự nét',startQuiz:'Luyện nét',rewrite:'Viết lại',showGuide:'Hiện mẫu',hideGuide:'Ẩn mẫu',writingReady:'Bấm “Luyện nét” rồi viết trực tiếp lên ô.',writingGood:'Hoàn thành đúng thứ tự nét!',writingMistake:'Nét này chưa đúng, thử lại nhé.',writerUnavailable:'Không tải được dữ liệu nét chữ. Hãy kiểm tra mạng rồi thử lại.',progress:'Tiến độ viết',coreChars:'Toàn bộ chữ',expandedWords:'Từ / cụm từ phát triển',singleRadical:'Từng bộ',deepStudy:'Học kỹ từ này',formula:'Ghép nghĩa',visualize:'Hình dung để nhớ',usage:'Cách dùng',pronunciation:'Tách phát âm',rootRole:'Vì sao chữ gốc thuộc bộ này?',studyFlow:'Cách học 4 bước',studyFlowText:'1. Nhìn cấu tạo → 2. Nghe 2–3 lần → 3. Nói theo → 4. Viết lại từ trí nhớ',compoundTag:'ghép nghĩa',grammarTag:'ngữ pháp',resultTag:'kết quả / hướng',fixedTag:'từ cố định',redupTag:'lặp từ',soundEach:'Bấm từng âm để nghe chậm',literalTip:'Dùng phép ghép để nhớ nghĩa, nhưng khi nói hãy nhớ cả từ như một khối.',lesson:'Bài học',learned:'Đã học',previous:'Trước',next:'Tiếp',understoodNext:'Đã hiểu · Tiếp',finishRadical:'Hoàn thành bộ',completed:'Đã hoàn thành',lessonHint:'Học từng chữ/từ một. Khi hiểu xong, bấm Tiếp để chuyển sang mục kế tiếp.',coreLesson:'Chữ nền tảng',wordLesson:'Từ phát triển',branchFrom:'Phát triển từ',resume:'Tiếp tục từ lần trước',restart:'Học lại từ đầu',aiCheck:'AI kiểm tra phát âm',aiSentenceCheck:'AI kiểm tra câu',aiListening:'Đang nghe… hãy đọc ngay bây giờ.',aiRecognizing:'AI đang nhận dạng…',aiTarget:'Mẫu',aiRecognized:'AI nghe được',aiScore:'Độ khớp',aiNote:'Groq AI kiểm tra xem hệ thống có nghe ra đúng chữ/câu hay không; đây chưa phải chấm thanh điệu chuyên sâu.',aiExcellent:'AI nghe đúng mẫu.',aiGood:'AI nghe khá gần. Hãy nghe lại và thử chậm hơn.',aiRetry:'AI nghe thành nội dung khác. Hãy nghe mẫu rồi thử lại.',aiUnavailable:'Chưa thể dùng AI kiểm tra phát âm.',aiMicDenied:'Không truy cập được microphone. Hãy cấp quyền microphone cho website.',aiGuestRemaining:(n,l)=>`Guest còn ${n}/${l} lượt AI`,writingOne:'Luyện từng chữ',writingA4:'Vở tập viết A4',writingA4Hint:'Một trang gồm nhiều chữ của bộ đang học. Mỗi hàng có mẫu chuẩn → ô tô theo mẫu mờ dần → ô trống để tự viết nhiều lần.',writingA4Guide:'Mẫu mờ',writingA4Brush:'Bút thư pháp Apple Pencil',writingA4Clear:'Xóa toàn bộ trang',writingA4Print:'In / Lưu PDF A4',writingA4Finish:'Hoàn thành và chọn bộ khác',writingA4Stroke:n=>`${n} nét`,writingA4NoData:'Không tải được mẫu vector; ô này để trống thay vì dùng font khác để tránh học sai hình chữ.'},
+    en:{tab:'Components',title:'Radicals & Character Families',sub:'Learn structure: semantic clue + sound clue → character → word → sentence.',semantic:'Semantic radicals',phonetic:'Sound families',pinyin:'Vietnamese sound bridge',search:'Search radical, character, pinyin or meaning…',listen:'Listen',listenWord:'Character',listenSentence:'Sentence',slow:'Slow',fast:'Fast',writeThis:'Write',initialTitle:'Initials',finalTitle:'Finals',specialTitle:'Easy-to-miss spelling rules',demoTitle:'Try a Pinyin',demoHint:'Type e.g. qǐng, xué, lǜ, zhōngwén…',analyze:'Analyze',why:'Why it helps',structure:'Structure',example:'Example',examples:'Example sentences',examplesHint:'See the word in context. Each sentence includes Pinyin, meaning, and audio.',fontSize:'Text size',fontSmaller:'Smaller',fontLarger:'Larger',fontReset:'Default',note:'This is a learning-oriented structural analysis. Not every character literally “grew” from its radical in a modern step-by-step way; many characters combine a semantic component with a phonetic component.',soundNote:'Vietnamese approximations are only a bridge. Prefer the zh-TW audio because many Mandarin sounds do not have exact Vietnamese equivalents.',familyNote:'Sound families show how one component can hint at pronunciation while another component changes the semantic field.',all:'All',chooseRadical:'Choose one radical to practise',chooseHint:'Each radical is separated. Pick one to study its characters, expanded vocabulary, and handwriting.',practiceWriting:'Practise writing this radical',practiceHint:'Choose a character or word → view stroke order → start stroke quiz to check your writing order.',practiceTarget:'Character / word',strokeOrder:'Stroke order',startQuiz:'Stroke quiz',rewrite:'Rewrite',showGuide:'Show model',hideGuide:'Hide model',writingReady:'Press “Stroke quiz” and write directly in the box.',writingGood:'Correct stroke order completed!',writingMistake:'That stroke is not right yet—try again.',writerUnavailable:'Stroke data could not be loaded. Check your connection and try again.',progress:'Writing progress',coreChars:'All characters',expandedWords:'Expanded words / phrases',singleRadical:'One radical',deepStudy:'Study this word deeply',formula:'Meaning formula',visualize:'Memory image',usage:'How to use it',pronunciation:'Pronunciation breakdown',rootRole:'Why this root belongs here',studyFlow:'4-step study flow',studyFlowText:'1. See the structure → 2. Listen 2–3 times → 3. Repeat → 4. Write from memory',compoundTag:'semantic compound',grammarTag:'grammar pattern',resultTag:'result / direction',fixedTag:'lexicalized word',redupTag:'reduplication',soundEach:'Tap each syllable to hear it slowly',literalTip:'Use the combination as a memory bridge, but learn the spoken word as one unit.',lesson:'Lesson',learned:'Learned',previous:'Previous',next:'Next',understoodNext:'Got it · Next',finishRadical:'Finish radical',completed:'Completed',lessonHint:'Study one character or word at a time. When it makes sense, press Next to move on.',coreLesson:'Core character',wordLesson:'Developed word',branchFrom:'Built from',resume:'Resume where you left off',restart:'Restart from beginning',aiCheck:'AI pronunciation check',aiSentenceCheck:'Check sentence',aiListening:'Listening… speak now.',aiRecognizing:'AI is transcribing…',aiTarget:'Target',aiRecognized:'AI heard',aiScore:'Match',aiNote:'Groq AI checks whether the speech is recognized as the target text; this is not a professional tone/phoneme score.',aiExcellent:'AI recognized the target.',aiGood:'AI heard something close. Listen again and try more slowly.',aiRetry:'AI heard different text. Listen to the model and try again.',aiUnavailable:'AI pronunciation check is unavailable.',aiMicDenied:'Microphone access failed. Allow microphone permission for this site.',aiGuestRemaining:(n,l)=>`Guest has ${n}/${l} AI checks left`,writingOne:'Single-character practice',writingA4:'A4 handwriting sheet',writingA4Hint:'One page contains multiple characters from the selected radical. Each row has a correct model → fading trace boxes → blank boxes for repeated free writing.',writingA4Guide:'Faint guides',writingA4Brush:'Apple Pencil calligraphy pen',writingA4Clear:'Clear whole page',writingA4Print:'Print / Save A4 PDF',writingA4Finish:'Finish and choose another radical',writingA4Stroke:n=>`${n} strokes`,writingA4NoData:'Vector data could not be loaded; this cell stays blank rather than showing a different font shape.'},
+    'zh-Hant':{tab:'部件',title:'部首・部件與字族',sub:'從結構學習：義符 + 聲符 → 字 → 詞 → 句子。',semantic:'義符部件',phonetic:'聲符字族',pinyin:'越南語近似音提示',search:'搜尋部件、字、拼音或意思…',listen:'聽',listenWord:'聽單字',listenSentence:'聽例句',slow:'慢速',fast:'加速',writeThis:'練寫',initialTitle:'聲母',finalTitle:'韻母',specialTitle:'容易混淆的拼音規則',demoTitle:'快速分析拼音',demoHint:'例如輸入：qǐng、xué、lǜ、zhōngwén…',analyze:'分析',why:'為什麼好記？',structure:'結構',example:'例句',examples:'例句',examplesHint:'用短句理解實際用法；每句都有拼音、意思與朗讀。',fontSize:'字體大小',fontSmaller:'縮小',fontLarger:'放大',fontReset:'預設',note:'這裡以學習與記憶為目的分析字形。不是所有漢字都能用現代「加一個部首就產生新字」來解釋；很多漢字屬於形聲結構，由義符提示意思、聲符提示讀音。',soundNote:'越南語近似音只作為入門橋樑。許多華語語音沒有完全相同的越南語對應音，請以 zh-TW 音檔為準。',familyNote:'聲符字族可以看出同一聲符如何提示讀音，而其他部件改變字義範圍。',all:'全部',chooseRadical:'選一個部件單獨練習',chooseHint:'每個部件已分開。選一個部件，集中學習相關字、延伸詞與書寫。',practiceWriting:'練寫這個部件',practiceHint:'選擇單字或詞語 → 看筆順 → 開始筆順練習，系統會檢查書寫順序。',practiceTarget:'要練的字／詞',strokeOrder:'筆順',startQuiz:'筆順練習',rewrite:'重寫',showGuide:'顯示字形',hideGuide:'隱藏字形',writingReady:'按「筆順練習」後，直接在方格內書寫。',writingGood:'筆順完成正確！',writingMistake:'這一筆還不對，再試一次。',writerUnavailable:'無法載入筆順資料，請檢查網路後再試。',progress:'書寫進度',coreChars:'全部漢字',expandedWords:'延伸詞／詞組',singleRadical:'單一部件',deepStudy:'深入學這個詞',formula:'組合意思',visualize:'記憶畫面',usage:'用法',pronunciation:'拆分發音',rootRole:'為什麼核心字屬於這個部件？',studyFlow:'四步學習法',studyFlowText:'1. 看結構 → 2. 聽 2–3 次 → 3. 跟讀 → 4. 不看答案寫出來',compoundTag:'語義組合',grammarTag:'語法結構',resultTag:'結果／方向',fixedTag:'固定詞',redupTag:'重疊詞',soundEach:'點每個音節可慢速聽',literalTip:'用字義組合幫助記憶，但實際說話時要把整個詞當成一個單位。',lesson:'學習項目',learned:'已學',previous:'上一個',next:'下一個',understoodNext:'懂了 · 下一個',finishRadical:'完成本部件',completed:'已完成',lessonHint:'一次只學一個字或詞。理解後按「下一個」再進入下一項。',coreLesson:'核心字',wordLesson:'延伸詞',branchFrom:'由此延伸',resume:'從上次進度繼續',restart:'從頭學習',aiCheck:'AI 發音檢查',aiSentenceCheck:'檢查整句',aiListening:'正在聆聽……請現在朗讀。',aiRecognizing:'AI 正在辨識……',aiTarget:'目標',aiRecognized:'AI 聽到',aiScore:'匹配度',aiNote:'Groq AI 檢查語音是否被辨識成目標文字；這不是專業的聲調／音位評分。',aiExcellent:'AI 正確辨識出目標。',aiGood:'AI 辨識結果接近，請再聽一次並放慢速度重試。',aiRetry:'AI 辨識成其他內容，請聽範例後再試。',aiUnavailable:'目前無法使用 AI 發音檢查。',aiMicDenied:'無法使用麥克風，請允許此網站使用麥克風。',aiGuestRemaining:(n,l)=>`訪客還有 ${n}/${l} 次 AI 檢查`,writingOne:'單字筆順練習',writingA4:'A4 寫字練習紙',writingA4Hint:'一頁集中練習目前部首的多個漢字。每列依序為標準範字 → 漸淡描字 → 空白格反覆默寫。',writingA4Guide:'淡色範字',writingA4Brush:'Apple Pencil 毛筆模式',writingA4Clear:'清除此頁',writingA4Print:'列印 / 儲存 A4 PDF',writingA4Finish:'完成並選其他部首',writingA4Stroke:n=>`${n} 畫`,writingA4NoData:'無法載入向量字形；此格保持空白，不改用不同字體，以免字形不一致。'}
   };
 
   let radicals=[];
@@ -564,21 +564,148 @@
       });
     });
   }
+  const RAD_A4_WRITING_SETTINGS_KEY='tocfl-writing-settings-v1';
+  const radicalA4Sessions=[];
+  function radicalA4Meta(r){
+    const map=new Map();
+    const variants=String(r.radical||'').split('/').map(x=>x.trim()).filter(Boolean);
+    variants.forEach(v=>hanziChars(v).forEach(ch=>{if(!map.has(ch))map.set(ch,{ch,p:r.pinyin||'',m:pick(r.meaning)});}));
+    (r.chars||[]).forEach(x=>hanziChars(x.h).forEach(ch=>{if(!map.has(ch))map.set(ch,{ch,p:x.p||'',m:pick(x.m)});}));
+    (expansionTrees[r.key]||[]).forEach(branch=>{
+      hanziChars(branch[0]).forEach(ch=>{if(!map.has(ch))map.set(ch,{ch,p:branch[1]||'',m:branchMeaning(branch)});});
+    });
+    return [...map.values()];
+  }
+  function readRadA4Brush(){
+    try{return Boolean(JSON.parse(localStorage.getItem(RAD_A4_WRITING_SETTINGS_KEY)||'{}')?.brushMode);}catch{return false;}
+  }
+  function writeRadA4Brush(value){
+    try{
+      const obj=JSON.parse(localStorage.getItem(RAD_A4_WRITING_SETTINGS_KEY)||'{}')||{};
+      obj.brushMode=Boolean(value);localStorage.setItem(RAD_A4_WRITING_SETTINGS_KEY,JSON.stringify(obj));
+    }catch{}
+  }
+  function radA4Point(canvas,e){const r=canvas.getBoundingClientRect();return[e.clientX-r.left,e.clientY-r.top];}
+  function radA4LineWidth(item,e,point,start=false){
+    const base=item.base||4.6;if(!item.brush())return base;
+    const pressure=(e?.pointerType==='pen'&&Number.isFinite(e.pressure)&&e.pressure>0)?e.pressure:.48;
+    const now=e?.timeStamp||performance.now(),dt=Math.max(1,now-(item.lastTime||now));
+    const dist=item.last?Math.hypot(point[0]-item.last[0],point[1]-item.last[1]):0,speed=dist/dt;
+    const tilt=Number.isFinite(e?.tiltX)&&Number.isFinite(e?.tiltY)?Math.min(1,Math.hypot(e.tiltX,e.tiltY)/90):0;
+    const target=base*(.4+1.7*pressure)*(1+.14*tilt)*Math.max(.78,Math.min(1.15,1.08-speed*.24));
+    if(start||!Number.isFinite(item.width))return Math.max(base*.45,Math.min(base*2.35,target));
+    return Math.max(base*.45,Math.min(base*2.35,item.width*.7+target*.3));
+  }
+  function bindRadA4Canvas(canvas,brushGetter){
+    const ctx=canvas.getContext('2d');
+    const r=canvas.getBoundingClientRect(),dpr=Math.max(1,Math.min(window.devicePixelRatio||1,2));
+    canvas.width=Math.round(r.width*dpr);canvas.height=Math.round(r.height*dpr);ctx.setTransform(dpr,0,0,dpr,0,0);ctx.lineCap='round';ctx.lineJoin='round';ctx.fillStyle=ctx.strokeStyle='#17211f';
+    const item={canvas,ctx,base:Math.max(3.2,r.width/24),drawing:false,pointerId:null,last:null,lastTime:0,width:5,brush:brushGetter};
+    const stop=e=>{if(e?.cancelable)e.preventDefault();try{window.getSelection?.()?.removeAllRanges?.();}catch{}};
+    const dot=(p,w)=>{ctx.beginPath();ctx.arc(p[0],p[1],Math.max(.8,w/2),0,Math.PI*2);ctx.fill();};
+    const seg=(a,b,wa,wb)=>{
+      if(!item.brush()){ctx.lineWidth=item.base;ctx.beginPath();ctx.moveTo(...a);ctx.lineTo(...b);ctx.stroke();return;}
+      const dx=b[0]-a[0],dy=b[1]-a[1],dist=Math.hypot(dx,dy),steps=Math.max(1,Math.ceil(dist/1.7));
+      for(let i=1;i<=steps;i++){const q=i/steps,w=wa+(wb-wa)*q;ctx.beginPath();ctx.arc(a[0]+dx*q,a[1]+dy*q,Math.max(.75,w/2),0,Math.PI*2);ctx.fill();}
+    };
+    ['contextmenu','selectstart','dragstart'].forEach(n=>canvas.addEventListener(n,e=>e.preventDefault()));
+    ['touchstart','touchmove','touchend','touchcancel'].forEach(n=>canvas.addEventListener(n,stop,{passive:false}));
+    canvas.addEventListener('pointerdown',e=>{if(e.pointerType==='mouse'&&e.button!==0)return;stop(e);item.drawing=true;item.pointerId=e.pointerId;try{canvas.setPointerCapture(e.pointerId);}catch{}const p=radA4Point(canvas,e);item.last=p;item.lastTime=e.timeStamp||performance.now();item.width=radA4LineWidth(item,e,p,true);dot(p,item.width);canvas.closest('.rad-a4-cell')?.classList.add('has-ink');},{passive:false});
+    canvas.addEventListener('pointermove',e=>{if(!item.drawing||(item.pointerId!==null&&item.pointerId!==e.pointerId))return;stop(e);const samples=typeof e.getCoalescedEvents==='function'?e.getCoalescedEvents():[e];for(const s of samples){const p=radA4Point(canvas,s),w=radA4LineWidth(item,s,p,false);seg(item.last,p,item.width,w);item.last=p;item.width=w;item.lastTime=s.timeStamp||performance.now();}},{passive:false});
+    const end=e=>{if(e&&e.pointerId!==undefined&&item.pointerId!==null&&e.pointerId!==item.pointerId)return;stop(e);item.drawing=false;item.pointerId=null;item.last=null;};
+    ['pointerup','pointercancel','pointerleave'].forEach(n=>canvas.addEventListener(n,end,{passive:false}));canvas.addEventListener('lostpointercapture',end);
+    item.clear=()=>{const rr=canvas.getBoundingClientRect();ctx.clearRect(0,0,rr.width,rr.height);canvas.closest('.rad-a4-cell')?.classList.remove('has-ink');};
+    return item;
+  }
+  function makeRadA4Writer(host,ch,opacity=1,color='#c53832',onData=null,onError=null){
+    if(typeof window.HanziWriter==='undefined')return null;
+    const rect=host.getBoundingClientRect(),size=Math.max(52,Math.round(Math.min(rect.width||76,rect.height||rect.width||76)));
+    host.style.opacity=String(opacity);
+    return window.HanziWriter.create(host,ch,{width:size,height:size,padding:7,showOutline:false,showCharacter:true,strokeColor:color,strokeAnimationSpeed:1,delayBetweenStrokes:140,charDataLoader:(char,done,fail)=>radicalCharDataLoader(char,data=>{onData?.(data);done(data);},err=>{onError?.(err);fail?.(err);})});
+  }
+  function buildRadicalA4Sheet(container,r,ui){
+    container.innerHTML='';
+    const shell=document.createElement('section');shell.className='rad-a4-shell';
+    const toolbar=document.createElement('div');toolbar.className='rad-a4-toolbar';
+    const intro=document.createElement('div');intro.className='rad-a4-toolbar-title';intro.innerHTML=`<strong>📄 ${ui.writingA4}</strong><span>${ui.writingA4Hint}</span>`;
+    const guideLabel=document.createElement('label');guideLabel.className='rad-a4-toggle';const guideCheck=document.createElement('input');guideCheck.type='checkbox';guideCheck.checked=true;guideLabel.append(guideCheck,document.createTextNode(` ${ui.writingA4Guide}`));
+    const brushLabel=document.createElement('label');brushLabel.className='rad-a4-toggle';const brushCheck=document.createElement('input');brushCheck.type='checkbox';brushCheck.checked=readRadA4Brush();brushLabel.append(brushCheck,document.createTextNode(` ${ui.writingA4Brush}`));
+    const clear=document.createElement('button');clear.type='button';clear.textContent=`🧹 ${ui.writingA4Clear}`;
+    const print=document.createElement('button');print.type='button';print.textContent=`🖨 ${ui.writingA4Print}`;
+    const finish=document.createElement('button');finish.type='button';finish.className='primary';finish.textContent=`✓ ${ui.writingA4Finish}`;
+    toolbar.append(intro,guideLabel,brushLabel,clear,print,finish);shell.append(toolbar);
+    const viewport=document.createElement('div');viewport.className='rad-a4-viewport';
+    const page=document.createElement('div');page.className='rad-a4-page';
+    const header=document.createElement('header');header.className='rad-a4-page-head';header.innerHTML=`<div><b>${r.radical}</b><span>${r.pinyin} · ${pick(r.meaning)}</span></div><small>${ui.writingA4}</small>`;page.append(header);
+    const inkItems=[],guideHosts=[];
+    const targets=radicalA4Meta(r);
+    targets.forEach((target,rowIndex)=>{
+      const row=document.createElement('section');row.className='rad-a4-row';
+      const info=document.createElement('div');info.className='rad-a4-info';
+      const stroke=document.createElement('span');stroke.className='rad-a4-stroke';stroke.textContent='…';
+      const pinyin=document.createElement('span');pinyin.className='rad-a4-pinyin';pinyin.textContent=target.p||'';
+      const model=document.createElement('div');model.className='rad-a4-model';
+      const modelFallback=document.createElement('span');modelFallback.className='rad-a4-fallback';modelFallback.textContent=target.ch;modelFallback.hidden=true;
+      const replay=document.createElement('button');replay.type='button';replay.className='rad-a4-play';replay.textContent='▶';replay.title=ui.strokeOrder;replay.disabled=true;
+      info.append(stroke,pinyin,model,modelFallback,replay);
+      const cells=document.createElement('div');cells.className='rad-a4-cells';
+      row.append(info,cells);page.append(row);
+      let modelWriter=null;
+      try{
+        modelWriter=makeRadA4Writer(model,target.ch,1,'#17211f',data=>{const n=Array.isArray(data?.strokes)?data.strokes.length:0;stroke.textContent=n?ui.writingA4Stroke(n):'';modelFallback.hidden=true;replay.disabled=false;},()=>{model.hidden=true;modelFallback.hidden=false;stroke.textContent='';});
+        if(!modelWriter)throw new Error();
+      }catch{model.hidden=true;modelFallback.hidden=false;stroke.textContent='';}
+      replay.addEventListener('click',()=>{try{modelWriter?.hideCharacter?.({duration:0});modelWriter?.animateCharacter?.({onComplete:()=>modelWriter?.showCharacter?.({duration:80})});}catch{}});
+      const opacities=[.52,.36,.23,.13,0,0,0,0];
+      opacities.forEach((opacity,i)=>{
+        const cell=document.createElement('div');cell.className='rad-a4-cell';
+        const grid=document.createElement('div');grid.className='rad-a4-gridlines';
+        const guide=document.createElement('div');guide.className='rad-a4-guide';guide.dataset.opacity=String(opacity);guide.style.opacity=String(opacity);if(!opacity)guide.hidden=true;
+        const noData=document.createElement('span');noData.className='rad-a4-nodata';noData.textContent='';noData.hidden=true;
+        const canvas=document.createElement('canvas');canvas.className='rad-a4-canvas';
+        cell.append(grid,guide,noData,canvas);cells.append(cell);
+        if(opacity>0){
+          guideHosts.push({host:guide,opacity});
+          try{const w=makeRadA4Writer(guide,target.ch,opacity,'#c53832',null,()=>{guide.hidden=true;noData.hidden=false;noData.title=ui.writingA4NoData;});if(!w)throw new Error();}catch{guide.hidden=true;noData.hidden=false;noData.title=ui.writingA4NoData;}
+        }
+        inkItems.push(bindRadA4Canvas(canvas,()=>brushCheck.checked));
+      });
+    });
+    viewport.append(page);shell.append(viewport);container.append(shell);
+    guideCheck.addEventListener('change',()=>guideHosts.forEach(x=>{x.host.hidden=!guideCheck.checked||Number(x.opacity)<=0;}));
+    brushCheck.addEventListener('change',()=>writeRadA4Brush(brushCheck.checked));
+    clear.addEventListener('click',()=>inkItems.forEach(x=>x.clear()));
+    print.addEventListener('click',()=>{document.body.classList.add('rad-a4-printing');setTimeout(()=>{window.print();setTimeout(()=>document.body.classList.remove('rad-a4-printing'),400);},30);});
+    finish.addEventListener('click',()=>{const picker=document.querySelector('.rad-picker');picker?.scrollIntoView({behavior:'smooth',block:'start'});});
+    radicalA4Sessions.push({shell,inkItems});
+  }
+
   function writingPracticePanel(r,ui){
     const details=document.createElement('details');details.className='rad-writing-panel';details.dataset.radWritingPanel=r.key;
     const summary=document.createElement('summary');
     summary.innerHTML=`<span>✍ ${ui.practiceWriting}</span><strong data-rad-writing-progress="${r.key}">${progressText(r,ui)}</strong>`;
     details.append(summary);
     const body=document.createElement('div');body.className='rad-writing-panel-body';details.append(body);
-    let built=false,targets=[],select=null,stage=null;
+    let built=false,targets=[],select=null,stage=null,a4Stage=null,singleWrap=null;
     const draw=()=>{
       if(!select||!stage||!targets.length)return;
       const idx=Number(select.value)||0;
       saveTextState(`${WRITING_TARGET_PREFIX}${r.key}`,String(idx));
       renderWritingTarget(stage,targets[idx]||targets[0],r,ui);
     };
+    const showMode=mode=>{
+      if(!singleWrap||!a4Stage)return;
+      const a4=mode==='a4';singleWrap.hidden=a4;a4Stage.hidden=!a4;
+      body.querySelectorAll('.rad-writing-mode-btn').forEach(b=>b.classList.toggle('is-active',b.dataset.mode===mode));
+      if(a4&&!a4Stage.dataset.built){buildRadicalA4Sheet(a4Stage,r,ui);a4Stage.dataset.built='1';}
+    };
     const build=()=>{
       if(built)return;built=true;
+      const modeBar=document.createElement('div');modeBar.className='rad-writing-mode-switch';
+      const one=document.createElement('button');one.type='button';one.className='rad-writing-mode-btn is-active';one.dataset.mode='one';one.textContent=`✍ ${ui.writingOne}`;
+      const a4=document.createElement('button');a4.type='button';a4.className='rad-writing-mode-btn';a4.dataset.mode='a4';a4.textContent=`📄 ${ui.writingA4}`;
+      modeBar.append(one,a4);body.append(modeBar);
+      singleWrap=document.createElement('div');singleWrap.className='rad-writing-single-wrap';
       const hint=document.createElement('p');hint.className='rad-writing-hint';hint.textContent=ui.practiceHint;
       const row=document.createElement('label');row.className='rad-writing-select-row';
       const title=document.createElement('span');title.textContent=ui.practiceTarget;
@@ -586,26 +713,16 @@
       targets=writingTargets(r);
       const coreGroup=document.createElement('optgroup');coreGroup.label=ui.coreChars;
       const expGroup=document.createElement('optgroup');expGroup.label=ui.expandedWords;
-      targets.forEach((target,idx)=>{
-        const option=document.createElement('option');option.value=String(idx);option.textContent=`${target.text} · ${target.p||''} · ${target.m||''}`;
-        (target.group==='expanded'?expGroup:coreGroup).append(option);
-      });
+      targets.forEach((target,idx)=>{const option=document.createElement('option');option.value=String(idx);option.textContent=`${target.text} · ${target.p||''} · ${target.m||''}`;(target.group==='expanded'?expGroup:coreGroup).append(option);});
       select.append(coreGroup,expGroup);
-      const saved=localStorage.getItem(`${WRITING_TARGET_PREFIX}${r.key}`);
-      if(saved!==null&&targets[Number(saved)])select.value=saved;
-      row.append(title,select);body.append(hint,row);
-      stage=document.createElement('div');stage.className='rad-writing-stage';body.append(stage);
-      select.addEventListener('change',draw);draw();
+      const saved=localStorage.getItem(`${WRITING_TARGET_PREFIX}${r.key}`);if(saved!==null&&targets[Number(saved)])select.value=saved;
+      row.append(title,select);singleWrap.append(hint,row);
+      stage=document.createElement('div');stage.className='rad-writing-stage';singleWrap.append(stage);body.append(singleWrap);
+      a4Stage=document.createElement('div');a4Stage.className='rad-writing-a4-stage';a4Stage.hidden=true;body.append(a4Stage);
+      select.addEventListener('change',draw);one.addEventListener('click',()=>showMode('one'));a4.addEventListener('click',()=>showMode('a4'));draw();
     };
-    const openTarget=text=>{
-      details.open=true;build();
-      const idx=targets.findIndex(t=>t.text===text);
-      if(idx>=0){select.value=String(idx);draw();}
-      requestAnimationFrame(()=>details.scrollIntoView({behavior:'smooth',block:'start'}));
-    };
-    writingPanels.set(r.key,{details,openTarget});
-    details.addEventListener('toggle',()=>{if(details.open)build();});
-    return details;
+    const openTarget=text=>{details.open=true;build();showMode('one');const idx=targets.findIndex(t=>t.text===text);if(idx>=0){select.value=String(idx);draw();}requestAnimationFrame(()=>details.scrollIntoView({behavior:'smooth',block:'start'}));};
+    writingPanels.set(r.key,{details,openTarget});details.addEventListener('toggle',()=>{if(details.open)build();});return details;
   }
   function radicalSearchText(r){
     const exp=(expansionTrees[r.key]||[]).map(b=>`${b.slice(0,5).join(' ')} ${b[5].flat().join(' ')}`).join(' ');

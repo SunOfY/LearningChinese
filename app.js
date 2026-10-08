@@ -1245,16 +1245,16 @@ function renderCopybookPractice(word){
         const play=document.createElement('button'); play.type='button'; play.className='copybook-preview-btn'; play.textContent='▶'; play.title=t('strokeAnimate'); play.disabled=true; cell.append(play);
         const inst={char:ch,writer:null,host:guide,fallback:fontFallback,square:cell,canvasItem:null,previewBtn:play,strokeBadge:null,previewing:false,guideOpacity:1,alwaysVisible:true}; copybookGuideInstances.push(inst);
         try{
-          const writer=makeCopybookGuideWriter(guide,ch,{strokeColor:'#17211f'},()=>{inst.writer=writer;play.disabled=false;},()=>{fontFallback.hidden=false;fontFallback.style.display='flex';play.disabled=true;});
+          const writer=makeCopybookGuideWriter(guide,ch,{strokeColor:'#17211f'},()=>{inst.writer=writer;fontFallback.hidden=true;fontFallback.style.display='none';play.disabled=false;},()=>{fontFallback.hidden=true;fontFallback.style.display='none';cell.classList.add('guide-unavailable');play.disabled=true;});
           if(!writer)throw new Error(); inst.writer=writer;
           let last=0; const preview=e=>{if(e?.pointerType==='pen')return;if(e?.cancelable)e.preventDefault();e?.stopPropagation?.();const now=performance.now();if(now-last<450)return;last=now;previewWritingStrokeOrder(inst);};
           play.addEventListener('pointerup',preview,{passive:false}); play.addEventListener('touchend',preview,{passive:false}); play.addEventListener('click',preview,{passive:false});
-        }catch{fontFallback.hidden=false;fontFallback.style.display='flex';play.disabled=true;}
+        }catch{fontFallback.hidden=true;fontFallback.style.display='none';cell.classList.add('guide-unavailable');play.disabled=true;}
       }else{
         const inst={char:ch,writer:null,host:guide,fallback:fontFallback,guideOpacity:opacity,alwaysVisible:false}; copybookGuideInstances.push(inst);
         if(opacity>0){
-          try{const writer=makeCopybookGuideWriter(guide,ch,{strokeColor:'#0f766e'},null,()=>{fontFallback.hidden=false;fontFallback.style.display=$('showGuideCheckbox').checked?'flex':'none';}); if(!writer)throw new Error();inst.writer=writer;}
-          catch{fontFallback.hidden=false;fontFallback.style.display=$('showGuideCheckbox').checked?'flex':'none';}
+          try{const writer=makeCopybookGuideWriter(guide,ch,{strokeColor:'#0f766e'},()=>{fontFallback.hidden=true;fontFallback.style.display='none';},()=>{fontFallback.hidden=true;fontFallback.style.display='none';cell.classList.add('guide-unavailable');}); if(!writer)throw new Error();inst.writer=writer;}
+          catch{fontFallback.hidden=true;fontFallback.style.display='none';cell.classList.add('guide-unavailable');}
         }
       }
     });

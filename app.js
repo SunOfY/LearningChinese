@@ -86,7 +86,7 @@ const I18N = {
     pronunciationPractice:'🎙 Luyện phát âm', startRecording:'Bắt đầu ghi âm', stop:'Dừng', playback:'Phát lại', checkPronunciation:'Kiểm tra phát âm',
     target:'Mẫu:', recognized:'AI nhận ra:', assessmentNote:'Groq Whisper AI nhận dạng giọng nói tiếng Trung. Điểm là độ khớp giữa chữ AI nghe được và từ mẫu; không phải điểm thanh điệu/âm vị chuyên sâu.', accuracyLabel:'Độ chính xác', fluencyLabel:'Độ trôi chảy', completenessLabel:'Độ đầy đủ',
     examples:'💬 Câu ví dụ', examplesHint:'Bấm loa để nghe cả câu bằng giọng zh-TW.', rememberLevel:'Bạn nhớ từ này mức nào?', notRemembered:'Chưa nhớ', learning:'Tạm nhớ', remembered:'Đã nhớ', previous:'Trước', next:'Tiếp theo',
-    writingPractice:'✍️ Luyện viết', writingDevices:'Chuột · ngón tay · Apple Pencil', clear:'Xóa', showGuide:'Hiện chữ mẫu mờ', writingTip:'<strong>Cách luyện:</strong> bấm ▶ để xem thứ tự nét → viết theo mẫu → tắt mẫu → tự viết. <strong>Nét bạn vẽ luôn được giữ nguyên</strong>, không tự biến thành nét mẫu.', studyMode:'Cách học', studyByLevel:'Theo trình độ', studyBySet:'Theo bộ/chữ cơ bản', studyByLevelDesc:'Chọn A1, A2, B1, B2, C1/C2 rồi học từ vựng như hiện tại.', studyBySetDesc:'Học từng bộ/chữ nền tảng như 口 Khẩu, 火 Hỏa, 天 Thiên, 月 Nguyệt, 人 Nhân… rồi chuyển thẳng sang luyện viết bộ đó.', setLabel:n=>`Bộ ${n}`, chooseSet:'Chọn bộ để học', setProgress:(a,b)=>`${a}/${b} từ đã đánh giá`, setComplete:'Đã học xong', setStudy:'Học bộ này', setWriting:'Tập viết bộ này', setWritingTitle:(level,n)=>`Luyện viết ${level} · Bộ ${n}`, backToSets:'Quay về các bộ', writingPrevWord:'Từ trước', writingNextWord:'Từ tiếp', writingFinish:'Hoàn thành & chọn bộ khác', setWritingHelp:'Luyện lần lượt từng từ trong bộ. Bấm Từ tiếp để chuyển sang từ kế tiếp; đến từ cuối cùng có thể quay về danh sách bộ.', writingSingleMode:'Ô đơn', writingCopybookMode:'Luyện lặp', brushMode:'🖌 Bút thư pháp (Apple Pencil)', brushModeHint:'Bật: nét thay đổi độ dày theo lực nhấn Apple Pencil. Tắt: nét đều như bút thường.', copybookHint:'Mỗi hàng: 1 ô mẫu → 3 ô tô theo mẫu mờ dần → 4 ô tự viết. Nét bạn viết luôn được giữ nguyên để tự so sánh.', clearRow:'Xóa hàng', sampleCell:'Mẫu', strokeGuideTitle:'🧭 Hướng dẫn thứ tự nét', strokeGuideHint:'Xem thứ tự nét của từng chữ trước khi viết. Website tự tải dữ liệu thứ tự nét, bạn không cần tự tìm hay upload GIF.', strokeGuideRules:'<strong>Quy tắc nhanh:</strong><ul><li>Từ trên xuống dưới.</li><li>Từ trái sang phải.</li><li>Ngang trước, sổ sau.</li><li>Bên ngoài trước, bên trong sau.</li><li>Khung ngoài đóng sau cùng.</li></ul>', strokeAnimate:'Xem thứ tự nét', strokeReplay:'Phát lại', strokeOrderLabel:n=>`Chữ ${n}`, strokeGuideNote:'Bắt đầu từ nét 1 và đi theo hoạt ảnh đến nét cuối cùng.', strokeAnimationUnavailable:'Không tải được hoạt ảnh thứ tự nét cho chữ này.',
+    writingPractice:'✍️ Luyện viết', writingDevices:'Chuột · ngón tay · Apple Pencil', clear:'Xóa', showGuide:'Hiện chữ mẫu mờ', writingTip:'<strong>Cách luyện:</strong> bấm ▶ để xem thứ tự nét → viết theo mẫu → tắt mẫu → tự viết. <strong>Nét bạn vẽ luôn được giữ nguyên</strong>, không tự biến thành nét mẫu.', studyMode:'Cách học', studyByLevel:'Theo trình độ', studyBySet:'Theo bộ thủ', studyByLevelDesc:'Chọn A1, A2, B1, B2, C1/C2 rồi học từ vựng như hiện tại.', studyBySetDesc:'Học theo bộ thủ/部件: cấu tạo chữ, chữ liên quan, từ phát triển, câu ví dụ, phát âm và luyện viết.', setLabel:n=>`Bộ ${n}`, chooseSet:'Chọn bộ để học', setProgress:(a,b)=>`${a}/${b} từ đã đánh giá`, setComplete:'Đã học xong', setStudy:'Học bộ này', setWriting:'Tập viết bộ này', setWritingTitle:(level,n)=>`Luyện viết ${level} · Bộ ${n}`, backToSets:'Quay về các bộ', writingPrevWord:'Từ trước', writingNextWord:'Từ tiếp', writingFinish:'Hoàn thành & chọn bộ khác', setWritingHelp:'Luyện lần lượt từng từ trong bộ. Bấm Từ tiếp để chuyển sang từ kế tiếp; đến từ cuối cùng có thể quay về danh sách bộ.', writingSingleMode:'Ô đơn', writingCopybookMode:'Luyện lặp', brushMode:'🖌 Bút thư pháp (Apple Pencil)', brushModeHint:'Bật: nét thay đổi độ dày theo lực nhấn Apple Pencil. Tắt: nét đều như bút thường.', copybookHint:'Mỗi hàng: 1 ô mẫu → 3 ô tô theo mẫu mờ dần → 4 ô tự viết. Nét bạn viết luôn được giữ nguyên để tự so sánh.', clearRow:'Xóa hàng', sampleCell:'Mẫu', strokeGuideTitle:'🧭 Hướng dẫn thứ tự nét', strokeGuideHint:'Xem thứ tự nét của từng chữ trước khi viết. Website tự tải dữ liệu thứ tự nét, bạn không cần tự tìm hay upload GIF.', strokeGuideRules:'<strong>Quy tắc nhanh:</strong><ul><li>Từ trên xuống dưới.</li><li>Từ trái sang phải.</li><li>Ngang trước, sổ sau.</li><li>Bên ngoài trước, bên trong sau.</li><li>Khung ngoài đóng sau cùng.</li></ul>', strokeAnimate:'Xem thứ tự nét', strokeReplay:'Phát lại', strokeOrderLabel:n=>`Chữ ${n}`, strokeGuideNote:'Bắt đầu từ nét 1 và đi theo hoạt ảnh đến nét cuối cùng.', strokeAnimationUnavailable:'Không tải được hoạt ảnh thứ tự nét cho chữ này.',
     creatingQuestion:'Đang tạo câu hỏi…', anotherQuestion:'Câu khác', reviewed:'Đã đánh giá', backupTitle:'💾 Sao lưu tiến độ', backupDesc:'Tiến độ được lưu trong trình duyệt của từng thiết bị. Bạn có thể xuất file để chuyển sang thiết bị khác.', exportProgress:'Xuất tiến độ', importProgress:'Nhập tiến độ', resetProgress:'Xóa tiến độ',
     footerNote:'Dữ liệu từ vựng của từng trình độ được tải từ thư mục data. English có thể được bổ sung từ CC-CEDICT khi có mạng; câu ví dụ bổ sung phục vụ học tập và không phải câu mẫu chính thức của TOCFL.',
     newWords:n=>`${n} từ mới`, allDays:'Tất cả ngày', dayOption:n=>`Ngày ${n}`, searchPlaceholder:'Tìm chữ, pinyin hoặc nghĩa…',
@@ -104,7 +104,7 @@ const I18N = {
     pronunciationPractice:'🎙 Pronunciation practice', startRecording:'Start recording', stop:'Stop', playback:'Playback', checkPronunciation:'Check pronunciation',
     target:'Target:', recognized:'AI recognized:', assessmentNote:'Groq Whisper AI transcribes your Chinese speech. The score is text-match similarity, not a professional tone/phoneme pronunciation score.', accuracyLabel:'Accuracy', fluencyLabel:'Fluency', completenessLabel:'Completeness',
     examples:'💬 Example sentences', examplesHint:'Tap the speaker to hear the full sentence in zh-TW.', rememberLevel:'How well do you remember this word?', notRemembered:'Not yet', learning:'Learning', remembered:'Remembered', previous:'Previous', next:'Next',
-    writingPractice:'✍️ Writing practice', writingDevices:'Mouse · finger · Apple Pencil', clear:'Clear', showGuide:'Show faint guide', writingTip:'<strong>Practice:</strong> tap ▶ to preview stroke order → write over the guide → hide it → write from memory. <strong>Your ink always stays exactly as drawn</strong>; it is never replaced by the model.', studyMode:'Study mode', studyByLevel:'By level', studyBySet:'By basic component', studyByLevelDesc:'Choose A1, A2, B1, B2, C1/C2 and study vocabulary as before.', studyBySetDesc:'Study foundational components/characters such as 口, 火, 天, 月 and 人, then practice writing that exact component.', setLabel:n=>`Set ${n}`, chooseSet:'Choose a set', setProgress:(a,b)=>`${a}/${b} words reviewed`, setComplete:'Completed', setStudy:'Study this set', setWriting:'Practice writing', setWritingTitle:(level,n)=>`Writing practice ${level} · Set ${n}`, backToSets:'Back to sets', writingPrevWord:'Previous word', writingNextWord:'Next word', writingFinish:'Finish & choose another set', setWritingHelp:'Practice the words in this set one by one. Use Next word to continue; after the final word, return to the set list.', writingSingleMode:'Single box', writingCopybookMode:'Repeat practice', brushMode:'🖌 Calligraphy brush (Apple Pencil)', brushModeHint:'On: line thickness follows Apple Pencil pressure. Off: normal constant-width pen.', copybookHint:'Each row: 1 model box → 3 progressively lighter tracing boxes → 4 blank boxes. Your own ink remains unchanged for comparison.', clearRow:'Clear row', sampleCell:'Model', strokeGuideTitle:'🧭 Stroke-order guide', strokeGuideHint:'Preview the stroke order before writing. The website loads stroke-order data automatically; you do not need to find or upload GIFs.', strokeGuideRules:'<strong>Quick rules:</strong><ul><li>Top to bottom.</li><li>Left to right.</li><li>Horizontal before vertical.</li><li>Outside before inside.</li><li>Close outer frames last.</li></ul>', strokeAnimate:'Show stroke order', strokeReplay:'Replay', strokeOrderLabel:n=>`Character ${n}`, strokeGuideNote:'Start with stroke 1 and follow the animation until the last stroke.', strokeAnimationUnavailable:'Stroke-order animation could not be loaded for this character.',
+    writingPractice:'✍️ Writing practice', writingDevices:'Mouse · finger · Apple Pencil', clear:'Clear', showGuide:'Show faint guide', writingTip:'<strong>Practice:</strong> tap ▶ to preview stroke order → write over the guide → hide it → write from memory. <strong>Your ink always stays exactly as drawn</strong>; it is never replaced by the model.', studyMode:'Study mode', studyByLevel:'By level', studyBySet:'By radicals', studyByLevelDesc:'Choose A1, A2, B1, B2, C1/C2 and study vocabulary as before.', studyBySetDesc:'Study radicals/components, related characters, expanded vocabulary, examples, pronunciation and handwriting.', setLabel:n=>`Set ${n}`, chooseSet:'Choose a set', setProgress:(a,b)=>`${a}/${b} words reviewed`, setComplete:'Completed', setStudy:'Study this set', setWriting:'Practice writing', setWritingTitle:(level,n)=>`Writing practice ${level} · Set ${n}`, backToSets:'Back to sets', writingPrevWord:'Previous word', writingNextWord:'Next word', writingFinish:'Finish & choose another set', setWritingHelp:'Practice the words in this set one by one. Use Next word to continue; after the final word, return to the set list.', writingSingleMode:'Single box', writingCopybookMode:'Repeat practice', brushMode:'🖌 Calligraphy brush (Apple Pencil)', brushModeHint:'On: line thickness follows Apple Pencil pressure. Off: normal constant-width pen.', copybookHint:'Each row: 1 model box → 3 progressively lighter tracing boxes → 4 blank boxes. Your own ink remains unchanged for comparison.', clearRow:'Clear row', sampleCell:'Model', strokeGuideTitle:'🧭 Stroke-order guide', strokeGuideHint:'Preview the stroke order before writing. The website loads stroke-order data automatically; you do not need to find or upload GIFs.', strokeGuideRules:'<strong>Quick rules:</strong><ul><li>Top to bottom.</li><li>Left to right.</li><li>Horizontal before vertical.</li><li>Outside before inside.</li><li>Close outer frames last.</li></ul>', strokeAnimate:'Show stroke order', strokeReplay:'Replay', strokeOrderLabel:n=>`Character ${n}`, strokeGuideNote:'Start with stroke 1 and follow the animation until the last stroke.', strokeAnimationUnavailable:'Stroke-order animation could not be loaded for this character.',
     creatingQuestion:'Creating a question…', anotherQuestion:'Another question', reviewed:'Reviewed', backupTitle:'💾 Progress backup', backupDesc:'Progress is stored in the browser on each device. Export a file to move it to another device.', exportProgress:'Export progress', importProgress:'Import progress', resetProgress:'Reset progress',
     footerNote:'Vocabulary for each level is loaded from the data folder. English glosses may be supplemented from CC-CEDICT when online; example sentences are study supplements and are not official TOCFL examples.',
     newWords:n=>`${n} new words`, allDays:'All days', dayOption:n=>`Day ${n}`, searchPlaceholder:'Search Hanzi, Pinyin or meaning…',
@@ -122,7 +122,7 @@ const I18N = {
     pronunciationPractice:'🎙 發音練習', startRecording:'開始錄音', stop:'停止', playback:'播放錄音', checkPronunciation:'檢查發音',
     target:'目標：', recognized:'AI 辨識：', assessmentNote:'Groq Whisper AI 會轉寫你的中文語音。分數代表 AI 文字辨識與目標詞的相似度，不是專業聲調／音位評分。', accuracyLabel:'準確度', fluencyLabel:'流暢度', completenessLabel:'完整度',
     examples:'💬 例句', examplesHint:'按喇叭可用 zh-TW 聽完整句子。', rememberLevel:'你記得這個詞嗎？', notRemembered:'還不會', learning:'不太熟', remembered:'記住了', previous:'上一個', next:'下一個',
-    writingPractice:'✍️ 寫字練習', writingDevices:'滑鼠 · 手指 · Apple Pencil', clear:'清除', showGuide:'顯示淡色範字', writingTip:'<strong>練習方式：</strong>先按 ▶ 看筆順 → 描字 → 關閉範字 → 默寫。<strong>你自己寫的筆跡會完整保留</strong>，不會自動變成範字。', studyMode:'學習方式', studyByLevel:'依程度', studyBySet:'依部件／基礎字', studyByLevelDesc:'先選 A1、A2、B1、B2、C1/C2，再照目前方式學詞彙。', studyBySetDesc:'依序學習 口、火、天、月、人等基礎部件／字，學完後直接練習該字。', setLabel:n=>`第 ${n} 單元`, chooseSet:'選擇學習單元', setProgress:(a,b)=>`已評估 ${a}/${b} 個詞`, setComplete:'已完成', setStudy:'學習這個單元', setWriting:'練習寫字', setWritingTitle:(level,n)=>`${level} · 第 ${n} 單元寫字`, backToSets:'返回單元', writingPrevWord:'上一個詞', writingNextWord:'下一個詞', writingFinish:'完成並選其他單元', setWritingHelp:'依序練習本單元的每個詞。按「下一個詞」繼續；最後一個詞完成後可返回單元清單。', writingSingleMode:'單格練習', writingCopybookMode:'重複練習', brushMode:'🖌 毛筆模式（Apple Pencil）', brushModeHint:'開啟：筆畫粗細會依 Apple Pencil 壓力變化。關閉：使用固定粗細的一般筆。', copybookHint:'每一列：1 格範字 → 3 格逐漸變淡的描字 → 4 格空白默寫。你的筆跡會保留，方便自己比較。', clearRow:'清除此列', sampleCell:'範字', strokeGuideTitle:'🧭 筆順提示', strokeGuideHint:'寫字前先看每個字的筆順。網站會自動載入筆順資料，不需要另外找或上傳 GIF。', strokeGuideRules:'<strong>快速規則：</strong><ul><li>由上到下。</li><li>由左到右。</li><li>先橫後豎。</li><li>先外後內。</li><li>外框最後封口。</li></ul>', strokeAnimate:'看筆順', strokeReplay:'再播一次', strokeOrderLabel:n=>`第 ${n} 個字`, strokeGuideNote:'從第 1 畫開始，依照動畫一路看到最後一畫。', strokeAnimationUnavailable:'目前無法載入這個字的筆順動畫。',
+    writingPractice:'✍️ 寫字練習', writingDevices:'滑鼠 · 手指 · Apple Pencil', clear:'清除', showGuide:'顯示淡色範字', writingTip:'<strong>練習方式：</strong>先按 ▶ 看筆順 → 描字 → 關閉範字 → 默寫。<strong>你自己寫的筆跡會完整保留</strong>，不會自動變成範字。', studyMode:'學習方式', studyByLevel:'依程度', studyBySet:'按部首／部件', studyByLevelDesc:'先選 A1、A2、B1、B2、C1/C2，再照目前方式學詞彙。', studyBySetDesc:'按部首／部件學習字形結構、相關漢字、延伸詞、例句、發音與書寫。', setLabel:n=>`第 ${n} 單元`, chooseSet:'選擇學習單元', setProgress:(a,b)=>`已評估 ${a}/${b} 個詞`, setComplete:'已完成', setStudy:'學習這個單元', setWriting:'練習寫字', setWritingTitle:(level,n)=>`${level} · 第 ${n} 單元寫字`, backToSets:'返回單元', writingPrevWord:'上一個詞', writingNextWord:'下一個詞', writingFinish:'完成並選其他單元', setWritingHelp:'依序練習本單元的每個詞。按「下一個詞」繼續；最後一個詞完成後可返回單元清單。', writingSingleMode:'單格練習', writingCopybookMode:'重複練習', brushMode:'🖌 毛筆模式（Apple Pencil）', brushModeHint:'開啟：筆畫粗細會依 Apple Pencil 壓力變化。關閉：使用固定粗細的一般筆。', copybookHint:'每一列：1 格範字 → 3 格逐漸變淡的描字 → 4 格空白默寫。你的筆跡會保留，方便自己比較。', clearRow:'清除此列', sampleCell:'範字', strokeGuideTitle:'🧭 筆順提示', strokeGuideHint:'寫字前先看每個字的筆順。網站會自動載入筆順資料，不需要另外找或上傳 GIF。', strokeGuideRules:'<strong>快速規則：</strong><ul><li>由上到下。</li><li>由左到右。</li><li>先橫後豎。</li><li>先外後內。</li><li>外框最後封口。</li></ul>', strokeAnimate:'看筆順', strokeReplay:'再播一次', strokeOrderLabel:n=>`第 ${n} 個字`, strokeGuideNote:'從第 1 畫開始，依照動畫一路看到最後一畫。', strokeAnimationUnavailable:'目前無法載入這個字的筆順動畫。',
     creatingQuestion:'正在出題…', anotherQuestion:'下一題', reviewed:'已評估', backupTitle:'💾 備份學習進度', backupDesc:'進度儲存在每台裝置的瀏覽器中。可匯出檔案，再匯入另一台裝置。', exportProgress:'匯出進度', importProgress:'匯入進度', resetProgress:'清除進度',
     footerNote:'各級詞彙從 data 資料夾載入。連網時可由 CC-CEDICT 補充英文釋義；例句為學習補充，並非 TOCFL 官方例句。',
     newWords:n=>`${n} 個新詞`, allDays:'全部', dayOption:n=>`第 ${n} 天`, searchPlaceholder:'搜尋漢字、拼音或意思…',
@@ -1232,6 +1232,10 @@ function renderCopybookPractice(word){
       const guide=document.createElement('div'); guide.className='copybook-guide'; guide.style.opacity=String(opacity||0); guide.style.display=(cellIndex===0 || ($('showGuideCheckbox').checked && opacity>0))?'block':'none';
       const fontFallback=document.createElement('div'); fontFallback.className='copybook-font-fallback'; fontFallback.textContent=ch; fontFallback.hidden=true;
       cell.append(lines,guide,fontFallback);
+      // IMPORTANT: attach the cell before HanziWriter measures the guide.
+      // Detached cells report 0×0, which made the writer fall back to ~90 px
+      // and left the character stuck in the upper-left of larger practice boxes.
+      cells.append(cell);
       let item=null;
       if(cellIndex>0){
         const canvas=document.createElement('canvas'); canvas.className='copybook-canvas'; canvas.setAttribute('aria-label',`${ch} practice ${cellIndex}`); cell.append(canvas); item=createWritingCanvasItem(canvas,copybookCanvases,{owner:cell}); rowCanvasItems.push(item);
@@ -1253,7 +1257,6 @@ function renderCopybookPractice(word){
           catch{fontFallback.hidden=false;fontFallback.style.display=$('showGuideCheckbox').checked?'flex':'none';}
         }
       }
-      cells.append(cell);
     });
     clearBtn.addEventListener('click',()=>rowCanvasItems.forEach(clearWritingItem));
   });
@@ -1304,13 +1307,17 @@ function makeWritingGuideWriter(host,ch,onData,onError){
 function makeCopybookGuideWriter(host,ch,options={},onData,onError){
   if(typeof window.HanziWriter==='undefined') return null;
   const rect=host.getBoundingClientRect();
-  const size=Math.max(62,Math.round(Math.min(rect.width||90,rect.height||rect.width||90)));
-  return window.HanziWriter.create(host,ch,{
-    width:size,height:size,padding:7,showOutline:false,showCharacter:true,
+  const measured=Math.min(rect.width||0,rect.height||0);
+  const size=Math.max(68,Math.round(measured||host.parentElement?.getBoundingClientRect?.().width||96));
+  host.style.display='grid';
+  host.style.placeItems='center';
+  const writer=window.HanziWriter.create(host,ch,{
+    width:size,height:size,padding:8,showOutline:false,showCharacter:true,
     strokeColor:options.strokeColor||'#0f766e',
     strokeAnimationSpeed:1,delayBetweenStrokes:150,
     charDataLoader:(char,onComplete,loaderError)=>loadStrokeData(char,onComplete,err=>{onError?.(err);loaderError?.(err);},onData)
   });
+  return writer;
 }
 function makeStrokeGuideMiniWriter(host,ch,onData,onError){
   if(typeof window.HanziWriter==='undefined') return null;
@@ -1461,8 +1468,8 @@ function updateSetWritingSessionUI(){
 function bindStudyFlow(){
   $('studyModeCloseBtn')?.addEventListener('click',closeStudyModeModal);
   $('studyModeModal')?.addEventListener('click',e=>{if(e.target===$('studyModeModal'))closeStudyModeModal();});
-  $('studyByLevelBtn')?.addEventListener('click',()=>{setStudyPathMode('level');closeStudyModeModal();openLevelSelector({force:true});});
-  $('studyBySetBtn')?.addEventListener('click',()=>{closeStudyModeModal();openSetSelector();});
+  $('studyByLevelBtn')?.addEventListener('click',()=>{setStudyPathMode('level');closeStudyModeModal();showView('today');openLevelSelector({force:true});});
+  $('studyBySetBtn')?.addEventListener('click',()=>{closeStudyModeModal();showView('radicals');});
   $('setCloseBtn')?.addEventListener('click',closeSetSelector);
   $('setModal')?.addEventListener('click',e=>{if(e.target===$('setModal'))closeSetSelector();});
   $('foundationBackBtn')?.addEventListener('click',()=>endFoundationSession({completed:false,openList:true}));
@@ -1545,7 +1552,7 @@ async function afterAccountReady(userId){
 function onSignedOut(){ state.currentUserId=null; closeLevelSelector(); }
 
 function bindNavigation(){document.querySelectorAll('.tab').forEach(btn=>btn.addEventListener('click',()=>showView(btn.dataset.view)));}
-function showView(name){document.querySelectorAll('.tab').forEach(x=>x.classList.toggle('is-active',x.dataset.view===name));document.querySelectorAll('.view').forEach(x=>x.classList.toggle('is-active',x.id===`view-${name}`));if(name==='progress')updateProgressUI();if(name==='quiz')makeQuiz();if(name==='vocab')renderVocabList();window.scrollTo({top:0,behavior:'smooth'});}
+function showView(name){document.querySelectorAll('.tab').forEach(x=>x.classList.toggle('is-active',x.dataset.view===name));document.querySelectorAll('.view').forEach(x=>x.classList.toggle('is-active',x.id===`view-${name}`));const levelLabel=$('levelBtnLabel');if(levelLabel)levelLabel.textContent=name==='radicals'?(state.lang==='zh-Hant'?'部首':state.lang==='en'?'Radicals':'Bộ thủ'):(state.activeLevel||'A1');if(name==='progress')updateProgressUI();if(name==='quiz')makeQuiz();if(name==='vocab')renderVocabList();window.scrollTo({top:0,behavior:'smooth'});}
 function bindVocab(){$('vocabSearch').addEventListener('input',renderVocabList);}
 function renderVocabList(){
   const wrap=$('vocabList');if(!wrap||!state.allWords.length)return;const q=$('vocabSearch').value.trim().toLowerCase(),day=$('vocabDayFilter').value;
@@ -1574,7 +1581,7 @@ function bindBackup(){
 }
 function exportProgress(){
   saveCurrentLevelSnapshot(); persistMultiState();
-  const data={version:3,format:'tocfl-multilevel-v1',exportedAt:new Date().toISOString(),levels:state.levelStates,settings:{activeLevel:state.activeLevel,rememberLevel:state.rememberLevel},language:state.lang};
+  const data={version:4,format:'tocfl-multilevel-v1',exportedAt:new Date().toISOString(),levels:state.levelStates,settings:{activeLevel:state.activeLevel,rememberLevel:state.rememberLevel},radicals:getRadicalCloudState(),language:state.lang};
   const blob=new Blob([JSON.stringify(data,null,2)],{type:'application/json'}),url=URL.createObjectURL(blob),a=document.createElement('a');
   a.href=url;a.download=`tocfl-all-levels-progress-${new Date().toISOString().slice(0,10)}.json`;a.click();URL.revokeObjectURL(url);$('backupStatus').textContent=t('exportDone');
 }
@@ -1587,6 +1594,7 @@ async function importProgress(e){
       if(!state.levelStates.A1) state.levelStates.A1=emptyLevelState();
       state.rememberLevel=Boolean(data.settings?.rememberLevel); const wanted=levelConfig(data.settings?.activeLevel)?data.settings.activeLevel:'A1';
       if(I18N[data.language]){state.lang=data.language;localStorage.setItem(LANGUAGE_KEY,state.lang);}
+      if(data.radicals&&typeof data.radicals==='object')applyRadicalCloudState(data.radicals);
       await applyLevel(wanted,{notify:false,close:false,skipSnapshot:true}); persistMultiState(); document.dispatchEvent(new CustomEvent('tocfl:state-changed'));
     }else if(data.progress && typeof data.progress==='object'){
       state.levelStates.A1=normalizeLevelState({progress:data.progress,favorites:Array.isArray(data.favorites)?data.favorites:[],lastDay:data.lastDay||1});
@@ -1599,12 +1607,41 @@ async function importProgress(e){
 
 function registerServiceWorker(){if('serviceWorker'in navigator)navigator.serviceWorker.register('./sw.js').catch(err=>console.warn('SW:',err));}
 function escapeHtml(s){return String(s).replace(/[&<>'"]/g,c=>({'&':'&amp;','<':'&lt;','>':'&gt;',"'":'&#39;','"':'&quot;'}[c]));}
+const RADICAL_CLOUD_KEYS={
+  learning:'tocfl-radical-learning-flow-v1',
+  writing:'tocfl-radical-writing-v1',
+  selected:'tocfl-radical-selected-v1',
+  writingTargetPrefix:'tocfl-radical-writing-target-',
+  fontScale:'tocfl-radical-font-scale-v1'
+};
+function readLocalJsonForCloud(key){
+  try{const value=JSON.parse(localStorage.getItem(key)||'{}');return value&&typeof value==='object'&&!Array.isArray(value)?value:{};}catch{return {};}
+}
+function getRadicalCloudState(){
+  const writingTargets={};
+  try{for(let i=0;i<localStorage.length;i++){const key=localStorage.key(i)||'';if(!key.startsWith(RADICAL_CLOUD_KEYS.writingTargetPrefix))continue;const radicalKey=key.slice(RADICAL_CLOUD_KEYS.writingTargetPrefix.length);if(radicalKey)writingTargets[radicalKey]=String(localStorage.getItem(key)??'0');}}catch{}
+  return {version:1,selectedRadicalKey:String(localStorage.getItem(RADICAL_CLOUD_KEYS.selected)||'person'),learning:readLocalJsonForCloud(RADICAL_CLOUD_KEYS.learning),writing:readLocalJsonForCloud(RADICAL_CLOUD_KEYS.writing),writingTargets,fontScale:Number(localStorage.getItem(RADICAL_CLOUD_KEYS.fontScale)||1)};
+}
+function applyRadicalCloudState(radicalState){
+  if(!radicalState||typeof radicalState!=='object'||Array.isArray(radicalState))return false;
+  try{
+    if(typeof radicalState.selectedRadicalKey==='string'&&radicalState.selectedRadicalKey.trim())localStorage.setItem(RADICAL_CLOUD_KEYS.selected,radicalState.selectedRadicalKey.trim());
+    if(radicalState.learning&&typeof radicalState.learning==='object')localStorage.setItem(RADICAL_CLOUD_KEYS.learning,JSON.stringify(radicalState.learning));
+    if(radicalState.writing&&typeof radicalState.writing==='object')localStorage.setItem(RADICAL_CLOUD_KEYS.writing,JSON.stringify(radicalState.writing));
+    if(Number.isFinite(Number(radicalState.fontScale)))localStorage.setItem(RADICAL_CLOUD_KEYS.fontScale,String(Math.max(.9,Math.min(1.6,Number(radicalState.fontScale)))));
+    if(radicalState.writingTargets&&typeof radicalState.writingTargets==='object'){
+      const remove=[];for(let i=0;i<localStorage.length;i++){const key=localStorage.key(i)||'';if(key.startsWith(RADICAL_CLOUD_KEYS.writingTargetPrefix))remove.push(key);}remove.forEach(key=>localStorage.removeItem(key));
+      for(const [radicalKey,value] of Object.entries(radicalState.writingTargets)){if(radicalKey)localStorage.setItem(`${RADICAL_CLOUD_KEYS.writingTargetPrefix}${radicalKey}`,String(value));}
+    }
+    document.dispatchEvent(new CustomEvent('tocfl:radical-cloud-applied'));return true;
+  }catch{return false;}
+}
 function getCloudState(){
   saveCurrentLevelSnapshot(); persistMultiState();
   const levels={}; for(const cfg of LEVEL_CATALOG) if(state.levelStates[cfg.id]) levels[cfg.id]=normalizeLevelState(state.levelStates[cfg.id]);
   const a1=normalizeLevelState(levels.A1||emptyLevelState());
   return {
-    progress:{__format:'tocfl-multilevel-v1',levels,settings:{activeLevel:state.activeLevel,rememberLevel:Boolean(state.rememberLevel)}},
+    progress:{__format:'tocfl-multilevel-v1',levels,settings:{activeLevel:state.activeLevel,rememberLevel:Boolean(state.rememberLevel)},radicals:getRadicalCloudState()},
     // Legacy mirrors keep the existing database schema and make migration reversible.
     favorites:a1.favorites,lastDay:a1.lastDay,language:state.lang
   };
@@ -1617,6 +1654,7 @@ async function applyCloudState(data={}){
     if(!state.levelStates.A1) state.levelStates.A1=emptyLevelState();
     state.rememberLevel=Boolean(cloudProgress.settings?.rememberLevel);
     const desired=String(cloudProgress.settings?.activeLevel||'A1').toUpperCase(); state.activeLevel=levelConfig(desired)?desired:'A1';
+    if(cloudProgress.radicals&&typeof cloudProgress.radicals==='object')applyRadicalCloudState(cloudProgress.radicals);
   }else{
     // Existing users: migrate the old single-level cloud row into A1 without touching future local levels.
     state.levelStates.A1=normalizeLevelState({progress:cloudProgress,favorites:Array.isArray(data.favorites)?data.favorites:[],lastDay:data.lastDay||1});

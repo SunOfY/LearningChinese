@@ -1,10 +1,13 @@
-const CACHE = 'tocfl-v5-1-0-foundation-writing-fix';
+const CACHE = 'tocfl-v5-2-0-radicals-copybook-center';
 const ASSETS = [
   './',
   './index.html',
   './styles.css',
   './app.js',
   './auth.js',
+  './pinyin-helper.js',
+  './radicals.js',
+  './data/radicals.json',
   './data/a1.json',
   './data/enrichment_day1.json',
   './manifest.webmanifest',
@@ -50,6 +53,8 @@ self.addEventListener('fetch', event => {
     url.pathname.endsWith('/styles.css') ||
     url.pathname.endsWith('/app.js') ||
     url.pathname.endsWith('/auth.js') ||
+    url.pathname.endsWith('/radicals.js') ||
+    url.pathname.endsWith('/pinyin-helper.js') ||
     url.pathname.includes('/data/') && url.pathname.endsWith('.json') ||
     url.pathname.endsWith('/sw.js');
 

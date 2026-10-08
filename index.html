@@ -228,6 +228,10 @@
         </div>
       </section>
 
+      <section id="view-radicals" class="view">
+        <div id="radicalsApp" class="radicals-app"></div>
+      </section>
+
       <section id="view-vocab" class="view">
         <div class="card">
           <div class="filter-row">
@@ -297,8 +301,8 @@
         </button>
         <button id="studyBySetBtn" type="button" class="study-mode-option">
           <span class="study-mode-icon">🀄</span>
-          <strong id="studyBySetTitle">Theo bộ/chữ cơ bản</strong>
-          <small id="studyBySetDesc" class="muted">Học 口 Khẩu, 火 Hỏa, 天 Thiên, 月 Nguyệt, 人 Nhân… rồi luyện viết riêng từng bộ.</small>
+          <strong id="studyBySetTitle">Theo bộ thủ</strong>
+          <small id="studyBySetDesc" class="muted">Học bộ thủ/部件, các chữ liên quan, từ phát triển, câu ví dụ, phát âm và luyện viết.</small>
         </button>
       </div>
     </div>
@@ -409,7 +413,9 @@
   </div>
 
   <script src="./config.js"></script>
+  <script src="./pinyin-helper.js" defer></script>
   <script src="./app.js" defer></script>
+  <script src="./radicals.js" defer></script>
   <script type="module" src="./auth.js"></script>
 </body>
 </html>

@@ -1,0 +1,19 @@
+v5.2.0
+
+1) Fixed repeated-writing guide alignment.
+Root cause: each HanziWriter guide was created while its practice cell was still detached from the DOM, so its measured size was 0 and it fell back to a small 90px writer aligned at the upper-left. Each cell is now attached before measurement/creation, so the character fills and centers in its own square.
+
+2) Restored the earlier data-driven radical study system instead of the simplified FOUNDATION_CATALOG replacement.
+- Top study button: By level / By radicals
+- By radicals opens the restored radicals screen.
+- Restored data/radicals.json, radicals.js and pinyin-helper.js.
+- Radical learning/writing progress is included in cloud sync and export/import.
+
+Upload/update:
+- index.html
+- styles.css
+- app.js
+- sw.js
+- radicals.js
+- pinyin-helper.js
+- data/radicals.json

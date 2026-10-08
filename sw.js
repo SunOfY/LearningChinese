@@ -1,4 +1,4 @@
-const CACHE = 'tocfl-v5-0-study-sets';
+const CACHE = 'tocfl-v5-1-0-foundation-writing-fix';
 const ASSETS = [
   './',
   './index.html',

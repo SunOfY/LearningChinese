@@ -1,0 +1,5 @@
+v5.1.0
+- Fix repeat-writing cells being compressed/clipped.
+- Repeat writing expands to full width and sizes from the actual writing panel.
+- "Theo từng bộ" now means components/basic characters (口, 火, 天, 月, 人...), not Day 1/Day 2 vocabulary sets.
+- Flow: choose component -> learn -> practice writing -> finish -> return to component list.

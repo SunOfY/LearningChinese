@@ -66,6 +66,30 @@
           <button id="startSetWritingBtn" type="button" class="primary">✍️ Tập viết bộ này</button>
         </div>
 
+        <section id="foundationLessonCard" class="foundation-lesson-card card" hidden>
+          <div class="foundation-lesson-top">
+            <button id="foundationBackBtn" type="button">← Danh sách bộ</button>
+            <span id="foundationDoneBadge" class="set-status complete" hidden>✓ Đã hoàn thành</span>
+          </div>
+          <div class="foundation-lesson-main">
+            <div id="foundationVector" class="foundation-vector" aria-hidden="true"></div>
+            <div class="foundation-lesson-info">
+              <div id="foundationTitle" class="foundation-title">口 · Khẩu</div>
+              <div id="foundationPinyin" class="foundation-pinyin">kǒu</div>
+              <div id="foundationMeaning" class="foundation-meaning">miệng</div>
+              <div id="foundationVariants" class="small muted"></div>
+              <div id="foundationNote" class="foundation-note"></div>
+            </div>
+          </div>
+          <div>
+            <div class="small strong">Ví dụ thường gặp</div>
+            <div id="foundationExamples" class="foundation-examples"></div>
+          </div>
+          <div class="toolbar foundation-actions">
+            <button id="foundationStartWritingBtn" type="button" class="primary">✍️ Tập viết bộ này</button>
+          </div>
+        </section>
+
         <div id="setWritingSessionBar" class="set-writing-session-bar card" hidden>
           <div class="set-writing-session-head">
             <button id="setWritingBackBtn" type="button">← Quay về các bộ</button>
@@ -272,9 +296,9 @@
           <small id="studyByLevelDesc" class="muted">Chọn A1, A2, B1...</small>
         </button>
         <button id="studyBySetBtn" type="button" class="study-mode-option">
-          <span class="study-mode-icon">🗂️</span>
-          <strong id="studyBySetTitle">Theo từng bộ</strong>
-          <small id="studyBySetDesc" class="muted">Học từng bộ rồi luyện viết đúng bộ đó.</small>
+          <span class="study-mode-icon">🀄</span>
+          <strong id="studyBySetTitle">Theo bộ/chữ cơ bản</strong>
+          <small id="studyBySetDesc" class="muted">Học 口 Khẩu, 火 Hỏa, 天 Thiên, 月 Nguyệt, 人 Nhân… rồi luyện viết riêng từng bộ.</small>
         </button>
       </div>
     </div>
@@ -283,11 +307,11 @@
   <div id="setModal" class="modal-overlay" hidden role="dialog" aria-modal="true" aria-labelledby="setModalTitle">
     <div class="modal-card set-modal-card">
       <div class="modal-head">
-        <div><div class="eyebrow">TOCFL · SETS</div><h2 id="setModalTitle">A1 · Chọn bộ để học</h2></div>
+        <div><div class="eyebrow">BASIC COMPONENTS · 基礎字</div><h2 id="setModalTitle">Chọn bộ/chữ cơ bản</h2></div>
         <button id="setCloseBtn" class="icon-btn" type="button" aria-label="Close">×</button>
       </div>
       <p id="setModalSubtitle" class="muted"></p>
-      <div class="toolbar set-modal-toolbar"><button id="setChangeLevelBtn" type="button">🎓 Đổi trình độ</button></div>
+      <div class="toolbar set-modal-toolbar" hidden><button id="setChangeLevelBtn" type="button">🎓 Đổi trình độ</button></div>
       <div id="setGrid" class="set-grid" aria-live="polite"></div>
     </div>
   </div>

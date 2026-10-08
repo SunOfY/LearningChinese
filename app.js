@@ -21,6 +21,62 @@ const LEVEL_CATALOG = [
   { id:'C2', base:'./data/c2.json', enrich:['./data/c2_enrichment.json'] }
 ];
 const LEVEL_MAP = Object.fromEntries(LEVEL_CATALOG.map(x=>[x.id,x]));
+
+// Basic components / foundational characters used by the handwriting curriculum.
+// The list intentionally includes high-frequency foundational characters such as 天,
+// in addition to strict radicals, matching the requested learning style.
+const FOUNDATION_CATALOG = [
+  {id:'ren',char:'人',nameVi:'Nhân',meaningVi:'người',pinyin:'rén',variants:'亻',noteVi:'Dạng 亻 thường đứng bên trái trong chữ ghép.',examples:['你','他','們','住','休']},
+  {id:'kou',char:'口',nameVi:'Khẩu',meaningVi:'miệng',pinyin:'kǒu',variants:'',noteVi:'Thường liên quan đến miệng, lời nói, ăn uống hoặc âm thanh.',examples:['吃','喝','叫','嗎','哪']},
+  {id:'huo',char:'火',nameVi:'Hỏa',meaningVi:'lửa',pinyin:'huǒ',variants:'灬',noteVi:'Dạng 灬 thường nằm ở phía dưới.',examples:['熱','煮','燒','炒','燈']},
+  {id:'tian',char:'天',nameVi:'Thiên',meaningVi:'trời / ngày',pinyin:'tiān',variants:'',noteVi:'Chữ nền tảng rất thường gặp trong từ vựng sơ cấp.',examples:['今天','明天','天氣','每天']},
+  {id:'yue',char:'月',nameVi:'Nguyệt',meaningVi:'trăng / tháng',pinyin:'yuè',variants:'',noteVi:'月 thường mang nghĩa trăng/tháng; cũng xuất hiện như thành phần trong một số chữ.',examples:['月份','月亮','朋友','期']},
+  {id:'ri',char:'日',nameVi:'Nhật',meaningVi:'mặt trời / ngày',pinyin:'rì',variants:'',noteVi:'Thường liên quan đến ngày, thời gian hoặc ánh sáng.',examples:['早','晚','明','時','星期']},
+  {id:'shui',char:'水',nameVi:'Thủy',meaningVi:'nước',pinyin:'shuǐ',variants:'氵',noteVi:'Dạng 氵 rất thường đứng bên trái.',examples:['河','海','洗','酒','沒']},
+  {id:'mu',char:'木',nameVi:'Mộc',meaningVi:'cây / gỗ',pinyin:'mù',variants:'',noteVi:'Thường liên quan cây cối, gỗ hoặc đồ vật bằng gỗ.',examples:['林','校','桌','杯','機']},
+  {id:'tu',char:'土',nameVi:'Thổ',meaningVi:'đất',pinyin:'tǔ',variants:'',noteVi:'Thường liên quan đến đất, địa điểm hoặc nền.',examples:['地','在','坐','城']},
+  {id:'jin',char:'金',nameVi:'Kim',meaningVi:'kim loại / vàng',pinyin:'jīn',variants:'釒',noteVi:'Trong chữ Phồn thể thường gặp dạng 釒 ở bên trái.',examples:['錢','銀','鐵','鐘']},
+  {id:'nv',char:'女',nameVi:'Nữ',meaningVi:'nữ / phụ nữ',pinyin:'nǚ',variants:'',noteVi:'Xuất hiện trong nhiều chữ liên quan con người và quan hệ.',examples:['好','媽','妹','姐','姓']},
+  {id:'zi',char:'子',nameVi:'Tử',meaningVi:'con / trẻ',pinyin:'zǐ',variants:'',noteVi:'Chữ nền tảng, cũng xuất hiện như thành phần trong nhiều chữ.',examples:['字','學','孩子','孫']},
+  {id:'shou',char:'手',nameVi:'Thủ',meaningVi:'tay',pinyin:'shǒu',variants:'扌',noteVi:'Dạng 扌 thường đứng bên trái, liên quan động tác bằng tay.',examples:['打','找','拿','提','推']},
+  {id:'xin',char:'心',nameVi:'Tâm',meaningVi:'tim / lòng',pinyin:'xīn',variants:'忄',noteVi:'Dạng 忄 thường đứng bên trái; thường liên quan cảm xúc hoặc suy nghĩ.',examples:['快','怕','情','想','忙']},
+  {id:'yan',char:'言',nameVi:'Ngôn',meaningVi:'lời nói',pinyin:'yán',variants:'訁',noteVi:'Phồn thể thường dùng 訁 ở bên trái.',examples:['說','話','語','請','謝']},
+  {id:'mu_eye',char:'目',nameVi:'Mục',meaningVi:'mắt',pinyin:'mù',variants:'',noteVi:'Thường liên quan đến mắt, nhìn hoặc thị giác.',examples:['看','眼','睛','睡']},
+  {id:'er',char:'耳',nameVi:'Nhĩ',meaningVi:'tai',pinyin:'ěr',variants:'',noteVi:'Liên quan đến tai và nghe.',examples:['聞','聽','職']},
+  {id:'zu',char:'足',nameVi:'Túc',meaningVi:'chân',pinyin:'zú',variants:'𧾷',noteVi:'Thường liên quan đến đi, chạy hoặc chân.',examples:['跑','路','跳','跟']},
+  {id:'shan',char:'山',nameVi:'Sơn',meaningVi:'núi',pinyin:'shān',variants:'',noteVi:'Liên quan đến núi và địa hình.',examples:['島','岩','岸']},
+  {id:'shi',char:'石',nameVi:'Thạch',meaningVi:'đá',pinyin:'shí',variants:'',noteVi:'Liên quan đến đá hoặc vật liệu cứng.',examples:['破','研','硬']},
+  {id:'tian_field',char:'田',nameVi:'Điền',meaningVi:'ruộng',pinyin:'tián',variants:'',noteVi:'Chữ nền tảng liên quan ruộng và ô đất.',examples:['男','界','留']},
+  {id:'he',char:'禾',nameVi:'Hòa',meaningVi:'lúa',pinyin:'hé',variants:'',noteVi:'Thường liên quan ngũ cốc hoặc mùa vụ.',examples:['秋','種','租','科']},
+  {id:'mi',char:'米',nameVi:'Mễ',meaningVi:'gạo',pinyin:'mǐ',variants:'',noteVi:'Liên quan gạo, hạt hoặc thực phẩm.',examples:['粉','糖','糕','粒']},
+  {id:'zhu',char:'竹',nameVi:'Trúc',meaningVi:'tre',pinyin:'zhú',variants:'⺮',noteVi:'Dạng ⺮ thường nằm phía trên.',examples:['筆','第','等','箱']},
+  {id:'cao',char:'艹',nameVi:'Thảo',meaningVi:'cỏ',pinyin:'cǎo',variants:'',noteVi:'Thường nằm phía trên và liên quan cây cỏ.',examples:['花','茶','菜','藥','草']},
+  {id:'mian',char:'宀',nameVi:'Miên',meaningVi:'mái nhà',pinyin:'mián',variants:'',noteVi:'Thường nằm phía trên, liên quan nhà cửa hoặc không gian bên trong.',examples:['家','室','安','客','宿']},
+  {id:'men',char:'門',nameVi:'Môn',meaningVi:'cửa',pinyin:'mén',variants:'',noteVi:'Phồn thể dùng 門 làm khung trong nhiều chữ.',examples:['問','間','開','關','聞']},
+  {id:'che',char:'車',nameVi:'Xa',meaningVi:'xe',pinyin:'chē',variants:'',noteVi:'Liên quan phương tiện và xe cộ.',examples:['輕','轉','輪','輛']},
+  {id:'ma',char:'馬',nameVi:'Mã',meaningVi:'ngựa',pinyin:'mǎ',variants:'',noteVi:'Chữ Phồn thể 馬 có nhiều nét, phù hợp luyện thứ tự nét.',examples:['騎','駕','馬路']},
+  {id:'niao',char:'鳥',nameVi:'Điểu',meaningVi:'chim',pinyin:'niǎo',variants:'',noteVi:'Liên quan chim hoặc loài có cánh.',examples:['雞','鴨','鵝']},
+  {id:'yu_rain',char:'雨',nameVi:'Vũ',meaningVi:'mưa',pinyin:'yǔ',variants:'',noteVi:'Thường ở phía trên trong chữ liên quan thời tiết.',examples:['雪','雲','電','雷']},
+  {id:'shi_food',char:'食',nameVi:'Thực',meaningVi:'ăn / thức ăn',pinyin:'shí',variants:'飠',noteVi:'Dạng 飠 thường đứng bên trái.',examples:['飯','餓','館','飲']},
+  {id:'yi',char:'衣',nameVi:'Y',meaningVi:'áo / quần áo',pinyin:'yī',variants:'衤',noteVi:'Dạng 衤 thường đứng bên trái.',examples:['褲','裙','被','衫']},
+  {id:'bei',char:'貝',nameVi:'Bối',meaningVi:'vỏ sò / tiền của',pinyin:'bèi',variants:'',noteVi:'Nhiều chữ liên quan tiền bạc hoặc giá trị.',examples:['買','賣','貴','費','貨']},
+  {id:'dao',char:'刀',nameVi:'Đao',meaningVi:'dao',pinyin:'dāo',variants:'刂',noteVi:'Dạng 刂 thường đứng bên phải.',examples:['到','別','利','刻']},
+  {id:'li',char:'力',nameVi:'Lực',meaningVi:'sức lực',pinyin:'lì',variants:'',noteVi:'Liên quan sức lực hoặc hành động.',examples:['動','加','助','努']},
+  {id:'da',char:'大',nameVi:'Đại',meaningVi:'lớn',pinyin:'dà',variants:'',noteVi:'Chữ cơ bản để luyện nét ngang, phẩy và mác.',examples:['太','天','夫','美']},
+  {id:'xiao',char:'小',nameVi:'Tiểu',meaningVi:'nhỏ',pinyin:'xiǎo',variants:'⺌',noteVi:'Chữ cơ bản ít nét; có biến thể ở phần trên của một số chữ.',examples:['少','尖','當']},
+  {id:'zhong',char:'中',nameVi:'Trung',meaningVi:'giữa / Trung Quốc',pinyin:'zhōng',variants:'',noteVi:'Luyện cân đối trục dọc ở giữa.',examples:['中國','中間','中文']},
+  {id:'shang',char:'上',nameVi:'Thượng',meaningVi:'trên',pinyin:'shàng',variants:'',noteVi:'Chữ cơ bản để luyện vị trí các nét ngang.',examples:['上午','上課','上面']},
+  {id:'xia',char:'下',nameVi:'Hạ',meaningVi:'dưới',pinyin:'xià',variants:'',noteVi:'Chữ cơ bản đối chiếu với 上.',examples:['下午','下課','下面']},
+  {id:'wang',char:'王',nameVi:'Vương',meaningVi:'vua',pinyin:'wáng',variants:'',noteVi:'Luyện khoảng cách ba nét ngang và nét sổ.',examples:['王','主','現']},
+  {id:'quan',char:'犬',nameVi:'Khuyển',meaningVi:'chó',pinyin:'quǎn',variants:'犭',noteVi:'Dạng 犭 thường đứng bên trái, liên quan động vật.',examples:['狗','貓','猴','獅']},
+  {id:'niu',char:'牛',nameVi:'Ngưu',meaningVi:'bò',pinyin:'niú',variants:'牜',noteVi:'Dạng 牜 thường đứng bên trái.',examples:['物','特','牧']},
+  {id:'yang',char:'羊',nameVi:'Dương',meaningVi:'dê / cừu',pinyin:'yáng',variants:'⺶',noteVi:'Xuất hiện trong nhiều chữ thường gặp.',examples:['美','群','樣']},
+  {id:'chong',char:'虫',nameVi:'Trùng',meaningVi:'côn trùng',pinyin:'chóng',variants:'',noteVi:'Thường liên quan côn trùng hoặc sinh vật nhỏ.',examples:['蛇','蚊','蜂','蛋']},
+  {id:'chuo',char:'辶',nameVi:'Sước',meaningVi:'đi / bước đi',pinyin:'chuò',variants:'',noteVi:'Thường nằm bên trái-dưới và liên quan chuyển động hoặc đường đi.',examples:['這','那','進','近','遠']}
+];
+const FOUNDATION_MAP = Object.fromEntries(FOUNDATION_CATALOG.map(x=>[x.id,x]));
+const FOUNDATION_PROGRESS_KEY='tocfl-foundation-progress-v1';
+
 const CEDICT_URL = 'https://raw.githubusercontent.com/jtoy/crdict/refs/heads/master/cedict_ts.u8';
 
 const I18N = {
@@ -30,7 +86,7 @@ const I18N = {
     pronunciationPractice:'🎙 Luyện phát âm', startRecording:'Bắt đầu ghi âm', stop:'Dừng', playback:'Phát lại', checkPronunciation:'Kiểm tra phát âm',
     target:'Mẫu:', recognized:'AI nhận ra:', assessmentNote:'Groq Whisper AI nhận dạng giọng nói tiếng Trung. Điểm là độ khớp giữa chữ AI nghe được và từ mẫu; không phải điểm thanh điệu/âm vị chuyên sâu.', accuracyLabel:'Độ chính xác', fluencyLabel:'Độ trôi chảy', completenessLabel:'Độ đầy đủ',
     examples:'💬 Câu ví dụ', examplesHint:'Bấm loa để nghe cả câu bằng giọng zh-TW.', rememberLevel:'Bạn nhớ từ này mức nào?', notRemembered:'Chưa nhớ', learning:'Tạm nhớ', remembered:'Đã nhớ', previous:'Trước', next:'Tiếp theo',
-    writingPractice:'✍️ Luyện viết', writingDevices:'Chuột · ngón tay · Apple Pencil', clear:'Xóa', showGuide:'Hiện chữ mẫu mờ', writingTip:'<strong>Cách luyện:</strong> bấm ▶ để xem thứ tự nét → viết theo mẫu → tắt mẫu → tự viết. <strong>Nét bạn vẽ luôn được giữ nguyên</strong>, không tự biến thành nét mẫu.', studyMode:'Cách học', studyByLevel:'Theo trình độ', studyBySet:'Theo từng bộ', studyByLevelDesc:'Chọn A1, A2, B1, B2, C1/C2 rồi học theo ngày như hiện tại.', studyBySetDesc:'Mỗi ngày hiện tại được xem như một bộ từ. Học xong bộ nào thì chuyển thẳng sang luyện viết đúng bộ đó.', setLabel:n=>`Bộ ${n}`, chooseSet:'Chọn bộ để học', setProgress:(a,b)=>`${a}/${b} từ đã đánh giá`, setComplete:'Đã học xong', setStudy:'Học bộ này', setWriting:'Tập viết bộ này', setWritingTitle:(level,n)=>`Luyện viết ${level} · Bộ ${n}`, backToSets:'Quay về các bộ', writingPrevWord:'Từ trước', writingNextWord:'Từ tiếp', writingFinish:'Hoàn thành & chọn bộ khác', setWritingHelp:'Luyện lần lượt từng từ trong bộ. Bấm Từ tiếp để chuyển sang từ kế tiếp; đến từ cuối cùng có thể quay về danh sách bộ.', writingSingleMode:'Ô đơn', writingCopybookMode:'Luyện lặp', brushMode:'🖌 Bút thư pháp (Apple Pencil)', brushModeHint:'Bật: nét thay đổi độ dày theo lực nhấn Apple Pencil. Tắt: nét đều như bút thường.', copybookHint:'Mỗi hàng: 1 ô mẫu → 3 ô tô theo mẫu mờ dần → 4 ô tự viết. Nét bạn viết luôn được giữ nguyên để tự so sánh.', clearRow:'Xóa hàng', sampleCell:'Mẫu', strokeGuideTitle:'🧭 Hướng dẫn thứ tự nét', strokeGuideHint:'Xem thứ tự nét của từng chữ trước khi viết. Website tự tải dữ liệu thứ tự nét, bạn không cần tự tìm hay upload GIF.', strokeGuideRules:'<strong>Quy tắc nhanh:</strong><ul><li>Từ trên xuống dưới.</li><li>Từ trái sang phải.</li><li>Ngang trước, sổ sau.</li><li>Bên ngoài trước, bên trong sau.</li><li>Khung ngoài đóng sau cùng.</li></ul>', strokeAnimate:'Xem thứ tự nét', strokeReplay:'Phát lại', strokeOrderLabel:n=>`Chữ ${n}`, strokeGuideNote:'Bắt đầu từ nét 1 và đi theo hoạt ảnh đến nét cuối cùng.', strokeAnimationUnavailable:'Không tải được hoạt ảnh thứ tự nét cho chữ này.',
+    writingPractice:'✍️ Luyện viết', writingDevices:'Chuột · ngón tay · Apple Pencil', clear:'Xóa', showGuide:'Hiện chữ mẫu mờ', writingTip:'<strong>Cách luyện:</strong> bấm ▶ để xem thứ tự nét → viết theo mẫu → tắt mẫu → tự viết. <strong>Nét bạn vẽ luôn được giữ nguyên</strong>, không tự biến thành nét mẫu.', studyMode:'Cách học', studyByLevel:'Theo trình độ', studyBySet:'Theo bộ/chữ cơ bản', studyByLevelDesc:'Chọn A1, A2, B1, B2, C1/C2 rồi học từ vựng như hiện tại.', studyBySetDesc:'Học từng bộ/chữ nền tảng như 口 Khẩu, 火 Hỏa, 天 Thiên, 月 Nguyệt, 人 Nhân… rồi chuyển thẳng sang luyện viết bộ đó.', setLabel:n=>`Bộ ${n}`, chooseSet:'Chọn bộ để học', setProgress:(a,b)=>`${a}/${b} từ đã đánh giá`, setComplete:'Đã học xong', setStudy:'Học bộ này', setWriting:'Tập viết bộ này', setWritingTitle:(level,n)=>`Luyện viết ${level} · Bộ ${n}`, backToSets:'Quay về các bộ', writingPrevWord:'Từ trước', writingNextWord:'Từ tiếp', writingFinish:'Hoàn thành & chọn bộ khác', setWritingHelp:'Luyện lần lượt từng từ trong bộ. Bấm Từ tiếp để chuyển sang từ kế tiếp; đến từ cuối cùng có thể quay về danh sách bộ.', writingSingleMode:'Ô đơn', writingCopybookMode:'Luyện lặp', brushMode:'🖌 Bút thư pháp (Apple Pencil)', brushModeHint:'Bật: nét thay đổi độ dày theo lực nhấn Apple Pencil. Tắt: nét đều như bút thường.', copybookHint:'Mỗi hàng: 1 ô mẫu → 3 ô tô theo mẫu mờ dần → 4 ô tự viết. Nét bạn viết luôn được giữ nguyên để tự so sánh.', clearRow:'Xóa hàng', sampleCell:'Mẫu', strokeGuideTitle:'🧭 Hướng dẫn thứ tự nét', strokeGuideHint:'Xem thứ tự nét của từng chữ trước khi viết. Website tự tải dữ liệu thứ tự nét, bạn không cần tự tìm hay upload GIF.', strokeGuideRules:'<strong>Quy tắc nhanh:</strong><ul><li>Từ trên xuống dưới.</li><li>Từ trái sang phải.</li><li>Ngang trước, sổ sau.</li><li>Bên ngoài trước, bên trong sau.</li><li>Khung ngoài đóng sau cùng.</li></ul>', strokeAnimate:'Xem thứ tự nét', strokeReplay:'Phát lại', strokeOrderLabel:n=>`Chữ ${n}`, strokeGuideNote:'Bắt đầu từ nét 1 và đi theo hoạt ảnh đến nét cuối cùng.', strokeAnimationUnavailable:'Không tải được hoạt ảnh thứ tự nét cho chữ này.',
     creatingQuestion:'Đang tạo câu hỏi…', anotherQuestion:'Câu khác', reviewed:'Đã đánh giá', backupTitle:'💾 Sao lưu tiến độ', backupDesc:'Tiến độ được lưu trong trình duyệt của từng thiết bị. Bạn có thể xuất file để chuyển sang thiết bị khác.', exportProgress:'Xuất tiến độ', importProgress:'Nhập tiến độ', resetProgress:'Xóa tiến độ',
     footerNote:'Dữ liệu từ vựng của từng trình độ được tải từ thư mục data. English có thể được bổ sung từ CC-CEDICT khi có mạng; câu ví dụ bổ sung phục vụ học tập và không phải câu mẫu chính thức của TOCFL.',
     newWords:n=>`${n} từ mới`, allDays:'Tất cả ngày', dayOption:n=>`Ngày ${n}`, searchPlaceholder:'Tìm chữ, pinyin hoặc nghĩa…',
@@ -48,7 +104,7 @@ const I18N = {
     pronunciationPractice:'🎙 Pronunciation practice', startRecording:'Start recording', stop:'Stop', playback:'Playback', checkPronunciation:'Check pronunciation',
     target:'Target:', recognized:'AI recognized:', assessmentNote:'Groq Whisper AI transcribes your Chinese speech. The score is text-match similarity, not a professional tone/phoneme pronunciation score.', accuracyLabel:'Accuracy', fluencyLabel:'Fluency', completenessLabel:'Completeness',
     examples:'💬 Example sentences', examplesHint:'Tap the speaker to hear the full sentence in zh-TW.', rememberLevel:'How well do you remember this word?', notRemembered:'Not yet', learning:'Learning', remembered:'Remembered', previous:'Previous', next:'Next',
-    writingPractice:'✍️ Writing practice', writingDevices:'Mouse · finger · Apple Pencil', clear:'Clear', showGuide:'Show faint guide', writingTip:'<strong>Practice:</strong> tap ▶ to preview stroke order → write over the guide → hide it → write from memory. <strong>Your ink always stays exactly as drawn</strong>; it is never replaced by the model.', studyMode:'Study mode', studyByLevel:'By level', studyBySet:'By set', studyByLevelDesc:'Choose A1, A2, B1, B2, C1/C2 and study by day as before.', studyBySetDesc:'Each current day becomes a vocabulary set. After studying a set, move directly into writing practice for that same set.', setLabel:n=>`Set ${n}`, chooseSet:'Choose a set', setProgress:(a,b)=>`${a}/${b} words reviewed`, setComplete:'Completed', setStudy:'Study this set', setWriting:'Practice writing', setWritingTitle:(level,n)=>`Writing practice ${level} · Set ${n}`, backToSets:'Back to sets', writingPrevWord:'Previous word', writingNextWord:'Next word', writingFinish:'Finish & choose another set', setWritingHelp:'Practice the words in this set one by one. Use Next word to continue; after the final word, return to the set list.', writingSingleMode:'Single box', writingCopybookMode:'Repeat practice', brushMode:'🖌 Calligraphy brush (Apple Pencil)', brushModeHint:'On: line thickness follows Apple Pencil pressure. Off: normal constant-width pen.', copybookHint:'Each row: 1 model box → 3 progressively lighter tracing boxes → 4 blank boxes. Your own ink remains unchanged for comparison.', clearRow:'Clear row', sampleCell:'Model', strokeGuideTitle:'🧭 Stroke-order guide', strokeGuideHint:'Preview the stroke order before writing. The website loads stroke-order data automatically; you do not need to find or upload GIFs.', strokeGuideRules:'<strong>Quick rules:</strong><ul><li>Top to bottom.</li><li>Left to right.</li><li>Horizontal before vertical.</li><li>Outside before inside.</li><li>Close outer frames last.</li></ul>', strokeAnimate:'Show stroke order', strokeReplay:'Replay', strokeOrderLabel:n=>`Character ${n}`, strokeGuideNote:'Start with stroke 1 and follow the animation until the last stroke.', strokeAnimationUnavailable:'Stroke-order animation could not be loaded for this character.',
+    writingPractice:'✍️ Writing practice', writingDevices:'Mouse · finger · Apple Pencil', clear:'Clear', showGuide:'Show faint guide', writingTip:'<strong>Practice:</strong> tap ▶ to preview stroke order → write over the guide → hide it → write from memory. <strong>Your ink always stays exactly as drawn</strong>; it is never replaced by the model.', studyMode:'Study mode', studyByLevel:'By level', studyBySet:'By basic component', studyByLevelDesc:'Choose A1, A2, B1, B2, C1/C2 and study vocabulary as before.', studyBySetDesc:'Study foundational components/characters such as 口, 火, 天, 月 and 人, then practice writing that exact component.', setLabel:n=>`Set ${n}`, chooseSet:'Choose a set', setProgress:(a,b)=>`${a}/${b} words reviewed`, setComplete:'Completed', setStudy:'Study this set', setWriting:'Practice writing', setWritingTitle:(level,n)=>`Writing practice ${level} · Set ${n}`, backToSets:'Back to sets', writingPrevWord:'Previous word', writingNextWord:'Next word', writingFinish:'Finish & choose another set', setWritingHelp:'Practice the words in this set one by one. Use Next word to continue; after the final word, return to the set list.', writingSingleMode:'Single box', writingCopybookMode:'Repeat practice', brushMode:'🖌 Calligraphy brush (Apple Pencil)', brushModeHint:'On: line thickness follows Apple Pencil pressure. Off: normal constant-width pen.', copybookHint:'Each row: 1 model box → 3 progressively lighter tracing boxes → 4 blank boxes. Your own ink remains unchanged for comparison.', clearRow:'Clear row', sampleCell:'Model', strokeGuideTitle:'🧭 Stroke-order guide', strokeGuideHint:'Preview the stroke order before writing. The website loads stroke-order data automatically; you do not need to find or upload GIFs.', strokeGuideRules:'<strong>Quick rules:</strong><ul><li>Top to bottom.</li><li>Left to right.</li><li>Horizontal before vertical.</li><li>Outside before inside.</li><li>Close outer frames last.</li></ul>', strokeAnimate:'Show stroke order', strokeReplay:'Replay', strokeOrderLabel:n=>`Character ${n}`, strokeGuideNote:'Start with stroke 1 and follow the animation until the last stroke.', strokeAnimationUnavailable:'Stroke-order animation could not be loaded for this character.',
     creatingQuestion:'Creating a question…', anotherQuestion:'Another question', reviewed:'Reviewed', backupTitle:'💾 Progress backup', backupDesc:'Progress is stored in the browser on each device. Export a file to move it to another device.', exportProgress:'Export progress', importProgress:'Import progress', resetProgress:'Reset progress',
     footerNote:'Vocabulary for each level is loaded from the data folder. English glosses may be supplemented from CC-CEDICT when online; example sentences are study supplements and are not official TOCFL examples.',
     newWords:n=>`${n} new words`, allDays:'All days', dayOption:n=>`Day ${n}`, searchPlaceholder:'Search Hanzi, Pinyin or meaning…',
@@ -66,7 +122,7 @@ const I18N = {
     pronunciationPractice:'🎙 發音練習', startRecording:'開始錄音', stop:'停止', playback:'播放錄音', checkPronunciation:'檢查發音',
     target:'目標：', recognized:'AI 辨識：', assessmentNote:'Groq Whisper AI 會轉寫你的中文語音。分數代表 AI 文字辨識與目標詞的相似度，不是專業聲調／音位評分。', accuracyLabel:'準確度', fluencyLabel:'流暢度', completenessLabel:'完整度',
     examples:'💬 例句', examplesHint:'按喇叭可用 zh-TW 聽完整句子。', rememberLevel:'你記得這個詞嗎？', notRemembered:'還不會', learning:'不太熟', remembered:'記住了', previous:'上一個', next:'下一個',
-    writingPractice:'✍️ 寫字練習', writingDevices:'滑鼠 · 手指 · Apple Pencil', clear:'清除', showGuide:'顯示淡色範字', writingTip:'<strong>練習方式：</strong>先按 ▶ 看筆順 → 描字 → 關閉範字 → 默寫。<strong>你自己寫的筆跡會完整保留</strong>，不會自動變成範字。', studyMode:'學習方式', studyByLevel:'依程度', studyBySet:'依單元', studyByLevelDesc:'先選 A1、A2、B1、B2、C1/C2，再像目前一樣依天學習。', studyBySetDesc:'把目前每一天視為一個單元。學完某個單元後，可直接練習該單元的寫字。', setLabel:n=>`第 ${n} 單元`, chooseSet:'選擇學習單元', setProgress:(a,b)=>`已評估 ${a}/${b} 個詞`, setComplete:'已完成', setStudy:'學習這個單元', setWriting:'練習寫字', setWritingTitle:(level,n)=>`${level} · 第 ${n} 單元寫字`, backToSets:'返回單元', writingPrevWord:'上一個詞', writingNextWord:'下一個詞', writingFinish:'完成並選其他單元', setWritingHelp:'依序練習本單元的每個詞。按「下一個詞」繼續；最後一個詞完成後可返回單元清單。', writingSingleMode:'單格練習', writingCopybookMode:'重複練習', brushMode:'🖌 毛筆模式（Apple Pencil）', brushModeHint:'開啟：筆畫粗細會依 Apple Pencil 壓力變化。關閉：使用固定粗細的一般筆。', copybookHint:'每一列：1 格範字 → 3 格逐漸變淡的描字 → 4 格空白默寫。你的筆跡會保留，方便自己比較。', clearRow:'清除此列', sampleCell:'範字', strokeGuideTitle:'🧭 筆順提示', strokeGuideHint:'寫字前先看每個字的筆順。網站會自動載入筆順資料，不需要另外找或上傳 GIF。', strokeGuideRules:'<strong>快速規則：</strong><ul><li>由上到下。</li><li>由左到右。</li><li>先橫後豎。</li><li>先外後內。</li><li>外框最後封口。</li></ul>', strokeAnimate:'看筆順', strokeReplay:'再播一次', strokeOrderLabel:n=>`第 ${n} 個字`, strokeGuideNote:'從第 1 畫開始，依照動畫一路看到最後一畫。', strokeAnimationUnavailable:'目前無法載入這個字的筆順動畫。',
+    writingPractice:'✍️ 寫字練習', writingDevices:'滑鼠 · 手指 · Apple Pencil', clear:'清除', showGuide:'顯示淡色範字', writingTip:'<strong>練習方式：</strong>先按 ▶ 看筆順 → 描字 → 關閉範字 → 默寫。<strong>你自己寫的筆跡會完整保留</strong>，不會自動變成範字。', studyMode:'學習方式', studyByLevel:'依程度', studyBySet:'依部件／基礎字', studyByLevelDesc:'先選 A1、A2、B1、B2、C1/C2，再照目前方式學詞彙。', studyBySetDesc:'依序學習 口、火、天、月、人等基礎部件／字，學完後直接練習該字。', setLabel:n=>`第 ${n} 單元`, chooseSet:'選擇學習單元', setProgress:(a,b)=>`已評估 ${a}/${b} 個詞`, setComplete:'已完成', setStudy:'學習這個單元', setWriting:'練習寫字', setWritingTitle:(level,n)=>`${level} · 第 ${n} 單元寫字`, backToSets:'返回單元', writingPrevWord:'上一個詞', writingNextWord:'下一個詞', writingFinish:'完成並選其他單元', setWritingHelp:'依序練習本單元的每個詞。按「下一個詞」繼續；最後一個詞完成後可返回單元清單。', writingSingleMode:'單格練習', writingCopybookMode:'重複練習', brushMode:'🖌 毛筆模式（Apple Pencil）', brushModeHint:'開啟：筆畫粗細會依 Apple Pencil 壓力變化。關閉：使用固定粗細的一般筆。', copybookHint:'每一列：1 格範字 → 3 格逐漸變淡的描字 → 4 格空白默寫。你的筆跡會保留，方便自己比較。', clearRow:'清除此列', sampleCell:'範字', strokeGuideTitle:'🧭 筆順提示', strokeGuideHint:'寫字前先看每個字的筆順。網站會自動載入筆順資料，不需要另外找或上傳 GIF。', strokeGuideRules:'<strong>快速規則：</strong><ul><li>由上到下。</li><li>由左到右。</li><li>先橫後豎。</li><li>先外後內。</li><li>外框最後封口。</li></ul>', strokeAnimate:'看筆順', strokeReplay:'再播一次', strokeOrderLabel:n=>`第 ${n} 個字`, strokeGuideNote:'從第 1 畫開始，依照動畫一路看到最後一畫。', strokeAnimationUnavailable:'目前無法載入這個字的筆順動畫。',
     creatingQuestion:'正在出題…', anotherQuestion:'下一題', reviewed:'已評估', backupTitle:'💾 備份學習進度', backupDesc:'進度儲存在每台裝置的瀏覽器中。可匯出檔案，再匯入另一台裝置。', exportProgress:'匯出進度', importProgress:'匯入進度', resetProgress:'清除進度',
     footerNote:'各級詞彙從 data 資料夾載入。連網時可由 CC-CEDICT 補充英文釋義；例句為學習補充，並非 TOCFL 官方例句。',
     newWords:n=>`${n} 個新詞`, allDays:'全部', dayOption:n=>`第 ${n} 天`, searchPlaceholder:'搜尋漢字、拼音或意思…',
@@ -89,7 +145,7 @@ const state = {
   activeLevel: 'A1', rememberLevel: false, levelStates: {}, levelDataCache: {},
   levelAvailability: {}, currentUserId: null,
   writingPracticeMode:'single', writingBrushMode:false,
-  studyPathMode:'level', setWritingSession:false, setWritingRestoreMode:'single'
+  studyPathMode:'level', setWritingSession:false, setWritingRestoreMode:'single', foundationCurrentId:null, foundationLesson:false, foundationWritingSession:false, foundationProgress:{}
 };
 
 const LEVEL_UI = {
@@ -241,7 +297,8 @@ function persistMultiState(){
 
 function loadLocalState(){
   const lang=localStorage.getItem(LANGUAGE_KEY); if(I18N[lang]) state.lang=lang;
-  try{const sf=JSON.parse(localStorage.getItem(STUDY_FLOW_KEY)||'null');if(sf?.mode==='set'||sf?.mode==='level')state.studyPathMode=sf.mode;}catch{}
+  try{const fp=JSON.parse(localStorage.getItem(FOUNDATION_PROGRESS_KEY)||'{}');if(fp&&typeof fp==='object')state.foundationProgress=fp;}catch{}
+  try{const sf=JSON.parse(localStorage.getItem(STUDY_FLOW_KEY)||'null');if(sf?.mode==='level')state.studyPathMode='level';else state.studyPathMode='level';}catch{state.studyPathMode='level';}
   try{
     const ws=JSON.parse(localStorage.getItem(WRITING_SETTINGS_KEY)||'null');
     if(ws?.mode==='copybook'||ws?.mode==='single') state.writingPracticeMode=ws.mode;
@@ -377,9 +434,14 @@ function englishFor(word){
 }
 function isEnglishPending(word){return !state.enrich[String(word.id)]?.meaning_en && !a1EnglishOverride(word) && !state.englishDefs[String(word.id)] && !state.englishLoaded;}
 
+function foundationCurrent(){return FOUNDATION_MAP[state.foundationCurrentId]||null;}
+function foundationPseudoWord(){
+  const f=foundationCurrent(); if(!f)return null;
+  return {id:`FOUNDATION-${f.id}`,traditional:f.char,pinyin:f.pinyin,meaning_vi:`${f.nameVi} · ${f.meaningVi}`,level:'BASIC',pos:'component'};
+}
 function renderCurrentWord(){
-  if(!state.dayWords.length)return;
-  const w=currentWord();
+  if(!state.dayWords.length && !state.foundationCurrentId)return;
+  const w=state.foundationCurrentId?foundationPseudoWord():currentWord();
   $('hanzi').textContent=w.traditional; $('pinyin').textContent=state.pinyinVisible?w.pinyin:'••••';
   $('meaningVi').textContent=w.meaning_vi||'—'; $('meaningEn').textContent=englishFor(w); $('meaningEn').classList.toggle('loading-shimmer',isEnglishPending(w));
   $('levelPos').textContent=`${w.level||'A1'}${w.pos?' · '+w.pos:''}`; $('wordIndex').textContent=`${state.index+1} / ${state.dayWords.length}`;
@@ -918,6 +980,7 @@ function setWritingInteractionLock(active){
 }
 function applyWritingModeUI(){
   const isCopy=state.writingPracticeMode==='copybook';
+  document.body.classList.toggle('copybook-mode-active',isCopy && !state.foundationLesson);
   const single=$('singleWritingPanel'),copy=$('copybookWritingPanel');
   if(single) single.hidden=isCopy;
   if(copy) copy.hidden=!isCopy;
@@ -1160,6 +1223,7 @@ function renderCopybookPractice(word){
     rowActions.append(rowLabel,clearBtn); head.append(title,rowActions);
     const cells=document.createElement('div'); cells.className='copybook-cells';
     const rowCanvasItems=[];
+    row.append(head,cells); wrap.append(row); // attach first so guide size is measured correctly
     const guideOpacities=[1,.32,.22,.13,0,0,0,0];
     guideOpacities.forEach((opacity,cellIndex)=>{
       const cell=document.createElement('div'); cell.className='copybook-cell';
@@ -1192,7 +1256,6 @@ function renderCopybookPractice(word){
       cells.append(cell);
     });
     clearBtn.addEventListener('click',()=>rowCanvasItems.forEach(clearWritingItem));
-    row.append(head,cells); wrap.append(row);
   });
 }
 function resizeWritingCanvas(item){
@@ -1295,16 +1358,18 @@ function dayWordCount(day){return state.allWords.filter(w=>Number(w.day)===Numbe
 function dayReviewedCount(day){return state.allWords.filter(w=>Number(w.day)===Number(day) && state.progress[w.id]?.memory).length;}
 function maxStudyDay(){return Math.max(1,...state.allWords.map(w=>Number(w.day||1)));}
 function setStudyPathMode(mode){
-  state.studyPathMode=mode==='set'?'set':'level';
+  state.studyPathMode='level';
   saveStudyFlow(); updateBranding(); refreshDaySelectorLabels(); renderSetStudyBanner(); renderStudyModeUI();
 }
+function renderSetStudyBanner(){const banner=$('setStudyBanner');if(banner)banner.hidden=true;}
+
 function renderStudyModeUI(){
   const title=$('studyModeTitle'); if(title)title.textContent=t('studyMode');
   const levelTitle=$('studyByLevelTitle'); if(levelTitle)levelTitle.textContent=t('studyByLevel');
   const setTitle=$('studyBySetTitle'); if(setTitle)setTitle.textContent=t('studyBySet');
   const levelDesc=$('studyByLevelDesc'); if(levelDesc)levelDesc.textContent=t('studyByLevelDesc');
   const setDesc=$('studyBySetDesc'); if(setDesc)setDesc.textContent=t('studyBySetDesc');
-  const dayLabel=$('daySelectLabel'); if(dayLabel)dayLabel.textContent=state.studyPathMode==='set'?(state.lang==='zh-Hant'?'單元':state.lang==='en'?'Set':'Bộ'):t('day');
+  const dayLabel=$('daySelectLabel'); if(dayLabel)dayLabel.textContent=t('day');
 }
 function openStudyModeModal(){
   const modal=$('studyModeModal'); if(!modal)return;
@@ -1314,10 +1379,10 @@ function closeStudyModeModal(){
   const modal=$('studyModeModal'); if(!modal)return; modal.hidden=true;
   if($('levelModal')?.hidden!==false && $('setModal')?.hidden!==false && $('authModal')?.hidden!==false)document.body.classList.remove('modal-open');
 }
+function saveFoundationProgress(){localStorage.setItem(FOUNDATION_PROGRESS_KEY,JSON.stringify(state.foundationProgress||{}));}
 function openSetSelector(){
-  closeStudyModeModal();
   const modal=$('setModal'); if(!modal)return;
-  setStudyPathMode('set'); renderSetSelector(); modal.hidden=false; document.body.classList.add('modal-open');
+  renderSetSelector(); modal.hidden=false; document.body.classList.add('modal-open');
 }
 function closeSetSelector(){
   const modal=$('setModal'); if(!modal)return; modal.hidden=true;
@@ -1325,87 +1390,92 @@ function closeSetSelector(){
 }
 function renderSetSelector(){
   const grid=$('setGrid'); if(!grid)return;
-  const title=$('setModalTitle'); if(title)title.textContent=`${state.activeLevel} · ${t('chooseSet')}`;
-  const sub=$('setModalSubtitle'); if(sub)sub.textContent=t('studyBySetDesc');
+  const title=$('setModalTitle'); if(title)title.textContent=state.lang==='zh-Hant'?'選擇部件／基礎字':state.lang==='en'?'Choose a basic component':'Chọn bộ/chữ cơ bản';
+  const sub=$('setModalSubtitle'); if(sub)sub.textContent=state.lang==='zh-Hant'?'先學字形與意思，再直接進入重複書寫練習。':state.lang==='en'?'Learn a component/character, then move directly to repeated handwriting practice.':'Học hình dạng và ý nghĩa của một bộ/chữ, sau đó chuyển thẳng sang luyện viết lặp lại.';
   grid.innerHTML='';
-  const max=maxStudyDay();
-  for(let day=1;day<=max;day++){
-    const total=dayWordCount(day); if(!total)continue;
-    const reviewed=dayReviewedCount(day), complete=reviewed>=total;
-    const card=document.createElement('article'); card.className='set-option-card'; if(day===state.day)card.classList.add('is-current');
+  FOUNDATION_CATALOG.forEach(f=>{
+    const done=Boolean(state.foundationProgress?.[f.id]);
+    const card=document.createElement('article');card.className='set-option-card foundation-option-card';
     const head=document.createElement('div');head.className='set-option-head';
-    const name=document.createElement('strong');name.textContent=t('setLabel',day);
-    const badge=document.createElement('span');badge.className=`set-status ${complete?'complete':''}`;badge.textContent=complete?t('setComplete'):`${total} ${state.lang==='en'?'words':state.lang==='zh-Hant'?'詞':'từ'}`;
+    const name=document.createElement('strong');name.textContent=`${f.char} · ${f.nameVi}`;
+    const badge=document.createElement('span');badge.className=`set-status ${done?'complete':''}`;badge.textContent=done?'✓ Đã luyện':f.meaningVi;
     head.append(name,badge);
-    const prog=document.createElement('div');prog.className='small muted';prog.textContent=t('setProgress',reviewed,total);
-    const bar=document.createElement('div');bar.className='set-card-progress';const fill=document.createElement('span');fill.style.width=`${Math.round(reviewed/Math.max(1,total)*100)}%`;bar.append(fill);
+    const py=document.createElement('div');py.className='foundation-card-pinyin';py.textContent=f.pinyin;
+    const note=document.createElement('div');note.className='small muted';note.textContent=f.noteVi;
     const actions=document.createElement('div');actions.className='set-card-actions';
-    const study=document.createElement('button');study.type='button';study.className='primary';study.textContent=t('setStudy');
-    const writing=document.createElement('button');writing.type='button';writing.textContent=`✍️ ${t('setWriting')}`;
-    study.addEventListener('click',()=>{closeSetSelector();setStudyPathMode('set');selectDay(day);showView('today');});
-    writing.addEventListener('click',()=>{closeSetSelector();setStudyPathMode('set');selectDay(day,{notify:false});startSetWritingSession();});
-    actions.append(study,writing);card.append(head,prog,bar,actions);grid.append(card);
-  }
+    const study=document.createElement('button');study.type='button';study.className='primary';study.textContent='Học bộ này';
+    const writing=document.createElement('button');writing.type='button';writing.textContent='✍️ Tập viết';
+    study.addEventListener('click',()=>{closeSetSelector();startFoundationLesson(f.id,false);});
+    writing.addEventListener('click',()=>{closeSetSelector();startFoundationLesson(f.id,true);});
+    actions.append(study,writing);card.append(head,py,note,actions);grid.append(card);
+  });
 }
-function renderSetStudyBanner(){
-  const banner=$('setStudyBanner'); if(!banner)return;
-  const show=state.studyPathMode==='set' && !state.setWritingSession && state.dayWords.length>0;
-  banner.hidden=!show; if(!show)return;
-  const reviewed=state.dayWords.filter(w=>state.progress[w.id]?.memory).length,total=state.dayWords.length;
-  $('setStudyTitle').textContent=`${state.activeLevel} · ${t('setLabel',state.day)}`;
-  $('setStudyProgress').textContent=t('setProgress',reviewed,total);
-  const btn=$('startSetWritingBtn'); if(btn)btn.textContent=`✍️ ${t('setWriting')}`;
+function renderFoundationLesson(){
+  const card=$('foundationLessonCard'); const f=foundationCurrent(); if(!card)return;
+  card.hidden=!state.foundationLesson || state.foundationWritingSession;
+  if(!f || card.hidden)return;
+  $('foundationTitle').textContent=`${f.char} · ${f.nameVi}`;
+  $('foundationPinyin').textContent=f.pinyin;
+  $('foundationMeaning').textContent=f.meaningVi;
+  $('foundationVariants').textContent=f.variants?`Dạng thường gặp: ${f.variants}`:'';
+  $('foundationNote').textContent=f.noteVi;
+  $('foundationDoneBadge').hidden=!state.foundationProgress?.[f.id];
+  const ex=$('foundationExamples');ex.innerHTML='';(f.examples||[]).forEach(x=>{const s=document.createElement('span');s.textContent=x;ex.append(s);});
+  const host=$('foundationVector');host.innerHTML='';host.classList.remove('font-fallback');
+  try{const w=makeStrokeGuideMiniWriter(host,f.char,null,()=>{host.textContent=f.char;host.classList.add('font-fallback');});if(!w)throw new Error();}catch{host.textContent=f.char;host.classList.add('font-fallback');}
 }
-function startSetWritingSession(){
-  if(!state.dayWords.length)return;
-  state.setWritingSession=true; state.setWritingRestoreMode=state.writingPracticeMode;
-  state.writingPracticeMode='copybook'; state.index=0;
-  document.body.classList.add('set-writing-session');
-  applyWritingModeUI(); showView('today'); renderCurrentWord(); updateSetWritingSessionUI();
+function startFoundationLesson(id,startWriting=false){
+  if(!FOUNDATION_MAP[id])return;
+  state.foundationCurrentId=id;state.foundationLesson=true;state.foundationWritingSession=false;
+  document.body.classList.add('foundation-study-session');document.body.classList.remove('foundation-writing-session');
+  showView('today');renderFoundationLesson();
+  if(startWriting)startFoundationWriting(); else window.scrollTo({top:0,behavior:'smooth'});
+}
+function startFoundationWriting(){
+  if(!foundationCurrent())return;
+  state.foundationLesson=true;state.foundationWritingSession=true;
+  state.setWritingRestoreMode=state.writingPracticeMode;state.writingPracticeMode='copybook';
+  document.body.classList.add('foundation-study-session','foundation-writing-session');
+  applyWritingModeUI();renderCurrentWord();renderFoundationLesson();updateSetWritingSessionUI();
   window.scrollTo({top:0,behavior:'smooth'});
 }
-function endSetWritingSession({openSets=true}={}){
-  state.setWritingSession=false; document.body.classList.remove('set-writing-session');
+function endFoundationSession({completed=false,openList=true}={}){
+  const f=foundationCurrent();if(completed&&f){state.foundationProgress[f.id]=true;saveFoundationProgress();}
+  state.foundationLesson=false;state.foundationWritingSession=false;state.foundationCurrentId=null;
+  document.body.classList.remove('foundation-study-session','foundation-writing-session');
   state.writingPracticeMode=state.setWritingRestoreMode==='copybook'?'copybook':'single';
-  applyWritingModeUI(); renderCurrentWord(); renderSetStudyBanner();
-  if(openSets)openSetSelector();
+  applyWritingModeUI();renderFoundationLesson();renderCurrentWord();
+  if(openList)openSetSelector();
 }
 function updateSetWritingSessionUI(){
   const bar=$('setWritingSessionBar'); if(!bar)return;
-  bar.hidden=!state.setWritingSession; if(!state.setWritingSession)return;
-  const w=currentWord();
-  $('setWritingSessionTitle').textContent=t('setWritingTitle',state.activeLevel,state.day);
-  $('setWritingSessionMeta').textContent=`${state.index+1}/${state.dayWords.length} · ${primaryForm(w)} · ${w.pinyin||''} · ${w.meaning_vi||''}`;
-  $('setWritingHelp').textContent=t('setWritingHelp');
-  $('setWritingBackBtn').textContent=`← ${t('backToSets')}`;
-  $('setWritingPrevBtn').textContent=`← ${t('writingPrevWord')}`;
-  $('setWritingPrevBtn').disabled=state.index<=0;
-  const next=$('setWritingNextBtn');
-  next.textContent=state.index>=state.dayWords.length-1?`✓ ${t('writingFinish')}`:`${t('writingNextWord')} →`;
+  bar.hidden=!state.foundationWritingSession;if(!state.foundationWritingSession)return;
+  const f=foundationCurrent();if(!f)return;
+  $('setWritingSessionTitle').textContent=`Luyện viết ${f.char} · ${f.nameVi}`;
+  $('setWritingSessionMeta').textContent=`${f.pinyin} · ${f.meaningVi}`;
+  $('setWritingHelp').textContent='Viết đi viết lại cùng một chữ. Ô đầu là mẫu; các ô sau mờ dần rồi chuyển sang ô trống để tự viết.';
+  $('setWritingBackBtn').textContent='← Danh sách bộ';
+  $('setWritingPrevBtn').hidden=true;
+  const next=$('setWritingNextBtn');next.textContent='✓ Hoàn thành & chọn bộ khác';next.disabled=false;
 }
 function bindStudyFlow(){
   $('studyModeCloseBtn')?.addEventListener('click',closeStudyModeModal);
   $('studyModeModal')?.addEventListener('click',e=>{if(e.target===$('studyModeModal'))closeStudyModeModal();});
   $('studyByLevelBtn')?.addEventListener('click',()=>{setStudyPathMode('level');closeStudyModeModal();openLevelSelector({force:true});});
-  $('studyBySetBtn')?.addEventListener('click',openSetSelector);
+  $('studyBySetBtn')?.addEventListener('click',()=>{closeStudyModeModal();openSetSelector();});
   $('setCloseBtn')?.addEventListener('click',closeSetSelector);
   $('setModal')?.addEventListener('click',e=>{if(e.target===$('setModal'))closeSetSelector();});
-  $('setChangeLevelBtn')?.addEventListener('click',()=>{closeSetSelector();openLevelSelector({force:true});});
-  $('startSetWritingBtn')?.addEventListener('click',startSetWritingSession);
-  $('setWritingBackBtn')?.addEventListener('click',()=>endSetWritingSession({openSets:true}));
-  $('setWritingPrevBtn')?.addEventListener('click',()=>{if(state.index>0){state.index--;renderCurrentWord();window.scrollTo({top:0,behavior:'smooth'});}});
-  $('setWritingNextBtn')?.addEventListener('click',()=>{if(state.index<state.dayWords.length-1){state.index++;renderCurrentWord();window.scrollTo({top:0,behavior:'smooth'});}else endSetWritingSession({openSets:true});});
-  document.addEventListener('keydown',e=>{
-    if(e.key!=='Escape')return;
-    if($('studyModeModal')?.hidden===false)closeStudyModeModal();
-    else if($('setModal')?.hidden===false)closeSetSelector();
-  });
-  renderStudyModeUI();renderSetStudyBanner();updateSetWritingSessionUI();
+  $('foundationBackBtn')?.addEventListener('click',()=>endFoundationSession({completed:false,openList:true}));
+  $('foundationStartWritingBtn')?.addEventListener('click',startFoundationWriting);
+  $('setWritingBackBtn')?.addEventListener('click',()=>endFoundationSession({completed:false,openList:true}));
+  $('setWritingNextBtn')?.addEventListener('click',()=>endFoundationSession({completed:true,openList:true}));
+  document.addEventListener('keydown',e=>{if(e.key!=='Escape')return;if($('studyModeModal')?.hidden===false)closeStudyModeModal();else if($('setModal')?.hidden===false)closeSetSelector();});
+  renderFoundationLesson();updateSetWritingSessionUI();
 }
 function updateBranding(){
   const id=state.activeLevel||'A1';
   const h1=document.getElementById('appTitle'); if(h1) h1.textContent='LEARNING TOCFL';
-  const btn=document.getElementById('levelBtnLabel'); if(btn) btn.textContent=state.studyPathMode==='set'?`${id} · ${t('setLabel',state.day)}`:id;
+  const btn=document.getElementById('levelBtnLabel'); if(btn) btn.textContent=id;
   const eyebrow=document.getElementById('appEyebrow'); if(eyebrow) eyebrow.textContent='🇹🇼 TOCFL · Traditional Chinese';
   const authEyebrow=document.getElementById('authEyebrow'); if(authEyebrow) authEyebrow.textContent='TOCFL · CLOUD';
   document.title='LEARNING TOCFL · Traditional Chinese';
@@ -1441,7 +1511,6 @@ function renderLevelSelector(){
       if(ok){
         if(!remember && state.currentUserId) sessionStorage.setItem(`tocfl-level-picked-session:${state.currentUserId}`,'1');
         persistMultiState();
-        if(state.studyPathMode==='set') setTimeout(openSetSelector,0);
       }
     });
     grid.append(card);

@@ -333,3 +333,26 @@ body.set-writing-session #singleWritingPanel{display:none!important}
 body.set-writing-session #copybookWritingPanel{display:block!important}
 body.set-writing-session .tabs{opacity:.55}
 @media(max-width:700px){.study-mode-grid,.set-grid{grid-template-columns:1fr}.study-mode-option{min-height:130px}.set-card-actions{grid-template-columns:1fr}.set-study-banner{align-items:stretch;flex-direction:column}.set-study-banner button{width:100%}.set-writing-session-head{align-items:stretch;flex-direction:column}.set-writing-session-nav button{flex:1}.set-writing-session-nav{display:grid;grid-template-columns:1fr 1fr}}
+
+
+/* v5.1.0 — copybook sizing fix + basic-component study */
+body.copybook-mode-active:not(.foundation-study-session) .study-grid{grid-template-columns:1fr;}
+body.copybook-mode-active:not(.foundation-study-session) .writing-card{position:static;max-width:1180px;width:100%;margin:0 auto;}
+.copybook-cells{grid-template-columns:repeat(auto-fit,minmax(92px,1fr))!important;}
+.copybook-cell{min-width:82px;}
+@media(max-width:700px){.copybook-cells{grid-template-columns:repeat(4,minmax(68px,1fr))!important}.copybook-cell{min-width:0}}
+@media(max-width:430px){.copybook-cells{grid-template-columns:repeat(3,minmax(72px,1fr))!important}}
+.foundation-option-card .set-option-head strong{font-size:22px}.foundation-card-pinyin{font-weight:750;color:var(--accent)}
+.foundation-lesson-card{max-width:980px;margin:0 auto 14px;display:grid;gap:16px}.foundation-lesson-card[hidden]{display:none!important}
+.foundation-lesson-top{display:flex;justify-content:space-between;align-items:center;gap:12px}.foundation-lesson-main{display:grid;grid-template-columns:180px 1fr;gap:22px;align-items:center}
+.foundation-vector{width:180px;height:180px;border:1px solid var(--border);border-radius:18px;background:#fbfdfc;padding:10px}.foundation-vector>svg{width:100%!important;height:100%!important;display:block}
+.foundation-vector.font-fallback{display:flex;align-items:center;justify-content:center;font-size:120px;font-family:"BiauKai","DFKai-SB","Kaiti TC","Noto Serif TC",serif}
+.foundation-title{font-size:30px;font-weight:900}.foundation-pinyin{font-size:20px;color:var(--accent);font-weight:800;margin-top:4px}.foundation-meaning{font-size:18px;margin-top:2px}.foundation-note{margin-top:12px;line-height:1.55}
+.foundation-examples{display:flex;flex-wrap:wrap;gap:8px;margin-top:8px}.foundation-examples span{border:1px solid var(--border);background:#fbfdfc;border-radius:10px;padding:8px 10px;font-size:22px;font-weight:700}
+.foundation-actions{justify-content:flex-end}.foundation-actions .primary{min-width:190px}
+body.foundation-study-session .daily-summary,body.foundation-study-session .set-study-banner,body.foundation-study-session .word-card{display:none!important}
+body.foundation-study-session .study-grid{grid-template-columns:1fr}body.foundation-study-session .writing-card{display:none;position:static;max-width:1180px;width:100%;margin:0 auto}
+body.foundation-writing-session .foundation-lesson-card{display:none!important}body.foundation-writing-session .writing-card{display:block!important}body.foundation-writing-session .writing-mode-switch{display:none}
+body.foundation-writing-session #singleWritingPanel{display:none!important}body.foundation-writing-session #copybookWritingPanel{display:block!important}body.foundation-writing-session .set-writing-session-bar{display:flex!important}
+body.foundation-study-session:not(.foundation-writing-session) .set-writing-session-bar{display:none!important}
+@media(max-width:700px){.foundation-lesson-main{grid-template-columns:1fr}.foundation-vector{width:min(180px,55vw);height:min(180px,55vw);margin:0 auto}.foundation-lesson-info{text-align:center}.foundation-actions .primary{width:100%}}

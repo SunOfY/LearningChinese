@@ -614,7 +614,11 @@
     canvas.addEventListener('pointermove',e=>{if(!item.drawing||(item.pointerId!==null&&item.pointerId!==e.pointerId))return;stop(e);const samples=typeof e.getCoalescedEvents==='function'?e.getCoalescedEvents():[e];for(const s of samples){const p=radA4Point(canvas,s),w=radA4LineWidth(item,s,p,false);seg(item.last,p,item.width,w);item.last=p;item.width=w;item.lastTime=s.timeStamp||performance.now();}},{passive:false});
     const end=e=>{if(e&&e.pointerId!==undefined&&item.pointerId!==null&&e.pointerId!==item.pointerId)return;stop(e);item.drawing=false;item.pointerId=null;item.last=null;};
     ['pointerup','pointercancel','pointerleave'].forEach(n=>canvas.addEventListener(n,end,{passive:false}));canvas.addEventListener('lostpointercapture',end);
-    item.clear=()=>{const rr=canvas.getBoundingClientRect();ctx.clearRect(0,0,rr.width,rr.height);canvas.closest('.rad-a4-cell')?.classList.remove('has-ink');};
+    item.clear=()=>{
+      item.drawing=false;item.pointerId=null;item.last=null;
+      ctx.save();ctx.setTransform(1,0,0,1,0,0);ctx.clearRect(0,0,canvas.width,canvas.height);ctx.restore();
+      canvas.closest('.rad-a4-cell')?.classList.remove('has-ink');
+    };
     return item;
   }
   function makeRadA4Writer(host,ch,opacity=1,color='#c53832',onData=null,onError=null){
@@ -637,7 +641,9 @@
     const viewport=document.createElement('div');viewport.className='rad-a4-viewport';
     const page=document.createElement('div');page.className='rad-a4-page';
     const header=document.createElement('header');header.className='rad-a4-page-head';header.innerHTML=`<div><b>${r.radical}</b><span>${r.pinyin} · ${pick(r.meaning)}</span></div><small>${ui.writingA4}</small>`;page.append(header);
-    const inkItems=[],guideHosts=[];
+    const inkItems=[],guideHosts=[],canvasJobs=[];
+    const a4RenderToken=String(Date.now())+Math.random().toString(36).slice(2);
+    shell.dataset.a4RenderToken=a4RenderToken;
     const targets=radicalA4Meta(r);
     targets.forEach((target,rowIndex)=>{
       const row=document.createElement('section');row.className='rad-a4-row';
@@ -668,10 +674,27 @@
           guideHosts.push({host:guide,opacity});
           try{const w=makeRadA4Writer(guide,target.ch,opacity,'#c53832',null,()=>{guide.hidden=true;noData.hidden=false;noData.title=ui.writingA4NoData;});if(!w)throw new Error();}catch{guide.hidden=true;noData.hidden=false;noData.title=ui.writingA4NoData;}
         }
-        inkItems.push(bindRadA4Canvas(canvas,()=>brushCheck.checked));
+        // Do not bind/size the canvas yet. At this point the A4 page is still detached
+        // from the document, so getBoundingClientRect() can be 0x0. On iPad this made
+        // the faint guide fade (pointer event fired) but the user's ink was invisible.
+        canvasJobs.push(canvas);
       });
     });
     viewport.append(page);shell.append(viewport);container.append(shell);
+
+    // IMPORTANT: size and bind handwriting canvases only after the A4 sheet is actually
+    // in the document and Safari has committed its final layout. Each canvas then gets
+    // an internal bitmap that exactly matches its visible cell, so Apple Pencil/finger
+    // coordinates and visible ink stay aligned. Two RAFs are intentional for iPad Safari.
+    requestAnimationFrame(()=>requestAnimationFrame(()=>{
+      if(!shell.isConnected || shell.dataset.a4RenderToken!==a4RenderToken)return;
+      canvasJobs.forEach(canvas=>{
+        const r=canvas.getBoundingClientRect();
+        if(r.width<8 || r.height<8)return;
+        inkItems.push(bindRadA4Canvas(canvas,()=>brushCheck.checked));
+      });
+    }));
+
     guideCheck.addEventListener('change',()=>guideHosts.forEach(x=>{x.host.hidden=!guideCheck.checked||Number(x.opacity)<=0;}));
     brushCheck.addEventListener('change',()=>writeRadA4Brush(brushCheck.checked));
     clear.addEventListener('click',()=>inkItems.forEach(x=>x.clear()));

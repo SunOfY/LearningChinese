@@ -1,0 +1,19 @@
+v5.3.4 — Radical A4 handwriting canvas fix
+
+Fixed:
+- In Radical A4 copybook mode, touching/writing made the faint guide dim but the user's ink was invisible.
+
+Root cause:
+- A4 canvases were sized and bound while the whole A4 sheet was still detached from the DOM.
+- getBoundingClientRect() therefore returned 0x0 (or an invalid temporary size), creating a zero/incorrect backing bitmap.
+- Pointer events still added the has-ink class, so the guide became fainter, but there was no correctly sized bitmap to show the user's strokes.
+
+Fix:
+- Build and attach the complete A4 sheet first.
+- Wait two animation frames so iPad Safari finishes layout.
+- Only then size and bind each handwriting canvas.
+- Clear now wipes the full backing bitmap safely.
+
+Upload:
+- radicals.js
+- sw.js

@@ -7,6 +7,8 @@ const MULTI_STATE_KEY = 'tocfl-multilevel-state-v1';
 const LANGUAGE_KEY = 'tocfl-a1-ui-language-v2'; // keep the old key so existing UI-language preference survives the upgrade
 const ENGLISH_CACHE_PREFIX = 'tocfl-english-cache-v3';
 const LEGACY_ENGLISH_CACHE_KEY = 'tocfl-a1-english-cache-v2';
+const WRITING_SETTINGS_KEY = 'tocfl-writing-settings-v1';
+const STUDY_FLOW_KEY = 'tocfl-study-flow-v1';
 
 // Future-proof level registry. To activate a level later, upload data/<level>.json.
 // The enrichment file is optional and follows data/<level>_enrichment.json.
@@ -23,54 +25,54 @@ const CEDICT_URL = 'https://raw.githubusercontent.com/jtoy/crdict/refs/heads/mas
 
 const I18N = {
   vi: {
-    day:'Ngày', navToday:'Hôm nay', navVocab:'Từ vựng', navQuiz:'Quiz', navHomework:'Bài tập', navProgress:'Tiến độ', goal:'Mục tiêu',
-    favorite:'Đánh dấu từ', listenWord:'Nghe từ', slow:'Chậm', fast:'Nhanh', hidePinyin:'Ẩn Pinyin', showPinyin:'Hiện Pinyin',
+    day:'Ngày', navToday:'Hôm nay', navVocab:'Từ vựng', navQuiz:'Quiz', navProgress:'Tiến độ', goal:'Mục tiêu',
+    favorite:'Đánh dấu từ', listenWord:'Nghe từ', slow:'Chậm', hidePinyin:'Ẩn Pinyin', showPinyin:'Hiện Pinyin',
     pronunciationPractice:'🎙 Luyện phát âm', startRecording:'Bắt đầu ghi âm', stop:'Dừng', playback:'Phát lại', checkPronunciation:'Kiểm tra phát âm',
     target:'Mẫu:', recognized:'AI nhận ra:', assessmentNote:'Groq Whisper AI nhận dạng giọng nói tiếng Trung. Điểm là độ khớp giữa chữ AI nghe được và từ mẫu; không phải điểm thanh điệu/âm vị chuyên sâu.', accuracyLabel:'Độ chính xác', fluencyLabel:'Độ trôi chảy', completenessLabel:'Độ đầy đủ',
     examples:'💬 Câu ví dụ', examplesHint:'Bấm loa để nghe cả câu bằng giọng zh-TW.', rememberLevel:'Bạn nhớ từ này mức nào?', notRemembered:'Chưa nhớ', learning:'Tạm nhớ', remembered:'Đã nhớ', previous:'Trước', next:'Tiếp theo',
-    writingPractice:'✍️ Luyện viết', writingDevices:'Chuột · ngón tay · Apple Pencil', clear:'Xóa', showGuide:'Hiện chữ mẫu mờ', writingTip:'<strong>Cách luyện:</strong> bấm ▶ trong ô để xem thứ tự nét → tô theo mẫu → tắt mẫu → tự viết → đọc thành tiếng chữ vừa viết.', strokeGuideTitle:'🧭 Hướng dẫn thứ tự nét', strokeGuideHint:'Xem thứ tự nét của từng chữ trước khi viết. Website tự tải dữ liệu thứ tự nét, bạn không cần tự tìm hay upload GIF.', strokeGuideRules:'<strong>Quy tắc nhanh:</strong><ul><li>Từ trên xuống dưới.</li><li>Từ trái sang phải.</li><li>Ngang trước, sổ sau.</li><li>Bên ngoài trước, bên trong sau.</li><li>Khung ngoài đóng sau cùng.</li></ul>', strokeAnimate:'Xem thứ tự nét', strokeReplay:'Phát lại', strokeOrderLabel:n=>`Chữ ${n}`, strokeGuideNote:'Bắt đầu từ nét 1 và đi theo hoạt ảnh đến nét cuối cùng.', strokeAnimationUnavailable:'Không tải được hoạt ảnh thứ tự nét cho chữ này.',
+    writingPractice:'✍️ Luyện viết', writingDevices:'Chuột · ngón tay · Apple Pencil', clear:'Xóa', showGuide:'Hiện chữ mẫu mờ', writingTip:'<strong>Cách luyện:</strong> bấm ▶ để xem thứ tự nét → viết theo mẫu → tắt mẫu → tự viết. <strong>Nét bạn vẽ luôn được giữ nguyên</strong>, không tự biến thành nét mẫu.', studyMode:'Cách học', studyByLevel:'Theo trình độ', studyBySet:'Theo từng bộ', studyByLevelDesc:'Chọn A1, A2, B1, B2, C1/C2 rồi học theo ngày như hiện tại.', studyBySetDesc:'Mỗi ngày hiện tại được xem như một bộ từ. Học xong bộ nào thì chuyển thẳng sang luyện viết đúng bộ đó.', setLabel:n=>`Bộ ${n}`, chooseSet:'Chọn bộ để học', setProgress:(a,b)=>`${a}/${b} từ đã đánh giá`, setComplete:'Đã học xong', setStudy:'Học bộ này', setWriting:'Tập viết bộ này', setWritingTitle:(level,n)=>`Luyện viết ${level} · Bộ ${n}`, backToSets:'Quay về các bộ', writingPrevWord:'Từ trước', writingNextWord:'Từ tiếp', writingFinish:'Hoàn thành & chọn bộ khác', setWritingHelp:'Luyện lần lượt từng từ trong bộ. Bấm Từ tiếp để chuyển sang từ kế tiếp; đến từ cuối cùng có thể quay về danh sách bộ.', writingSingleMode:'Ô đơn', writingCopybookMode:'Luyện lặp', brushMode:'🖌 Bút thư pháp (Apple Pencil)', brushModeHint:'Bật: nét thay đổi độ dày theo lực nhấn Apple Pencil. Tắt: nét đều như bút thường.', copybookHint:'Mỗi hàng: 1 ô mẫu → 3 ô tô theo mẫu mờ dần → 4 ô tự viết. Nét bạn viết luôn được giữ nguyên để tự so sánh.', clearRow:'Xóa hàng', sampleCell:'Mẫu', strokeGuideTitle:'🧭 Hướng dẫn thứ tự nét', strokeGuideHint:'Xem thứ tự nét của từng chữ trước khi viết. Website tự tải dữ liệu thứ tự nét, bạn không cần tự tìm hay upload GIF.', strokeGuideRules:'<strong>Quy tắc nhanh:</strong><ul><li>Từ trên xuống dưới.</li><li>Từ trái sang phải.</li><li>Ngang trước, sổ sau.</li><li>Bên ngoài trước, bên trong sau.</li><li>Khung ngoài đóng sau cùng.</li></ul>', strokeAnimate:'Xem thứ tự nét', strokeReplay:'Phát lại', strokeOrderLabel:n=>`Chữ ${n}`, strokeGuideNote:'Bắt đầu từ nét 1 và đi theo hoạt ảnh đến nét cuối cùng.', strokeAnimationUnavailable:'Không tải được hoạt ảnh thứ tự nét cho chữ này.',
     creatingQuestion:'Đang tạo câu hỏi…', anotherQuestion:'Câu khác', reviewed:'Đã đánh giá', backupTitle:'💾 Sao lưu tiến độ', backupDesc:'Tiến độ được lưu trong trình duyệt của từng thiết bị. Bạn có thể xuất file để chuyển sang thiết bị khác.', exportProgress:'Xuất tiến độ', importProgress:'Nhập tiến độ', resetProgress:'Xóa tiến độ',
     footerNote:'Dữ liệu từ vựng của từng trình độ được tải từ thư mục data. English có thể được bổ sung từ CC-CEDICT khi có mạng; câu ví dụ bổ sung phục vụ học tập và không phải câu mẫu chính thức của TOCFL.',
     newWords:n=>`${n} từ mới`, allDays:'Tất cả ngày', dayOption:n=>`Ngày ${n}`, searchPlaceholder:'Tìm chữ, pinyin hoặc nghĩa…',
     loadingEnglish:'Đang tải nghĩa English…', englishUnavailable:'Chưa lấy được nghĩa English.', sourceWarning:'Lưu ý dữ liệu nguồn:', likelyForm:'Ví dụ dùng dạng được suy đoán theo pinyin/nghĩa:',
     recordIdle:'Giọng ghi âm chỉ lưu tạm trên thiết bị.', recording:'🔴 Đang ghi âm… hãy đọc từ hiện tại.', recordDone:'Đã ghi xong. Bạn có thể phát lại hoặc kiểm tra phát âm.', micDenied:'Không truy cập được microphone. Hãy cấp quyền microphone cho website.', recorderUnsupported:'Thiết bị/trình duyệt này chưa hỗ trợ ghi âm bằng MediaRecorder.',
-    speechUnsupported:'Thiết bị/trình duyệt này chưa hỗ trợ thu âm để gửi AI.', speechListening:'🎧 Đang thu âm khoảng 3,5 giây… hãy nói từ mẫu một lần ngay bây giờ.', noRecognition:'AI không nhận được chữ. Hãy nói lại rõ hơn.', recognitionDone:'✅ Groq AI đã nhận dạng xong. Kết quả ở bên dưới.', aiRecognizing:'🤖 AI đang nhận dạng…', speechNoSpeech:'🎤 Không phát hiện được tiếng nói. Hãy bấm kiểm tra rồi nói ngay.', speechPermissionDenied:'🔒 Chưa có quyền microphone. Hãy cho phép website dùng microphone.', speechGenericError:'⚠️ Không nhận dạng được bằng Groq AI. Hãy thử lại.', groqLoginRequired:'🔐 Hãy đăng nhập trước khi kiểm tra phát âm.', groqNotConnected:'☁️ Tài khoản chưa kết nối Groq API Key cá nhân. Mở Tài khoản → Groq AI Speech cá nhân để nhập Key.', groqTranscriptionError:'Không lấy được kết quả từ Groq AI.', guestTrialExhausted:'🎁 Bạn đã dùng hết 20 lượt AI miễn phí trên trình duyệt này. Đăng nhập để tiếp tục bằng Groq Key cá nhân.', guestTrialRemaining:(n,l)=>`✅ Groq AI đã nhận dạng xong · Guest còn ${n}/${l} lượt.`,
+    speechUnsupported:'Thiết bị/trình duyệt này chưa hỗ trợ thu âm để gửi AI.', speechListening:'🎧 Đang thu âm khoảng 3,5 giây… hãy nói từ mẫu một lần ngay bây giờ.', noRecognition:'AI không nhận được chữ. Hãy nói lại rõ hơn.', recognitionDone:'✅ Groq AI đã nhận dạng xong. Kết quả ở bên dưới.', speechNoSpeech:'🎤 Không phát hiện được tiếng nói. Hãy bấm kiểm tra rồi nói ngay.', speechPermissionDenied:'🔒 Chưa có quyền microphone. Hãy cho phép website dùng microphone.', speechGenericError:'⚠️ Không nhận dạng được bằng Groq AI. Hãy thử lại.', groqLoginRequired:'🔐 Hãy đăng nhập trước khi kiểm tra phát âm.', groqNotConnected:'☁️ Tài khoản chưa kết nối Groq API Key cá nhân. Mở Tài khoản → Groq AI Speech cá nhân để nhập Key.', groqTranscriptionError:'Không lấy được kết quả từ Groq AI.',
     feedbackExcellent:'AI nghe đúng từ mẫu.', feedbackGood:'AI nghe gần đúng. Hãy nghe mẫu và thử lại.', feedbackRetry:'AI nghe thành từ khác. Hãy nghe chậm rồi đọc lại.',
     quizMeaning:q=>`“${q}” nghĩa là gì?`, quizPinyin:q=>`Pinyin của “${q}” là gì?`, quizEnglish:q=>`English của “${q}” là gì?`, correct:'✅ Chính xác!', answer:a=>`❌ Đáp án: ${a}`, noVocab:'Không tìm thấy từ phù hợp.',
     exportDone:'Đã xuất file tiến độ.', importDone:'Đã nhập tiến độ thành công.', resetConfirm:'Xóa toàn bộ tiến độ và từ đã đánh dấu trên thiết bị này?', resetDone:'Đã xóa tiến độ.', invalidFile:'File không đúng định dạng.',
     generatedExample:'Ví dụ bổ sung tự động', curatedExample:'Ví dụ đã biên soạn'
   },
   en: {
-    day:'Day', navToday:'Today', navVocab:'Vocabulary', navQuiz:'Quiz', navHomework:'Homework', navProgress:'Progress', goal:'Goal',
-    favorite:'Favorite word', listenWord:'Listen', slow:'Slow', fast:'Fast', hidePinyin:'Hide Pinyin', showPinyin:'Show Pinyin',
+    day:'Day', navToday:'Today', navVocab:'Vocabulary', navQuiz:'Quiz', navProgress:'Progress', goal:'Goal',
+    favorite:'Favorite word', listenWord:'Listen', slow:'Slow', hidePinyin:'Hide Pinyin', showPinyin:'Show Pinyin',
     pronunciationPractice:'🎙 Pronunciation practice', startRecording:'Start recording', stop:'Stop', playback:'Playback', checkPronunciation:'Check pronunciation',
     target:'Target:', recognized:'AI recognized:', assessmentNote:'Groq Whisper AI transcribes your Chinese speech. The score is text-match similarity, not a professional tone/phoneme pronunciation score.', accuracyLabel:'Accuracy', fluencyLabel:'Fluency', completenessLabel:'Completeness',
     examples:'💬 Example sentences', examplesHint:'Tap the speaker to hear the full sentence in zh-TW.', rememberLevel:'How well do you remember this word?', notRemembered:'Not yet', learning:'Learning', remembered:'Remembered', previous:'Previous', next:'Next',
-    writingPractice:'✍️ Writing practice', writingDevices:'Mouse · finger · Apple Pencil', clear:'Clear', showGuide:'Show faint guide', writingTip:'<strong>Practice:</strong> tap ▶ inside the box to preview stroke order → trace the guide → hide it → write from memory → say the character aloud.', strokeGuideTitle:'🧭 Stroke-order guide', strokeGuideHint:'Preview the stroke order before writing. The website loads stroke-order data automatically; you do not need to find or upload GIFs.', strokeGuideRules:'<strong>Quick rules:</strong><ul><li>Top to bottom.</li><li>Left to right.</li><li>Horizontal before vertical.</li><li>Outside before inside.</li><li>Close outer frames last.</li></ul>', strokeAnimate:'Show stroke order', strokeReplay:'Replay', strokeOrderLabel:n=>`Character ${n}`, strokeGuideNote:'Start with stroke 1 and follow the animation until the last stroke.', strokeAnimationUnavailable:'Stroke-order animation could not be loaded for this character.',
+    writingPractice:'✍️ Writing practice', writingDevices:'Mouse · finger · Apple Pencil', clear:'Clear', showGuide:'Show faint guide', writingTip:'<strong>Practice:</strong> tap ▶ to preview stroke order → write over the guide → hide it → write from memory. <strong>Your ink always stays exactly as drawn</strong>; it is never replaced by the model.', studyMode:'Study mode', studyByLevel:'By level', studyBySet:'By set', studyByLevelDesc:'Choose A1, A2, B1, B2, C1/C2 and study by day as before.', studyBySetDesc:'Each current day becomes a vocabulary set. After studying a set, move directly into writing practice for that same set.', setLabel:n=>`Set ${n}`, chooseSet:'Choose a set', setProgress:(a,b)=>`${a}/${b} words reviewed`, setComplete:'Completed', setStudy:'Study this set', setWriting:'Practice writing', setWritingTitle:(level,n)=>`Writing practice ${level} · Set ${n}`, backToSets:'Back to sets', writingPrevWord:'Previous word', writingNextWord:'Next word', writingFinish:'Finish & choose another set', setWritingHelp:'Practice the words in this set one by one. Use Next word to continue; after the final word, return to the set list.', writingSingleMode:'Single box', writingCopybookMode:'Repeat practice', brushMode:'🖌 Calligraphy brush (Apple Pencil)', brushModeHint:'On: line thickness follows Apple Pencil pressure. Off: normal constant-width pen.', copybookHint:'Each row: 1 model box → 3 progressively lighter tracing boxes → 4 blank boxes. Your own ink remains unchanged for comparison.', clearRow:'Clear row', sampleCell:'Model', strokeGuideTitle:'🧭 Stroke-order guide', strokeGuideHint:'Preview the stroke order before writing. The website loads stroke-order data automatically; you do not need to find or upload GIFs.', strokeGuideRules:'<strong>Quick rules:</strong><ul><li>Top to bottom.</li><li>Left to right.</li><li>Horizontal before vertical.</li><li>Outside before inside.</li><li>Close outer frames last.</li></ul>', strokeAnimate:'Show stroke order', strokeReplay:'Replay', strokeOrderLabel:n=>`Character ${n}`, strokeGuideNote:'Start with stroke 1 and follow the animation until the last stroke.', strokeAnimationUnavailable:'Stroke-order animation could not be loaded for this character.',
     creatingQuestion:'Creating a question…', anotherQuestion:'Another question', reviewed:'Reviewed', backupTitle:'💾 Progress backup', backupDesc:'Progress is stored in the browser on each device. Export a file to move it to another device.', exportProgress:'Export progress', importProgress:'Import progress', resetProgress:'Reset progress',
     footerNote:'Vocabulary for each level is loaded from the data folder. English glosses may be supplemented from CC-CEDICT when online; example sentences are study supplements and are not official TOCFL examples.',
     newWords:n=>`${n} new words`, allDays:'All days', dayOption:n=>`Day ${n}`, searchPlaceholder:'Search Hanzi, Pinyin or meaning…',
     loadingEnglish:'Loading English definition…', englishUnavailable:'English definition unavailable.', sourceWarning:'Source-data note:', likelyForm:'Examples use the likely intended form based on the source pinyin/meaning:',
     recordIdle:'The recording is kept only temporarily on this device.', recording:'🔴 Recording… say the current word.', recordDone:'Recording complete. Play it back or check pronunciation.', micDenied:'Microphone access failed. Allow microphone permission for this site.', recorderUnsupported:'This browser/device does not support MediaRecorder.',
-    speechUnsupported:'This browser/device cannot record audio for AI transcription.', speechListening:'🎧 Recording for about 3.5 seconds… say the target word once now.', noRecognition:'AI did not return recognized text. Please try again clearly.', recognitionDone:'✅ Groq AI transcription complete. See the result below.', aiRecognizing:'🤖 AI is transcribing…', speechNoSpeech:'🎤 No speech was detected. Tap check and speak immediately.', speechPermissionDenied:'🔒 Microphone permission is not available. Allow microphone access for this site.', speechGenericError:'⚠️ Groq AI transcription failed. Please try again.', groqLoginRequired:'🔐 Sign in before checking pronunciation.', groqNotConnected:'☁️ This account has not connected its personal Groq API Key. Open Account → Personal Groq AI Speech and enter the key.', groqTranscriptionError:'Could not obtain a result from Groq AI.', guestTrialExhausted:'🎁 This browser has used all 20 free AI checks. Sign in to continue with a personal Groq key.', guestTrialRemaining:(n,l)=>`✅ Groq AI complete · Guest has ${n}/${l} checks left.`,
+    speechUnsupported:'This browser/device cannot record audio for AI transcription.', speechListening:'🎧 Recording for about 3.5 seconds… say the target word once now.', noRecognition:'AI did not return recognized text. Please try again clearly.', recognitionDone:'✅ Groq AI transcription complete. See the result below.', speechNoSpeech:'🎤 No speech was detected. Tap check and speak immediately.', speechPermissionDenied:'🔒 Microphone permission is not available. Allow microphone access for this site.', speechGenericError:'⚠️ Groq AI transcription failed. Please try again.', groqLoginRequired:'🔐 Sign in before checking pronunciation.', groqNotConnected:'☁️ This account has not connected its personal Groq API Key. Open Account → Personal Groq AI Speech and enter the key.', groqTranscriptionError:'Could not obtain a result from Groq AI.',
     feedbackExcellent:'AI recognized the target word exactly.', feedbackGood:'AI recognized something close. Listen to the model and try again.', feedbackRetry:'AI recognized a different word. Listen slowly and try again.',
     quizMeaning:q=>`What does “${q}” mean in Vietnamese?`, quizPinyin:q=>`What is the Pinyin for “${q}”?`, quizEnglish:q=>`What does “${q}” mean in English?`, correct:'✅ Correct!', answer:a=>`❌ Answer: ${a}`, noVocab:'No matching vocabulary found.',
     exportDone:'Progress file exported.', importDone:'Progress imported successfully.', resetConfirm:'Delete all progress and favorites on this device?', resetDone:'Progress deleted.', invalidFile:'Invalid progress file.',
     generatedExample:'Auto-generated study example', curatedExample:'Curated example'
   },
   'zh-Hant': {
-    day:'第', navToday:'今天', navVocab:'詞彙', navQuiz:'測驗', navHomework:'作業', navProgress:'進度', goal:'今日目標',
-    favorite:'收藏單字', listenWord:'聽單字', slow:'慢速', fast:'加速', hidePinyin:'隱藏拼音', showPinyin:'顯示拼音',
+    day:'第', navToday:'今天', navVocab:'詞彙', navQuiz:'測驗', navProgress:'進度', goal:'今日目標',
+    favorite:'收藏單字', listenWord:'聽單字', slow:'慢速', hidePinyin:'隱藏拼音', showPinyin:'顯示拼音',
     pronunciationPractice:'🎙 發音練習', startRecording:'開始錄音', stop:'停止', playback:'播放錄音', checkPronunciation:'檢查發音',
     target:'目標：', recognized:'AI 辨識：', assessmentNote:'Groq Whisper AI 會轉寫你的中文語音。分數代表 AI 文字辨識與目標詞的相似度，不是專業聲調／音位評分。', accuracyLabel:'準確度', fluencyLabel:'流暢度', completenessLabel:'完整度',
     examples:'💬 例句', examplesHint:'按喇叭可用 zh-TW 聽完整句子。', rememberLevel:'你記得這個詞嗎？', notRemembered:'還不會', learning:'不太熟', remembered:'記住了', previous:'上一個', next:'下一個',
-    writingPractice:'✍️ 寫字練習', writingDevices:'滑鼠 · 手指 · Apple Pencil', clear:'清除', showGuide:'顯示淡色範字', writingTip:'<strong>練習方式：</strong>先按方格內的 ▶ 看筆順 → 描字 → 關閉範字 → 默寫 → 大聲讀出剛寫的字。', strokeGuideTitle:'🧭 筆順提示', strokeGuideHint:'寫字前先看每個字的筆順。網站會自動載入筆順資料，不需要另外找或上傳 GIF。', strokeGuideRules:'<strong>快速規則：</strong><ul><li>由上到下。</li><li>由左到右。</li><li>先橫後豎。</li><li>先外後內。</li><li>外框最後封口。</li></ul>', strokeAnimate:'看筆順', strokeReplay:'再播一次', strokeOrderLabel:n=>`第 ${n} 個字`, strokeGuideNote:'從第 1 畫開始，依照動畫一路看到最後一畫。', strokeAnimationUnavailable:'目前無法載入這個字的筆順動畫。',
+    writingPractice:'✍️ 寫字練習', writingDevices:'滑鼠 · 手指 · Apple Pencil', clear:'清除', showGuide:'顯示淡色範字', writingTip:'<strong>練習方式：</strong>先按 ▶ 看筆順 → 描字 → 關閉範字 → 默寫。<strong>你自己寫的筆跡會完整保留</strong>，不會自動變成範字。', studyMode:'學習方式', studyByLevel:'依程度', studyBySet:'依單元', studyByLevelDesc:'先選 A1、A2、B1、B2、C1/C2，再像目前一樣依天學習。', studyBySetDesc:'把目前每一天視為一個單元。學完某個單元後，可直接練習該單元的寫字。', setLabel:n=>`第 ${n} 單元`, chooseSet:'選擇學習單元', setProgress:(a,b)=>`已評估 ${a}/${b} 個詞`, setComplete:'已完成', setStudy:'學習這個單元', setWriting:'練習寫字', setWritingTitle:(level,n)=>`${level} · 第 ${n} 單元寫字`, backToSets:'返回單元', writingPrevWord:'上一個詞', writingNextWord:'下一個詞', writingFinish:'完成並選其他單元', setWritingHelp:'依序練習本單元的每個詞。按「下一個詞」繼續；最後一個詞完成後可返回單元清單。', writingSingleMode:'單格練習', writingCopybookMode:'重複練習', brushMode:'🖌 毛筆模式（Apple Pencil）', brushModeHint:'開啟：筆畫粗細會依 Apple Pencil 壓力變化。關閉：使用固定粗細的一般筆。', copybookHint:'每一列：1 格範字 → 3 格逐漸變淡的描字 → 4 格空白默寫。你的筆跡會保留，方便自己比較。', clearRow:'清除此列', sampleCell:'範字', strokeGuideTitle:'🧭 筆順提示', strokeGuideHint:'寫字前先看每個字的筆順。網站會自動載入筆順資料，不需要另外找或上傳 GIF。', strokeGuideRules:'<strong>快速規則：</strong><ul><li>由上到下。</li><li>由左到右。</li><li>先橫後豎。</li><li>先外後內。</li><li>外框最後封口。</li></ul>', strokeAnimate:'看筆順', strokeReplay:'再播一次', strokeOrderLabel:n=>`第 ${n} 個字`, strokeGuideNote:'從第 1 畫開始，依照動畫一路看到最後一畫。', strokeAnimationUnavailable:'目前無法載入這個字的筆順動畫。',
     creatingQuestion:'正在出題…', anotherQuestion:'下一題', reviewed:'已評估', backupTitle:'💾 備份學習進度', backupDesc:'進度儲存在每台裝置的瀏覽器中。可匯出檔案，再匯入另一台裝置。', exportProgress:'匯出進度', importProgress:'匯入進度', resetProgress:'清除進度',
     footerNote:'各級詞彙從 data 資料夾載入。連網時可由 CC-CEDICT 補充英文釋義；例句為學習補充，並非 TOCFL 官方例句。',
     newWords:n=>`${n} 個新詞`, allDays:'全部', dayOption:n=>`第 ${n} 天`, searchPlaceholder:'搜尋漢字、拼音或意思…',
     loadingEnglish:'正在載入英文釋義…', englishUnavailable:'暫時無法取得英文釋義。', sourceWarning:'原始資料提醒：', likelyForm:'例句依原始拼音／意思採用推測的詞形：',
     recordIdle:'錄音只會暫時保留在此裝置。', recording:'🔴 錄音中……請讀目前的詞。', recordDone:'錄音完成。可播放錄音或檢查發音。', micDenied:'無法使用麥克風，請允許此網站使用麥克風。', recorderUnsupported:'此瀏覽器／裝置不支援 MediaRecorder。',
-    speechUnsupported:'此瀏覽器／裝置無法錄音給 AI 辨識。', speechListening:'🎧 正在錄音約 3.5 秒……請現在讀一次目標詞。', noRecognition:'AI 沒有回傳辨識文字，請清楚地再試一次。', recognitionDone:'✅ Groq AI 已完成辨識，結果如下。', aiRecognizing:'🤖 AI 正在辨識…', speechNoSpeech:'🎤 沒有偵測到語音，請按檢查後立即說話。', speechPermissionDenied:'🔒 尚未取得麥克風權限，請允許此網站使用麥克風。', speechGenericError:'⚠️ Groq AI 辨識失敗，請再試一次。', groqLoginRequired:'🔐 請先登入再檢查發音。', groqNotConnected:'☁️ 此帳號尚未連接個人的 Groq API Key。請到帳號 → 個人 Groq AI Speech 輸入 Key。', groqTranscriptionError:'無法取得 Groq AI 的辨識結果。', guestTrialExhausted:'🎁 此瀏覽器的 20 次免費 AI 檢查已用完。登入後可使用個人 Groq Key 繼續。', guestTrialRemaining:(n,l)=>`✅ Groq AI 完成 · 訪客還有 ${n}/${l} 次。`,
+    speechUnsupported:'此瀏覽器／裝置無法錄音給 AI 辨識。', speechListening:'🎧 正在錄音約 3.5 秒……請現在讀一次目標詞。', noRecognition:'AI 沒有回傳辨識文字，請清楚地再試一次。', recognitionDone:'✅ Groq AI 已完成辨識，結果如下。', speechNoSpeech:'🎤 沒有偵測到語音，請按檢查後立即說話。', speechPermissionDenied:'🔒 尚未取得麥克風權限，請允許此網站使用麥克風。', speechGenericError:'⚠️ Groq AI 辨識失敗，請再試一次。', groqLoginRequired:'🔐 請先登入再檢查發音。', groqNotConnected:'☁️ 此帳號尚未連接個人的 Groq API Key。請到帳號 → 個人 Groq AI Speech 輸入 Key。', groqTranscriptionError:'無法取得 Groq AI 的辨識結果。',
     feedbackExcellent:'AI 正確辨識出目標詞。', feedbackGood:'AI 辨識結果接近，請聽範例後再試一次。', feedbackRetry:'AI 辨識成其他詞，請慢速聆聽後再試一次。',
     quizMeaning:q=>`「${q}」的越南文意思是什麼？`, quizPinyin:q=>`「${q}」的拼音是什麼？`, quizEnglish:q=>`「${q}」的英文意思是什麼？`, correct:'✅ 答對了！', answer:a=>`❌ 答案：${a}`, noVocab:'找不到符合的詞。',
     exportDone:'已匯出進度檔。', importDone:'已成功匯入進度。', resetConfirm:'要清除這台裝置上的全部進度與收藏嗎？', resetDone:'已清除進度。', invalidFile:'檔案格式不正確。',
@@ -85,7 +87,9 @@ const state = {
   groqRecognitionRunning: false,
   pinyinMap: new Map(),
   activeLevel: 'A1', rememberLevel: false, levelStates: {}, levelDataCache: {},
-  levelAvailability: {}, currentUserId: null
+  levelAvailability: {}, currentUserId: null,
+  writingPracticeMode:'single', writingBrushMode:false,
+  studyPathMode:'level', setWritingSession:false, setWritingRestoreMode:'single'
 };
 
 const LEVEL_UI = {
@@ -237,6 +241,12 @@ function persistMultiState(){
 
 function loadLocalState(){
   const lang=localStorage.getItem(LANGUAGE_KEY); if(I18N[lang]) state.lang=lang;
+  try{const sf=JSON.parse(localStorage.getItem(STUDY_FLOW_KEY)||'null');if(sf?.mode==='set'||sf?.mode==='level')state.studyPathMode=sf.mode;}catch{}
+  try{
+    const ws=JSON.parse(localStorage.getItem(WRITING_SETTINGS_KEY)||'null');
+    if(ws?.mode==='copybook'||ws?.mode==='single') state.writingPracticeMode=ws.mode;
+    state.writingBrushMode=Boolean(ws?.brushMode);
+  }catch{}
   let multi=null;
   try{ multi=JSON.parse(localStorage.getItem(MULTI_STATE_KEY)||'null'); }catch{}
   if(multi?.levels && typeof multi.levels==='object'){
@@ -262,6 +272,7 @@ async function applyLevel(levelId,{notify=true,close=true,skipSnapshot=false}={}
   const pack=await loadLevelData(id,{force:false});
   if(!pack) return false;
   if(!skipSnapshot) saveCurrentLevelSnapshot();
+  if(state.setWritingSession){state.setWritingSession=false;document.body.classList.remove('set-writing-session');}
   state.activeLevel=id; state.allWords=pack.words; state.enrich=pack.enrich||{};
   const saved=normalizeLevelState(state.levelStates[id]||emptyLevelState());
   state.levelStates[id]=saved; state.progress=saved.progress; state.favorites=new Set(saved.favorites); state.day=saved.lastDay; state.index=0;
@@ -285,9 +296,8 @@ async function init(){
     const saved=normalizeLevelState(state.levelStates[desired]||emptyLevelState());
     state.levelStates[desired]=saved; state.progress=saved.progress; state.favorites=new Set(saved.favorites); state.day=saved.lastDay;
     loadEnglishCacheForLevel(desired); buildPinyinMap();
-    bindLanguage(); buildDaySelectors(); bindNavigation(); bindStudyControls(); bindRecorder(); bindCanvas(); bindVocab(); bindQuiz(); bindBackup(); bindLevelSelector();
+    bindLanguage(); buildDaySelectors(); bindNavigation(); bindStudyControls(); bindRecorder(); bindCanvas(); bindVocab(); bindQuiz(); bindBackup(); bindLevelSelector(); bindStudyFlow();
     updateBranding(); applyLanguage(); selectDay(saved.lastDay,{notify:false});
-    showView(preferredView(),{persist:false,scroll:false});
     registerServiceWorker();
     window.TOCFL_APP_READY=true;
     document.dispatchEvent(new CustomEvent('tocfl:app-ready'));
@@ -327,6 +337,9 @@ function applyLanguage() {
   if (!state.recordingUrl && !state.recognitionRunning) $('recordStatus').textContent=t('recordIdle');
   updateBranding();
   renderLevelSelector();
+  renderStudyModeUI();
+  renderSetStudyBanner();
+  updateSetWritingSessionUI();
 }
 
 function buildDaySelectors(){
@@ -338,8 +351,10 @@ function buildDaySelectors(){
   refreshDaySelectorLabels();
 }
 function refreshDaySelectorLabels(){
-  [...$('daySelect').options].forEach((o,i)=>o.textContent=t('dayOption',i+1));
-  [...$('vocabDayFilter').options].forEach((o,i)=>o.textContent=i===0?t('allDays'):t('dayOption',i));
+  const setMode=state.studyPathMode==='set';
+  [...$('daySelect').options].forEach((o,i)=>o.textContent=setMode?t('setLabel',i+1):t('dayOption',i+1));
+  [...$('vocabDayFilter').options].forEach((o,i)=>o.textContent=i===0?t('allDays'):(setMode?t('setLabel',i):t('dayOption',i)));
+  const lbl=$('daySelectLabel'); if(lbl)lbl.textContent=setMode?(state.lang==='zh-Hant'?'單元':state.lang==='en'?'Set':'Bộ'):t('day');
 }
 function selectDay(day,{notify=true}={}){
   const maxDay=Math.max(1,...state.allWords.map(w=>Number(w.day||1)));
@@ -351,7 +366,7 @@ function selectDay(day,{notify=true}={}){
   state.index=0; $('daySelect').value=String(state.day);
   saveCurrentLevelSnapshot(); persistMultiState();
   $('dailyTargetLabel').textContent=t('newWords',state.dayWords.length);
-  renderCurrentWord(); updateProgressUI(); renderVocabList(); makeQuiz();
+  renderCurrentWord(); updateProgressUI(); renderVocabList(); makeQuiz(); updateBranding(); renderSetStudyBanner(); updateSetWritingSessionUI();
   if(notify) document.dispatchEvent(new CustomEvent('tocfl:state-changed'));
 }
 function currentWord(){return state.dayWords[state.index]||state.allWords[0];}
@@ -366,11 +381,10 @@ function renderCurrentWord(){
   if(!state.dayWords.length)return;
   const w=currentWord();
   $('hanzi').textContent=w.traditional; $('pinyin').textContent=state.pinyinVisible?w.pinyin:'••••';
-  const pinyinHint=$('pinyinViHint'); if(pinyinHint){ const guide=state.pinyinVisible && state.lang==='vi' ? window.TOCFLPinyin?.compactGuide?.(w.pinyin) : ''; pinyinHint.textContent=guide ? `🇻🇳 Gợi âm: ${guide}` : ''; pinyinHint.hidden=!guide; }
   $('meaningVi').textContent=w.meaning_vi||'—'; $('meaningEn').textContent=englishFor(w); $('meaningEn').classList.toggle('loading-shimmer',isEnglishPending(w));
   $('levelPos').textContent=`${w.level||'A1'}${w.pos?' · '+w.pos:''}`; $('wordIndex').textContent=`${state.index+1} / ${state.dayWords.length}`;
   $('favoriteBtn').textContent=state.favorites.has(w.id)?'★':'☆'; $('togglePinyinBtn').textContent=state.pinyinVisible?t('hidePinyin'):t('showPinyin');
-  renderSourceNote(w); renderExamples(w); renderMemoryButtons(w); renderWritingBoxes(w); resetRecordingForNewWord();
+  renderSourceNote(w); renderExamples(w); renderMemoryButtons(w); renderWritingBoxes(w); renderCopybookPractice(w); applyWritingModeUI(); resetRecordingForNewWord(); updateSetWritingSessionUI(); renderSetStudyBanner();
 }
 function renderSourceNote(w){
   const box=$('dictionaryNote'); box.textContent='';
@@ -424,7 +438,7 @@ function renderExamples(w){
     const zh=document.createElement('div');zh.className='example-zh';zh.textContent=ex.zh;
     const py=document.createElement('div');py.className='example-pinyin';py.textContent=state.pinyinVisible?(ex.pinyin||sentencePinyin(ex.zh,w)):'••••••••';
     text.append(zh,py);
-    const btn=document.createElement('button');btn.type='button';btn.className='icon-btn';btn.textContent='🔊';btn.title=`Listen ${idx+1}`;btn.addEventListener('click',()=>speak(ex.zh,.76));
+    const btn=document.createElement('button');btn.type='button';btn.className='icon-btn';btn.textContent='🔊';btn.title=`Listen ${idx+1}`;btn.addEventListener('click',()=>speak(ex.zh,.88));
     top.append(text,btn);
     const trans=document.createElement('div');trans.className='example-translations';
     const vi=document.createElement('div');vi.textContent=`🇻🇳 ${ex.vi}`;const en=document.createElement('div');en.textContent=`🇬🇧 ${ex.en}`;
@@ -741,9 +755,8 @@ function sentencePinyin(sentence,w){
 }
 
 function bindStudyControls(){
-  $('speakBtn').addEventListener('click',()=>speak(primaryForm(currentWord()),.76));
-  $('slowBtn').addEventListener('click',()=>speak(primaryForm(currentWord()),.50));
-  $('fastBtn')?.addEventListener('click',()=>speak(primaryForm(currentWord()),1.0));
+  $('speakBtn').addEventListener('click',()=>speak(primaryForm(currentWord()),.92));
+  $('slowBtn').addEventListener('click',()=>speak(primaryForm(currentWord()),.58));
   $('togglePinyinBtn').addEventListener('click',()=>{state.pinyinVisible=!state.pinyinVisible;renderCurrentWord();});
   $('prevBtn').addEventListener('click',()=>{state.index=(state.index-1+state.dayWords.length)%state.dayWords.length;renderCurrentWord();});
   $('nextBtn').addEventListener('click',()=>{state.index=(state.index+1)%state.dayWords.length;renderCurrentWord();});
@@ -847,6 +860,7 @@ async function capturePronunciationClip(durationMs=3500){
 async function checkPronunciationGroq(){
   resetPronunciationResult();
   if(state.groqRecognitionRunning)return;
+  if(!window.TOCFLAuth?.getSession?.()?.user){$('recordStatus').textContent=t('groqLoginRequired');showGroqFailure('groqLoginRequired');window.TOCFLAuth?.openAuth?.('login');return;}
   if(!window.TOCFLAuth?.transcribeWithGroq){$('recordStatus').textContent=t('speechGenericError');showGroqFailure('speechGenericError');return;}
   try{
     setGroqRecognitionBusy(true);
@@ -854,19 +868,18 @@ async function checkPronunciationGroq(){
     $('recordStatus').textContent=t('speechListening');
     const w=currentWord(),target=primaryForm(w);
     const clip=await capturePronunciationClip(3500);
-    $('recordStatus').textContent=t('aiRecognizing');
+    $('recordStatus').textContent='🤖 AI đang nhận dạng…';
     const result=await window.TOCFLAuth.transcribeWithGroq(clip,target);
     const recognized=String(result?.text||'').trim();
     if(!recognized)throw Object.assign(new Error(t('noRecognition')),{code:'NO_TRANSCRIPT'});
     renderGroqPronunciationResult(w,recognized);
-    $('recordStatus').textContent=result?.guest ? t('guestTrialRemaining',result.remaining,result.limit||20) : t('recognitionDone');
+    $('recordStatus').textContent=t('recognitionDone');
   }catch(err){
     console.warn('Groq pronunciation:',err);
     const code=String(err?.code||'');
     let key='speechGenericError';
-    if(code==='GUEST_LIMIT_REACHED')key='guestTrialExhausted'; else if(code==='NOT_CONNECTED')key='groqNotConnected'; else if(code==='NOT_SIGNED_IN')key='groqLoginRequired'; else if(code==='MIC_PERMISSION')key='speechPermissionDenied'; else if(code==='NO_TRANSCRIPT'||code==='EMPTY_AUDIO')key='noRecognition';
-    const friendlyMessage=code==='GUEST_LIMIT_REACHED'?t(key):(err?.message||t(key));
-    $('recordStatus').textContent=friendlyMessage;showGroqFailure(key,friendlyMessage);
+    if(code==='NOT_CONNECTED')key='groqNotConnected'; else if(code==='NOT_SIGNED_IN')key='groqLoginRequired'; else if(code==='MIC_PERMISSION')key='speechPermissionDenied'; else if(code==='NO_TRANSCRIPT'||code==='EMPTY_AUDIO')key='noRecognition';
+    $('recordStatus').textContent=err?.message||t(key);showGroqFailure(key,err?.message||'');
   }finally{setGroqRecognitionBusy(false);}
 }
 function renderGroqPronunciationResult(w,recognized){
@@ -884,9 +897,15 @@ function similarity(a,b){if(!a&&!b)return 1;if(!a||!b)return 0;const d=levenshte
 function levenshtein(a,b){const prev=Array.from({length:b.length+1},(_,i)=>i),cur=new Array(b.length+1);for(let i=1;i<=a.length;i++){cur[0]=i;for(let j=1;j<=b.length;j++)cur[j]=Math.min(cur[j-1]+1,prev[j]+1,prev[j-1]+(a[i-1]===b[j-1]?0:1));for(let j=0;j<=b.length;j++)prev[j]=cur[j];}return prev[b.length];}
 
 let writingCanvases=[];
+let copybookCanvases=[];
 let writingGuideInstances=[];
 let writingLabelInstances=[];
+let copybookGuideInstances=[];
 let writingInteractionCount=0;
+
+function saveWritingSettings(){
+  localStorage.setItem(WRITING_SETTINGS_KEY,JSON.stringify({mode:state.writingPracticeMode,brushMode:Boolean(state.writingBrushMode)}));
+}
 function clearBrowserSelection(){
   try{ window.getSelection?.()?.removeAllRanges?.(); }catch{}
   try{ document.selection?.empty?.(); }catch{}
@@ -897,8 +916,21 @@ function setWritingInteractionLock(active){
   document.body.classList.toggle('writing-active', on);
   if(on) clearBrowserSelection();
 }
+function applyWritingModeUI(){
+  const isCopy=state.writingPracticeMode==='copybook';
+  const single=$('singleWritingPanel'),copy=$('copybookWritingPanel');
+  if(single) single.hidden=isCopy;
+  if(copy) copy.hidden=!isCopy;
+  const sBtn=$('singleWritingModeBtn'),cBtn=$('copybookWritingModeBtn');
+  if(sBtn){sBtn.classList.toggle('is-active',!isCopy);sBtn.setAttribute('aria-selected',String(!isCopy));}
+  if(cBtn){cBtn.classList.toggle('is-active',isCopy);cBtn.setAttribute('aria-selected',String(isCopy));}
+  const brush=$('brushModeCheckbox'); if(brush) brush.checked=Boolean(state.writingBrushMode);
+}
 function bindCanvas(){
   $('clearCanvasBtn').addEventListener('click',clearWritingCanvas);
+  $('singleWritingModeBtn')?.addEventListener('click',()=>{state.writingPracticeMode='single';saveWritingSettings();applyWritingModeUI();});
+  $('copybookWritingModeBtn')?.addEventListener('click',()=>{state.writingPracticeMode='copybook';saveWritingSettings();applyWritingModeUI();});
+  $('brushModeCheckbox')?.addEventListener('change',e=>{state.writingBrushMode=Boolean(e.target.checked);saveWritingSettings();});
   $('showGuideCheckbox').addEventListener('change',e=>{
     const show=e.target.checked;
     writingGuideInstances.forEach(inst=>{
@@ -906,12 +938,18 @@ function bindCanvas(){
       inst.host.style.display=show?'block':'none';
       if(inst.fallback) inst.fallback.style.display=show && inst.fallback.dataset.failed==='1' ? 'flex' : 'none';
     });
+    copybookGuideInstances.forEach(inst=>{
+      if(inst.alwaysVisible)return;
+      const visible=show && inst.guideOpacity>0;
+      inst.host.style.display=visible?'block':'none';
+      if(inst.fallback) inst.fallback.style.display=visible && inst.fallback.dataset.failed==='1' ? 'flex' : 'none';
+    });
   });
   document.addEventListener('selectionchange',()=>{ if(document.body.classList.contains('writing-active')) clearBrowserSelection(); });
-  const grid=$('writingGrid');
+  const card=document.querySelector('.writing-card');
   ['touchstart','touchmove','touchend','touchcancel'].forEach(name=>{
-    grid.addEventListener(name,e=>{
-      if(e.target?.closest?.('.writing-preview-btn'))return;
+    card?.addEventListener(name,e=>{
+      if(e.target?.closest?.('button,input,label'))return;
       if(document.body.classList.contains('writing-active') && e.cancelable)e.preventDefault();
     },{passive:false});
   });
@@ -919,9 +957,11 @@ function bindCanvas(){
   window.addEventListener('pointercancel',()=>setWritingInteractionLock(false));
   window.addEventListener('blur',()=>setWritingInteractionLock(false));
   window.addEventListener('resize',()=>{
-    writingCanvases.forEach(resizeWritingCanvas);
+    [...writingCanvases,...copybookCanvases].forEach(resizeWritingCanvas);
     writingGuideInstances.forEach(x=>x?.writer?.resize?.());
+    copybookGuideInstances.forEach(x=>x?.writer?.resize?.());
   });
+  applyWritingModeUI();
 }
 function writingCharacters(word){
   const raw=primaryForm(word);
@@ -939,189 +979,238 @@ function renderWritingWordLabel(chars){
       const writer=makeStrokeGuideMiniWriter(cell,ch,null,()=>{ cell.hidden=true; fallback.hidden=false; });
       if(!writer) throw new Error('HanziWriter unavailable');
       writingLabelInstances.push({char:ch,writer,host:cell});
-    }catch(err){
-      cell.hidden=true; fallback.hidden=false;
-    }
+    }catch(err){ cell.hidden=true; fallback.hidden=false; }
   }
 }
-
+function createWritingCanvasItem(canvas,collection,options={}){
+  const ctx=canvas.getContext('2d');
+  const item={
+    canvas,ctx,dpr:1,drawing:false,lastPoint:[0,0],prevPoint:null,baseLineWidth:6,
+    pointerId:null,previewing:false,lastTime:0,lastWidth:6,captureTarget:null,
+    owner:options.owner||null
+  };
+  collection.push(item);
+  resizeWritingCanvas(item);
+  bindWritingSurface(canvas,item);
+  return item;
+}
+function preventWritingBrowserGesture(e){ if(e?.cancelable)e.preventDefault(); clearBrowserSelection(); }
+function beginWritingStroke(item,e,captureTarget=item.canvas){
+  if(item.previewing)return false;
+  if(e.pointerType==='mouse' && e.button!==0)return false;
+  preventWritingBrowserGesture(e); setWritingInteractionLock(true);
+  item.drawing=true; item.pointerId=e.pointerId; item.captureTarget=captureTarget;
+  try{captureTarget.setPointerCapture?.(e.pointerId);}catch{}
+  const pt=writingCanvasPoint(item,e); item.lastPoint=pt; item.prevPoint=pt; item.lastTime=e.timeStamp||performance.now();
+  item.lastWidth=writingLineWidth(item,e,pt,true);
+  drawWritingDot(item,pt,item.lastWidth);
+  item.canvas.closest('.writing-square,.copybook-cell')?.classList.add('has-user-ink');
+  return true;
+}
+function continueWritingStroke(item,e){
+  if(item.previewing || !item.drawing || (item.pointerId!==null && e.pointerId!==item.pointerId))return;
+  preventWritingBrowserGesture(e);
+  const samples=typeof e.getCoalescedEvents==='function' ? e.getCoalescedEvents() : [e];
+  for(const pe of samples){
+    const pt=writingCanvasPoint(item,pe);
+    const width=writingLineWidth(item,pe,pt,false);
+    drawWritingSegment(item,item.lastPoint,pt,item.lastWidth,width);
+    item.prevPoint=item.lastPoint; item.lastPoint=pt; item.lastWidth=width; item.lastTime=pe.timeStamp||performance.now();
+  }
+}
+function finishWritingStroke(item,e){
+  if(e && e.pointerId!==undefined && item.pointerId!==null && e.pointerId!==item.pointerId)return;
+  if(e)preventWritingBrowserGesture(e);
+  item.drawing=false; item.pointerId=null; item.captureTarget=null; item.prevPoint=null;
+  setWritingInteractionLock(false);
+}
+function bindWritingSurface(surface,item){
+  ['contextmenu','selectstart','dragstart'].forEach(name=>surface.addEventListener(name,e=>e.preventDefault()));
+  ['touchstart','touchmove','touchend','touchcancel'].forEach(name=>surface.addEventListener(name,preventWritingBrowserGesture,{passive:false}));
+  surface.addEventListener('pointerdown',e=>beginWritingStroke(item,e,surface),{passive:false});
+  surface.addEventListener('pointermove',e=>continueWritingStroke(item,e),{passive:false});
+  ['pointerup','pointercancel','pointerleave'].forEach(name=>surface.addEventListener(name,e=>finishWritingStroke(item,e),{passive:false}));
+  surface.addEventListener('lostpointercapture',e=>finishWritingStroke(item,e));
+}
+function drawWritingDot(item,pt,width){
+  const ctx=item.ctx; ctx.save(); ctx.fillStyle='#17211f'; ctx.beginPath(); ctx.arc(pt[0],pt[1],Math.max(1,width/2),0,Math.PI*2); ctx.fill(); ctx.restore();
+}
+function drawWritingSegment(item,a,b,widthA,widthB){
+  const ctx=item.ctx;
+  if(!state.writingBrushMode){
+    ctx.lineWidth=item.baseLineWidth; ctx.beginPath(); ctx.moveTo(a[0],a[1]); ctx.lineTo(b[0],b[1]); ctx.stroke(); return;
+  }
+  // Variable-width brush: interpolate short circles between coalesced Pencil samples.
+  // This preserves exactly what the user draws; no snapping/correction is performed.
+  const dx=b[0]-a[0],dy=b[1]-a[1],dist=Math.hypot(dx,dy);
+  const steps=Math.max(1,Math.ceil(dist/1.8));
+  ctx.save(); ctx.fillStyle='#17211f';
+  for(let i=1;i<=steps;i++){
+    const q=i/steps,x=a[0]+dx*q,y=a[1]+dy*q,w=widthA+(widthB-widthA)*q;
+    ctx.beginPath(); ctx.arc(x,y,Math.max(.8,w/2),0,Math.PI*2); ctx.fill();
+  }
+  ctx.restore();
+}
+function writingLineWidth(item,e,point,isStart=false){
+  const base=item.baseLineWidth||6;
+  if(!state.writingBrushMode)return base;
+  const penPressure=(e?.pointerType==='pen' && Number.isFinite(e.pressure) && e.pressure>0) ? e.pressure : null;
+  const now=e?.timeStamp||performance.now();
+  const dt=Math.max(1,now-(item.lastTime||now));
+  const dist=item.lastPoint ? Math.hypot(point[0]-item.lastPoint[0],point[1]-item.lastPoint[1]) : 0;
+  const speed=dist/dt; // px/ms
+  const speedFactor=Math.max(.76,Math.min(1.18,1.12-speed*.28));
+  const pressure=penPressure ?? Math.max(.28,Math.min(.72,.58-speed*.12));
+  const tilt=Number.isFinite(e?.tiltX)&&Number.isFinite(e?.tiltY) ? Math.min(1,Math.hypot(e.tiltX,e.tiltY)/90) : 0;
+  const target=base*(.38+1.72*pressure)*(1+.16*tilt)*speedFactor;
+  if(isStart || !Number.isFinite(item.lastWidth))return Math.max(base*.42,Math.min(base*2.45,target));
+  const smooth=item.lastWidth*.68+target*.32;
+  return Math.max(base*.42,Math.min(base*2.45,smooth));
+}
+function attachPreviewButton(previewBtn,guideInst,item){
+  let lastPreviewTrigger=0;
+  const triggerPreview=e=>{
+    // Pencil on the corner button continues to behave as ink, never as a command.
+    if(e?.pointerType==='pen')return;
+    if(e?.cancelable)e.preventDefault(); e?.stopPropagation?.();
+    const now=(window.performance?.now?.() ?? Date.now());
+    if(now-lastPreviewTrigger<450)return; lastPreviewTrigger=now;
+    previewWritingStrokeOrder(guideInst);
+  };
+  // If a Pencil stroke starts on the preview button, route that entire stroke into the ink canvas.
+  previewBtn.addEventListener('pointerdown',e=>{
+    if(e.pointerType==='pen'){
+      e.stopPropagation(); beginWritingStroke(item,e,previewBtn); return;
+    }
+    e.stopPropagation(); clearBrowserSelection();
+  },{passive:false});
+  previewBtn.addEventListener('pointermove',e=>{if(e.pointerType==='pen')continueWritingStroke(item,e);},{passive:false});
+  ['pointerup','pointercancel','pointerleave'].forEach(name=>previewBtn.addEventListener(name,e=>{
+    if(e.pointerType==='pen'){finishWritingStroke(item,e);return;}
+    if(name==='pointerup')triggerPreview(e);
+  },{passive:false}));
+  previewBtn.addEventListener('touchend',triggerPreview,{passive:false});
+  previewBtn.addEventListener('click',triggerPreview,{passive:false});
+}
 function renderWritingBoxes(word){
   const grid=$('writingGrid'); if(!grid)return;
   grid.innerHTML=''; writingCanvases=[]; writingGuideInstances=[];
-  const chars=writingCharacters(word);
-  renderWritingWordLabel(chars);
+  const chars=writingCharacters(word); renderWritingWordLabel(chars);
   chars.forEach((ch,idx)=>{
     const square=document.createElement('div'); square.className='writing-square';
     const lines=document.createElement('div'); lines.className='grid-lines'; lines.setAttribute('aria-hidden','true');
-    const guide=document.createElement('div'); guide.className='trace-char trace-vector';
-    guide.style.display=$('showGuideCheckbox').checked?'block':'none';
+    const guide=document.createElement('div'); guide.className='trace-char trace-vector'; guide.style.display=$('showGuideCheckbox').checked?'block':'none';
     const fallback=document.createElement('div'); fallback.className='trace-font-fallback'; fallback.textContent=ch; fallback.hidden=true; fallback.dataset.failed='0';
     const canvas=document.createElement('canvas'); canvas.className='writing-canvas'; canvas.setAttribute('aria-label',`Luyện viết chữ ${ch}, ô ${idx+1}`);
-
-    const previewBtn=document.createElement('button');
-    previewBtn.type='button'; previewBtn.className='writing-preview-btn'; previewBtn.textContent='▶';
-    previewBtn.title=t('strokeAnimate'); previewBtn.setAttribute('aria-label',`${t('strokeAnimate')}: ${ch}`); previewBtn.disabled=true;
-
+    const previewBtn=document.createElement('button'); previewBtn.type='button'; previewBtn.className='writing-preview-btn'; previewBtn.textContent='▶'; previewBtn.title=t('strokeAnimate'); previewBtn.setAttribute('aria-label',`${t('strokeAnimate')}: ${ch}`); previewBtn.disabled=true;
     const strokeBadge=document.createElement('span'); strokeBadge.className='writing-stroke-badge'; strokeBadge.textContent='…';
     square.append(lines,guide,fallback,canvas,previewBtn,strokeBadge); grid.append(square);
 
-    const ctx=canvas.getContext('2d');
-    const item={canvas,ctx,dpr:1,drawing:false,lastPoint:[0,0],baseLineWidth:6,pointerId:null,previewing:false}; writingCanvases.push(item);
-    resizeWritingCanvas(item);
-
-    let guideInst={char:ch,writer:null,host:guide,fallback,square,canvasItem:item,previewBtn,strokeBadge,previewing:false};
-    writingGuideInstances.push(guideInst);
+    const item=createWritingCanvasItem(canvas,writingCanvases,{owner:square});
+    const guideInst={char:ch,writer:null,host:guide,fallback,square,canvasItem:item,previewBtn,strokeBadge,previewing:false,guideOpacity:.16}; writingGuideInstances.push(guideInst);
     try{
       const writer=makeWritingGuideWriter(guide,ch,(data)=>{
-        guideInst.writer=writer;
-        fallback.hidden=true; fallback.dataset.failed='0';
+        guideInst.writer=writer; fallback.hidden=true; fallback.dataset.failed='0';
         const n=Array.isArray(data?.strokes)?data.strokes.length:0;
         strokeBadge.textContent=n ? (state.lang==='zh-Hant'?`${n} 畫`:state.lang==='en'?`${n} strokes`:`${n} nét`) : '';
         previewBtn.disabled=false;
       },()=>{
-        fallback.hidden=false; fallback.dataset.failed='1';
-        fallback.style.display=$('showGuideCheckbox').checked?'flex':'none';
-        strokeBadge.textContent=''; previewBtn.disabled=true;
+        fallback.hidden=false; fallback.dataset.failed='1'; fallback.style.display=$('showGuideCheckbox').checked?'flex':'none'; strokeBadge.textContent=''; previewBtn.disabled=true;
       });
-      if(!writer) throw new Error('HanziWriter unavailable');
-      guideInst.writer=writer;
+      if(!writer)throw new Error('HanziWriter unavailable'); guideInst.writer=writer;
     }catch(err){
-      console.warn('Vector writing guide unavailable:',ch,err);
-      fallback.hidden=false; fallback.dataset.failed='1';
-      fallback.style.display=$('showGuideCheckbox').checked?'flex':'none';
-      strokeBadge.textContent=''; previewBtn.disabled=true;
+      console.warn('Vector writing guide unavailable:',ch,err); fallback.hidden=false; fallback.dataset.failed='1'; fallback.style.display=$('showGuideCheckbox').checked?'flex':'none'; strokeBadge.textContent=''; previewBtn.disabled=true;
     }
-
-    // Keep the preview button tappable on iPad/iPhone. Safari may suppress the
-    // synthetic click when an ancestor prevents touchstart/touchend, so trigger
-    // from pointerup/touchend as well and de-duplicate the event burst.
-    let lastPreviewTrigger=0;
-    const triggerPreview=e=>{
-      if(e?.cancelable)e.preventDefault();
-      e?.stopPropagation?.();
-      const now=(window.performance?.now?.() ?? Date.now());
-      if(now-lastPreviewTrigger<450)return;
-      lastPreviewTrigger=now;
-      previewWritingStrokeOrder(guideInst);
-    };
-    previewBtn.addEventListener('pointerdown',e=>{ e.stopPropagation(); clearBrowserSelection(); },{passive:true});
-    previewBtn.addEventListener('pointerup',triggerPreview,{passive:false});
-    previewBtn.addEventListener('touchend',triggerPreview,{passive:false});
-    previewBtn.addEventListener('click',triggerPreview,{passive:false});
-
-    // Safari/iPad: do not let a Pencil/finger stroke turn into text selection,
-    // long-press callout, drag, or page scrolling while the pointer is inside the canvas.
-    const stopBrowserGesture=e=>{if(e.cancelable)e.preventDefault(); clearBrowserSelection();};
-    ['contextmenu','selectstart','dragstart'].forEach(name=>{
-      square.addEventListener(name,e=>e.preventDefault());
-      canvas.addEventListener(name,e=>e.preventDefault());
-    });
-    ['touchstart','touchmove','touchend','touchcancel'].forEach(name=>{
-      square.addEventListener(name,e=>{
-        // Do not cancel the native button gesture; cancelling the ancestor
-        // touch event can make the ▶ preview button inert in Safari/iPadOS.
-        if(e.target?.closest?.('.writing-preview-btn'))return;
-        stopBrowserGesture(e);
-      },{passive:false});
-      canvas.addEventListener(name,stopBrowserGesture,{passive:false});
-    });
-
-    canvas.addEventListener('pointerdown',e=>{
-      if(item.previewing)return;
-      if(e.pointerType==='mouse' && e.button!==0)return;
-      stopBrowserGesture(e);
-      setWritingInteractionLock(true);
-      item.drawing=true; item.pointerId=e.pointerId;
-      try{canvas.setPointerCapture(e.pointerId);}catch{}
-      item.lastPoint=writingCanvasPoint(item,e);
-      item.ctx.save();
-      item.ctx.lineWidth=writingLineWidth(item,e);
-      item.ctx.beginPath();
-      item.ctx.arc(item.lastPoint[0],item.lastPoint[1],Math.max(1,item.ctx.lineWidth/2),0,Math.PI*2);
-      item.ctx.fillStyle=item.ctx.strokeStyle; item.ctx.fill();
-      item.ctx.restore();
-    },{passive:false});
-
-    canvas.addEventListener('pointermove',e=>{
-      if(item.previewing || !item.drawing || (item.pointerId!==null && e.pointerId!==item.pointerId))return;
-      stopBrowserGesture(e);
-      const samples=typeof e.getCoalescedEvents==='function' ? e.getCoalescedEvents() : [e];
-      for(const pe of samples){
-        const [x,y]=writingCanvasPoint(item,pe);
-        item.ctx.lineWidth=writingLineWidth(item,pe);
-        item.ctx.beginPath();
-        item.ctx.moveTo(item.lastPoint[0],item.lastPoint[1]);
-        item.ctx.lineTo(x,y);
-        item.ctx.stroke();
-        item.lastPoint=[x,y];
-      }
-    },{passive:false});
-
-    const finishStroke=e=>{
-      if(e && e.pointerId!==undefined && item.pointerId!==null && e.pointerId!==item.pointerId)return;
-      if(e)stopBrowserGesture(e);
-      item.drawing=false; item.pointerId=null;
-      setWritingInteractionLock(false);
-    };
-    ['pointerup','pointercancel','pointerleave'].forEach(name=>canvas.addEventListener(name,finishStroke,{passive:false}));
-    canvas.addEventListener('lostpointercapture',()=>{item.drawing=false;item.pointerId=null;setWritingInteractionLock(false);});
+    attachPreviewButton(previewBtn,guideInst,item);
   });
 }
 async function previewWritingStrokeOrder(inst){
   if(!inst?.writer || inst.previewing)return;
-  inst.previewing=true;
-  if(inst.canvasItem) inst.canvasItem.previewing=true;
-  inst.square?.classList.add('is-previewing');
-  inst.previewBtn.disabled=true;
-  inst.previewBtn.textContent='⏳';
-  inst.host.style.display='block';
-  inst.host.classList.add('is-animating');
+  inst.previewing=true; inst.square?.classList.add('is-previewing'); inst.previewBtn.disabled=true; inst.previewBtn.textContent='⏳';
+  // Only animate the reference layer underneath. The user's canvas is never cleared,
+  // redrawn, corrected, snapped, hidden, or replaced.
+  inst.host.style.display='block'; inst.host.classList.add('is-animating');
   try{
     await inst.writer.hideCharacter({duration:0});
-    await new Promise(resolve=>{
-      inst.writer.animateCharacter({
-        onComplete:resolve
-      });
-    });
-  }catch(err){
-    console.warn('Writing stroke preview:',err);
-  }finally{
+    await new Promise(resolve=>inst.writer.animateCharacter({onComplete:resolve}));
+  }catch(err){console.warn('Writing stroke preview:',err);}
+  finally{
     inst.host.classList.remove('is-animating');
-    if($('showGuideCheckbox')?.checked){
-      try{ await inst.writer.showCharacter({duration:120}); }catch{}
-      inst.host.style.display='block';
-    }else{
-      try{ await inst.writer.hideCharacter({duration:0}); }catch{}
-      inst.host.style.display='none';
-    }
-    inst.previewBtn.textContent='▶';
-    inst.previewBtn.disabled=false;
-    inst.square?.classList.remove('is-previewing');
-    if(inst.canvasItem) inst.canvasItem.previewing=false;
-    inst.previewing=false;
+    if(inst.alwaysVisible || $('showGuideCheckbox')?.checked){try{await inst.writer.showCharacter({duration:100});}catch{} inst.host.style.display='block';}
+    else{try{await inst.writer.hideCharacter({duration:0});}catch{} inst.host.style.display='none';}
+    inst.previewBtn.textContent='▶'; inst.previewBtn.disabled=false; inst.square?.classList.remove('is-previewing'); inst.previewing=false;
   }
+}
+function renderCopybookPractice(word){
+  const wrap=$('copybookGrid'); if(!wrap)return;
+  wrap.innerHTML=''; copybookCanvases=[]; copybookGuideInstances=[];
+  const meta=$('copybookWordMeta'); if(meta)meta.textContent=`${primaryForm(word)} · ${word.pinyin||''}`;
+  const chars=writingCharacters(word);
+  chars.forEach((ch,rowIndex)=>{
+    const row=document.createElement('section'); row.className='copybook-row';
+    const head=document.createElement('div'); head.className='copybook-row-head';
+    const title=document.createElement('div'); title.className='copybook-row-char';
+    const vector=document.createElement('span'); vector.className='copybook-row-vector';
+    const fallback=document.createElement('strong'); fallback.textContent=ch; fallback.hidden=true;
+    title.append(vector,fallback);
+    try{const w=makeStrokeGuideMiniWriter(vector,ch,null,()=>{vector.hidden=true;fallback.hidden=false;}); if(!w)throw new Error();}catch{vector.hidden=true;fallback.hidden=false;}
+    const rowActions=document.createElement('div'); rowActions.className='copybook-row-actions';
+    const rowLabel=document.createElement('span'); rowLabel.className='small muted'; rowLabel.textContent=`${rowIndex+1}/${chars.length}`;
+    const clearBtn=document.createElement('button'); clearBtn.type='button'; clearBtn.className='copybook-clear-row'; clearBtn.textContent=t('clearRow');
+    rowActions.append(rowLabel,clearBtn); head.append(title,rowActions);
+    const cells=document.createElement('div'); cells.className='copybook-cells';
+    const rowCanvasItems=[];
+    const guideOpacities=[1,.32,.22,.13,0,0,0,0];
+    guideOpacities.forEach((opacity,cellIndex)=>{
+      const cell=document.createElement('div'); cell.className='copybook-cell';
+      if(cellIndex===0)cell.classList.add('is-model');
+      const lines=document.createElement('div'); lines.className='grid-lines';
+      const guide=document.createElement('div'); guide.className='copybook-guide'; guide.style.opacity=String(opacity||0); guide.style.display=(cellIndex===0 || ($('showGuideCheckbox').checked && opacity>0))?'block':'none';
+      const fontFallback=document.createElement('div'); fontFallback.className='copybook-font-fallback'; fontFallback.textContent=ch; fontFallback.hidden=true;
+      cell.append(lines,guide,fontFallback);
+      let item=null;
+      if(cellIndex>0){
+        const canvas=document.createElement('canvas'); canvas.className='copybook-canvas'; canvas.setAttribute('aria-label',`${ch} practice ${cellIndex}`); cell.append(canvas); item=createWritingCanvasItem(canvas,copybookCanvases,{owner:cell}); rowCanvasItems.push(item);
+      }
+      if(cellIndex===0){
+        const badge=document.createElement('span'); badge.className='copybook-model-badge'; badge.textContent=t('sampleCell'); cell.append(badge);
+        const play=document.createElement('button'); play.type='button'; play.className='copybook-preview-btn'; play.textContent='▶'; play.title=t('strokeAnimate'); play.disabled=true; cell.append(play);
+        const inst={char:ch,writer:null,host:guide,fallback:fontFallback,square:cell,canvasItem:null,previewBtn:play,strokeBadge:null,previewing:false,guideOpacity:1,alwaysVisible:true}; copybookGuideInstances.push(inst);
+        try{
+          const writer=makeCopybookGuideWriter(guide,ch,{strokeColor:'#17211f'},()=>{inst.writer=writer;play.disabled=false;},()=>{fontFallback.hidden=false;fontFallback.style.display='flex';play.disabled=true;});
+          if(!writer)throw new Error(); inst.writer=writer;
+          let last=0; const preview=e=>{if(e?.pointerType==='pen')return;if(e?.cancelable)e.preventDefault();e?.stopPropagation?.();const now=performance.now();if(now-last<450)return;last=now;previewWritingStrokeOrder(inst);};
+          play.addEventListener('pointerup',preview,{passive:false}); play.addEventListener('touchend',preview,{passive:false}); play.addEventListener('click',preview,{passive:false});
+        }catch{fontFallback.hidden=false;fontFallback.style.display='flex';play.disabled=true;}
+      }else{
+        const inst={char:ch,writer:null,host:guide,fallback:fontFallback,guideOpacity:opacity,alwaysVisible:false}; copybookGuideInstances.push(inst);
+        if(opacity>0){
+          try{const writer=makeCopybookGuideWriter(guide,ch,{strokeColor:'#0f766e'},null,()=>{fontFallback.hidden=false;fontFallback.style.display=$('showGuideCheckbox').checked?'flex':'none';}); if(!writer)throw new Error();inst.writer=writer;}
+          catch{fontFallback.hidden=false;fontFallback.style.display=$('showGuideCheckbox').checked?'flex':'none';}
+        }
+      }
+      cells.append(cell);
+    });
+    clearBtn.addEventListener('click',()=>rowCanvasItems.forEach(clearWritingItem));
+    row.append(head,cells); wrap.append(row);
+  });
 }
 function resizeWritingCanvas(item){
   if(!item?.canvas||!item.ctx)return;
   const r=item.canvas.getBoundingClientRect(); if(!r.width||!r.height)return;
-  const old=item.canvas.toDataURL();
+  let old=null;
+  try{if(item.canvas.width&&item.canvas.height)old=item.canvas.toDataURL();}catch{}
   item.dpr=Math.max(1,Math.min(devicePixelRatio||1,2)); item.canvas.width=Math.round(r.width*item.dpr); item.canvas.height=Math.round(r.height*item.dpr);
-  item.ctx.setTransform(item.dpr,0,0,item.dpr,0,0); item.ctx.lineCap='round'; item.ctx.lineJoin='round'; item.baseLineWidth=Math.max(4,r.width/55); item.ctx.lineWidth=item.baseLineWidth; item.ctx.strokeStyle='#152321';
-  if(old && !old.endsWith('AAAA')){
-    const img=new Image(); img.onload=()=>{item.ctx.drawImage(img,0,0,r.width,r.height);}; img.src=old;
-  }
+  item.ctx.setTransform(item.dpr,0,0,item.dpr,0,0); item.ctx.lineCap='round'; item.ctx.lineJoin='round'; item.baseLineWidth=Math.max(3.2,r.width/55); item.ctx.lineWidth=item.baseLineWidth; item.ctx.strokeStyle='#17211f'; item.ctx.fillStyle='#17211f';
+  if(old && !old.endsWith('AAAA')){const img=new Image();img.onload=()=>{item.ctx.drawImage(img,0,0,r.width,r.height);};img.src=old;}
 }
 function writingCanvasPoint(item,e){const r=item.canvas.getBoundingClientRect();return[e.clientX-r.left,e.clientY-r.top];}
-function writingLineWidth(item,e){
-  const base=item.baseLineWidth||6;
-  // Apple Pencil exposes pressure on supported Safari versions. Keep the variation gentle.
-  if(e?.pointerType==='pen' && Number.isFinite(e.pressure) && e.pressure>0)return base*(0.72+Math.min(1,e.pressure)*0.55);
-  return base;
+function clearWritingItem(item){
+  if(!item?.ctx||!item?.canvas)return; const r=item.canvas.getBoundingClientRect(); item.ctx.clearRect(0,0,r.width,r.height); item.canvas.closest('.writing-square,.copybook-cell')?.classList.remove('has-user-ink');
 }
 function clearWritingCanvas(){
-  writingCanvases.forEach(item=>{
-    const r=item.canvas.getBoundingClientRect(); item.ctx.clearRect(0,0,r.width,r.height);
-  });
+  const list=state.writingPracticeMode==='copybook'?copybookCanvases:writingCanvases;
+  list.forEach(clearWritingItem);
 }
 
 function strokeDataUrl(ch){
@@ -1147,6 +1236,17 @@ function makeWritingGuideWriter(host,ch,onData,onError){
     charDataLoader:(char,onComplete,loaderError)=>{
       loadStrokeData(char,onComplete,err=>{ onError?.(err); loaderError?.(err); },onData);
     }
+  });
+}
+function makeCopybookGuideWriter(host,ch,options={},onData,onError){
+  if(typeof window.HanziWriter==='undefined') return null;
+  const rect=host.getBoundingClientRect();
+  const size=Math.max(62,Math.round(Math.min(rect.width||90,rect.height||rect.width||90)));
+  return window.HanziWriter.create(host,ch,{
+    width:size,height:size,padding:7,showOutline:false,showCharacter:true,
+    strokeColor:options.strokeColor||'#0f766e',
+    strokeAnimationSpeed:1,delayBetweenStrokes:150,
+    charDataLoader:(char,onComplete,loaderError)=>loadStrokeData(char,onComplete,err=>{onError?.(err);loaderError?.(err);},onData)
   });
 }
 function makeStrokeGuideMiniWriter(host,ch,onData,onError){
@@ -1187,10 +1287,125 @@ function playStrokeGuide(item){
     try{ item.writer.animateCharacter(); }catch(err){ console.warn('Stroke animation:',err); }
   }
 }
+
+function saveStudyFlow(){
+  localStorage.setItem(STUDY_FLOW_KEY,JSON.stringify({mode:state.studyPathMode}));
+}
+function dayWordCount(day){return state.allWords.filter(w=>Number(w.day)===Number(day)).length;}
+function dayReviewedCount(day){return state.allWords.filter(w=>Number(w.day)===Number(day) && state.progress[w.id]?.memory).length;}
+function maxStudyDay(){return Math.max(1,...state.allWords.map(w=>Number(w.day||1)));}
+function setStudyPathMode(mode){
+  state.studyPathMode=mode==='set'?'set':'level';
+  saveStudyFlow(); updateBranding(); refreshDaySelectorLabels(); renderSetStudyBanner(); renderStudyModeUI();
+}
+function renderStudyModeUI(){
+  const title=$('studyModeTitle'); if(title)title.textContent=t('studyMode');
+  const levelTitle=$('studyByLevelTitle'); if(levelTitle)levelTitle.textContent=t('studyByLevel');
+  const setTitle=$('studyBySetTitle'); if(setTitle)setTitle.textContent=t('studyBySet');
+  const levelDesc=$('studyByLevelDesc'); if(levelDesc)levelDesc.textContent=t('studyByLevelDesc');
+  const setDesc=$('studyBySetDesc'); if(setDesc)setDesc.textContent=t('studyBySetDesc');
+  const dayLabel=$('daySelectLabel'); if(dayLabel)dayLabel.textContent=state.studyPathMode==='set'?(state.lang==='zh-Hant'?'單元':state.lang==='en'?'Set':'Bộ'):t('day');
+}
+function openStudyModeModal(){
+  const modal=$('studyModeModal'); if(!modal)return;
+  renderStudyModeUI(); modal.hidden=false; document.body.classList.add('modal-open');
+}
+function closeStudyModeModal(){
+  const modal=$('studyModeModal'); if(!modal)return; modal.hidden=true;
+  if($('levelModal')?.hidden!==false && $('setModal')?.hidden!==false && $('authModal')?.hidden!==false)document.body.classList.remove('modal-open');
+}
+function openSetSelector(){
+  closeStudyModeModal();
+  const modal=$('setModal'); if(!modal)return;
+  setStudyPathMode('set'); renderSetSelector(); modal.hidden=false; document.body.classList.add('modal-open');
+}
+function closeSetSelector(){
+  const modal=$('setModal'); if(!modal)return; modal.hidden=true;
+  if($('studyModeModal')?.hidden!==false && $('levelModal')?.hidden!==false && $('authModal')?.hidden!==false)document.body.classList.remove('modal-open');
+}
+function renderSetSelector(){
+  const grid=$('setGrid'); if(!grid)return;
+  const title=$('setModalTitle'); if(title)title.textContent=`${state.activeLevel} · ${t('chooseSet')}`;
+  const sub=$('setModalSubtitle'); if(sub)sub.textContent=t('studyBySetDesc');
+  grid.innerHTML='';
+  const max=maxStudyDay();
+  for(let day=1;day<=max;day++){
+    const total=dayWordCount(day); if(!total)continue;
+    const reviewed=dayReviewedCount(day), complete=reviewed>=total;
+    const card=document.createElement('article'); card.className='set-option-card'; if(day===state.day)card.classList.add('is-current');
+    const head=document.createElement('div');head.className='set-option-head';
+    const name=document.createElement('strong');name.textContent=t('setLabel',day);
+    const badge=document.createElement('span');badge.className=`set-status ${complete?'complete':''}`;badge.textContent=complete?t('setComplete'):`${total} ${state.lang==='en'?'words':state.lang==='zh-Hant'?'詞':'từ'}`;
+    head.append(name,badge);
+    const prog=document.createElement('div');prog.className='small muted';prog.textContent=t('setProgress',reviewed,total);
+    const bar=document.createElement('div');bar.className='set-card-progress';const fill=document.createElement('span');fill.style.width=`${Math.round(reviewed/Math.max(1,total)*100)}%`;bar.append(fill);
+    const actions=document.createElement('div');actions.className='set-card-actions';
+    const study=document.createElement('button');study.type='button';study.className='primary';study.textContent=t('setStudy');
+    const writing=document.createElement('button');writing.type='button';writing.textContent=`✍️ ${t('setWriting')}`;
+    study.addEventListener('click',()=>{closeSetSelector();setStudyPathMode('set');selectDay(day);showView('today');});
+    writing.addEventListener('click',()=>{closeSetSelector();setStudyPathMode('set');selectDay(day,{notify:false});startSetWritingSession();});
+    actions.append(study,writing);card.append(head,prog,bar,actions);grid.append(card);
+  }
+}
+function renderSetStudyBanner(){
+  const banner=$('setStudyBanner'); if(!banner)return;
+  const show=state.studyPathMode==='set' && !state.setWritingSession && state.dayWords.length>0;
+  banner.hidden=!show; if(!show)return;
+  const reviewed=state.dayWords.filter(w=>state.progress[w.id]?.memory).length,total=state.dayWords.length;
+  $('setStudyTitle').textContent=`${state.activeLevel} · ${t('setLabel',state.day)}`;
+  $('setStudyProgress').textContent=t('setProgress',reviewed,total);
+  const btn=$('startSetWritingBtn'); if(btn)btn.textContent=`✍️ ${t('setWriting')}`;
+}
+function startSetWritingSession(){
+  if(!state.dayWords.length)return;
+  state.setWritingSession=true; state.setWritingRestoreMode=state.writingPracticeMode;
+  state.writingPracticeMode='copybook'; state.index=0;
+  document.body.classList.add('set-writing-session');
+  applyWritingModeUI(); showView('today'); renderCurrentWord(); updateSetWritingSessionUI();
+  window.scrollTo({top:0,behavior:'smooth'});
+}
+function endSetWritingSession({openSets=true}={}){
+  state.setWritingSession=false; document.body.classList.remove('set-writing-session');
+  state.writingPracticeMode=state.setWritingRestoreMode==='copybook'?'copybook':'single';
+  applyWritingModeUI(); renderCurrentWord(); renderSetStudyBanner();
+  if(openSets)openSetSelector();
+}
+function updateSetWritingSessionUI(){
+  const bar=$('setWritingSessionBar'); if(!bar)return;
+  bar.hidden=!state.setWritingSession; if(!state.setWritingSession)return;
+  const w=currentWord();
+  $('setWritingSessionTitle').textContent=t('setWritingTitle',state.activeLevel,state.day);
+  $('setWritingSessionMeta').textContent=`${state.index+1}/${state.dayWords.length} · ${primaryForm(w)} · ${w.pinyin||''} · ${w.meaning_vi||''}`;
+  $('setWritingHelp').textContent=t('setWritingHelp');
+  $('setWritingBackBtn').textContent=`← ${t('backToSets')}`;
+  $('setWritingPrevBtn').textContent=`← ${t('writingPrevWord')}`;
+  $('setWritingPrevBtn').disabled=state.index<=0;
+  const next=$('setWritingNextBtn');
+  next.textContent=state.index>=state.dayWords.length-1?`✓ ${t('writingFinish')}`:`${t('writingNextWord')} →`;
+}
+function bindStudyFlow(){
+  $('studyModeCloseBtn')?.addEventListener('click',closeStudyModeModal);
+  $('studyModeModal')?.addEventListener('click',e=>{if(e.target===$('studyModeModal'))closeStudyModeModal();});
+  $('studyByLevelBtn')?.addEventListener('click',()=>{setStudyPathMode('level');closeStudyModeModal();openLevelSelector({force:true});});
+  $('studyBySetBtn')?.addEventListener('click',openSetSelector);
+  $('setCloseBtn')?.addEventListener('click',closeSetSelector);
+  $('setModal')?.addEventListener('click',e=>{if(e.target===$('setModal'))closeSetSelector();});
+  $('setChangeLevelBtn')?.addEventListener('click',()=>{closeSetSelector();openLevelSelector({force:true});});
+  $('startSetWritingBtn')?.addEventListener('click',startSetWritingSession);
+  $('setWritingBackBtn')?.addEventListener('click',()=>endSetWritingSession({openSets:true}));
+  $('setWritingPrevBtn')?.addEventListener('click',()=>{if(state.index>0){state.index--;renderCurrentWord();window.scrollTo({top:0,behavior:'smooth'});}});
+  $('setWritingNextBtn')?.addEventListener('click',()=>{if(state.index<state.dayWords.length-1){state.index++;renderCurrentWord();window.scrollTo({top:0,behavior:'smooth'});}else endSetWritingSession({openSets:true});});
+  document.addEventListener('keydown',e=>{
+    if(e.key!=='Escape')return;
+    if($('studyModeModal')?.hidden===false)closeStudyModeModal();
+    else if($('setModal')?.hidden===false)closeSetSelector();
+  });
+  renderStudyModeUI();renderSetStudyBanner();updateSetWritingSessionUI();
+}
 function updateBranding(){
   const id=state.activeLevel||'A1';
   const h1=document.getElementById('appTitle'); if(h1) h1.textContent='LEARNING TOCFL';
-  const btn=document.getElementById('levelBtnLabel'); if(btn) btn.textContent=id;
+  const btn=document.getElementById('levelBtnLabel'); if(btn) btn.textContent=state.studyPathMode==='set'?`${id} · ${t('setLabel',state.day)}`:id;
   const eyebrow=document.getElementById('appEyebrow'); if(eyebrow) eyebrow.textContent='🇹🇼 TOCFL · Traditional Chinese';
   const authEyebrow=document.getElementById('authEyebrow'); if(authEyebrow) authEyebrow.textContent='TOCFL · CLOUD';
   document.title='LEARNING TOCFL · Traditional Chinese';
@@ -1226,6 +1441,7 @@ function renderLevelSelector(){
       if(ok){
         if(!remember && state.currentUserId) sessionStorage.setItem(`tocfl-level-picked-session:${state.currentUserId}`,'1');
         persistMultiState();
+        if(state.studyPathMode==='set') setTimeout(openSetSelector,0);
       }
     });
     grid.append(card);
@@ -1243,7 +1459,7 @@ function closeLevelSelector(){
   if($('authModal')?.hidden!==false) document.body.classList.remove('modal-open');
 }
 function bindLevelSelector(){
-  $('levelBtn')?.addEventListener('click',()=>openLevelSelector({force:true}));
+  $('levelBtn')?.addEventListener('click',openStudyModeModal);
   $('levelCloseBtn')?.addEventListener('click',closeLevelSelector);
   $('levelModal')?.addEventListener('click',e=>{if(e.target===$('levelModal'))closeLevelSelector();});
   document.addEventListener('keydown',e=>{if(e.key==='Escape' && $('levelModal')?.hidden===false)closeLevelSelector();});
@@ -1259,20 +1475,8 @@ async function afterAccountReady(userId){
 }
 function onSignedOut(){ state.currentUserId=null; closeLevelSelector(); }
 
-const LAST_VIEW_KEY='tocfl-last-view-v1';
-const VALID_VIEWS=new Set(['today','vocab','radicals','quiz','homework','progress']);
-function preferredView(){
-  try{const v=localStorage.getItem(LAST_VIEW_KEY);return VALID_VIEWS.has(v)?v:'radicals';}catch{return 'radicals';}
-}
 function bindNavigation(){document.querySelectorAll('.tab').forEach(btn=>btn.addEventListener('click',()=>showView(btn.dataset.view)));}
-function showView(name,{persist=true,scroll=true}={}){
-  name=VALID_VIEWS.has(name)?name:'radicals';
-  document.querySelectorAll('.tab').forEach(x=>x.classList.toggle('is-active',x.dataset.view===name));
-  document.querySelectorAll('.view').forEach(x=>x.classList.toggle('is-active',x.id===`view-${name}`));
-  if(name==='progress')updateProgressUI();if(name==='quiz')makeQuiz();if(name==='vocab')renderVocabList();
-  if(persist){try{localStorage.setItem(LAST_VIEW_KEY,name);}catch{}document.dispatchEvent(new CustomEvent('tocfl:state-changed'));}
-  if(scroll)window.scrollTo({top:0,behavior:'smooth'});
-}
+function showView(name){document.querySelectorAll('.tab').forEach(x=>x.classList.toggle('is-active',x.dataset.view===name));document.querySelectorAll('.view').forEach(x=>x.classList.toggle('is-active',x.id===`view-${name}`));if(name==='progress')updateProgressUI();if(name==='quiz')makeQuiz();if(name==='vocab')renderVocabList();window.scrollTo({top:0,behavior:'smooth'});}
 function bindVocab(){$('vocabSearch').addEventListener('input',renderVocabList);}
 function renderVocabList(){
   const wrap=$('vocabList');if(!wrap||!state.allWords.length)return;const q=$('vocabSearch').value.trim().toLowerCase(),day=$('vocabDayFilter').value;
@@ -1287,7 +1491,7 @@ function makeQuiz(){
   const others=state.dayWords.filter(w=>w.id!==correct.id).sort(()=>Math.random()-.5).slice(0,3),options=[correct,...others].sort(()=>Math.random()-.5);const wrap=$('quizOptions');wrap.innerHTML='';$('quizResult').textContent='';
   options.forEach(w=>{const b=document.createElement('button');b.type='button';b.className='quiz-option';b.textContent=type==='vi'?w.meaning_vi:type==='en'?englishFor(w):w.pinyin;b.addEventListener('click',()=>{const ok=w.id===correct.id;const ans=type==='vi'?correct.meaning_vi:type==='en'?englishFor(correct):correct.pinyin;$('quizResult').textContent=ok?t('correct'):t('answer',ans);if(ok){state.progress[correct.id]={...(state.progress[correct.id]||{}),quizCorrect:(state.progress[correct.id]?.quizCorrect||0)+1};saveLocalState();}});wrap.append(b);});
 }
-function updateProgressUI(){const entries=Object.values(state.progress).filter(x=>x.memory),count=x=>entries.filter(e=>e.memory===x).length;$('statReviewed').textContent=entries.length;$('statEasy').textContent=count('easy');$('statMedium').textContent=count('medium');$('statHard').textContent=count('hard');const dayReviewed=state.dayWords.filter(w=>state.progress[w.id]?.memory).length,total=state.dayWords.length||1,pct=Math.round(dayReviewed/total*100);$('dailyProgressBar').style.width=`${pct}%`;$('dailyProgressText').textContent=`${dayReviewed} / ${state.dayWords.length}`;$('dailyTargetLabel').textContent=t('newWords',state.dayWords.length);}
+function updateProgressUI(){const entries=Object.values(state.progress).filter(x=>x.memory),count=x=>entries.filter(e=>e.memory===x).length;$('statReviewed').textContent=entries.length;$('statEasy').textContent=count('easy');$('statMedium').textContent=count('medium');$('statHard').textContent=count('hard');const dayReviewed=state.dayWords.filter(w=>state.progress[w.id]?.memory).length,total=state.dayWords.length||1,pct=Math.round(dayReviewed/total*100);$('dailyProgressBar').style.width=`${pct}%`;$('dailyProgressText').textContent=`${dayReviewed} / ${state.dayWords.length}`;$('dailyTargetLabel').textContent=t('newWords',state.dayWords.length);renderSetStudyBanner();if($('setModal')?.hidden===false)renderSetSelector();}
 
 function bindBackup(){
   $('exportBtn').addEventListener('click',exportProgress); $('importInput').addEventListener('change',importProgress);
@@ -1326,90 +1530,28 @@ async function importProgress(e){
 
 function registerServiceWorker(){if('serviceWorker'in navigator)navigator.serviceWorker.register('./sw.js').catch(err=>console.warn('SW:',err));}
 function escapeHtml(s){return String(s).replace(/[&<>'"]/g,c=>({'&':'&amp;','<':'&lt;','>':'&gt;',"'":'&#39;','"':'&quot;'}[c]));}
-const RADICAL_CLOUD_KEYS={
-  learning:'tocfl-radical-learning-flow-v1',
-  writing:'tocfl-radical-writing-v1',
-  selected:'tocfl-radical-selected-v1',
-  writingTargetPrefix:'tocfl-radical-writing-target-',
-  fontScale:'tocfl-radical-font-scale-v1',
-  origins:'tocfl-character-origin-flow-v1',
-  mode:'tocfl-radical-mode-v1'
-};
-function readLocalJsonForCloud(key){
-  try{const value=JSON.parse(localStorage.getItem(key)||'{}');return value&&typeof value==='object'&&!Array.isArray(value)?value:{};}catch{return {};}
-}
-function getRadicalCloudState(){
-  const writingTargets={};
-  try{
-    for(let i=0;i<localStorage.length;i++){
-      const key=localStorage.key(i)||'';
-      if(!key.startsWith(RADICAL_CLOUD_KEYS.writingTargetPrefix))continue;
-      const radicalKey=key.slice(RADICAL_CLOUD_KEYS.writingTargetPrefix.length);
-      if(radicalKey)writingTargets[radicalKey]=String(localStorage.getItem(key)??'0');
-    }
-  }catch{}
-  return {
-    version:1,
-    selectedRadicalKey:String(localStorage.getItem(RADICAL_CLOUD_KEYS.selected)||'person'),
-    learning:readLocalJsonForCloud(RADICAL_CLOUD_KEYS.learning),
-    writing:readLocalJsonForCloud(RADICAL_CLOUD_KEYS.writing),
-    writingTargets,
-    fontScale:Number(localStorage.getItem(RADICAL_CLOUD_KEYS.fontScale)||1),
-    origins:readLocalJsonForCloud(RADICAL_CLOUD_KEYS.origins),
-    mode:String(localStorage.getItem(RADICAL_CLOUD_KEYS.mode)||'origins')
-  };
-}
-function applyRadicalCloudState(radicalState){
-  if(!radicalState||typeof radicalState!=='object'||Array.isArray(radicalState))return false;
-  try{
-    if(typeof radicalState.selectedRadicalKey==='string'&&radicalState.selectedRadicalKey.trim())localStorage.setItem(RADICAL_CLOUD_KEYS.selected,radicalState.selectedRadicalKey.trim());
-    if(radicalState.learning&&typeof radicalState.learning==='object')localStorage.setItem(RADICAL_CLOUD_KEYS.learning,JSON.stringify(radicalState.learning));
-    if(radicalState.writing&&typeof radicalState.writing==='object')localStorage.setItem(RADICAL_CLOUD_KEYS.writing,JSON.stringify(radicalState.writing));
-    if(Number.isFinite(Number(radicalState.fontScale)))localStorage.setItem(RADICAL_CLOUD_KEYS.fontScale,String(Math.max(.9,Math.min(1.6,Number(radicalState.fontScale)))));
-    if(radicalState.origins&&typeof radicalState.origins==='object')localStorage.setItem(RADICAL_CLOUD_KEYS.origins,JSON.stringify(radicalState.origins));
-    if(['origins','semantic','phonetic','pinyin'].includes(radicalState.mode))localStorage.setItem(RADICAL_CLOUD_KEYS.mode,radicalState.mode);
-    if(radicalState.writingTargets&&typeof radicalState.writingTargets==='object'){
-      const remove=[];
-      for(let i=0;i<localStorage.length;i++){
-        const key=localStorage.key(i)||'';
-        if(key.startsWith(RADICAL_CLOUD_KEYS.writingTargetPrefix))remove.push(key);
-      }
-      remove.forEach(key=>localStorage.removeItem(key));
-      for(const [radicalKey,value] of Object.entries(radicalState.writingTargets)){
-        if(radicalKey)localStorage.setItem(`${RADICAL_CLOUD_KEYS.writingTargetPrefix}${radicalKey}`,String(value));
-      }
-    }
-    document.dispatchEvent(new CustomEvent('tocfl:radical-cloud-applied'));
-    return true;
-  }catch{return false;}
-}
 function getCloudState(){
   saveCurrentLevelSnapshot(); persistMultiState();
   const levels={}; for(const cfg of LEVEL_CATALOG) if(state.levelStates[cfg.id]) levels[cfg.id]=normalizeLevelState(state.levelStates[cfg.id]);
   const a1=normalizeLevelState(levels.A1||emptyLevelState());
   return {
-    progress:{__format:'tocfl-multilevel-v1',levels,settings:{activeLevel:state.activeLevel,rememberLevel:Boolean(state.rememberLevel),lastView:preferredView()},radicals:getRadicalCloudState()},
+    progress:{__format:'tocfl-multilevel-v1',levels,settings:{activeLevel:state.activeLevel,rememberLevel:Boolean(state.rememberLevel)}},
     // Legacy mirrors keep the existing database schema and make migration reversible.
     favorites:a1.favorites,lastDay:a1.lastDay,language:state.lang
   };
 }
 async function applyCloudState(data={}){
   const cloudProgress=data.progress && typeof data.progress==='object' ? data.progress : {};
-  let needsCloudUpgrade=false;
   if(cloudProgress.__format==='tocfl-multilevel-v1' && cloudProgress.levels){
     state.levelStates={};
     for(const [id,value] of Object.entries(cloudProgress.levels)) if(levelConfig(id)) state.levelStates[id]=normalizeLevelState(value);
     if(!state.levelStates.A1) state.levelStates.A1=emptyLevelState();
     state.rememberLevel=Boolean(cloudProgress.settings?.rememberLevel);
     const desired=String(cloudProgress.settings?.activeLevel||'A1').toUpperCase(); state.activeLevel=levelConfig(desired)?desired:'A1';
-    const cloudLastView=String(cloudProgress.settings?.lastView||''); if(VALID_VIEWS.has(cloudLastView)){try{localStorage.setItem(LAST_VIEW_KEY,cloudLastView);}catch{}}
-    if(cloudProgress.radicals&&typeof cloudProgress.radicals==='object')applyRadicalCloudState(cloudProgress.radicals);
-    else needsCloudUpgrade=true;
   }else{
     // Existing users: migrate the old single-level cloud row into A1 without touching future local levels.
     state.levelStates.A1=normalizeLevelState({progress:cloudProgress,favorites:Array.isArray(data.favorites)?data.favorites:[],lastDay:data.lastDay||1});
     if(!state.activeLevel) state.activeLevel='A1';
-    needsCloudUpgrade=true;
   }
   if(I18N[data.language]){state.lang=data.language;localStorage.setItem(LANGUAGE_KEY,state.lang);}
   let desired=state.activeLevel||'A1';
@@ -1417,8 +1559,6 @@ async function applyCloudState(data={}){
   if(!ok){desired='A1';state.activeLevel='A1';await applyLevel('A1',{notify:false,close:false,skipSnapshot:true});state.rememberLevel=false;}
   persistMultiState(); applyLanguage(); document.dispatchEvent(new CustomEvent('tocfl:language-changed'));
   renderCurrentWord(); renderVocabList(); makeQuiz(); updateProgressUI();
-  showView(preferredView(),{persist:false,scroll:false});
-  return {needsCloudUpgrade};
 }
 window.TOCFLApp={
   getCloudState,applyCloudState,getLanguage:()=>state.lang,isReady:()=>Boolean(window.TOCFL_APP_READY),

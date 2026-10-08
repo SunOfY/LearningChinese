@@ -1,0 +1,14 @@
+v4.8.3 hotfix
+
+Issue fixed:
+- The black character shown at the top-left of the stroke-order card was still plain text/font,
+  so it could look different from the green animated stroke-order character.
+
+Fix:
+- The small top-left preview now uses the same HanziWriter stroke vector data as the main animation.
+- This makes the small preview and the green animated character match much more closely.
+
+Upload these files:
+- app.js
+- styles.css
+- sw.js

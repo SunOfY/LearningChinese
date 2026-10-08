@@ -1,0 +1,15 @@
+v4.8.6 iPad preview fix
+
+Issue:
+- On iPad/iPhone Safari, tapping the ▶ stroke-order button could do nothing.
+- The writing square intentionally prevented touch gestures to stop text selection; that ancestor preventDefault also suppressed the button tap on Safari.
+
+Fix:
+- Preview-button touches are excluded from the canvas gesture blocker.
+- The button uses pointerup/touchend/click with de-duplication for Safari compatibility.
+- touch-action: manipulation is applied to the preview button.
+
+Upload only:
+- app.js
+- styles.css
+- sw.js

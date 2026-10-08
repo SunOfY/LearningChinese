@@ -1,0 +1,11 @@
+v4.8.2 — Unified character shape
+
+The mismatch happened because the faint writing template was rendered with a system font, while the animation used HanziWriter vector stroke data.
+
+Now:
+- faint tracing template = HanziWriter vector data
+- stroke animation = the same HanziWriter vector data
+- therefore the character shape you trace matches the animated strokes
+- a system-font fallback appears only when vector data cannot be loaded
+
+Quick upload: app.js, styles.css, sw.js

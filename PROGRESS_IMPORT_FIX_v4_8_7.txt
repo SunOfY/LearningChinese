@@ -1,0 +1,18 @@
+v4.8.7 — Progress import/cloud restore fix
+
+Fixed:
+- Importing a progress JSON on another device could show 0 progress.
+- Loading progress from Supabase on a second device could also be overwritten by stale local state.
+
+Root cause:
+applyLevel() saved the current device's old state immediately before applying the imported/cloud state.
+If the current level was A1, this could overwrite the imported A1 progress with an empty A1 state.
+
+Changed:
+- applyLevel() now supports skipSnapshot.
+- Import and cloud-restore paths use skipSnapshot=true.
+- Normal manual level switching still saves the current level exactly as before.
+
+Upload only:
+- app.js
+- sw.js

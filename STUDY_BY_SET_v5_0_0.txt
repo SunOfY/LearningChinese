@@ -1,0 +1,26 @@
+v5.0.0 — Study by level / study by set
+
+New learning flow:
+1. Top study button now opens two choices:
+   - Study by level (A1/A2/B1/B2/C1/C2 when data exists)
+   - Study by set
+2. Existing day groups are reused as sets, so the vocabulary data format does not change.
+   Example: Day 1 -> Set 1, Day 2 -> Set 2.
+3. Set selector shows reviewed progress for every set.
+4. Each set has:
+   - Study this set
+   - Practice writing this set
+5. In set mode, a Writing this set button is also shown while studying.
+6. Set writing session:
+   - switches to repeat/copybook writing view
+   - goes through every word in the selected set
+   - previous/next word controls
+   - at the last word: Finish & choose another set
+   - returns to the set list
+7. Existing Apple Pencil/calligraphy mode and v4.8.7 progress import fix are retained.
+
+QUICK upload files:
+- index.html
+- styles.css
+- app.js
+- sw.js

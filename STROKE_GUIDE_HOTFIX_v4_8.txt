@@ -1,0 +1,20 @@
+v4.8 writing hotfix
+
+Updated files:
+- index.html
+- styles.css
+- app.js
+- sw.js
+
+What changed:
+1. Stronger Apple Pencil / iPad anti-text-selection protection while drawing.
+2. New stroke-order guide panel below the writing area.
+3. Automatic HanziWriter animation for each character in the current word.
+4. Optional support for local GIF files in data/stroke-gifs/<char>.gif.
+
+Upload these files/folders to GitHub:
+- index.html
+- styles.css
+- app.js
+- sw.js
+- data/stroke-gifs/README.txt (optional)

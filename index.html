@@ -22,7 +22,7 @@
       </div>
       <div class="header-actions">
         <button id="accountBtn" class="account-btn" type="button" title="Tài khoản">👤 <span>Đăng nhập</span></button>
-        <button id="levelBtn" class="level-btn" type="button" title="Chọn trình độ">🎓 <span id="levelBtnLabel">A1</span> <span aria-hidden="true">▾</span></button>
+        <button id="levelBtn" class="level-btn" type="button" title="Cách học">🎓 <span id="levelBtnLabel">A1</span> <span aria-hidden="true">▾</span></button>
         <label class="language-select-wrap" title="Language">
           <span aria-hidden="true">🌐</span>
           <select id="languageSelect" aria-label="Language">
@@ -32,23 +32,21 @@
           </select>
         </label>
         <label class="day-select-wrap">
-          <span data-i18n="day">Ngày</span>
+          <span id="daySelectLabel" data-i18n="day">Ngày</span>
           <select id="daySelect" aria-label="Chọn ngày học"></select>
         </label>
       </div>
     </header>
 
     <nav class="tabs" aria-label="Điều hướng chính">
-      <button class="tab" data-view="today" type="button"><span>🏠</span> <span data-i18n="navToday">Hôm nay</span></button>
+      <button class="tab is-active" data-view="today" type="button"><span>🏠</span> <span data-i18n="navToday">Hôm nay</span></button>
       <button class="tab" data-view="vocab" type="button"><span>📚</span> <span data-i18n="navVocab">Từ vựng</span></button>
-      <button class="tab radicals-tab is-active" data-view="radicals" type="button"><span>🧩</span> <span id="radicalsTabLabel">Bộ thủ</span></button>
       <button class="tab" data-view="quiz" type="button"><span>🧠</span> <span data-i18n="navQuiz">Quiz</span></button>
-      <button class="tab homework-tab" data-view="homework" type="button"><span>📝</span> <span data-i18n="navHomework">Bài tập</span></button>
       <button class="tab" data-view="progress" type="button"><span>📊</span> <span data-i18n="navProgress">Tiến độ</span></button>
     </nav>
 
     <main>
-      <section id="view-today" class="view">
+      <section id="view-today" class="view is-active">
         <div class="daily-summary card compact">
           <div>
             <div class="muted small" data-i18n="goal">Mục tiêu</div>
@@ -60,6 +58,29 @@
           </div>
         </div>
 
+        <div id="setStudyBanner" class="set-study-banner card compact" hidden>
+          <div>
+            <strong id="setStudyTitle">A1 · Bộ 1</strong>
+            <div id="setStudyProgress" class="small muted"></div>
+          </div>
+          <button id="startSetWritingBtn" type="button" class="primary">✍️ Tập viết bộ này</button>
+        </div>
+
+        <div id="setWritingSessionBar" class="set-writing-session-bar card" hidden>
+          <div class="set-writing-session-head">
+            <button id="setWritingBackBtn" type="button">← Quay về các bộ</button>
+            <div class="set-writing-session-title-wrap">
+              <strong id="setWritingSessionTitle">Luyện viết A1 · Bộ 1</strong>
+              <div id="setWritingSessionMeta" class="small muted"></div>
+            </div>
+          </div>
+          <div id="setWritingHelp" class="small muted"></div>
+          <div class="set-writing-session-nav">
+            <button id="setWritingPrevBtn" type="button">← Từ trước</button>
+            <button id="setWritingNextBtn" type="button" class="primary">Từ tiếp →</button>
+          </div>
+        </div>
+
         <div class="study-grid">
           <article class="card word-card">
             <div class="word-head">
@@ -67,7 +88,6 @@
                 <div class="meta-line"><span id="levelPos">A1</span><span id="wordIndex">1 / 20</span></div>
                 <div id="hanzi" class="hanzi">啊</div>
                 <div id="pinyin" class="pinyin">ā</div>
-                <div id="pinyinViHint" class="pinyin-vi-hint" aria-live="polite"></div>
               </div>
               <button id="favoriteBtn" type="button" class="icon-btn" data-i18n-title="favorite" title="Đánh dấu từ">☆</button>
             </div>
@@ -87,7 +107,6 @@
             <div class="toolbar">
               <button id="speakBtn" type="button" class="primary"><span>🔊</span> <span data-i18n="listenWord">Nghe từ</span></button>
               <button id="slowBtn" type="button"><span>🐢</span> <span data-i18n="slow">Chậm</span></button>
-              <button id="fastBtn" type="button"><span>⚡</span> <span data-i18n="fast">Nhanh</span></button>
               <button id="togglePinyinBtn" type="button">Ẩn Pinyin</button>
             </div>
 
@@ -101,7 +120,6 @@
               </div>
               <audio id="recordingAudio" controls hidden></audio>
               <div id="recordStatus" class="small muted" aria-live="polite"></div>
-              <div id="guestTrialStatus" class="small muted" aria-live="polite"></div>
               <div id="pronunciationResult" class="pronunciation-result" hidden aria-live="polite">
                 <div class="score-ring"><strong id="pronunciationScore">—</strong><span>/100</span></div>
                 <div class="pronunciation-details">
@@ -152,22 +170,38 @@
               <button id="clearCanvasBtn" type="button" data-i18n="clear">Xóa</button>
             </div>
 
-            <div id="writingWordLabel" class="writing-word-label" aria-live="polite"></div>
-            <div id="writingGrid" class="writing-grid" aria-label="Vùng luyện viết chữ Phồn thể"></div>
+            <div class="writing-mode-switch" role="tablist" aria-label="Writing mode">
+              <button id="singleWritingModeBtn" type="button" class="is-active" role="tab" aria-selected="true"><span aria-hidden="true">✍️</span> <span data-i18n="writingSingleMode">Ô đơn</span></button>
+              <button id="copybookWritingModeBtn" type="button" role="tab" aria-selected="false"><span aria-hidden="true">▦</span> <span data-i18n="writingCopybookMode">Luyện lặp</span></button>
+            </div>
+
+            <label class="brush-toggle-row">
+              <input id="brushModeCheckbox" type="checkbox" />
+              <span>
+                <strong data-i18n="brushMode">🖌 Bút thư pháp (Apple Pencil)</strong>
+                <small class="muted" data-i18n="brushModeHint">Bật để độ dày thay đổi theo lực nhấn của Apple Pencil. Tắt để dùng nét đều.</small>
+              </span>
+            </label>
+
+            <div id="singleWritingPanel">
+              <div id="writingWordLabel" class="writing-word-label" aria-live="polite"></div>
+              <div id="writingGrid" class="writing-grid" aria-label="Vùng luyện viết chữ Phồn thể"></div>
+            </div>
+
+            <div id="copybookWritingPanel" hidden>
+              <div id="copybookWordMeta" class="copybook-word-meta"></div>
+              <div class="small muted copybook-hint" data-i18n="copybookHint">Mỗi hàng: 1 ô mẫu → 3 ô tô theo mẫu mờ dần → 4 ô tự viết. Nét bạn viết luôn được giữ nguyên để tự so sánh.</div>
+              <div id="copybookGrid" class="copybook-grid" aria-label="Vở luyện viết lặp lại"></div>
+            </div>
 
             <label class="toggle-row">
               <input id="showGuideCheckbox" type="checkbox" checked />
               <span data-i18n="showGuide">Hiện chữ mẫu mờ</span>
             </label>
 
-            <div class="tip-box" data-i18n-html="writingTip"><strong>Cách luyện:</strong> tô theo mẫu → tắt mẫu → tự viết → đọc thành tiếng chữ vừa viết.</div>
-
+            <div class="tip-box" data-i18n-html="writingTip"><strong>Cách luyện:</strong> bấm ▶ để xem thứ tự nét → viết theo mẫu → tắt mẫu → tự viết. Nét bạn vẽ sẽ không bị thay thế.</div>
           </aside>
         </div>
-      </section>
-
-      <section id="view-radicals" class="view is-active">
-        <div id="radicalsApp" class="radicals-app"></div>
       </section>
 
       <section id="view-vocab" class="view">
@@ -188,10 +222,6 @@
           <div id="quizResult" class="quiz-result" aria-live="polite"></div>
           <div class="toolbar"><button id="newQuizBtn" type="button" class="primary" data-i18n="anotherQuestion">Câu khác</button></div>
         </div>
-      </section>
-
-      <section id="view-homework" class="view">
-        <div id="homeworkApp" class="homework-app" aria-live="polite"></div>
       </section>
 
       <section id="view-progress" class="view">
@@ -227,6 +257,39 @@
     </main>
 
     <footer data-i18n="footerNote">Dữ liệu từ vựng của từng trình độ được tải từ thư mục data. English có thể được bổ sung từ CC-CEDICT khi có mạng; câu ví dụ là nội dung hỗ trợ học tập.</footer>
+  </div>
+
+  <div id="studyModeModal" class="modal-overlay" hidden role="dialog" aria-modal="true" aria-labelledby="studyModeTitle">
+    <div class="modal-card study-mode-card">
+      <div class="modal-head">
+        <div><div class="eyebrow">TOCFL · STUDY</div><h2 id="studyModeTitle">Cách học</h2></div>
+        <button id="studyModeCloseBtn" class="icon-btn" type="button" aria-label="Close">×</button>
+      </div>
+      <div class="study-mode-grid">
+        <button id="studyByLevelBtn" type="button" class="study-mode-option">
+          <span class="study-mode-icon">🎓</span>
+          <strong id="studyByLevelTitle">Theo trình độ</strong>
+          <small id="studyByLevelDesc" class="muted">Chọn A1, A2, B1...</small>
+        </button>
+        <button id="studyBySetBtn" type="button" class="study-mode-option">
+          <span class="study-mode-icon">🗂️</span>
+          <strong id="studyBySetTitle">Theo từng bộ</strong>
+          <small id="studyBySetDesc" class="muted">Học từng bộ rồi luyện viết đúng bộ đó.</small>
+        </button>
+      </div>
+    </div>
+  </div>
+
+  <div id="setModal" class="modal-overlay" hidden role="dialog" aria-modal="true" aria-labelledby="setModalTitle">
+    <div class="modal-card set-modal-card">
+      <div class="modal-head">
+        <div><div class="eyebrow">TOCFL · SETS</div><h2 id="setModalTitle">A1 · Chọn bộ để học</h2></div>
+        <button id="setCloseBtn" class="icon-btn" type="button" aria-label="Close">×</button>
+      </div>
+      <p id="setModalSubtitle" class="muted"></p>
+      <div class="toolbar set-modal-toolbar"><button id="setChangeLevelBtn" type="button">🎓 Đổi trình độ</button></div>
+      <div id="setGrid" class="set-grid" aria-live="polite"></div>
+    </div>
   </div>
 
   <div id="levelModal" class="modal-overlay" hidden role="dialog" aria-modal="true" aria-labelledby="levelModalTitle">
@@ -322,10 +385,7 @@
   </div>
 
   <script src="./config.js"></script>
-  <script src="./pinyin-helper.js" defer></script>
   <script src="./app.js" defer></script>
-  <script src="./radicals.js" defer></script>
-  <script src="./homework.js" defer></script>
   <script type="module" src="./auth.js"></script>
 </body>
 </html>

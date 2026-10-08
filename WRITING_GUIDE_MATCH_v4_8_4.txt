@@ -1,0 +1,12 @@
+v4.8.4 - Writing guide shape match
+
+Fixes:
+- The faint character inside the writing square no longer overlays a font glyph on top of the HanziWriter vector.
+- The large tracing model and stroke-order animation now use the same HanziWriter vector source and the same padding.
+- The small black word preview above the writing squares also uses HanziWriter vector data.
+- Font fallback is shown only when vector stroke data truly fails to load.
+
+Upload these files only:
+- app.js
+- styles.css
+- sw.js

@@ -1,0 +1,16 @@
+v4.8.5 - Integrated stroke-order preview
+
+What changed
+- Removed the large separate stroke-order section below Writing practice.
+- Every writing square now contains its own small ▶ button.
+- Tap ▶ to animate the stroke order directly inside the same square you will write in.
+- During animation, drawing is temporarily disabled to prevent accidental Apple Pencil marks.
+- After animation finishes, the faint guide returns if "Show faint guide" is enabled.
+- A small stroke-count badge appears in the top-left of each square.
+- Apple Pencil anti-selection protections remain enabled.
+
+Quick upload files
+- index.html
+- styles.css
+- app.js
+- sw.js

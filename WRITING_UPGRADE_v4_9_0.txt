@@ -1,0 +1,30 @@
+LEARNING TOCFL v4.9.0 — Writing upgrade
+
+Built from v4.8.7.
+
+1) User ink is never snapped/replaced
+- The reference/stroke-order layer and the user's ink canvas are fully separate.
+- Stroke-order preview animates only the reference layer underneath the user's writing.
+- Existing handwritten strokes are not cleared, corrected, hidden, redrawn, or converted to the model.
+- Apple Pencil touching the preview-button corner is treated as handwriting, not as a preview command.
+
+2) New Repeat practice / copybook mode
+- Switch between "Single box" and "Repeat practice".
+- Each character gets 8 cells:
+  1 model cell, 3 progressively lighter tracing cells, 4 blank memory-writing cells.
+- Traditional Chinese from the current TOCFL vocabulary is used.
+- Each row can be cleared independently.
+
+3) Optional Apple Pencil calligraphy brush
+- Off by default: constant-width normal pen.
+- On: variable-width brush using Apple Pencil pressure, with mild tilt/speed shaping.
+- Setting is saved locally on the device.
+
+Updated files for GitHub:
+- index.html
+- styles.css
+- app.js
+- sw.js
+
+Service-worker cache:
+- tocfl-v4-9-0-writing-copybook-brush

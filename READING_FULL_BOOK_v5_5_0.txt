@@ -1,0 +1,16 @@
+v5.5.0 — Full Reading content from the uploaded Modern Chinese PDF
+
+Added to the existing website; nothing was rebuilt or removed.
+
+- Lessons 1–15 are now listed in Reading.
+- Every Dialogue 1 / Dialogue 2 / Reading passage that is present in the uploaded PDF was added.
+- Lesson 15 has Dialogue 1 and Dialogue 2 because the uploaded PDF itself ends during Lesson 15 before the Reading section.
+- Vocabulary now uses a longest-match scan against the existing TOCFL A1+A2 data, including one-character words, so the vocabulary list is much more useful for learning each textbook lesson.
+- Lesson 1 keeps the manually entered textbook vocabulary list.
+- Existing Groq recording/checking, memorization mask, Supabase sync, radicals, writing, Apple Pencil and TOCFL data are unchanged.
+
+Upload:
+- reading.js
+- styles.css
+- sw.js
+- data/readings.json

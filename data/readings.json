@@ -1,111 +1,2733 @@
 {
   "meta": {
-    "title": "時代華語 Modern Chinese — Reading",
+    "title": "時代華語 Modern Chinese — Reading + Vocabulary",
     "source": "User-provided textbook PDF",
     "language": "zh-Hant",
-    "version": 1
+    "version": 3,
+    "lesson_count": 15,
+    "note": "Includes every dialogue/reading passage available in the uploaded PDF through Lesson 15. The uploaded PDF ends during Lesson 15 after Dialogue 2."
   },
-  "readings": [
+  "lessons": [
     {
-      "id": "MC-L1-READING",
+      "id": "MC-L1",
       "lesson": 1,
-      "title_zh": "自我介紹",
-      "title_vi": "Tự giới thiệu",
-      "pdf_page": 14,
-      "book_page": 46,
-      "sentences": [
-        {"zh":"大家好！","pinyin":"Dàjiā hǎo!","vi":"Chào mọi người!"},
-        {"zh":"我姓小林，叫友美，我是日本人。","pinyin":"Wǒ xìng Xiǎolín, jiào Yǒuměi, wǒ shì Rìběn rén.","vi":"Tôi họ Kobayashi, tên là Yūmi, tôi là người Nhật Bản."},
-        {"zh":"我喜歡臺灣，臺灣朋友很可愛。","pinyin":"Wǒ xǐhuān Táiwān, Táiwān péngyǒu hěn kě'ài.","vi":"Tôi thích Đài Loan, những người bạn Đài Loan rất đáng yêu."},
-        {"zh":"我愛吃水果，愛喝珍珠奶茶。","pinyin":"Wǒ ài chī shuǐguǒ, ài hē zhēnzhū nǎichá.","vi":"Tôi thích ăn trái cây và thích uống trà sữa trân châu."},
-        {"zh":"謝謝大家！","pinyin":"Xièxie dàjiā!","vi":"Cảm ơn mọi người!"}
+      "title_zh": "新同學",
+      "title_vi": "Bạn học mới",
+      "vocabulary": [
+        {
+          "zh": "同學",
+          "pinyin": "tóngxué",
+          "pos": "N",
+          "vi": "bạn học; bạn cùng lớp",
+          "source": "01-1"
+        },
+        {
+          "zh": "新",
+          "pinyin": "xīn",
+          "pos": "Vs",
+          "vi": "mới",
+          "source": "01-1"
+        },
+        {
+          "zh": "她",
+          "pinyin": "tā",
+          "pos": "N",
+          "vi": "cô ấy; bà ấy",
+          "source": "01-1"
+        },
+        {
+          "zh": "誰",
+          "pinyin": "shéi",
+          "pos": "N",
+          "vi": "ai",
+          "source": "01-1"
+        },
+        {
+          "zh": "叫",
+          "pinyin": "jiào",
+          "pos": "Vst",
+          "vi": "tên là; được gọi là",
+          "source": "01-1"
+        },
+        {
+          "zh": "姓",
+          "pinyin": "xìng",
+          "pos": "Vst",
+          "vi": "mang họ; họ là",
+          "source": "01-1"
+        },
+        {
+          "zh": "很",
+          "pinyin": "hěn",
+          "pos": "Adv",
+          "vi": "rất",
+          "source": "01-1"
+        },
+        {
+          "zh": "可愛",
+          "pinyin": "kě'ài",
+          "pos": "Vs",
+          "vi": "đáng yêu; dễ thương",
+          "source": "01-1"
+        },
+        {
+          "zh": "哪",
+          "pinyin": "nǎ / něi",
+          "pos": "Det",
+          "vi": "nào",
+          "source": "01-1"
+        },
+        {
+          "zh": "國",
+          "pinyin": "guó",
+          "pos": "N",
+          "vi": "nước; quốc gia",
+          "source": "01-1"
+        },
+        {
+          "zh": "知道",
+          "pinyin": "zhīdào",
+          "pos": "Vst",
+          "vi": "biết",
+          "source": "01-1"
+        },
+        {
+          "zh": "嗎",
+          "pinyin": "ma",
+          "pos": "Ptc",
+          "vi": "trợ từ nghi vấn",
+          "source": "01-1"
+        },
+        {
+          "zh": "人",
+          "pinyin": "rén",
+          "pos": "N",
+          "vi": "người",
+          "source": "01-1"
+        },
+        {
+          "zh": "日本",
+          "pinyin": "Rìběn",
+          "pos": "N",
+          "vi": "Nhật Bản",
+          "source": "01-1"
+        },
+        {
+          "zh": "臺灣",
+          "pinyin": "Táiwān",
+          "pos": "N",
+          "vi": "Đài Loan",
+          "source": "01-1"
+        },
+        {
+          "zh": "中國",
+          "pinyin": "Zhōngguó",
+          "pos": "N",
+          "vi": "Trung Quốc",
+          "source": "01-1"
+        },
+        {
+          "zh": "美國",
+          "pinyin": "Měiguó",
+          "pos": "N",
+          "vi": "Hoa Kỳ",
+          "source": "01-1"
+        },
+        {
+          "zh": "英國",
+          "pinyin": "Yīngguó",
+          "pos": "N",
+          "vi": "Vương quốc Anh",
+          "source": "01-1"
+        },
+        {
+          "zh": "漂亮",
+          "pinyin": "piàoliang",
+          "pos": "Vs",
+          "vi": "xinh đẹp",
+          "source": "01-1"
+        },
+        {
+          "zh": "姓名",
+          "pinyin": "xìngmíng",
+          "pos": "N",
+          "vi": "họ tên; tên đầy đủ",
+          "source": "01-2"
+        },
+        {
+          "zh": "呢",
+          "pinyin": "ne",
+          "pos": "Ptc",
+          "vi": "còn… thì sao?; trợ từ hỏi",
+          "source": "01-2"
+        },
+        {
+          "zh": "印尼",
+          "pinyin": "Yìnní",
+          "pos": "N",
+          "vi": "Indonesia",
+          "source": "01-2"
+        },
+        {
+          "zh": "喜歡",
+          "pinyin": "xǐhuān",
+          "pos": "Vst",
+          "vi": "thích",
+          "source": "01-2"
+        },
+        {
+          "zh": "你好",
+          "pinyin": "nǐ hǎo",
+          "pos": "Phrase",
+          "vi": "xin chào",
+          "source": "01-2"
+        },
+        {
+          "zh": "請問",
+          "pinyin": "qǐngwèn",
+          "pos": "Phrase",
+          "vi": "xin hỏi; cho tôi hỏi",
+          "source": "01-2"
+        },
+        {
+          "zh": "大家",
+          "pinyin": "dàjiā",
+          "pos": "N",
+          "vi": "mọi người",
+          "source": "01-3"
+        },
+        {
+          "zh": "朋友",
+          "pinyin": "péngyǒu",
+          "pos": "N",
+          "vi": "bạn; bạn bè",
+          "source": "01-3"
+        },
+        {
+          "zh": "愛",
+          "pinyin": "ài",
+          "pos": "Vst",
+          "vi": "yêu; thích",
+          "source": "01-3"
+        },
+        {
+          "zh": "吃",
+          "pinyin": "chī",
+          "pos": "V",
+          "vi": "ăn",
+          "source": "01-3"
+        },
+        {
+          "zh": "水果",
+          "pinyin": "shuǐguǒ",
+          "pos": "N",
+          "vi": "trái cây; hoa quả",
+          "source": "01-3"
+        },
+        {
+          "zh": "喝",
+          "pinyin": "hē",
+          "pos": "V",
+          "vi": "uống",
+          "source": "01-3"
+        },
+        {
+          "zh": "茶",
+          "pinyin": "chá",
+          "pos": "N",
+          "vi": "trà",
+          "source": "01-3"
+        },
+        {
+          "zh": "謝謝",
+          "pinyin": "xièxie",
+          "pos": "Vst",
+          "vi": "cảm ơn",
+          "source": "01-3"
+        },
+        {
+          "zh": "不客氣",
+          "pinyin": "bù kèqi",
+          "pos": "Phrase",
+          "vi": "không có gì; đừng khách sáo",
+          "source": "01-3"
+        },
+        {
+          "zh": "自我介紹",
+          "pinyin": "zìwǒ jièshào",
+          "pos": "Phrase",
+          "vi": "tự giới thiệu",
+          "source": "01-3"
+        },
+        {
+          "zh": "珍珠奶茶",
+          "pinyin": "zhēnzhū nǎichá",
+          "pos": "N",
+          "vi": "trà sữa trân châu",
+          "source": "01-3"
+        },
+        {
+          "zh": "奶茶",
+          "pinyin": "nǎichá",
+          "pos": "N",
+          "vi": "trà sữa",
+          "source": "01-3"
+        }
+      ],
+      "passages": [
+        {
+          "id": "MC-L1-D1",
+          "kind": "dialogue",
+          "title_zh": "對話一",
+          "title_vi": "Hội thoại 1",
+          "context_zh": "在教室",
+          "context_vi": "Trong lớp học",
+          "pdf_page": 2,
+          "book_page": 34,
+          "sentences": [
+            {
+              "speaker": "中明",
+              "zh": "宜文，她是誰？",
+              "pinyin": "Yíwén, tā shì shéi?",
+              "vi": "Yiwen, cô ấy là ai?"
+            },
+            {
+              "speaker": "宜文",
+              "zh": "她是新同學，叫友美。她很可愛。",
+              "pinyin": "Tā shì xīn tóngxué, jiào Yǒuměi. Tā hěn kě'ài.",
+              "vi": "Cô ấy là bạn học mới, tên Yumi. Cô ấy rất dễ thương."
+            },
+            {
+              "speaker": "中明",
+              "zh": "她是哪國人？妳知道嗎？",
+              "pinyin": "Tā shì nǎ guó rén? Nǐ zhīdào ma?",
+              "vi": "Cô ấy là người nước nào? Bạn có biết không?"
+            },
+            {
+              "speaker": "宜文",
+              "zh": "我知道，她是日本人。",
+              "pinyin": "Wǒ zhīdào, tā shì Rìběn rén.",
+              "vi": "Tôi biết, cô ấy là người Nhật Bản."
+            },
+            {
+              "speaker": "中明",
+              "zh": "她很漂亮。",
+              "pinyin": "Tā hěn piàoliang.",
+              "vi": "Cô ấy rất xinh đẹp."
+            }
+          ]
+        },
+        {
+          "id": "MC-L1-D2",
+          "kind": "dialogue",
+          "title_zh": "對話二",
+          "title_vi": "Hội thoại 2",
+          "context_zh": "在教室",
+          "context_vi": "Trong lớp học",
+          "pdf_page": 9,
+          "book_page": 41,
+          "sentences": [
+            {
+              "speaker": "中明",
+              "zh": "你好！我是李中明，請問妳叫什麼名字？",
+              "pinyin": "Nǐ hǎo! Wǒ shì Lǐ Zhōngmíng, qǐngwèn nǐ jiào shénme míngzi?",
+              "vi": "Xin chào! Tôi là Li Zhongming. Xin hỏi bạn tên gì?"
+            },
+            {
+              "speaker": "友美",
+              "zh": "我姓小林，叫友美。",
+              "pinyin": "Wǒ xìng Xiǎolín, jiào Yǒuměi.",
+              "vi": "Tôi họ Kobayashi, tên Yumi."
+            },
+            {
+              "speaker": "中明",
+              "zh": "請問妳是哪國人？",
+              "pinyin": "Qǐngwèn nǐ shì nǎ guó rén?",
+              "vi": "Xin hỏi bạn là người nước nào?"
+            },
+            {
+              "speaker": "友美",
+              "zh": "我是日本人，你呢？",
+              "pinyin": "Wǒ shì Rìběn rén, nǐ ne?",
+              "vi": "Tôi là người Nhật Bản, còn bạn?"
+            },
+            {
+              "speaker": "中明",
+              "zh": "我是印尼人。妳喜歡臺灣嗎？",
+              "pinyin": "Wǒ shì Yìnní rén. Nǐ xǐhuān Táiwān ma?",
+              "vi": "Tôi là người Indonesia. Bạn có thích Đài Loan không?"
+            },
+            {
+              "speaker": "友美",
+              "zh": "我喜歡臺灣。",
+              "pinyin": "Wǒ xǐhuān Táiwān.",
+              "vi": "Tôi thích Đài Loan."
+            }
+          ]
+        },
+        {
+          "id": "MC-L1-READING",
+          "kind": "reading",
+          "title_zh": "自我介紹",
+          "title_vi": "Tự giới thiệu",
+          "pdf_page": 14,
+          "book_page": 46,
+          "sentences": [
+            {
+              "zh": "大家好！",
+              "pinyin": "Dàjiā hǎo!",
+              "vi": "Chào mọi người!"
+            },
+            {
+              "zh": "我姓小林，叫友美，我是日本人。",
+              "pinyin": "Wǒ xìng Xiǎolín, jiào Yǒuměi, wǒ shì Rìběn rén.",
+              "vi": "Tôi họ Kobayashi, tên là Yūmi, tôi là người Nhật Bản."
+            },
+            {
+              "zh": "我喜歡臺灣，臺灣朋友很可愛。",
+              "pinyin": "Wǒ xǐhuān Táiwān, Táiwān péngyǒu hěn kě'ài.",
+              "vi": "Tôi thích Đài Loan, những người bạn Đài Loan rất đáng yêu."
+            },
+            {
+              "zh": "我愛吃水果，愛喝珍珠奶茶。",
+              "pinyin": "Wǒ ài chī shuǐguǒ, ài hē zhēnzhū nǎichá.",
+              "vi": "Tôi thích ăn trái cây và thích uống trà sữa trân châu."
+            },
+            {
+              "zh": "謝謝大家！",
+              "pinyin": "Xièxie dàjiā!",
+              "vi": "Cảm ơn mọi người!"
+            }
+          ]
+        }
       ]
     },
     {
-      "id": "MC-L2-READING",
+      "id": "MC-L2",
       "lesson": 2,
-      "title_zh": "友美做什麼？",
-      "title_vi": "Yūmi làm gì?",
-      "pdf_page": 31,
-      "book_page": 63,
-      "sentences": [
-        {"zh":"友美是學生，十九歲。","pinyin":"Yǒuměi shì xuéshēng, shíjiǔ suì.","vi":"Yūmi là học sinh, 19 tuổi."},
-        {"zh":"她早上六點半起床，七點去學校，八點四十分上課；","pinyin":"Tā zǎoshàng liù diǎn bàn qǐchuáng, qī diǎn qù xuéxiào, bā diǎn sìshí fēn shàngkè;","vi":"Cô ấy thức dậy lúc 6:30 sáng, 7 giờ đi học và 8:40 bắt đầu vào lớp;"},
-        {"zh":"中午十二點下課、吃午飯；","pinyin":"Zhōngwǔ shí'èr diǎn xiàkè, chī wǔfàn;","vi":"12 giờ trưa tan học và ăn trưa;"},
-        {"zh":"下午一點去圖書館；","pinyin":"Xiàwǔ yī diǎn qù túshūguǎn;","vi":"1 giờ chiều đi thư viện;"},
-        {"zh":"四點回家做飯，晚上六點吃飯，十點睡覺。","pinyin":"Sì diǎn huí jiā zuòfàn, wǎnshàng liù diǎn chīfàn, shí diǎn shuìjiào.","vi":"4 giờ về nhà nấu cơm, 6 giờ tối ăn cơm và 10 giờ đi ngủ."},
-        {"zh":"友美很忙！","pinyin":"Yǒuměi hěn máng!","vi":"Yūmi rất bận!"}
+      "title_zh": "你幾點去學校？",
+      "title_vi": "Mấy giờ bạn đi học?",
+      "vocabulary": [],
+      "passages": [
+        {
+          "id": "MC-L2-D1",
+          "kind": "dialogue",
+          "title_zh": "對話1",
+          "title_vi": "Hội thoại 1",
+          "context_zh": "在中明家",
+          "context_vi": "Ở nhà Zhongming",
+          "pdf_page": 18,
+          "book_page": 50,
+          "sentences": [
+            {
+              "speaker": "媽媽",
+              "zh": "今天是星期一，你不去學校嗎？",
+              "pinyin": "",
+              "vi": ""
+            },
+            {
+              "speaker": "中明",
+              "zh": "我早上沒有課，九點去圖書館。",
+              "pinyin": "",
+              "vi": ""
+            },
+            {
+              "speaker": "媽媽",
+              "zh": "中午呢？你中午回家嗎？",
+              "pinyin": "",
+              "vi": ""
+            },
+            {
+              "speaker": "中明",
+              "zh": "我下午有課，中午不回家。",
+              "pinyin": "",
+              "vi": ""
+            },
+            {
+              "speaker": "媽媽",
+              "zh": "你幾點下課？",
+              "pinyin": "",
+              "vi": ""
+            },
+            {
+              "speaker": "中明",
+              "zh": "我四點四十分下課。",
+              "pinyin": "",
+              "vi": ""
+            }
+          ]
+        },
+        {
+          "id": "MC-L2-D2",
+          "kind": "dialogue",
+          "title_zh": "對話2",
+          "title_vi": "Hội thoại 2",
+          "context_zh": "星期五下課以後",
+          "context_vi": "Sau giờ học thứ Sáu",
+          "pdf_page": 25,
+          "book_page": 57,
+          "sentences": [
+            {
+              "speaker": "宜文",
+              "zh": "今天是星期五，明天是週末，你們要不要來我家？",
+              "pinyin": "",
+              "vi": ""
+            },
+            {
+              "speaker": "中明",
+              "zh": "明天是九月二十三號……啊！是妳的生日！",
+              "pinyin": "",
+              "vi": ""
+            },
+            {
+              "speaker": "友美",
+              "zh": "宜文，生日快樂！",
+              "pinyin": "",
+              "vi": ""
+            },
+            {
+              "speaker": "宜文",
+              "zh": "謝謝！明天晚上六點來我家，好不好？",
+              "pinyin": "",
+              "vi": ""
+            },
+            {
+              "speaker": "中明",
+              "zh": "沒問題。",
+              "pinyin": "",
+              "vi": ""
+            },
+            {
+              "speaker": "友美",
+              "zh": "好，明天見。",
+              "pinyin": "",
+              "vi": ""
+            }
+          ]
+        },
+        {
+          "id": "MC-L2-READING",
+          "kind": "reading",
+          "title_zh": "友美做什麼？",
+          "title_vi": "Yumi làm gì?",
+          "pdf_page": 31,
+          "book_page": 63,
+          "sentences": [
+            {
+              "speaker": "",
+              "zh": "友美是學生，十九歲。",
+              "pinyin": "",
+              "vi": ""
+            },
+            {
+              "speaker": "",
+              "zh": "她早上六點半起床，七點去學校，八點四十分上課；",
+              "pinyin": "",
+              "vi": ""
+            },
+            {
+              "speaker": "",
+              "zh": "中午十二點下課、吃午飯；",
+              "pinyin": "",
+              "vi": ""
+            },
+            {
+              "speaker": "",
+              "zh": "下午一點去圖書館；",
+              "pinyin": "",
+              "vi": ""
+            },
+            {
+              "speaker": "",
+              "zh": "四點回家做飯，晚上六點吃飯，十點睡覺。",
+              "pinyin": "",
+              "vi": ""
+            },
+            {
+              "speaker": "",
+              "zh": "友美很忙！",
+              "pinyin": "",
+              "vi": ""
+            }
+          ]
+        }
       ]
     },
     {
-      "id": "MC-L3-READING",
+      "id": "MC-L3",
       "lesson": 3,
-      "title_zh": "友美的生日",
-      "title_vi": "Sinh nhật của Yūmi",
-      "pdf_page": 54,
-      "book_page": 86,
-      "sentences": [
-        {"zh":"今天是友美的生日，她請我、中明和國安一起去她家玩。","pinyin":"Jīntiān shì Yǒuměi de shēngrì, tā qǐng wǒ, Zhōngmíng hé Guó'ān yìqǐ qù tā jiā wán.","vi":"Hôm nay là sinh nhật của Yūmi, cô ấy mời tôi, Zhongming và Guoan cùng đến nhà cô ấy chơi."},
-        {"zh":"我們送友美花、兩本中文書、兩枝可愛的小鉛筆和一個大蛋糕，她很喜歡這些禮物。","pinyin":"Wǒmen sòng Yǒuměi huā, liǎng běn Zhōngwén shū, liǎng zhī kě'ài de xiǎo qiānbǐ hé yí ge dà dàngāo, tā hěn xǐhuān zhèxiē lǐwù.","vi":"Chúng tôi tặng Yūmi hoa, hai quyển sách tiếng Trung, hai cây bút chì nhỏ dễ thương và một chiếc bánh lớn; cô ấy rất thích những món quà này."},
-        {"zh":"友美請我們吃點心和水果，大家都很開心。","pinyin":"Yǒuměi qǐng wǒmen chī diǎnxīn hé shuǐguǒ, dàjiā dōu hěn kāixīn.","vi":"Yūmi mời chúng tôi ăn điểm tâm và trái cây, mọi người đều rất vui."}
+      "title_zh": "買生日禮物",
+      "title_vi": "Mua quà sinh nhật",
+      "vocabulary": [],
+      "passages": [
+        {
+          "id": "MC-L3-D1",
+          "kind": "dialogue",
+          "title_zh": "對話1",
+          "title_vi": "Hội thoại 1",
+          "context_zh": "在學校",
+          "context_vi": "Ở trường",
+          "pdf_page": 37,
+          "book_page": 69,
+          "sentences": [
+            {
+              "speaker": "宜文",
+              "zh": "明天是友美的生日，我想送她一個禮物。",
+              "pinyin": "",
+              "vi": ""
+            },
+            {
+              "speaker": "中明",
+              "zh": "妳想送她什麼？",
+              "pinyin": "",
+              "vi": ""
+            },
+            {
+              "speaker": "宜文",
+              "zh": "友美愛看書，我想送她兩本中文書，你呢？",
+              "pinyin": "",
+              "vi": ""
+            },
+            {
+              "speaker": "中明",
+              "zh": "我想買一些花和一個大蛋糕。",
+              "pinyin": "",
+              "vi": ""
+            },
+            {
+              "speaker": "宜文",
+              "zh": "我們一起去買，好不好？",
+              "pinyin": "",
+              "vi": ""
+            },
+            {
+              "speaker": "中明",
+              "zh": "好啊！",
+              "pinyin": "",
+              "vi": ""
+            }
+          ]
+        },
+        {
+          "id": "MC-L3-D2",
+          "kind": "dialogue",
+          "title_zh": "對話2",
+          "title_vi": "Hội thoại 2",
+          "context_zh": "買禮物",
+          "context_vi": "Mua quà",
+          "pdf_page": 44,
+          "book_page": 76,
+          "sentences": [
+            {
+              "speaker": "宜文",
+              "zh": "這種小鉛筆怎麼樣？",
+              "pinyin": "",
+              "vi": ""
+            },
+            {
+              "speaker": "中明",
+              "zh": "很可愛，友美喜歡可愛的東西。",
+              "pinyin": "",
+              "vi": ""
+            },
+            {
+              "speaker": "宜文",
+              "zh": "我們買兩枝，好不好？兩枝五十塊錢。",
+              "pinyin": "",
+              "vi": ""
+            },
+            {
+              "speaker": "中明",
+              "zh": "五十塊錢很便宜！妳看，哪個顏色漂亮？",
+              "pinyin": "",
+              "vi": ""
+            },
+            {
+              "speaker": "宜文",
+              "zh": "紅色、白色都好看。",
+              "pinyin": "",
+              "vi": ""
+            },
+            {
+              "speaker": "中明",
+              "zh": "我想友美喜歡白色，她常常穿白色的衣服。",
+              "pinyin": "",
+              "vi": ""
+            },
+            {
+              "speaker": "宜文",
+              "zh": "好，我們買白的。",
+              "pinyin": "",
+              "vi": ""
+            }
+          ]
+        },
+        {
+          "id": "MC-L3-READING",
+          "kind": "reading",
+          "title_zh": "友美的生日",
+          "title_vi": "Sinh nhật Yumi",
+          "pdf_page": 54,
+          "book_page": 86,
+          "sentences": [
+            {
+              "speaker": "",
+              "zh": "今天是友美的生日，她請我、中明和國安一起去她家玩。",
+              "pinyin": "",
+              "vi": ""
+            },
+            {
+              "speaker": "",
+              "zh": "我們送友美花、兩本中文書、兩枝可愛的小鉛筆和一個大蛋糕，她很喜歡這些禮物。",
+              "pinyin": "",
+              "vi": ""
+            },
+            {
+              "speaker": "",
+              "zh": "友美請我們吃點心和水果，大家都很開心。",
+              "pinyin": "",
+              "vi": ""
+            }
+          ]
+        }
       ]
     },
     {
-      "id": "MC-L4-READING",
+      "id": "MC-L4",
       "lesson": 4,
-      "title_zh": "買飲料",
-      "title_vi": "Mua đồ uống",
-      "pdf_page": 76,
-      "book_page": 108,
-      "sentences": [
-        {"zh":"臺灣夏天的天氣很熱，很多人都喜歡喝飲料。","pinyin":"Táiwān xiàtiān de tiānqì hěn rè, hěn duō rén dōu xǐhuān hē yǐnliào.","vi":"Mùa hè ở Đài Loan rất nóng, rất nhiều người thích uống đồ uống."},
-        {"zh":"飲料店很多，他們賣很多種飲料。","pinyin":"Yǐnliào diàn hěn duō, tāmen mài hěn duō zhǒng yǐnliào.","vi":"Có rất nhiều cửa hàng đồ uống và họ bán nhiều loại đồ uống."},
-        {"zh":"果汁、牛奶、咖啡、茶都很好喝，有的很便宜，一杯二十多塊錢。","pinyin":"Guǒzhī, niúnǎi, kāfēi, chá dōu hěn hǎohē, yǒude hěn piányí, yì bēi èrshí duō kuài qián.","vi":"Nước trái cây, sữa, cà phê và trà đều ngon; có loại rất rẻ, một ly chỉ hơn 20 Đài tệ."},
-        {"zh":"我和朋友都很愛喝，我們每天都去買。","pinyin":"Wǒ hé péngyǒu dōu hěn ài hē, wǒmen měitiān dōu qù mǎi.","vi":"Tôi và bạn bè đều rất thích uống, ngày nào chúng tôi cũng đi mua."}
+      "title_zh": "你要咖啡還是茶？",
+      "title_vi": "Bạn muốn cà phê hay trà?",
+      "vocabulary": [],
+      "passages": [
+        {
+          "id": "MC-L4-D1",
+          "kind": "dialogue",
+          "title_zh": "對話1",
+          "title_vi": "Hội thoại 1",
+          "context_zh": "",
+          "context_vi": "",
+          "pdf_page": 59,
+          "book_page": 91,
+          "sentences": [
+            {
+              "speaker": "中明",
+              "zh": "天氣好熱，我們去喝飲料，好不好？",
+              "pinyin": "",
+              "vi": ""
+            },
+            {
+              "speaker": "友美",
+              "zh": "好啊！你想喝什麼？咖啡還是茶？",
+              "pinyin": "",
+              "vi": ""
+            },
+            {
+              "speaker": "中明",
+              "zh": "咖啡、茶，我都喜歡。我也很餓，想吃一點兒東西。",
+              "pinyin": "",
+              "vi": ""
+            },
+            {
+              "speaker": "友美",
+              "zh": "這家餐廳人太多，我們去那家餐廳，好嗎？他們的牛肉麵很好吃，也很便宜。",
+              "pinyin": "",
+              "vi": ""
+            },
+            {
+              "speaker": "中明",
+              "zh": "太好了！我最愛吃牛肉麵。他們也賣飲料嗎？",
+              "pinyin": "",
+              "vi": ""
+            },
+            {
+              "speaker": "友美",
+              "zh": "他們賣很多種飲料。",
+              "pinyin": "",
+              "vi": ""
+            },
+            {
+              "speaker": "中明",
+              "zh": "我們現在去，好嗎？",
+              "pinyin": "",
+              "vi": ""
+            },
+            {
+              "speaker": "友美",
+              "zh": "好。",
+              "pinyin": "",
+              "vi": ""
+            }
+          ]
+        },
+        {
+          "id": "MC-L4-D2",
+          "kind": "dialogue",
+          "title_zh": "對話2",
+          "title_vi": "Hội thoại 2",
+          "context_zh": "在餐廳櫃台點餐",
+          "context_vi": "Gọi món tại quầy nhà hàng",
+          "pdf_page": 68,
+          "book_page": 100,
+          "sentences": [
+            {
+              "speaker": "中明",
+              "zh": "小姐，我們要點兩碗牛肉麵和兩杯茶。",
+              "pinyin": "",
+              "vi": ""
+            },
+            {
+              "speaker": "女店員",
+              "zh": "請問兩位要紅茶還是綠茶？",
+              "pinyin": "",
+              "vi": ""
+            },
+            {
+              "speaker": "友美",
+              "zh": "我要紅茶。",
+              "pinyin": "",
+              "vi": ""
+            },
+            {
+              "speaker": "中明",
+              "zh": "請給我們一杯紅茶、一杯綠茶。請問一共多少錢？",
+              "pinyin": "",
+              "vi": ""
+            },
+            {
+              "speaker": "女店員",
+              "zh": "一共兩百一十五塊錢。",
+              "pinyin": "",
+              "vi": ""
+            },
+            {
+              "speaker": "女店員",
+              "zh": "找您七百八十五塊錢，謝謝。",
+              "pinyin": "",
+              "vi": ""
+            },
+            {
+              "speaker": "中明",
+              "zh": "一共兩百多塊錢，好便宜！",
+              "pinyin": "",
+              "vi": ""
+            }
+          ]
+        },
+        {
+          "id": "MC-L4-READING",
+          "kind": "reading",
+          "title_zh": "買飲料",
+          "title_vi": "Mua đồ uống",
+          "pdf_page": 76,
+          "book_page": 108,
+          "sentences": [
+            {
+              "speaker": "",
+              "zh": "臺灣夏天的天氣很熱，很多人都喜歡喝飲料。",
+              "pinyin": "",
+              "vi": ""
+            },
+            {
+              "speaker": "",
+              "zh": "飲料店很多，他們賣很多種飲料。",
+              "pinyin": "",
+              "vi": ""
+            },
+            {
+              "speaker": "",
+              "zh": "果汁、牛奶、咖啡、茶都很好喝，有的很便宜，一杯二十多塊錢。",
+              "pinyin": "",
+              "vi": ""
+            },
+            {
+              "speaker": "",
+              "zh": "我和朋友都很愛喝，我們每天都去買。",
+              "pinyin": "",
+              "vi": ""
+            }
+          ]
+        }
       ]
     },
     {
-      "id": "MC-L5-READING",
+      "id": "MC-L5",
       "lesson": 5,
-      "title_zh": "我的房間",
-      "title_vi": "Phòng của tôi",
-      "pdf_page": 95,
-      "book_page": 127,
-      "sentences": [
-        {"zh":"我的房間裡有一張桌子、一張床跟一張沙發。","pinyin":"Wǒ de fángjiān lǐ yǒu yì zhāng zhuōzi, yì zhāng chuáng gēn yì zhāng shāfā.","vi":"Trong phòng tôi có một cái bàn, một cái giường và một ghế sofa."},
-        {"zh":"沙發前面有一台很新的電視機，可是我不常看電視，我最喜歡在沙發上看書。","pinyin":"Shāfā qiánmiàn yǒu yì tái hěn xīn de diànshìjī, kěshì wǒ bù cháng kàn diànshì, wǒ zuì xǐhuān zài shāfā shàng kànshū.","vi":"Trước sofa có một chiếc TV rất mới, nhưng tôi không thường xem TV; tôi thích nhất là đọc sách trên sofa."},
-        {"zh":"我的書很多，有中文書，也有英文書。","pinyin":"Wǒ de shū hěn duō, yǒu Zhōngwén shū, yě yǒu Yīngwén shū.","vi":"Tôi có rất nhiều sách, có sách tiếng Trung và cũng có sách tiếng Anh."},
-        {"zh":"我房間的窗戶很大，我的貓喜歡在窗戶旁邊曬太陽。","pinyin":"Wǒ fángjiān de chuānghù hěn dà, wǒ de māo xǐhuān zài chuānghù pángbiān shài tàiyáng.","vi":"Cửa sổ phòng tôi rất lớn, con mèo của tôi thích phơi nắng cạnh cửa sổ."}
+      "title_zh": "我的錢包在哪裡？",
+      "title_vi": "Ví của tôi ở đâu?",
+      "vocabulary": [],
+      "passages": [
+        {
+          "id": "MC-L5-D1",
+          "kind": "dialogue",
+          "title_zh": "對話1",
+          "title_vi": "Hội thoại 1",
+          "context_zh": "",
+          "context_vi": "",
+          "pdf_page": 80,
+          "book_page": 112,
+          "sentences": [
+            {
+              "speaker": "中明",
+              "zh": "友美，妳這個週末要做什麼？",
+              "pinyin": "",
+              "vi": ""
+            },
+            {
+              "speaker": "友美",
+              "zh": "我要在家看書、聽音樂。",
+              "pinyin": "",
+              "vi": ""
+            },
+            {
+              "speaker": "中明",
+              "zh": "妳星期六下午有空嗎？我們一起去喝下午茶，怎麼樣？",
+              "pinyin": "",
+              "vi": ""
+            },
+            {
+              "speaker": "友美",
+              "zh": "好啊！你想去哪裡？",
+              "pinyin": "",
+              "vi": ""
+            },
+            {
+              "speaker": "中明",
+              "zh": "我知道一家很不錯的咖啡廳，那裡的冰淇淋很好吃。",
+              "pinyin": "",
+              "vi": ""
+            },
+            {
+              "speaker": "友美",
+              "zh": "他們有巧克力冰淇淋嗎？",
+              "pinyin": "",
+              "vi": ""
+            },
+            {
+              "speaker": "中明",
+              "zh": "有啊！他們有很多種冰淇淋。",
+              "pinyin": "",
+              "vi": ""
+            },
+            {
+              "speaker": "友美",
+              "zh": "我們這個星期六下午兩點半去吧。",
+              "pinyin": "",
+              "vi": ""
+            },
+            {
+              "speaker": "中明",
+              "zh": "好。",
+              "pinyin": "",
+              "vi": ""
+            }
+          ]
+        },
+        {
+          "id": "MC-L5-D2",
+          "kind": "dialogue",
+          "title_zh": "對話2",
+          "title_vi": "Hội thoại 2",
+          "context_zh": "",
+          "context_vi": "",
+          "pdf_page": 87,
+          "book_page": 119,
+          "sentences": [
+            {
+              "speaker": "中明",
+              "zh": "媽，我跟友美要去喝下午茶，可是我的錢包不在房間裡。",
+              "pinyin": "",
+              "vi": ""
+            },
+            {
+              "speaker": "媽媽",
+              "zh": "客廳的桌子上有一個錢包，是不是你的？",
+              "pinyin": "",
+              "vi": ""
+            },
+            {
+              "speaker": "中明",
+              "zh": "那不是我的，是哥哥的。我的錢包不在客廳裡。",
+              "pinyin": "",
+              "vi": ""
+            },
+            {
+              "speaker": "媽媽",
+              "zh": "沙發下面呢？",
+              "pinyin": "",
+              "vi": ""
+            },
+            {
+              "speaker": "中明",
+              "zh": "沙發上面、下面跟旁邊都沒有。媽，妳幫我找，好嗎？",
+              "pinyin": "",
+              "vi": ""
+            },
+            {
+              "speaker": "媽媽",
+              "zh": "我很忙，現在要去廚房做飯，你再去房間找吧。",
+              "pinyin": "",
+              "vi": ""
+            },
+            {
+              "speaker": "中明",
+              "zh": "啊！在這裡！錢包在我的書下面。",
+              "pinyin": "",
+              "vi": ""
+            }
+          ]
+        },
+        {
+          "id": "MC-L5-READING",
+          "kind": "reading",
+          "title_zh": "我的房間",
+          "title_vi": "Phòng của tôi",
+          "pdf_page": 95,
+          "book_page": 127,
+          "sentences": [
+            {
+              "speaker": "",
+              "zh": "我的房間裡有一張桌子、一張床跟一張沙發。",
+              "pinyin": "",
+              "vi": ""
+            },
+            {
+              "speaker": "",
+              "zh": "沙發前面有一台很新的電視機，可是我不常看電視，我最喜歡在沙發上看書。",
+              "pinyin": "",
+              "vi": ""
+            },
+            {
+              "speaker": "",
+              "zh": "我的書很多，有中文書，也有英文書。",
+              "pinyin": "",
+              "vi": ""
+            },
+            {
+              "speaker": "",
+              "zh": "我房間的窗戶很大，我的貓喜歡在窗戶旁邊曬太陽。",
+              "pinyin": "",
+              "vi": ""
+            }
+          ]
+        }
       ]
     },
     {
-      "id": "MC-L6-READING",
+      "id": "MC-L6",
       "lesson": 6,
-      "title_zh": "我的興趣",
-      "title_vi": "Sở thích của tôi",
-      "pdf_page": 117,
-      "book_page": 149,
-      "sentences": [
-        {"zh":"我有幾個好朋友，我們都喜歡學中文、聽音樂、唱歌。","pinyin":"Wǒ yǒu jǐ ge hǎo péngyǒu, wǒmen dōu xǐhuān xué Zhōngwén, tīng yīnyuè, chànggē.","vi":"Tôi có vài người bạn tốt; chúng tôi đều thích học tiếng Trung, nghe nhạc và hát."},
-        {"zh":"中明最愛唱歌，他的中文歌唱得很好。","pinyin":"Zhōngmíng zuì ài chànggē, tā de Zhōngwén gē chàng de hěn hǎo.","vi":"Zhongming thích hát nhất và hát các bài tiếng Trung rất hay."},
-        {"zh":"平常我們都有點兒忙，可是週末我們常一起去運動，宜文游泳游得不錯，國安的籃球打得很好，我喜歡打網球，有時候我們也一起去看運動比賽。","pinyin":"Píngcháng wǒmen dōu yǒudiǎnr máng, kěshì zhōumò wǒmen cháng yìqǐ qù yùndòng, Yíwén yóuyǒng yóu de búcuò, Guó'ān de lánqiú dǎ de hěn hǎo, wǒ xǐhuān dǎ wǎngqiú, yǒushíhou wǒmen yě yìqǐ qù kàn yùndòng bǐsài.","vi":"Bình thường chúng tôi hơi bận, nhưng cuối tuần thường cùng nhau vận động: Yiwen bơi khá tốt, Guoan chơi bóng rổ rất giỏi, tôi thích đánh tennis, đôi khi chúng tôi còn cùng đi xem thi đấu thể thao."},
-        {"zh":"有這幾個好朋友，我真高興！","pinyin":"Yǒu zhè jǐ ge hǎo péngyǒu, wǒ zhēn gāoxìng!","vi":"Có những người bạn tốt này, tôi thật sự rất vui!"}
+      "title_zh": "週末去打網球吧！",
+      "title_vi": "Cuối tuần đi đánh tennis nhé!",
+      "vocabulary": [],
+      "passages": [
+        {
+          "id": "MC-L6-D1",
+          "kind": "dialogue",
+          "title_zh": "對話1",
+          "title_vi": "Hội thoại 1",
+          "context_zh": "",
+          "context_vi": "",
+          "pdf_page": 99,
+          "book_page": 131,
+          "sentences": [
+            {
+              "speaker": "國安",
+              "zh": "今天天氣不錯，海邊的風景也很漂亮，我想去游泳，妳們想去嗎？",
+              "pinyin": "",
+              "vi": ""
+            },
+            {
+              "speaker": "友美",
+              "zh": "我不會游泳。宜文，妳會游泳嗎？",
+              "pinyin": "",
+              "vi": ""
+            },
+            {
+              "speaker": "宜文",
+              "zh": "我會游泳，可是游得不太好。",
+              "pinyin": "",
+              "vi": ""
+            },
+            {
+              "speaker": "國安",
+              "zh": "我們去跑步，怎麼樣？",
+              "pinyin": "",
+              "vi": ""
+            },
+            {
+              "speaker": "友美",
+              "zh": "我不喜歡跑步，我跑步跑得很慢。",
+              "pinyin": "",
+              "vi": ""
+            },
+            {
+              "speaker": "宜文",
+              "zh": "打網球怎麼樣？中明說妳的網球打得很好，我們一起去打吧。",
+              "pinyin": "",
+              "vi": ""
+            },
+            {
+              "speaker": "友美",
+              "zh": "好啊。",
+              "pinyin": "",
+              "vi": ""
+            }
+          ]
+        },
+        {
+          "id": "MC-L6-D2",
+          "kind": "dialogue",
+          "title_zh": "對話2",
+          "title_vi": "Hội thoại 2",
+          "context_zh": "",
+          "context_vi": "",
+          "pdf_page": 109,
+          "book_page": 141,
+          "sentences": [
+            {
+              "speaker": "國安",
+              "zh": "聽說這部電影很有趣，我們晚上一起去看，好不好？",
+              "pinyin": "",
+              "vi": ""
+            },
+            {
+              "speaker": "中明",
+              "zh": "我覺得有一點兒累，我想回家休息。",
+              "pinyin": "",
+              "vi": ""
+            },
+            {
+              "speaker": "國安",
+              "zh": "你不要常常在家上網、看電腦、玩手機，應該去運動。明天我有空，我們可以一起去騎腳踏車。",
+              "pinyin": "",
+              "vi": ""
+            },
+            {
+              "speaker": "中明",
+              "zh": "可是我只想聽音樂、睡覺。",
+              "pinyin": "",
+              "vi": ""
+            },
+            {
+              "speaker": "國安",
+              "zh": "後天去呢？",
+              "pinyin": "",
+              "vi": ""
+            },
+            {
+              "speaker": "中明",
+              "zh": "這兩天天氣有點兒冷，我們週末去，好嗎？",
+              "pinyin": "",
+              "vi": ""
+            }
+          ]
+        },
+        {
+          "id": "MC-L6-READING",
+          "kind": "reading",
+          "title_zh": "我的興趣",
+          "title_vi": "Sở thích của tôi",
+          "pdf_page": 117,
+          "book_page": 149,
+          "sentences": [
+            {
+              "speaker": "",
+              "zh": "我有幾個好朋友，我們都喜歡學中文、聽音樂、唱歌。",
+              "pinyin": "",
+              "vi": ""
+            },
+            {
+              "speaker": "",
+              "zh": "中明最愛唱歌，他的中文歌唱得很好。",
+              "pinyin": "",
+              "vi": ""
+            },
+            {
+              "speaker": "",
+              "zh": "平常我們都有點兒忙，可是週末我們常一起去運動，宜文游泳游得不錯，國安的籃球打得很好，我喜歡打網球，有時候我們也一起去看運動比賽。",
+              "pinyin": "",
+              "vi": ""
+            },
+            {
+              "speaker": "",
+              "zh": "有這幾個好朋友，我真高興！",
+              "pinyin": "",
+              "vi": ""
+            }
+          ]
+        }
       ]
     },
     {
-      "id": "MC-L7-READING",
+      "id": "MC-L7",
       "lesson": 7,
-      "title_zh": "從我家坐捷運很方便",
-      "title_vi": "Đi MRT từ nhà tôi rất tiện",
-      "pdf_page": 141,
-      "book_page": 173,
-      "sentences": [
-        {"zh":"我家附近有三條捷運線，一條紅的、一條綠的和一條藍的。","pinyin":"Wǒ jiā fùjìn yǒu sān tiáo jiéyùn xiàn, yì tiáo hóng de, yì tiáo lǜ de hé yì tiáo lán de.","vi":"Gần nhà tôi có ba tuyến MRT: một tuyến đỏ, một tuyến xanh lá và một tuyến xanh dương."},
-        {"zh":"我平常坐紅線去學校上課，週末也坐捷運去運動、看電影。","pinyin":"Wǒ píngcháng zuò hóngxiàn qù xuéxiào shàngkè, zhōumò yě zuò jiéyùn qù yùndòng, kàn diànyǐng.","vi":"Bình thường tôi đi tuyến đỏ đến trường học; cuối tuần cũng đi MRT để vận động và xem phim."},
-        {"zh":"朋友常來找我，他們都覺得坐捷運來我家，又快又方便。","pinyin":"Péngyǒu cháng lái zhǎo wǒ, tāmen dōu juéde zuò jiéyùn lái wǒ jiā, yòu kuài yòu fāngbiàn.","vi":"Bạn bè thường đến tìm tôi; họ đều thấy đi MRT đến nhà tôi vừa nhanh vừa tiện."},
-        {"zh":"從我家到機場也不遠，開車去、坐捷運去都可以。","pinyin":"Cóng wǒ jiā dào jīchǎng yě bù yuǎn, kāichē qù, zuò jiéyùn qù dōu kěyǐ.","vi":"Từ nhà tôi đến sân bay cũng không xa; đi ô tô hay MRT đều được."},
-        {"zh":"機場附近的風景也很漂亮，我常常去看風景、看飛機。","pinyin":"Jīchǎng fùjìn de fēngjǐng yě hěn piàoliang, wǒ chángcháng qù kàn fēngjǐng, kàn fēijī.","vi":"Phong cảnh gần sân bay cũng rất đẹp; tôi thường đến đó ngắm cảnh và xem máy bay."}
+      "title_zh": "怎麼到飯店去？",
+      "title_vi": "Đi đến khách sạn thế nào?",
+      "vocabulary": [],
+      "passages": [
+        {
+          "id": "MC-L7-D1",
+          "kind": "dialogue",
+          "title_zh": "對話1",
+          "title_vi": "Hội thoại 1",
+          "context_zh": "學校下課休息時間",
+          "context_vi": "Giờ nghỉ ở trường",
+          "pdf_page": 125,
+          "book_page": 157,
+          "sentences": [
+            {
+              "speaker": "友美",
+              "zh": "元真，我們明天幾點去找妳的韓國朋友？",
+              "pinyin": "",
+              "vi": ""
+            },
+            {
+              "speaker": "元真",
+              "zh": "我們下午四點要到天美飯店，她在那裡等我們。",
+              "pinyin": "",
+              "vi": ""
+            },
+            {
+              "speaker": "友美",
+              "zh": "我們要怎麼去？坐捷運還是坐公車？",
+              "pinyin": "",
+              "vi": ""
+            },
+            {
+              "speaker": "元真",
+              "zh": "聽說那家飯店不遠，我想我們可以從學校走路去。",
+              "pinyin": "",
+              "vi": ""
+            },
+            {
+              "speaker": "友美",
+              "zh": "可是我不知道怎麼走，妳知道嗎？",
+              "pinyin": "",
+              "vi": ""
+            },
+            {
+              "speaker": "元真",
+              "zh": "我也不知道。我們可以先上網看地圖。",
+              "pinyin": "",
+              "vi": ""
+            },
+            {
+              "speaker": "友美",
+              "zh": "啊！上課了！我們先上課吧。",
+              "pinyin": "",
+              "vi": ""
+            },
+            {
+              "speaker": "元真",
+              "zh": "好。",
+              "pinyin": "",
+              "vi": ""
+            }
+          ]
+        },
+        {
+          "id": "MC-L7-D2",
+          "kind": "dialogue",
+          "title_zh": "對話2",
+          "title_vi": "Hội thoại 2",
+          "context_zh": "下課後一起看地圖",
+          "context_vi": "Sau giờ học cùng xem bản đồ",
+          "pdf_page": 135,
+          "book_page": 167,
+          "sentences": [
+            {
+              "speaker": "元真",
+              "zh": "友美，妳看，天美飯店在大學路。我現在知道怎麼走了。",
+              "pinyin": "",
+              "vi": ""
+            },
+            {
+              "speaker": "友美",
+              "zh": "啊！天美飯店在這裡！我知道這個地方，附近有郵局跟超級市場。",
+              "pinyin": "",
+              "vi": ""
+            },
+            {
+              "speaker": "元真",
+              "zh": "我想走路去一定沒問題。",
+              "pinyin": "",
+              "vi": ""
+            },
+            {
+              "speaker": "友美",
+              "zh": "可是我覺得那裡有點兒遠，走路去太累了。",
+              "pinyin": "",
+              "vi": ""
+            },
+            {
+              "speaker": "元真",
+              "zh": "妳想怎麼去？",
+              "pinyin": "",
+              "vi": ""
+            },
+            {
+              "speaker": "友美",
+              "zh": "坐捷運又方便又舒服，我們可以坐捷運。",
+              "pinyin": "",
+              "vi": ""
+            },
+            {
+              "speaker": "元真",
+              "zh": "好，我們明天坐捷運去吧。",
+              "pinyin": "",
+              "vi": ""
+            }
+          ]
+        },
+        {
+          "id": "MC-L7-READING",
+          "kind": "reading",
+          "title_zh": "從我家坐捷運很方便",
+          "title_vi": "Đi MRT từ nhà tôi rất tiện",
+          "pdf_page": 141,
+          "book_page": 173,
+          "sentences": [
+            {
+              "speaker": "",
+              "zh": "我家附近有三條捷運線，一條紅的、一條綠的和一條藍的。",
+              "pinyin": "",
+              "vi": ""
+            },
+            {
+              "speaker": "",
+              "zh": "我平常坐紅線去學校上課，週末也坐捷運去運動、看電影。",
+              "pinyin": "",
+              "vi": ""
+            },
+            {
+              "speaker": "",
+              "zh": "朋友常來找我，他們都覺得坐捷運來我家，又快又方便。",
+              "pinyin": "",
+              "vi": ""
+            },
+            {
+              "speaker": "",
+              "zh": "從我家到機場也不遠，開車去、坐捷運去都可以。",
+              "pinyin": "",
+              "vi": ""
+            },
+            {
+              "speaker": "",
+              "zh": "機場附近的風景也很漂亮，我常常去看風景、看飛機。",
+              "pinyin": "",
+              "vi": ""
+            }
+          ]
+        }
       ]
+    },
+    {
+      "id": "MC-L8",
+      "lesson": 8,
+      "title_zh": "這條裙子真好看",
+      "title_vi": "Chiếc váy này đẹp thật",
+      "vocabulary": [],
+      "passages": [
+        {
+          "id": "MC-L8-D1",
+          "kind": "dialogue",
+          "title_zh": "對話1",
+          "title_vi": "Hội thoại 1",
+          "context_zh": "",
+          "context_vi": "",
+          "pdf_page": 148,
+          "book_page": 180,
+          "sentences": [
+            {
+              "speaker": "宜文",
+              "zh": "元真，妳的這條裙子真好看，我很喜歡。",
+              "pinyin": "",
+              "vi": ""
+            },
+            {
+              "speaker": "元真",
+              "zh": "謝謝，這是我去年的生日禮物。",
+              "pinyin": "",
+              "vi": ""
+            },
+            {
+              "speaker": "宜文",
+              "zh": "聽說這個牌子的東西很貴，可是很多人喜歡。",
+              "pinyin": "",
+              "vi": ""
+            },
+            {
+              "speaker": "元真",
+              "zh": "是啊，因為這個牌子很有名，衣服、褲子和裙子也都很好看，所以很多人買。",
+              "pinyin": "",
+              "vi": ""
+            },
+            {
+              "speaker": "宜文",
+              "zh": "妳知道去哪裡買這個牌子的衣服嗎？",
+              "pinyin": "",
+              "vi": ""
+            },
+            {
+              "speaker": "元真",
+              "zh": "知道，百貨公司都有，不難找。",
+              "pinyin": "",
+              "vi": ""
+            },
+            {
+              "speaker": "宜文",
+              "zh": "我很想去看，可是我最近胖了五公斤，我怕衣服不好買。",
+              "pinyin": "",
+              "vi": ""
+            },
+            {
+              "speaker": "元真",
+              "zh": "妳胖了嗎？我不覺得啊，我跟妳一起去看。我也想去買今年夏天的新衣服。",
+              "pinyin": "",
+              "vi": ""
+            },
+            {
+              "speaker": "宜文",
+              "zh": "好，我們找時間一起去。",
+              "pinyin": "",
+              "vi": ""
+            }
+          ]
+        },
+        {
+          "id": "MC-L8-D2",
+          "kind": "dialogue",
+          "title_zh": "對話2",
+          "title_vi": "Hội thoại 2",
+          "context_zh": "在百貨公司",
+          "context_vi": "Ở trung tâm bách hóa",
+          "pdf_page": 156,
+          "book_page": 188,
+          "sentences": [
+            {
+              "speaker": "宜文",
+              "zh": "妳看，這條黃色的褲子不錯吧？",
+              "pinyin": "",
+              "vi": ""
+            },
+            {
+              "speaker": "元真",
+              "zh": "很好看。這條藍的也很漂亮，藍色是今年很流行的顏色。",
+              "pinyin": "",
+              "vi": ""
+            },
+            {
+              "speaker": "宜文",
+              "zh": "這兩條我都去穿穿看。",
+              "pinyin": "",
+              "vi": ""
+            },
+            {
+              "speaker": "元真",
+              "zh": "妳覺得怎麼樣？",
+              "pinyin": "",
+              "vi": ""
+            },
+            {
+              "speaker": "宜文",
+              "zh": "都太短，也太小了。",
+              "pinyin": "",
+              "vi": ""
+            },
+            {
+              "speaker": "元真",
+              "zh": "沒關係，我們可以下個週末再來看。對了，妳要買鞋子嗎？",
+              "pinyin": "",
+              "vi": ""
+            },
+            {
+              "speaker": "宜文",
+              "zh": "是啊，我想買一雙黑色的。",
+              "pinyin": "",
+              "vi": ""
+            },
+            {
+              "speaker": "元真",
+              "zh": "鞋子都在一樓，我們到樓下去吧！九點了，百貨公司快要關了。",
+              "pinyin": "",
+              "vi": ""
+            },
+            {
+              "speaker": "宜文",
+              "zh": "電梯在那裡！我們現在去買。",
+              "pinyin": "",
+              "vi": ""
+            }
+          ]
+        },
+        {
+          "id": "MC-L8-READING",
+          "kind": "reading",
+          "title_zh": "年輕人喜歡新東西",
+          "title_vi": "Người trẻ thích đồ mới",
+          "pdf_page": 165,
+          "book_page": 197,
+          "sentences": [
+            {
+              "speaker": "",
+              "zh": "百貨公司裡有很多衣服、鞋子和皮包，都是最新的，所以很多年輕女生喜歡到百貨公司去，漂亮的、流行的衣服，她們都想穿穿看。",
+              "pinyin": "",
+              "vi": ""
+            },
+            {
+              "speaker": "",
+              "zh": "很多年輕男生愛在書店看汽車雜誌，汽車很貴，他們不一定可以買新車，可是都看得很開心。",
+              "pinyin": "",
+              "vi": ""
+            },
+            {
+              "speaker": "",
+              "zh": "我覺得有的舊東西很不錯，有的新東西也很有趣，我很喜歡看新車、新衣服，可是因為我的錢不多，所以我不常買。",
+              "pinyin": "",
+              "vi": ""
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "MC-L9",
+      "lesson": 9,
+      "title_zh": "我的中文課",
+      "title_vi": "Lớp tiếng Trung của tôi",
+      "vocabulary": [],
+      "passages": [
+        {
+          "id": "MC-L9-D1",
+          "kind": "dialogue",
+          "title_zh": "對話1",
+          "title_vi": "Hội thoại 1",
+          "context_zh": "在學校",
+          "context_vi": "Ở trường",
+          "pdf_page": 170,
+          "book_page": 202,
+          "sentences": [
+            {
+              "speaker": "國安",
+              "zh": "友美，這幾個句子的意思我不太懂，妳可以教我嗎？",
+              "pinyin": "",
+              "vi": ""
+            },
+            {
+              "speaker": "友美",
+              "zh": "我覺得有點兒難，我也不太懂。",
+              "pinyin": "",
+              "vi": ""
+            },
+            {
+              "speaker": "國安",
+              "zh": "這課真的不好學。",
+              "pinyin": "",
+              "vi": ""
+            },
+            {
+              "speaker": "友美",
+              "zh": "我們可以去問家樂，他非常聰明，我想他懂。",
+              "pinyin": "",
+              "vi": ""
+            },
+            {
+              "speaker": "國安",
+              "zh": "那麼我們現在去找他。",
+              "pinyin": "",
+              "vi": ""
+            },
+            {
+              "speaker": "友美",
+              "zh": "現在他在上書法課，我們四點去吧。",
+              "pinyin": "",
+              "vi": ""
+            },
+            {
+              "speaker": "國安",
+              "zh": "可是從四點到五點半我要上英文課，六點去，怎麼樣？",
+              "pinyin": "",
+              "vi": ""
+            },
+            {
+              "speaker": "友美",
+              "zh": "好。我先回宿舍做功課，再跟你一起去找他。",
+              "pinyin": "",
+              "vi": ""
+            }
+          ]
+        },
+        {
+          "id": "MC-L9-D2",
+          "kind": "dialogue",
+          "title_zh": "對話2",
+          "title_vi": "Hội thoại 2",
+          "context_zh": "在學校",
+          "context_vi": "Ở trường",
+          "pdf_page": 177,
+          "book_page": 209,
+          "sentences": [
+            {
+              "speaker": "中明",
+              "zh": "期中考快要到了，老師說我們可以去圖書館對面的大教室看書。",
+              "pinyin": "",
+              "vi": ""
+            },
+            {
+              "speaker": "家樂",
+              "zh": "太好了！在那裡看書很舒服。我們每天都能用那間教室嗎？",
+              "pinyin": "",
+              "vi": ""
+            },
+            {
+              "speaker": "中明",
+              "zh": "我們班只能禮拜一跟禮拜二下午用。",
+              "pinyin": "",
+              "vi": ""
+            },
+            {
+              "speaker": "家樂",
+              "zh": "可是這些時間我都有語言交換，不能去。",
+              "pinyin": "",
+              "vi": ""
+            },
+            {
+              "speaker": "中明",
+              "zh": "別的時間可以嗎？",
+              "pinyin": "",
+              "vi": ""
+            },
+            {
+              "speaker": "家樂",
+              "zh": "我朋友最近比較忙，別的時間他沒有空。",
+              "pinyin": "",
+              "vi": ""
+            },
+            {
+              "speaker": "中明",
+              "zh": "我們去問老師，也許他可以幫你。",
+              "pinyin": "",
+              "vi": ""
+            },
+            {
+              "speaker": "家樂",
+              "zh": "好，希望老師可以幫我。",
+              "pinyin": "",
+              "vi": ""
+            }
+          ]
+        },
+        {
+          "id": "MC-L9-READING",
+          "kind": "reading",
+          "title_zh": "我喜歡學中文",
+          "title_vi": "Tôi thích học tiếng Trung",
+          "pdf_page": 185,
+          "book_page": 217,
+          "sentences": [
+            {
+              "speaker": "",
+              "zh": "這個學期開始，從星期一到星期五我都有華語課，每天從上午八點四十分到中午十二點上課，下午一點寫功課，有時候也跟同學練習說中文。",
+              "pinyin": "",
+              "vi": ""
+            },
+            {
+              "speaker": "",
+              "zh": "最近我的台灣朋友想學日文，請我教他，我也請他教我中文。現在我非常忙，沒有很多時間讀書，可是因為有語言交換，所以我的中文進步了。",
+              "pinyin": "",
+              "vi": ""
+            },
+            {
+              "speaker": "",
+              "zh": "下個星期華語課有期中考，我有一點兒緊張，所以每天晚上都讀書，也練習寫字，希望下個星期的考試能考得很好。",
+              "pinyin": "",
+              "vi": ""
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "MC-L10",
+      "lesson": 10,
+      "title_zh": "最近感冒的人很多",
+      "title_vi": "Gần đây có nhiều người bị cảm",
+      "vocabulary": [],
+      "passages": [
+        {
+          "id": "MC-L10-D1",
+          "kind": "dialogue",
+          "title_zh": "對話1",
+          "title_vi": "Hội thoại 1",
+          "context_zh": "",
+          "context_vi": "",
+          "pdf_page": 190,
+          "book_page": 222,
+          "sentences": [
+            {
+              "speaker": "元真",
+              "zh": "老師，國安今天要請假。他發燒了，不能來上課。",
+              "pinyin": "",
+              "vi": ""
+            },
+            {
+              "speaker": "老師",
+              "zh": "他發燒了？那他應該去看醫生。",
+              "pinyin": "",
+              "vi": ""
+            },
+            {
+              "speaker": "元真",
+              "zh": "國安跟我說，他今天要去看醫生，他家附近有一家不錯的醫院。",
+              "pinyin": "",
+              "vi": ""
+            },
+            {
+              "speaker": "老師",
+              "zh": "最近很多人感冒，你們要戴口罩，也要常常洗手。",
+              "pinyin": "",
+              "vi": ""
+            },
+            {
+              "speaker": "元真",
+              "zh": "老師，我很健康，不常生病。",
+              "pinyin": "",
+              "vi": ""
+            },
+            {
+              "speaker": "老師",
+              "zh": "平常不生病的人也要注意。",
+              "pinyin": "",
+              "vi": ""
+            },
+            {
+              "speaker": "元真",
+              "zh": "對，我應該多注意身體健康。",
+              "pinyin": "",
+              "vi": ""
+            },
+            {
+              "speaker": "老師",
+              "zh": "妳可以帶一些水果去看國安，跟他說應該多喝水，也要多休息。",
+              "pinyin": "",
+              "vi": ""
+            },
+            {
+              "speaker": "元真",
+              "zh": "好，我明天帶一些水果去看他。",
+              "pinyin": "",
+              "vi": ""
+            }
+          ]
+        },
+        {
+          "id": "MC-L10-D2",
+          "kind": "dialogue",
+          "title_zh": "對話2",
+          "title_vi": "Hội thoại 2",
+          "context_zh": "",
+          "context_vi": "",
+          "pdf_page": 200,
+          "book_page": 232,
+          "sentences": [
+            {
+              "speaker": "醫生",
+              "zh": "你覺得哪裡不舒服？",
+              "pinyin": "",
+              "vi": ""
+            },
+            {
+              "speaker": "國安",
+              "zh": "我咳嗽、頭痛，鼻子也不舒服。",
+              "pinyin": "",
+              "vi": ""
+            },
+            {
+              "speaker": "醫生",
+              "zh": "最近天氣冷了，很多人感冒了。",
+              "pinyin": "",
+              "vi": ""
+            },
+            {
+              "speaker": "國安",
+              "zh": "對啊！聽說我們學校感冒、發燒的學生很多。",
+              "pinyin": "",
+              "vi": ""
+            },
+            {
+              "speaker": "醫生",
+              "zh": "最近也有很多人肚子痛。",
+              "pinyin": "",
+              "vi": ""
+            },
+            {
+              "speaker": "國安",
+              "zh": "是因為吃的東西不乾淨嗎？",
+              "pinyin": "",
+              "vi": ""
+            },
+            {
+              "speaker": "醫生",
+              "zh": "不是，這也是因為感冒。",
+              "pinyin": "",
+              "vi": ""
+            },
+            {
+              "speaker": "國安",
+              "zh": "請問我需要吃藥嗎？",
+              "pinyin": "",
+              "vi": ""
+            },
+            {
+              "speaker": "醫生",
+              "zh": "我會給你三天的藥。你要記得多喝一點兒水，要是發燒了，就吃紅色的藥。",
+              "pinyin": "",
+              "vi": ""
+            },
+            {
+              "speaker": "國安",
+              "zh": "好，謝謝醫生。",
+              "pinyin": "",
+              "vi": ""
+            }
+          ]
+        },
+        {
+          "id": "MC-L10-READING",
+          "kind": "reading",
+          "title_zh": "我的同學感冒了",
+          "title_vi": "Bạn học của tôi bị cảm",
+          "pdf_page": 206,
+          "book_page": 238,
+          "sentences": [
+            {
+              "speaker": "",
+              "zh": "最近感冒的人很多，我的同學國安也感冒了，今天開始發燒了。",
+              "pinyin": "",
+              "vi": ""
+            },
+            {
+              "speaker": "",
+              "zh": "他打電話跟我說，他不能來上課，請我幫他請假。",
+              "pinyin": "",
+              "vi": ""
+            },
+            {
+              "speaker": "",
+              "zh": "我很擔心他，請他去看醫生，也告訴他要聽醫生的話，不要忘記多喝水、多休息。",
+              "pinyin": "",
+              "vi": ""
+            },
+            {
+              "speaker": "",
+              "zh": "他說他會去看醫生，請我們不要擔心，如果他好了，就會來學校上課。",
+              "pinyin": "",
+              "vi": ""
+            },
+            {
+              "speaker": "",
+              "zh": "今天我要帶一些水果去看他，也會跟他說今天的功課。",
+              "pinyin": "",
+              "vi": ""
+            },
+            {
+              "speaker": "",
+              "zh": "我們都希望他明天能回學校上課。",
+              "pinyin": "",
+              "vi": ""
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "MC-L11",
+      "lesson": 11,
+      "title_zh": "你們是怎麼認識的？",
+      "title_vi": "Hai người quen nhau thế nào?",
+      "vocabulary": [],
+      "passages": [
+        {
+          "id": "MC-L11-D1",
+          "kind": "dialogue",
+          "title_zh": "對話1",
+          "title_vi": "Hội thoại 1",
+          "context_zh": "宜文到宿舍去找友美",
+          "context_vi": "Yiwen đến ký túc xá tìm Yumi",
+          "pdf_page": 210,
+          "book_page": 242,
+          "sentences": [
+            {
+              "speaker": "宜文",
+              "zh": "友美，今天的功課妳寫了嗎？",
+              "pinyin": "",
+              "vi": ""
+            },
+            {
+              "speaker": "友美",
+              "zh": "我已經寫了，我現在在寫卡片。",
+              "pinyin": "",
+              "vi": ""
+            },
+            {
+              "speaker": "宜文",
+              "zh": "給誰的卡片？",
+              "pinyin": "",
+              "vi": ""
+            },
+            {
+              "speaker": "友美",
+              "zh": "一個新朋友。妳看，這是他送我的卡片。",
+              "pinyin": "",
+              "vi": ""
+            },
+            {
+              "speaker": "宜文",
+              "zh": "他寫的字真好看。你們是怎麼認識的？",
+              "pinyin": "",
+              "vi": ""
+            },
+            {
+              "speaker": "友美",
+              "zh": "我們是上網認識的，我看到他寫的文章，然後留言問了他一個問題，他回答得很有趣。",
+              "pinyin": "",
+              "vi": ""
+            },
+            {
+              "speaker": "宜文",
+              "zh": "你們常上網聊天嗎？",
+              "pinyin": "",
+              "vi": ""
+            },
+            {
+              "speaker": "友美",
+              "zh": "對啊，差不多每個晚上都聊。昨天他說他想跟我見面。",
+              "pinyin": "",
+              "vi": ""
+            },
+            {
+              "speaker": "宜文",
+              "zh": "妳呢？妳要跟他見面嗎？",
+              "pinyin": "",
+              "vi": ""
+            },
+            {
+              "speaker": "友美",
+              "zh": "我還沒決定。",
+              "pinyin": "",
+              "vi": ""
+            }
+          ]
+        },
+        {
+          "id": "MC-L11-D2",
+          "kind": "dialogue",
+          "title_zh": "對話2",
+          "title_vi": "Hội thoại 2",
+          "context_zh": "在教室裡",
+          "context_vi": "Trong lớp học",
+          "pdf_page": 221,
+          "book_page": 253,
+          "sentences": [
+            {
+              "speaker": "宜文",
+              "zh": "妳跟那位新朋友見面了沒有？",
+              "pinyin": "",
+              "vi": ""
+            },
+            {
+              "speaker": "友美",
+              "zh": "我還沒決定要不要跟他見面。",
+              "pinyin": "",
+              "vi": ""
+            },
+            {
+              "speaker": "宜文",
+              "zh": "妳擔心什麼？",
+              "pinyin": "",
+              "vi": ""
+            },
+            {
+              "speaker": "友美",
+              "zh": "我有點兒緊張，我以前沒有這種經驗，所以覺得這樣有點兒奇怪。",
+              "pinyin": "",
+              "vi": ""
+            },
+            {
+              "speaker": "宜文",
+              "zh": "妳不要緊張。我有辦法，我跟妳一起去。",
+              "pinyin": "",
+              "vi": ""
+            },
+            {
+              "speaker": "友美",
+              "zh": "太好了，謝謝妳幫我的忙。",
+              "pinyin": "",
+              "vi": ""
+            },
+            {
+              "speaker": "宜文",
+              "zh": "不客氣。妳打算什麼時候跟他見面？",
+              "pinyin": "",
+              "vi": ""
+            },
+            {
+              "speaker": "友美",
+              "zh": "可能這個週末吧。如果妳有空，我再跟他約時間。",
+              "pinyin": "",
+              "vi": ""
+            },
+            {
+              "speaker": "宜文",
+              "zh": "有空啊，但是我明天不會來學校，等妳決定了，再給我打電話吧。",
+              "pinyin": "",
+              "vi": ""
+            }
+          ]
+        },
+        {
+          "id": "MC-L11-READING",
+          "kind": "reading",
+          "title_zh": "我的新朋友",
+          "title_vi": "Người bạn mới của tôi",
+          "pdf_page": 228,
+          "book_page": 260,
+          "sentences": [
+            {
+              "speaker": "",
+              "zh": "今天我跟一個日本女生見面，她姓小林，叫友美。我們是在網路上認識的。友美看了我寫的文章，留言給我，她覺得我很有趣。我們常上網聊天，上個星期我寄了張卡片給她，約她見面。",
+              "pinyin": "",
+              "vi": ""
+            },
+            {
+              "speaker": "",
+              "zh": "我們在一家餐廳見面，友美的同學也來了。那家餐廳很有名，菜單也做得很好看、很特別。我們點了幾盤菜，然後開始聊天，聊得很開心，也一起照了幾張相片。",
+              "pinyin": "",
+              "vi": ""
+            },
+            {
+              "speaker": "",
+              "zh": "今天我的心情真好，因為友美太可愛了！我還想再約她出去，希望以後有機會常常跟她見面、聊天。",
+              "pinyin": "",
+              "vi": ""
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "MC-L12",
+      "lesson": 12,
+      "title_zh": "你想做什麼工作？",
+      "title_vi": "Bạn muốn làm công việc gì?",
+      "vocabulary": [],
+      "passages": [
+        {
+          "id": "MC-L12-D1",
+          "kind": "dialogue",
+          "title_zh": "對話1",
+          "title_vi": "Hội thoại 1",
+          "context_zh": "",
+          "context_vi": "",
+          "pdf_page": 235,
+          "book_page": 267,
+          "sentences": [
+            {
+              "speaker": "中明",
+              "zh": "你昨天怎麼沒來上課？",
+              "pinyin": "",
+              "vi": ""
+            },
+            {
+              "speaker": "國安",
+              "zh": "我去參加畫畫比賽。你們上課上了什麼？",
+              "pinyin": "",
+              "vi": ""
+            },
+            {
+              "speaker": "中明",
+              "zh": "老師問我們想做什麼工作，大家都說得很高興。",
+              "pinyin": "",
+              "vi": ""
+            },
+            {
+              "speaker": "國安",
+              "zh": "我知道友美想當護理師。別的同學呢？",
+              "pinyin": "",
+              "vi": ""
+            },
+            {
+              "speaker": "中明",
+              "zh": "宜文希望可以用中文和英文工作，所以她以後想當記者，元真想在銀行工作。",
+              "pinyin": "",
+              "vi": ""
+            },
+            {
+              "speaker": "國安",
+              "zh": "那你畢業以後想做什麼？",
+              "pinyin": "",
+              "vi": ""
+            },
+            {
+              "speaker": "中明",
+              "zh": "我以前想當大公司的老闆，可是老闆要做的事情太多，現在覺得當醫生比較好。那你想做什麼？",
+              "pinyin": "",
+              "vi": ""
+            },
+            {
+              "speaker": "國安",
+              "zh": "當醫生很不錯，但是太忙了，我只想每天可以準時上班、下班。",
+              "pinyin": "",
+              "vi": ""
+            }
+          ]
+        },
+        {
+          "id": "MC-L12-D2",
+          "kind": "dialogue",
+          "title_zh": "對話2",
+          "title_vi": "Hội thoại 2",
+          "context_zh": "",
+          "context_vi": "",
+          "pdf_page": 245,
+          "book_page": 277,
+          "sentences": [
+            {
+              "speaker": "中明",
+              "zh": "國安，你每天下課以後都要去麵包店工作，辛苦嗎？",
+              "pinyin": "",
+              "vi": ""
+            },
+            {
+              "speaker": "國安",
+              "zh": "不辛苦。我很喜歡這個工作，因為可以學怎麼做麵包，而且同事也都對我很好。",
+              "pinyin": "",
+              "vi": ""
+            },
+            {
+              "speaker": "中明",
+              "zh": "這樣你在學校的成績，不會有問題嗎？",
+              "pinyin": "",
+              "vi": ""
+            },
+            {
+              "speaker": "國安",
+              "zh": "不會啊！我都先做功課，再去工作。",
+              "pinyin": "",
+              "vi": ""
+            },
+            {
+              "speaker": "中明",
+              "zh": "我以前在餐廳上過班，因為太累了，常常睡得不夠。",
+              "pinyin": "",
+              "vi": ""
+            },
+            {
+              "speaker": "國安",
+              "zh": "這樣真的很辛苦。",
+              "pinyin": "",
+              "vi": ""
+            },
+            {
+              "speaker": "中明",
+              "zh": "有時候早上起得太晚，上課遲到了，而且沒時間準備考試，所以就不做了。",
+              "pinyin": "",
+              "vi": ""
+            },
+            {
+              "speaker": "國安",
+              "zh": "我下午四點到六點上班，工作時間不長，所以沒問題。",
+              "pinyin": "",
+              "vi": ""
+            },
+            {
+              "speaker": "中明",
+              "zh": "兩個小時也可以嗎？那你們麵包店還需要人嗎？",
+              "pinyin": "",
+              "vi": ""
+            },
+            {
+              "speaker": "國安",
+              "zh": "不知道，我明天看到老闆的時候，幫你問他。",
+              "pinyin": "",
+              "vi": ""
+            }
+          ]
+        },
+        {
+          "id": "MC-L12-READING",
+          "kind": "reading",
+          "title_zh": "工作",
+          "title_vi": "Công việc",
+          "pdf_page": 253,
+          "book_page": 285,
+          "sentences": [
+            {
+              "speaker": "",
+              "zh": "昨天我看了一個電視節目，有很多父母在節目上談自己的孩子，他們說現在年輕人覺得結不結婚不重要，快樂比較重要；找工作的時候，錢多不多不重要，重要的是喜不喜歡這個工作。",
+              "pinyin": "",
+              "vi": ""
+            },
+            {
+              "speaker": "",
+              "zh": "節目裡有人說，很多年輕人喜歡在有冷氣的辦公室裡工作，休息時間還可以喝咖啡、上網，工廠裡辛苦的工作沒有人要做，所以工人常常不夠。",
+              "pinyin": "",
+              "vi": ""
+            },
+            {
+              "speaker": "",
+              "zh": "如果大家都只喜歡做舒服的工作，那辛苦的工作誰要做呢？",
+              "pinyin": "",
+              "vi": ""
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "MC-L13",
+      "lesson": 13,
+      "title_zh": "用手機上網",
+      "title_vi": "Dùng điện thoại lên mạng",
+      "vocabulary": [],
+      "passages": [
+        {
+          "id": "MC-L13-D1",
+          "kind": "dialogue",
+          "title_zh": "對話1",
+          "title_vi": "Hội thoại 1",
+          "context_zh": "國安給中明打電話",
+          "context_vi": "Guoan gọi điện cho Zhongming",
+          "pdf_page": 258,
+          "book_page": 290,
+          "sentences": [
+            {
+              "speaker": "國安",
+              "zh": "喂，中明，半個小時以前我寄了一封電子郵件給你，你看到了嗎？",
+              "pinyin": "",
+              "vi": ""
+            },
+            {
+              "speaker": "中明",
+              "zh": "剛剛我的手機網路有點兒問題，不能看電子郵件，你寄的是什麼？",
+              "pinyin": "",
+              "vi": ""
+            },
+            {
+              "speaker": "國安",
+              "zh": "博物館的網址。下禮拜六老師要帶我們去參觀，你可以先看看。",
+              "pinyin": "",
+              "vi": ""
+            },
+            {
+              "speaker": "中明",
+              "zh": "好。現在沒問題了，我看到了。",
+              "pinyin": "",
+              "vi": ""
+            },
+            {
+              "speaker": "國安",
+              "zh": "網站上有地址，那個地方在我家附近，從我家出去，往右轉，差不多五分鐘就到了。",
+              "pinyin": "",
+              "vi": ""
+            },
+            {
+              "speaker": "中明",
+              "zh": "我們應該幾點到？",
+              "pinyin": "",
+              "vi": ""
+            },
+            {
+              "speaker": "國安",
+              "zh": "早上九點在博物館門口見，要記得準時到。",
+              "pinyin": "",
+              "vi": ""
+            },
+            {
+              "speaker": "中明",
+              "zh": "我們上個星期六去運動的時候，我到得太晚，真不好意思。下個星期我一定會準時。",
+              "pinyin": "",
+              "vi": ""
+            }
+          ]
+        },
+        {
+          "id": "MC-L13-D2",
+          "kind": "dialogue",
+          "title_zh": "對話2",
+          "title_vi": "Hội thoại 2",
+          "context_zh": "在博物館門口",
+          "context_vi": "Trước cửa bảo tàng",
+          "pdf_page": 266,
+          "book_page": 298,
+          "sentences": [
+            {
+              "speaker": "老師",
+              "zh": "博物館五分鐘以後就要開門了，大家都到了吧？",
+              "pinyin": "",
+              "vi": ""
+            },
+            {
+              "speaker": "國安",
+              "zh": "中明說他快要到了。",
+              "pinyin": "",
+              "vi": ""
+            },
+            {
+              "speaker": "家樂",
+              "zh": "老師，我們要不要先去排隊買票？",
+              "pinyin": "",
+              "vi": ""
+            },
+            {
+              "speaker": "老師",
+              "zh": "差不多需要排十分鐘的隊，那好吧，我們先去排隊。",
+              "pinyin": "",
+              "vi": ""
+            },
+            {
+              "speaker": "老師",
+              "zh": "今天我們打算參觀三個小時，會有人給我們介紹。進去以後，記得要安靜，不可以說話說得太大聲。",
+              "pinyin": "",
+              "vi": ""
+            },
+            {
+              "speaker": "家樂",
+              "zh": "老師，我剛剛先用手機上網看了很多有趣的圖片，真想馬上就看到博物館裡的東西。",
+              "pinyin": "",
+              "vi": ""
+            },
+            {
+              "speaker": "老師",
+              "zh": "我知道你非常喜歡歷史，我想你今天一定會很開心。",
+              "pinyin": "",
+              "vi": ""
+            },
+            {
+              "speaker": "家樂",
+              "zh": "我也在網路上找了很多文章，那些介紹和故事都非常有趣。",
+              "pinyin": "",
+              "vi": ""
+            },
+            {
+              "speaker": "老師",
+              "zh": "那如果大家有問題就可以問你了。",
+              "pinyin": "",
+              "vi": ""
+            },
+            {
+              "speaker": "家樂",
+              "zh": "要是我知道，一定會告訴大家！",
+              "pinyin": "",
+              "vi": ""
+            },
+            {
+              "speaker": "國安",
+              "zh": "中明來了！",
+              "pinyin": "",
+              "vi": ""
+            },
+            {
+              "speaker": "老師",
+              "zh": "好，我們進去參觀吧。",
+              "pinyin": "",
+              "vi": ""
+            }
+          ]
+        },
+        {
+          "id": "MC-L13-READING",
+          "kind": "reading",
+          "title_zh": "手機和我們的生活",
+          "title_vi": "Điện thoại và cuộc sống của chúng ta",
+          "pdf_page": 275,
+          "book_page": 307,
+          "sentences": [
+            {
+              "speaker": "",
+              "zh": "我們一天用幾個小時的手機呢？打電話、算錢、看天氣、看地圖、看朋友的留言，都需要手機。",
+              "pinyin": "",
+              "vi": ""
+            },
+            {
+              "speaker": "",
+              "zh": "我上個星期坐捷運去參觀一個科學展。出了捷運站以後，我不知道往哪個方向走，馬上看了手機的網路地圖，然後就知道怎麼走了。我從捷運站出去，先往右轉，過了第一個十字路口，再走五分鐘就到了。有手機真方便！",
+              "pinyin": "",
+              "vi": ""
+            },
+            {
+              "speaker": "",
+              "zh": "我們每天從家裡出去以後，最怕什麼事？忘了帶錢？忘了帶手機？還是手機壞了？如果世界上沒有手機了，我們的生活會怎麼樣呢？",
+              "pinyin": "",
+              "vi": ""
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "MC-L14",
+      "lesson": 14,
+      "title_zh": "跨年活動",
+      "title_vi": "Hoạt động đón năm mới",
+      "vocabulary": [],
+      "passages": [
+        {
+          "id": "MC-L14-D1",
+          "kind": "dialogue",
+          "title_zh": "對話1",
+          "title_vi": "Hội thoại 1",
+          "context_zh": "",
+          "context_vi": "",
+          "pdf_page": 281,
+          "book_page": 313,
+          "sentences": [
+            {
+              "speaker": "老師",
+              "zh": "家樂，你在台灣住了多久了？參加過台灣的新年活動嗎？",
+              "pinyin": "",
+              "vi": ""
+            },
+            {
+              "speaker": "家樂",
+              "zh": "我在台灣住了半年了，這是我第一次在台灣過新年。台灣人在一年的最後一天有什麼特別的活動？",
+              "pinyin": "",
+              "vi": ""
+            },
+            {
+              "speaker": "老師",
+              "zh": "十二月三十一號的晚上，很多城市都有跨年晚會，我最喜歡的是台北101的跨年晚會，有很多表演，又熱鬧又好看。",
+              "pinyin": "",
+              "vi": ""
+            },
+            {
+              "speaker": "家樂",
+              "zh": "跟朋友一起去一定會很有意思，大家要不要一起去？",
+              "pinyin": "",
+              "vi": ""
+            },
+            {
+              "speaker": "老師",
+              "zh": "如果大家要去跨年，要多帶一件衣服。去年我在那裡站了一晚，因為時間太久，天氣也太冷，回家以後就感冒了。",
+              "pinyin": "",
+              "vi": ""
+            },
+            {
+              "speaker": "宜文",
+              "zh": "我家在台北101大樓附近，大家可以先來我家，我們一起吃晚飯，再去看演唱會。",
+              "pinyin": "",
+              "vi": ""
+            },
+            {
+              "speaker": "國安",
+              "zh": "太好了！我們可以每個人都準備一些好吃的東西。",
+              "pinyin": "",
+              "vi": ""
+            },
+            {
+              "speaker": "宜文",
+              "zh": "老師，請您也跟大家一起來我家，好嗎？",
+              "pinyin": "",
+              "vi": ""
+            },
+            {
+              "speaker": "老師",
+              "zh": "好啊！那我也準備一些飲料。大家一起跨年吧！",
+              "pinyin": "",
+              "vi": ""
+            }
+          ]
+        },
+        {
+          "id": "MC-L14-D2",
+          "kind": "dialogue",
+          "title_zh": "對話2",
+          "title_vi": "Hội thoại 2",
+          "context_zh": "在宜文家",
+          "context_vi": "Ở nhà Yiwen",
+          "pdf_page": 293,
+          "book_page": 325,
+          "sentences": [
+            {
+              "speaker": "宜文",
+              "zh": "歡迎大家，請進！",
+              "pinyin": "",
+              "vi": ""
+            },
+            {
+              "speaker": "家樂",
+              "zh": "謝謝！妳家前面的公園有很多花跟樹，環境真好！",
+              "pinyin": "",
+              "vi": ""
+            },
+            {
+              "speaker": "國安",
+              "zh": "我跟友美買了幾瓶酒，也帶了大家都喜歡的餃子、包子和牛肉湯。",
+              "pinyin": "",
+              "vi": ""
+            },
+            {
+              "speaker": "宜文",
+              "zh": "這麼多東西很重吧？",
+              "pinyin": "",
+              "vi": ""
+            },
+            {
+              "speaker": "國安",
+              "zh": "不重，我很高興能幫大家準備。",
+              "pinyin": "",
+              "vi": ""
+            },
+            {
+              "speaker": "老師",
+              "zh": "我買了珍珠奶茶，希望大家會喜歡。",
+              "pinyin": "",
+              "vi": ""
+            },
+            {
+              "speaker": "宜文",
+              "zh": "大家準備了這麼多東西。老師，請您先拿吧！",
+              "pinyin": "",
+              "vi": ""
+            },
+            {
+              "speaker": "家樂",
+              "zh": "老師，跨年的時候，如果不想去看演唱會，還有別的活動嗎？",
+              "pinyin": "",
+              "vi": ""
+            },
+            {
+              "speaker": "老師",
+              "zh": "有啊！我小的時候在山上住了七、八年，每一年的第一天，我都跟家人一起看日出。",
+              "pinyin": "",
+              "vi": ""
+            },
+            {
+              "speaker": "家樂",
+              "zh": "跨年的時候，英國的教堂有很多活動，也有人去聽音樂會。",
+              "pinyin": "",
+              "vi": ""
+            },
+            {
+              "speaker": "友美",
+              "zh": "在日本，跨年的時候，很多人在家跟家人一起看電視。但是我喜歡和朋友一起跨年，比在家看電視有趣。",
+              "pinyin": "",
+              "vi": ""
+            },
+            {
+              "speaker": "國安",
+              "zh": "我也喜歡跟朋友一起跨年，而且今年比以前有意思多了，因為在台灣跟你們一起玩，覺得很特別。",
+              "pinyin": "",
+              "vi": ""
+            },
+            {
+              "speaker": "宜文",
+              "zh": "我同意，我也覺得今年很有意思。",
+              "pinyin": "",
+              "vi": ""
+            }
+          ]
+        },
+        {
+          "id": "MC-L14-READING",
+          "kind": "reading",
+          "title_zh": "跨年",
+          "title_vi": "Đón năm mới",
+          "pdf_page": 302,
+          "book_page": 334,
+          "sentences": [
+            {
+              "speaker": "",
+              "zh": "一年的最後一天，每個國家都有慶祝跨年的活動。參加這些活動的年輕人很多，他們喜歡跟朋友去熱鬧的地方玩。在台灣，年輕人最喜歡的跨年活動是去看演唱會。",
+              "pinyin": "",
+              "vi": ""
+            },
+            {
+              "speaker": "",
+              "zh": "但是，交通是一個問題，需要很多警察在捷運站幫忙，因為人真的太多了，如果不小心，可能會受傷，所以有的人覺得在家裡看電視比出去玩好。",
+              "pinyin": "",
+              "vi": ""
+            },
+            {
+              "speaker": "",
+              "zh": "今年是我第一次在台灣過新年。我跟老師、同學們先去一個同學家吃晚飯，再去參加101大樓的跨年活動。",
+              "pinyin": "",
+              "vi": ""
+            },
+            {
+              "speaker": "",
+              "zh": "我覺得最有意思的是看演唱會，很多人一起唱歌、跳舞，真熱鬧。我們都覺得今年在台北跨年是一個最特別的經驗。",
+              "pinyin": "",
+              "vi": ""
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "MC-L15",
+      "lesson": 15,
+      "title_zh": "十二生肖",
+      "title_vi": "Mười hai con giáp",
+      "vocabulary": [],
+      "passages": [
+        {
+          "id": "MC-L15-D1",
+          "kind": "dialogue",
+          "title_zh": "對話1",
+          "title_vi": "Hội thoại 1",
+          "context_zh": "",
+          "context_vi": "",
+          "pdf_page": 310,
+          "book_page": 342,
+          "sentences": [
+            {
+              "speaker": "宜文",
+              "zh": "我們下個星期要學第十五課，我剛才先看了一點兒，書上有很多種動物，我覺得很有意思。",
+              "pinyin": "",
+              "vi": ""
+            },
+            {
+              "speaker": "友美",
+              "zh": "有哪些動物？",
+              "pinyin": "",
+              "vi": ""
+            },
+            {
+              "speaker": "宜文",
+              "zh": "我記得有羊、馬、兔子……，最特別的是龍。妳看看……",
+              "pinyin": "",
+              "vi": ""
+            },
+            {
+              "speaker": "友美",
+              "zh": "原來是十二生肖，真的很有意思。",
+              "pinyin": "",
+              "vi": ""
+            },
+            {
+              "speaker": "宜文",
+              "zh": "什麼是十二生肖？",
+              "pinyin": "",
+              "vi": ""
+            },
+            {
+              "speaker": "友美",
+              "zh": "華人用不一樣的動物代表每一年，一共有十二種動物。",
+              "pinyin": "",
+              "vi": ""
+            },
+            {
+              "speaker": "國安",
+              "zh": "越南也有十二生肖，可是我們沒有兔年，有貓年。我是貓年出生的，屬貓。",
+              "pinyin": "",
+              "vi": ""
+            },
+            {
+              "speaker": "宜文",
+              "zh": "真的啊？好有趣！",
+              "pinyin": "",
+              "vi": ""
+            },
+            {
+              "speaker": "友美",
+              "zh": "原來越南的生肖跟中國的有點兒不一樣。",
+              "pinyin": "",
+              "vi": ""
+            },
+            {
+              "speaker": "宜文",
+              "zh": "我好想知道我屬什麼。",
+              "pinyin": "",
+              "vi": ""
+            },
+            {
+              "speaker": "國安",
+              "zh": "很簡單，上網一查就知道了。",
+              "pinyin": "",
+              "vi": ""
+            },
+            {
+              "speaker": "宜文",
+              "zh": "好，我上網查查看。",
+              "pinyin": "",
+              "vi": ""
+            }
+          ]
+        },
+        {
+          "id": "MC-L15-D2",
+          "kind": "dialogue",
+          "title_zh": "對話2",
+          "title_vi": "Hội thoại 2",
+          "context_zh": "",
+          "context_vi": "",
+          "pdf_page": 318,
+          "book_page": 350,
+          "sentences": [
+            {
+              "speaker": "宜文",
+              "zh": "中明，你手裡拿著什麼？",
+              "pinyin": "",
+              "vi": ""
+            },
+            {
+              "speaker": "中明",
+              "zh": "這是燈籠。",
+              "pinyin": "",
+              "vi": ""
+            },
+            {
+              "speaker": "宜文",
+              "zh": "燈籠上的小老虎好可愛。",
+              "pinyin": "",
+              "vi": ""
+            },
+            {
+              "speaker": "中明",
+              "zh": "這是我朋友做的，因為他屬虎。妳知道十二生肖嗎？",
+              "pinyin": "",
+              "vi": ""
+            },
+            {
+              "speaker": "宜文",
+              "zh": "知道，友美跟我講過。",
+              "pinyin": "",
+              "vi": ""
+            },
+            {
+              "speaker": "中明",
+              "zh": "這個星期六是元宵節，妳跟友美會去看燈會嗎？",
+              "pinyin": "",
+              "vi": ""
+            },
+            {
+              "speaker": "宜文",
+              "zh": "友美說她想去，我還沒決定去不去。燈會好玩嗎？",
+              "pinyin": "",
+              "vi": ""
+            },
+            {
+              "speaker": "中明",
+              "zh": "我去年去看了，很多大人帶著小孩去看燈會，非常熱鬧，我照了很多相片。",
+              "pinyin": "",
+              "vi": ""
+            },
+            {
+              "speaker": "宜文",
+              "zh": "那我這個週末一定要去看看。",
+              "pinyin": "",
+              "vi": ""
+            },
+            {
+              "speaker": "中明",
+              "zh": "我週末還要工作，打算一下班就去看燈會。我們可以約友美一起去。",
+              "pinyin": "",
+              "vi": ""
+            }
+          ]
+        }
+      ],
+      "note_vi": "File PDF bạn tải lên kết thúc trong Bài 15 sau Đối thoại 2; không có trang 短文/Reading tiếp theo trong file."
     }
   ]
 }

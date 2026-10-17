@@ -1,4 +1,4 @@
-const CACHE = 'tocfl-v5-4-0-reading';
+const CACHE = 'tocfl-v5-5-0-reading-full-book';
 const ASSETS = [
   './',
   './index.html',

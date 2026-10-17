@@ -522,3 +522,26 @@ body.foundation-study-session:not(.foundation-writing-session) .set-writing-sess
 .reading-exam-panel{padding:14px;border:1px solid var(--border);border-radius:14px;background:#f8fbfa}.reading-exam-panel p{margin-top:0;line-height:1.55}.reading-record-actions{display:flex;flex-wrap:wrap;gap:8px}.reading-record-actions audio{width:100%;margin-top:8px}.reading-result{margin-top:12px;padding:12px;border-radius:12px;background:#fff;border:1px solid var(--border)}.reading-result-grid{display:grid;grid-template-columns:auto 1fr;gap:12px;align-items:center}.reading-score{width:72px;height:72px;border:5px solid rgba(15,118,110,.22);border-radius:50%;display:flex;flex-direction:column;align-items:center;justify-content:center}.reading-score strong{font-size:1.45rem}.reading-recognized{word-break:break-word;line-height:1.6;margin-top:5px}.reading-feedback{font-weight:700;margin-top:8px}.reading-complete-btn.is-complete{background:#0f766e;color:#fff;border-color:#0f766e}
 @media(max-width:850px){.reading-layout{grid-template-columns:1fr}.reading-lessons-card{position:static}.reading-lesson-list{display:grid;grid-template-columns:repeat(2,minmax(0,1fr))}.reading-chinese-only{font-size:1.45rem;line-height:1.95}}
 @media(max-width:560px){.reading-lesson-list{grid-template-columns:1fr}.reading-mode-switch{grid-template-columns:1fr}.reading-head{flex-direction:column}.reading-head-right{justify-content:flex-start}.reading-mask-row{grid-template-columns:1fr auto}.reading-mask-row input{grid-column:1/-1}.reading-passage{padding:13px}.reading-sentence-zh{font-size:1.2rem}.reading-chinese-only{font-size:1.32rem}}
+
+/* v5.4.1 Reading: vocabulary + multiple passages per lesson */
+.reading-content-tabs{display:flex;gap:8px;flex-wrap:wrap;padding:4px;border-radius:14px;background:#eef4f2}
+.reading-content-tab{border:0;background:transparent;border-radius:10px;padding:9px 13px;min-height:40px;font-weight:700}
+.reading-content-tab.is-active{background:#fff;color:#0f766e;box-shadow:0 1px 4px rgba(0,0,0,.1)}
+.reading-vocab-panel{border:1px solid var(--border);border-radius:16px;background:#fbfdfc;padding:14px}
+.reading-vocab-head{display:flex;justify-content:space-between;gap:12px;align-items:flex-start;margin-bottom:12px}
+.reading-vocab-head h3{margin:0 0 4px}.reading-vocab-head p{margin:0;line-height:1.45}
+.reading-vocab-list{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:10px;margin-bottom:14px}
+.reading-vocab-card{display:flex;justify-content:space-between;gap:12px;border:1px solid var(--border);border-radius:13px;background:#fff;padding:12px;min-width:0}
+.reading-vocab-card.is-known{border-color:rgba(15,118,110,.55);background:#f1fbf8}
+.reading-vocab-main{min-width:0}.reading-vocab-zh{font-size:1.55rem;font-family:"Noto Sans TC","PingFang TC","Microsoft JhengHei",sans-serif;margin-right:9px}
+.reading-vocab-pinyin{color:#0f766e;font-weight:700}.reading-vocab-pos{display:inline-block;margin-left:7px;padding:2px 6px;border-radius:999px;background:#eef4f2;color:var(--muted);font-size:.75rem}
+.reading-vocab-meaning{margin-top:5px;line-height:1.4;color:#33413f}.reading-vocab-actions{display:flex;flex-direction:column;gap:7px;flex:0 0 auto}
+.reading-vocab-actions button{min-height:36px;white-space:nowrap}
+.reading-sentence-zh span:first-child{white-space:pre-wrap}
+@media(max-width:760px){.reading-vocab-list{grid-template-columns:1fr}.reading-vocab-card{align-items:flex-start}.reading-content-tabs{overflow-x:auto;flex-wrap:nowrap}.reading-content-tab{white-space:nowrap}}
+
+/* v5.5.0 - full textbook Reading list */
+.reading-lesson-list{max-height:min(68vh,760px);overflow:auto;padding-right:3px;}
+.reading-lesson-item strong{line-height:1.35;}
+.reading-content-tabs{position:sticky;top:0;z-index:4;}
+@media(max-width:900px){.reading-lesson-list{max-height:none;}.reading-content-tabs{position:static;}}

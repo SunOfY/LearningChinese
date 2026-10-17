@@ -16,9 +16,9 @@
       examHelp:'Chế độ thi chỉ hiện tiếng Trung của đoạn đang chọn. Hãy tự nhớ cách đọc, ghi âm toàn đoạn rồi để AI so khớp phần chữ nhận được.',
       start:'🎙 Bắt đầu ghi âm', stop:'⏹ Dừng', check:'✓ Kiểm tra bài đọc', playback:'▶ Nghe lại', idle:'Chưa ghi âm.', recording:'🔴 Đang ghi âm… hãy đọc toàn bộ đoạn đang chọn.', recorded:'Đã ghi xong. Bạn có thể nghe lại hoặc kiểm tra.',
       checking:'🤖 AI đang nhận dạng…', login:'Hãy đăng nhập trước khi dùng AI kiểm tra.', groq:'Tài khoản chưa kết nối Groq API Key.', result:'Kết quả AI', recognized:'AI nhận ra', textMatch:'Độ khớp chữ', scoreNote:'Điểm này đo độ khớp giữa chữ AI nghe được và đoạn mẫu; không phải điểm thanh điệu chuyên sâu.',
-      complete:'✓ Đánh dấu đã thuộc', completed:'✓ Đã thuộc đoạn', best:'Tốt nhất', noScore:'Chưa kiểm tra', progress:(done,total)=>`${done}/${total} bài có đoạn đã thuộc`, sourceBook:'時代華語 · Modern Chinese',
+      complete:'✓ Đánh dấu đã thuộc', completed:'✓ Đã thuộc đoạn', best:'Tốt nhất', noScore:'Chưa kiểm tra', progress:(done,total)=>`${done}/${total} bài có đoạn đã thuộc`, sourceBook:'Modern Chinese',
       micError:'Không dùng được microphone. Hãy cấp quyền microphone cho website.', noAudio:'Chưa có bản ghi để kiểm tra.', excellent:'Rất tốt — AI nhận được gần như đầy đủ đoạn đọc.', good:'Khá tốt — hãy xem lại những chỗ còn thiếu và đọc lại.', retry:'Nên luyện lại — AI nhận được khá khác đoạn mẫu.',
-      noVocab:'Chưa có danh sách từ riêng cho bài này.'
+      noVocab:'Chưa có danh sách từ riêng cho bài này.', write:'✍️ Viết chữ', closeWriting:'Đóng luyện viết', writingTitle:w=>`Luyện viết · ${w}`, writingHint:'Mỗi chữ: xem thứ tự nét → tô theo mẫu → tự viết. Nét bạn viết được giữ nguyên để tự so sánh.', charLabel:n=>`Chữ ${n}`, model:'Mẫu / thứ tự nét', trace:'Tô theo mẫu', free:'Tự viết', stroke:'▶ Xem nét', clearWriting:'Xóa chữ', wrote:'✍️ Đã luyện viết'
     },
     en:{
       subtitle:'Study each textbook lesson in order: vocabulary → dialogues/readings → memorization → Chinese-only test.',
@@ -30,8 +30,8 @@
       examHelp:'Test mode shows Chinese only for the selected passage. Read it from memory, record yourself, then let AI compare the recognized text.',
       start:'🎙 Start recording', stop:'⏹ Stop', check:'✓ Check reading', playback:'▶ Playback', idle:'No recording yet.', recording:'🔴 Recording… read the selected passage.', recorded:'Recording complete. Play it back or check it.',
       checking:'🤖 AI is transcribing…', login:'Sign in before using AI checking.', groq:'This account has no Groq API Key connected.', result:'AI result', recognized:'AI recognized', textMatch:'Text match', scoreNote:'This measures text-match similarity, not professional tone/phoneme pronunciation.',
-      complete:'✓ Mark memorized', completed:'✓ Memorized', best:'Best', noScore:'Not checked', progress:(done,total)=>`${done}/${total} lessons have a memorized passage`, sourceBook:'時代華語 · Modern Chinese',
-      micError:'Microphone is unavailable. Allow microphone access for this site.', noAudio:'Record the passage first.', excellent:'Excellent — AI recognized nearly the complete passage.', good:'Good — review the missing parts and try again.', retry:'Practice again — the recognized text differs substantially from the target.', noVocab:'No separate vocabulary list is available for this lesson yet.'
+      complete:'✓ Mark memorized', completed:'✓ Memorized', best:'Best', noScore:'Not checked', progress:(done,total)=>`${done}/${total} lessons have a memorized passage`, sourceBook:'Modern Chinese',
+      micError:'Microphone is unavailable. Allow microphone access for this site.', noAudio:'Record the passage first.', excellent:'Excellent — AI recognized nearly the complete passage.', good:'Good — review the missing parts and try again.', retry:'Practice again — the recognized text differs substantially from the target.', noVocab:'No separate vocabulary list is available for this lesson yet.', write:'✍️ Write', closeWriting:'Close writing', writingTitle:w=>`Writing practice · ${w}`, writingHint:'For each character: preview stroke order → trace the model → write from memory. Your ink stays exactly as drawn.', charLabel:n=>`Character ${n}`, model:'Model / stroke order', trace:'Trace', free:'Write from memory', stroke:'▶ Strokes', clearWriting:'Clear character', wrote:'✍️ Practiced'
     },
     'zh-Hant':{
       subtitle:'依課本課次：先學生詞，再練對話／短文，最後只看中文背誦與測驗。',
@@ -42,26 +42,133 @@
       start:'🎙 開始錄音', stop:'⏹ 停止', check:'✓ 檢查朗讀', playback:'▶ 播放錄音', idle:'尚未錄音。', recording:'🔴 錄音中……請朗讀所選課文。', recorded:'錄音完成，可以播放或檢查。',
       checking:'🤖 AI 辨識中……', login:'請先登入再使用 AI 檢查。', groq:'此帳號尚未連接 Groq API Key。', result:'AI 結果', recognized:'AI 辨識', textMatch:'文字符合度', scoreNote:'此分數是辨識文字與課文的相似度，不是專業聲調／音位評分。',
       complete:'✓ 標記已背熟', completed:'✓ 已背熟', best:'最佳', noScore:'尚未檢查', progress:(done,total)=>`${done}/${total} 課已有背熟課文`, sourceBook:'時代華語 · Modern Chinese',
-      micError:'無法使用麥克風，請允許網站使用麥克風。', noAudio:'請先錄下全文。', excellent:'很好——AI 幾乎辨識出完整課文。', good:'不錯——請複習缺少的部分再試一次。', retry:'建議再練習——辨識結果與課文差異較大。', noVocab:'本課目前沒有獨立生詞表。'
+      micError:'無法使用麥克風，請允許網站使用麥克風。', noAudio:'請先錄下全文。', excellent:'很好——AI 幾乎辨識出完整課文。', good:'不錯——請複習缺少的部分再試一次。', retry:'建議再練習——辨識結果與課文差異較大。', noVocab:'本課目前沒有獨立生詞表。', write:'✍️ 寫字', closeWriting:'關閉寫字', writingTitle:w=>`寫字練習 · ${w}`, writingHint:'每個字：先看筆順 → 描字 → 默寫。你自己寫的筆跡會完整保留，方便比較。', charLabel:n=>`第 ${n} 個字`, model:'範字 / 筆順', trace:'描字', free:'默寫', stroke:'▶ 看筆順', clearWriting:'清除此字', wrote:'✍️ 已練習'
     }
   };
 
-  const state={lessons:[],lessonIndex:0,passageIndex:0,content:'vocab',mode:'study',mask:0,peek:false,showPinyin:true,showMeaning:true,progress:{lessons:{},vocabulary:{},lastLesson:1,lastPassageByLesson:{}},vocabBank:[],recorder:null,stream:null,chunks:[],blob:null,url:null};
+  const state={lessons:[],lessonIndex:0,passageIndex:0,content:'vocab',mode:'study',mask:0,peek:false,showPinyin:true,showMeaning:true,progress:{lessons:{},vocabulary:{},vocabularyWriting:{},lastLesson:1,lastPassageByLesson:{}},vocabBank:[],recorder:null,stream:null,chunks:[],blob:null,url:null,writingVocabKey:null,writingCanvases:[],writingWriters:[]};
   const $=id=>document.getElementById(id);
   const lang=()=>window.TOCFLApp?.getLanguage?.()||localStorage.getItem('tocfl-a1-ui-language-v2')||'vi';
   const tx=()=>UI[lang()]||UI.vi;
   const escapeHtml=s=>String(s??'').replace(/[&<>'"]/g,c=>({'&':'&amp;','<':'&lt;','>':'&gt;',"'":'&#39;','"':'&quot;'}[c]));
 
   function loadProgress(){
-    try{const x=JSON.parse(localStorage.getItem(STORAGE_KEY)||'null');if(x&&typeof x==='object')state.progress={lessons:x.lessons&&typeof x.lessons==='object'?x.lessons:{},vocabulary:x.vocabulary&&typeof x.vocabulary==='object'?x.vocabulary:{},lastLesson:Number(x.lastLesson||1),lastPassageByLesson:x.lastPassageByLesson&&typeof x.lastPassageByLesson==='object'?x.lastPassageByLesson:{}};}catch{}
+    try{const x=JSON.parse(localStorage.getItem(STORAGE_KEY)||'null');if(x&&typeof x==='object')state.progress={lessons:x.lessons&&typeof x.lessons==='object'?x.lessons:{},vocabulary:x.vocabulary&&typeof x.vocabulary==='object'?x.vocabulary:{},vocabularyWriting:x.vocabularyWriting&&typeof x.vocabularyWriting==='object'?x.vocabularyWriting:{},lastLesson:Number(x.lastLesson||1),lastPassageByLesson:x.lastPassageByLesson&&typeof x.lastPassageByLesson==='object'?x.lastPassageByLesson:{}};}catch{}
   }
   function saveProgress(){localStorage.setItem(STORAGE_KEY,JSON.stringify(state.progress));document.dispatchEvent(new CustomEvent('tocfl:state-changed'));}
   function passageProgress(id){return state.progress.lessons[id]||{};}
   function currentLesson(){return state.lessons[state.lessonIndex]||null;}
   function currentPassage(){const l=currentLesson();return l?.passages?.[state.passageIndex]||l?.passages?.[0]||null;}
+  function localizedLessonName(l){
+    const lg=lang();
+    if(lg==='zh-Hant') return l?.title_zh||l?.title_vi||'';
+    if(lg==='vi') return l?.title_vi||l?.title_zh||'';
+    return l?.title_en||l?.title_vi||l?.title_zh||'';
+  }
+  function localizedPassageName(p,index=0){
+    const lg=lang();
+    if(lg==='zh-Hant') return p?.title_zh||p?.title_vi||'';
+    if(lg==='vi') return p?.title_vi||((p?.kind==='dialogue')?`Hội thoại ${index+1}`:p?.title_zh)||'';
+    return p?.title_en||p?.title_vi||((p?.kind==='dialogue')?`Dialogue ${index+1}`:p?.title_zh)||'';
+  }
+  function localizedContext(p){
+    const lg=lang();
+    if(lg==='zh-Hant') return p?.context_zh||'';
+    if(lg==='vi') return p?.context_vi||'';
+    return p?.context_en||p?.context_vi||'';
+  }
   function fullText(p=currentPassage()){return (p?.sentences||[]).map(s=>s.zh).join('');}
   function vocabKey(lesson,word){return `${lesson.lesson}|${word.zh}`;}
   function isVocabRemembered(lesson,word){return state.progress.vocabulary[vocabKey(lesson,word)]==='easy';}
+  
+  function vocabWritingKey(lesson,word){return `${lesson.lesson}|${word.zh}`;}
+  function hasPracticedWriting(lesson,word){return Boolean(state.progress.vocabularyWriting?.[vocabWritingKey(lesson,word)]);}
+  function chineseChars(text){return Array.from(String(text||'')).filter(ch=>/[\u3400-\u9FFF\uF900-\uFAFF]/.test(ch));}
+  function readingBrushMode(){try{return Boolean(JSON.parse(localStorage.getItem('tocfl-writing-settings-v1')||'{}')?.brushMode);}catch{return false;}}
+  function strokeDataUrl(ch){return `https://cdn.jsdelivr.net/npm/hanzi-writer-data@2.0.1/${encodeURIComponent(ch)}.json`;}
+  function readingStrokeLoader(char,onComplete,onError){fetch(strokeDataUrl(char),{cache:'force-cache'}).then(r=>{if(!r.ok)throw new Error(`Stroke data HTTP ${r.status}`);return r.json();}).then(onComplete).catch(onError);}
+  function clearReadingWritingRuntime(){
+    state.writingCanvases=[];
+    state.writingWriters=[];
+  }
+  function makeReadingGuide(host,ch,{animate=false}={}){
+    if(typeof window.HanziWriter==='undefined')return null;
+    const rect=host.getBoundingClientRect();
+    const size=Math.max(88,Math.round(Math.min(rect.width||128,rect.height||rect.width||128)));
+    host.replaceChildren();
+    return window.HanziWriter.create(host,ch,{
+      width:size,height:size,padding:Math.max(7,Math.round(size*.08)),
+      showOutline:Boolean(animate),showCharacter:true,
+      strokeColor:animate?'#17211f':'#0f766e',outlineColor:'rgba(15,118,110,.16)',
+      strokeAnimationSpeed:1,delayBetweenStrokes:160,
+      charDataLoader:(char,onComplete,loaderError)=>readingStrokeLoader(char,onComplete,loaderError)
+    });
+  }
+  function resizeReadingCanvas(item,{preserve=true}={}){
+    const canvas=item?.canvas;if(!canvas?.isConnected)return;
+    const rect=canvas.getBoundingClientRect();if(rect.width<20||rect.height<20)return;
+    const dpr=Math.max(1,window.devicePixelRatio||1),w=Math.round(rect.width*dpr),h=Math.round(rect.height*dpr);
+    if(canvas.width===w&&canvas.height===h)return;
+    let old=null;
+    if(preserve&&canvas.width&&canvas.height){old=document.createElement('canvas');old.width=canvas.width;old.height=canvas.height;old.getContext('2d').drawImage(canvas,0,0);}
+    canvas.width=w;canvas.height=h;
+    const ctx=canvas.getContext('2d');ctx.setTransform(dpr,0,0,dpr,0,0);ctx.lineCap='round';ctx.lineJoin='round';ctx.strokeStyle='#17211f';ctx.fillStyle='#17211f';
+    if(old)ctx.drawImage(old,0,0,old.width,old.height,0,0,rect.width,rect.height);
+  }
+  function clearReadingCanvas(item){
+    const c=item?.canvas;if(!c)return;const ctx=c.getContext('2d');ctx.save();ctx.setTransform(1,0,0,1,0,0);ctx.clearRect(0,0,c.width,c.height);ctx.restore();item.last=null;item.active=false;c.classList.remove('has-ink');
+  }
+  function bindReadingCanvas(canvas,onCommit){
+    const item={canvas,last:null,active:false,lastTime:0,lastPressure:.5};
+    state.writingCanvases.push(item);
+    requestAnimationFrame(()=>requestAnimationFrame(()=>resizeReadingCanvas(item,{preserve:false})));
+    const point=e=>{const r=canvas.getBoundingClientRect();return{x:e.clientX-r.left,y:e.clientY-r.top,p:Number.isFinite(e.pressure)?e.pressure:.5,t:e.timeStamp||performance.now()};};
+    const drawPoint=p=>{
+      const ctx=canvas.getContext('2d'),brush=readingBrushMode(),prev=item.last;
+      let width=5.2;
+      if(brush){const pressure=p.p>0?p.p:(item.lastPressure||.35);let speed=0;if(prev){const dt=Math.max(1,p.t-prev.t),dist=Math.hypot(p.x-prev.x,p.y-prev.y);speed=dist/dt;}width=Math.max(2.2,Math.min(13.5,2.4+pressure*10.5-speed*1.8));item.lastPressure=pressure;}
+      ctx.lineWidth=width;
+      if(prev){ctx.beginPath();ctx.moveTo(prev.x,prev.y);ctx.lineTo(p.x,p.y);ctx.stroke();}else{ctx.beginPath();ctx.arc(p.x,p.y,width/2,0,Math.PI*2);ctx.fill();}
+      item.last=p;canvas.classList.add('has-ink');
+    };
+    canvas.addEventListener('contextmenu',e=>e.preventDefault());
+    canvas.addEventListener('dragstart',e=>e.preventDefault());
+    canvas.addEventListener('pointerdown',e=>{if(e.button!=null&&e.button!==0)return;e.preventDefault();resizeReadingCanvas(item);item.active=true;item.last=null;try{canvas.setPointerCapture(e.pointerId);}catch{}drawPoint(point(e));},{passive:false});
+    canvas.addEventListener('pointermove',e=>{if(!item.active)return;e.preventDefault();const events=e.getCoalescedEvents?.()||[e];events.forEach(ev=>drawPoint(point(ev)));},{passive:false});
+    const end=e=>{if(!item.active)return;if(e?.cancelable)e.preventDefault();item.active=false;item.last=null;try{canvas.releasePointerCapture(e.pointerId);}catch{}onCommit?.();};
+    canvas.addEventListener('pointerup',end,{passive:false});canvas.addEventListener('pointercancel',end,{passive:false});
+    return item;
+  }
+  function mountVocabWriting(panel,lesson,word){
+    clearReadingWritingRuntime();
+    const t=tx(),chars=chineseChars(word.zh);panel.innerHTML='';
+    const head=document.createElement('div');head.className='reading-writing-head';head.innerHTML=`<div><strong>${escapeHtml(t.writingTitle(word.zh))}</strong><p>${escapeHtml(t.writingHint)}</p></div>`;panel.append(head);
+    const grid=document.createElement('div');grid.className='reading-writing-char-grid';panel.append(grid);
+    const commit=()=>{state.progress.vocabularyWriting=state.progress.vocabularyWriting||{};state.progress.vocabularyWriting[vocabWritingKey(lesson,word)]=true;saveProgress();};
+    chars.forEach((ch,idx)=>{
+      const block=document.createElement('section');block.className='reading-writing-char';
+      const title=document.createElement('div');title.className='reading-writing-char-title';title.innerHTML=`<strong>${escapeHtml(ch)}</strong><span>${escapeHtml(t.charLabel(idx+1))}</span>`;block.append(title);
+      const boxes=document.createElement('div');boxes.className='reading-writing-boxes';block.append(boxes);
+      const mkBox=(label,mode)=>{const wrap=document.createElement('div');wrap.className=`reading-writing-box ${mode}`;const lab=document.createElement('span');lab.className='reading-writing-box-label';lab.textContent=label;const sq=document.createElement('div');sq.className='reading-writing-square';sq.innerHTML='<i></i><i></i><i></i><i></i>';wrap.append(lab,sq);boxes.append(wrap);return{wrap,sq};};
+      const model=mkBox(t.model,'model'),trace=mkBox(t.trace,'trace'),free=mkBox(t.free,'free');
+      const modelHost=document.createElement('div');modelHost.className='reading-writing-guide model-guide';model.sq.append(modelHost);
+      const play=document.createElement('button');play.type='button';play.className='reading-writing-play';play.textContent='▶';play.title=t.stroke;model.sq.append(play);
+      const traceHost=document.createElement('div');traceHost.className='reading-writing-guide trace-guide';trace.sq.append(traceHost);
+      const traceCanvas=document.createElement('canvas');traceCanvas.className='reading-writing-canvas';trace.sq.append(traceCanvas);
+      const freeCanvas=document.createElement('canvas');freeCanvas.className='reading-writing-canvas';free.sq.append(freeCanvas);
+      const clear=document.createElement('button');clear.type='button';clear.className='reading-writing-clear';clear.textContent=t.clearWriting;block.append(clear);
+      grid.append(block);
+      requestAnimationFrame(()=>requestAnimationFrame(()=>{
+        let modelWriter=null;
+        try{modelWriter=makeReadingGuide(modelHost,ch,{animate:true});if(modelWriter)state.writingWriters.push(modelWriter);}catch{}
+        try{const traceWriter=makeReadingGuide(traceHost,ch);if(traceWriter)state.writingWriters.push(traceWriter);}catch{}
+        const a=bindReadingCanvas(traceCanvas,commit),b=bindReadingCanvas(freeCanvas,commit);
+        clear.addEventListener('click',()=>{clearReadingCanvas(a);clearReadingCanvas(b);});
+        play.addEventListener('click',()=>{if(!modelWriter)return;try{modelWriter.hideCharacter({duration:80});setTimeout(()=>modelWriter.animateCharacter(),100);}catch{try{modelWriter.animateCharacter();}catch{}}});
+      }));
+    });
+  }
+  
 
   function normalizeData(data){
     if(Array.isArray(data?.lessons))return data.lessons.map(l=>({...l,passages:Array.isArray(l.passages)?l.passages:[],vocabulary:Array.isArray(l.vocabulary)?l.vocabulary:[]}));
@@ -131,7 +238,7 @@
     $('readingVocabularyPanel').hidden=!vocabMode;if(modeSwitch)modeSwitch.hidden=vocabMode;if(toolbar)toolbar.hidden=vocabMode;$('readingMemorizeControls').hidden=vocabMode||state.mode!=='memorize';$('readingPassage').hidden=vocabMode;$('readingSentencePracticeWrap').hidden=vocabMode||state.mode!=='study';$('readingExamPanel').hidden=vocabMode||state.mode!=='exam';$('readingCompleteBtn').hidden=vocabMode;$('readingBestScore').hidden=vocabMode;
     if(vocabMode){renderVocabulary();return;}
     const p=currentPassage();if(!p)return;
-    $('readingLessonTitle').textContent=`${t.lesson(lesson.lesson)} · ${p.title_zh}`;const context=p.context_zh?` · ${p.context_zh}`:'';$('readingLessonSub').textContent=`${p.title_vi||''}${context} · ${t.sourceBook}${p.book_page?` · ${t.source(p.book_page)}`:''}`;
+    $('readingLessonTitle').textContent=`${t.lesson(lesson.lesson)} · ${localizedPassageName(p,state.passageIndex)}`;const context=localizedContext(p);$('readingLessonSub').textContent=`${context?`${context} · `:''}${t.sourceBook}${p.book_page?` · ${t.source(p.book_page)}`:''}`;
     document.querySelectorAll('[data-reading-mode]').forEach(b=>{const on=b.dataset.readingMode===state.mode;b.classList.toggle('is-active',on);b.setAttribute('aria-selected',String(on));});
     $('readingModeStudy').textContent=t.study;$('readingModeMemorize').textContent=t.memorize;$('readingModeExam').textContent=t.exam;$('readingListenBtn').textContent=t.listen;$('readingSlowBtn').textContent=t.slow;$('readingPinyinText').textContent=t.showPinyin;$('readingMeaningText').textContent=t.showMeaning;$('readingMaskTitle').textContent=t.hideChars;$('readingPeekBtn').textContent=t.peek;$('readingExamHelp').textContent=t.examHelp;$('readingRecordBtn').textContent=t.start;$('readingStopBtn').textContent=t.stop;$('readingCheckBtn').textContent=t.check;$('readingPlaybackBtn').textContent=t.playback;
     $('readingPinyinToggle').checked=state.showPinyin;$('readingMeaningToggle').checked=state.showMeaning;$('readingMaskRange').value=String(state.mask);renderMaskLabel();
@@ -140,19 +247,44 @@
 
   function renderLessonList(){
     const list=$('readingLessonList'),t=tx();if(!list)return;list.innerHTML='';
-    state.lessons.forEach((l,i)=>{const passages=l.passages||[],done=passages.filter(p=>passageProgress(p.id)?.completed).length,vocab=lessonVocabulary(l),known=vocab.filter(w=>isVocabRemembered(l,w)).length,b=document.createElement('button');b.type='button';b.className='reading-lesson-item';if(i===state.lessonIndex)b.classList.add('is-current');const left=document.createElement('span');left.innerHTML=`<strong>${escapeHtml(t.lesson(l.lesson))} · ${escapeHtml(l.title_zh||'')}</strong><small>🧠 ${known}/${vocab.length} · 📖 ${done}/${passages.length}</small>`;const right=document.createElement('span');right.className='reading-lesson-state';right.textContent=done===passages.length&&passages.length?'✓':'—';b.append(left,right);b.addEventListener('click',()=>{cleanupAudio();state.lessonIndex=i;state.passageIndex=0;state.content='vocab';state.progress.lastLesson=l.lesson;saveProgress();render();});list.append(b);});
+    state.lessons.forEach((l,i)=>{const passages=l.passages||[],done=passages.filter(p=>passageProgress(p.id)?.completed).length,vocab=lessonVocabulary(l),known=vocab.filter(w=>isVocabRemembered(l,w)).length,b=document.createElement('button');b.type='button';b.className='reading-lesson-item';if(i===state.lessonIndex)b.classList.add('is-current');const left=document.createElement('span');const lessonName=localizedLessonName(l);left.innerHTML=`<strong>${escapeHtml(t.lesson(l.lesson))}${lessonName?` · ${escapeHtml(lessonName)}`:''}</strong><small>🧠 ${known}/${vocab.length} · 📖 ${done}/${passages.length}</small>`;const right=document.createElement('span');right.className='reading-lesson-state';right.textContent=done===passages.length&&passages.length?'✓':'—';b.append(left,right);b.addEventListener('click',()=>{cleanupAudio();state.lessonIndex=i;state.passageIndex=0;state.content='vocab';state.progress.lastLesson=l.lesson;saveProgress();render();});list.append(b);});
   }
 
   function renderContentTabs(){
     const wrap=$('readingContentTabs'),t=tx(),l=currentLesson();if(!wrap||!l)return;wrap.innerHTML='';
     const add=(label,on,fn)=>{const b=document.createElement('button');b.type='button';b.className='reading-content-tab';b.classList.toggle('is-active',on);b.textContent=label;b.addEventListener('click',fn);wrap.append(b);};
     add(t.vocabulary,state.content==='vocab',()=>{cleanupAudio();state.content='vocab';render();});
-    (l.passages||[]).forEach((p,i)=>add(`${p.kind==='dialogue'?'💬':'📖'} ${p.title_zh}`,state.content==='passage'&&state.passageIndex===i,()=>{cleanupAudio();state.content='passage';state.passageIndex=i;state.progress.lastPassageByLesson[l.lesson]=p.id;saveProgress();render();}));
+    (l.passages||[]).forEach((p,i)=>add(`${p.kind==='dialogue'?'💬':'📖'} ${localizedPassageName(p,i)}`,state.content==='passage'&&state.passageIndex===i,()=>{cleanupAudio();state.content='passage';state.passageIndex=i;state.progress.lastPassageByLesson[l.lesson]=p.id;saveProgress();render();}));
   }
 
   function renderVocabulary(){
-    const t=tx(),l=currentLesson(),words=lessonVocabulary(l);$('readingLessonTitle').textContent=`${t.lesson(l.lesson)} · ${t.vocabTitle}`;$('readingLessonSub').textContent=`${l.title_zh||''}${l.title_vi?` · ${l.title_vi}`:''} · ${t.sourceBook}${l.note_vi?` · ${l.note_vi}`:''}`;$('readingVocabTitle').textContent=t.vocabTitle;$('readingVocabHint').textContent=t.vocabHint;const known=words.filter(w=>isVocabRemembered(l,w)).length;$('readingVocabProgress').textContent=t.vocabProgress(known,words.length);const list=$('readingVocabList');list.innerHTML='';
-    words.forEach(w=>{const card=document.createElement('article');card.className='reading-vocab-card';if(isVocabRemembered(l,w))card.classList.add('is-known');const main=document.createElement('div');main.className='reading-vocab-main';const zh=document.createElement('strong');zh.className='reading-vocab-zh';zh.textContent=w.zh;const py=document.createElement('span');py.className='reading-vocab-pinyin';py.textContent=w.pinyin||'';const pos=document.createElement('span');pos.className='reading-vocab-pos';pos.textContent=w.pos||'';const vi=document.createElement('div');vi.className='reading-vocab-meaning';vi.textContent=w.vi||'';main.append(zh,py,pos,vi);const actions=document.createElement('div');actions.className='reading-vocab-actions';const audio=document.createElement('button');audio.type='button';audio.textContent='🔊';audio.addEventListener('click',()=>speak(w.zh,.82));const mem=document.createElement('button');mem.type='button';mem.className=isVocabRemembered(l,w)?'primary':'';mem.textContent=isVocabRemembered(l,w)?t.remembered:t.notRemembered;mem.addEventListener('click',()=>{const key=vocabKey(l,w);if(isVocabRemembered(l,w))delete state.progress.vocabulary[key];else state.progress.vocabulary[key]='easy';saveProgress();renderVocabulary();renderLessonList();});actions.append(audio,mem);card.append(main,actions);list.append(card);});
+    const t=tx(),l=currentLesson(),words=lessonVocabulary(l);
+    $('readingLessonTitle').textContent=`${t.lesson(l.lesson)} · ${t.vocabTitle}`;
+    const lessonName=localizedLessonName(l);
+    $('readingLessonSub').textContent=`${lessonName?`${lessonName} · `:''}${t.sourceBook}${(lang()==='vi'&&l.note_vi)?` · ${l.note_vi}`:''}`;
+    $('readingVocabTitle').textContent=t.vocabTitle;$('readingVocabHint').textContent=t.vocabHint;
+    const known=words.filter(w=>isVocabRemembered(l,w)).length;$('readingVocabProgress').textContent=t.vocabProgress(known,words.length);
+    const list=$('readingVocabList');list.innerHTML='';clearReadingWritingRuntime();
+    words.forEach(w=>{
+      const key=vocabWritingKey(l,w),card=document.createElement('article');card.className='reading-vocab-card';if(isVocabRemembered(l,w))card.classList.add('is-known');
+      const top=document.createElement('div');top.className='reading-vocab-card-top';
+      const main=document.createElement('div');main.className='reading-vocab-main';
+      const zh=document.createElement('strong');zh.className='reading-vocab-zh';zh.textContent=w.zh;
+      const py=document.createElement('span');py.className='reading-vocab-pinyin';py.textContent=w.pinyin||'';
+      const pos=document.createElement('span');pos.className='reading-vocab-pos';pos.textContent=w.pos||'';
+      const vi=document.createElement('div');vi.className='reading-vocab-meaning';vi.textContent=w.vi||'';main.append(zh,py,pos,vi);
+      if(hasPracticedWriting(l,w)){const badge=document.createElement('small');badge.className='reading-writing-done';badge.textContent=t.wrote;main.append(badge);}
+      const actions=document.createElement('div');actions.className='reading-vocab-actions';
+      const audio=document.createElement('button');audio.type='button';audio.textContent='🔊';audio.addEventListener('click',()=>speak(w.zh,.82));
+      const write=document.createElement('button');write.type='button';write.className='reading-vocab-write';write.textContent=state.writingVocabKey===key?t.closeWriting:t.write;
+      const mem=document.createElement('button');mem.type='button';mem.className=isVocabRemembered(l,w)?'primary':'';mem.textContent=isVocabRemembered(l,w)?t.remembered:t.notRemembered;
+      mem.addEventListener('click',()=>{const k=vocabKey(l,w);if(isVocabRemembered(l,w))delete state.progress.vocabulary[k];else state.progress.vocabulary[k]='easy';saveProgress();renderVocabulary();renderLessonList();});
+      actions.append(audio,write,mem);top.append(main,actions);card.append(top);
+      const panel=document.createElement('div');panel.className='reading-vocab-writing';panel.hidden=state.writingVocabKey!==key;card.append(panel);
+      write.addEventListener('click',()=>{state.writingVocabKey=state.writingVocabKey===key?null:key;renderVocabulary();});
+      list.append(card);
+      if(state.writingVocabKey===key)mountVocabWriting(panel,l,w);
+    });
     $('readingNextPassageBtn').textContent=t.nextReading;$('readingNextPassageBtn').disabled=!(l.passages||[]).length;
   }
 
@@ -178,6 +310,6 @@
   function similarity(a,b){if(!a&&!b)return 1;if(!a||!b)return 0;return 1-levenshtein(a,b)/Math.max(a.length,b.length);}
   async function checkReading(){const t=tx(),p=currentPassage();if(!state.blob?.size){$('readingRecordStatus').textContent=t.noAudio;return;}if(!window.TOCFLAuth?.getSession?.()?.user){$('readingRecordStatus').textContent=t.login;window.TOCFLAuth?.openAuth?.('login');return;}if(!window.TOCFLAuth?.transcribeWithGroq){$('readingRecordStatus').textContent=t.groq;return;}try{$('readingCheckBtn').disabled=true;$('readingRecordStatus').textContent=t.checking;const result=await window.TOCFLAuth.transcribeWithGroq(state.blob,fullText(p)),recognized=String(result?.text||'').trim();const score=Math.max(0,Math.min(100,Math.round(similarity(normalizeChinese(fullText(p)),normalizeChinese(recognized))*100)));$('readingResult').hidden=false;$('readingScore').textContent=String(score);$('readingRecognized').textContent=recognized||'—';$('readingScoreNote').textContent=t.scoreNote;$('readingResultTitle').textContent=t.result;$('readingRecognizedLabel').textContent=t.recognized;$('readingMatchLabel').textContent=t.textMatch;$('readingFeedback').textContent=score>=90?t.excellent:score>=70?t.good:t.retry;const prev=passageProgress(p.id),x={...prev,lastScore:score,bestScore:Math.max(Number(prev.bestScore||0),score),lastStudied:new Date().toISOString()};if(score>=90)x.completed=true;state.progress.lessons[p.id]=x;saveProgress();renderLessonList();$('readingBestScore').textContent=`${t.best}: ${x.bestScore}/100`;$('readingCompleteBtn').textContent=x.completed?t.completed:t.complete;$('readingCompleteBtn').classList.toggle('is-complete',Boolean(x.completed));$('readingRecordStatus').textContent=t.recorded;}catch(err){$('readingRecordStatus').textContent=err?.message||t.groq;}finally{$('readingCheckBtn').disabled=false;}}
 
-  window.TOCFLReading={getProgress:()=>{loadProgress();return JSON.parse(JSON.stringify(state.progress));},applyProgress:value=>{if(value&&typeof value==='object'){localStorage.setItem(STORAGE_KEY,JSON.stringify(value));loadProgress();document.dispatchEvent(new CustomEvent('tocfl:reading-cloud-applied'));}},reset:()=>{localStorage.removeItem(STORAGE_KEY);state.progress={lessons:{},vocabulary:{},lastLesson:1,lastPassageByLesson:{}};render();}};
+  window.TOCFLReading={getProgress:()=>{loadProgress();return JSON.parse(JSON.stringify(state.progress));},applyProgress:value=>{if(value&&typeof value==='object'){localStorage.setItem(STORAGE_KEY,JSON.stringify(value));loadProgress();document.dispatchEvent(new CustomEvent('tocfl:reading-cloud-applied'));}},reset:()=>{localStorage.removeItem(STORAGE_KEY);state.progress={lessons:{},vocabulary:{},vocabularyWriting:{},lastLesson:1,lastPassageByLesson:{}};render();}};
   if(document.readyState==='loading')document.addEventListener('DOMContentLoaded',init,{once:true});else init();
 })();

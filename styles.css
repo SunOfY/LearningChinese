@@ -545,3 +545,62 @@ body.foundation-study-session:not(.foundation-writing-session) .set-writing-sess
 .reading-lesson-item strong{line-height:1.35;}
 .reading-content-tabs{position:sticky;top:0;z-index:4;}
 @media(max-width:900px){.reading-lesson-list{max-height:none;}.reading-content-tabs{position:static;}}
+
+
+/* v5.5.1 — Reading sidebar containment + localized navigation labels */
+.reading-lesson-item{
+  align-items:flex-start;
+  height:auto!important;
+  min-height:64px;
+  overflow:hidden;
+}
+.reading-lesson-item>span:first-child{
+  flex:1 1 auto;
+  width:0;
+  min-width:0;
+  overflow:hidden;
+}
+.reading-lesson-item strong{
+  display:block;
+  width:100%;
+  white-space:normal;
+  overflow-wrap:anywhere;
+  word-break:break-word;
+  line-height:1.32;
+  max-width:100%;
+}
+.reading-lesson-item small{
+  display:block;
+  margin-top:4px;
+  white-space:normal;
+  overflow-wrap:anywhere;
+}
+.reading-lesson-state{
+  align-self:flex-start;
+  margin-top:1px;
+}
+@media(min-width:851px){
+  .reading-layout{grid-template-columns:minmax(250px,300px) minmax(0,1fr);}
+}
+
+
+/* v5.5.2 — handwriting inside Reading vocabulary */
+.reading-vocab-card{display:block}
+.reading-vocab-card-top{display:flex;justify-content:space-between;gap:12px;min-width:0}
+.reading-writing-done{display:block;margin-top:7px;color:#0f766e;font-weight:700}
+.reading-vocab-write{border-color:rgba(15,118,110,.35);color:#0f766e}
+.reading-vocab-writing{width:100%;margin-top:12px;padding-top:12px;border-top:1px dashed var(--border)}
+.reading-writing-head{display:flex;justify-content:space-between;gap:12px;margin-bottom:10px}
+.reading-writing-head p{margin:4px 0 0;color:var(--muted);font-size:.9rem;line-height:1.45}
+.reading-writing-char-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(310px,1fr));gap:12px}
+.reading-writing-char{border:1px solid var(--border);border-radius:14px;background:#fbfdfc;padding:10px}
+.reading-writing-char-title{display:flex;align-items:baseline;gap:8px;margin-bottom:8px}.reading-writing-char-title strong{font-size:1.5rem}.reading-writing-char-title span{color:var(--muted);font-size:.86rem}
+.reading-writing-boxes{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:8px}
+.reading-writing-box{min-width:0}.reading-writing-box-label{display:block;text-align:center;font-size:.74rem;color:var(--muted);margin-bottom:4px;white-space:nowrap;overflow:hidden;text-overflow:ellipsis}
+.reading-writing-square{position:relative;aspect-ratio:1/1;min-height:92px;border:1px solid rgba(15,118,110,.35);border-radius:9px;background:#fff;overflow:hidden;isolation:isolate}
+.reading-writing-square>i{position:absolute;z-index:0;background:rgba(15,118,110,.12);pointer-events:none}.reading-writing-square>i:nth-child(1){left:50%;top:0;width:1px;height:100%}.reading-writing-square>i:nth-child(2){top:50%;left:0;height:1px;width:100%}.reading-writing-square>i:nth-child(3){left:50%;top:-20%;width:1px;height:140%;transform:rotate(45deg);transform-origin:center}.reading-writing-square>i:nth-child(4){left:50%;top:-20%;width:1px;height:140%;transform:rotate(-45deg);transform-origin:center}
+.reading-writing-guide{position:absolute;inset:0;z-index:1;display:grid;place-items:center;pointer-events:none}.reading-writing-guide>svg{display:block;max-width:100%;max-height:100%}.trace-guide{opacity:.18}
+.reading-writing-canvas{position:absolute;inset:0;z-index:3;width:100%;height:100%;display:block;touch-action:none;user-select:none;-webkit-user-select:none;-webkit-touch-callout:none;overscroll-behavior:contain;cursor:crosshair}
+.reading-writing-play{position:absolute;right:5px;bottom:5px;z-index:5;width:34px;height:34px;border-radius:999px;padding:0;background:rgba(255,255,255,.94);box-shadow:0 1px 4px rgba(0,0,0,.12);touch-action:manipulation}
+.reading-writing-clear{margin-top:8px;width:100%;min-height:36px}
+@media(max-width:760px){.reading-vocab-card-top{align-items:flex-start}.reading-writing-char-grid{grid-template-columns:1fr}.reading-writing-square{min-height:88px}.reading-writing-box-label{font-size:.7rem}.reading-vocab-actions{min-width:104px}}

@@ -41,6 +41,7 @@
     <nav class="tabs" aria-label="Điều hướng chính">
       <button class="tab is-active" data-view="today" type="button"><span>🏠</span> <span data-i18n="navToday">Hôm nay</span></button>
       <button class="tab" data-view="vocab" type="button"><span>📚</span> <span data-i18n="navVocab">Từ vựng</span></button>
+      <button class="tab" data-view="reading" type="button"><span>📖</span> <span data-i18n="navReading">Reading</span></button>
       <button class="tab" data-view="quiz" type="button"><span>🧠</span> <span data-i18n="navQuiz">Quiz</span></button>
       <button class="tab" data-view="progress" type="button"><span>📊</span> <span data-i18n="navProgress">Tiến độ</span></button>
     </nav>
@@ -242,6 +243,90 @@
         </div>
       </section>
 
+      <section id="view-reading" class="view">
+        <div id="readingApp" class="reading-layout">
+          <aside class="card reading-lessons-card">
+            <div>
+              <div class="eyebrow">MODERN CHINESE · READING</div>
+              <h2>📖 Reading</h2>
+            </div>
+            <p id="readingSubtitle" class="muted"></p>
+            <div id="readingProgressSummary" class="small strong"></div>
+            <div id="readingLessonList" class="reading-lesson-list" aria-label="Reading lessons"></div>
+          </aside>
+
+          <article class="card reading-study-card">
+            <div class="reading-head">
+              <div>
+                <div class="eyebrow">TEXTBOOK READING</div>
+                <h2 id="readingLessonTitle">Bài đọc</h2>
+                <div id="readingLessonSub" class="small muted"></div>
+              </div>
+              <div class="reading-head-right">
+                <span id="readingBestScore" class="reading-best"></span>
+                <button id="readingCompleteBtn" type="button" class="reading-complete-btn"></button>
+              </div>
+            </div>
+
+            <div class="reading-mode-switch" role="tablist" aria-label="Reading mode">
+              <button id="readingModeStudy" class="is-active" data-reading-mode="study" type="button" role="tab" aria-selected="true">📘 Học</button>
+              <button id="readingModeMemorize" data-reading-mode="memorize" type="button" role="tab" aria-selected="false">🧠 Học thuộc</button>
+              <button id="readingModeExam" data-reading-mode="exam" type="button" role="tab" aria-selected="false">🎓 Thi thử</button>
+            </div>
+
+            <div class="reading-toolbar">
+              <button id="readingListenBtn" class="primary" type="button">🔊 Nghe cả bài</button>
+              <button id="readingSlowBtn" type="button">🐢 Nghe chậm</button>
+              <div id="readingStudyOptions" class="reading-toolbar">
+                <label class="reading-option"><input id="readingPinyinToggle" type="checkbox" checked /><span id="readingPinyinText">Hiện Pinyin</span></label>
+                <label class="reading-option"><input id="readingMeaningToggle" type="checkbox" checked /><span id="readingMeaningText">Hiện nghĩa Việt</span></label>
+              </div>
+            </div>
+
+            <div id="readingMemorizeControls" class="reading-memorize-controls" hidden>
+              <div class="reading-mask-row">
+                <strong id="readingMaskTitle">Mức ẩn chữ</strong>
+                <input id="readingMaskRange" type="range" min="0" max="100" step="25" value="0" />
+                <span id="readingMaskLabel">0%</span>
+              </div>
+              <div class="toolbar" style="margin-top:10px"><button id="readingPeekBtn" type="button">👁 Giữ để xem đáp án</button></div>
+            </div>
+
+            <div id="readingPassage" class="reading-passage"></div>
+
+            <div id="readingSentencePracticeWrap">
+              <div id="readingSentencePracticeTitle" class="small strong">Luyện từng câu</div>
+              <div id="readingSentencePractice" class="reading-sentence-practice"></div>
+            </div>
+
+            <div id="readingExamPanel" class="reading-exam-panel" hidden>
+              <p id="readingExamHelp" class="muted"></p>
+              <div class="reading-record-actions">
+                <button id="readingRecordBtn" type="button">🎙 Bắt đầu ghi âm</button>
+                <button id="readingStopBtn" type="button" disabled>⏹ Dừng</button>
+                <button id="readingPlaybackBtn" type="button" disabled>▶ Nghe lại</button>
+                <button id="readingCheckBtn" type="button" class="primary" disabled>✓ Kiểm tra bài đọc</button>
+                <audio id="readingAudio" controls hidden></audio>
+              </div>
+              <div id="readingRecordStatus" class="small muted" style="margin-top:8px"></div>
+              <div id="readingResult" class="reading-result" hidden>
+                <div id="readingResultTitle" class="small strong">Kết quả AI</div>
+                <div class="reading-result-grid">
+                  <div class="reading-score"><strong id="readingScore">—</strong><span>/100</span></div>
+                  <div>
+                    <div><span id="readingMatchLabel" class="muted">Độ khớp chữ</span></div>
+                    <div><span id="readingRecognizedLabel" class="muted">AI nhận ra</span></div>
+                    <div id="readingRecognized" class="reading-recognized"></div>
+                    <div id="readingFeedback" class="reading-feedback"></div>
+                  </div>
+                </div>
+                <div id="readingScoreNote" class="small muted" style="margin-top:8px"></div>
+              </div>
+            </div>
+          </article>
+        </div>
+      </section>
+
       <section id="view-quiz" class="view">
         <div class="card quiz-card">
           <div class="eyebrow">MINI QUIZ</div>
@@ -416,6 +501,7 @@
   <script src="./pinyin-helper.js" defer></script>
   <script src="./app.js" defer></script>
   <script src="./radicals.js" defer></script>
+  <script src="./reading.js" defer></script>
   <script type="module" src="./auth.js"></script>
 </body>
 </html>

@@ -1,0 +1,16 @@
+v5.3.2 hotfix
+
+Fixed:
+- In repeat-practice mode, the 4 writing cells after the model could draw ink at the wrong position.
+
+Root cause:
+- The canvas for each practice cell was first sized while the row was still expanding.
+- Later, CSS auto-fit changed the cell width, but the canvas internal coordinate system kept the old size.
+- Result: Apple Pencil/touch input no longer matched the visible cell position.
+
+Fix:
+- After all 8 cells are in the DOM and the final layout is stable, the app now resizes every copybook writing canvas again before use.
+
+Upload:
+- app.js
+- sw.js

@@ -1,0 +1,111 @@
+{
+  "meta": {
+    "title": "時代華語 Modern Chinese — Reading",
+    "source": "User-provided textbook PDF",
+    "language": "zh-Hant",
+    "version": 1
+  },
+  "readings": [
+    {
+      "id": "MC-L1-READING",
+      "lesson": 1,
+      "title_zh": "自我介紹",
+      "title_vi": "Tự giới thiệu",
+      "pdf_page": 14,
+      "book_page": 46,
+      "sentences": [
+        {"zh":"大家好！","pinyin":"Dàjiā hǎo!","vi":"Chào mọi người!"},
+        {"zh":"我姓小林，叫友美，我是日本人。","pinyin":"Wǒ xìng Xiǎolín, jiào Yǒuměi, wǒ shì Rìběn rén.","vi":"Tôi họ Kobayashi, tên là Yūmi, tôi là người Nhật Bản."},
+        {"zh":"我喜歡臺灣，臺灣朋友很可愛。","pinyin":"Wǒ xǐhuān Táiwān, Táiwān péngyǒu hěn kě'ài.","vi":"Tôi thích Đài Loan, những người bạn Đài Loan rất đáng yêu."},
+        {"zh":"我愛吃水果，愛喝珍珠奶茶。","pinyin":"Wǒ ài chī shuǐguǒ, ài hē zhēnzhū nǎichá.","vi":"Tôi thích ăn trái cây và thích uống trà sữa trân châu."},
+        {"zh":"謝謝大家！","pinyin":"Xièxie dàjiā!","vi":"Cảm ơn mọi người!"}
+      ]
+    },
+    {
+      "id": "MC-L2-READING",
+      "lesson": 2,
+      "title_zh": "友美做什麼？",
+      "title_vi": "Yūmi làm gì?",
+      "pdf_page": 31,
+      "book_page": 63,
+      "sentences": [
+        {"zh":"友美是學生，十九歲。","pinyin":"Yǒuměi shì xuéshēng, shíjiǔ suì.","vi":"Yūmi là học sinh, 19 tuổi."},
+        {"zh":"她早上六點半起床，七點去學校，八點四十分上課；","pinyin":"Tā zǎoshàng liù diǎn bàn qǐchuáng, qī diǎn qù xuéxiào, bā diǎn sìshí fēn shàngkè;","vi":"Cô ấy thức dậy lúc 6:30 sáng, 7 giờ đi học và 8:40 bắt đầu vào lớp;"},
+        {"zh":"中午十二點下課、吃午飯；","pinyin":"Zhōngwǔ shí'èr diǎn xiàkè, chī wǔfàn;","vi":"12 giờ trưa tan học và ăn trưa;"},
+        {"zh":"下午一點去圖書館；","pinyin":"Xiàwǔ yī diǎn qù túshūguǎn;","vi":"1 giờ chiều đi thư viện;"},
+        {"zh":"四點回家做飯，晚上六點吃飯，十點睡覺。","pinyin":"Sì diǎn huí jiā zuòfàn, wǎnshàng liù diǎn chīfàn, shí diǎn shuìjiào.","vi":"4 giờ về nhà nấu cơm, 6 giờ tối ăn cơm và 10 giờ đi ngủ."},
+        {"zh":"友美很忙！","pinyin":"Yǒuměi hěn máng!","vi":"Yūmi rất bận!"}
+      ]
+    },
+    {
+      "id": "MC-L3-READING",
+      "lesson": 3,
+      "title_zh": "友美的生日",
+      "title_vi": "Sinh nhật của Yūmi",
+      "pdf_page": 54,
+      "book_page": 86,
+      "sentences": [
+        {"zh":"今天是友美的生日，她請我、中明和國安一起去她家玩。","pinyin":"Jīntiān shì Yǒuměi de shēngrì, tā qǐng wǒ, Zhōngmíng hé Guó'ān yìqǐ qù tā jiā wán.","vi":"Hôm nay là sinh nhật của Yūmi, cô ấy mời tôi, Zhongming và Guoan cùng đến nhà cô ấy chơi."},
+        {"zh":"我們送友美花、兩本中文書、兩枝可愛的小鉛筆和一個大蛋糕，她很喜歡這些禮物。","pinyin":"Wǒmen sòng Yǒuměi huā, liǎng běn Zhōngwén shū, liǎng zhī kě'ài de xiǎo qiānbǐ hé yí ge dà dàngāo, tā hěn xǐhuān zhèxiē lǐwù.","vi":"Chúng tôi tặng Yūmi hoa, hai quyển sách tiếng Trung, hai cây bút chì nhỏ dễ thương và một chiếc bánh lớn; cô ấy rất thích những món quà này."},
+        {"zh":"友美請我們吃點心和水果，大家都很開心。","pinyin":"Yǒuměi qǐng wǒmen chī diǎnxīn hé shuǐguǒ, dàjiā dōu hěn kāixīn.","vi":"Yūmi mời chúng tôi ăn điểm tâm và trái cây, mọi người đều rất vui."}
+      ]
+    },
+    {
+      "id": "MC-L4-READING",
+      "lesson": 4,
+      "title_zh": "買飲料",
+      "title_vi": "Mua đồ uống",
+      "pdf_page": 76,
+      "book_page": 108,
+      "sentences": [
+        {"zh":"臺灣夏天的天氣很熱，很多人都喜歡喝飲料。","pinyin":"Táiwān xiàtiān de tiānqì hěn rè, hěn duō rén dōu xǐhuān hē yǐnliào.","vi":"Mùa hè ở Đài Loan rất nóng, rất nhiều người thích uống đồ uống."},
+        {"zh":"飲料店很多，他們賣很多種飲料。","pinyin":"Yǐnliào diàn hěn duō, tāmen mài hěn duō zhǒng yǐnliào.","vi":"Có rất nhiều cửa hàng đồ uống và họ bán nhiều loại đồ uống."},
+        {"zh":"果汁、牛奶、咖啡、茶都很好喝，有的很便宜，一杯二十多塊錢。","pinyin":"Guǒzhī, niúnǎi, kāfēi, chá dōu hěn hǎohē, yǒude hěn piányí, yì bēi èrshí duō kuài qián.","vi":"Nước trái cây, sữa, cà phê và trà đều ngon; có loại rất rẻ, một ly chỉ hơn 20 Đài tệ."},
+        {"zh":"我和朋友都很愛喝，我們每天都去買。","pinyin":"Wǒ hé péngyǒu dōu hěn ài hē, wǒmen měitiān dōu qù mǎi.","vi":"Tôi và bạn bè đều rất thích uống, ngày nào chúng tôi cũng đi mua."}
+      ]
+    },
+    {
+      "id": "MC-L5-READING",
+      "lesson": 5,
+      "title_zh": "我的房間",
+      "title_vi": "Phòng của tôi",
+      "pdf_page": 95,
+      "book_page": 127,
+      "sentences": [
+        {"zh":"我的房間裡有一張桌子、一張床跟一張沙發。","pinyin":"Wǒ de fángjiān lǐ yǒu yì zhāng zhuōzi, yì zhāng chuáng gēn yì zhāng shāfā.","vi":"Trong phòng tôi có một cái bàn, một cái giường và một ghế sofa."},
+        {"zh":"沙發前面有一台很新的電視機，可是我不常看電視，我最喜歡在沙發上看書。","pinyin":"Shāfā qiánmiàn yǒu yì tái hěn xīn de diànshìjī, kěshì wǒ bù cháng kàn diànshì, wǒ zuì xǐhuān zài shāfā shàng kànshū.","vi":"Trước sofa có một chiếc TV rất mới, nhưng tôi không thường xem TV; tôi thích nhất là đọc sách trên sofa."},
+        {"zh":"我的書很多，有中文書，也有英文書。","pinyin":"Wǒ de shū hěn duō, yǒu Zhōngwén shū, yě yǒu Yīngwén shū.","vi":"Tôi có rất nhiều sách, có sách tiếng Trung và cũng có sách tiếng Anh."},
+        {"zh":"我房間的窗戶很大，我的貓喜歡在窗戶旁邊曬太陽。","pinyin":"Wǒ fángjiān de chuānghù hěn dà, wǒ de māo xǐhuān zài chuānghù pángbiān shài tàiyáng.","vi":"Cửa sổ phòng tôi rất lớn, con mèo của tôi thích phơi nắng cạnh cửa sổ."}
+      ]
+    },
+    {
+      "id": "MC-L6-READING",
+      "lesson": 6,
+      "title_zh": "我的興趣",
+      "title_vi": "Sở thích của tôi",
+      "pdf_page": 117,
+      "book_page": 149,
+      "sentences": [
+        {"zh":"我有幾個好朋友，我們都喜歡學中文、聽音樂、唱歌。","pinyin":"Wǒ yǒu jǐ ge hǎo péngyǒu, wǒmen dōu xǐhuān xué Zhōngwén, tīng yīnyuè, chànggē.","vi":"Tôi có vài người bạn tốt; chúng tôi đều thích học tiếng Trung, nghe nhạc và hát."},
+        {"zh":"中明最愛唱歌，他的中文歌唱得很好。","pinyin":"Zhōngmíng zuì ài chànggē, tā de Zhōngwén gē chàng de hěn hǎo.","vi":"Zhongming thích hát nhất và hát các bài tiếng Trung rất hay."},
+        {"zh":"平常我們都有點兒忙，可是週末我們常一起去運動，宜文游泳游得不錯，國安的籃球打得很好，我喜歡打網球，有時候我們也一起去看運動比賽。","pinyin":"Píngcháng wǒmen dōu yǒudiǎnr máng, kěshì zhōumò wǒmen cháng yìqǐ qù yùndòng, Yíwén yóuyǒng yóu de búcuò, Guó'ān de lánqiú dǎ de hěn hǎo, wǒ xǐhuān dǎ wǎngqiú, yǒushíhou wǒmen yě yìqǐ qù kàn yùndòng bǐsài.","vi":"Bình thường chúng tôi hơi bận, nhưng cuối tuần thường cùng nhau vận động: Yiwen bơi khá tốt, Guoan chơi bóng rổ rất giỏi, tôi thích đánh tennis, đôi khi chúng tôi còn cùng đi xem thi đấu thể thao."},
+        {"zh":"有這幾個好朋友，我真高興！","pinyin":"Yǒu zhè jǐ ge hǎo péngyǒu, wǒ zhēn gāoxìng!","vi":"Có những người bạn tốt này, tôi thật sự rất vui!"}
+      ]
+    },
+    {
+      "id": "MC-L7-READING",
+      "lesson": 7,
+      "title_zh": "從我家坐捷運很方便",
+      "title_vi": "Đi MRT từ nhà tôi rất tiện",
+      "pdf_page": 141,
+      "book_page": 173,
+      "sentences": [
+        {"zh":"我家附近有三條捷運線，一條紅的、一條綠的和一條藍的。","pinyin":"Wǒ jiā fùjìn yǒu sān tiáo jiéyùn xiàn, yì tiáo hóng de, yì tiáo lǜ de hé yì tiáo lán de.","vi":"Gần nhà tôi có ba tuyến MRT: một tuyến đỏ, một tuyến xanh lá và một tuyến xanh dương."},
+        {"zh":"我平常坐紅線去學校上課，週末也坐捷運去運動、看電影。","pinyin":"Wǒ píngcháng zuò hóngxiàn qù xuéxiào shàngkè, zhōumò yě zuò jiéyùn qù yùndòng, kàn diànyǐng.","vi":"Bình thường tôi đi tuyến đỏ đến trường học; cuối tuần cũng đi MRT để vận động và xem phim."},
+        {"zh":"朋友常來找我，他們都覺得坐捷運來我家，又快又方便。","pinyin":"Péngyǒu cháng lái zhǎo wǒ, tāmen dōu juéde zuò jiéyùn lái wǒ jiā, yòu kuài yòu fāngbiàn.","vi":"Bạn bè thường đến tìm tôi; họ đều thấy đi MRT đến nhà tôi vừa nhanh vừa tiện."},
+        {"zh":"從我家到機場也不遠，開車去、坐捷運去都可以。","pinyin":"Cóng wǒ jiā dào jīchǎng yě bù yuǎn, kāichē qù, zuò jiéyùn qù dōu kěyǐ.","vi":"Từ nhà tôi đến sân bay cũng không xa; đi ô tô hay MRT đều được."},
+        {"zh":"機場附近的風景也很漂亮，我常常去看風景、看飛機。","pinyin":"Jīchǎng fùjìn de fēngjǐng yě hěn piàoliang, wǒ chángcháng qù kàn fēngjǐng, kàn fēijī.","vi":"Phong cảnh gần sân bay cũng rất đẹp; tôi thường đến đó ngắm cảnh và xem máy bay."}
+      ]
+    }
+  ]
+}

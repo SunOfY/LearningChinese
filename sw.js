@@ -1,4 +1,4 @@
-const CACHE = 'tocfl-v5-6-2-reading-interactive-responsive';
+const CACHE = 'tocfl-v5-6-3-practice-display-toggle';
 const ASSETS = [
   './',
   './index.html',

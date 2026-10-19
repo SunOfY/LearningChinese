@@ -711,3 +711,25 @@ body.reading-writing-active *{
   .reading-content-tabs{grid-template-columns:repeat(auto-fit,minmax(120px,1fr))!important}
   .reading-toolbar{grid-template-columns:repeat(auto-fit,minmax(120px,1fr))!important}
 }
+
+
+/* v5.6.3 — optional Pinyin / Vietnamese meaning in Grammar & Exercise practice */
+.reading-practice-display-options{
+  display:flex;
+  flex-wrap:wrap;
+  gap:10px;
+  align-items:center;
+  margin:12px 0 6px;
+  padding:10px 12px;
+  border:1px solid var(--border);
+  border-radius:12px;
+  background:#f4f8f7;
+}
+.reading-practice-display-options .reading-option{
+  min-width:0;
+  flex:0 1 auto;
+}
+.reading-practice-pinyin[hidden],.reading-practice-meaning[hidden]{display:none!important}
+@media(max-width:560px){
+  .reading-practice-display-options{display:grid;grid-template-columns:1fr;align-items:stretch}
+}

@@ -1,0 +1,13 @@
+v5.6.3 — Grammar/Exercise Pinyin & Vietnamese toggles
+
+Added to the interactive “Câu & bài tập” section:
+- Checkbox: Hiện Pinyin
+- Checkbox: Hiện nghĩa Việt
+- Each can be turned on/off independently.
+- Works for short questions and longer structured exercise/grammar passages whenever pinyin/vi data is present.
+- Reading passage toggles remain separate, so the learner can hide help in exercises without changing the Reading view.
+
+Upload only:
+- reading.js
+- styles.css
+- sw.js

@@ -1,4 +1,4 @@
-const CACHE = 'tocfl-v5-6-3-practice-display-toggle';
+const CACHE = 'tocfl-v5-6-5-tab-controls-account-progress';
 const ASSETS = [
   './',
   './index.html',

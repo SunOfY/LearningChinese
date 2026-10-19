@@ -9,7 +9,7 @@
     vi:{
       subtitle:'Học theo từng bài trong sách: từ vựng → hội thoại/đoạn đọc → học thuộc → thi thử chỉ nhìn tiếng Trung.',
       lesson:n=>`Bài ${n}`, source:p=>`Trang sách ${p}`, study:'📘 Học', memorize:'🧠 Học thuộc', exam:'🎓 Thi thử',
-      vocabulary:'🧠 Từ vựng', practice:'📝 Câu & bài tập', practiceTitle:'Luyện câu và chọn đáp án', practiceHint:'Luyện trực tiếp từ các câu trong bài. Các câu gốc được giữ nguyên; bài chọn đáp án được tạo từ chính nội dung của bài để bạn nhớ từ và mẫu câu.', practiceProgress:(a,b)=>`Câu ${a}/${b}`, practiceCorrect:'✅ Đúng rồi', practiceWrong:'❌ Chưa đúng', practiceAnswer:a=>`Đáp án: ${a}`, practicePrev:'← Câu trước', practiceNext:'Câu sau →', practiceShow:'👁 Xem đáp án', practiceSource:'Nguồn', practiceShowPinyin:'Hiện Pinyin', practiceShowMeaning:'Hiện nghĩa Việt', fullBook:'📚 Toàn bộ bài', fullBookTitle:'Toàn bộ nội dung của bài', fullBookHint:'Giữ nguyên đúng trang sách gốc: hội thoại, từ vựng, ngữ pháp, ví dụ, bài tập, Phrase, Notes, Reading và hoạt động đều có ở đây.', bookPrev:'← Trang trước', bookNext:'Trang sau →', bookOpen:'↗ Mở toàn màn hình', bookPage:(a,b)=>`Trang sách ${a} / ${b}`, bookPdfPage:(a,b)=>`PDF ${a}/${b}`, vocabTitle:'Từ vựng của bài', vocabHint:'Học từ trước để khi sang Reading bạn nhận ra chữ và tự đọc được.',
+      vocabulary:'🧠 Từ vựng', practice:'📝 Câu & bài tập', practiceTitle:'Luyện câu và chọn đáp án', practiceHint:'Luyện trực tiếp từ các câu trong bài. Các câu gốc được giữ nguyên; bài chọn đáp án được tạo từ chính nội dung của bài để bạn nhớ từ và mẫu câu.', practiceProgress:(a,b)=>`Câu ${a}/${b}`, practiceDone:(a,b)=>`Đã làm ${a}/${b}`, bookLoading:'Đang tải trang…', bookLoadError:'Không tải được trang PDF. Hãy thử lại hoặc mở toàn màn hình.', practiceCorrect:'✅ Đúng rồi', practiceWrong:'❌ Chưa đúng', practiceAnswer:a=>`Đáp án: ${a}`, practicePrev:'← Câu trước', practiceNext:'Câu sau →', practiceShow:'👁 Xem đáp án', practiceSource:'Nguồn', practiceShowPinyin:'Hiện Pinyin', practiceShowMeaning:'Hiện nghĩa Việt', fullBook:'📚 Toàn bộ bài', fullBookTitle:'Toàn bộ nội dung của bài', fullBookHint:'Giữ nguyên đúng trang sách gốc: hội thoại, từ vựng, ngữ pháp, ví dụ, bài tập, Phrase, Notes, Reading và hoạt động đều có ở đây.', bookPrev:'← Trang trước', bookNext:'Trang sau →', bookOpen:'↗ Mở toàn màn hình', bookPage:(a,b)=>`Trang sách ${a} / ${b}`, bookPdfPage:(a,b)=>`PDF ${a}/${b}`, vocabTitle:'Từ vựng của bài', vocabHint:'Học từ trước để khi sang Reading bạn nhận ra chữ và tự đọc được.',
       remembered:'✅ Đã nhớ', notRemembered:'😕 Chưa nhớ', vocabProgress:(a,b)=>`${a}/${b} từ đã nhớ`,
       derivedVocab:'Từ trong đoạn (khớp dữ liệu TOCFL A1/A2)', bookVocab:'Từ mới trong bài', nextReading:'Bắt đầu đoạn đầu tiên →',
       listen:'🔊 Nghe cả đoạn', slow:'🐢 Nghe chậm', showPinyin:'Hiện Pinyin', showMeaning:'Hiện nghĩa Việt', hideChars:'Mức ẩn chữ', peek:'👁 Giữ để xem đáp án', sentencePractice:'Luyện từng câu',
@@ -23,7 +23,7 @@
     en:{
       subtitle:'Study each textbook lesson in order: vocabulary → dialogues/readings → memorization → Chinese-only test.',
       lesson:n=>`Lesson ${n}`, source:p=>`Book page ${p}`, study:'📘 Study', memorize:'🧠 Memorize', exam:'🎓 Test',
-      vocabulary:'🧠 Vocabulary', practice:'📝 Sentences & practice', practiceTitle:'Sentence practice', practiceHint:'Practice directly from the lesson sentences. Source sentences are preserved; multiple-choice cloze items are generated from the same lesson content.', practiceProgress:(a,b)=>`Item ${a}/${b}`, practiceCorrect:'✅ Correct', practiceWrong:'❌ Not yet', practiceAnswer:a=>`Answer: ${a}`, practicePrev:'← Previous', practiceNext:'Next →', practiceShow:'👁 Show answer', practiceSource:'Source', practiceShowPinyin:'Show Pinyin', practiceShowMeaning:'Show Vietnamese meaning', fullBook:'📚 Full lesson', fullBookTitle:'Complete lesson content', fullBookHint:'Exact textbook pages: dialogues, vocabulary, grammar, examples, exercises, phrases, notes, readings and activities are all included here.', bookPrev:'← Previous page', bookNext:'Next page →', bookOpen:'↗ Open full screen', bookPage:(a,b)=>`Book page ${a} / ${b}`, bookPdfPage:(a,b)=>`PDF ${a}/${b}`, vocabTitle:'Lesson vocabulary', vocabHint:'Learn the words first so you can recognize the characters in the reading.',
+      vocabulary:'🧠 Vocabulary', practice:'📝 Sentences & practice', practiceTitle:'Sentence practice', practiceHint:'Practice directly from the lesson sentences. Source sentences are preserved; multiple-choice cloze items are generated from the same lesson content.', practiceProgress:(a,b)=>`Item ${a}/${b}`, practiceDone:(a,b)=>`Done ${a}/${b}`, bookLoading:'Loading page…', bookLoadError:'Could not render this PDF page. Try again or open full screen.', practiceCorrect:'✅ Correct', practiceWrong:'❌ Not yet', practiceAnswer:a=>`Answer: ${a}`, practicePrev:'← Previous', practiceNext:'Next →', practiceShow:'👁 Show answer', practiceSource:'Source', practiceShowPinyin:'Show Pinyin', practiceShowMeaning:'Show Vietnamese meaning', fullBook:'📚 Full lesson', fullBookTitle:'Complete lesson content', fullBookHint:'Exact textbook pages: dialogues, vocabulary, grammar, examples, exercises, phrases, notes, readings and activities are all included here.', bookPrev:'← Previous page', bookNext:'Next page →', bookOpen:'↗ Open full screen', bookPage:(a,b)=>`Book page ${a} / ${b}`, bookPdfPage:(a,b)=>`PDF ${a}/${b}`, vocabTitle:'Lesson vocabulary', vocabHint:'Learn the words first so you can recognize the characters in the reading.',
       remembered:'✅ Remembered', notRemembered:'😕 Not yet', vocabProgress:(a,b)=>`${a}/${b} words remembered`,
       derivedVocab:'Words found in the passage (TOCFL A1/A2 match)', bookVocab:'Textbook vocabulary', nextReading:'Start first passage →',
       listen:'🔊 Listen', slow:'🐢 Slow', showPinyin:'Show Pinyin', showMeaning:'Show Vietnamese meaning', hideChars:'Hide characters', peek:'👁 Hold to reveal', sentencePractice:'Sentence practice',
@@ -36,7 +36,7 @@
     'zh-Hant':{
       subtitle:'依課本課次：先學生詞，再練對話／短文，最後只看中文背誦與測驗。',
       lesson:n=>`第 ${n} 課`, source:p=>`課本第 ${p} 頁`, study:'📘 學習', memorize:'🧠 背誦', exam:'🎓 模擬測驗',
-      vocabulary:'🧠 生詞', practice:'📝 句子與練習', practiceTitle:'句子與選擇練習', practiceHint:'直接使用本課原句練習；選擇題由本課內容產生，幫助記憶生詞與句型。', practiceProgress:(a,b)=>`第 ${a}/${b} 題`, practiceCorrect:'✅ 答對了', practiceWrong:'❌ 再想一想', practiceAnswer:a=>`答案：${a}`, practicePrev:'← 上一題', practiceNext:'下一題 →', practiceShow:'👁 看答案', practiceSource:'來源', fullBook:'📚 全課內容', fullBookTitle:'本課完整內容', fullBookHint:'完全保留課本原頁：對話、生詞、語法、例句、練習、片語、註解、短文與活動都在這裡。', bookPrev:'← 上一頁', bookNext:'下一頁 →', bookOpen:'↗ 全螢幕開啟', bookPage:(a,b)=>`課本第 ${a} / ${b} 頁`, bookPdfPage:(a,b)=>`PDF ${a}/${b}`, vocabTitle:'本課生詞', vocabHint:'先把生詞記熟，再進入課文朗讀。', remembered:'✅ 已記住', notRemembered:'😕 還不熟', vocabProgress:(a,b)=>`已記住 ${a}/${b} 個`,
+      vocabulary:'🧠 生詞', practice:'📝 句子與練習', practiceTitle:'句子與選擇練習', practiceHint:'直接使用本課原句練習；選擇題由本課內容產生，幫助記憶生詞與句型。', practiceProgress:(a,b)=>`第 ${a}/${b} 題`, practiceDone:(a,b)=>`已完成 ${a}/${b}`, bookLoading:'正在載入頁面…', bookLoadError:'無法顯示此 PDF 頁面，請重試或全螢幕開啟。', practiceCorrect:'✅ 答對了', practiceWrong:'❌ 再想一想', practiceAnswer:a=>`答案：${a}`, practicePrev:'← 上一題', practiceNext:'下一題 →', practiceShow:'👁 看答案', practiceSource:'來源', fullBook:'📚 全課內容', fullBookTitle:'本課完整內容', fullBookHint:'完全保留課本原頁：對話、生詞、語法、例句、練習、片語、註解、短文與活動都在這裡。', bookPrev:'← 上一頁', bookNext:'下一頁 →', bookOpen:'↗ 全螢幕開啟', bookPage:(a,b)=>`課本第 ${a} / ${b} 頁`, bookPdfPage:(a,b)=>`PDF ${a}/${b}`, vocabTitle:'本課生詞', vocabHint:'先把生詞記熟，再進入課文朗讀。', remembered:'✅ 已記住', notRemembered:'😕 還不熟', vocabProgress:(a,b)=>`已記住 ${a}/${b} 個`,
       derivedVocab:'課文中符合 TOCFL A1/A2 的詞', bookVocab:'課本生詞', nextReading:'開始第一篇 →', listen:'🔊 聽全文', slow:'🐢 慢速', showPinyin:'顯示拼音', showMeaning:'顯示越文意思', hideChars:'隱藏文字', peek:'👁 按住看答案', sentencePractice:'逐句練習',
       examHelp:'測驗模式只顯示所選課文的中文。請憑記憶朗讀全文、錄音，再用 AI 比對辨識文字。',
       start:'🎙 開始錄音', stop:'⏹ 停止', check:'✓ 檢查朗讀', playback:'▶ 播放錄音', idle:'尚未錄音。', recording:'🔴 錄音中……請朗讀所選課文。', recorded:'錄音完成，可以播放或檢查。',
@@ -46,16 +46,36 @@
     }
   };
 
-  const state={lessons:[],lessonIndex:0,passageIndex:0,bookPage:0,practiceIndex:0,practiceSelected:null,practiceRevealed:false,bookLoadToken:0,content:'vocab',mode:'study',mask:0,peek:false,showPinyin:true,showMeaning:true,practiceShowPinyin:true,practiceShowMeaning:true,progress:{lessons:{},vocabulary:{},vocabularyWriting:{},lastLesson:1,lastPassageByLesson:{}},vocabBank:[],recorder:null,stream:null,chunks:[],blob:null,url:null,writingVocabKey:null,writingCanvases:[],writingWriters:[],writingObservers:[]};
+  const state={lessons:[],lessonIndex:0,passageIndex:0,bookPage:0,practiceIndex:0,practiceSelected:null,practiceRevealed:false,bookLoadToken:0,bookRenderWidth:0,content:'vocab',mode:'study',mask:0,peek:false,showPinyin:true,showMeaning:true,practiceShowPinyin:true,practiceShowMeaning:true,progress:{lessons:{},vocabulary:{},vocabularyWriting:{},practice:{},lastPracticeIndexByLesson:{},bookPageByLesson:{},lastContentByLesson:{},lastLesson:1,lastPassageByLesson:{}},vocabBank:[],recorder:null,stream:null,chunks:[],blob:null,url:null,writingVocabKey:null,writingCanvases:[],writingWriters:[],writingObservers:[]};
   const $=id=>document.getElementById(id);
   const lang=()=>window.TOCFLApp?.getLanguage?.()||localStorage.getItem('tocfl-a1-ui-language-v2')||'vi';
   const tx=()=>UI[lang()]||UI.vi;
   const escapeHtml=s=>String(s??'').replace(/[&<>'"]/g,c=>({'&':'&amp;','<':'&lt;','>':'&gt;',"'":'&#39;','"':'&quot;'}[c]));
 
   function loadProgress(){
-    try{const x=JSON.parse(localStorage.getItem(STORAGE_KEY)||'null');if(x&&typeof x==='object')state.progress={lessons:x.lessons&&typeof x.lessons==='object'?x.lessons:{},vocabulary:x.vocabulary&&typeof x.vocabulary==='object'?x.vocabulary:{},vocabularyWriting:x.vocabularyWriting&&typeof x.vocabularyWriting==='object'?x.vocabularyWriting:{},lastLesson:Number(x.lastLesson||1),lastPassageByLesson:x.lastPassageByLesson&&typeof x.lastPassageByLesson==='object'?x.lastPassageByLesson:{}};}catch{}
+    try{const x=JSON.parse(localStorage.getItem(STORAGE_KEY)||'null');if(x&&typeof x==='object')state.progress={lessons:x.lessons&&typeof x.lessons==='object'?x.lessons:{},vocabulary:x.vocabulary&&typeof x.vocabulary==='object'?x.vocabulary:{},vocabularyWriting:x.vocabularyWriting&&typeof x.vocabularyWriting==='object'?x.vocabularyWriting:{},practice:x.practice&&typeof x.practice==='object'?x.practice:{},lastPracticeIndexByLesson:x.lastPracticeIndexByLesson&&typeof x.lastPracticeIndexByLesson==='object'?x.lastPracticeIndexByLesson:{},bookPageByLesson:x.bookPageByLesson&&typeof x.bookPageByLesson==='object'?x.bookPageByLesson:{},lastContentByLesson:x.lastContentByLesson&&typeof x.lastContentByLesson==='object'?x.lastContentByLesson:{},lastLesson:Number(x.lastLesson||1),lastPassageByLesson:x.lastPassageByLesson&&typeof x.lastPassageByLesson==='object'?x.lastPassageByLesson:{}};}catch{}
   }
-  function saveProgress(){localStorage.setItem(STORAGE_KEY,JSON.stringify(state.progress));document.dispatchEvent(new CustomEvent('tocfl:state-changed'));}
+  function saveProgress(){state.progress.updatedAt=new Date().toISOString();localStorage.setItem(STORAGE_KEY,JSON.stringify(state.progress));document.dispatchEvent(new CustomEvent('tocfl:state-changed'));}
+  function practiceProgressKey(lesson,item){return `${lesson?.lesson||0}|${item?.id||''}`;}
+  function savedPractice(lesson,item){return state.progress.practice?.[practiceProgressKey(lesson,item)]||null;}
+  function savePracticeState(lesson,item,patch={}){
+    if(!lesson||!item)return;
+    state.progress.practice=state.progress.practice||{};
+    const key=practiceProgressKey(lesson,item),prev=state.progress.practice[key]||{};
+    state.progress.practice[key]={...prev,...patch,updatedAt:new Date().toISOString()};
+    state.progress.lastPracticeIndexByLesson=state.progress.lastPracticeIndexByLesson||{};
+    state.progress.lastPracticeIndexByLesson[lesson.lesson]=Number(state.practiceIndex||0);
+    saveProgress();
+  }
+  function rememberReadingContent(lesson,content){
+    if(!lesson)return;
+    state.progress.lastContentByLesson=state.progress.lastContentByLesson||{};
+    state.progress.lastContentByLesson[lesson.lesson]=content;
+    saveProgress();
+  }
+  function rememberBookPage(lesson,page){
+    if(!lesson)return;state.progress.bookPageByLesson=state.progress.bookPageByLesson||{};state.progress.bookPageByLesson[lesson.lesson]=Number(page||0);saveProgress();
+  }
   function passageProgress(id){return state.progress.lessons[id]||{};}
   function currentLesson(){return state.lessons[state.lessonIndex]||null;}
   function currentPassage(){const l=currentLesson();return l?.passages?.[state.passageIndex]||l?.passages?.[0]||null;}
@@ -274,15 +294,15 @@
     practice.innerHTML='<div class="reading-practice-head"><div><h3 id="readingPracticeTitle"></h3><p id="readingPracticeHint" class="muted"></p></div><strong id="readingPracticeProgress"></strong></div><div class="reading-practice-display-options"><label class="reading-option"><input id="readingPracticePinyinToggle" type="checkbox" checked /><span id="readingPracticePinyinText"></span></label><label class="reading-option"><input id="readingPracticeMeaningToggle" type="checkbox" checked /><span id="readingPracticeMeaningText"></span></label></div><div id="readingPracticeSource" class="reading-practice-source"></div><div id="readingPracticeQuestion" class="reading-practice-question"></div><div id="readingPracticePinyin" class="reading-practice-pinyin"></div><div id="readingPracticeMeaning" class="reading-practice-meaning"></div><div id="readingPracticeChoices" class="reading-practice-choices"></div><div id="readingPracticeFeedback" class="reading-practice-feedback" aria-live="polite"></div><div class="reading-practice-nav"><button id="readingPracticePrev" type="button"></button><button id="readingPracticeShow" type="button"></button><button id="readingPracticeNext" type="button" class="primary"></button></div>';
     switcher.before(practice);
     const book=document.createElement('section');book.id='readingBookPanel';book.className='reading-book-panel';book.hidden=true;
-    book.innerHTML='<div class="reading-book-head"><div><h3 id="readingBookTitle"></h3><p id="readingBookHint" class="muted"></p></div><div class="reading-book-range" id="readingBookRange"></div></div><div class="reading-book-controls"><button id="readingBookPrev" type="button"></button><select id="readingBookPageSelect" aria-label="Page"></select><button id="readingBookNext" type="button"></button><a id="readingBookOpen" class="buttonlike" target="_blank" rel="noopener"></a></div><div class="reading-book-frame-wrap"><iframe id="readingBookFrame" title="Modern Chinese textbook page" loading="lazy"></iframe></div><p class="small muted reading-book-exact">✓ Exact scanned textbook page — no character normalization or rewriting.</p>';
+    book.innerHTML='<div class="reading-book-head"><div><h3 id="readingBookTitle"></h3><p id="readingBookHint" class="muted"></p></div><div class="reading-book-range" id="readingBookRange"></div></div><div class="reading-book-controls"><button id="readingBookPrev" type="button"></button><select id="readingBookPageSelect" aria-label="Page"></select><button id="readingBookNext" type="button"></button><a id="readingBookOpen" class="buttonlike" target="_blank" rel="noopener"></a></div><div class="reading-book-frame-wrap"><div id="readingBookLoading" class="reading-book-loading"></div><canvas id="readingBookCanvas" aria-label="Modern Chinese textbook page"></canvas><iframe id="readingBookFrame" title="Modern Chinese textbook page fallback" loading="lazy" hidden></iframe></div><p class="small muted reading-book-exact">✓ Exact scanned textbook page — no character normalization or rewriting.</p>';
     switcher.before(book);
     $('readingNextPassageBtn')?.addEventListener('click',()=>{state.content='passage';state.passageIndex=0;cleanupAudio();render();});
     $('readingBookPrev')?.addEventListener('click',()=>moveBookPage(-1));
     $('readingBookNext')?.addEventListener('click',()=>moveBookPage(1));
-    $('readingBookPageSelect')?.addEventListener('change',e=>{state.bookPage=Number(e.target.value||0);renderBookPanel(true);});
+    $('readingBookPageSelect')?.addEventListener('change',e=>{state.bookPage=Number(e.target.value||0);rememberBookPage(currentLesson(),state.bookPage);renderBookPanel(true);});
     $('readingPracticePrev')?.addEventListener('click',()=>movePractice(-1));
     $('readingPracticeNext')?.addEventListener('click',()=>movePractice(1));
-    $('readingPracticeShow')?.addEventListener('click',()=>{state.practiceRevealed=!state.practiceRevealed;renderPracticePanel();});
+    $('readingPracticeShow')?.addEventListener('click',()=>{const items=practiceItems(currentLesson()),item=items[Math.max(0,Math.min(items.length-1,Number(state.practiceIndex||0)))];state.practiceRevealed=!state.practiceRevealed;if(item)savePracticeState(currentLesson(),item,{revealed:state.practiceRevealed});renderPracticePanel();});
     $('readingPracticePinyinToggle')?.addEventListener('change',e=>{state.practiceShowPinyin=Boolean(e.target.checked);renderPracticePanel();});
     $('readingPracticeMeaningToggle')?.addEventListener('change',e=>{state.practiceShowMeaning=Boolean(e.target.checked);renderPracticePanel();});
     const responsiveRefresh=()=>requestAnimationFrame(()=>requestAnimationFrame(()=>{
@@ -295,7 +315,7 @@
 
   async function init(){
     const root=$('readingApp');if(!root)return;loadProgress();ensureExtraUI();
-    try{const res=await fetch(DATA_URL,{cache:'no-store'});if(!res.ok)throw new Error(`HTTP ${res.status}`);const data=await res.json();state.lessons=normalizeData(data);await loadVocabBank();const idx=state.lessons.findIndex(l=>Number(l.lesson)===Number(state.progress.lastLesson));state.lessonIndex=idx>=0?idx:0;const lesson=currentLesson();state.bookPage=Number(lesson?.pdf_start||0);const savedId=state.progress.lastPassageByLesson?.[lesson?.lesson];if(savedId){const pi=lesson.passages.findIndex(p=>p.id===savedId);if(pi>=0)state.passageIndex=pi;}bind();render();}
+    try{const res=await fetch(DATA_URL,{cache:'no-store'});if(!res.ok)throw new Error(`HTTP ${res.status}`);const data=await res.json();state.lessons=normalizeData(data);await loadVocabBank();const idx=state.lessons.findIndex(l=>Number(l.lesson)===Number(state.progress.lastLesson));state.lessonIndex=idx>=0?idx:0;const lesson=currentLesson();state.bookPage=Number(state.progress.bookPageByLesson?.[lesson?.lesson]||lesson?.pdf_start||0);const savedId=state.progress.lastPassageByLesson?.[lesson?.lesson];if(savedId){const pi=lesson.passages.findIndex(p=>p.id===savedId);if(pi>=0)state.passageIndex=pi;}const savedContent=String(state.progress.lastContentByLesson?.[lesson?.lesson]||'vocab');state.content=['vocab','passage','practice','book'].includes(savedContent)?savedContent:'vocab';state.practiceIndex=Number(state.progress.lastPracticeIndexByLesson?.[lesson?.lesson]||0);bind();render();}
     catch(err){root.innerHTML=`<div class="card"><strong>Reading:</strong> ${escapeHtml(err.message)}</div>`;}
   }
 
@@ -336,16 +356,16 @@
 
   function renderLessonList(){
     const list=$('readingLessonList'),t=tx();if(!list)return;list.innerHTML='';
-    state.lessons.forEach((l,i)=>{const passages=l.passages||[],done=passages.filter(p=>passageProgress(p.id)?.completed).length,vocab=lessonVocabulary(l),known=vocab.filter(w=>isVocabRemembered(l,w)).length,b=document.createElement('button');b.type='button';b.className='reading-lesson-item';if(i===state.lessonIndex)b.classList.add('is-current');const left=document.createElement('span');const lessonName=localizedLessonName(l);left.innerHTML=`<strong>${escapeHtml(t.lesson(l.lesson))}${lessonName?` · ${escapeHtml(lessonName)}`:''}</strong><small>🧠 ${known}/${vocab.length} · 📖 ${done}/${passages.length}</small>`;const right=document.createElement('span');right.className='reading-lesson-state';right.textContent=done===passages.length&&passages.length?'✓':'—';b.append(left,right);b.addEventListener('click',()=>{cleanupAudio();state.lessonIndex=i;state.passageIndex=0;state.bookPage=Number(l.pdf_start||0);state.content='vocab';state.progress.lastLesson=l.lesson;saveProgress();render();});list.append(b);});
+    state.lessons.forEach((l,i)=>{const passages=l.passages||[],done=passages.filter(p=>passageProgress(p.id)?.completed).length,vocab=lessonVocabulary(l),known=vocab.filter(w=>isVocabRemembered(l,w)).length,b=document.createElement('button');b.type='button';b.className='reading-lesson-item';if(i===state.lessonIndex)b.classList.add('is-current');const left=document.createElement('span');const lessonName=localizedLessonName(l);left.innerHTML=`<strong>${escapeHtml(t.lesson(l.lesson))}${lessonName?` · ${escapeHtml(lessonName)}`:''}</strong><small>🧠 ${known}/${vocab.length} · 📖 ${done}/${passages.length}</small>`;const right=document.createElement('span');right.className='reading-lesson-state';right.textContent=done===passages.length&&passages.length?'✓':'—';b.append(left,right);b.addEventListener('click',()=>{cleanupAudio();state.lessonIndex=i;state.passageIndex=0;state.bookPage=Number(state.progress.bookPageByLesson?.[l.lesson]||l.pdf_start||0);state.practiceIndex=Number(state.progress.lastPracticeIndexByLesson?.[l.lesson]||0);const savedContent=String(state.progress.lastContentByLesson?.[l.lesson]||'vocab');state.content=['vocab','passage','practice','book'].includes(savedContent)?savedContent:'vocab';state.progress.lastLesson=l.lesson;saveProgress();render();});list.append(b);});
   }
 
   function renderContentTabs(){
     const wrap=$('readingContentTabs'),t=tx(),l=currentLesson();if(!wrap||!l)return;wrap.innerHTML='';
     const add=(label,on,fn)=>{const b=document.createElement('button');b.type='button';b.className='reading-content-tab';b.classList.toggle('is-active',on);b.textContent=label;b.addEventListener('click',fn);wrap.append(b);};
-    add(t.vocabulary,state.content==='vocab',()=>{cleanupAudio();state.content='vocab';render();});
-    (l.passages||[]).forEach((p,i)=>add(`${p.kind==='dialogue'?'💬':'📖'} ${localizedPassageName(p,i)}`,state.content==='passage'&&state.passageIndex===i,()=>{cleanupAudio();state.content='passage';state.passageIndex=i;state.progress.lastPassageByLesson[l.lesson]=p.id;saveProgress();render();}));
-    add(t.practice,state.content==='practice',()=>{cleanupAudio();state.content='practice';state.practiceIndex=0;state.practiceSelected=null;state.practiceRevealed=false;render();});
-    add(t.fullBook,state.content==='book',()=>{cleanupAudio();state.content='book';state.bookPage=Number(l.pdf_start||0);render();});
+    add(t.vocabulary,state.content==='vocab',()=>{cleanupAudio();state.content='vocab';rememberReadingContent(l,'vocab');render();});
+    (l.passages||[]).forEach((p,i)=>add(`${p.kind==='dialogue'?'💬':'📖'} ${localizedPassageName(p,i)}`,state.content==='passage'&&state.passageIndex===i,()=>{cleanupAudio();state.content='passage';state.passageIndex=i;state.progress.lastPassageByLesson[l.lesson]=p.id;rememberReadingContent(l,'passage');render();}));
+    add(t.practice,state.content==='practice',()=>{cleanupAudio();state.content='practice';state.practiceIndex=Number(state.progress.lastPracticeIndexByLesson?.[l.lesson]||0);state.practiceSelected=null;state.practiceRevealed=false;rememberReadingContent(l,'practice');render();});
+    add(t.fullBook,state.content==='book',()=>{cleanupAudio();state.content='book';state.bookPage=Number(state.progress.bookPageByLesson?.[l.lesson]||l.pdf_start||0);rememberReadingContent(l,'book');render();});
   }
 
   function currentBookRange(){
@@ -355,20 +375,56 @@
   }
   function moveBookPage(delta){
     const r=currentBookRange(),cur=Number(state.bookPage||r.start);
-    state.bookPage=Math.max(r.start,Math.min(r.end,cur+delta));renderBookPanel(true);
+    state.bookPage=Math.max(r.start,Math.min(r.end,cur+delta));rememberBookPage(currentLesson(),state.bookPage);renderBookPanel(true);
   }
-  function forceBookFramePage(frame,url,cur){
-    if(!frame)return;
+  let pdfJsLoadPromise=null;
+  const bookPdfCache=new Map();
+  function ensurePdfJs(){
+    if(window.pdfjsLib){
+      try{window.pdfjsLib.GlobalWorkerOptions.workerSrc='https://cdnjs.cloudflare.com/ajax/libs/pdf.js/3.11.174/pdf.worker.min.js';}catch{}
+      return Promise.resolve(window.pdfjsLib);
+    }
+    if(pdfJsLoadPromise)return pdfJsLoadPromise;
+    pdfJsLoadPromise=new Promise((resolve,reject)=>{
+      const existing=document.querySelector('script[data-tocfl-pdfjs]');
+      const finish=()=>{if(window.pdfjsLib){try{window.pdfjsLib.GlobalWorkerOptions.workerSrc='https://cdnjs.cloudflare.com/ajax/libs/pdf.js/3.11.174/pdf.worker.min.js';}catch{}resolve(window.pdfjsLib);}else reject(new Error('PDF.js unavailable'));};
+      if(existing){existing.addEventListener('load',finish,{once:true});existing.addEventListener('error',()=>reject(new Error('PDF.js load failed')),{once:true});return;}
+      const sc=document.createElement('script');sc.src='https://cdnjs.cloudflare.com/ajax/libs/pdf.js/3.11.174/pdf.min.js';sc.defer=true;sc.dataset.tocflPdfjs='1';sc.onload=finish;sc.onerror=()=>reject(new Error('PDF.js load failed'));document.head.append(sc);
+    });
+    return pdfJsLoadPromise;
+  }
+  async function getBookPdf(url){
+    if(bookPdfCache.has(url))return bookPdfCache.get(url);
+    const lib=await ensurePdfJs();
+    const promise=lib.getDocument({url}).promise.catch(err=>{bookPdfCache.delete(url);throw err;});
+    bookPdfCache.set(url,promise);return promise;
+  }
+  async function renderBookCanvas(pdfUrl,localPage,force=false){
+    const canvas=$('readingBookCanvas'),wrap=canvas?.parentElement,loading=$('readingBookLoading'),fallback=$('readingBookFrame');
+    if(!canvas||!wrap)return;
     const token=++state.bookLoadToken;
-    frame.dataset.page=String(cur);
-    // iPad/Safari's built-in PDF viewer often ignores a fragment-only #page
-    // change in an existing iframe.  Blank the frame for one paint, then reload
-    // the same cached PDF with the new page fragment.
-    frame.src='about:blank';
-    requestAnimationFrame(()=>requestAnimationFrame(()=>{
-      if(token!==state.bookLoadToken||!frame.isConnected)return;
-      frame.src=url;
-    }));
+    const width=Math.max(280,Math.floor(wrap.clientWidth-18));
+    if(!force&&canvas.dataset.pdf===pdfUrl&&canvas.dataset.page===String(localPage)&&Math.abs(Number(canvas.dataset.renderWidth||0)-width)<3)return;
+    canvas.dataset.pdf=pdfUrl;canvas.dataset.page=String(localPage);canvas.dataset.renderWidth=String(width);
+    if(loading){loading.hidden=false;loading.textContent=tx().bookLoading;loading.classList.remove('is-error');}
+    canvas.hidden=true;if(fallback)fallback.hidden=true;
+    try{
+      const doc=await getBookPdf(pdfUrl);if(token!==state.bookLoadToken)return;
+      const page=await doc.getPage(Math.max(1,Math.min(doc.numPages,localPage)));if(token!==state.bookLoadToken)return;
+      const base=page.getViewport({scale:1}),cssScale=width/base.width,dpr=Math.min(2.25,Math.max(1,window.devicePixelRatio||1));
+      const viewport=page.getViewport({scale:cssScale*dpr});
+      canvas.width=Math.max(1,Math.floor(viewport.width));canvas.height=Math.max(1,Math.floor(viewport.height));
+      canvas.style.width=`${Math.floor(viewport.width/dpr)}px`;canvas.style.height=`${Math.floor(viewport.height/dpr)}px`;
+      const ctx=canvas.getContext('2d',{alpha:false});ctx.save();ctx.fillStyle='#fff';ctx.fillRect(0,0,canvas.width,canvas.height);ctx.restore();
+      await page.render({canvasContext:ctx,viewport}).promise;if(token!==state.bookLoadToken)return;
+      canvas.hidden=false;if(loading)loading.hidden=true;
+    }catch(err){
+      console.warn('PDF page render failed',err);
+      if(token!==state.bookLoadToken)return;
+      if(loading){loading.hidden=false;loading.classList.add('is-error');loading.textContent=tx().bookLoadError;}
+      // Last-resort fallback: force a unique PDF URL. Some desktop viewers honor #page.
+      if(fallback){fallback.hidden=false;fallback.src=`${pdfUrl}?tocfl_page=${localPage}#page=${localPage}&view=FitH`;}
+    }
   }
   function renderBookPanel(forceReload=false){
     const t=tx(),l=currentLesson(),r=currentBookRange();if(!l)return;
@@ -381,13 +437,10 @@
     const localPage=cur-r.start+1;
     const localEnd=Number(l.lesson_pdf_pages||r.end-r.start+1);
     const lessonPdf=l.lesson_pdf ? `./${l.lesson_pdf}` : `./data/textbook/lesson${String(l.lesson).padStart(2,'0')}.pdf`;
-    const pdf=`${lessonPdf}#page=${localPage}&view=FitH`;
+    const pdfLink=`${lessonPdf}#page=${localPage}&view=FitH`;
     $('readingBookRange').textContent=`${t.bookPage(printed,r.bookEnd)} · ${t.bookPdfPage(localPage,localEnd)}`;
-    const frame=$('readingBookFrame');
-    if(frame&&(forceReload||frame.dataset.page!==String(cur)||frame.dataset.pdf!==lessonPdf)){
-      frame.dataset.pdf=lessonPdf;forceBookFramePage(frame,pdf,cur);
-    }
-    const open=$('readingBookOpen');if(open){open.href=pdf;open.textContent=t.bookOpen;}
+    requestAnimationFrame(()=>renderBookCanvas(lessonPdf,localPage,forceReload));
+    const open=$('readingBookOpen');if(open){open.href=pdfLink;open.textContent=t.bookOpen;}
     const prev=$('readingBookPrev'),next=$('readingBookNext');if(prev){prev.textContent=t.bookPrev;prev.disabled=cur<=r.start;}if(next){next.textContent=t.bookNext;next.disabled=cur>=r.end;}
   }
 
@@ -420,7 +473,7 @@
   }
   function movePractice(delta){
     const items=practiceItems(currentLesson());if(!items.length)return;
-    state.practiceIndex=Math.max(0,Math.min(items.length-1,Number(state.practiceIndex||0)+delta));state.practiceSelected=null;state.practiceRevealed=false;renderPracticePanel();
+    state.practiceIndex=Math.max(0,Math.min(items.length-1,Number(state.practiceIndex||0)+delta));state.progress.lastPracticeIndexByLesson=state.progress.lastPracticeIndexByLesson||{};state.progress.lastPracticeIndexByLesson[currentLesson().lesson]=state.practiceIndex;saveProgress();state.practiceSelected=null;state.practiceRevealed=false;renderPracticePanel();
   }
   function renderPracticePanel(){
     const t=tx(),l=currentLesson(),items=practiceItems(l);if(!l)return;
@@ -433,14 +486,16 @@
     if($('readingPracticeMeaningText'))$('readingPracticeMeaningText').textContent=t.practiceShowMeaning||t.showMeaning;
     if(!items.length){$('readingPracticeProgress').textContent='0/0';$('readingPracticeQuestion').textContent='—';$('readingPracticeChoices').innerHTML='';$('readingPracticeFeedback').textContent='';return;}
     let i=Math.max(0,Math.min(items.length-1,Number(state.practiceIndex||0)));state.practiceIndex=i;const item=items[i];
-    $('readingPracticeProgress').textContent=t.practiceProgress(i+1,items.length);
+    const saved=savedPractice(l,item);state.practiceSelected=saved?.selected||null;state.practiceRevealed=Boolean(saved?.revealed);
+    const doneCount=items.filter(x=>Boolean(savedPractice(l,x)?.selected)).length;
+    $('readingPracticeProgress').textContent=`${t.practiceProgress(i+1,items.length)} · ${t.practiceDone(doneCount,items.length)}`;
     $('readingPracticeSource').textContent=`${t.practiceSource}: ${item.source||t.sourceBook}`;
     $('readingPracticeQuestion').textContent=item.prompt;
     const pyBox=$('readingPracticePinyin'),viBox=$('readingPracticeMeaning');
     if(pyBox){pyBox.textContent=state.practiceShowPinyin?(item.pinyin||''):'';pyBox.hidden=!state.practiceShowPinyin||!item.pinyin;}
     if(viBox){viBox.textContent=state.practiceShowMeaning?(item.vi||''):'';viBox.hidden=!state.practiceShowMeaning||!item.vi;}
     const choices=$('readingPracticeChoices');choices.innerHTML='';
-    (item.options||[]).forEach(opt=>{const b=document.createElement('button');b.type='button';b.textContent=opt;b.className='reading-practice-choice';const selected=state.practiceSelected===opt;if(selected)b.classList.add(opt===item.answer?'is-correct':'is-wrong');if(state.practiceRevealed&&opt===item.answer)b.classList.add('is-correct');b.addEventListener('click',()=>{state.practiceSelected=opt;state.practiceRevealed=false;renderPracticePanel();});choices.append(b);});
+    (item.options||[]).forEach(opt=>{const b=document.createElement('button');b.type='button';b.textContent=opt;b.className='reading-practice-choice';const selected=state.practiceSelected===opt;if(selected)b.classList.add(opt===item.answer?'is-correct':'is-wrong');if(state.practiceRevealed&&opt===item.answer)b.classList.add('is-correct');b.addEventListener('click',()=>{state.practiceSelected=opt;state.practiceRevealed=false;savePracticeState(l,item,{selected:opt,correct:opt===item.answer,revealed:false});renderPracticePanel();});choices.append(b);});
     const fb=$('readingPracticeFeedback');
     if(state.practiceRevealed)fb.textContent=t.practiceAnswer(item.answer);
     else if(state.practiceSelected)fb.textContent=state.practiceSelected===item.answer?t.practiceCorrect:`${t.practiceWrong} · ${t.practiceAnswer(item.answer)}`;
@@ -506,6 +561,6 @@
   function similarity(a,b){if(!a&&!b)return 1;if(!a||!b)return 0;return 1-levenshtein(a,b)/Math.max(a.length,b.length);}
   async function checkReading(){const t=tx(),p=currentPassage();if(!state.blob?.size){$('readingRecordStatus').textContent=t.noAudio;return;}const liveSession=await window.TOCFLAuth?.ensureSession?.();if(!liveSession?.user){$('readingRecordStatus').textContent=t.login;window.TOCFLAuth?.openAuth?.('login');return;}if(!window.TOCFLAuth?.transcribeWithGroq){$('readingRecordStatus').textContent=t.groq;return;}try{$('readingCheckBtn').disabled=true;$('readingRecordStatus').textContent=t.checking;const result=await window.TOCFLAuth.transcribeWithGroq(state.blob,fullText(p)),recognized=String(result?.text||'').trim();const score=Math.max(0,Math.min(100,Math.round(similarity(normalizeChinese(fullText(p)),normalizeChinese(recognized))*100)));$('readingResult').hidden=false;$('readingScore').textContent=String(score);$('readingRecognized').textContent=recognized||'—';$('readingScoreNote').textContent=t.scoreNote;$('readingResultTitle').textContent=t.result;$('readingRecognizedLabel').textContent=t.recognized;$('readingMatchLabel').textContent=t.textMatch;$('readingFeedback').textContent=score>=90?t.excellent:score>=70?t.good:t.retry;const prev=passageProgress(p.id),x={...prev,lastScore:score,bestScore:Math.max(Number(prev.bestScore||0),score),lastStudied:new Date().toISOString()};if(score>=90)x.completed=true;state.progress.lessons[p.id]=x;saveProgress();renderLessonList();$('readingBestScore').textContent=`${t.best}: ${x.bestScore}/100`;$('readingCompleteBtn').textContent=x.completed?t.completed:t.complete;$('readingCompleteBtn').classList.toggle('is-complete',Boolean(x.completed));$('readingRecordStatus').textContent=t.recorded;}catch(err){$('readingRecordStatus').textContent=err?.message||t.groq;}finally{$('readingCheckBtn').disabled=false;}}
 
-  window.TOCFLReading={getProgress:()=>{loadProgress();return JSON.parse(JSON.stringify(state.progress));},applyProgress:value=>{if(value&&typeof value==='object'){localStorage.setItem(STORAGE_KEY,JSON.stringify(value));loadProgress();document.dispatchEvent(new CustomEvent('tocfl:reading-cloud-applied'));}},reset:()=>{localStorage.removeItem(STORAGE_KEY);state.progress={lessons:{},vocabulary:{},vocabularyWriting:{},lastLesson:1,lastPassageByLesson:{}};render();}};
+  window.TOCFLReading={getProgress:()=>{loadProgress();return JSON.parse(JSON.stringify(state.progress));},applyProgress:value=>{if(value&&typeof value==='object'){localStorage.setItem(STORAGE_KEY,JSON.stringify(value));loadProgress();document.dispatchEvent(new CustomEvent('tocfl:reading-cloud-applied'));}},reset:()=>{localStorage.removeItem(STORAGE_KEY);state.progress={lessons:{},vocabulary:{},vocabularyWriting:{},practice:{},lastPracticeIndexByLesson:{},bookPageByLesson:{},lastContentByLesson:{},lastLesson:1,lastPassageByLesson:{}};render();}};
   if(document.readyState==='loading')document.addEventListener('DOMContentLoaded',init,{once:true});else init();
 })();

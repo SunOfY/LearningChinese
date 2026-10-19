@@ -9,7 +9,7 @@
     vi:{
       subtitle:'Học theo từng bài trong sách: từ vựng → hội thoại/đoạn đọc → học thuộc → thi thử chỉ nhìn tiếng Trung.',
       lesson:n=>`Bài ${n}`, source:p=>`Trang sách ${p}`, study:'📘 Học', memorize:'🧠 Học thuộc', exam:'🎓 Thi thử',
-      vocabulary:'🧠 Từ vựng', fullBook:'📚 Toàn bộ bài', fullBookTitle:'Toàn bộ nội dung của bài', fullBookHint:'Giữ nguyên đúng trang sách gốc: hội thoại, từ vựng, ngữ pháp, ví dụ, bài tập, Phrase, Notes, Reading và hoạt động đều có ở đây.', bookPrev:'← Trang trước', bookNext:'Trang sau →', bookOpen:'↗ Mở toàn màn hình', bookPage:(a,b)=>`Trang sách ${a} / ${b}`, bookPdfPage:(a,b)=>`PDF ${a}/${b}`, vocabTitle:'Từ vựng của bài', vocabHint:'Học từ trước để khi sang Reading bạn nhận ra chữ và tự đọc được.',
+      vocabulary:'🧠 Từ vựng', practice:'📝 Câu & bài tập', practiceTitle:'Luyện câu và chọn đáp án', practiceHint:'Luyện trực tiếp từ các câu trong bài. Các câu gốc được giữ nguyên; bài chọn đáp án được tạo từ chính nội dung của bài để bạn nhớ từ và mẫu câu.', practiceProgress:(a,b)=>`Câu ${a}/${b}`, practiceCorrect:'✅ Đúng rồi', practiceWrong:'❌ Chưa đúng', practiceAnswer:a=>`Đáp án: ${a}`, practicePrev:'← Câu trước', practiceNext:'Câu sau →', practiceShow:'👁 Xem đáp án', practiceSource:'Nguồn', fullBook:'📚 Toàn bộ bài', fullBookTitle:'Toàn bộ nội dung của bài', fullBookHint:'Giữ nguyên đúng trang sách gốc: hội thoại, từ vựng, ngữ pháp, ví dụ, bài tập, Phrase, Notes, Reading và hoạt động đều có ở đây.', bookPrev:'← Trang trước', bookNext:'Trang sau →', bookOpen:'↗ Mở toàn màn hình', bookPage:(a,b)=>`Trang sách ${a} / ${b}`, bookPdfPage:(a,b)=>`PDF ${a}/${b}`, vocabTitle:'Từ vựng của bài', vocabHint:'Học từ trước để khi sang Reading bạn nhận ra chữ và tự đọc được.',
       remembered:'✅ Đã nhớ', notRemembered:'😕 Chưa nhớ', vocabProgress:(a,b)=>`${a}/${b} từ đã nhớ`,
       derivedVocab:'Từ trong đoạn (khớp dữ liệu TOCFL A1/A2)', bookVocab:'Từ mới trong bài', nextReading:'Bắt đầu đoạn đầu tiên →',
       listen:'🔊 Nghe cả đoạn', slow:'🐢 Nghe chậm', showPinyin:'Hiện Pinyin', showMeaning:'Hiện nghĩa Việt', hideChars:'Mức ẩn chữ', peek:'👁 Giữ để xem đáp án', sentencePractice:'Luyện từng câu',
@@ -23,7 +23,7 @@
     en:{
       subtitle:'Study each textbook lesson in order: vocabulary → dialogues/readings → memorization → Chinese-only test.',
       lesson:n=>`Lesson ${n}`, source:p=>`Book page ${p}`, study:'📘 Study', memorize:'🧠 Memorize', exam:'🎓 Test',
-      vocabulary:'🧠 Vocabulary', fullBook:'📚 Full lesson', fullBookTitle:'Complete lesson content', fullBookHint:'Exact textbook pages: dialogues, vocabulary, grammar, examples, exercises, phrases, notes, readings and activities are all included here.', bookPrev:'← Previous page', bookNext:'Next page →', bookOpen:'↗ Open full screen', bookPage:(a,b)=>`Book page ${a} / ${b}`, bookPdfPage:(a,b)=>`PDF ${a}/${b}`, vocabTitle:'Lesson vocabulary', vocabHint:'Learn the words first so you can recognize the characters in the reading.',
+      vocabulary:'🧠 Vocabulary', practice:'📝 Sentences & practice', practiceTitle:'Sentence practice', practiceHint:'Practice directly from the lesson sentences. Source sentences are preserved; multiple-choice cloze items are generated from the same lesson content.', practiceProgress:(a,b)=>`Item ${a}/${b}`, practiceCorrect:'✅ Correct', practiceWrong:'❌ Not yet', practiceAnswer:a=>`Answer: ${a}`, practicePrev:'← Previous', practiceNext:'Next →', practiceShow:'👁 Show answer', practiceSource:'Source', fullBook:'📚 Full lesson', fullBookTitle:'Complete lesson content', fullBookHint:'Exact textbook pages: dialogues, vocabulary, grammar, examples, exercises, phrases, notes, readings and activities are all included here.', bookPrev:'← Previous page', bookNext:'Next page →', bookOpen:'↗ Open full screen', bookPage:(a,b)=>`Book page ${a} / ${b}`, bookPdfPage:(a,b)=>`PDF ${a}/${b}`, vocabTitle:'Lesson vocabulary', vocabHint:'Learn the words first so you can recognize the characters in the reading.',
       remembered:'✅ Remembered', notRemembered:'😕 Not yet', vocabProgress:(a,b)=>`${a}/${b} words remembered`,
       derivedVocab:'Words found in the passage (TOCFL A1/A2 match)', bookVocab:'Textbook vocabulary', nextReading:'Start first passage →',
       listen:'🔊 Listen', slow:'🐢 Slow', showPinyin:'Show Pinyin', showMeaning:'Show Vietnamese meaning', hideChars:'Hide characters', peek:'👁 Hold to reveal', sentencePractice:'Sentence practice',
@@ -36,7 +36,7 @@
     'zh-Hant':{
       subtitle:'依課本課次：先學生詞，再練對話／短文，最後只看中文背誦與測驗。',
       lesson:n=>`第 ${n} 課`, source:p=>`課本第 ${p} 頁`, study:'📘 學習', memorize:'🧠 背誦', exam:'🎓 模擬測驗',
-      vocabulary:'🧠 生詞', fullBook:'📚 全課內容', fullBookTitle:'本課完整內容', fullBookHint:'完全保留課本原頁：對話、生詞、語法、例句、練習、片語、註解、短文與活動都在這裡。', bookPrev:'← 上一頁', bookNext:'下一頁 →', bookOpen:'↗ 全螢幕開啟', bookPage:(a,b)=>`課本第 ${a} / ${b} 頁`, bookPdfPage:(a,b)=>`PDF ${a}/${b}`, vocabTitle:'本課生詞', vocabHint:'先把生詞記熟，再進入課文朗讀。', remembered:'✅ 已記住', notRemembered:'😕 還不熟', vocabProgress:(a,b)=>`已記住 ${a}/${b} 個`,
+      vocabulary:'🧠 生詞', practice:'📝 句子與練習', practiceTitle:'句子與選擇練習', practiceHint:'直接使用本課原句練習；選擇題由本課內容產生，幫助記憶生詞與句型。', practiceProgress:(a,b)=>`第 ${a}/${b} 題`, practiceCorrect:'✅ 答對了', practiceWrong:'❌ 再想一想', practiceAnswer:a=>`答案：${a}`, practicePrev:'← 上一題', practiceNext:'下一題 →', practiceShow:'👁 看答案', practiceSource:'來源', fullBook:'📚 全課內容', fullBookTitle:'本課完整內容', fullBookHint:'完全保留課本原頁：對話、生詞、語法、例句、練習、片語、註解、短文與活動都在這裡。', bookPrev:'← 上一頁', bookNext:'下一頁 →', bookOpen:'↗ 全螢幕開啟', bookPage:(a,b)=>`課本第 ${a} / ${b} 頁`, bookPdfPage:(a,b)=>`PDF ${a}/${b}`, vocabTitle:'本課生詞', vocabHint:'先把生詞記熟，再進入課文朗讀。', remembered:'✅ 已記住', notRemembered:'😕 還不熟', vocabProgress:(a,b)=>`已記住 ${a}/${b} 個`,
       derivedVocab:'課文中符合 TOCFL A1/A2 的詞', bookVocab:'課本生詞', nextReading:'開始第一篇 →', listen:'🔊 聽全文', slow:'🐢 慢速', showPinyin:'顯示拼音', showMeaning:'顯示越文意思', hideChars:'隱藏文字', peek:'👁 按住看答案', sentencePractice:'逐句練習',
       examHelp:'測驗模式只顯示所選課文的中文。請憑記憶朗讀全文、錄音，再用 AI 比對辨識文字。',
       start:'🎙 開始錄音', stop:'⏹ 停止', check:'✓ 檢查朗讀', playback:'▶ 播放錄音', idle:'尚未錄音。', recording:'🔴 錄音中……請朗讀所選課文。', recorded:'錄音完成，可以播放或檢查。',
@@ -46,7 +46,7 @@
     }
   };
 
-  const state={lessons:[],lessonIndex:0,passageIndex:0,bookPage:0,content:'vocab',mode:'study',mask:0,peek:false,showPinyin:true,showMeaning:true,progress:{lessons:{},vocabulary:{},vocabularyWriting:{},lastLesson:1,lastPassageByLesson:{}},vocabBank:[],recorder:null,stream:null,chunks:[],blob:null,url:null,writingVocabKey:null,writingCanvases:[],writingWriters:[],writingObservers:[]};
+  const state={lessons:[],lessonIndex:0,passageIndex:0,bookPage:0,practiceIndex:0,practiceSelected:null,practiceRevealed:false,bookLoadToken:0,content:'vocab',mode:'study',mask:0,peek:false,showPinyin:true,showMeaning:true,progress:{lessons:{},vocabulary:{},vocabularyWriting:{},lastLesson:1,lastPassageByLesson:{}},vocabBank:[],recorder:null,stream:null,chunks:[],blob:null,url:null,writingVocabKey:null,writingCanvases:[],writingWriters:[],writingObservers:[]};
   const $=id=>document.getElementById(id);
   const lang=()=>window.TOCFLApp?.getLanguage?.()||localStorage.getItem('tocfl-a1-ui-language-v2')||'vi';
   const tx=()=>UI[lang()]||UI.vi;
@@ -236,24 +236,32 @@
     state.vocabBank=out;
   }
   function lessonVocabulary(lesson){
-    const explicit=Array.isArray(lesson?.vocabulary)?lesson.vocabulary:[];
+    const explicit=[...(Array.isArray(lesson?.vocabulary)?lesson.vocabulary:[]),...(Array.isArray(lesson?.extra_vocabulary)?lesson.extra_vocabulary:[])];
     const seen=new Set(),out=[];
     explicit.forEach(w=>{if(w?.zh&&!seen.has(w.zh)){seen.add(w.zh);out.push({...w,_kind:'book'});}});
-    const byFirst=new Map();
-    state.vocabBank.forEach(w=>{
-      if(!w?.zh)return; const first=Array.from(w.zh)[0];
-      if(!byFirst.has(first))byFirst.set(first,[]); byFirst.get(first).push(w);
+
+    // v5.6.2: do not use the old greedy longest-match scan.  It skipped many
+    // valid words whenever a longer word consumed the same characters.
+    // Instead include EVERY A1/A2 dictionary entry that actually appears in
+    // this lesson's extracted textbook content.  Explicit textbook vocabulary
+    // stays first and keeps its book spelling.
+    const corpusParts=[];
+    (lesson?.passages||[]).forEach(p=>{
+      if(p?.title_zh)corpusParts.push(p.title_zh);
+      if(p?.context_zh)corpusParts.push(p.context_zh);
+      (p?.sentences||[]).forEach(s=>{if(s?.speaker)corpusParts.push(s.speaker);if(s?.zh)corpusParts.push(s.zh);});
     });
-    byFirst.forEach(arr=>arr.sort((a,b)=>Array.from(b.zh).length-Array.from(a.zh).length));
-    const text=(lesson?.passages||[]).map(fullText).join('');
-    for(let i=0;i<text.length;){
-      const ch=text[i];
-      if(!/[\u3400-\u9FFF\uF900-\uFAFF]/.test(ch)){i++;continue;}
-      const candidates=byFirst.get(ch)||[]; let hit=null;
-      for(const w of candidates){if(text.startsWith(w.zh,i)){hit=w;break;}}
-      if(hit){if(!seen.has(hit.zh)){seen.add(hit.zh);out.push({...hit,_kind:'derived'});} i+=hit.zh.length;} else i++;
-    }
-    return out.slice(0,120);
+    (lesson?.exercises||[]).forEach(x=>{if(x?.prompt_zh)corpusParts.push(x.prompt_zh);if(x?.answer)corpusParts.push(x.answer);});
+    const text=corpusParts.join('｜');
+    const hits=[];
+    state.vocabBank.forEach((w,idx)=>{
+      if(!w?.zh||seen.has(w.zh))return;
+      const pos=text.indexOf(w.zh);
+      if(pos>=0)hits.push({w,pos,idx,len:Array.from(w.zh).length});
+    });
+    hits.sort((a,b)=>a.pos-b.pos||b.len-a.len||a.idx-b.idx);
+    hits.forEach(({w})=>{if(!seen.has(w.zh)){seen.add(w.zh);out.push({...w,_kind:'derived'});}});
+    return out.slice(0,260);
   }
 
   function ensureExtraUI(){
@@ -262,13 +270,25 @@
     const panel=document.createElement('section');panel.id='readingVocabularyPanel';panel.className='reading-vocab-panel';panel.hidden=true;
     panel.innerHTML='<div class="reading-vocab-head"><div><h3 id="readingVocabTitle"></h3><p id="readingVocabHint" class="muted"></p></div><strong id="readingVocabProgress"></strong></div><div id="readingWritingWorkspace" class="reading-writing-workspace" hidden></div><div id="readingVocabList" class="reading-vocab-list"></div><div class="toolbar"><button id="readingNextPassageBtn" type="button" class="primary"></button></div>';
     switcher.before(panel);
+    const practice=document.createElement('section');practice.id='readingPracticePanel';practice.className='reading-practice-panel';practice.hidden=true;
+    practice.innerHTML='<div class="reading-practice-head"><div><h3 id="readingPracticeTitle"></h3><p id="readingPracticeHint" class="muted"></p></div><strong id="readingPracticeProgress"></strong></div><div id="readingPracticeSource" class="reading-practice-source"></div><div id="readingPracticeQuestion" class="reading-practice-question"></div><div id="readingPracticePinyin" class="reading-practice-pinyin"></div><div id="readingPracticeMeaning" class="reading-practice-meaning"></div><div id="readingPracticeChoices" class="reading-practice-choices"></div><div id="readingPracticeFeedback" class="reading-practice-feedback" aria-live="polite"></div><div class="reading-practice-nav"><button id="readingPracticePrev" type="button"></button><button id="readingPracticeShow" type="button"></button><button id="readingPracticeNext" type="button" class="primary"></button></div>';
+    switcher.before(practice);
     const book=document.createElement('section');book.id='readingBookPanel';book.className='reading-book-panel';book.hidden=true;
     book.innerHTML='<div class="reading-book-head"><div><h3 id="readingBookTitle"></h3><p id="readingBookHint" class="muted"></p></div><div class="reading-book-range" id="readingBookRange"></div></div><div class="reading-book-controls"><button id="readingBookPrev" type="button"></button><select id="readingBookPageSelect" aria-label="Page"></select><button id="readingBookNext" type="button"></button><a id="readingBookOpen" class="buttonlike" target="_blank" rel="noopener"></a></div><div class="reading-book-frame-wrap"><iframe id="readingBookFrame" title="Modern Chinese textbook page" loading="lazy"></iframe></div><p class="small muted reading-book-exact">✓ Exact scanned textbook page — no character normalization or rewriting.</p>';
     switcher.before(book);
     $('readingNextPassageBtn')?.addEventListener('click',()=>{state.content='passage';state.passageIndex=0;cleanupAudio();render();});
     $('readingBookPrev')?.addEventListener('click',()=>moveBookPage(-1));
     $('readingBookNext')?.addEventListener('click',()=>moveBookPage(1));
-    $('readingBookPageSelect')?.addEventListener('change',e=>{state.bookPage=Number(e.target.value||0);renderBookPanel();});
+    $('readingBookPageSelect')?.addEventListener('change',e=>{state.bookPage=Number(e.target.value||0);renderBookPanel(true);});
+    $('readingPracticePrev')?.addEventListener('click',()=>movePractice(-1));
+    $('readingPracticeNext')?.addEventListener('click',()=>movePractice(1));
+    $('readingPracticeShow')?.addEventListener('click',()=>{state.practiceRevealed=!state.practiceRevealed;renderPracticePanel();});
+    const responsiveRefresh=()=>requestAnimationFrame(()=>requestAnimationFrame(()=>{
+      state.writingCanvases.forEach(x=>resizeReadingCanvas(x,{preserve:true}));
+      if(state.content==='book')renderBookPanel(false);
+    }));
+    window.addEventListener('orientationchange',responsiveRefresh,{passive:true});
+    window.visualViewport?.addEventListener?.('resize',responsiveRefresh,{passive:true});
   }
 
   async function init(){
@@ -299,10 +319,11 @@
     const t=tx(),lesson=currentLesson();if(!lesson)return;
     const completedLessons=state.lessons.filter(l=>(l.passages||[]).some(p=>passageProgress(p.id)?.completed)).length;
     $('readingSubtitle').textContent=t.subtitle;$('readingProgressSummary').textContent=t.progress(completedLessons,state.lessons.length);renderLessonList();renderContentTabs();
-    const vocabMode=state.content==='vocab',bookMode=state.content==='book',modeSwitch=document.querySelector('#view-reading .reading-mode-switch'),toolbar=document.querySelector('#view-reading .reading-toolbar');
-    $('readingVocabularyPanel').hidden=!vocabMode;$('readingBookPanel').hidden=!bookMode;if(modeSwitch)modeSwitch.hidden=vocabMode||bookMode;if(toolbar)toolbar.hidden=vocabMode||bookMode;$('readingMemorizeControls').hidden=vocabMode||bookMode||state.mode!=='memorize';$('readingPassage').hidden=vocabMode||bookMode;$('readingSentencePracticeWrap').hidden=vocabMode||bookMode||state.mode!=='study';$('readingExamPanel').hidden=vocabMode||bookMode||state.mode!=='exam';$('readingCompleteBtn').hidden=vocabMode||bookMode;$('readingBestScore').hidden=vocabMode||bookMode;
+    const vocabMode=state.content==='vocab',practiceMode=state.content==='practice',bookMode=state.content==='book',modeSwitch=document.querySelector('#view-reading .reading-mode-switch'),toolbar=document.querySelector('#view-reading .reading-toolbar');
+    $('readingVocabularyPanel').hidden=!vocabMode;$('readingPracticePanel').hidden=!practiceMode;$('readingBookPanel').hidden=!bookMode;if(modeSwitch)modeSwitch.hidden=vocabMode||practiceMode||bookMode;if(toolbar)toolbar.hidden=vocabMode||practiceMode||bookMode;$('readingMemorizeControls').hidden=vocabMode||practiceMode||bookMode||state.mode!=='memorize';$('readingPassage').hidden=vocabMode||practiceMode||bookMode;$('readingSentencePracticeWrap').hidden=vocabMode||practiceMode||bookMode||state.mode!=='study';$('readingExamPanel').hidden=vocabMode||practiceMode||bookMode||state.mode!=='exam';$('readingCompleteBtn').hidden=vocabMode||practiceMode||bookMode;$('readingBestScore').hidden=vocabMode||practiceMode||bookMode;
     if(vocabMode){renderVocabulary();return;}
-    if(bookMode){renderBookPanel();return;}
+    if(practiceMode){renderPracticePanel();return;}
+    if(bookMode){renderBookPanel(true);return;}
     const p=currentPassage();if(!p)return;
     $('readingLessonTitle').textContent=`${t.lesson(lesson.lesson)} · ${localizedPassageName(p,state.passageIndex)}`;const context=localizedContext(p);$('readingLessonSub').textContent=`${context?`${context} · `:''}${t.sourceBook}${p.book_page?` · ${t.source(p.book_page)}`:''}`;
     document.querySelectorAll('[data-reading-mode]').forEach(b=>{const on=b.dataset.readingMode===state.mode;b.classList.toggle('is-active',on);b.setAttribute('aria-selected',String(on));});
@@ -321,6 +342,7 @@
     const add=(label,on,fn)=>{const b=document.createElement('button');b.type='button';b.className='reading-content-tab';b.classList.toggle('is-active',on);b.textContent=label;b.addEventListener('click',fn);wrap.append(b);};
     add(t.vocabulary,state.content==='vocab',()=>{cleanupAudio();state.content='vocab';render();});
     (l.passages||[]).forEach((p,i)=>add(`${p.kind==='dialogue'?'💬':'📖'} ${localizedPassageName(p,i)}`,state.content==='passage'&&state.passageIndex===i,()=>{cleanupAudio();state.content='passage';state.passageIndex=i;state.progress.lastPassageByLesson[l.lesson]=p.id;saveProgress();render();}));
+    add(t.practice,state.content==='practice',()=>{cleanupAudio();state.content='practice';state.practiceIndex=0;state.practiceSelected=null;state.practiceRevealed=false;render();});
     add(t.fullBook,state.content==='book',()=>{cleanupAudio();state.content='book';state.bookPage=Number(l.pdf_start||0);render();});
   }
 
@@ -331,9 +353,22 @@
   }
   function moveBookPage(delta){
     const r=currentBookRange(),cur=Number(state.bookPage||r.start);
-    state.bookPage=Math.max(r.start,Math.min(r.end,cur+delta));renderBookPanel();
+    state.bookPage=Math.max(r.start,Math.min(r.end,cur+delta));renderBookPanel(true);
   }
-  function renderBookPanel(){
+  function forceBookFramePage(frame,url,cur){
+    if(!frame)return;
+    const token=++state.bookLoadToken;
+    frame.dataset.page=String(cur);
+    // iPad/Safari's built-in PDF viewer often ignores a fragment-only #page
+    // change in an existing iframe.  Blank the frame for one paint, then reload
+    // the same cached PDF with the new page fragment.
+    frame.src='about:blank';
+    requestAnimationFrame(()=>requestAnimationFrame(()=>{
+      if(token!==state.bookLoadToken||!frame.isConnected)return;
+      frame.src=url;
+    }));
+  }
+  function renderBookPanel(forceReload=false){
     const t=tx(),l=currentLesson(),r=currentBookRange();if(!l)return;
     let cur=Number(state.bookPage||r.start);if(cur<r.start||cur>r.end)cur=r.start;state.bookPage=cur;
     const printed=r.bookStart+(cur-r.start);
@@ -342,13 +377,69 @@
     $('readingBookTitle').textContent=t.fullBookTitle;$('readingBookHint').textContent=t.fullBookHint;
     const sel=$('readingBookPageSelect');if(sel){const wanted=Array.from({length:r.end-r.start+1},(_,i)=>r.start+i),existing=Array.from(sel.options).map(o=>Number(o.value));if(existing.length!==wanted.length||existing[0]!==wanted[0]){sel.innerHTML='';wanted.forEach(p=>{const o=document.createElement('option');o.value=String(p);o.textContent=t.source(r.bookStart+(p-r.start));sel.append(o);});}sel.value=String(cur);}
     const localPage=cur-r.start+1;
-    const localEnd=r.end-r.start+1;
+    const localEnd=Number(l.lesson_pdf_pages||r.end-r.start+1);
     const lessonPdf=l.lesson_pdf ? `./${l.lesson_pdf}` : `./data/textbook/lesson${String(l.lesson).padStart(2,'0')}.pdf`;
     const pdf=`${lessonPdf}#page=${localPage}&view=FitH`;
     $('readingBookRange').textContent=`${t.bookPage(printed,r.bookEnd)} · ${t.bookPdfPage(localPage,localEnd)}`;
-    const frame=$('readingBookFrame');if(frame&&(frame.dataset.page!==String(cur)||frame.dataset.pdf!==lessonPdf)){frame.dataset.page=String(cur);frame.dataset.pdf=lessonPdf;frame.src=pdf;}
+    const frame=$('readingBookFrame');
+    if(frame&&(forceReload||frame.dataset.page!==String(cur)||frame.dataset.pdf!==lessonPdf)){
+      frame.dataset.pdf=lessonPdf;forceBookFramePage(frame,pdf,cur);
+    }
     const open=$('readingBookOpen');if(open){open.href=pdf;open.textContent=t.bookOpen;}
     const prev=$('readingBookPrev'),next=$('readingBookNext');if(prev){prev.textContent=t.bookPrev;prev.disabled=cur<=r.start;}if(next){next.textContent=t.bookNext;next.disabled=cur>=r.end;}
+  }
+
+  function deterministicShuffle(arr,seed){
+    const a=[...arr];let s=(seed>>>0)||1;
+    for(let i=a.length-1;i>0;i--){s=(s*1664525+1013904223)>>>0;const j=s%(i+1);[a[i],a[j]]=[a[j],a[i]];}
+    return a;
+  }
+  function practiceItems(lesson){
+    if(!lesson)return[];
+    const manual=(Array.isArray(lesson.exercises)?lesson.exercises:[]).map((x,i)=>({
+      id:x.id||`manual-${i}`,prompt:x.prompt_zh||'',pinyin:x.pinyin||'',vi:x.vi||'',answer:x.answer||'',options:Array.isArray(x.options)?x.options:[],source:x.source_label||'Exercise'
+    })).filter(x=>x.prompt&&x.answer);
+    const vocab=lessonVocabulary(lesson),generated=[];let serial=0;
+    (lesson.passages||[]).forEach((p,pi)=>(p.sentences||[]).forEach((s,si)=>{
+      const zh=String(s.zh||'');if(!zh)return;
+      let matches=vocab.filter(w=>w?.zh&&zh.includes(w.zh));
+      matches=matches.sort((a,b)=>Array.from(b.zh).length-Array.from(a.zh).length||zh.indexOf(a.zh)-zh.indexOf(b.zh));
+      let target=matches.length?matches[(si+pi)%Math.min(matches.length,4)]?.zh:'';
+      if(!target){const chars=Array.from(zh).filter(c=>/[\u3400-\u9FFF\uF900-\uFAFF]/.test(c));target=chars[(si+pi)%Math.max(1,chars.length)]||'';}
+      if(!target||!zh.includes(target))return;
+      const pool=vocab.map(w=>w.zh).filter(x=>x&&x!==target);
+      let same=pool.filter(x=>Array.from(x).length===Array.from(target).length);
+      if(same.length<3)same=[...same,...pool.filter(x=>!same.includes(x))];
+      const opts=deterministicShuffle([target,...same.slice(0,7)],(lesson.lesson*1000)+(pi*100)+si).filter((x,i,a)=>a.indexOf(x)===i).slice(0,4);
+      if(!opts.includes(target))opts[opts.length-1]=target;
+      generated.push({id:`gen-${pi}-${si}`,prompt:(s.speaker?`${s.speaker}：`:'')+zh.replace(target,'＿＿'),pinyin:s.pinyin||'',vi:s.vi||'',answer:target,options:deterministicShuffle(opts,(lesson.lesson*7919)+serial++),source:localizedPassageName(p,pi)});
+    }));
+    return [...manual,...generated];
+  }
+  function movePractice(delta){
+    const items=practiceItems(currentLesson());if(!items.length)return;
+    state.practiceIndex=Math.max(0,Math.min(items.length-1,Number(state.practiceIndex||0)+delta));state.practiceSelected=null;state.practiceRevealed=false;renderPracticePanel();
+  }
+  function renderPracticePanel(){
+    const t=tx(),l=currentLesson(),items=practiceItems(l);if(!l)return;
+    $('readingLessonTitle').textContent=`${t.lesson(l.lesson)} · ${t.practiceTitle}`;
+    $('readingLessonSub').textContent=`${localizedLessonName(l)||''}${localizedLessonName(l)?' · ':''}${t.sourceBook}`;
+    $('readingPracticeTitle').textContent=t.practiceTitle;$('readingPracticeHint').textContent=t.practiceHint;
+    if(!items.length){$('readingPracticeProgress').textContent='0/0';$('readingPracticeQuestion').textContent='—';$('readingPracticeChoices').innerHTML='';$('readingPracticeFeedback').textContent='';return;}
+    let i=Math.max(0,Math.min(items.length-1,Number(state.practiceIndex||0)));state.practiceIndex=i;const item=items[i];
+    $('readingPracticeProgress').textContent=t.practiceProgress(i+1,items.length);
+    $('readingPracticeSource').textContent=`${t.practiceSource}: ${item.source||t.sourceBook}`;
+    $('readingPracticeQuestion').textContent=item.prompt;
+    $('readingPracticePinyin').textContent=item.pinyin||'';$('readingPracticeMeaning').textContent=item.vi||'';
+    const choices=$('readingPracticeChoices');choices.innerHTML='';
+    (item.options||[]).forEach(opt=>{const b=document.createElement('button');b.type='button';b.textContent=opt;b.className='reading-practice-choice';const selected=state.practiceSelected===opt;if(selected)b.classList.add(opt===item.answer?'is-correct':'is-wrong');if(state.practiceRevealed&&opt===item.answer)b.classList.add('is-correct');b.addEventListener('click',()=>{state.practiceSelected=opt;state.practiceRevealed=false;renderPracticePanel();});choices.append(b);});
+    const fb=$('readingPracticeFeedback');
+    if(state.practiceRevealed)fb.textContent=t.practiceAnswer(item.answer);
+    else if(state.practiceSelected)fb.textContent=state.practiceSelected===item.answer?t.practiceCorrect:`${t.practiceWrong} · ${t.practiceAnswer(item.answer)}`;
+    else fb.textContent='';
+    $('readingPracticePrev').textContent=t.practicePrev;$('readingPracticePrev').disabled=i<=0;
+    $('readingPracticeNext').textContent=t.practiceNext;$('readingPracticeNext').disabled=i>=items.length-1;
+    $('readingPracticeShow').textContent=t.practiceShow;
   }
 
   function renderVocabulary(){

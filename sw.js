@@ -1,4 +1,4 @@
-const CACHE = 'tocfl-v5-6-1-split-textbook';
+const CACHE = 'tocfl-v5-6-2-reading-interactive-responsive';
 const ASSETS = [
   './',
   './index.html',

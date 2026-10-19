@@ -681,3 +681,33 @@ body.reading-writing-active *{
 .reading-book-controls{display:grid;grid-template-columns:auto minmax(160px,1fr) auto auto;gap:8px;align-items:center;margin:10px 0}.reading-book-controls button,.reading-book-controls select,.reading-book-controls .buttonlike{min-height:42px;border:1px solid var(--border);border-radius:10px;background:#fff;padding:8px 12px;font:inherit;font-weight:700;text-decoration:none;color:inherit;display:flex;align-items:center;justify-content:center}.reading-book-controls button:disabled{opacity:.45}
 .reading-book-frame-wrap{height:min(76vh,920px);min-height:600px;border:1px solid var(--border);border-radius:12px;overflow:hidden;background:#eef2f1}.reading-book-frame-wrap iframe{width:100%;height:100%;border:0;background:#fff}.reading-book-exact{margin:8px 0 0}
 @media(max-width:760px){.reading-book-head{display:block}.reading-book-range{margin-top:8px;white-space:normal}.reading-book-controls{grid-template-columns:1fr 1fr}.reading-book-controls select{grid-column:1/-1;grid-row:1}.reading-book-frame-wrap{height:68vh;min-height:480px}.reading-content-tabs{padding-bottom:6px}}
+
+
+/* v5.6.2 — reliable PDF paging, interactive sentence practice, rotation-safe layout */
+.reading-practice-panel{border:1px solid var(--border);border-radius:16px;background:#fbfdfc;padding:14px;min-width:0}
+.reading-practice-head{display:flex;justify-content:space-between;gap:14px;align-items:flex-start}.reading-practice-head h3{margin:0 0 4px}.reading-practice-head p{margin:0;line-height:1.45}.reading-practice-source{margin:12px 0 6px;color:#0f766e;font-weight:800}.reading-practice-question{font-family:"Noto Sans TC","PingFang TC","Microsoft JhengHei",sans-serif;font-size:clamp(1.45rem,3vw,2.1rem);line-height:1.65;padding:14px;border-radius:13px;background:#fff;border:1px solid var(--border);white-space:pre-wrap}.reading-practice-pinyin{margin-top:10px;color:#0f766e;font-weight:700;font-size:1.02rem}.reading-practice-meaning{margin-top:6px;color:#465451}.reading-practice-choices{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:9px;margin-top:14px}.reading-practice-choice{min-height:48px;font-size:1.08rem;font-weight:800;border:1px solid var(--border);border-radius:11px;background:#fff}.reading-practice-choice.is-correct{border-color:#0f766e;background:#ecfdf5;color:#065f46}.reading-practice-choice.is-wrong{border-color:#dc2626;background:#fef2f2;color:#991b1b}.reading-practice-feedback{min-height:30px;margin:10px 0;font-weight:800}.reading-practice-nav{display:grid;grid-template-columns:1fr 1fr 1fr;gap:9px}.reading-practice-nav button{min-height:44px}
+
+/* Controls follow the available container width instead of keeping desktop positions. */
+.reading-toolbar{display:grid!important;grid-template-columns:repeat(auto-fit,minmax(128px,1fr));width:100%;align-items:stretch}.reading-toolbar>*{min-width:0!important;width:100%;justify-content:center}
+.reading-mode-switch{grid-template-columns:repeat(auto-fit,minmax(120px,1fr))!important;width:100%}
+.reading-content-tabs{display:grid!important;grid-template-columns:repeat(auto-fit,minmax(132px,1fr));overflow:visible!important;width:100%}.reading-content-tab{white-space:normal!important;min-width:0;width:100%;text-align:center}
+.reading-book-controls{grid-template-columns:repeat(4,minmax(0,1fr))}.reading-book-controls>*{min-width:0!important;width:100%}
+.reading-book-frame-wrap iframe{display:block}
+
+@media(max-width:900px){
+  .reading-practice-choices{grid-template-columns:repeat(2,minmax(0,1fr))}
+  .reading-content-tabs{grid-template-columns:repeat(2,minmax(0,1fr))!important}
+  .reading-book-controls{grid-template-columns:repeat(2,minmax(0,1fr))!important}
+  .reading-book-controls select{grid-column:1/-1!important;grid-row:auto!important}
+  .reading-practice-head{flex-direction:column}
+}
+@media(max-width:560px){
+  .reading-content-tabs,.reading-toolbar,.reading-mode-switch,.reading-book-controls,.reading-practice-nav{grid-template-columns:1fr!important}
+  .reading-practice-choices{grid-template-columns:1fr 1fr}
+  .reading-book-controls select{grid-column:auto!important}
+}
+@media(orientation:landscape) and (max-height:600px){
+  .reading-book-frame-wrap{height:62vh;min-height:320px}
+  .reading-content-tabs{grid-template-columns:repeat(auto-fit,minmax(120px,1fr))!important}
+  .reading-toolbar{grid-template-columns:repeat(auto-fit,minmax(120px,1fr))!important}
+}

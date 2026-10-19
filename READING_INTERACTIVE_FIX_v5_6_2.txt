@@ -1,0 +1,15 @@
+v5.6.2
+
+Fixes:
+1) PDF page selector / Previous / Next now forces Safari/iPad PDF viewer to reload the requested page.
+2) Adds an interactive “Sentences & practice” tab. It uses exact extracted lesson sentences and creates multiple-choice cloze practice. Lesson 1 also includes source-grounded grammar/exercise items from the supplied book screenshots.
+3) Vocabulary matching no longer greedily skips shorter valid A1/A2 words; it now includes every matching dictionary item that occurs in the lesson. Lesson 1 is additionally supplemented with terms visible in the supplied textbook pages.
+4) Reading controls, tabs and PDF navigation now reflow with container width and iPad rotation; orientation/visualViewport resize also refreshes writing canvases and the PDF panel.
+
+Upload:
+- reading.js
+- styles.css
+- sw.js
+- data/readings.json
+
+Keep data/textbook/lesson01.pdf ... lesson15.pdf from v5.6.1.

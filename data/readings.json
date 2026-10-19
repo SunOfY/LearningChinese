@@ -274,6 +274,83 @@
           "pos": "N",
           "vi": "trà sữa",
           "source": "01-3"
+        },
+        {
+          "zh": "什麼",
+          "pinyin": "shénme",
+          "pos": "N",
+          "vi": "gì; cái gì",
+          "source": "01-2-2"
+        },
+        {
+          "zh": "名字",
+          "pinyin": "míngzi",
+          "pos": "N",
+          "vi": "tên; tên đầy đủ",
+          "source": "01-2-2"
+        },
+        {
+          "zh": "好",
+          "pinyin": "hǎo",
+          "pos": "Vs",
+          "vi": "tốt; khỏe; ổn",
+          "source": "Phrase"
+        },
+        {
+          "zh": "忙",
+          "pinyin": "máng",
+          "pos": "Vs",
+          "vi": "bận",
+          "source": "Grammar"
+        },
+        {
+          "zh": "累",
+          "pinyin": "lèi",
+          "pos": "Vs",
+          "vi": "mệt",
+          "source": "Grammar"
+        },
+        {
+          "zh": "先生",
+          "pinyin": "xiānsheng",
+          "pos": "N",
+          "vi": "ông; ngài; anh (cách xưng hô)",
+          "source": "Grammar"
+        },
+        {
+          "zh": "小姐",
+          "pinyin": "xiǎojiě",
+          "pos": "N",
+          "vi": "cô; tiểu thư",
+          "source": "Grammar"
+        },
+        {
+          "zh": "太太",
+          "pinyin": "tàitai",
+          "pos": "N",
+          "vi": "bà; vợ",
+          "source": "Grammar"
+        },
+        {
+          "zh": "爸爸",
+          "pinyin": "bàba",
+          "pos": "N",
+          "vi": "bố; ba",
+          "source": "Grammar"
+        },
+        {
+          "zh": "媽媽",
+          "pinyin": "māma",
+          "pos": "N",
+          "vi": "mẹ; má",
+          "source": "Grammar"
+        },
+        {
+          "zh": "妳好",
+          "pinyin": "nǐ hǎo",
+          "pos": "Phrase",
+          "vi": "xin chào (nói với nữ)",
+          "source": "Phrase"
         }
       ],
       "passages": [
@@ -408,7 +485,157 @@
       "book_page_start": 34,
       "book_page_end": 49,
       "lesson_pdf": "data/textbook/lesson01.pdf",
-      "lesson_pdf_pages": 16
+      "lesson_pdf_pages": 16,
+      "exercises": [
+        {
+          "id": "L1-G1",
+          "prompt_zh": "他＿＿中明。",
+          "pinyin": "Tā ___ Zhōngmíng.",
+          "vi": "Anh ấy tên là Zhongming.",
+          "options": [
+            "叫",
+            "姓",
+            "是",
+            "很"
+          ],
+          "answer": "叫",
+          "source_label": "Ngữ pháp 叫／姓／是"
+        },
+        {
+          "id": "L1-G2",
+          "prompt_zh": "誰＿＿李？",
+          "pinyin": "Shéi ___ Lǐ?",
+          "vi": "Ai họ Lý?",
+          "options": [
+            "叫",
+            "姓",
+            "是",
+            "很"
+          ],
+          "answer": "姓",
+          "source_label": "Ngữ pháp 叫／姓／是"
+        },
+        {
+          "id": "L1-G3",
+          "prompt_zh": "他＿＿臺灣人。",
+          "pinyin": "Tā ___ Táiwān rén.",
+          "vi": "Anh ấy không phải người Đài Loan.",
+          "options": [
+            "不是",
+            "很",
+            "姓",
+            "叫"
+          ],
+          "answer": "不是",
+          "source_label": "Ngữ pháp 叫／姓／是"
+        },
+        {
+          "id": "L1-G4",
+          "prompt_zh": "友美＿＿漂亮。",
+          "pinyin": "Yǒuměi ___ piàoliang.",
+          "vi": "Yumi rất xinh đẹp.",
+          "options": [
+            "很",
+            "不"
+          ],
+          "answer": "很",
+          "source_label": "Bài tập 很／不"
+        },
+        {
+          "id": "L1-G5",
+          "prompt_zh": "他＿＿忙。",
+          "pinyin": "Tā ___ máng.",
+          "vi": "Anh ấy rất bận.",
+          "options": [
+            "很",
+            "不"
+          ],
+          "answer": "很",
+          "source_label": "Bài tập 很／不"
+        },
+        {
+          "id": "L1-G6",
+          "prompt_zh": "她很累，中明＿＿累。",
+          "pinyin": "Tā hěn lèi, Zhōngmíng ___ lèi.",
+          "vi": "Cô ấy rất mệt, Zhongming không mệt.",
+          "options": [
+            "很",
+            "不"
+          ],
+          "answer": "不",
+          "source_label": "Bài tập 很／不"
+        },
+        {
+          "id": "L1-G7",
+          "prompt_zh": "他是日本人＿＿？",
+          "pinyin": "Tā shì Rìběn rén ___?",
+          "vi": "Anh ấy là người Nhật Bản phải không?",
+          "options": [
+            "嗎",
+            "呢",
+            "很",
+            "不"
+          ],
+          "answer": "嗎",
+          "source_label": "Ngữ pháp 嗎"
+        },
+        {
+          "id": "L1-G8",
+          "prompt_zh": "他忙＿＿？",
+          "pinyin": "Tā máng ___?",
+          "vi": "Anh ấy bận không?",
+          "options": [
+            "嗎",
+            "呢",
+            "很",
+            "不"
+          ],
+          "answer": "嗎",
+          "source_label": "Ngữ pháp 嗎"
+        },
+        {
+          "id": "L1-G9",
+          "prompt_zh": "我是臺灣人，你＿＿？",
+          "pinyin": "Wǒ shì Táiwān rén, nǐ ___?",
+          "vi": "Tôi là người Đài Loan, còn bạn?",
+          "options": [
+            "呢",
+            "嗎",
+            "很",
+            "不"
+          ],
+          "answer": "呢",
+          "source_label": "Ngữ pháp 呢"
+        },
+        {
+          "id": "L1-G10",
+          "prompt_zh": "宜文姓王，中明＿＿？",
+          "pinyin": "Yíwén xìng Wáng, Zhōngmíng ___?",
+          "vi": "Yiwen họ Vương, còn Zhongming?",
+          "options": [
+            "呢",
+            "嗎",
+            "很",
+            "不"
+          ],
+          "answer": "呢",
+          "source_label": "Ngữ pháp 呢"
+        },
+        {
+          "id": "L1-G11",
+          "prompt_zh": "我喜歡李小姐，＿＿喜歡王小姐。",
+          "pinyin": "Wǒ xǐhuān Lǐ xiǎojiě, ___ xǐhuān Wáng xiǎojiě.",
+          "vi": "Tôi thích cô Lý, không thích cô Vương.",
+          "options": [
+            "不",
+            "很",
+            "嗎",
+            "呢"
+          ],
+          "answer": "不",
+          "source_label": "Phủ định 不"
+        }
+      ]
     },
     {
       "id": "MC-L2",

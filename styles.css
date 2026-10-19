@@ -673,3 +673,11 @@ body.reading-writing-active *{
   .reading-writing-boxes{gap:6px;}
   .reading-writing-box-label{font-size:.68rem;white-space:normal;min-height:2.2em;line-height:1.1;}
 }
+
+
+/* v5.6.0 exact full textbook lesson viewer */
+.reading-book-panel{border:1px solid var(--border);border-radius:16px;background:#fbfdfc;padding:14px;min-width:0}
+.reading-book-head{display:flex;justify-content:space-between;gap:14px;align-items:flex-start;margin-bottom:12px}.reading-book-head h3{margin:0 0 4px}.reading-book-head p{margin:0;line-height:1.45}.reading-book-range{font-weight:800;color:#0f766e;white-space:nowrap}
+.reading-book-controls{display:grid;grid-template-columns:auto minmax(160px,1fr) auto auto;gap:8px;align-items:center;margin:10px 0}.reading-book-controls button,.reading-book-controls select,.reading-book-controls .buttonlike{min-height:42px;border:1px solid var(--border);border-radius:10px;background:#fff;padding:8px 12px;font:inherit;font-weight:700;text-decoration:none;color:inherit;display:flex;align-items:center;justify-content:center}.reading-book-controls button:disabled{opacity:.45}
+.reading-book-frame-wrap{height:min(76vh,920px);min-height:600px;border:1px solid var(--border);border-radius:12px;overflow:hidden;background:#eef2f1}.reading-book-frame-wrap iframe{width:100%;height:100%;border:0;background:#fff}.reading-book-exact{margin:8px 0 0}
+@media(max-width:760px){.reading-book-head{display:block}.reading-book-range{margin-top:8px;white-space:normal}.reading-book-controls{grid-template-columns:1fr 1fr}.reading-book-controls select{grid-column:1/-1;grid-row:1}.reading-book-frame-wrap{height:68vh;min-height:480px}.reading-content-tabs{padding-bottom:6px}}

@@ -9,7 +9,7 @@
     vi:{
       subtitle:'Học theo từng bài trong sách: từ vựng → hội thoại/đoạn đọc → học thuộc → thi thử chỉ nhìn tiếng Trung.',
       lesson:n=>`Bài ${n}`, source:p=>`Trang sách ${p}`, study:'📘 Học', memorize:'🧠 Học thuộc', exam:'🎓 Thi thử',
-      vocabulary:'🧠 Từ vựng', vocabTitle:'Từ vựng của bài', vocabHint:'Học từ trước để khi sang Reading bạn nhận ra chữ và tự đọc được.',
+      vocabulary:'🧠 Từ vựng', fullBook:'📚 Toàn bộ bài', fullBookTitle:'Toàn bộ nội dung của bài', fullBookHint:'Giữ nguyên đúng trang sách gốc: hội thoại, từ vựng, ngữ pháp, ví dụ, bài tập, Phrase, Notes, Reading và hoạt động đều có ở đây.', bookPrev:'← Trang trước', bookNext:'Trang sau →', bookOpen:'↗ Mở toàn màn hình', bookPage:(a,b)=>`Trang sách ${a} / ${b}`, bookPdfPage:(a,b)=>`PDF ${a}/${b}`, vocabTitle:'Từ vựng của bài', vocabHint:'Học từ trước để khi sang Reading bạn nhận ra chữ và tự đọc được.',
       remembered:'✅ Đã nhớ', notRemembered:'😕 Chưa nhớ', vocabProgress:(a,b)=>`${a}/${b} từ đã nhớ`,
       derivedVocab:'Từ trong đoạn (khớp dữ liệu TOCFL A1/A2)', bookVocab:'Từ mới trong bài', nextReading:'Bắt đầu đoạn đầu tiên →',
       listen:'🔊 Nghe cả đoạn', slow:'🐢 Nghe chậm', showPinyin:'Hiện Pinyin', showMeaning:'Hiện nghĩa Việt', hideChars:'Mức ẩn chữ', peek:'👁 Giữ để xem đáp án', sentencePractice:'Luyện từng câu',
@@ -23,7 +23,7 @@
     en:{
       subtitle:'Study each textbook lesson in order: vocabulary → dialogues/readings → memorization → Chinese-only test.',
       lesson:n=>`Lesson ${n}`, source:p=>`Book page ${p}`, study:'📘 Study', memorize:'🧠 Memorize', exam:'🎓 Test',
-      vocabulary:'🧠 Vocabulary', vocabTitle:'Lesson vocabulary', vocabHint:'Learn the words first so you can recognize the characters in the reading.',
+      vocabulary:'🧠 Vocabulary', fullBook:'📚 Full lesson', fullBookTitle:'Complete lesson content', fullBookHint:'Exact textbook pages: dialogues, vocabulary, grammar, examples, exercises, phrases, notes, readings and activities are all included here.', bookPrev:'← Previous page', bookNext:'Next page →', bookOpen:'↗ Open full screen', bookPage:(a,b)=>`Book page ${a} / ${b}`, bookPdfPage:(a,b)=>`PDF ${a}/${b}`, vocabTitle:'Lesson vocabulary', vocabHint:'Learn the words first so you can recognize the characters in the reading.',
       remembered:'✅ Remembered', notRemembered:'😕 Not yet', vocabProgress:(a,b)=>`${a}/${b} words remembered`,
       derivedVocab:'Words found in the passage (TOCFL A1/A2 match)', bookVocab:'Textbook vocabulary', nextReading:'Start first passage →',
       listen:'🔊 Listen', slow:'🐢 Slow', showPinyin:'Show Pinyin', showMeaning:'Show Vietnamese meaning', hideChars:'Hide characters', peek:'👁 Hold to reveal', sentencePractice:'Sentence practice',
@@ -36,7 +36,7 @@
     'zh-Hant':{
       subtitle:'依課本課次：先學生詞，再練對話／短文，最後只看中文背誦與測驗。',
       lesson:n=>`第 ${n} 課`, source:p=>`課本第 ${p} 頁`, study:'📘 學習', memorize:'🧠 背誦', exam:'🎓 模擬測驗',
-      vocabulary:'🧠 生詞', vocabTitle:'本課生詞', vocabHint:'先把生詞記熟，再進入課文朗讀。', remembered:'✅ 已記住', notRemembered:'😕 還不熟', vocabProgress:(a,b)=>`已記住 ${a}/${b} 個`,
+      vocabulary:'🧠 生詞', fullBook:'📚 全課內容', fullBookTitle:'本課完整內容', fullBookHint:'完全保留課本原頁：對話、生詞、語法、例句、練習、片語、註解、短文與活動都在這裡。', bookPrev:'← 上一頁', bookNext:'下一頁 →', bookOpen:'↗ 全螢幕開啟', bookPage:(a,b)=>`課本第 ${a} / ${b} 頁`, bookPdfPage:(a,b)=>`PDF ${a}/${b}`, vocabTitle:'本課生詞', vocabHint:'先把生詞記熟，再進入課文朗讀。', remembered:'✅ 已記住', notRemembered:'😕 還不熟', vocabProgress:(a,b)=>`已記住 ${a}/${b} 個`,
       derivedVocab:'課文中符合 TOCFL A1/A2 的詞', bookVocab:'課本生詞', nextReading:'開始第一篇 →', listen:'🔊 聽全文', slow:'🐢 慢速', showPinyin:'顯示拼音', showMeaning:'顯示越文意思', hideChars:'隱藏文字', peek:'👁 按住看答案', sentencePractice:'逐句練習',
       examHelp:'測驗模式只顯示所選課文的中文。請憑記憶朗讀全文、錄音，再用 AI 比對辨識文字。',
       start:'🎙 開始錄音', stop:'⏹ 停止', check:'✓ 檢查朗讀', playback:'▶ 播放錄音', idle:'尚未錄音。', recording:'🔴 錄音中……請朗讀所選課文。', recorded:'錄音完成，可以播放或檢查。',
@@ -46,7 +46,7 @@
     }
   };
 
-  const state={lessons:[],lessonIndex:0,passageIndex:0,content:'vocab',mode:'study',mask:0,peek:false,showPinyin:true,showMeaning:true,progress:{lessons:{},vocabulary:{},vocabularyWriting:{},lastLesson:1,lastPassageByLesson:{}},vocabBank:[],recorder:null,stream:null,chunks:[],blob:null,url:null,writingVocabKey:null,writingCanvases:[],writingWriters:[],writingObservers:[]};
+  const state={lessons:[],lessonIndex:0,passageIndex:0,bookPage:0,content:'vocab',mode:'study',mask:0,peek:false,showPinyin:true,showMeaning:true,progress:{lessons:{},vocabulary:{},vocabularyWriting:{},lastLesson:1,lastPassageByLesson:{}},vocabBank:[],recorder:null,stream:null,chunks:[],blob:null,url:null,writingVocabKey:null,writingCanvases:[],writingWriters:[],writingObservers:[]};
   const $=id=>document.getElementById(id);
   const lang=()=>window.TOCFLApp?.getLanguage?.()||localStorage.getItem('tocfl-a1-ui-language-v2')||'vi';
   const tx=()=>UI[lang()]||UI.vi;
@@ -262,12 +262,18 @@
     const panel=document.createElement('section');panel.id='readingVocabularyPanel';panel.className='reading-vocab-panel';panel.hidden=true;
     panel.innerHTML='<div class="reading-vocab-head"><div><h3 id="readingVocabTitle"></h3><p id="readingVocabHint" class="muted"></p></div><strong id="readingVocabProgress"></strong></div><div id="readingWritingWorkspace" class="reading-writing-workspace" hidden></div><div id="readingVocabList" class="reading-vocab-list"></div><div class="toolbar"><button id="readingNextPassageBtn" type="button" class="primary"></button></div>';
     switcher.before(panel);
+    const book=document.createElement('section');book.id='readingBookPanel';book.className='reading-book-panel';book.hidden=true;
+    book.innerHTML='<div class="reading-book-head"><div><h3 id="readingBookTitle"></h3><p id="readingBookHint" class="muted"></p></div><div class="reading-book-range" id="readingBookRange"></div></div><div class="reading-book-controls"><button id="readingBookPrev" type="button"></button><select id="readingBookPageSelect" aria-label="Page"></select><button id="readingBookNext" type="button"></button><a id="readingBookOpen" class="buttonlike" target="_blank" rel="noopener"></a></div><div class="reading-book-frame-wrap"><iframe id="readingBookFrame" title="Modern Chinese textbook page" loading="lazy"></iframe></div><p class="small muted reading-book-exact">✓ Exact scanned textbook page — no character normalization or rewriting.</p>';
+    switcher.before(book);
     $('readingNextPassageBtn')?.addEventListener('click',()=>{state.content='passage';state.passageIndex=0;cleanupAudio();render();});
+    $('readingBookPrev')?.addEventListener('click',()=>moveBookPage(-1));
+    $('readingBookNext')?.addEventListener('click',()=>moveBookPage(1));
+    $('readingBookPageSelect')?.addEventListener('change',e=>{state.bookPage=Number(e.target.value||0);renderBookPanel();});
   }
 
   async function init(){
     const root=$('readingApp');if(!root)return;loadProgress();ensureExtraUI();
-    try{const res=await fetch(DATA_URL,{cache:'no-store'});if(!res.ok)throw new Error(`HTTP ${res.status}`);const data=await res.json();state.lessons=normalizeData(data);await loadVocabBank();const idx=state.lessons.findIndex(l=>Number(l.lesson)===Number(state.progress.lastLesson));state.lessonIndex=idx>=0?idx:0;const lesson=currentLesson(),savedId=state.progress.lastPassageByLesson?.[lesson?.lesson];if(savedId){const pi=lesson.passages.findIndex(p=>p.id===savedId);if(pi>=0)state.passageIndex=pi;}bind();render();}
+    try{const res=await fetch(DATA_URL,{cache:'no-store'});if(!res.ok)throw new Error(`HTTP ${res.status}`);const data=await res.json();state.lessons=normalizeData(data);await loadVocabBank();const idx=state.lessons.findIndex(l=>Number(l.lesson)===Number(state.progress.lastLesson));state.lessonIndex=idx>=0?idx:0;const lesson=currentLesson();state.bookPage=Number(lesson?.pdf_start||0);const savedId=state.progress.lastPassageByLesson?.[lesson?.lesson];if(savedId){const pi=lesson.passages.findIndex(p=>p.id===savedId);if(pi>=0)state.passageIndex=pi;}bind();render();}
     catch(err){root.innerHTML=`<div class="card"><strong>Reading:</strong> ${escapeHtml(err.message)}</div>`;}
   }
 
@@ -293,9 +299,10 @@
     const t=tx(),lesson=currentLesson();if(!lesson)return;
     const completedLessons=state.lessons.filter(l=>(l.passages||[]).some(p=>passageProgress(p.id)?.completed)).length;
     $('readingSubtitle').textContent=t.subtitle;$('readingProgressSummary').textContent=t.progress(completedLessons,state.lessons.length);renderLessonList();renderContentTabs();
-    const vocabMode=state.content==='vocab',modeSwitch=document.querySelector('#view-reading .reading-mode-switch'),toolbar=document.querySelector('#view-reading .reading-toolbar');
-    $('readingVocabularyPanel').hidden=!vocabMode;if(modeSwitch)modeSwitch.hidden=vocabMode;if(toolbar)toolbar.hidden=vocabMode;$('readingMemorizeControls').hidden=vocabMode||state.mode!=='memorize';$('readingPassage').hidden=vocabMode;$('readingSentencePracticeWrap').hidden=vocabMode||state.mode!=='study';$('readingExamPanel').hidden=vocabMode||state.mode!=='exam';$('readingCompleteBtn').hidden=vocabMode;$('readingBestScore').hidden=vocabMode;
+    const vocabMode=state.content==='vocab',bookMode=state.content==='book',modeSwitch=document.querySelector('#view-reading .reading-mode-switch'),toolbar=document.querySelector('#view-reading .reading-toolbar');
+    $('readingVocabularyPanel').hidden=!vocabMode;$('readingBookPanel').hidden=!bookMode;if(modeSwitch)modeSwitch.hidden=vocabMode||bookMode;if(toolbar)toolbar.hidden=vocabMode||bookMode;$('readingMemorizeControls').hidden=vocabMode||bookMode||state.mode!=='memorize';$('readingPassage').hidden=vocabMode||bookMode;$('readingSentencePracticeWrap').hidden=vocabMode||bookMode||state.mode!=='study';$('readingExamPanel').hidden=vocabMode||bookMode||state.mode!=='exam';$('readingCompleteBtn').hidden=vocabMode||bookMode;$('readingBestScore').hidden=vocabMode||bookMode;
     if(vocabMode){renderVocabulary();return;}
+    if(bookMode){renderBookPanel();return;}
     const p=currentPassage();if(!p)return;
     $('readingLessonTitle').textContent=`${t.lesson(lesson.lesson)} · ${localizedPassageName(p,state.passageIndex)}`;const context=localizedContext(p);$('readingLessonSub').textContent=`${context?`${context} · `:''}${t.sourceBook}${p.book_page?` · ${t.source(p.book_page)}`:''}`;
     document.querySelectorAll('[data-reading-mode]').forEach(b=>{const on=b.dataset.readingMode===state.mode;b.classList.toggle('is-active',on);b.setAttribute('aria-selected',String(on));});
@@ -306,7 +313,7 @@
 
   function renderLessonList(){
     const list=$('readingLessonList'),t=tx();if(!list)return;list.innerHTML='';
-    state.lessons.forEach((l,i)=>{const passages=l.passages||[],done=passages.filter(p=>passageProgress(p.id)?.completed).length,vocab=lessonVocabulary(l),known=vocab.filter(w=>isVocabRemembered(l,w)).length,b=document.createElement('button');b.type='button';b.className='reading-lesson-item';if(i===state.lessonIndex)b.classList.add('is-current');const left=document.createElement('span');const lessonName=localizedLessonName(l);left.innerHTML=`<strong>${escapeHtml(t.lesson(l.lesson))}${lessonName?` · ${escapeHtml(lessonName)}`:''}</strong><small>🧠 ${known}/${vocab.length} · 📖 ${done}/${passages.length}</small>`;const right=document.createElement('span');right.className='reading-lesson-state';right.textContent=done===passages.length&&passages.length?'✓':'—';b.append(left,right);b.addEventListener('click',()=>{cleanupAudio();state.lessonIndex=i;state.passageIndex=0;state.content='vocab';state.progress.lastLesson=l.lesson;saveProgress();render();});list.append(b);});
+    state.lessons.forEach((l,i)=>{const passages=l.passages||[],done=passages.filter(p=>passageProgress(p.id)?.completed).length,vocab=lessonVocabulary(l),known=vocab.filter(w=>isVocabRemembered(l,w)).length,b=document.createElement('button');b.type='button';b.className='reading-lesson-item';if(i===state.lessonIndex)b.classList.add('is-current');const left=document.createElement('span');const lessonName=localizedLessonName(l);left.innerHTML=`<strong>${escapeHtml(t.lesson(l.lesson))}${lessonName?` · ${escapeHtml(lessonName)}`:''}</strong><small>🧠 ${known}/${vocab.length} · 📖 ${done}/${passages.length}</small>`;const right=document.createElement('span');right.className='reading-lesson-state';right.textContent=done===passages.length&&passages.length?'✓':'—';b.append(left,right);b.addEventListener('click',()=>{cleanupAudio();state.lessonIndex=i;state.passageIndex=0;state.bookPage=Number(l.pdf_start||0);state.content='vocab';state.progress.lastLesson=l.lesson;saveProgress();render();});list.append(b);});
   }
 
   function renderContentTabs(){
@@ -314,6 +321,34 @@
     const add=(label,on,fn)=>{const b=document.createElement('button');b.type='button';b.className='reading-content-tab';b.classList.toggle('is-active',on);b.textContent=label;b.addEventListener('click',fn);wrap.append(b);};
     add(t.vocabulary,state.content==='vocab',()=>{cleanupAudio();state.content='vocab';render();});
     (l.passages||[]).forEach((p,i)=>add(`${p.kind==='dialogue'?'💬':'📖'} ${localizedPassageName(p,i)}`,state.content==='passage'&&state.passageIndex===i,()=>{cleanupAudio();state.content='passage';state.passageIndex=i;state.progress.lastPassageByLesson[l.lesson]=p.id;saveProgress();render();}));
+    add(t.fullBook,state.content==='book',()=>{cleanupAudio();state.content='book';state.bookPage=Number(l.pdf_start||0);render();});
+  }
+
+  function currentBookRange(){
+    const l=currentLesson()||{};
+    const start=Number(l.pdf_start||1),end=Number(l.pdf_end||start);
+    return{start,end,bookStart:Number(l.book_page_start||start+32),bookEnd:Number(l.book_page_end||end+32)};
+  }
+  function moveBookPage(delta){
+    const r=currentBookRange(),cur=Number(state.bookPage||r.start);
+    state.bookPage=Math.max(r.start,Math.min(r.end,cur+delta));renderBookPanel();
+  }
+  function renderBookPanel(){
+    const t=tx(),l=currentLesson(),r=currentBookRange();if(!l)return;
+    let cur=Number(state.bookPage||r.start);if(cur<r.start||cur>r.end)cur=r.start;state.bookPage=cur;
+    const printed=r.bookStart+(cur-r.start);
+    $('readingLessonTitle').textContent=`${t.lesson(l.lesson)} · ${t.fullBookTitle}`;
+    $('readingLessonSub').textContent=`${t.sourceBook} · ${t.bookPage(printed,r.bookEnd)}`;
+    $('readingBookTitle').textContent=t.fullBookTitle;$('readingBookHint').textContent=t.fullBookHint;
+    const sel=$('readingBookPageSelect');if(sel){const wanted=Array.from({length:r.end-r.start+1},(_,i)=>r.start+i),existing=Array.from(sel.options).map(o=>Number(o.value));if(existing.length!==wanted.length||existing[0]!==wanted[0]){sel.innerHTML='';wanted.forEach(p=>{const o=document.createElement('option');o.value=String(p);o.textContent=t.source(r.bookStart+(p-r.start));sel.append(o);});}sel.value=String(cur);}
+    const localPage=cur-r.start+1;
+    const localEnd=r.end-r.start+1;
+    const lessonPdf=l.lesson_pdf ? `./${l.lesson_pdf}` : `./data/textbook/lesson${String(l.lesson).padStart(2,'0')}.pdf`;
+    const pdf=`${lessonPdf}#page=${localPage}&view=FitH`;
+    $('readingBookRange').textContent=`${t.bookPage(printed,r.bookEnd)} · ${t.bookPdfPage(localPage,localEnd)}`;
+    const frame=$('readingBookFrame');if(frame&&(frame.dataset.page!==String(cur)||frame.dataset.pdf!==lessonPdf)){frame.dataset.page=String(cur);frame.dataset.pdf=lessonPdf;frame.src=pdf;}
+    const open=$('readingBookOpen');if(open){open.href=pdf;open.textContent=t.bookOpen;}
+    const prev=$('readingBookPrev'),next=$('readingBookNext');if(prev){prev.textContent=t.bookPrev;prev.disabled=cur<=r.start;}if(next){next.textContent=t.bookNext;next.disabled=cur>=r.end;}
   }
 
   function renderVocabulary(){

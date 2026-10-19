@@ -1,4 +1,4 @@
-const CACHE = 'tocfl-v5-5-4-pencil-dynamics';
+const CACHE = 'tocfl-v5-6-1-split-textbook';
 const ASSETS = [
   './',
   './index.html',
@@ -45,6 +45,12 @@ self.addEventListener('fetch', event => {
       fetch(event.request, { cache: 'no-store' })
         .catch(() => caches.match(event.request))
     );
+    return;
+  }
+
+  // Textbook PDFs are split by lesson. Stream them directly and do not keep them in Service Worker cache.
+  if (/\/data\/textbook\/lesson\d{2}\.pdf$/.test(url.pathname)) {
+    event.respondWith(fetch(event.request));
     return;
   }
 

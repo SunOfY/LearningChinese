@@ -3,9 +3,11 @@
     "title": "時代華語 Modern Chinese — Reading + Vocabulary",
     "source": "User-provided textbook PDF",
     "language": "zh-Hant",
-    "version": 4,
+    "version": 5,
     "lesson_count": 15,
-    "note": "All 15 lessons: textbook Chinese is preserved; every dialogue/reading sentence includes study Pinyin and Vietnamese meaning. Lesson 1 first greeting uses 妳好 to match the textbook glyph."
+    "note": "All 15 lessons: textbook Chinese is preserved; every dialogue/reading sentence includes study Pinyin and Vietnamese meaning. Lesson 1 first greeting uses 妳好 to match the textbook glyph.",
+    "full_lesson_ranges": "Lessons 1-15 use split per-lesson PDFs so every individual file stays below GitHub web upload limit.",
+    "lesson_pdf_pattern": "data/textbook/lesson01.pdf ... lesson15.pdf"
   },
   "lessons": [
     {
@@ -400,7 +402,13 @@
             }
           ]
         }
-      ]
+      ],
+      "pdf_start": 2,
+      "pdf_end": 17,
+      "book_page_start": 34,
+      "book_page_end": 49,
+      "lesson_pdf": "data/textbook/lesson01.pdf",
+      "lesson_pdf_pages": 16
     },
     {
       "id": "MC-L2",
@@ -551,7 +559,13 @@
             }
           ]
         }
-      ]
+      ],
+      "pdf_start": 18,
+      "pdf_end": 36,
+      "book_page_start": 50,
+      "book_page_end": 68,
+      "lesson_pdf": "data/textbook/lesson02.pdf",
+      "lesson_pdf_pages": 19
     },
     {
       "id": "MC-L3",
@@ -690,7 +704,13 @@
             }
           ]
         }
-      ]
+      ],
+      "pdf_start": 37,
+      "pdf_end": 58,
+      "book_page_start": 69,
+      "book_page_end": 90,
+      "lesson_pdf": "data/textbook/lesson03.pdf",
+      "lesson_pdf_pages": 22
     },
     {
       "id": "MC-L4",
@@ -847,7 +867,13 @@
             }
           ]
         }
-      ]
+      ],
+      "pdf_start": 59,
+      "pdf_end": 79,
+      "book_page_start": 91,
+      "book_page_end": 111,
+      "lesson_pdf": "data/textbook/lesson04.pdf",
+      "lesson_pdf_pages": 21
     },
     {
       "id": "MC-L5",
@@ -1010,7 +1036,13 @@
             }
           ]
         }
-      ]
+      ],
+      "pdf_start": 80,
+      "pdf_end": 98,
+      "book_page_start": 112,
+      "book_page_end": 130,
+      "lesson_pdf": "data/textbook/lesson05.pdf",
+      "lesson_pdf_pages": 19
     },
     {
       "id": "MC-L6",
@@ -1155,7 +1187,13 @@
             }
           ]
         }
-      ]
+      ],
+      "pdf_start": 99,
+      "pdf_end": 124,
+      "book_page_start": 131,
+      "book_page_end": 156,
+      "lesson_pdf": "data/textbook/lesson06.pdf",
+      "lesson_pdf_pages": 26
     },
     {
       "id": "MC-L7",
@@ -1318,7 +1356,13 @@
             }
           ]
         }
-      ]
+      ],
+      "pdf_start": 125,
+      "pdf_end": 148,
+      "book_page_start": 157,
+      "book_page_end": 180,
+      "lesson_pdf": "data/textbook/lesson07.pdf",
+      "lesson_pdf_pages": 24
     },
     {
       "id": "MC-L8",
@@ -1487,7 +1531,13 @@
             }
           ]
         }
-      ]
+      ],
+      "pdf_start": 149,
+      "pdf_end": 169,
+      "book_page_start": 181,
+      "book_page_end": 201,
+      "lesson_pdf": "data/textbook/lesson08.pdf",
+      "lesson_pdf_pages": 21
     },
     {
       "id": "MC-L9",
@@ -1644,7 +1694,13 @@
             }
           ]
         }
-      ]
+      ],
+      "pdf_start": 170,
+      "pdf_end": 189,
+      "book_page_start": 202,
+      "book_page_end": 221,
+      "lesson_pdf": "data/textbook/lesson09.pdf",
+      "lesson_pdf_pages": 20
     },
     {
       "id": "MC-L10",
@@ -1837,7 +1893,13 @@
             }
           ]
         }
-      ]
+      ],
+      "pdf_start": 190,
+      "pdf_end": 209,
+      "book_page_start": 222,
+      "book_page_end": 241,
+      "lesson_pdf": "data/textbook/lesson10.pdf",
+      "lesson_pdf_pages": 20
     },
     {
       "id": "MC-L11",
@@ -2012,7 +2074,13 @@
             }
           ]
         }
-      ]
+      ],
+      "pdf_start": 210,
+      "pdf_end": 234,
+      "book_page_start": 242,
+      "book_page_end": 266,
+      "lesson_pdf": "data/textbook/lesson11.pdf",
+      "lesson_pdf_pages": 25
     },
     {
       "id": "MC-L12",
@@ -2181,7 +2249,13 @@
             }
           ]
         }
-      ]
+      ],
+      "pdf_start": 235,
+      "pdf_end": 258,
+      "book_page_start": 267,
+      "book_page_end": 290,
+      "lesson_pdf": "data/textbook/lesson12.pdf",
+      "lesson_pdf_pages": 24
     },
     {
       "id": "MC-L13",
@@ -2362,7 +2436,13 @@
             }
           ]
         }
-      ]
+      ],
+      "pdf_start": 259,
+      "pdf_end": 280,
+      "book_page_start": 291,
+      "book_page_end": 312,
+      "lesson_pdf": "data/textbook/lesson13.pdf",
+      "lesson_pdf_pages": 22
     },
     {
       "id": "MC-L14",
@@ -2561,7 +2641,13 @@
             }
           ]
         }
-      ]
+      ],
+      "pdf_start": 281,
+      "pdf_end": 309,
+      "book_page_start": 313,
+      "book_page_end": 341,
+      "lesson_pdf": "data/textbook/lesson14.pdf",
+      "lesson_pdf_pages": 29
     },
     {
       "id": "MC-L15",
@@ -2727,7 +2813,13 @@
           ]
         }
       ],
-      "note_vi": "File PDF bạn tải lên kết thúc trong Bài 15 sau Đối thoại 2; không có trang 短文/Reading tiếp theo trong file."
+      "note_vi": "File PDF bạn tải lên kết thúc trong Bài 15 sau Đối thoại 2; không có trang 短文/Reading tiếp theo trong file.",
+      "pdf_start": 310,
+      "pdf_end": 322,
+      "book_page_start": 342,
+      "book_page_end": 354,
+      "lesson_pdf": "data/textbook/lesson15.pdf",
+      "lesson_pdf_pages": 13
     }
   ]
 }

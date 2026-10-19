@@ -127,20 +127,43 @@
     if(old)ctx.drawImage(old,0,0,old.width,old.height,0,0,rect.width,rect.height);
   }
   function clearReadingCanvas(item){
-    const c=item?.canvas;if(!c)return;const ctx=c.getContext('2d');ctx.save();ctx.setTransform(1,0,0,1,0,0);ctx.clearRect(0,0,c.width,c.height);ctx.restore();item.last=null;item.active=false;c.classList.remove('has-ink');
+    const c=item?.canvas;if(!c)return;const ctx=c.getContext('2d');ctx.save();ctx.setTransform(1,0,0,1,0,0);ctx.clearRect(0,0,c.width,c.height);ctx.restore();item.last=null;item.active=false;item.lastWidth=3.2;c.classList.remove('has-ink');
   }
   function bindReadingCanvas(canvas,onCommit){
-    const item={canvas,last:null,active:false,lastTime:0,lastPressure:.5,pointerId:null};
+    const item={canvas,last:null,active:false,lastTime:0,lastPressure:.5,lastWidth:3.2,pointerId:null};
     state.writingCanvases.push(item);
     const prevent=e=>{if(e?.cancelable)e.preventDefault();clearReadingSelection();};
     const point=e=>{
       const r=canvas.getBoundingClientRect();
-      return{x:Math.max(0,Math.min(r.width,e.clientX-r.left)),y:Math.max(0,Math.min(r.height,e.clientY-r.top)),p:Number.isFinite(e.pressure)?e.pressure:.5,t:e.timeStamp||performance.now()};
+      return{
+        x:Math.max(0,Math.min(r.width,e.clientX-r.left)),
+        y:Math.max(0,Math.min(r.height,e.clientY-r.top)),
+        p:(e.pointerType==='pen'&&Number.isFinite(e.pressure)&&e.pressure>0)?Math.max(0,Math.min(1,e.pressure)):null,
+        tilt:(()=>{
+          if(e.pointerType!=='pen')return 0;
+          if(Number.isFinite(e.altitudeAngle))return Math.max(0,Math.min(1,1-e.altitudeAngle/(Math.PI/2)));
+          if(Number.isFinite(e.tiltX)&&Number.isFinite(e.tiltY))return Math.max(0,Math.min(1,Math.hypot(e.tiltX,e.tiltY)/90));
+          return 0;
+        })(),
+        pen:e.pointerType==='pen',
+        t:e.timeStamp||performance.now()
+      };
     };
     const drawPoint=p=>{
       const ctx=canvas.getContext('2d'),brush=readingBrushMode(),prev=item.last;
-      let width=5.2;
-      if(brush){const pressure=p.p>0?p.p:(item.lastPressure||.35);let speed=0;if(prev){const dt=Math.max(1,p.t-prev.t),dist=Math.hypot(p.x-prev.x,p.y-prev.y);speed=dist/dt;}width=Math.max(2.2,Math.min(13.5,2.4+pressure*10.5-speed*1.8));item.lastPressure=pressure;}
+      let width=3.2;
+      if(brush){
+        let speed=0;
+        if(prev){const dt=Math.max(1,p.t-prev.t),dist=Math.hypot(p.x-prev.x,p.y-prev.y);speed=dist/dt;}
+        const pressure=p.pen&&p.p!=null ? p.p : Math.max(.24,Math.min(.66,.54-speed*.10));
+        const tilt=p.pen ? (p.tilt||0) : 0;
+        let target=(1.35+pressure*5.9+tilt*1.55)*Math.max(.78,Math.min(1.10,1.05-speed*.18));
+        target=Math.max(1.45,Math.min(9.2,target));
+        width=Number.isFinite(item.lastWidth)?item.lastWidth*.58+target*.42:target;
+        item.lastPressure=pressure;item.lastWidth=width;
+      }else{
+        item.lastWidth=3.2;
+      }
       ctx.lineWidth=width;
       if(prev){ctx.beginPath();ctx.moveTo(prev.x,prev.y);ctx.lineTo(p.x,p.y);ctx.stroke();}else{ctx.beginPath();ctx.arc(p.x,p.y,width/2,0,Math.PI*2);ctx.fill();}
       item.last=p;canvas.classList.add('has-ink');
@@ -149,7 +172,7 @@
     ['touchstart','touchmove','touchend','touchcancel'].forEach(name=>canvas.addEventListener(name,prevent,{passive:false}));
     canvas.addEventListener('pointerdown',e=>{
       if(e.pointerType==='mouse'&&e.button!==0)return;
-      prevent(e);resizeReadingCanvas(item);setReadingWritingLock(true);item.active=true;item.pointerId=e.pointerId;item.last=null;
+      prevent(e);resizeReadingCanvas(item);setReadingWritingLock(true);item.active=true;item.pointerId=e.pointerId;item.last=null;item.lastWidth=3.2;
       try{canvas.setPointerCapture(e.pointerId);}catch{}drawPoint(point(e));
     },{passive:false});
     canvas.addEventListener('pointermove',e=>{

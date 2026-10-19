@@ -1,0 +1,9 @@
+v5.5.4 Apple Pencil dynamics
+
+- Normal writing stroke reduced to 3.2 CSS px.
+- Calligraphy mode reads Apple Pencil pressure when PointerEvent exposes it.
+- Tilt uses altitudeAngle when available, otherwise tiltX/tiltY.
+- Heavy strokes are capped so they do not become marker-thick.
+- Main Writing and Reading vocabulary writing use the same thinner dynamics.
+- Finger/mouse do not pretend to have Pencil pressure.
+- Apple Pencil double-tap is a native iPadOS interaction and is not exposed as a normal PointerEvent to a GitHub Pages/Safari web app.

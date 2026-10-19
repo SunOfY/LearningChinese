@@ -1048,8 +1048,8 @@ function renderWritingWordLabel(chars){
 function createWritingCanvasItem(canvas,collection,options={}){
   const ctx=canvas.getContext('2d');
   const item={
-    canvas,ctx,dpr:1,drawing:false,lastPoint:[0,0],prevPoint:null,baseLineWidth:6,
-    pointerId:null,previewing:false,lastTime:0,lastWidth:6,captureTarget:null,
+    canvas,ctx,dpr:1,drawing:false,lastPoint:[0,0],prevPoint:null,baseLineWidth:3.2,
+    pointerId:null,previewing:false,lastTime:0,lastWidth:3.2,captureTarget:null,
     owner:options.owner||null
   };
   collection.push(item);
@@ -1114,21 +1114,40 @@ function drawWritingSegment(item,a,b,widthA,widthB){
   }
   ctx.restore();
 }
+function pencilTiltAmount(e){
+  // 0 = Pencil nearly upright, 1 = strongly tilted.
+  if(e?.pointerType!=='pen')return 0;
+  if(Number.isFinite(e.altitudeAngle)){
+    const upright=Math.PI/2;
+    return Math.max(0,Math.min(1,1-(e.altitudeAngle/upright)));
+  }
+  if(Number.isFinite(e.tiltX)&&Number.isFinite(e.tiltY)){
+    return Math.max(0,Math.min(1,Math.hypot(e.tiltX,e.tiltY)/90));
+  }
+  return 0;
+}
 function writingLineWidth(item,e,point,isStart=false){
-  const base=item.baseLineWidth||6;
+  const base=item.baseLineWidth||3.2;
   if(!state.writingBrushMode)return base;
-  const penPressure=(e?.pointerType==='pen' && Number.isFinite(e.pressure) && e.pressure>0) ? e.pressure : null;
+
+  const isPencil=e?.pointerType==='pen';
+  const rawPressure=isPencil&&Number.isFinite(e.pressure)&&e.pressure>0 ? Math.max(0,Math.min(1,e.pressure)) : null;
+  const tilt=pencilTiltAmount(e);
   const now=e?.timeStamp||performance.now();
   const dt=Math.max(1,now-(item.lastTime||now));
   const dist=item.lastPoint ? Math.hypot(point[0]-item.lastPoint[0],point[1]-item.lastPoint[1]) : 0;
-  const speed=dist/dt; // px/ms
-  const speedFactor=Math.max(.76,Math.min(1.18,1.12-speed*.28));
-  const pressure=penPressure ?? Math.max(.28,Math.min(.72,.58-speed*.12));
-  const tilt=Number.isFinite(e?.tiltX)&&Number.isFinite(e?.tiltY) ? Math.min(1,Math.hypot(e.tiltX,e.tiltY)/90) : 0;
-  const target=base*(.38+1.72*pressure)*(1+.16*tilt)*speedFactor;
-  if(isStart || !Number.isFinite(item.lastWidth))return Math.max(base*.42,Math.min(base*2.45,target));
-  const smooth=item.lastWidth*.68+target*.32;
-  return Math.max(base*.42,Math.min(base*2.45,smooth));
+  const speed=dist/dt; // CSS px/ms
+
+  // Apple Pencil pressure + tilt are used directly when Safari exposes them.
+  // If pressure is unavailable, use only a modest speed fallback rather than
+  // pretending the device has hardware pressure.
+  const pressure=rawPressure ?? Math.max(.24,Math.min(.66,.54-speed*.10));
+  const speedFactor=Math.max(.78,Math.min(1.10,1.05-speed*.18));
+  let target=(1.35 + pressure*5.9 + tilt*1.55)*speedFactor;
+  target=Math.max(1.45,Math.min(9.2,target));
+
+  if(isStart || !Number.isFinite(item.lastWidth))return target;
+  return Math.max(1.45,Math.min(9.2,item.lastWidth*.58+target*.42));
 }
 function attachPreviewButton(previewBtn,guideInst,item){
   let lastPreviewTrigger=0;
@@ -1356,7 +1375,7 @@ function clearWritingItem(item){
   const dpr=item.dpr||1;
   ctx.setTransform(dpr,0,0,dpr,0,0);
   ctx.lineCap='round'; ctx.lineJoin='round';
-  ctx.lineWidth=item.baseLineWidth||6; ctx.strokeStyle='#17211f'; ctx.fillStyle='#17211f';
+  ctx.lineWidth=item.baseLineWidth||3.2; ctx.strokeStyle='#17211f'; ctx.fillStyle='#17211f';
   canvas.closest('.writing-square,.copybook-cell')?.classList.remove('has-user-ink');
 }
 function clearWritingCanvas(){

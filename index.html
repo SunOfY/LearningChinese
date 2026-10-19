@@ -445,7 +445,7 @@
           <label><span data-auth-i18n="password">Mật khẩu</span><input id="loginPassword" type="password" autocomplete="current-password" required minlength="6" /></label>
           <button type="submit" class="primary" data-auth-i18n="login">Đăng nhập</button>
         </form>
-        <div class="auth-switch"><span data-auth-i18n="noAccount">Chưa có tài khoản?</span> <button type="button" data-auth-tab="signup" class="link-btn" data-auth-i18n="create">Tạo tài khoản</button></div>
+        <div class="auth-switch"><span data-auth-i18n="noAccount">Chưa có tài khoản?</span> <button type="button" data-auth-tab="signup" class="link-btn" data-auth-i18n="create">Tạo tài khoản</button> · <button id="forgotPasswordBtn" type="button" class="link-btn" data-auth-i18n="forgotPassword">Quên mật khẩu?</button></div>
       </div>
 
       <div id="authPane-signup" class="auth-pane" hidden>
@@ -489,6 +489,7 @@
         </div>
 
         <div class="toolbar">
+          <button id="restoreCloudBtn" type="button" data-auth-i18n="restoreCloud">Khôi phục dữ liệu từ cloud</button>
           <button id="logoutBtn" type="button" class="danger" data-auth-i18n="signOut">Đăng xuất</button>
         </div>
       </div>

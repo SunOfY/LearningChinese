@@ -1,0 +1,39 @@
+v5.5.3 — Reading reliability + full Pinyin/meaning hotfix
+
+This update is additive. It keeps the existing TOCFL, radicals, writing, Apple Pencil, Groq and Supabase architecture.
+
+Fixed:
+1) Reading vocabulary writing
+- Writing practice now opens in one full-width workspace instead of inside a narrow vocabulary card.
+- Strong iPad/iPhone/Apple Pencil anti-selection protection.
+- Pointer capture + coalesced Pencil events.
+- ResizeObserver keeps canvas coordinates aligned after device rotation/window resizing.
+- HanziWriter guides use a stable 100x100 vector coordinate system and scale with the square.
+- User ink is never snapped/corrected into the model.
+
+2) Memorization mode
+- Mask slider responds to both input and change.
+- Hold-to-reveal uses robust pointer capture and keyboard fallback.
+- Hidden-state CSS is hardened.
+
+3) Exam AI / login / cloud protection
+- AI check now refreshes/restores the current Supabase session before declaring the user signed out.
+- Added Forgot password flow.
+- Added explicit Restore cloud data button after login.
+- Automatic sync waits until cloud state has been loaded, reducing risk of empty local state overwriting cloud state.
+- A local backup snapshot is saved before cloud restore.
+
+4) Textbook glyph fidelity
+- Lesson 1 Dialogue 2 now uses 妳好 to match the textbook.
+- Existing Traditional Chinese passage text is preserved; no Simplified conversion is applied.
+
+5) Pinyin + Vietnamese meanings
+- All 305 dialogue/reading sentence records across Lessons 1–15 now have non-empty Pinyin and Vietnamese meaning fields.
+
+Upload from QUICK:
+- index.html
+- reading.js
+- styles.css
+- auth.js
+- sw.js
+- data/readings.json

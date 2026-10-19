@@ -18,7 +18,7 @@
       checking:'🤖 AI đang nhận dạng…', login:'Hãy đăng nhập trước khi dùng AI kiểm tra.', groq:'Tài khoản chưa kết nối Groq API Key.', result:'Kết quả AI', recognized:'AI nhận ra', textMatch:'Độ khớp chữ', scoreNote:'Điểm này đo độ khớp giữa chữ AI nghe được và đoạn mẫu; không phải điểm thanh điệu chuyên sâu.',
       complete:'✓ Đánh dấu đã thuộc', completed:'✓ Đã thuộc đoạn', best:'Tốt nhất', noScore:'Chưa kiểm tra', progress:(done,total)=>`${done}/${total} bài có đoạn đã thuộc`, sourceBook:'Modern Chinese',
       micError:'Không dùng được microphone. Hãy cấp quyền microphone cho website.', noAudio:'Chưa có bản ghi để kiểm tra.', excellent:'Rất tốt — AI nhận được gần như đầy đủ đoạn đọc.', good:'Khá tốt — hãy xem lại những chỗ còn thiếu và đọc lại.', retry:'Nên luyện lại — AI nhận được khá khác đoạn mẫu.',
-      noVocab:'Chưa có danh sách từ riêng cho bài này.', write:'✍️ Viết chữ', closeWriting:'Đóng luyện viết', writingTitle:w=>`Luyện viết · ${w}`, writingHint:'Mỗi chữ: xem thứ tự nét → tô theo mẫu → tự viết. Nét bạn viết được giữ nguyên để tự so sánh.', charLabel:n=>`Chữ ${n}`, model:'Mẫu / thứ tự nét', trace:'Tô theo mẫu', free:'Tự viết', stroke:'▶ Xem nét', clearWriting:'Xóa chữ', wrote:'✍️ Đã luyện viết'
+      noVocab:'Chưa có danh sách từ riêng cho bài này.', write:'✍️ Viết chữ', closeWriting:'Đóng luyện viết', writingTitle:w=>`Luyện viết · ${w}`, writingHint:'Mỗi chữ: xem thứ tự nét → tô theo mẫu → tự viết. Nét bạn viết được giữ nguyên để tự so sánh.', charLabel:n=>`Chữ ${n}`, model:'Mẫu / thứ tự nét', trace:'Tô theo mẫu', free:'Tự viết', stroke:'▶ Xem nét', clearWriting:'Xóa chữ', wrote:'✍️ Đã luyện viết', writingClose:'✕ Đóng', writingWorkspaceHint:'Viết trực tiếp bằng Apple Pencil, ngón tay hoặc chuột. Nét của bạn không bị tự sửa.'
     },
     en:{
       subtitle:'Study each textbook lesson in order: vocabulary → dialogues/readings → memorization → Chinese-only test.',
@@ -31,7 +31,7 @@
       start:'🎙 Start recording', stop:'⏹ Stop', check:'✓ Check reading', playback:'▶ Playback', idle:'No recording yet.', recording:'🔴 Recording… read the selected passage.', recorded:'Recording complete. Play it back or check it.',
       checking:'🤖 AI is transcribing…', login:'Sign in before using AI checking.', groq:'This account has no Groq API Key connected.', result:'AI result', recognized:'AI recognized', textMatch:'Text match', scoreNote:'This measures text-match similarity, not professional tone/phoneme pronunciation.',
       complete:'✓ Mark memorized', completed:'✓ Memorized', best:'Best', noScore:'Not checked', progress:(done,total)=>`${done}/${total} lessons have a memorized passage`, sourceBook:'Modern Chinese',
-      micError:'Microphone is unavailable. Allow microphone access for this site.', noAudio:'Record the passage first.', excellent:'Excellent — AI recognized nearly the complete passage.', good:'Good — review the missing parts and try again.', retry:'Practice again — the recognized text differs substantially from the target.', noVocab:'No separate vocabulary list is available for this lesson yet.', write:'✍️ Write', closeWriting:'Close writing', writingTitle:w=>`Writing practice · ${w}`, writingHint:'For each character: preview stroke order → trace the model → write from memory. Your ink stays exactly as drawn.', charLabel:n=>`Character ${n}`, model:'Model / stroke order', trace:'Trace', free:'Write from memory', stroke:'▶ Strokes', clearWriting:'Clear character', wrote:'✍️ Practiced'
+      micError:'Microphone is unavailable. Allow microphone access for this site.', noAudio:'Record the passage first.', excellent:'Excellent — AI recognized nearly the complete passage.', good:'Good — review the missing parts and try again.', retry:'Practice again — the recognized text differs substantially from the target.', noVocab:'No separate vocabulary list is available for this lesson yet.', write:'✍️ Write', closeWriting:'Close writing', writingTitle:w=>`Writing practice · ${w}`, writingHint:'For each character: preview stroke order → trace the model → write from memory. Your ink stays exactly as drawn.', charLabel:n=>`Character ${n}`, model:'Model / stroke order', trace:'Trace', free:'Write from memory', stroke:'▶ Strokes', clearWriting:'Clear character', wrote:'✍️ Practiced', writingClose:'✕ Close', writingWorkspaceHint:'Write with Apple Pencil, finger, or mouse. Your ink is never auto-corrected.'
     },
     'zh-Hant':{
       subtitle:'依課本課次：先學生詞，再練對話／短文，最後只看中文背誦與測驗。',
@@ -42,11 +42,11 @@
       start:'🎙 開始錄音', stop:'⏹ 停止', check:'✓ 檢查朗讀', playback:'▶ 播放錄音', idle:'尚未錄音。', recording:'🔴 錄音中……請朗讀所選課文。', recorded:'錄音完成，可以播放或檢查。',
       checking:'🤖 AI 辨識中……', login:'請先登入再使用 AI 檢查。', groq:'此帳號尚未連接 Groq API Key。', result:'AI 結果', recognized:'AI 辨識', textMatch:'文字符合度', scoreNote:'此分數是辨識文字與課文的相似度，不是專業聲調／音位評分。',
       complete:'✓ 標記已背熟', completed:'✓ 已背熟', best:'最佳', noScore:'尚未檢查', progress:(done,total)=>`${done}/${total} 課已有背熟課文`, sourceBook:'時代華語 · Modern Chinese',
-      micError:'無法使用麥克風，請允許網站使用麥克風。', noAudio:'請先錄下全文。', excellent:'很好——AI 幾乎辨識出完整課文。', good:'不錯——請複習缺少的部分再試一次。', retry:'建議再練習——辨識結果與課文差異較大。', noVocab:'本課目前沒有獨立生詞表。', write:'✍️ 寫字', closeWriting:'關閉寫字', writingTitle:w=>`寫字練習 · ${w}`, writingHint:'每個字：先看筆順 → 描字 → 默寫。你自己寫的筆跡會完整保留，方便比較。', charLabel:n=>`第 ${n} 個字`, model:'範字 / 筆順', trace:'描字', free:'默寫', stroke:'▶ 看筆順', clearWriting:'清除此字', wrote:'✍️ 已練習'
+      micError:'無法使用麥克風，請允許網站使用麥克風。', noAudio:'請先錄下全文。', excellent:'很好——AI 幾乎辨識出完整課文。', good:'不錯——請複習缺少的部分再試一次。', retry:'建議再練習——辨識結果與課文差異較大。', noVocab:'本課目前沒有獨立生詞表。', write:'✍️ 寫字', closeWriting:'關閉寫字', writingTitle:w=>`寫字練習 · ${w}`, writingHint:'每個字：先看筆順 → 描字 → 默寫。你自己寫的筆跡會完整保留，方便比較。', charLabel:n=>`第 ${n} 個字`, model:'範字 / 筆順', trace:'描字', free:'默寫', stroke:'▶ 看筆順', clearWriting:'清除此字', wrote:'✍️ 已練習', writingClose:'✕ 關閉', writingWorkspaceHint:'可使用 Apple Pencil、手指或滑鼠直接書寫；你的筆跡不會被自動修正。'
     }
   };
 
-  const state={lessons:[],lessonIndex:0,passageIndex:0,content:'vocab',mode:'study',mask:0,peek:false,showPinyin:true,showMeaning:true,progress:{lessons:{},vocabulary:{},vocabularyWriting:{},lastLesson:1,lastPassageByLesson:{}},vocabBank:[],recorder:null,stream:null,chunks:[],blob:null,url:null,writingVocabKey:null,writingCanvases:[],writingWriters:[]};
+  const state={lessons:[],lessonIndex:0,passageIndex:0,content:'vocab',mode:'study',mask:0,peek:false,showPinyin:true,showMeaning:true,progress:{lessons:{},vocabulary:{},vocabularyWriting:{},lastLesson:1,lastPassageByLesson:{}},vocabBank:[],recorder:null,stream:null,chunks:[],blob:null,url:null,writingVocabKey:null,writingCanvases:[],writingWriters:[],writingObservers:[]};
   const $=id=>document.getElementById(id);
   const lang=()=>window.TOCFLApp?.getLanguage?.()||localStorage.getItem('tocfl-a1-ui-language-v2')||'vi';
   const tx=()=>UI[lang()]||UI.vi;
@@ -87,17 +87,28 @@
   function readingBrushMode(){try{return Boolean(JSON.parse(localStorage.getItem('tocfl-writing-settings-v1')||'{}')?.brushMode);}catch{return false;}}
   function strokeDataUrl(ch){return `https://cdn.jsdelivr.net/npm/hanzi-writer-data@2.0.1/${encodeURIComponent(ch)}.json`;}
   function readingStrokeLoader(char,onComplete,onError){fetch(strokeDataUrl(char),{cache:'force-cache'}).then(r=>{if(!r.ok)throw new Error(`Stroke data HTTP ${r.status}`);return r.json();}).then(onComplete).catch(onError);}
+  function clearReadingSelection(){
+    try{window.getSelection?.()?.removeAllRanges?.();}catch{}
+    try{document.selection?.empty?.();}catch{}
+  }
+  function setReadingWritingLock(active){
+    document.body.classList.toggle('reading-writing-active',Boolean(active));
+    if(active)clearReadingSelection();
+  }
   function clearReadingWritingRuntime(){
+    state.writingObservers.forEach(o=>{try{o.disconnect();}catch{}});
+    state.writingObservers=[];
     state.writingCanvases=[];
     state.writingWriters=[];
+    setReadingWritingLock(false);
   }
   function makeReadingGuide(host,ch,{animate=false}={}){
     if(typeof window.HanziWriter==='undefined')return null;
-    const rect=host.getBoundingClientRect();
-    const size=Math.max(88,Math.round(Math.min(rect.width||128,rect.height||rect.width||128)));
     host.replaceChildren();
+    // Fixed 100x100 vector coordinate system. CSS scales the SVG with the square,
+    // so the model stays centered when iPad/phone/laptop layouts resize.
     return window.HanziWriter.create(host,ch,{
-      width:size,height:size,padding:Math.max(7,Math.round(size*.08)),
+      width:100,height:100,padding:8,
       showOutline:Boolean(animate),showCharacter:true,
       strokeColor:animate?'#17211f':'#0f766e',outlineColor:'rgba(15,118,110,.16)',
       strokeAnimationSpeed:1,delayBetweenStrokes:160,
@@ -119,10 +130,13 @@
     const c=item?.canvas;if(!c)return;const ctx=c.getContext('2d');ctx.save();ctx.setTransform(1,0,0,1,0,0);ctx.clearRect(0,0,c.width,c.height);ctx.restore();item.last=null;item.active=false;c.classList.remove('has-ink');
   }
   function bindReadingCanvas(canvas,onCommit){
-    const item={canvas,last:null,active:false,lastTime:0,lastPressure:.5};
+    const item={canvas,last:null,active:false,lastTime:0,lastPressure:.5,pointerId:null};
     state.writingCanvases.push(item);
-    requestAnimationFrame(()=>requestAnimationFrame(()=>resizeReadingCanvas(item,{preserve:false})));
-    const point=e=>{const r=canvas.getBoundingClientRect();return{x:e.clientX-r.left,y:e.clientY-r.top,p:Number.isFinite(e.pressure)?e.pressure:.5,t:e.timeStamp||performance.now()};};
+    const prevent=e=>{if(e?.cancelable)e.preventDefault();clearReadingSelection();};
+    const point=e=>{
+      const r=canvas.getBoundingClientRect();
+      return{x:Math.max(0,Math.min(r.width,e.clientX-r.left)),y:Math.max(0,Math.min(r.height,e.clientY-r.top)),p:Number.isFinite(e.pressure)?e.pressure:.5,t:e.timeStamp||performance.now()};
+    };
     const drawPoint=p=>{
       const ctx=canvas.getContext('2d'),brush=readingBrushMode(),prev=item.last;
       let width=5.2;
@@ -131,18 +145,34 @@
       if(prev){ctx.beginPath();ctx.moveTo(prev.x,prev.y);ctx.lineTo(p.x,p.y);ctx.stroke();}else{ctx.beginPath();ctx.arc(p.x,p.y,width/2,0,Math.PI*2);ctx.fill();}
       item.last=p;canvas.classList.add('has-ink');
     };
-    canvas.addEventListener('contextmenu',e=>e.preventDefault());
-    canvas.addEventListener('dragstart',e=>e.preventDefault());
-    canvas.addEventListener('pointerdown',e=>{if(e.button!=null&&e.button!==0)return;e.preventDefault();resizeReadingCanvas(item);item.active=true;item.last=null;try{canvas.setPointerCapture(e.pointerId);}catch{}drawPoint(point(e));},{passive:false});
-    canvas.addEventListener('pointermove',e=>{if(!item.active)return;e.preventDefault();const events=e.getCoalescedEvents?.()||[e];events.forEach(ev=>drawPoint(point(ev)));},{passive:false});
-    const end=e=>{if(!item.active)return;if(e?.cancelable)e.preventDefault();item.active=false;item.last=null;try{canvas.releasePointerCapture(e.pointerId);}catch{}onCommit?.();};
-    canvas.addEventListener('pointerup',end,{passive:false});canvas.addEventListener('pointercancel',end,{passive:false});
+    ['contextmenu','selectstart','dragstart'].forEach(name=>canvas.addEventListener(name,e=>e.preventDefault()));
+    ['touchstart','touchmove','touchend','touchcancel'].forEach(name=>canvas.addEventListener(name,prevent,{passive:false}));
+    canvas.addEventListener('pointerdown',e=>{
+      if(e.pointerType==='mouse'&&e.button!==0)return;
+      prevent(e);resizeReadingCanvas(item);setReadingWritingLock(true);item.active=true;item.pointerId=e.pointerId;item.last=null;
+      try{canvas.setPointerCapture(e.pointerId);}catch{}drawPoint(point(e));
+    },{passive:false});
+    canvas.addEventListener('pointermove',e=>{
+      if(!item.active||(item.pointerId!==null&&e.pointerId!==item.pointerId))return;prevent(e);
+      const events=e.getCoalescedEvents?.()||[e];events.forEach(ev=>drawPoint(point(ev)));
+    },{passive:false});
+    const end=e=>{
+      if(!item.active)return;if(e?.pointerId!=null&&item.pointerId!==null&&e.pointerId!==item.pointerId)return;
+      prevent(e);item.active=false;item.pointerId=null;item.last=null;setReadingWritingLock(false);
+      try{canvas.releasePointerCapture?.(e.pointerId);}catch{}onCommit?.();
+    };
+    canvas.addEventListener('pointerup',end,{passive:false});canvas.addEventListener('pointercancel',end,{passive:false});canvas.addEventListener('lostpointercapture',end);
+    requestAnimationFrame(()=>requestAnimationFrame(()=>resizeReadingCanvas(item,{preserve:false})));
+    if('ResizeObserver'in window){const ro=new ResizeObserver(()=>resizeReadingCanvas(item,{preserve:true}));ro.observe(canvas);state.writingObservers.push(ro);}
     return item;
   }
   function mountVocabWriting(panel,lesson,word){
     clearReadingWritingRuntime();
-    const t=tx(),chars=chineseChars(word.zh);panel.innerHTML='';
-    const head=document.createElement('div');head.className='reading-writing-head';head.innerHTML=`<div><strong>${escapeHtml(t.writingTitle(word.zh))}</strong><p>${escapeHtml(t.writingHint)}</p></div>`;panel.append(head);
+    const t=tx(),chars=chineseChars(word.zh);panel.innerHTML='';panel.hidden=false;
+    const head=document.createElement('div');head.className='reading-writing-head';
+    const intro=document.createElement('div');intro.innerHTML=`<strong>${escapeHtml(t.writingTitle(word.zh))}</strong><p>${escapeHtml(t.writingHint)}</p><p class="small muted">${escapeHtml(t.writingWorkspaceHint)}</p>`;
+    const close=document.createElement('button');close.type='button';close.className='reading-writing-workspace-close';close.textContent=t.writingClose;close.addEventListener('click',()=>{state.writingVocabKey=null;clearReadingWritingRuntime();renderVocabulary();});
+    head.append(intro,close);panel.append(head);
     const grid=document.createElement('div');grid.className='reading-writing-char-grid';panel.append(grid);
     const commit=()=>{state.progress.vocabularyWriting=state.progress.vocabularyWriting||{};state.progress.vocabularyWriting[vocabWritingKey(lesson,word)]=true;saveProgress();};
     chars.forEach((ch,idx)=>{
@@ -207,7 +237,7 @@
     const switcher=document.querySelector('#view-reading .reading-mode-switch');if(!switcher||$('readingContentTabs'))return;
     const tabs=document.createElement('div');tabs.id='readingContentTabs';tabs.className='reading-content-tabs';switcher.before(tabs);
     const panel=document.createElement('section');panel.id='readingVocabularyPanel';panel.className='reading-vocab-panel';panel.hidden=true;
-    panel.innerHTML='<div class="reading-vocab-head"><div><h3 id="readingVocabTitle"></h3><p id="readingVocabHint" class="muted"></p></div><strong id="readingVocabProgress"></strong></div><div id="readingVocabList" class="reading-vocab-list"></div><div class="toolbar"><button id="readingNextPassageBtn" type="button" class="primary"></button></div>';
+    panel.innerHTML='<div class="reading-vocab-head"><div><h3 id="readingVocabTitle"></h3><p id="readingVocabHint" class="muted"></p></div><strong id="readingVocabProgress"></strong></div><div id="readingWritingWorkspace" class="reading-writing-workspace" hidden></div><div id="readingVocabList" class="reading-vocab-list"></div><div class="toolbar"><button id="readingNextPassageBtn" type="button" class="primary"></button></div>';
     switcher.before(panel);
     $('readingNextPassageBtn')?.addEventListener('click',()=>{state.content='passage';state.passageIndex=0;cleanupAudio();render();});
   }
@@ -219,14 +249,20 @@
   }
 
   function bind(){
-    document.querySelectorAll('[data-reading-mode]').forEach(btn=>btn.addEventListener('click',()=>{state.mode=btn.dataset.readingMode;render();}));
+    document.querySelectorAll('[data-reading-mode]').forEach(btn=>btn.addEventListener('click',e=>{e.preventDefault();state.mode=btn.dataset.readingMode||'study';state.peek=false;render();}));
     $('readingPinyinToggle')?.addEventListener('change',e=>{state.showPinyin=e.target.checked;renderPassage();});
     $('readingMeaningToggle')?.addEventListener('change',e=>{state.showMeaning=e.target.checked;renderPassage();});
-    $('readingMaskRange')?.addEventListener('input',e=>{state.mask=Number(e.target.value||0);renderPassage();renderMaskLabel();});
+    const mask=$('readingMaskRange');const updateMask=e=>{state.mask=Math.max(0,Math.min(100,Number(e.target.value||0)));state.peek=false;renderMaskLabel();renderPassage();};
+    mask?.addEventListener('input',updateMask);mask?.addEventListener('change',updateMask);
     $('readingListenBtn')?.addEventListener('click',()=>speak(fullText(),.92));$('readingSlowBtn')?.addEventListener('click',()=>speak(fullText(),.68));$('readingCompleteBtn')?.addEventListener('click',toggleComplete);
     $('readingRecordBtn')?.addEventListener('click',startRecording);$('readingStopBtn')?.addEventListener('click',stopRecording);$('readingPlaybackBtn')?.addEventListener('click',()=>{const a=$('readingAudio');if(a?.src)a.play();});$('readingCheckBtn')?.addEventListener('click',checkReading);
-    const peek=$('readingPeekBtn'),reveal=e=>{if(e?.cancelable)e.preventDefault();state.peek=true;renderPassage();},hide=e=>{if(e?.cancelable)e.preventDefault();state.peek=false;renderPassage();};
-    peek?.addEventListener('pointerdown',reveal,{passive:false});['pointerup','pointercancel','pointerleave'].forEach(n=>peek?.addEventListener(n,hide,{passive:false}));peek?.addEventListener('touchstart',reveal,{passive:false});peek?.addEventListener('touchend',hide,{passive:false});
+    const peek=$('readingPeekBtn');
+    const reveal=e=>{if(e?.cancelable)e.preventDefault();e?.stopPropagation?.();state.peek=true;try{peek?.setPointerCapture?.(e.pointerId);}catch{}renderPassage();};
+    const hide=e=>{if(e?.cancelable)e.preventDefault();e?.stopPropagation?.();state.peek=false;renderPassage();};
+    peek?.addEventListener('pointerdown',reveal,{passive:false});peek?.addEventListener('pointerup',hide,{passive:false});peek?.addEventListener('pointercancel',hide,{passive:false});peek?.addEventListener('lostpointercapture',hide);
+    peek?.addEventListener('keydown',e=>{if(e.key===' '||e.key==='Enter')reveal(e);});peek?.addEventListener('keyup',e=>{if(e.key===' '||e.key==='Enter')hide(e);});peek?.addEventListener('contextmenu',e=>e.preventDefault());
+    document.addEventListener('selectionchange',()=>{if(document.body.classList.contains('reading-writing-active'))clearReadingSelection();});
+    window.addEventListener('resize',()=>state.writingCanvases.forEach(x=>resizeReadingCanvas(x,{preserve:true})));
     document.addEventListener('tocfl:language-changed',render);document.addEventListener('tocfl:reading-cloud-applied',()=>{loadProgress();const i=state.lessons.findIndex(l=>Number(l.lesson)===Number(state.progress.lastLesson));if(i>=0)state.lessonIndex=i;render();});
   }
 
@@ -280,11 +316,14 @@
       const mem=document.createElement('button');mem.type='button';mem.className=isVocabRemembered(l,w)?'primary':'';mem.textContent=isVocabRemembered(l,w)?t.remembered:t.notRemembered;
       mem.addEventListener('click',()=>{const k=vocabKey(l,w);if(isVocabRemembered(l,w))delete state.progress.vocabulary[k];else state.progress.vocabulary[k]='easy';saveProgress();renderVocabulary();renderLessonList();});
       actions.append(audio,write,mem);top.append(main,actions);card.append(top);
-      const panel=document.createElement('div');panel.className='reading-vocab-writing';panel.hidden=state.writingVocabKey!==key;card.append(panel);
-      write.addEventListener('click',()=>{state.writingVocabKey=state.writingVocabKey===key?null:key;renderVocabulary();});
+      write.addEventListener('click',()=>{state.writingVocabKey=state.writingVocabKey===key?null:key;renderVocabulary();requestAnimationFrame(()=>$('readingWritingWorkspace')?.scrollIntoView?.({behavior:'smooth',block:'nearest'}));});
       list.append(card);
-      if(state.writingVocabKey===key)mountVocabWriting(panel,l,w);
     });
+    const workspace=$('readingWritingWorkspace');
+    if(workspace){
+      const active=words.find(w=>vocabWritingKey(l,w)===state.writingVocabKey);
+      if(active){mountVocabWriting(workspace,l,active);}else{clearReadingWritingRuntime();workspace.hidden=true;workspace.innerHTML='';}
+    }
     $('readingNextPassageBtn').textContent=t.nextReading;$('readingNextPassageBtn').disabled=!(l.passages||[]).length;
   }
 
@@ -308,7 +347,7 @@
   function normalizeChinese(s){return String(s||'').normalize('NFKC').replace(/[\s，。！？,.!?;；:：、'"“”‘’()（）/\-—]/g,'').toLowerCase();}
   function levenshtein(a,b){const prev=Array.from({length:b.length+1},(_,i)=>i),cur=new Array(b.length+1);for(let i=1;i<=a.length;i++){cur[0]=i;for(let j=1;j<=b.length;j++)cur[j]=Math.min(cur[j-1]+1,prev[j]+1,prev[j-1]+(a[i-1]===b[j-1]?0:1));for(let j=0;j<=b.length;j++)prev[j]=cur[j];}return prev[b.length];}
   function similarity(a,b){if(!a&&!b)return 1;if(!a||!b)return 0;return 1-levenshtein(a,b)/Math.max(a.length,b.length);}
-  async function checkReading(){const t=tx(),p=currentPassage();if(!state.blob?.size){$('readingRecordStatus').textContent=t.noAudio;return;}if(!window.TOCFLAuth?.getSession?.()?.user){$('readingRecordStatus').textContent=t.login;window.TOCFLAuth?.openAuth?.('login');return;}if(!window.TOCFLAuth?.transcribeWithGroq){$('readingRecordStatus').textContent=t.groq;return;}try{$('readingCheckBtn').disabled=true;$('readingRecordStatus').textContent=t.checking;const result=await window.TOCFLAuth.transcribeWithGroq(state.blob,fullText(p)),recognized=String(result?.text||'').trim();const score=Math.max(0,Math.min(100,Math.round(similarity(normalizeChinese(fullText(p)),normalizeChinese(recognized))*100)));$('readingResult').hidden=false;$('readingScore').textContent=String(score);$('readingRecognized').textContent=recognized||'—';$('readingScoreNote').textContent=t.scoreNote;$('readingResultTitle').textContent=t.result;$('readingRecognizedLabel').textContent=t.recognized;$('readingMatchLabel').textContent=t.textMatch;$('readingFeedback').textContent=score>=90?t.excellent:score>=70?t.good:t.retry;const prev=passageProgress(p.id),x={...prev,lastScore:score,bestScore:Math.max(Number(prev.bestScore||0),score),lastStudied:new Date().toISOString()};if(score>=90)x.completed=true;state.progress.lessons[p.id]=x;saveProgress();renderLessonList();$('readingBestScore').textContent=`${t.best}: ${x.bestScore}/100`;$('readingCompleteBtn').textContent=x.completed?t.completed:t.complete;$('readingCompleteBtn').classList.toggle('is-complete',Boolean(x.completed));$('readingRecordStatus').textContent=t.recorded;}catch(err){$('readingRecordStatus').textContent=err?.message||t.groq;}finally{$('readingCheckBtn').disabled=false;}}
+  async function checkReading(){const t=tx(),p=currentPassage();if(!state.blob?.size){$('readingRecordStatus').textContent=t.noAudio;return;}const liveSession=await window.TOCFLAuth?.ensureSession?.();if(!liveSession?.user){$('readingRecordStatus').textContent=t.login;window.TOCFLAuth?.openAuth?.('login');return;}if(!window.TOCFLAuth?.transcribeWithGroq){$('readingRecordStatus').textContent=t.groq;return;}try{$('readingCheckBtn').disabled=true;$('readingRecordStatus').textContent=t.checking;const result=await window.TOCFLAuth.transcribeWithGroq(state.blob,fullText(p)),recognized=String(result?.text||'').trim();const score=Math.max(0,Math.min(100,Math.round(similarity(normalizeChinese(fullText(p)),normalizeChinese(recognized))*100)));$('readingResult').hidden=false;$('readingScore').textContent=String(score);$('readingRecognized').textContent=recognized||'—';$('readingScoreNote').textContent=t.scoreNote;$('readingResultTitle').textContent=t.result;$('readingRecognizedLabel').textContent=t.recognized;$('readingMatchLabel').textContent=t.textMatch;$('readingFeedback').textContent=score>=90?t.excellent:score>=70?t.good:t.retry;const prev=passageProgress(p.id),x={...prev,lastScore:score,bestScore:Math.max(Number(prev.bestScore||0),score),lastStudied:new Date().toISOString()};if(score>=90)x.completed=true;state.progress.lessons[p.id]=x;saveProgress();renderLessonList();$('readingBestScore').textContent=`${t.best}: ${x.bestScore}/100`;$('readingCompleteBtn').textContent=x.completed?t.completed:t.complete;$('readingCompleteBtn').classList.toggle('is-complete',Boolean(x.completed));$('readingRecordStatus').textContent=t.recorded;}catch(err){$('readingRecordStatus').textContent=err?.message||t.groq;}finally{$('readingCheckBtn').disabled=false;}}
 
   window.TOCFLReading={getProgress:()=>{loadProgress();return JSON.parse(JSON.stringify(state.progress));},applyProgress:value=>{if(value&&typeof value==='object'){localStorage.setItem(STORAGE_KEY,JSON.stringify(value));loadProgress();document.dispatchEvent(new CustomEvent('tocfl:reading-cloud-applied'));}},reset:()=>{localStorage.removeItem(STORAGE_KEY);state.progress={lessons:{},vocabulary:{},vocabularyWriting:{},lastLesson:1,lastPassageByLesson:{}};render();}};
   if(document.readyState==='loading')document.addEventListener('DOMContentLoaded',init,{once:true});else init();

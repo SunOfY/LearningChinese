@@ -21,7 +21,7 @@ const AUTH_TEXT = {
     firstCloudUpload:'Tài khoản chưa có dữ liệu cloud; tiến độ hiện tại trên thiết bị đã được tải lên.',
     cloudLoaded:'Đã tải tiến độ của tài khoản về thiết bị này.', guest:'Khách', profile:'Hồ sơ',
     groqTitle:'🤖 Groq AI Speech cá nhân', groqNotConnected:'Chưa kết nối Groq API Key riêng.', groqConnectedBadge:'Đã kết nối', groqConnectedAt:'Groq AI Speech đã kết nối', groqHelp:'Mỗi tài khoản dùng Groq API Key của chính mình nên quota không dùng chung. Key được mã hóa trên server và không lưu trong GitHub hay trình duyệt.', groqKey:'Groq API Key', groqSaveTest:'Lưu & kiểm tra', groqDisconnect:'Ngắt kết nối', groqSaving:'Đang kiểm tra Groq Key…', groqSaved:'✅ Groq API Key đã kết nối và kiểm tra thành công.', groqDeleted:'Đã ngắt Groq khỏi tài khoản.', groqNeedKey:'Hãy nhập Groq API Key.', groqFunctionError:'Chưa cấu hình Edge Function groq-speech hoặc schema Groq BYOK.', groqConfirmDelete:'Ngắt Groq AI Speech cá nhân khỏi tài khoản này?',
-    privacy:'Mỗi tài khoản chỉ đọc/ghi tiến độ của chính mình khi bạn đã chạy file RLS trong thư mục supabase.'
+    privacy:'Mỗi tài khoản chỉ đọc/ghi tiến độ của chính mình khi bạn đã chạy file RLS trong thư mục supabase.', forgotPassword:'Quên mật khẩu?', resetSent:'Đã gửi email đặt lại mật khẩu. Hãy mở email rồi quay lại website.', resetNeedEmail:'Hãy nhập email tài khoản trước.', newPasswordPrompt:'Nhập mật khẩu mới (ít nhất 6 ký tự):', newPasswordAgain:'Nhập lại mật khẩu mới:', passwordUpdated:'Đã đổi mật khẩu. Bạn có thể tiếp tục dùng tài khoản.', restoreCloud:'Khôi phục dữ liệu từ cloud', restoreCloudDone:'Đã tải lại dữ liệu cloud. Nếu trước đây đã đồng bộ, tiến độ cũ sẽ xuất hiện lại.', localBackupSaved:'Đã tạo bản sao cục bộ trước khi khôi phục cloud.'
   },
   en: {
     account:'Account', signIn:'Sign in', signUp:'Create account', signOut:'Sign out', close:'Close',
@@ -36,7 +36,7 @@ const AUTH_TEXT = {
     firstCloudUpload:'No cloud progress existed yet, so this device’s current progress was uploaded.',
     cloudLoaded:'Your account progress was loaded onto this device.', guest:'Guest', profile:'Profile',
     groqTitle:'🤖 Personal Groq AI Speech', groqNotConnected:'No personal Groq API Key connected.', groqConnectedBadge:'Connected', groqConnectedAt:'Groq AI Speech connected', groqHelp:'Each account uses its own Groq API Key, so usage quotas are separate. The key is encrypted on the server and is never stored in GitHub or the browser.', groqKey:'Groq API Key', groqSaveTest:'Save & test', groqDisconnect:'Disconnect', groqSaving:'Testing Groq key…', groqSaved:'✅ Groq API Key connected and tested successfully.', groqDeleted:'Groq disconnected from this account.', groqNeedKey:'Enter a Groq API Key.', groqFunctionError:'The groq-speech Edge Function or Groq BYOK schema is not configured.', groqConfirmDelete:'Disconnect personal Groq AI Speech from this account?',
-    privacy:'With the included RLS setup, each account can only read and write its own progress.'
+    privacy:'With the included RLS setup, each account can only read and write its own progress.', forgotPassword:'Forgot password?', resetSent:'Password reset email sent. Open it, then return to this site.', resetNeedEmail:'Enter your account email first.', newPasswordPrompt:'Enter a new password (at least 6 characters):', newPasswordAgain:'Enter the new password again:', passwordUpdated:'Password updated. You can continue using your account.', restoreCloud:'Restore cloud data', restoreCloudDone:'Cloud data reloaded. Previously synced progress should reappear.', localBackupSaved:'A local backup was saved before restoring cloud.'
   },
   'zh-Hant': {
     account:'帳號', signIn:'登入', signUp:'建立帳號', signOut:'登出', close:'關閉',
@@ -51,7 +51,7 @@ const AUTH_TEXT = {
     firstCloudUpload:'雲端尚無資料，已把這台裝置目前的進度上傳。',
     cloudLoaded:'已把帳號的學習進度載入這台裝置。', guest:'訪客', profile:'個人資料',
     groqTitle:'🤖 個人 Groq AI Speech', groqNotConnected:'尚未連接個人的 Groq API Key。', groqConnectedBadge:'已連接', groqConnectedAt:'Groq AI Speech 已連接', groqHelp:'每個帳號使用自己的 Groq API Key，因此用量額度彼此獨立。Key 會在伺服器端加密，不會儲存在 GitHub 或瀏覽器。', groqKey:'Groq API Key', groqSaveTest:'儲存並測試', groqDisconnect:'中斷連接', groqSaving:'正在測試 Groq Key…', groqSaved:'✅ Groq API Key 已成功連接並通過測試。', groqDeleted:'已從此帳號移除 Groq。', groqNeedKey:'請輸入 Groq API Key。', groqFunctionError:'尚未設定 groq-speech Edge Function 或 Groq BYOK schema。', groqConfirmDelete:'要中斷此帳號的個人 Groq AI Speech 嗎？',
-    privacy:'執行內附的 RLS 設定後，每個帳號只能讀寫自己的學習進度。'
+    privacy:'執行內附的 RLS 設定後，每個帳號只能讀寫自己的學習進度。', forgotPassword:'忘記密碼？', resetSent:'已寄出重設密碼郵件，請開啟郵件後回到此網站。', resetNeedEmail:'請先輸入帳號電子郵件。', newPasswordPrompt:'輸入新密碼（至少 6 個字元）：', newPasswordAgain:'再次輸入新密碼：', passwordUpdated:'密碼已更新，可以繼續使用帳號。', restoreCloud:'從雲端復原資料', restoreCloudDone:'已重新載入雲端資料；若之前有同步，舊進度會重新出現。', localBackupSaved:'復原雲端前已建立本機備份。'
   }
 };
 
@@ -62,6 +62,7 @@ let syncTimer = null;
 let syncBusy = false;
 let suppressSync = false;
 let groqStatus = { connected:false, updatedAt:null };
+let cloudReady = false;
 
 const $ = id => document.getElementById(id);
 const lang = () => window.TOCFLApp?.getLanguage?.() || localStorage.getItem('tocfl-a1-ui-language-v2') || 'vi';
@@ -157,6 +158,57 @@ function escapeText(s) {
   return String(s || '').replace(/[&<>"']/g, c => ({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[c]));
 }
 
+
+async function ensureSession() {
+  if (!configured || !supabaseClient) return null;
+  try {
+    const { data, error } = await supabaseClient.auth.getSession();
+    if (error) throw error;
+    session = data?.session || null;
+    if (!session) {
+      const refreshed = await supabaseClient.auth.refreshSession();
+      if (!refreshed.error) session = refreshed.data?.session || null;
+    }
+    renderAccountUI();
+    return session;
+  } catch (error) {
+    console.warn('ensureSession:', error);
+    return session;
+  }
+}
+
+function backupLocalBeforeCloudRestore() {
+  try {
+    if (!window.TOCFLApp?.getCloudState) return;
+    const snapshot={savedAt:new Date().toISOString(),state:window.TOCFLApp.getCloudState()};
+    localStorage.setItem('tocfl-pre-cloud-restore-v1',JSON.stringify(snapshot));
+  } catch (error) { console.warn('Local recovery backup:', error); }
+}
+
+async function requestPasswordReset() {
+  if (!configured || !supabaseClient) { setAuthStatus(tr('setupNeeded'), true); return; }
+  const email=$('loginEmail')?.value?.trim()||'';
+  if(!email){setAuthStatus(tr('resetNeedEmail'),true);return;}
+  try{
+    setAuthStatus('…');
+    const redirect=`${window.location.origin}${window.location.pathname}`;
+    const {error}=await supabaseClient.auth.resetPasswordForEmail(email,{redirectTo:redirect});
+    if(error)throw error;
+    setAuthStatus(tr('resetSent'));
+  }catch(error){setAuthStatus(error.message||tr('cloudError'),true);}
+}
+
+async function handlePasswordRecovery() {
+  const p1=window.prompt(tr('newPasswordPrompt'));
+  if(!p1)return;
+  if(p1.length<6){setAuthStatus(tr('passwordShort'),true);return;}
+  const p2=window.prompt(tr('newPasswordAgain'));
+  if(p1!==p2){setAuthStatus(tr('passwordMismatch'),true);return;}
+  const {error}=await supabaseClient.auth.updateUser({password:p1});
+  if(error){setAuthStatus(error.message,true);return;}
+  setAuthStatus(tr('passwordUpdated'));
+}
+
 async function signIn(e) {
   e.preventDefault();
   if (!configured || !supabaseClient) { setAuthStatus(tr('setupNeeded'), true); return; }
@@ -164,11 +216,15 @@ async function signIn(e) {
   const password = $('loginPassword').value;
   if (!email || !password) { setAuthStatus(tr('fillRequired'), true); return; }
   setAuthStatus('…');
-  const { data, error } = await supabaseClient.auth.signInWithPassword({ email, password });
-  if (error) { setAuthStatus(error.message, true); return; }
-  session = data.session;
-  setAuthStatus(tr('loginSuccess'));
-  await afterSignedIn();
+  try {
+    const { data, error } = await supabaseClient.auth.signInWithPassword({ email, password });
+    if (error) throw error;
+    session = data.session; cloudReady=false;
+    setAuthStatus(tr('loginSuccess'));
+    await afterSignedIn();
+  } catch (error) {
+    setAuthStatus(error?.message || tr('cloudError'), true);
+  }
 }
 
 async function signUp(e) {
@@ -198,7 +254,7 @@ async function signUp(e) {
 async function signOut() {
   if (!supabaseClient) return;
   await supabaseClient.auth.signOut();
-  session = null; groqStatus = { connected:false, updatedAt:null };
+  session = null; cloudReady=false; groqStatus = { connected:false, updatedAt:null };
   window.TOCFLApp?.onSignedOut?.();
   setCloudStatus(tr('loggedOut'));
   renderAccountUI();
@@ -225,11 +281,13 @@ async function loadCloudState() {
     .maybeSingle();
   if (error) { setCloudStatus(`${tr('cloudError')}: ${error.message}`, true); return; }
   if (!data) {
-    await syncNow();
+    cloudReady=true;
+    await syncNow(true);
     setCloudStatus(tr('firstCloudUpload'));
     await window.TOCFLApp?.afterAccountReady?.(session.user.id);
     return;
   }
+  backupLocalBeforeCloudRestore();
   suppressSync = true;
   try {
     await window.TOCFLApp.applyCloudState({
@@ -241,12 +299,14 @@ async function loadCloudState() {
   } finally {
     suppressSync = false;
   }
+  cloudReady=true;
   setCloudStatus(tr('cloudLoaded'));
   await window.TOCFLApp?.afterAccountReady?.(session.user.id);
 }
 
-async function syncNow() {
+async function syncNow(initialUpload=false) {
   if (!session?.user || !supabaseClient || !window.TOCFLApp || syncBusy) return;
+  if (!cloudReady && !initialUpload) { await loadCloudState(); return; }
   syncBusy = true;
   renderAccountUI();
   setCloudStatus(tr('cloudSyncing'));
@@ -363,7 +423,7 @@ async function transcribeWithGroq(audioBlob, target='') {
 }
 
 function scheduleSync() {
-  if (suppressSync || !session?.user || !configured) return;
+  if (suppressSync || !session?.user || !configured || !cloudReady) return;
   clearTimeout(syncTimer);
   syncTimer = setTimeout(syncNow, 900);
 }
@@ -384,9 +444,12 @@ async function initAuth() {
     const { data } = await supabaseClient.auth.getSession();
     session = data.session || null;
     renderAccountUI();
-    supabaseClient.auth.onAuthStateChange(async (_event, newSession) => {
-      session = newSession;
+    supabaseClient.auth.onAuthStateChange(async (eventName, newSession) => {
+      session = newSession; cloudReady=false;
       renderAccountUI();
+      if (eventName==='PASSWORD_RECOVERY' && session?.user) {
+        await handlePasswordRecovery();
+      }
       if (session?.user) {
         await refreshGroqStatus();
         if (appReady) await loadCloudState();
@@ -411,9 +474,11 @@ function bindUI() {
   $('authModal')?.addEventListener('click', e => { if (e.target === $('authModal')) closeAuth(); });
   document.querySelectorAll('[data-auth-tab]').forEach(btn => btn.addEventListener('click', () => showAuthPane(btn.dataset.authTab)));
   $('loginForm')?.addEventListener('submit', signIn);
+  $('forgotPasswordBtn')?.addEventListener('click', requestPasswordReset);
   $('signupForm')?.addEventListener('submit', signUp);
   $('logoutBtn')?.addEventListener('click', signOut);
   $('syncNowBtn')?.addEventListener('click', syncNow);
+  $('restoreCloudBtn')?.addEventListener('click', async()=>{if(!session?.user){openAuth('login');return;}cloudReady=false;await loadCloudState();setCloudStatus(tr('restoreCloudDone'));});
   $('groqCredentialsForm')?.addEventListener('submit', saveGroqCredentials);
   $('deleteGroqBtn')?.addEventListener('click', deleteGroqCredentials);
   document.addEventListener('tocfl:language-changed', applyAuthLanguage);
@@ -426,5 +491,5 @@ function bindUI() {
   document.addEventListener('keydown', e => { if (e.key === 'Escape' && !$('authModal')?.hidden) closeAuth(); });
 }
 
-window.TOCFLAuth = { syncNow, openAuth, isConfigured: () => configured, getSession: () => session, transcribeWithGroq, refreshGroqStatus, getGroqStatus: () => ({...groqStatus}) };
+window.TOCFLAuth = { syncNow, openAuth, ensureSession, restoreCloud:loadCloudState, isConfigured: () => configured, getSession: () => session, transcribeWithGroq, refreshGroqStatus, getGroqStatus: () => ({...groqStatus}) };
 initAuth();

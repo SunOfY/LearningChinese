@@ -3,9 +3,9 @@
     "title": "時代華語 Modern Chinese — Reading + Vocabulary",
     "source": "User-provided textbook PDF",
     "language": "zh-Hant",
-    "version": 3,
+    "version": 4,
     "lesson_count": 15,
-    "note": "Includes every dialogue/reading passage available in the uploaded PDF through Lesson 15. The uploaded PDF ends during Lesson 15 after Dialogue 2."
+    "note": "All 15 lessons: textbook Chinese is preserved; every dialogue/reading sentence includes study Pinyin and Vietnamese meaning. Lesson 1 first greeting uses 妳好 to match the textbook glyph."
   },
   "lessons": [
     {
@@ -329,7 +329,7 @@
           "sentences": [
             {
               "speaker": "中明",
-              "zh": "你好！我是李中明，請問妳叫什麼名字？",
+              "zh": "妳好！我是李中明，請問妳叫什麼名字？",
               "pinyin": "Nǐ hǎo! Wǒ shì Lǐ Zhōngmíng, qǐngwèn nǐ jiào shénme míngzi?",
               "vi": "Xin chào! Tôi là Li Zhongming. Xin hỏi bạn tên gì?"
             },
@@ -422,38 +422,38 @@
             {
               "speaker": "媽媽",
               "zh": "今天是星期一，你不去學校嗎？",
-              "pinyin": "",
-              "vi": ""
+              "pinyin": "jīntiān shì xīngqí yī, nǐ bù qù xuéxiào ma?",
+              "vi": "Hôm nay là thứ Hai, con không đi học sao?"
             },
             {
               "speaker": "中明",
               "zh": "我早上沒有課，九點去圖書館。",
-              "pinyin": "",
-              "vi": ""
+              "pinyin": "wǒ zǎoshàng méi yǒu kè, jiǔ diǎn qù túshūguǎn.",
+              "vi": "Buổi sáng con không có tiết, chín giờ con đi thư viện."
             },
             {
               "speaker": "媽媽",
               "zh": "中午呢？你中午回家嗎？",
-              "pinyin": "",
-              "vi": ""
+              "pinyin": "zhōngwǔ ne? nǐ zhōngwǔ huíjiā ma?",
+              "vi": "Còn buổi trưa thì sao? Trưa con có về nhà không?"
             },
             {
               "speaker": "中明",
               "zh": "我下午有課，中午不回家。",
-              "pinyin": "",
-              "vi": ""
+              "pinyin": "wǒ xiàwǔ yǒu kè, zhōngwǔ bù huíjiā.",
+              "vi": "Buổi chiều con có tiết, buổi trưa không về nhà."
             },
             {
               "speaker": "媽媽",
               "zh": "你幾點下課？",
-              "pinyin": "",
-              "vi": ""
+              "pinyin": "nǐ jǐ diǎn xiàkè?",
+              "vi": "Mấy giờ con tan học?"
             },
             {
               "speaker": "中明",
               "zh": "我四點四十分下課。",
-              "pinyin": "",
-              "vi": ""
+              "pinyin": "wǒ sì diǎn sì shí fēn xiàkè.",
+              "vi": "Con tan học lúc bốn giờ bốn mươi."
             }
           ]
         },
@@ -470,38 +470,38 @@
             {
               "speaker": "宜文",
               "zh": "今天是星期五，明天是週末，你們要不要來我家？",
-              "pinyin": "",
-              "vi": ""
+              "pinyin": "jīntiān shì xīngqí wǔ, míngtiān shì zhōumò, nǐmen yào bù yào lái wǒ jiā?",
+              "vi": "Hôm nay là thứ Sáu, ngày mai là cuối tuần, các bạn có muốn đến nhà tôi không?"
             },
             {
               "speaker": "中明",
               "zh": "明天是九月二十三號……啊！是妳的生日！",
-              "pinyin": "",
-              "vi": ""
+              "pinyin": "míngtiān shì jiǔ yuè èr shí sān hào……ā! shì nǐ de shēngrì!",
+              "vi": "Ngày mai là ngày 23 tháng 9… A! Là sinh nhật của bạn!"
             },
             {
               "speaker": "友美",
               "zh": "宜文，生日快樂！",
-              "pinyin": "",
-              "vi": ""
+              "pinyin": "Yíwén, shēngrì kuàilè!",
+              "vi": "Yiwen, chúc mừng sinh nhật!"
             },
             {
               "speaker": "宜文",
               "zh": "謝謝！明天晚上六點來我家，好不好？",
-              "pinyin": "",
-              "vi": ""
+              "pinyin": "xièxie! míngtiān wǎnshàng liù diǎn lái wǒ jiā, hǎo bù hǎo?",
+              "vi": "Cảm ơn! Tối mai sáu giờ đến nhà tôi nhé, được không?"
             },
             {
               "speaker": "中明",
               "zh": "沒問題。",
-              "pinyin": "",
-              "vi": ""
+              "pinyin": "méiwèntí.",
+              "vi": "Không vấn đề gì."
             },
             {
               "speaker": "友美",
               "zh": "好，明天見。",
-              "pinyin": "",
-              "vi": ""
+              "pinyin": "hǎo, míngtiān jiàn.",
+              "vi": "Được, mai gặp nhé."
             }
           ]
         },
@@ -516,38 +516,38 @@
             {
               "speaker": "",
               "zh": "友美是學生，十九歲。",
-              "pinyin": "",
-              "vi": ""
+              "pinyin": "Yǒuměi shì xuéshēng, shí jiǔ suì.",
+              "vi": "Yumi là sinh viên, mười chín tuổi."
             },
             {
               "speaker": "",
               "zh": "她早上六點半起床，七點去學校，八點四十分上課；",
-              "pinyin": "",
-              "vi": ""
+              "pinyin": "tā zǎoshàng liù diǎn bàn qǐchuáng, qī diǎn qù xuéxiào, bā diǎn sì shí fēn shàngkè;",
+              "vi": "Buổi sáng cô ấy thức dậy lúc sáu giờ rưỡi, bảy giờ đến trường, tám giờ bốn mươi vào học;"
             },
             {
               "speaker": "",
               "zh": "中午十二點下課、吃午飯；",
-              "pinyin": "",
-              "vi": ""
+              "pinyin": "zhōngwǔ shí èr diǎn xiàkè, chī wǔ fàn;",
+              "vi": "Mười hai giờ trưa tan học và ăn trưa;"
             },
             {
               "speaker": "",
               "zh": "下午一點去圖書館；",
-              "pinyin": "",
-              "vi": ""
+              "pinyin": "xiàwǔ yìdiǎn qù túshūguǎn;",
+              "vi": "Một giờ chiều đi thư viện;"
             },
             {
               "speaker": "",
               "zh": "四點回家做飯，晚上六點吃飯，十點睡覺。",
-              "pinyin": "",
-              "vi": ""
+              "pinyin": "sì diǎn huíjiā zuòfàn, wǎnshàng liù diǎn chīfàn, shí diǎn shuìjiào.",
+              "vi": "Bốn giờ về nhà nấu cơm, sáu giờ tối ăn cơm, mười giờ đi ngủ."
             },
             {
               "speaker": "",
               "zh": "友美很忙！",
-              "pinyin": "",
-              "vi": ""
+              "pinyin": "Yǒuměi hěn máng!",
+              "vi": "Yumi rất bận!"
             }
           ]
         }
@@ -573,38 +573,38 @@
             {
               "speaker": "宜文",
               "zh": "明天是友美的生日，我想送她一個禮物。",
-              "pinyin": "",
-              "vi": ""
+              "pinyin": "míngtiān shì Yǒuměi de shēngrì, wǒ xiǎng sòng tā yí ge lǐwù.",
+              "vi": "Ngày mai là sinh nhật của Yumi, tôi muốn tặng cô ấy một món quà."
             },
             {
               "speaker": "中明",
               "zh": "妳想送她什麼？",
-              "pinyin": "",
-              "vi": ""
+              "pinyin": "nǐ xiǎng sòng tā shénme?",
+              "vi": "Bạn muốn tặng cô ấy thứ gì?"
             },
             {
               "speaker": "宜文",
               "zh": "友美愛看書，我想送她兩本中文書，你呢？",
-              "pinyin": "",
-              "vi": ""
+              "pinyin": "Yǒuměi ài kàn shū, wǒ xiǎng sòng tā liǎng běn zhōngwén shū, nǐ ne?",
+              "vi": "Yumi thích đọc sách, tôi muốn tặng cô ấy hai quyển sách tiếng Trung, còn bạn?"
             },
             {
               "speaker": "中明",
               "zh": "我想買一些花和一個大蛋糕。",
-              "pinyin": "",
-              "vi": ""
+              "pinyin": "wǒ xiǎng mǎi yìxiē huā hé yí ge dà dàn gāo.",
+              "vi": "Tôi muốn mua một ít hoa và một chiếc bánh kem lớn."
             },
             {
               "speaker": "宜文",
               "zh": "我們一起去買，好不好？",
-              "pinyin": "",
-              "vi": ""
+              "pinyin": "wǒmen yìqǐ qù mǎi, hǎo bù hǎo?",
+              "vi": "Chúng ta cùng đi mua nhé, được không?"
             },
             {
               "speaker": "中明",
               "zh": "好啊！",
-              "pinyin": "",
-              "vi": ""
+              "pinyin": "hǎo ā!",
+              "vi": "Được chứ!"
             }
           ]
         },
@@ -621,44 +621,44 @@
             {
               "speaker": "宜文",
               "zh": "這種小鉛筆怎麼樣？",
-              "pinyin": "",
-              "vi": ""
+              "pinyin": "zhè zhǒng xiǎo qiānbǐ zěnmeyàng?",
+              "vi": "Loại bút chì nhỏ này thế nào?"
             },
             {
               "speaker": "中明",
               "zh": "很可愛，友美喜歡可愛的東西。",
-              "pinyin": "",
-              "vi": ""
+              "pinyin": "hěn kěài, Yǒuměi xǐhuān kěài de dōngxī.",
+              "vi": "Rất dễ thương, Yumi thích những thứ dễ thương."
             },
             {
               "speaker": "宜文",
               "zh": "我們買兩枝，好不好？兩枝五十塊錢。",
-              "pinyin": "",
-              "vi": ""
+              "pinyin": "wǒmen mǎi liǎng zhī, hǎo bù hǎo? liǎng zhī wǔ shí kuài qián.",
+              "vi": "Chúng ta mua hai cây nhé? Hai cây năm mươi đồng."
             },
             {
               "speaker": "中明",
               "zh": "五十塊錢很便宜！妳看，哪個顏色漂亮？",
-              "pinyin": "",
-              "vi": ""
+              "pinyin": "wǔ shí kuài qián hěn piányi! nǐ kàn, nǎ gè yánsè piāoliàng?",
+              "vi": "Năm mươi đồng rất rẻ! Bạn xem, màu nào đẹp?"
             },
             {
               "speaker": "宜文",
               "zh": "紅色、白色都好看。",
-              "pinyin": "",
-              "vi": ""
+              "pinyin": "hóngsè, báisè dōu hǎokàn.",
+              "vi": "Màu đỏ và màu trắng đều đẹp."
             },
             {
               "speaker": "中明",
               "zh": "我想友美喜歡白色，她常常穿白色的衣服。",
-              "pinyin": "",
-              "vi": ""
+              "pinyin": "wǒ xiǎng Yǒuměi xǐhuān báisè, tā chángcháng chuān báisè de yīfú.",
+              "vi": "Tôi nghĩ Yumi thích màu trắng, cô ấy thường mặc quần áo màu trắng."
             },
             {
               "speaker": "宜文",
               "zh": "好，我們買白的。",
-              "pinyin": "",
-              "vi": ""
+              "pinyin": "hǎo, wǒmen mǎi bái de.",
+              "vi": "Được, chúng ta mua màu trắng."
             }
           ]
         },
@@ -673,20 +673,20 @@
             {
               "speaker": "",
               "zh": "今天是友美的生日，她請我、中明和國安一起去她家玩。",
-              "pinyin": "",
-              "vi": ""
+              "pinyin": "jīntiān shì Yǒuměi de shēngrì, tā qǐng wǒ, Zhōngmíng hé Guó'ān yìqǐ qù tā jiā wán.",
+              "vi": "Hôm nay là sinh nhật của Yumi, cô ấy mời tôi, Zhongming và Guoan cùng đến nhà cô ấy chơi."
             },
             {
               "speaker": "",
               "zh": "我們送友美花、兩本中文書、兩枝可愛的小鉛筆和一個大蛋糕，她很喜歡這些禮物。",
-              "pinyin": "",
-              "vi": ""
+              "pinyin": "wǒmen sòng Yǒuměi huā, liǎng běn zhōngwén shū, liǎng zhī kěài de xiǎo qiānbǐ hé yí ge dà dàn gāo, tā hěn xǐhuān zhèxiē lǐwù.",
+              "vi": "Chúng tôi tặng Yumi hoa, hai quyển sách tiếng Trung, hai cây bút chì nhỏ dễ thương và một chiếc bánh kem lớn; cô ấy rất thích những món quà này."
             },
             {
               "speaker": "",
               "zh": "友美請我們吃點心和水果，大家都很開心。",
-              "pinyin": "",
-              "vi": ""
+              "pinyin": "Yǒuměi qǐng wǒmen chī diǎnxīn hé shuǐguǒ, dàjiā dōu hěn kāixīn.",
+              "vi": "Yumi mời chúng tôi ăn bánh điểm tâm và trái cây, mọi người đều rất vui."
             }
           ]
         }
@@ -712,50 +712,50 @@
             {
               "speaker": "中明",
               "zh": "天氣好熱，我們去喝飲料，好不好？",
-              "pinyin": "",
-              "vi": ""
+              "pinyin": "tiānqì hǎo rè, wǒmen qù hē yǐnliào, hǎo bù hǎo?",
+              "vi": "Trời nóng quá, chúng ta đi uống đồ uống nhé?"
             },
             {
               "speaker": "友美",
               "zh": "好啊！你想喝什麼？咖啡還是茶？",
-              "pinyin": "",
-              "vi": ""
+              "pinyin": "hǎo ā! nǐ xiǎng hē shénme? kāfēi háishì chá?",
+              "vi": "Được! Bạn muốn uống gì? Cà phê hay trà?"
             },
             {
               "speaker": "中明",
               "zh": "咖啡、茶，我都喜歡。我也很餓，想吃一點兒東西。",
-              "pinyin": "",
-              "vi": ""
+              "pinyin": "kāfēi, chá, wǒ dōu xǐhuān. wǒ yě hěn è, xiǎng chī yìdiǎnr dōngxī.",
+              "vi": "Cà phê và trà tôi đều thích. Tôi cũng rất đói, muốn ăn một chút gì đó."
             },
             {
               "speaker": "友美",
               "zh": "這家餐廳人太多，我們去那家餐廳，好嗎？他們的牛肉麵很好吃，也很便宜。",
-              "pinyin": "",
-              "vi": ""
+              "pinyin": "zhè jiā cāntīng rén tài duō, wǒmen qù nà jiā cāntīng, hǎo ma? tā men de niúròumiàn hěn hǎochī, yě hěn piányi.",
+              "vi": "Nhà hàng này đông người quá, chúng ta sang nhà hàng kia nhé? Mì bò của họ rất ngon mà cũng rẻ."
             },
             {
               "speaker": "中明",
               "zh": "太好了！我最愛吃牛肉麵。他們也賣飲料嗎？",
-              "pinyin": "",
-              "vi": ""
+              "pinyin": "tài hǎo le! wǒ zuì ài chī niúròumiàn. tā men yě mài yǐnliào ma?",
+              "vi": "Tuyệt quá! Tôi thích ăn mì bò nhất. Họ cũng bán đồ uống chứ?"
             },
             {
               "speaker": "友美",
               "zh": "他們賣很多種飲料。",
-              "pinyin": "",
-              "vi": ""
+              "pinyin": "tā men mài hěn duō zhǒng yǐnliào.",
+              "vi": "Họ bán rất nhiều loại đồ uống."
             },
             {
               "speaker": "中明",
               "zh": "我們現在去，好嗎？",
-              "pinyin": "",
-              "vi": ""
+              "pinyin": "wǒmen xiànzài qù, hǎo ma?",
+              "vi": "Bây giờ chúng ta đi nhé?"
             },
             {
               "speaker": "友美",
               "zh": "好。",
-              "pinyin": "",
-              "vi": ""
+              "pinyin": "hǎo.",
+              "vi": "Được."
             }
           ]
         },
@@ -772,44 +772,44 @@
             {
               "speaker": "中明",
               "zh": "小姐，我們要點兩碗牛肉麵和兩杯茶。",
-              "pinyin": "",
-              "vi": ""
+              "pinyin": "xiǎojiě, wǒmen yào diǎn liǎng wǎn niúròumiàn hé liǎng bēi chá.",
+              "vi": "Cô ơi, chúng tôi muốn gọi hai bát mì bò và hai cốc trà."
             },
             {
               "speaker": "女店員",
               "zh": "請問兩位要紅茶還是綠茶？",
-              "pinyin": "",
-              "vi": ""
+              "pinyin": "qǐngwèn liǎng wèi yào hóngchá háishì lǜ chá?",
+              "vi": "Xin hỏi hai vị muốn trà đen hay trà xanh?"
             },
             {
               "speaker": "友美",
               "zh": "我要紅茶。",
-              "pinyin": "",
-              "vi": ""
+              "pinyin": "wǒ yào hóngchá.",
+              "vi": "Tôi muốn trà đen."
             },
             {
               "speaker": "中明",
               "zh": "請給我們一杯紅茶、一杯綠茶。請問一共多少錢？",
-              "pinyin": "",
-              "vi": ""
+              "pinyin": "qǐng gěi wǒmen yì bēi hóngchá, yì bēi lǜ chá. qǐngwèn yígòng duōshǎo qián?",
+              "vi": "Cho chúng tôi một cốc trà đen và một cốc trà xanh. Xin hỏi tổng cộng bao nhiêu tiền?"
             },
             {
               "speaker": "女店員",
               "zh": "一共兩百一十五塊錢。",
-              "pinyin": "",
-              "vi": ""
+              "pinyin": "yígòng liǎng bǎi yī shí wǔ kuài qián.",
+              "vi": "Tổng cộng 215 đồng."
             },
             {
               "speaker": "女店員",
               "zh": "找您七百八十五塊錢，謝謝。",
-              "pinyin": "",
-              "vi": ""
+              "pinyin": "zhǎo nín qī bǎi bā shí wǔ kuài qián, xièxie.",
+              "vi": "Thối lại cho quý khách 785 đồng, cảm ơn."
             },
             {
               "speaker": "中明",
               "zh": "一共兩百多塊錢，好便宜！",
-              "pinyin": "",
-              "vi": ""
+              "pinyin": "yígòng liǎng bǎi duō kuài qián, hǎo piányi!",
+              "vi": "Tổng cộng chỉ hơn hai trăm đồng, rẻ thật!"
             }
           ]
         },
@@ -824,26 +824,26 @@
             {
               "speaker": "",
               "zh": "臺灣夏天的天氣很熱，很多人都喜歡喝飲料。",
-              "pinyin": "",
-              "vi": ""
+              "pinyin": "Táiwān xiàtiān de tiānqì hěn rè, hěn duō rén dōu xǐhuān hē yǐnliào.",
+              "vi": "Mùa hè ở Đài Loan rất nóng, rất nhiều người thích uống đồ uống."
             },
             {
               "speaker": "",
               "zh": "飲料店很多，他們賣很多種飲料。",
-              "pinyin": "",
-              "vi": ""
+              "pinyin": "yǐnliào diàn hěn duō, tā men mài hěn duō zhǒng yǐnliào.",
+              "vi": "Có rất nhiều cửa hàng đồ uống, họ bán nhiều loại đồ uống."
             },
             {
               "speaker": "",
               "zh": "果汁、牛奶、咖啡、茶都很好喝，有的很便宜，一杯二十多塊錢。",
-              "pinyin": "",
-              "vi": ""
+              "pinyin": "guǒzhī, niúnǎi, kāfēi, chá dōu hěn hǎo hē, yǒu de hěn piányi, yì bēi èr shí duō kuài qián.",
+              "vi": "Nước trái cây, sữa, cà phê và trà đều ngon; có loại rất rẻ, một cốc chỉ hơn hai mươi đồng."
             },
             {
               "speaker": "",
               "zh": "我和朋友都很愛喝，我們每天都去買。",
-              "pinyin": "",
-              "vi": ""
+              "pinyin": "wǒ hé péngyǒu dōu hěn ài hē, wǒmen měi tiān dōu qù mǎi.",
+              "vi": "Tôi và bạn bè đều rất thích uống, ngày nào chúng tôi cũng đi mua."
             }
           ]
         }
@@ -869,56 +869,56 @@
             {
               "speaker": "中明",
               "zh": "友美，妳這個週末要做什麼？",
-              "pinyin": "",
-              "vi": ""
+              "pinyin": "Yǒuměi, nǐ zhè gè zhōumò yào zuò shénme?",
+              "vi": "Yumi, cuối tuần này bạn định làm gì?"
             },
             {
               "speaker": "友美",
               "zh": "我要在家看書、聽音樂。",
-              "pinyin": "",
-              "vi": ""
+              "pinyin": "wǒ yào zài jiā kàn shū, tīng yīnyuè.",
+              "vi": "Tôi sẽ ở nhà đọc sách và nghe nhạc."
             },
             {
               "speaker": "中明",
               "zh": "妳星期六下午有空嗎？我們一起去喝下午茶，怎麼樣？",
-              "pinyin": "",
-              "vi": ""
+              "pinyin": "nǐ xīngqí liù xiàwǔ yǒukòng ma? wǒmen yìqǐ qù hē xiàwǔ chá, zěnmeyàng?",
+              "vi": "Chiều thứ Bảy bạn có rảnh không? Chúng ta cùng đi uống trà chiều nhé, thế nào?"
             },
             {
               "speaker": "友美",
               "zh": "好啊！你想去哪裡？",
-              "pinyin": "",
-              "vi": ""
+              "pinyin": "hǎo ā! nǐ xiǎng qù nǎlǐ?",
+              "vi": "Được! Bạn muốn đi đâu?"
             },
             {
               "speaker": "中明",
               "zh": "我知道一家很不錯的咖啡廳，那裡的冰淇淋很好吃。",
-              "pinyin": "",
-              "vi": ""
+              "pinyin": "wǒ zhīdào yī jiā hěn búcuò de kāfēitīng, nàlǐ de bīngqílín hěn hǎochī.",
+              "vi": "Tôi biết một quán cà phê rất ổn, kem ở đó rất ngon."
             },
             {
               "speaker": "友美",
               "zh": "他們有巧克力冰淇淋嗎？",
-              "pinyin": "",
-              "vi": ""
+              "pinyin": "tā men yǒu qiǎokèlì bīngqílín ma?",
+              "vi": "Họ có kem sô-cô-la không?"
             },
             {
               "speaker": "中明",
               "zh": "有啊！他們有很多種冰淇淋。",
-              "pinyin": "",
-              "vi": ""
+              "pinyin": "yǒu ā! tā men yǒu hěn duō zhǒng bīngqílín.",
+              "vi": "Có chứ! Họ có rất nhiều loại kem."
             },
             {
               "speaker": "友美",
               "zh": "我們這個星期六下午兩點半去吧。",
-              "pinyin": "",
-              "vi": ""
+              "pinyin": "wǒmen zhè gè xīngqí liù xiàwǔ liǎng diǎn bàn qù ba.",
+              "vi": "Thứ Bảy này lúc hai giờ rưỡi chiều chúng ta đi nhé."
             },
             {
               "speaker": "中明",
               "zh": "好。",
-              "pinyin": "",
-              "vi": ""
+              "pinyin": "hǎo.",
+              "vi": "Được."
             }
           ]
         },
@@ -935,44 +935,44 @@
             {
               "speaker": "中明",
               "zh": "媽，我跟友美要去喝下午茶，可是我的錢包不在房間裡。",
-              "pinyin": "",
-              "vi": ""
+              "pinyin": "mā, wǒ gēn Yǒuměi yào qù hē xiàwǔ chá, kěshì wǒ de qiánbāo bù zài fángjiān lǐ.",
+              "vi": "Mẹ ơi, con và Yumi sắp đi uống trà chiều, nhưng ví của con không ở trong phòng."
             },
             {
               "speaker": "媽媽",
               "zh": "客廳的桌子上有一個錢包，是不是你的？",
-              "pinyin": "",
-              "vi": ""
+              "pinyin": "kètīng de zhuōzi shàng yǒu yí ge qiánbāo, shì bù shì nǐ de?",
+              "vi": "Trên bàn phòng khách có một cái ví, có phải của con không?"
             },
             {
               "speaker": "中明",
               "zh": "那不是我的，是哥哥的。我的錢包不在客廳裡。",
-              "pinyin": "",
-              "vi": ""
+              "pinyin": "nà bù shì wǒ de, shì gēge de. wǒ de qiánbāo bù zài kètīng lǐ.",
+              "vi": "Đó không phải của con, là của anh trai. Ví của con không ở phòng khách."
             },
             {
               "speaker": "媽媽",
               "zh": "沙發下面呢？",
-              "pinyin": "",
-              "vi": ""
+              "pinyin": "shāfā xià miàn ne?",
+              "vi": "Còn dưới ghế sofa thì sao?"
             },
             {
               "speaker": "中明",
               "zh": "沙發上面、下面跟旁邊都沒有。媽，妳幫我找，好嗎？",
-              "pinyin": "",
-              "vi": ""
+              "pinyin": "shāfā shàng miàn, xià miàn gēn pángbiān dōu méi yǒu. mā, nǐ bāng wǒ zhǎo, hǎo ma?",
+              "vi": "Trên, dưới và bên cạnh ghế sofa đều không có. Mẹ, mẹ giúp con tìm nhé?"
             },
             {
               "speaker": "媽媽",
               "zh": "我很忙，現在要去廚房做飯，你再去房間找吧。",
-              "pinyin": "",
-              "vi": ""
+              "pinyin": "wǒ hěn máng, xiànzài yào qù chúfáng zuòfàn, nǐ zài qù fángjiān zhǎo ba.",
+              "vi": "Mẹ rất bận, bây giờ phải vào bếp nấu cơm; con vào phòng tìm lại đi."
             },
             {
               "speaker": "中明",
               "zh": "啊！在這裡！錢包在我的書下面。",
-              "pinyin": "",
-              "vi": ""
+              "pinyin": "ā! zài zhèlǐ! qiánbāo zài wǒ de shū xià miàn.",
+              "vi": "A! Ở đây! Ví ở dưới quyển sách của con."
             }
           ]
         },
@@ -987,26 +987,26 @@
             {
               "speaker": "",
               "zh": "我的房間裡有一張桌子、一張床跟一張沙發。",
-              "pinyin": "",
-              "vi": ""
+              "pinyin": "wǒ de fángjiān lǐ yǒu yì zhāng zhuōzi, yì zhāng chuáng gēn yì zhāng shāfā.",
+              "vi": "Trong phòng tôi có một cái bàn, một cái giường và một ghế sofa."
             },
             {
               "speaker": "",
               "zh": "沙發前面有一台很新的電視機，可是我不常看電視，我最喜歡在沙發上看書。",
-              "pinyin": "",
-              "vi": ""
+              "pinyin": "shāfā qiánmiàn yǒu yì tái hěn xīn de diàn shì jī, kěshì wǒ bù cháng kàn diàn shì, wǒ zuì xǐhuān zài shāfā shàng kàn shū.",
+              "vi": "Phía trước sofa có một chiếc TV rất mới, nhưng tôi không thường xem TV; tôi thích nhất là đọc sách trên sofa."
             },
             {
               "speaker": "",
               "zh": "我的書很多，有中文書，也有英文書。",
-              "pinyin": "",
-              "vi": ""
+              "pinyin": "wǒ de shū hěn duō, yǒu zhōngwén shū, yě yǒu yīngwén shū.",
+              "vi": "Tôi có rất nhiều sách, có sách tiếng Trung và cũng có sách tiếng Anh."
             },
             {
               "speaker": "",
               "zh": "我房間的窗戶很大，我的貓喜歡在窗戶旁邊曬太陽。",
-              "pinyin": "",
-              "vi": ""
+              "pinyin": "wǒ fángjiān de chuānghù hěn dà, wǒ de māo xǐhuān zài chuānghù pángbiān shài tài yáng.",
+              "vi": "Cửa sổ phòng tôi rất lớn, con mèo của tôi thích phơi nắng cạnh cửa sổ."
             }
           ]
         }
@@ -1032,44 +1032,44 @@
             {
               "speaker": "國安",
               "zh": "今天天氣不錯，海邊的風景也很漂亮，我想去游泳，妳們想去嗎？",
-              "pinyin": "",
-              "vi": ""
+              "pinyin": "jīntiān tiānqì búcuò, hǎibiān de fēngjǐng yě hěn piāoliàng, wǒ xiǎng qù yóuyǒng, nǐ men xiǎng qù ma?",
+              "vi": "Hôm nay thời tiết khá đẹp, cảnh biển cũng rất đẹp. Tôi muốn đi bơi, các bạn có muốn đi không?"
             },
             {
               "speaker": "友美",
               "zh": "我不會游泳。宜文，妳會游泳嗎？",
-              "pinyin": "",
-              "vi": ""
+              "pinyin": "wǒ bù huì yóuyǒng. Yíwén, nǐ huì yóuyǒng ma?",
+              "vi": "Tôi không biết bơi. Yiwen, bạn biết bơi không?"
             },
             {
               "speaker": "宜文",
               "zh": "我會游泳，可是游得不太好。",
-              "pinyin": "",
-              "vi": ""
+              "pinyin": "wǒ huì yóuyǒng, kěshì yóu de bù tài hǎo.",
+              "vi": "Tôi biết bơi, nhưng bơi không được giỏi lắm."
             },
             {
               "speaker": "國安",
               "zh": "我們去跑步，怎麼樣？",
-              "pinyin": "",
-              "vi": ""
+              "pinyin": "wǒmen qù pǎobù, zěnmeyàng?",
+              "vi": "Chúng ta đi chạy bộ thì sao?"
             },
             {
               "speaker": "友美",
               "zh": "我不喜歡跑步，我跑步跑得很慢。",
-              "pinyin": "",
-              "vi": ""
+              "pinyin": "wǒ bù xǐhuān pǎobù, wǒ pǎobù pǎo de hěn màn.",
+              "vi": "Tôi không thích chạy bộ, tôi chạy rất chậm."
             },
             {
               "speaker": "宜文",
               "zh": "打網球怎麼樣？中明說妳的網球打得很好，我們一起去打吧。",
-              "pinyin": "",
-              "vi": ""
+              "pinyin": "dǎ wǎngqiú zěnmeyàng? Zhōngmíng shuō nǐ de wǎngqiú dǎ de hěn hǎo, wǒmen yìqǐ qù dǎ ba.",
+              "vi": "Đánh tennis thì sao? Zhongming nói bạn đánh tennis rất giỏi, chúng ta cùng đi đánh nhé."
             },
             {
               "speaker": "友美",
               "zh": "好啊。",
-              "pinyin": "",
-              "vi": ""
+              "pinyin": "hǎo ā.",
+              "vi": "Được."
             }
           ]
         },
@@ -1086,38 +1086,38 @@
             {
               "speaker": "國安",
               "zh": "聽說這部電影很有趣，我們晚上一起去看，好不好？",
-              "pinyin": "",
-              "vi": ""
+              "pinyin": "tīngshuō zhè bù diànyǐng hěn yǒuqù, wǒmen wǎnshàng yìqǐ qù kàn, hǎo bù hǎo?",
+              "vi": "Nghe nói bộ phim này rất thú vị, tối nay chúng ta cùng đi xem nhé?"
             },
             {
               "speaker": "中明",
               "zh": "我覺得有一點兒累，我想回家休息。",
-              "pinyin": "",
-              "vi": ""
+              "pinyin": "wǒ juéde yǒu yìdiǎnr lèi, wǒ xiǎng huíjiā xiūxí.",
+              "vi": "Tôi cảm thấy hơi mệt, tôi muốn về nhà nghỉ."
             },
             {
               "speaker": "國安",
               "zh": "你不要常常在家上網、看電腦、玩手機，應該去運動。明天我有空，我們可以一起去騎腳踏車。",
-              "pinyin": "",
-              "vi": ""
+              "pinyin": "nǐ bù yào chángcháng zài jiā shàngwǎng, kàn diànnǎo, wán shǒujī, yīnggāi qù yùndòng. míngtiān wǒ yǒukòng, wǒmen kěyǐ yìqǐ qù qí jiǎotàchē.",
+              "vi": "Bạn đừng thường xuyên ở nhà lên mạng, nhìn máy tính và chơi điện thoại; nên đi vận động. Ngày mai tôi rảnh, chúng ta có thể cùng đi xe đạp."
             },
             {
               "speaker": "中明",
               "zh": "可是我只想聽音樂、睡覺。",
-              "pinyin": "",
-              "vi": ""
+              "pinyin": "kěshì wǒ zhǐ xiǎng tīng yīnyuè, shuìjiào.",
+              "vi": "Nhưng tôi chỉ muốn nghe nhạc và ngủ."
             },
             {
               "speaker": "國安",
               "zh": "後天去呢？",
-              "pinyin": "",
-              "vi": ""
+              "pinyin": "hòu tiān qù ne?",
+              "vi": "Thế đi ngày kia thì sao?"
             },
             {
               "speaker": "中明",
               "zh": "這兩天天氣有點兒冷，我們週末去，好嗎？",
-              "pinyin": "",
-              "vi": ""
+              "pinyin": "zhè liǎng tiāntiān qì yǒudiǎnr lěng, wǒmen zhōumò qù, hǎo ma?",
+              "vi": "Hai hôm nay trời hơi lạnh, cuối tuần chúng ta đi nhé?"
             }
           ]
         },
@@ -1132,26 +1132,26 @@
             {
               "speaker": "",
               "zh": "我有幾個好朋友，我們都喜歡學中文、聽音樂、唱歌。",
-              "pinyin": "",
-              "vi": ""
+              "pinyin": "wǒ yǒu jǐ gè hǎo péngyǒu, wǒmen dōu xǐhuān xué zhōngwén, tīng yīnyuè, chànggē.",
+              "vi": "Tôi có vài người bạn tốt, chúng tôi đều thích học tiếng Trung, nghe nhạc và hát."
             },
             {
               "speaker": "",
               "zh": "中明最愛唱歌，他的中文歌唱得很好。",
-              "pinyin": "",
-              "vi": ""
+              "pinyin": "Zhōngmíng zuì ài chànggē, tā de zhōngwén gē chàng de hěn hǎo.",
+              "vi": "Zhongming thích hát nhất, anh ấy hát các bài tiếng Trung rất hay."
             },
             {
               "speaker": "",
               "zh": "平常我們都有點兒忙，可是週末我們常一起去運動，宜文游泳游得不錯，國安的籃球打得很好，我喜歡打網球，有時候我們也一起去看運動比賽。",
-              "pinyin": "",
-              "vi": ""
+              "pinyin": "píng cháng wǒmen dōu yǒudiǎnr máng, kěshì zhōumò wǒmen cháng yìqǐ qù yùndòng, Yíwén yóuyǒng yóu de búcuò, Guó'ān de lánqiú dǎ de hěn hǎo, wǒ xǐhuān dǎ wǎngqiú, yǒushíhòu wǒmen yě yìqǐ qù kàn yùndòng bǐsài.",
+              "vi": "Bình thường chúng tôi đều hơi bận, nhưng cuối tuần thường cùng đi vận động. Yiwen bơi khá tốt, Guoan chơi bóng rổ rất giỏi, tôi thích đánh tennis; đôi khi chúng tôi cũng cùng đi xem thi đấu thể thao."
             },
             {
               "speaker": "",
               "zh": "有這幾個好朋友，我真高興！",
-              "pinyin": "",
-              "vi": ""
+              "pinyin": "yǒu zhè jǐ gè hǎo péngyǒu, wǒ zhēn gāoxìng!",
+              "vi": "Có những người bạn tốt này, tôi thật sự rất vui!"
             }
           ]
         }
@@ -1177,50 +1177,50 @@
             {
               "speaker": "友美",
               "zh": "元真，我們明天幾點去找妳的韓國朋友？",
-              "pinyin": "",
-              "vi": ""
+              "pinyin": "Yuánzhēn, wǒmen míngtiān jǐ diǎn qù zhǎo nǐ de hánguó péngyǒu?",
+              "vi": "Yuanzhen, ngày mai mấy giờ chúng ta đi gặp người bạn Hàn Quốc của bạn?"
             },
             {
               "speaker": "元真",
               "zh": "我們下午四點要到天美飯店，她在那裡等我們。",
-              "pinyin": "",
-              "vi": ""
+              "pinyin": "wǒmen xiàwǔ sì diǎn yào dào Tiānměi Fàndiàn, tā zài nàlǐ děng wǒmen.",
+              "vi": "Bốn giờ chiều chúng ta phải đến khách sạn Tianmei, cô ấy sẽ đợi chúng ta ở đó."
             },
             {
               "speaker": "友美",
               "zh": "我們要怎麼去？坐捷運還是坐公車？",
-              "pinyin": "",
-              "vi": ""
+              "pinyin": "wǒmen yào zěnme qù? zuò jiéyùn háishì zuò gōng chē?",
+              "vi": "Chúng ta đi thế nào? Đi MRT hay xe buýt?"
             },
             {
               "speaker": "元真",
               "zh": "聽說那家飯店不遠，我想我們可以從學校走路去。",
-              "pinyin": "",
-              "vi": ""
+              "pinyin": "tīngshuō nà jiā fàndiàn bù yuǎn, wǒ xiǎng wǒmen kěyǐ cóng xuéxiào zǒulù qù.",
+              "vi": "Nghe nói khách sạn đó không xa, tôi nghĩ chúng ta có thể đi bộ từ trường tới."
             },
             {
               "speaker": "友美",
               "zh": "可是我不知道怎麼走，妳知道嗎？",
-              "pinyin": "",
-              "vi": ""
+              "pinyin": "kěshì wǒ bù zhīdào zěnme zǒu, nǐ zhīdào ma?",
+              "vi": "Nhưng tôi không biết đi thế nào, bạn biết không?"
             },
             {
               "speaker": "元真",
               "zh": "我也不知道。我們可以先上網看地圖。",
-              "pinyin": "",
-              "vi": ""
+              "pinyin": "wǒ yě bù zhīdào. wǒmen kěyǐ xiān shàngwǎng kàn dìtú.",
+              "vi": "Tôi cũng không biết. Chúng ta có thể lên mạng xem bản đồ trước."
             },
             {
               "speaker": "友美",
               "zh": "啊！上課了！我們先上課吧。",
-              "pinyin": "",
-              "vi": ""
+              "pinyin": "ā! shàngkè le! wǒmen xiān shàngkè ba.",
+              "vi": "A! Vào học rồi! Chúng ta học trước đi."
             },
             {
               "speaker": "元真",
               "zh": "好。",
-              "pinyin": "",
-              "vi": ""
+              "pinyin": "hǎo.",
+              "vi": "Được."
             }
           ]
         },
@@ -1237,44 +1237,44 @@
             {
               "speaker": "元真",
               "zh": "友美，妳看，天美飯店在大學路。我現在知道怎麼走了。",
-              "pinyin": "",
-              "vi": ""
+              "pinyin": "Yǒuměi, nǐ kàn, Tiānměi Fàndiàn zài Dàxué Lù. wǒ xiànzài zhīdào zěnme zǒu le.",
+              "vi": "Yumi, bạn xem, khách sạn Tianmei ở đường Daxue. Bây giờ tôi biết đi thế nào rồi."
             },
             {
               "speaker": "友美",
               "zh": "啊！天美飯店在這裡！我知道這個地方，附近有郵局跟超級市場。",
-              "pinyin": "",
-              "vi": ""
+              "pinyin": "ā! Tiānměi Fàndiàn zài zhèlǐ! wǒ zhīdào zhè gè dìfāng, fùjìn yǒu yóujú gēn chāojí shìchǎng.",
+              "vi": "A! Khách sạn Tianmei ở đây! Tôi biết chỗ này, gần đó có bưu điện và siêu thị."
             },
             {
               "speaker": "元真",
               "zh": "我想走路去一定沒問題。",
-              "pinyin": "",
-              "vi": ""
+              "pinyin": "wǒ xiǎng zǒulù qù yídìng méiwèntí.",
+              "vi": "Tôi nghĩ đi bộ tới chắc chắn không vấn đề gì."
             },
             {
               "speaker": "友美",
               "zh": "可是我覺得那裡有點兒遠，走路去太累了。",
-              "pinyin": "",
-              "vi": ""
+              "pinyin": "kěshì wǒ juéde nàlǐ yǒudiǎnr yuǎn, zǒulù qù tài lèi le.",
+              "vi": "Nhưng tôi thấy chỗ đó hơi xa, đi bộ sẽ mệt quá."
             },
             {
               "speaker": "元真",
               "zh": "妳想怎麼去？",
-              "pinyin": "",
-              "vi": ""
+              "pinyin": "nǐ xiǎng zěnme qù?",
+              "vi": "Bạn muốn đi thế nào?"
             },
             {
               "speaker": "友美",
               "zh": "坐捷運又方便又舒服，我們可以坐捷運。",
-              "pinyin": "",
-              "vi": ""
+              "pinyin": "zuò jiéyùn yòu fāngbiàn yòu shūfú, wǒmen kěyǐ zuò jiéyùn.",
+              "vi": "Đi MRT vừa tiện vừa thoải mái, chúng ta có thể đi MRT."
             },
             {
               "speaker": "元真",
               "zh": "好，我們明天坐捷運去吧。",
-              "pinyin": "",
-              "vi": ""
+              "pinyin": "hǎo, wǒmen míngtiān zuò jiéyùn qù ba.",
+              "vi": "Được, ngày mai chúng ta đi MRT nhé."
             }
           ]
         },
@@ -1289,32 +1289,32 @@
             {
               "speaker": "",
               "zh": "我家附近有三條捷運線，一條紅的、一條綠的和一條藍的。",
-              "pinyin": "",
-              "vi": ""
+              "pinyin": "wǒ jiā fùjìn yǒu sān tiáo jiéyùn xiàn, yì tiáo hóng de, yì tiáo lǜ de hé yì tiáo lán de.",
+              "vi": "Gần nhà tôi có ba tuyến MRT: một tuyến đỏ, một tuyến xanh lá và một tuyến xanh lam."
             },
             {
               "speaker": "",
               "zh": "我平常坐紅線去學校上課，週末也坐捷運去運動、看電影。",
-              "pinyin": "",
-              "vi": ""
+              "pinyin": "wǒ píng cháng zuò hóng xiàn qù xuéxiào shàngkè, zhōumò yě zuò jiéyùn qù yùndòng, kàn diànyǐng.",
+              "vi": "Bình thường tôi đi tuyến đỏ đến trường học; cuối tuần cũng đi MRT để vận động và xem phim."
             },
             {
               "speaker": "",
               "zh": "朋友常來找我，他們都覺得坐捷運來我家，又快又方便。",
-              "pinyin": "",
-              "vi": ""
+              "pinyin": "péngyǒu cháng lái zhǎo wǒ, tā men dōu juéde zuò jiéyùn lái wǒ jiā, yòu kuài yòu fāngbiàn.",
+              "vi": "Bạn bè thường đến tìm tôi; họ đều thấy đi MRT đến nhà tôi vừa nhanh vừa tiện."
             },
             {
               "speaker": "",
               "zh": "從我家到機場也不遠，開車去、坐捷運去都可以。",
-              "pinyin": "",
-              "vi": ""
+              "pinyin": "cóng wǒ jiā dào jīchǎng yě bù yuǎn, kāichē qù, zuò jiéyùn qù dōu kěyǐ.",
+              "vi": "Từ nhà tôi đến sân bay cũng không xa, lái xe hay đi MRT đều được."
             },
             {
               "speaker": "",
               "zh": "機場附近的風景也很漂亮，我常常去看風景、看飛機。",
-              "pinyin": "",
-              "vi": ""
+              "pinyin": "jīchǎng fùjìn de fēngjǐng yě hěn piāoliàng, wǒ chángcháng qù kàn fēngjǐng, kàn fēijī.",
+              "vi": "Cảnh gần sân bay cũng rất đẹp, tôi thường đến ngắm cảnh và xem máy bay."
             }
           ]
         }
@@ -1340,56 +1340,56 @@
             {
               "speaker": "宜文",
               "zh": "元真，妳的這條裙子真好看，我很喜歡。",
-              "pinyin": "",
-              "vi": ""
+              "pinyin": "Yuánzhēn, nǐ de zhè tiáo qúnzi zhēn hǎokàn, wǒ hěn xǐhuān.",
+              "vi": "Yuanzhen, chiếc váy này của bạn đẹp thật, tôi rất thích."
             },
             {
               "speaker": "元真",
               "zh": "謝謝，這是我去年的生日禮物。",
-              "pinyin": "",
-              "vi": ""
+              "pinyin": "xièxie, zhè shì wǒ qùnián de shēngrì lǐwù.",
+              "vi": "Cảm ơn, đây là quà sinh nhật năm ngoái của tôi."
             },
             {
               "speaker": "宜文",
               "zh": "聽說這個牌子的東西很貴，可是很多人喜歡。",
-              "pinyin": "",
-              "vi": ""
+              "pinyin": "tīngshuō zhè gè pái zi de dōngxī hěn guì, kěshì hěn duō rén xǐhuān.",
+              "vi": "Nghe nói đồ của thương hiệu này rất đắt, nhưng rất nhiều người thích."
             },
             {
               "speaker": "元真",
               "zh": "是啊，因為這個牌子很有名，衣服、褲子和裙子也都很好看，所以很多人買。",
-              "pinyin": "",
-              "vi": ""
+              "pinyin": "shì ā, yīnwèi zhè gè pái zi hěn yǒu míng, yīfú, kùzi hé qúnzi yě dōu hěn hǎokàn, suǒyǐ hěn duō rén mǎi.",
+              "vi": "Đúng vậy, vì thương hiệu này rất nổi tiếng, quần áo, quần và váy đều đẹp nên nhiều người mua."
             },
             {
               "speaker": "宜文",
               "zh": "妳知道去哪裡買這個牌子的衣服嗎？",
-              "pinyin": "",
-              "vi": ""
+              "pinyin": "nǐ zhīdào qù nǎlǐ mǎi zhè gè pái zi de yīfú ma?",
+              "vi": "Bạn biết đi đâu mua quần áo của thương hiệu này không?"
             },
             {
               "speaker": "元真",
               "zh": "知道，百貨公司都有，不難找。",
-              "pinyin": "",
-              "vi": ""
+              "pinyin": "zhīdào, bǎihuò gōngsī dōu yǒu, bù nán zhǎo.",
+              "vi": "Biết, các trung tâm bách hóa đều có, không khó tìm."
             },
             {
               "speaker": "宜文",
               "zh": "我很想去看，可是我最近胖了五公斤，我怕衣服不好買。",
-              "pinyin": "",
-              "vi": ""
+              "pinyin": "wǒ hěn xiǎng qù kàn, kěshì wǒ zuìjìn pàng le wǔ gōng jīn, wǒ pà yīfú bù hǎo mǎi.",
+              "vi": "Tôi rất muốn đi xem, nhưng gần đây tôi tăng năm ký, tôi sợ khó mua quần áo."
             },
             {
               "speaker": "元真",
               "zh": "妳胖了嗎？我不覺得啊，我跟妳一起去看。我也想去買今年夏天的新衣服。",
-              "pinyin": "",
-              "vi": ""
+              "pinyin": "nǐ pàng le ma? wǒ bù juéde ā, wǒ gēn nǐ yìqǐ qù kàn. wǒ yě xiǎng qù mǎi jīnnián xiàtiān de xīn yīfú.",
+              "vi": "Bạn tăng cân à? Tôi không thấy vậy. Tôi đi xem cùng bạn. Tôi cũng muốn mua quần áo mới cho mùa hè năm nay."
             },
             {
               "speaker": "宜文",
               "zh": "好，我們找時間一起去。",
-              "pinyin": "",
-              "vi": ""
+              "pinyin": "hǎo, wǒmen zhǎo shíjiān yìqǐ qù.",
+              "vi": "Được, chúng ta tìm thời gian cùng đi."
             }
           ]
         },
@@ -1406,56 +1406,56 @@
             {
               "speaker": "宜文",
               "zh": "妳看，這條黃色的褲子不錯吧？",
-              "pinyin": "",
-              "vi": ""
+              "pinyin": "nǐ kàn, zhè tiáo huángsè de kùzi búcuò ba?",
+              "vi": "Bạn xem, chiếc quần màu vàng này khá đẹp nhỉ?"
             },
             {
               "speaker": "元真",
               "zh": "很好看。這條藍的也很漂亮，藍色是今年很流行的顏色。",
-              "pinyin": "",
-              "vi": ""
+              "pinyin": "hěn hǎokàn. zhè tiáo lán de yě hěn piāoliàng, lánsè shì jīnnián hěn liú xíng de yánsè.",
+              "vi": "Rất đẹp. Chiếc màu xanh lam này cũng rất đẹp; xanh lam là màu rất thịnh hành năm nay."
             },
             {
               "speaker": "宜文",
               "zh": "這兩條我都去穿穿看。",
-              "pinyin": "",
-              "vi": ""
+              "pinyin": "zhè liǎng tiáo wǒ dōu qù chuān chuān kàn.",
+              "vi": "Hai chiếc này tôi đều đi thử xem."
             },
             {
               "speaker": "元真",
               "zh": "妳覺得怎麼樣？",
-              "pinyin": "",
-              "vi": ""
+              "pinyin": "nǐ juéde zěnmeyàng?",
+              "vi": "Bạn thấy thế nào?"
             },
             {
               "speaker": "宜文",
               "zh": "都太短，也太小了。",
-              "pinyin": "",
-              "vi": ""
+              "pinyin": "dōu tài duǎn, yě tài xiǎo le.",
+              "vi": "Cả hai đều quá ngắn và cũng quá nhỏ."
             },
             {
               "speaker": "元真",
               "zh": "沒關係，我們可以下個週末再來看。對了，妳要買鞋子嗎？",
-              "pinyin": "",
-              "vi": ""
+              "pinyin": "méiguānxì, wǒmen kěyǐ xià gè zhōumò zài lái kàn. duì le, nǐ yào mǎi xiézi ma?",
+              "vi": "Không sao, cuối tuần sau chúng ta có thể quay lại xem. À, bạn có muốn mua giày không?"
             },
             {
               "speaker": "宜文",
               "zh": "是啊，我想買一雙黑色的。",
-              "pinyin": "",
-              "vi": ""
+              "pinyin": "shì ā, wǒ xiǎng mǎi yì shuāng hēisè de.",
+              "vi": "Có, tôi muốn mua một đôi màu đen."
             },
             {
               "speaker": "元真",
               "zh": "鞋子都在一樓，我們到樓下去吧！九點了，百貨公司快要關了。",
-              "pinyin": "",
-              "vi": ""
+              "pinyin": "xiézi dōu zài yī lóu, wǒmen dào lóuxià qù ba! jiǔ diǎn le, bǎihuò gōngsī kuài yào guān le.",
+              "vi": "Giày đều ở tầng một, chúng ta xuống dưới đi! Chín giờ rồi, trung tâm bách hóa sắp đóng cửa."
             },
             {
               "speaker": "宜文",
               "zh": "電梯在那裡！我們現在去買。",
-              "pinyin": "",
-              "vi": ""
+              "pinyin": "diàn tī zài nàlǐ! wǒmen xiànzài qù mǎi.",
+              "vi": "Thang máy ở kia! Bây giờ chúng ta đi mua."
             }
           ]
         },
@@ -1470,20 +1470,20 @@
             {
               "speaker": "",
               "zh": "百貨公司裡有很多衣服、鞋子和皮包，都是最新的，所以很多年輕女生喜歡到百貨公司去，漂亮的、流行的衣服，她們都想穿穿看。",
-              "pinyin": "",
-              "vi": ""
+              "pinyin": "bǎihuò gōngsī lǐ yǒu hěn duō yīfú, xiézi hé píbāo, dōu shì zuì xīn de, suǒyǐ hěn duō niánqīng nǚshēng xǐhuān dào bǎihuò gōngsī qù, piāoliàng de, liú xíng de yīfú, tā men dōu xiǎng chuān chuān kàn.",
+              "vi": "Trong trung tâm bách hóa có rất nhiều quần áo, giày và túi xách, đều là mẫu mới nhất; vì vậy nhiều cô gái trẻ thích đến đó và muốn thử những bộ quần áo đẹp, hợp thời trang."
             },
             {
               "speaker": "",
               "zh": "很多年輕男生愛在書店看汽車雜誌，汽車很貴，他們不一定可以買新車，可是都看得很開心。",
-              "pinyin": "",
-              "vi": ""
+              "pinyin": "hěn duō niánqīng nánshēng ài zài shū diàn kàn qìchē zá zhì, qìchē hěn guì, tā men bùyídìng kěyǐ mǎi xīn chē, kěshì dōu kàn de hěn kāixīn.",
+              "vi": "Nhiều chàng trai trẻ thích xem tạp chí ô tô ở hiệu sách. Ô tô rất đắt, họ chưa chắc mua được xe mới, nhưng vẫn xem rất vui."
             },
             {
               "speaker": "",
               "zh": "我覺得有的舊東西很不錯，有的新東西也很有趣，我很喜歡看新車、新衣服，可是因為我的錢不多，所以我不常買。",
-              "pinyin": "",
-              "vi": ""
+              "pinyin": "wǒ juéde yǒu de jiù dōngxī hěn búcuò, yǒu de xīn dōngxī yě hěn yǒuqù, wǒ hěn xǐhuān kàn xīn chē, xīn yīfú, kěshì yīnwèi wǒ de qián bù duō, suǒyǐ wǒ bù cháng mǎi.",
+              "vi": "Tôi thấy có những đồ cũ rất tốt, và một số đồ mới cũng rất thú vị. Tôi rất thích xem xe mới và quần áo mới, nhưng vì không có nhiều tiền nên tôi không thường mua."
             }
           ]
         }
@@ -1509,50 +1509,50 @@
             {
               "speaker": "國安",
               "zh": "友美，這幾個句子的意思我不太懂，妳可以教我嗎？",
-              "pinyin": "",
-              "vi": ""
+              "pinyin": "Yǒuměi, zhè jǐ gè jùzi de yìsī wǒ bù tài dǒng, nǐ kěyǐ jiāo wǒ ma?",
+              "vi": "Yumi, ý nghĩa của mấy câu này tôi không hiểu lắm, bạn có thể dạy tôi không?"
             },
             {
               "speaker": "友美",
               "zh": "我覺得有點兒難，我也不太懂。",
-              "pinyin": "",
-              "vi": ""
+              "pinyin": "wǒ juéde yǒudiǎnr nán, wǒ yě bù tài dǒng.",
+              "vi": "Tôi thấy hơi khó, tôi cũng không hiểu lắm."
             },
             {
               "speaker": "國安",
               "zh": "這課真的不好學。",
-              "pinyin": "",
-              "vi": ""
+              "pinyin": "zhè kè zhēn de bù hǎo xué.",
+              "vi": "Bài này thật sự khó học."
             },
             {
               "speaker": "友美",
               "zh": "我們可以去問家樂，他非常聰明，我想他懂。",
-              "pinyin": "",
-              "vi": ""
+              "pinyin": "wǒmen kěyǐ qù wèn Jiālè, tā fēicháng cōngmíng, wǒ xiǎng tā dǒng.",
+              "vi": "Chúng ta có thể đi hỏi Jiale, cậu ấy rất thông minh, tôi nghĩ cậu ấy hiểu."
             },
             {
               "speaker": "國安",
               "zh": "那麼我們現在去找他。",
-              "pinyin": "",
-              "vi": ""
+              "pinyin": "Nàme wǒmen xiànzài qù zhǎo tā.",
+              "vi": "Vậy bây giờ chúng ta đi tìm cậu ấy."
             },
             {
               "speaker": "友美",
               "zh": "現在他在上書法課，我們四點去吧。",
-              "pinyin": "",
-              "vi": ""
+              "pinyin": "xiànzài tā zài shàng shū fǎ kè, wǒmen sì diǎn qù ba.",
+              "vi": "Bây giờ cậu ấy đang học thư pháp, bốn giờ chúng ta đi nhé."
             },
             {
               "speaker": "國安",
               "zh": "可是從四點到五點半我要上英文課，六點去，怎麼樣？",
-              "pinyin": "",
-              "vi": ""
+              "pinyin": "kěshì cóng sì diǎn dào wǔ diǎn bàn wǒ yào shàng yīngwén kè, liù diǎn qù, zěnmeyàng?",
+              "vi": "Nhưng từ bốn giờ đến năm giờ rưỡi tôi phải học tiếng Anh; sáu giờ đi thì sao?"
             },
             {
               "speaker": "友美",
               "zh": "好。我先回宿舍做功課，再跟你一起去找他。",
-              "pinyin": "",
-              "vi": ""
+              "pinyin": "hǎo. wǒ xiān huí sùshè zuò gōngkè, zài gēn nǐ yìqǐ qù zhǎo tā.",
+              "vi": "Được. Tôi về ký túc xá làm bài trước, rồi cùng bạn đi tìm cậu ấy."
             }
           ]
         },
@@ -1569,50 +1569,50 @@
             {
               "speaker": "中明",
               "zh": "期中考快要到了，老師說我們可以去圖書館對面的大教室看書。",
-              "pinyin": "",
-              "vi": ""
+              "pinyin": "qīzhōngkǎo kuài yào dào le, lǎoshī shuō wǒmen kěyǐ qù túshūguǎn duìmiàn de dà jiàoshì kàn shū.",
+              "vi": "Kỳ thi giữa kỳ sắp đến, thầy/cô nói chúng ta có thể đến phòng học lớn đối diện thư viện để học."
             },
             {
               "speaker": "家樂",
               "zh": "太好了！在那裡看書很舒服。我們每天都能用那間教室嗎？",
-              "pinyin": "",
-              "vi": ""
+              "pinyin": "tài hǎo le! zài nàlǐ kàn shū hěn shūfú. wǒmen měi tiān dōu néng yòng nà jiān jiàoshì ma?",
+              "vi": "Tuyệt quá! Học ở đó rất thoải mái. Ngày nào chúng ta cũng có thể dùng phòng học đó sao?"
             },
             {
               "speaker": "中明",
               "zh": "我們班只能禮拜一跟禮拜二下午用。",
-              "pinyin": "",
-              "vi": ""
+              "pinyin": "wǒmen bān zhǐ néng lǐ bài yī gēn lǐ bài èr xiàwǔ yòng.",
+              "vi": "Lớp chúng ta chỉ có thể dùng vào chiều thứ Hai và thứ Ba."
             },
             {
               "speaker": "家樂",
               "zh": "可是這些時間我都有語言交換，不能去。",
-              "pinyin": "",
-              "vi": ""
+              "pinyin": "kěshì zhèxiē shíjiān wǒ dōu yǒu yǔyán jiāohuàn, bù néng qù.",
+              "vi": "Nhưng những thời gian đó tôi đều có buổi trao đổi ngôn ngữ, không thể đi."
             },
             {
               "speaker": "中明",
               "zh": "別的時間可以嗎？",
-              "pinyin": "",
-              "vi": ""
+              "pinyin": "biéde shíjiān kěyǐ ma?",
+              "vi": "Thời gian khác có được không?"
             },
             {
               "speaker": "家樂",
               "zh": "我朋友最近比較忙，別的時間他沒有空。",
-              "pinyin": "",
-              "vi": ""
+              "pinyin": "wǒ péngyǒu zuìjìn bǐjiào máng, biéde shíjiān tā méi yǒukòng.",
+              "vi": "Gần đây bạn tôi khá bận, thời gian khác cậu ấy không rảnh."
             },
             {
               "speaker": "中明",
               "zh": "我們去問老師，也許他可以幫你。",
-              "pinyin": "",
-              "vi": ""
+              "pinyin": "wǒmen qù wèn lǎoshī, yěxǔ tā kěyǐ bāng nǐ.",
+              "vi": "Chúng ta đi hỏi thầy/cô, có lẽ thầy/cô có thể giúp bạn."
             },
             {
               "speaker": "家樂",
               "zh": "好，希望老師可以幫我。",
-              "pinyin": "",
-              "vi": ""
+              "pinyin": "hǎo, xīwàng lǎoshī kěyǐ bāng wǒ.",
+              "vi": "Được, hy vọng thầy/cô có thể giúp tôi."
             }
           ]
         },
@@ -1627,20 +1627,20 @@
             {
               "speaker": "",
               "zh": "這個學期開始，從星期一到星期五我都有華語課，每天從上午八點四十分到中午十二點上課，下午一點寫功課，有時候也跟同學練習說中文。",
-              "pinyin": "",
-              "vi": ""
+              "pinyin": "zhè gè xué qī kāishǐ, cóng xīngqí yī dào xīngqí wǔ wǒ dōu yǒu Huáyǔ kè, měi tiān cóng shàngwǔ bā diǎn sì shí fēn dào zhōngwǔ shí èr diǎn shàngkè, xiàwǔ yìdiǎn xiě gōngkè, yǒushíhòu yě gēn tóngxué liànxí shuō zhōngwén.",
+              "vi": "Bắt đầu từ học kỳ này, từ thứ Hai đến thứ Sáu tôi đều có lớp Hoa ngữ. Mỗi ngày học từ 8 giờ 40 sáng đến 12 giờ trưa; 1 giờ chiều làm bài tập, đôi khi cũng luyện nói tiếng Trung với bạn cùng lớp."
             },
             {
               "speaker": "",
               "zh": "最近我的台灣朋友想學日文，請我教他，我也請他教我中文。現在我非常忙，沒有很多時間讀書，可是因為有語言交換，所以我的中文進步了。",
-              "pinyin": "",
-              "vi": ""
+              "pinyin": "zuìjìn wǒ de Táiwān péngyǒu xiǎng xué rì wén, qǐng wǒ jiāo tā, wǒ yě qǐng tā jiāo wǒ zhōngwén. xiànzài wǒ fēicháng máng, méi yǒu hěn duō shíjiān dúshū, kěshì yīnwèi yǒu yǔyán jiāohuàn, suǒyǐ wǒ de zhōngwén jìnbù le.",
+              "vi": "Gần đây người bạn Đài Loan của tôi muốn học tiếng Nhật và nhờ tôi dạy; tôi cũng nhờ cậu ấy dạy tiếng Trung cho tôi. Bây giờ tôi rất bận, không có nhiều thời gian học, nhưng nhờ trao đổi ngôn ngữ nên tiếng Trung của tôi đã tiến bộ."
             },
             {
               "speaker": "",
               "zh": "下個星期華語課有期中考，我有一點兒緊張，所以每天晚上都讀書，也練習寫字，希望下個星期的考試能考得很好。",
-              "pinyin": "",
-              "vi": ""
+              "pinyin": "xià gè xīngqí Huáyǔ kè yǒu qīzhōngkǎo, wǒ yǒu yìdiǎnr jǐnzhāng, suǒyǐ měi tiān wǎnshàng dōu dúshū, yě liànxí xiězì, xīwàng xià gè xīngqí de kǎoshì néng kǎo de hěn hǎo.",
+              "vi": "Tuần sau lớp Hoa ngữ có thi giữa kỳ, tôi hơi căng thẳng nên tối nào cũng học và luyện viết chữ, hy vọng kỳ thi tuần sau có thể đạt kết quả tốt."
             }
           ]
         }
@@ -1666,56 +1666,56 @@
             {
               "speaker": "元真",
               "zh": "老師，國安今天要請假。他發燒了，不能來上課。",
-              "pinyin": "",
-              "vi": ""
+              "pinyin": "lǎoshī, Guó'ān jīntiān yào qǐngjià. tā fāshāo le, bù néng lái shàngkè.",
+              "vi": "Thưa thầy/cô, hôm nay Guoan xin nghỉ. Cậu ấy bị sốt, không thể đến lớp."
             },
             {
               "speaker": "老師",
               "zh": "他發燒了？那他應該去看醫生。",
-              "pinyin": "",
-              "vi": ""
+              "pinyin": "tā fāshāo le? nà tā yīnggāi qù kàn yīshēng.",
+              "vi": "Cậu ấy bị sốt à? Vậy cậu ấy nên đi khám bác sĩ."
             },
             {
               "speaker": "元真",
               "zh": "國安跟我說，他今天要去看醫生，他家附近有一家不錯的醫院。",
-              "pinyin": "",
-              "vi": ""
+              "pinyin": "Guó'ān gēn wǒ shuō, tā jīntiān yào qù kàn yīshēng, tā jiā fùjìn yǒu yī jiā búcuò de yīyuàn.",
+              "vi": "Guoan nói với tôi hôm nay cậu ấy sẽ đi khám bác sĩ; gần nhà cậu ấy có một bệnh viện khá tốt."
             },
             {
               "speaker": "老師",
               "zh": "最近很多人感冒，你們要戴口罩，也要常常洗手。",
-              "pinyin": "",
-              "vi": ""
+              "pinyin": "zuìjìn hěn duō rén gǎnmào, nǐmen yào dài kǒuzhào, yě yào chángcháng xǐ shǒu.",
+              "vi": "Gần đây nhiều người bị cảm, các em phải đeo khẩu trang và thường xuyên rửa tay."
             },
             {
               "speaker": "元真",
               "zh": "老師，我很健康，不常生病。",
-              "pinyin": "",
-              "vi": ""
+              "pinyin": "lǎoshī, wǒ hěn jiànkāng, bù cháng shēngbìng.",
+              "vi": "Thưa thầy/cô, em rất khỏe, không thường bị bệnh."
             },
             {
               "speaker": "老師",
               "zh": "平常不生病的人也要注意。",
-              "pinyin": "",
-              "vi": ""
+              "pinyin": "píng cháng bù shēngbìng de rén yě yào zhùyì.",
+              "vi": "Người bình thường không hay bệnh cũng phải chú ý."
             },
             {
               "speaker": "元真",
               "zh": "對，我應該多注意身體健康。",
-              "pinyin": "",
-              "vi": ""
+              "pinyin": "duì, wǒ yīnggāi duō zhùyì shēntǐ jiànkāng.",
+              "vi": "Đúng, em nên chú ý sức khỏe nhiều hơn."
             },
             {
               "speaker": "老師",
               "zh": "妳可以帶一些水果去看國安，跟他說應該多喝水，也要多休息。",
-              "pinyin": "",
-              "vi": ""
+              "pinyin": "nǐ kěyǐ dài yìxiē shuǐguǒ qù kàn Guó'ān, gēn tā shuō yīnggāi duō hē shuǐ, yě yào duō xiūxí.",
+              "vi": "Em có thể mang một ít trái cây đến thăm Guoan, nói với cậu ấy nên uống nhiều nước và nghỉ ngơi nhiều."
             },
             {
               "speaker": "元真",
               "zh": "好，我明天帶一些水果去看他。",
-              "pinyin": "",
-              "vi": ""
+              "pinyin": "hǎo, wǒ míngtiān dài yìxiē shuǐguǒ qù kàn tā.",
+              "vi": "Vâng, ngày mai em sẽ mang ít trái cây đến thăm cậu ấy."
             }
           ]
         },
@@ -1732,62 +1732,62 @@
             {
               "speaker": "醫生",
               "zh": "你覺得哪裡不舒服？",
-              "pinyin": "",
-              "vi": ""
+              "pinyin": "nǐ juéde nǎlǐ bù shūfú?",
+              "vi": "Bạn cảm thấy chỗ nào không khỏe?"
             },
             {
               "speaker": "國安",
               "zh": "我咳嗽、頭痛，鼻子也不舒服。",
-              "pinyin": "",
-              "vi": ""
+              "pinyin": "wǒ hāi sòu, tóu tòng, bí zi yě bù shūfú.",
+              "vi": "Tôi ho, đau đầu, mũi cũng khó chịu."
             },
             {
               "speaker": "醫生",
               "zh": "最近天氣冷了，很多人感冒了。",
-              "pinyin": "",
-              "vi": ""
+              "pinyin": "zuìjìn tiānqì lěng le, hěn duō rén gǎnmào le.",
+              "vi": "Gần đây trời lạnh, nhiều người bị cảm."
             },
             {
               "speaker": "國安",
               "zh": "對啊！聽說我們學校感冒、發燒的學生很多。",
-              "pinyin": "",
-              "vi": ""
+              "pinyin": "duì ā! tīngshuō wǒmen xuéxiào gǎnmào, fāshāo de xuéshēng hěn duō.",
+              "vi": "Đúng vậy! Nghe nói trường chúng tôi có rất nhiều học sinh bị cảm và sốt."
             },
             {
               "speaker": "醫生",
               "zh": "最近也有很多人肚子痛。",
-              "pinyin": "",
-              "vi": ""
+              "pinyin": "zuìjìn yě yǒu hěn duō rén dùzǐ tòng.",
+              "vi": "Gần đây cũng có nhiều người đau bụng."
             },
             {
               "speaker": "國安",
               "zh": "是因為吃的東西不乾淨嗎？",
-              "pinyin": "",
-              "vi": ""
+              "pinyin": "shì yīnwèi chī de dōngxī bù gānjìng ma?",
+              "vi": "Có phải vì đồ ăn không sạch không?"
             },
             {
               "speaker": "醫生",
               "zh": "不是，這也是因為感冒。",
-              "pinyin": "",
-              "vi": ""
+              "pinyin": "bù shì, zhè yě shì yīnwèi gǎnmào.",
+              "vi": "Không, đây cũng là do cảm."
             },
             {
               "speaker": "國安",
               "zh": "請問我需要吃藥嗎？",
-              "pinyin": "",
-              "vi": ""
+              "pinyin": "qǐngwèn wǒ xūyào chī yào ma?",
+              "vi": "Xin hỏi tôi có cần uống thuốc không?"
             },
             {
               "speaker": "醫生",
               "zh": "我會給你三天的藥。你要記得多喝一點兒水，要是發燒了，就吃紅色的藥。",
-              "pinyin": "",
-              "vi": ""
+              "pinyin": "wǒ huì gěi nǐ sān tiān de yào. nǐ yào jìdé duō hē yìdiǎnr shuǐ, yàoshì fāshāo le, jiù chī hóngsè de yào.",
+              "vi": "Tôi sẽ cho bạn thuốc dùng trong ba ngày. Bạn nhớ uống nhiều nước; nếu bị sốt thì uống thuốc màu đỏ."
             },
             {
               "speaker": "國安",
               "zh": "好，謝謝醫生。",
-              "pinyin": "",
-              "vi": ""
+              "pinyin": "hǎo, xièxie yīshēng.",
+              "vi": "Vâng, cảm ơn bác sĩ."
             }
           ]
         },
@@ -1802,38 +1802,38 @@
             {
               "speaker": "",
               "zh": "最近感冒的人很多，我的同學國安也感冒了，今天開始發燒了。",
-              "pinyin": "",
-              "vi": ""
+              "pinyin": "zuìjìn gǎnmào de rén hěn duō, wǒ de tóngxué Guó'ān yě gǎnmào le, jīntiān kāishǐ fāshāo le.",
+              "vi": "Gần đây nhiều người bị cảm; bạn cùng lớp của tôi là Guoan cũng bị cảm, hôm nay bắt đầu sốt."
             },
             {
               "speaker": "",
               "zh": "他打電話跟我說，他不能來上課，請我幫他請假。",
-              "pinyin": "",
-              "vi": ""
+              "pinyin": "tā dǎdiànhuà gēn wǒ shuō, tā bù néng lái shàngkè, qǐng wǒ bāng tā qǐngjià.",
+              "vi": "Cậu ấy gọi điện nói với tôi rằng không thể đến lớp và nhờ tôi xin nghỉ giúp."
             },
             {
               "speaker": "",
               "zh": "我很擔心他，請他去看醫生，也告訴他要聽醫生的話，不要忘記多喝水、多休息。",
-              "pinyin": "",
-              "vi": ""
+              "pinyin": "wǒ hěn dān xīn tā, qǐng tā qù kàn yīshēng, yě gàosù tā yào tīng yīshēng de huà, bù yào wàng jì duō hē shuǐ, duō xiūxí.",
+              "vi": "Tôi rất lo cho cậu ấy, bảo cậu ấy đi khám bác sĩ và dặn phải nghe lời bác sĩ, đừng quên uống nhiều nước và nghỉ ngơi nhiều."
             },
             {
               "speaker": "",
               "zh": "他說他會去看醫生，請我們不要擔心，如果他好了，就會來學校上課。",
-              "pinyin": "",
-              "vi": ""
+              "pinyin": "tā shuō tā huì qù kàn yīshēng, qǐng wǒmen bù yào dān xīn, rúguǒ tā hǎo le, jiù huì lái xuéxiào shàngkè.",
+              "vi": "Cậu ấy nói sẽ đi khám và bảo chúng tôi đừng lo; nếu khỏe lại thì sẽ đến trường học."
             },
             {
               "speaker": "",
               "zh": "今天我要帶一些水果去看他，也會跟他說今天的功課。",
-              "pinyin": "",
-              "vi": ""
+              "pinyin": "jīntiān wǒ yào dài yìxiē shuǐguǒ qù kàn tā, yě huì gēn tā shuō jīntiān de gōngkè.",
+              "vi": "Hôm nay tôi sẽ mang một ít trái cây đến thăm cậu ấy và cũng nói cho cậu ấy biết bài tập hôm nay."
             },
             {
               "speaker": "",
               "zh": "我們都希望他明天能回學校上課。",
-              "pinyin": "",
-              "vi": ""
+              "pinyin": "wǒmen dōu xīwàng tā míngtiān néng huí xuéxiào shàngkè.",
+              "vi": "Chúng tôi đều hy vọng ngày mai cậu ấy có thể trở lại trường học."
             }
           ]
         }
@@ -1859,62 +1859,62 @@
             {
               "speaker": "宜文",
               "zh": "友美，今天的功課妳寫了嗎？",
-              "pinyin": "",
-              "vi": ""
+              "pinyin": "Yǒuměi, jīntiān de gōngkè nǐ xiě le ma?",
+              "vi": "Yumi, bài tập hôm nay bạn làm chưa?"
             },
             {
               "speaker": "友美",
               "zh": "我已經寫了，我現在在寫卡片。",
-              "pinyin": "",
-              "vi": ""
+              "pinyin": "wǒ yǐjīng xiě le, wǒ xiànzài zài xiě kǎpiàn.",
+              "vi": "Tôi làm rồi, bây giờ đang viết thiệp."
             },
             {
               "speaker": "宜文",
               "zh": "給誰的卡片？",
-              "pinyin": "",
-              "vi": ""
+              "pinyin": "gěi shéi de kǎpiàn?",
+              "vi": "Thiệp cho ai?"
             },
             {
               "speaker": "友美",
               "zh": "一個新朋友。妳看，這是他送我的卡片。",
-              "pinyin": "",
-              "vi": ""
+              "pinyin": "yí ge xīn péngyǒu. nǐ kàn, zhè shì tā sòng wǒ de kǎpiàn.",
+              "vi": "Một người bạn mới. Bạn xem, đây là tấm thiệp cậu ấy tặng tôi."
             },
             {
               "speaker": "宜文",
               "zh": "他寫的字真好看。你們是怎麼認識的？",
-              "pinyin": "",
-              "vi": ""
+              "pinyin": "tā xiě de zì zhēn hǎokàn. nǐmen shì zěnme rènshi de?",
+              "vi": "Chữ cậu ấy viết đẹp thật. Hai người quen nhau như thế nào?"
             },
             {
               "speaker": "友美",
               "zh": "我們是上網認識的，我看到他寫的文章，然後留言問了他一個問題，他回答得很有趣。",
-              "pinyin": "",
-              "vi": ""
+              "pinyin": "wǒmen shì shàngwǎng rènshi de, wǒ kàndào tā xiě de wén zhāng, ránhòu liú yán wèn le tā yí ge wèntí, tā huídá de hěn yǒuqù.",
+              "vi": "Chúng tôi quen nhau trên mạng. Tôi đọc bài cậu ấy viết, sau đó để lại lời nhắn hỏi một câu; cậu ấy trả lời rất thú vị."
             },
             {
               "speaker": "宜文",
               "zh": "你們常上網聊天嗎？",
-              "pinyin": "",
-              "vi": ""
+              "pinyin": "nǐmen cháng shàngwǎng liáotiān ma?",
+              "vi": "Hai người thường lên mạng trò chuyện à?"
             },
             {
               "speaker": "友美",
               "zh": "對啊，差不多每個晚上都聊。昨天他說他想跟我見面。",
-              "pinyin": "",
-              "vi": ""
+              "pinyin": "duì ā, chàbuduō měi gè wǎnshàng dōu liáo. zuótiān tā shuō tā xiǎng gēn wǒ jiànmiàn.",
+              "vi": "Đúng vậy, gần như tối nào cũng trò chuyện. Hôm qua cậu ấy nói muốn gặp tôi."
             },
             {
               "speaker": "宜文",
               "zh": "妳呢？妳要跟他見面嗎？",
-              "pinyin": "",
-              "vi": ""
+              "pinyin": "nǐ ne? nǐ yào gēn tā jiànmiàn ma?",
+              "vi": "Còn bạn? Bạn có muốn gặp cậu ấy không?"
             },
             {
               "speaker": "友美",
               "zh": "我還沒決定。",
-              "pinyin": "",
-              "vi": ""
+              "pinyin": "wǒ hái méi juédìng.",
+              "vi": "Tôi vẫn chưa quyết định."
             }
           ]
         },
@@ -1931,56 +1931,56 @@
             {
               "speaker": "宜文",
               "zh": "妳跟那位新朋友見面了沒有？",
-              "pinyin": "",
-              "vi": ""
+              "pinyin": "nǐ gēn nà wèi xīn péngyǒu jiànmiàn le méi yǒu?",
+              "vi": "Bạn đã gặp người bạn mới đó chưa?"
             },
             {
               "speaker": "友美",
               "zh": "我還沒決定要不要跟他見面。",
-              "pinyin": "",
-              "vi": ""
+              "pinyin": "wǒ hái méi juédìng yào bù yào gēn tā jiànmiàn.",
+              "vi": "Tôi vẫn chưa quyết định có gặp cậu ấy hay không."
             },
             {
               "speaker": "宜文",
               "zh": "妳擔心什麼？",
-              "pinyin": "",
-              "vi": ""
+              "pinyin": "nǐ dān xīn shénme?",
+              "vi": "Bạn lo điều gì?"
             },
             {
               "speaker": "友美",
               "zh": "我有點兒緊張，我以前沒有這種經驗，所以覺得這樣有點兒奇怪。",
-              "pinyin": "",
-              "vi": ""
+              "pinyin": "wǒ yǒudiǎnr jǐnzhāng, wǒ yǐqián méi yǒu zhè zhǒng jīng yàn, suǒyǐ juéde zhè yàng yǒudiǎnr qíguài.",
+              "vi": "Tôi hơi căng thẳng; trước đây tôi chưa có kinh nghiệm như thế này nên cảm thấy hơi kỳ lạ."
             },
             {
               "speaker": "宜文",
               "zh": "妳不要緊張。我有辦法，我跟妳一起去。",
-              "pinyin": "",
-              "vi": ""
+              "pinyin": "nǐ bù yào jǐnzhāng. wǒ yǒu bànfǎ, wǒ gēn nǐ yìqǐ qù.",
+              "vi": "Bạn đừng căng thẳng. Tôi có cách, tôi sẽ đi cùng bạn."
             },
             {
               "speaker": "友美",
               "zh": "太好了，謝謝妳幫我的忙。",
-              "pinyin": "",
-              "vi": ""
+              "pinyin": "tài hǎo le, xièxie nǐ bāng wǒ de máng.",
+              "vi": "Tuyệt quá, cảm ơn bạn đã giúp tôi."
             },
             {
               "speaker": "宜文",
               "zh": "不客氣。妳打算什麼時候跟他見面？",
-              "pinyin": "",
-              "vi": ""
+              "pinyin": "bú kèqi. nǐ dǎsuàn shénme shíhòu gēn tā jiànmiàn?",
+              "vi": "Không có gì. Bạn dự định khi nào gặp cậu ấy?"
             },
             {
               "speaker": "友美",
               "zh": "可能這個週末吧。如果妳有空，我再跟他約時間。",
-              "pinyin": "",
-              "vi": ""
+              "pinyin": "kěnéng zhè gè zhōumò ba. rúguǒ nǐ yǒukòng, wǒ zài gēn tā yuē shíjiān.",
+              "vi": "Có lẽ cuối tuần này. Nếu bạn rảnh, tôi sẽ hẹn thời gian với cậu ấy."
             },
             {
               "speaker": "宜文",
               "zh": "有空啊，但是我明天不會來學校，等妳決定了，再給我打電話吧。",
-              "pinyin": "",
-              "vi": ""
+              "pinyin": "yǒukòng ā, dànshì wǒ míngtiān bù huì lái xuéxiào, děng nǐ juédìng le, zài gěi wǒ dǎdiànhuà ba.",
+              "vi": "Tôi rảnh, nhưng ngày mai tôi sẽ không đến trường; khi bạn quyết định rồi thì gọi cho tôi nhé."
             }
           ]
         },
@@ -1995,20 +1995,20 @@
             {
               "speaker": "",
               "zh": "今天我跟一個日本女生見面，她姓小林，叫友美。我們是在網路上認識的。友美看了我寫的文章，留言給我，她覺得我很有趣。我們常上網聊天，上個星期我寄了張卡片給她，約她見面。",
-              "pinyin": "",
-              "vi": ""
+              "pinyin": "jīntiān wǒ gēn yí ge rìběn nǚshēng jiànmiàn, tā xìng Xiǎolín, jiào Yǒuměi. wǒmen shì zài wǎnglù shàng rènshi de. Yǒuměi kàn le wǒ xiě de wén zhāng, liú yán gěi wǒ, tā juéde wǒ hěn yǒuqù. wǒmen cháng shàngwǎng liáotiān, shàng gè xīngqí wǒ jì le zhāng kǎpiàn gěi tā, yuē tā jiànmiàn.",
+              "vi": "Hôm nay tôi gặp một cô gái Nhật Bản. Cô ấy họ Kobayashi, tên Yumi. Chúng tôi quen nhau trên mạng. Yumi đọc bài tôi viết, để lại lời nhắn cho tôi và thấy tôi rất thú vị. Chúng tôi thường trò chuyện trên mạng; tuần trước tôi gửi một tấm thiệp và hẹn gặp cô ấy."
             },
             {
               "speaker": "",
               "zh": "我們在一家餐廳見面，友美的同學也來了。那家餐廳很有名，菜單也做得很好看、很特別。我們點了幾盤菜，然後開始聊天，聊得很開心，也一起照了幾張相片。",
-              "pinyin": "",
-              "vi": ""
+              "pinyin": "wǒmen zài yī jiā cāntīng jiànmiàn, Yǒuměi de tóngxué yě lái le. nà jiā cāntīng hěn yǒu míng, càidān yě zuò de hěn hǎokàn, hěn tèbié. wǒmen diǎn le jǐ pán cài, ránhòu kāishǐ liáotiān, liáo de hěn kāixīn, yě yìqǐ zhào le jǐ zhāng xiāng piàn.",
+              "vi": "Chúng tôi gặp nhau tại một nhà hàng; bạn cùng lớp của Yumi cũng đến. Nhà hàng đó rất nổi tiếng, thực đơn cũng được làm rất đẹp và đặc biệt. Chúng tôi gọi vài đĩa món ăn, rồi bắt đầu trò chuyện rất vui và cùng chụp vài tấm ảnh."
             },
             {
               "speaker": "",
               "zh": "今天我的心情真好，因為友美太可愛了！我還想再約她出去，希望以後有機會常常跟她見面、聊天。",
-              "pinyin": "",
-              "vi": ""
+              "pinyin": "jīntiān wǒ de xīn qíng zhēn hǎo, yīnwèi Yǒuměi tài kěài le! wǒ hái xiǎng zài yuē tā chū qù, xīwàng yǐhòu yǒu jīhuì chángcháng gēn tā jiànmiàn, liáotiān.",
+              "vi": "Hôm nay tâm trạng tôi thật tốt vì Yumi quá dễ thương! Tôi vẫn muốn hẹn cô ấy đi chơi lần nữa, hy vọng sau này có cơ hội thường xuyên gặp và trò chuyện với cô ấy."
             }
           ]
         }
@@ -2034,50 +2034,50 @@
             {
               "speaker": "中明",
               "zh": "你昨天怎麼沒來上課？",
-              "pinyin": "",
-              "vi": ""
+              "pinyin": "nǐ zuótiān zěnme méi lái shàngkè?",
+              "vi": "Hôm qua sao bạn không đến lớp?"
             },
             {
               "speaker": "國安",
               "zh": "我去參加畫畫比賽。你們上課上了什麼？",
-              "pinyin": "",
-              "vi": ""
+              "pinyin": "wǒ qù cānjiā Huà huà bǐsài. nǐmen shàngkè shàng le shénme?",
+              "vi": "Tôi đi tham gia cuộc thi vẽ. Các bạn đã học gì trên lớp?"
             },
             {
               "speaker": "中明",
               "zh": "老師問我們想做什麼工作，大家都說得很高興。",
-              "pinyin": "",
-              "vi": ""
+              "pinyin": "lǎoshī wèn wǒmen xiǎng zuò shénme gōngzuò, dàjiā dōu shuō de hěn gāoxìng.",
+              "vi": "Thầy/cô hỏi chúng tôi muốn làm công việc gì, mọi người đều nói chuyện rất hào hứng."
             },
             {
               "speaker": "國安",
               "zh": "我知道友美想當護理師。別的同學呢？",
-              "pinyin": "",
-              "vi": ""
+              "pinyin": "wǒ zhīdào Yǒuměi xiǎng dāng hùlǐshī. biéde tóngxué ne?",
+              "vi": "Tôi biết Yumi muốn làm điều dưỡng. Còn các bạn khác?"
             },
             {
               "speaker": "中明",
               "zh": "宜文希望可以用中文和英文工作，所以她以後想當記者，元真想在銀行工作。",
-              "pinyin": "",
-              "vi": ""
+              "pinyin": "Yíwén xīwàng kěyǐ yòng zhōngwén hé yīngwén gōngzuò, suǒyǐ tā yǐhòu xiǎng dāng jìzhě, Yuánzhēn xiǎng zài yínháng gōngzuò.",
+              "vi": "Yiwen hy vọng có thể làm việc bằng tiếng Trung và tiếng Anh, vì vậy sau này cô ấy muốn làm phóng viên; Yuanzhen muốn làm việc ở ngân hàng."
             },
             {
               "speaker": "國安",
               "zh": "那你畢業以後想做什麼？",
-              "pinyin": "",
-              "vi": ""
+              "pinyin": "nà nǐ bìyè yǐhòu xiǎng zuò shénme?",
+              "vi": "Vậy sau khi tốt nghiệp bạn muốn làm gì?"
             },
             {
               "speaker": "中明",
               "zh": "我以前想當大公司的老闆，可是老闆要做的事情太多，現在覺得當醫生比較好。那你想做什麼？",
-              "pinyin": "",
-              "vi": ""
+              "pinyin": "wǒ yǐqián xiǎng dāng dà gōngsī de lǎobǎn, kěshì lǎobǎn yào zuò de shìqíng tài duō, xiànzài juéde dāng yīshēng bǐjiào hǎo. nà nǐ xiǎng zuò shénme?",
+              "vi": "Trước đây tôi muốn làm ông chủ một công ty lớn, nhưng ông chủ có quá nhiều việc phải làm; bây giờ tôi thấy làm bác sĩ tốt hơn. Còn bạn muốn làm gì?"
             },
             {
               "speaker": "國安",
               "zh": "當醫生很不錯，但是太忙了，我只想每天可以準時上班、下班。",
-              "pinyin": "",
-              "vi": ""
+              "pinyin": "dāng yīshēng hěn búcuò, dànshì tài máng le, wǒ zhǐ xiǎng měi tiān kěyǐ zhǔn shí shàngbān, xiàbān.",
+              "vi": "Làm bác sĩ rất tốt nhưng quá bận. Tôi chỉ muốn mỗi ngày có thể đi làm và tan làm đúng giờ."
             }
           ]
         },
@@ -2094,62 +2094,62 @@
             {
               "speaker": "中明",
               "zh": "國安，你每天下課以後都要去麵包店工作，辛苦嗎？",
-              "pinyin": "",
-              "vi": ""
+              "pinyin": "Guó'ān, nǐ měi tiān xiàkè yǐhòu dōu yào qù miànbāodiàn gōngzuò, xīnkǔ ma?",
+              "vi": "Guoan, mỗi ngày sau giờ học bạn đều phải đi làm ở tiệm bánh, có vất vả không?"
             },
             {
               "speaker": "國安",
               "zh": "不辛苦。我很喜歡這個工作，因為可以學怎麼做麵包，而且同事也都對我很好。",
-              "pinyin": "",
-              "vi": ""
+              "pinyin": "bù xīnkǔ. wǒ hěn xǐhuān zhè gè gōngzuò, yīnwèi kěyǐ xué zěnme zuò miànbāo, ér qiě tóng shì yě dōu duì wǒ hěn hǎo.",
+              "vi": "Không vất vả. Tôi rất thích công việc này vì có thể học cách làm bánh mì, hơn nữa đồng nghiệp đều đối xử rất tốt với tôi."
             },
             {
               "speaker": "中明",
               "zh": "這樣你在學校的成績，不會有問題嗎？",
-              "pinyin": "",
-              "vi": ""
+              "pinyin": "zhè yàng nǐ zài xuéxiào de chéngjī, bù huì yǒu wèntí ma?",
+              "vi": "Như vậy thành tích ở trường của bạn sẽ không có vấn đề chứ?"
             },
             {
               "speaker": "國安",
               "zh": "不會啊！我都先做功課，再去工作。",
-              "pinyin": "",
-              "vi": ""
+              "pinyin": "bù huì ā! wǒ dōu xiān zuò gōngkè, zài qù gōngzuò.",
+              "vi": "Không đâu! Tôi luôn làm bài tập trước rồi mới đi làm."
             },
             {
               "speaker": "中明",
               "zh": "我以前在餐廳上過班，因為太累了，常常睡得不夠。",
-              "pinyin": "",
-              "vi": ""
+              "pinyin": "wǒ yǐqián zài cāntīng shàng guò bān, yīnwèi tài lèi le, chángcháng shuì de bù gòu.",
+              "vi": "Trước đây tôi từng làm ở nhà hàng; vì quá mệt nên thường ngủ không đủ."
             },
             {
               "speaker": "國安",
               "zh": "這樣真的很辛苦。",
-              "pinyin": "",
-              "vi": ""
+              "pinyin": "zhè yàng zhēn de hěn xīnkǔ.",
+              "vi": "Như vậy thật sự rất vất vả."
             },
             {
               "speaker": "中明",
               "zh": "有時候早上起得太晚，上課遲到了，而且沒時間準備考試，所以就不做了。",
-              "pinyin": "",
-              "vi": ""
+              "pinyin": "yǒushíhòu zǎoshàng qǐ de tài wǎn, shàngkè chídào le, ér qiě méi shíjiān zhǔnbèi kǎoshì, suǒyǐ jiù bù zuò le.",
+              "vi": "Có lúc buổi sáng dậy quá muộn, đến lớp trễ, lại không có thời gian chuẩn bị thi nên tôi nghỉ làm."
             },
             {
               "speaker": "國安",
               "zh": "我下午四點到六點上班，工作時間不長，所以沒問題。",
-              "pinyin": "",
-              "vi": ""
+              "pinyin": "wǒ xiàwǔ sì diǎn dào liù diǎn shàngbān, gōngzuò shíjiān bù cháng, suǒyǐ méiwèntí.",
+              "vi": "Tôi làm từ bốn đến sáu giờ chiều; thời gian làm việc không dài nên không vấn đề."
             },
             {
               "speaker": "中明",
               "zh": "兩個小時也可以嗎？那你們麵包店還需要人嗎？",
-              "pinyin": "",
-              "vi": ""
+              "pinyin": "liǎng gè xiǎoshí yě kěyǐ ma? nà nǐmen miànbāodiàn hái xūyào rén ma?",
+              "vi": "Chỉ hai tiếng cũng được sao? Vậy tiệm bánh của các bạn còn cần người không?"
             },
             {
               "speaker": "國安",
               "zh": "不知道，我明天看到老闆的時候，幫你問他。",
-              "pinyin": "",
-              "vi": ""
+              "pinyin": "bù zhīdào, wǒ míngtiān kàndào lǎobǎn de shíhòu, bāng nǐ wèn tā.",
+              "vi": "Không biết, ngày mai khi gặp ông chủ tôi sẽ hỏi giúp bạn."
             }
           ]
         },
@@ -2164,20 +2164,20 @@
             {
               "speaker": "",
               "zh": "昨天我看了一個電視節目，有很多父母在節目上談自己的孩子，他們說現在年輕人覺得結不結婚不重要，快樂比較重要；找工作的時候，錢多不多不重要，重要的是喜不喜歡這個工作。",
-              "pinyin": "",
-              "vi": ""
+              "pinyin": "zuótiān wǒ kàn le yí ge diàn shì jiémù, yǒu hěn duō fù mǔ zài jiémù shàng tán zìjǐ de háizi, tā men shuō xiànzài niánqīng rén juéde jié bù jiéhūn bù zhòngyào, kuàilè bǐjiào zhòngyào; zhǎo gōngzuò de shíhòu, qián duō bù duō bù zhòngyào, zhòngyào de shì xǐ bù xǐhuān zhè gè gōngzuò.",
+              "vi": "Hôm qua tôi xem một chương trình truyền hình. Có nhiều bậc cha mẹ nói về con mình; họ nói người trẻ ngày nay cho rằng kết hôn hay không không quan trọng, vui vẻ mới quan trọng; khi tìm việc, lương nhiều hay ít không quan trọng, quan trọng là có thích công việc đó hay không."
             },
             {
               "speaker": "",
               "zh": "節目裡有人說，很多年輕人喜歡在有冷氣的辦公室裡工作，休息時間還可以喝咖啡、上網，工廠裡辛苦的工作沒有人要做，所以工人常常不夠。",
-              "pinyin": "",
-              "vi": ""
+              "pinyin": "jiémù lǐ yǒu rén shuō, hěn duō niánqīng rén xǐhuān zài yǒu lěng qì de bàngōngshì lǐ gōngzuò, xiūxí shíjiān hái kěyǐ hē kāfēi, shàngwǎng, gōngchǎng lǐ xīnkǔ de gōngzuò méi yǒu rén yào zuò, suǒyǐ gōng rén chángcháng bù gòu.",
+              "vi": "Trong chương trình có người nói nhiều người trẻ thích làm việc trong văn phòng có máy lạnh; giờ nghỉ còn có thể uống cà phê, lên mạng. Công việc vất vả trong nhà máy không ai muốn làm nên thường thiếu công nhân."
             },
             {
               "speaker": "",
               "zh": "如果大家都只喜歡做舒服的工作，那辛苦的工作誰要做呢？",
-              "pinyin": "",
-              "vi": ""
+              "pinyin": "rúguǒ dàjiā dōu zhǐ xǐhuān zuò shūfú de gōngzuò, nà xīnkǔ de gōngzuò shéi yào zuò ne?",
+              "vi": "Nếu mọi người chỉ thích làm công việc thoải mái, vậy ai sẽ làm những công việc vất vả?"
             }
           ]
         }
@@ -2203,50 +2203,50 @@
             {
               "speaker": "國安",
               "zh": "喂，中明，半個小時以前我寄了一封電子郵件給你，你看到了嗎？",
-              "pinyin": "",
-              "vi": ""
+              "pinyin": "wéi, Zhōngmíng, bàn gè xiǎoshí yǐqián wǒ jì le yì fēng diànzǐ yóujiàn gěi nǐ, nǐ kàndào le ma?",
+              "vi": "A lô, Zhongming, nửa tiếng trước tôi gửi cho bạn một email, bạn đã thấy chưa?"
             },
             {
               "speaker": "中明",
               "zh": "剛剛我的手機網路有點兒問題，不能看電子郵件，你寄的是什麼？",
-              "pinyin": "",
-              "vi": ""
+              "pinyin": "gānggāng wǒ de shǒujī wǎnglù yǒudiǎnr wèntí, bù néng kàn diànzǐ yóujiàn, nǐ jì de shì shénme?",
+              "vi": "Vừa rồi mạng điện thoại của tôi có chút vấn đề nên không xem được email. Bạn gửi gì vậy?"
             },
             {
               "speaker": "國安",
               "zh": "博物館的網址。下禮拜六老師要帶我們去參觀，你可以先看看。",
-              "pinyin": "",
-              "vi": ""
+              "pinyin": "bówùguǎn de wǎng zhǐ. xià lǐ bài liù lǎoshī yào dài wǒmen qù cānguān, nǐ kěyǐ xiān kàn kàn.",
+              "vi": "Địa chỉ website của bảo tàng. Thứ Bảy tuần sau thầy/cô sẽ dẫn chúng ta đi tham quan, bạn có thể xem trước."
             },
             {
               "speaker": "中明",
               "zh": "好。現在沒問題了，我看到了。",
-              "pinyin": "",
-              "vi": ""
+              "pinyin": "hǎo. xiànzài méiwèntí le, wǒ kàndào le.",
+              "vi": "Được. Bây giờ không có vấn đề nữa, tôi thấy rồi."
             },
             {
               "speaker": "國安",
               "zh": "網站上有地址，那個地方在我家附近，從我家出去，往右轉，差不多五分鐘就到了。",
-              "pinyin": "",
-              "vi": ""
+              "pinyin": "wǎngzhàn shàng yǒu de zhǐ, nà gè dìfāng zài wǒ jiā fùjìn, cóng wǒ jiā chū qù, wǎng yòu zhuǎn, chàbuduō wǔ fēnzhōng jiù dào le.",
+              "vi": "Trên website có địa chỉ. Nơi đó gần nhà tôi; từ nhà tôi đi ra, rẽ phải, khoảng năm phút là tới."
             },
             {
               "speaker": "中明",
               "zh": "我們應該幾點到？",
-              "pinyin": "",
-              "vi": ""
+              "pinyin": "wǒmen yīnggāi jǐ diǎn dào?",
+              "vi": "Chúng ta nên đến lúc mấy giờ?"
             },
             {
               "speaker": "國安",
               "zh": "早上九點在博物館門口見，要記得準時到。",
-              "pinyin": "",
-              "vi": ""
+              "pinyin": "zǎoshàng jiǔ diǎn zài bówùguǎn ménkǒu jiàn, yào jìdé zhǔn shí dào.",
+              "vi": "Chín giờ sáng gặp ở cửa bảo tàng, nhớ đến đúng giờ."
             },
             {
               "speaker": "中明",
               "zh": "我們上個星期六去運動的時候，我到得太晚，真不好意思。下個星期我一定會準時。",
-              "pinyin": "",
-              "vi": ""
+              "pinyin": "wǒmen shàng gè xīngqí liù qù yùndòng de shíhòu, wǒ dào de tài wǎn, zhēn bù hǎoyìsi. xià gè xīngqí wǒ yídìng huì zhǔn shí.",
+              "vi": "Thứ Bảy tuần trước khi chúng ta đi vận động, tôi đến quá muộn, thật ngại quá. Tuần sau tôi nhất định sẽ đúng giờ."
             }
           ]
         },
@@ -2263,74 +2263,74 @@
             {
               "speaker": "老師",
               "zh": "博物館五分鐘以後就要開門了，大家都到了吧？",
-              "pinyin": "",
-              "vi": ""
+              "pinyin": "bówùguǎn wǔ fēnzhōng yǐhòu jiùyào kāi mén le, dàjiā dōu dào le ba?",
+              "vi": "Bảo tàng năm phút nữa sẽ mở cửa, mọi người đều đến rồi chứ?"
             },
             {
               "speaker": "國安",
               "zh": "中明說他快要到了。",
-              "pinyin": "",
-              "vi": ""
+              "pinyin": "Zhōngmíng shuō tā kuài yào dào le.",
+              "vi": "Zhongming nói cậu ấy sắp đến rồi."
             },
             {
               "speaker": "家樂",
               "zh": "老師，我們要不要先去排隊買票？",
-              "pinyin": "",
-              "vi": ""
+              "pinyin": "lǎoshī, wǒmen yào bù yào xiān qù pái duì mǎi piào?",
+              "vi": "Thưa thầy/cô, chúng ta có nên xếp hàng mua vé trước không?"
             },
             {
               "speaker": "老師",
               "zh": "差不多需要排十分鐘的隊，那好吧，我們先去排隊。",
-              "pinyin": "",
-              "vi": ""
+              "pinyin": "chàbuduō xūyào pái shí fēnzhōng de duì, nà hǎo ba, wǒmen xiān qù pái duì.",
+              "vi": "Có lẽ phải xếp hàng khoảng mười phút. Vậy được, chúng ta xếp hàng trước."
             },
             {
               "speaker": "老師",
               "zh": "今天我們打算參觀三個小時，會有人給我們介紹。進去以後，記得要安靜，不可以說話說得太大聲。",
-              "pinyin": "",
-              "vi": ""
+              "pinyin": "jīntiān wǒmen dǎsuàn cānguān sān gè xiǎoshí, huì yǒu rén gěi wǒmen jièshào. jìnqù yǐhòu, jìdé yào ānjìng, bù kěyǐ shuōhuà shuō de tài dàshēng.",
+              "vi": "Hôm nay chúng ta dự định tham quan ba giờ; sẽ có người giới thiệu cho chúng ta. Sau khi vào, nhớ phải giữ yên lặng, không được nói quá to."
             },
             {
               "speaker": "家樂",
               "zh": "老師，我剛剛先用手機上網看了很多有趣的圖片，真想馬上就看到博物館裡的東西。",
-              "pinyin": "",
-              "vi": ""
+              "pinyin": "lǎoshī, wǒ gānggāng xiān yòng shǒujī shàngwǎng kàn le hěn duō yǒuqù de túpiàn, zhēn xiǎng mǎshàng jiù kàndào bówùguǎn lǐ de dōngxī.",
+              "vi": "Thưa thầy/cô, vừa rồi em đã dùng điện thoại lên mạng xem nhiều hình ảnh thú vị, thật muốn lập tức nhìn thấy những thứ trong bảo tàng."
             },
             {
               "speaker": "老師",
               "zh": "我知道你非常喜歡歷史，我想你今天一定會很開心。",
-              "pinyin": "",
-              "vi": ""
+              "pinyin": "wǒ zhīdào nǐ fēicháng xǐhuān lì shǐ, wǒ xiǎng nǐ jīntiān yídìng huì hěn kāixīn.",
+              "vi": "Thầy/cô biết em rất thích lịch sử, thầy/cô nghĩ hôm nay em chắc chắn sẽ rất vui."
             },
             {
               "speaker": "家樂",
               "zh": "我也在網路上找了很多文章，那些介紹和故事都非常有趣。",
-              "pinyin": "",
-              "vi": ""
+              "pinyin": "wǒ yě zài wǎnglù shàng zhǎo le hěn duō wén zhāng, nàxiē jièshào hé gùshì dōu fēicháng yǒuqù.",
+              "vi": "Em cũng tìm được nhiều bài viết trên mạng; những phần giới thiệu và câu chuyện đó đều rất thú vị."
             },
             {
               "speaker": "老師",
               "zh": "那如果大家有問題就可以問你了。",
-              "pinyin": "",
-              "vi": ""
+              "pinyin": "nà rúguǒ dàjiā yǒu wèntí jiù kěyǐ wèn nǐ le.",
+              "vi": "Vậy nếu mọi người có câu hỏi thì có thể hỏi em rồi."
             },
             {
               "speaker": "家樂",
               "zh": "要是我知道，一定會告訴大家！",
-              "pinyin": "",
-              "vi": ""
+              "pinyin": "yàoshì wǒ zhīdào, yídìng huì gàosù dàjiā!",
+              "vi": "Nếu em biết, em nhất định sẽ nói cho mọi người!"
             },
             {
               "speaker": "國安",
               "zh": "中明來了！",
-              "pinyin": "",
-              "vi": ""
+              "pinyin": "Zhōngmíng lái le!",
+              "vi": "Zhongming đến rồi!"
             },
             {
               "speaker": "老師",
               "zh": "好，我們進去參觀吧。",
-              "pinyin": "",
-              "vi": ""
+              "pinyin": "hǎo, wǒmen jìnqù cānguān ba.",
+              "vi": "Được, chúng ta vào tham quan thôi."
             }
           ]
         },
@@ -2345,20 +2345,20 @@
             {
               "speaker": "",
               "zh": "我們一天用幾個小時的手機呢？打電話、算錢、看天氣、看地圖、看朋友的留言，都需要手機。",
-              "pinyin": "",
-              "vi": ""
+              "pinyin": "wǒmen yī tiān yòng jǐ gè xiǎoshí de shǒujī ne? dǎdiànhuà, suàn qián, kàn tiānqì, kàn dìtú, kàn péngyǒu de liú yán, dōu xūyào shǒujī.",
+              "vi": "Mỗi ngày chúng ta dùng điện thoại bao nhiêu giờ? Gọi điện, tính tiền, xem thời tiết, xem bản đồ, xem lời nhắn của bạn bè đều cần điện thoại."
             },
             {
               "speaker": "",
               "zh": "我上個星期坐捷運去參觀一個科學展。出了捷運站以後，我不知道往哪個方向走，馬上看了手機的網路地圖，然後就知道怎麼走了。我從捷運站出去，先往右轉，過了第一個十字路口，再走五分鐘就到了。有手機真方便！",
-              "pinyin": "",
-              "vi": ""
+              "pinyin": "wǒ shàng gè xīngqí zuò jiéyùn qù cānguān yí ge kēxué zhǎn. chū le jiéyùn zhàn yǐhòu, wǒ bù zhīdào wǎng nǎ gè fāng xiàng zǒu, mǎshàng kàn le shǒujī de wǎnglù dìtú, ránhòu jiù zhīdào zěnme zǒu le. wǒ cóng jiéyùn zhàn chū qù, xiān wǎng yòu zhuǎn, guò le dì yí ge shízì lùkǒu, zài zǒu wǔ fēnzhōng jiù dào le. yǒu shǒujī zhēn fāngbiàn!",
+              "vi": "Tuần trước tôi đi MRT đến tham quan một triển lãm khoa học. Sau khi ra khỏi ga MRT, tôi không biết đi hướng nào nên lập tức xem bản đồ trên điện thoại rồi biết đường. Tôi ra khỏi ga, rẽ phải trước, đi qua ngã tư đầu tiên, rồi đi thêm năm phút là đến. Có điện thoại thật tiện!"
             },
             {
               "speaker": "",
               "zh": "我們每天從家裡出去以後，最怕什麼事？忘了帶錢？忘了帶手機？還是手機壞了？如果世界上沒有手機了，我們的生活會怎麼樣呢？",
-              "pinyin": "",
-              "vi": ""
+              "pinyin": "wǒmen měi tiān cóng jiā lǐ chū qù yǐhòu, zuì pà shénme shì? wàng le dài qián? wàng le dài shǒujī? háishì shǒujī huài le? rúguǒ shìjiè shàng méi yǒu shǒujī le, wǒmen de shēnghuó huì zěnmeyàng ne?",
+              "vi": "Mỗi ngày sau khi ra khỏi nhà, chúng ta sợ nhất chuyện gì? Quên mang tiền? Quên mang điện thoại? Hay điện thoại bị hỏng? Nếu trên thế giới không còn điện thoại, cuộc sống của chúng ta sẽ thế nào?"
             }
           ]
         }
@@ -2384,56 +2384,56 @@
             {
               "speaker": "老師",
               "zh": "家樂，你在台灣住了多久了？參加過台灣的新年活動嗎？",
-              "pinyin": "",
-              "vi": ""
+              "pinyin": "Jiālè, nǐ zài Táiwān zhù le duō jiǔ le? cānjiā guò Táiwān de xīnnián huódòng ma?",
+              "vi": "Jiale, bạn đã sống ở Đài Loan bao lâu rồi? Bạn từng tham gia hoạt động năm mới ở Đài Loan chưa?"
             },
             {
               "speaker": "家樂",
               "zh": "我在台灣住了半年了，這是我第一次在台灣過新年。台灣人在一年的最後一天有什麼特別的活動？",
-              "pinyin": "",
-              "vi": ""
+              "pinyin": "wǒ zài Táiwān zhù le bàn nián le, zhè shì wǒ dì yī cì zài Táiwān guò xīnnián. Táiwān rén zài yī nián de zuì hòu yī tiān yǒu shénme tèbié de huódòng?",
+              "vi": "Tôi đã sống ở Đài Loan nửa năm; đây là lần đầu tôi đón năm mới ở Đài Loan. Người Đài Loan có hoạt động đặc biệt gì vào ngày cuối cùng của năm?"
             },
             {
               "speaker": "老師",
               "zh": "十二月三十一號的晚上，很多城市都有跨年晚會，我最喜歡的是台北101的跨年晚會，有很多表演，又熱鬧又好看。",
-              "pinyin": "",
-              "vi": ""
+              "pinyin": "shí èr yuè sān shí yī hào de wǎnshàng, hěn duō chéngshì dōu yǒu kuànián wǎn huì, wǒ zuì xǐhuān de shì Táiběi 101 de kuànián wǎn huì, yǒu hěn duō biǎo yǎn, yòu rènào yòu hǎokàn.",
+              "vi": "Tối ngày 31 tháng 12, nhiều thành phố đều có đêm hội giao thừa. Tôi thích nhất đêm hội giao thừa ở Taipei 101; có nhiều tiết mục, vừa náo nhiệt vừa hay."
             },
             {
               "speaker": "家樂",
               "zh": "跟朋友一起去一定會很有意思，大家要不要一起去？",
-              "pinyin": "",
-              "vi": ""
+              "pinyin": "gēn péngyǒu yìqǐ qù yídìng huì hěn yǒuyìsī, dàjiā yào bù yào yìqǐ qù?",
+              "vi": "Đi cùng bạn bè chắc chắn sẽ rất thú vị, mọi người có muốn cùng đi không?"
             },
             {
               "speaker": "老師",
               "zh": "如果大家要去跨年，要多帶一件衣服。去年我在那裡站了一晚，因為時間太久，天氣也太冷，回家以後就感冒了。",
-              "pinyin": "",
-              "vi": ""
+              "pinyin": "rúguǒ dàjiā yào qù kuànián, yào duō dài yí jiàn yīfú. qùnián wǒ zài nàlǐ zhàn le yī wǎn, yīnwèi shíjiān tài jiǔ, tiānqì yě tài lěng, huíjiā yǐhòu jiù gǎnmào le.",
+              "vi": "Nếu mọi người đi đón giao thừa thì nên mang thêm một chiếc áo. Năm ngoái tôi đứng ở đó cả đêm; vì thời gian quá lâu và trời quá lạnh nên về nhà thì bị cảm."
             },
             {
               "speaker": "宜文",
               "zh": "我家在台北101大樓附近，大家可以先來我家，我們一起吃晚飯，再去看演唱會。",
-              "pinyin": "",
-              "vi": ""
+              "pinyin": "wǒ jiā zài Táiběi 101 dàlóu fùjìn, dàjiā kěyǐ xiān lái wǒ jiā, wǒmen yìqǐ chī wǎn fàn, zài qù kàn yǎnchànghuì.",
+              "vi": "Nhà tôi gần tòa nhà Taipei 101. Mọi người có thể đến nhà tôi trước, chúng ta cùng ăn tối rồi đi xem hòa nhạc."
             },
             {
               "speaker": "國安",
               "zh": "太好了！我們可以每個人都準備一些好吃的東西。",
-              "pinyin": "",
-              "vi": ""
+              "pinyin": "tài hǎo le! wǒmen kěyǐ měi gè rén dōu zhǔnbèi yìxiē hǎochī de dōngxī.",
+              "vi": "Tuyệt quá! Mỗi người chúng ta có thể chuẩn bị một ít đồ ăn ngon."
             },
             {
               "speaker": "宜文",
               "zh": "老師，請您也跟大家一起來我家，好嗎？",
-              "pinyin": "",
-              "vi": ""
+              "pinyin": "lǎoshī, qǐng nín yě gēn dàjiā yìqǐ lái wǒ jiā, hǎo ma?",
+              "vi": "Thưa thầy/cô, thầy/cô cũng cùng mọi người đến nhà em nhé?"
             },
             {
               "speaker": "老師",
               "zh": "好啊！那我也準備一些飲料。大家一起跨年吧！",
-              "pinyin": "",
-              "vi": ""
+              "pinyin": "hǎo ā! nà wǒ yě zhǔnbèi yìxiē yǐnliào. dàjiā yìqǐ kuànián ba!",
+              "vi": "Được! Vậy thầy/cô cũng chuẩn bị một ít đồ uống. Mọi người cùng đón giao thừa nhé!"
             }
           ]
         },
@@ -2450,80 +2450,80 @@
             {
               "speaker": "宜文",
               "zh": "歡迎大家，請進！",
-              "pinyin": "",
-              "vi": ""
+              "pinyin": "huānyíng dàjiā, qǐng jìn!",
+              "vi": "Chào mừng mọi người, mời vào!"
             },
             {
               "speaker": "家樂",
               "zh": "謝謝！妳家前面的公園有很多花跟樹，環境真好！",
-              "pinyin": "",
-              "vi": ""
+              "pinyin": "xièxie! nǐ jiā qiánmiàn de gōngyuán yǒu hěn duō huā gēn shù, huán jìng zhēn hǎo!",
+              "vi": "Cảm ơn! Công viên trước nhà bạn có rất nhiều hoa và cây, môi trường thật đẹp!"
             },
             {
               "speaker": "國安",
               "zh": "我跟友美買了幾瓶酒，也帶了大家都喜歡的餃子、包子和牛肉湯。",
-              "pinyin": "",
-              "vi": ""
+              "pinyin": "wǒ gēn Yǒuměi mǎi le jǐ píng jiǔ, yě dài le dàjiā dōu xǐhuān de jiǎozi, bāozi hé niú ròu tāng.",
+              "vi": "Tôi và Yumi mua vài chai rượu, cũng mang theo bánh chẻo, bánh bao và canh bò mà mọi người đều thích."
             },
             {
               "speaker": "宜文",
               "zh": "這麼多東西很重吧？",
-              "pinyin": "",
-              "vi": ""
+              "pinyin": "zhème duō dōngxī hěn zhòng ba?",
+              "vi": "Nhiều đồ thế này chắc nặng lắm nhỉ?"
             },
             {
               "speaker": "國安",
               "zh": "不重，我很高興能幫大家準備。",
-              "pinyin": "",
-              "vi": ""
+              "pinyin": "bù zhòng, wǒ hěn gāoxìng néng bāng dàjiā zhǔnbèi.",
+              "vi": "Không nặng, tôi rất vui vì có thể giúp mọi người chuẩn bị."
             },
             {
               "speaker": "老師",
               "zh": "我買了珍珠奶茶，希望大家會喜歡。",
-              "pinyin": "",
-              "vi": ""
+              "pinyin": "wǒ mǎi le zhēnzhū nǎichá, xīwàng dàjiā huì xǐhuān.",
+              "vi": "Tôi mua trà sữa trân châu, hy vọng mọi người sẽ thích."
             },
             {
               "speaker": "宜文",
               "zh": "大家準備了這麼多東西。老師，請您先拿吧！",
-              "pinyin": "",
-              "vi": ""
+              "pinyin": "dàjiā zhǔnbèi le zhème duō dōngxī. lǎoshī, qǐng nín xiān ná ba!",
+              "vi": "Mọi người chuẩn bị nhiều đồ như vậy. Thưa thầy/cô, mời thầy/cô lấy trước!"
             },
             {
               "speaker": "家樂",
               "zh": "老師，跨年的時候，如果不想去看演唱會，還有別的活動嗎？",
-              "pinyin": "",
-              "vi": ""
+              "pinyin": "lǎoshī, kuànián de shíhòu, rúguǒ bù xiǎng qù kàn yǎnchànghuì, hái yǒu biéde huódòng ma?",
+              "vi": "Thưa thầy/cô, lúc đón giao thừa nếu không muốn đi xem hòa nhạc thì còn hoạt động nào khác không?"
             },
             {
               "speaker": "老師",
               "zh": "有啊！我小的時候在山上住了七、八年，每一年的第一天，我都跟家人一起看日出。",
-              "pinyin": "",
-              "vi": ""
+              "pinyin": "yǒu ā! wǒ xiǎo de shíhòu zài shān shàng zhù le qī, bā nián, měi yī nián de dì yī tiān, wǒ dōu gēn jiārén yìqǐ kàn rìchū.",
+              "vi": "Có! Khi còn nhỏ tôi sống trên núi bảy, tám năm; ngày đầu tiên của mỗi năm tôi đều cùng gia đình ngắm mặt trời mọc."
             },
             {
               "speaker": "家樂",
               "zh": "跨年的時候，英國的教堂有很多活動，也有人去聽音樂會。",
-              "pinyin": "",
-              "vi": ""
+              "pinyin": "kuànián de shíhòu, yīngguó de jiàotáng yǒu hěn duō huódòng, yě yǒu rén qù tīng yīnyuè huì.",
+              "vi": "Khi đón giao thừa, các nhà thờ ở Anh có nhiều hoạt động, cũng có người đi nghe hòa nhạc."
             },
             {
               "speaker": "友美",
               "zh": "在日本，跨年的時候，很多人在家跟家人一起看電視。但是我喜歡和朋友一起跨年，比在家看電視有趣。",
-              "pinyin": "",
-              "vi": ""
+              "pinyin": "zài rìběn, kuànián de shíhòu, hěn duō rén zài jiā gēn jiārén yìqǐ kàn diàn shì. dànshì wǒ xǐhuān hé péngyǒu yìqǐ kuànián, bǐ zài jiā kàn diàn shì yǒuqù.",
+              "vi": "Ở Nhật Bản, lúc đón giao thừa nhiều người ở nhà xem TV cùng gia đình. Nhưng tôi thích đón giao thừa với bạn bè hơn, thú vị hơn xem TV ở nhà."
             },
             {
               "speaker": "國安",
               "zh": "我也喜歡跟朋友一起跨年，而且今年比以前有意思多了，因為在台灣跟你們一起玩，覺得很特別。",
-              "pinyin": "",
-              "vi": ""
+              "pinyin": "wǒ yě xǐhuān gēn péngyǒu yìqǐ kuànián, ér qiě jīnnián bǐ yǐqián yǒuyìsī duō le, yīnwèi zài Táiwān gēn nǐmen yìqǐ wán, juéde hěn tèbié.",
+              "vi": "Tôi cũng thích đón giao thừa cùng bạn bè; hơn nữa năm nay thú vị hơn trước rất nhiều vì được vui chơi cùng mọi người ở Đài Loan, cảm thấy rất đặc biệt."
             },
             {
               "speaker": "宜文",
               "zh": "我同意，我也覺得今年很有意思。",
-              "pinyin": "",
-              "vi": ""
+              "pinyin": "wǒ tóng yì, wǒ yě juéde jīnnián hěn yǒuyìsī.",
+              "vi": "Tôi đồng ý, tôi cũng thấy năm nay rất thú vị."
             }
           ]
         },
@@ -2538,26 +2538,26 @@
             {
               "speaker": "",
               "zh": "一年的最後一天，每個國家都有慶祝跨年的活動。參加這些活動的年輕人很多，他們喜歡跟朋友去熱鬧的地方玩。在台灣，年輕人最喜歡的跨年活動是去看演唱會。",
-              "pinyin": "",
-              "vi": ""
+              "pinyin": "yī nián de zuì hòu yī tiān, měi gè guójiā dōu yǒu qìngzhù kuànián de huódòng. cānjiā zhèxiē huódòng de niánqīng rén hěn duō, tā men xǐhuān gēn péngyǒu qù rènào de dìfāng wán. zài Táiwān, niánqīng rén zuì xǐhuān de kuànián huódòng shì qù kàn yǎnchànghuì.",
+              "vi": "Vào ngày cuối cùng của năm, mỗi quốc gia đều có hoạt động chào đón năm mới. Có rất nhiều người trẻ tham gia; họ thích cùng bạn bè đến những nơi náo nhiệt. Ở Đài Loan, hoạt động giao thừa được giới trẻ thích nhất là đi xem hòa nhạc."
             },
             {
               "speaker": "",
               "zh": "但是，交通是一個問題，需要很多警察在捷運站幫忙，因為人真的太多了，如果不小心，可能會受傷，所以有的人覺得在家裡看電視比出去玩好。",
-              "pinyin": "",
-              "vi": ""
+              "pinyin": "dànshì, jiāo tōng shì yí ge wèntí, xūyào hěn duō jǐng chá zài jiéyùn zhàn bāngmáng, yīnwèi rén zhēn de tài duō le, rúguǒ bù xiǎoxīn, kěnéng huì shòu shāng, suǒyǐ yǒu de rén juéde zài jiā lǐ kàn diàn shì bǐ chū qù wán hǎo.",
+              "vi": "Tuy nhiên, giao thông là một vấn đề; cần nhiều cảnh sát hỗ trợ tại ga MRT vì người thật sự quá đông. Nếu không cẩn thận có thể bị thương, nên có người cho rằng ở nhà xem TV tốt hơn ra ngoài chơi."
             },
             {
               "speaker": "",
               "zh": "今年是我第一次在台灣過新年。我跟老師、同學們先去一個同學家吃晚飯，再去參加101大樓的跨年活動。",
-              "pinyin": "",
-              "vi": ""
+              "pinyin": "jīnnián shì wǒ dì yī cì zài Táiwān guò xīnnián. wǒ gēn lǎoshī, tóngxué men xiān qù yí ge tóngxué jiā chī wǎn fàn, zài qù cānjiā 101 dàlóu de kuànián huódòng.",
+              "vi": "Năm nay là lần đầu tôi đón năm mới ở Đài Loan. Tôi cùng thầy/cô và các bạn đến nhà một bạn học ăn tối trước, rồi tham gia hoạt động giao thừa ở tòa nhà 101."
             },
             {
               "speaker": "",
               "zh": "我覺得最有意思的是看演唱會，很多人一起唱歌、跳舞，真熱鬧。我們都覺得今年在台北跨年是一個最特別的經驗。",
-              "pinyin": "",
-              "vi": ""
+              "pinyin": "wǒ juéde zuì yǒuyìsī de shì kàn yǎnchànghuì, hěn duō rén yìqǐ chànggē, tiàowǔ, zhēn rènào. wǒmen dōu juéde jīnnián zài Táiběi kuànián shì yí ge zuì tèbié de jīng yàn.",
+              "vi": "Tôi thấy thú vị nhất là xem hòa nhạc; rất nhiều người cùng hát và nhảy, thật náo nhiệt. Chúng tôi đều thấy đón giao thừa ở Đài Bắc năm nay là một trải nghiệm đặc biệt nhất."
             }
           ]
         }
@@ -2583,74 +2583,74 @@
             {
               "speaker": "宜文",
               "zh": "我們下個星期要學第十五課，我剛才先看了一點兒，書上有很多種動物，我覺得很有意思。",
-              "pinyin": "",
-              "vi": ""
+              "pinyin": "wǒmen xià gè xīngqí yào xué dì shí wǔ kè, wǒ gāng cái xiān kàn le yìdiǎnr, shū shàng yǒu hěn duō zhǒng dòngwù, wǒ juéde hěn yǒuyìsī.",
+              "vi": "Tuần sau chúng ta sẽ học bài 15. Vừa rồi tôi xem trước một chút; trong sách có rất nhiều loài động vật, tôi thấy rất thú vị."
             },
             {
               "speaker": "友美",
               "zh": "有哪些動物？",
-              "pinyin": "",
-              "vi": ""
+              "pinyin": "yǒu nǎ xiē dòngwù?",
+              "vi": "Có những con vật nào?"
             },
             {
               "speaker": "宜文",
               "zh": "我記得有羊、馬、兔子……，最特別的是龍。妳看看……",
-              "pinyin": "",
-              "vi": ""
+              "pinyin": "wǒ jìdé yǒu yáng, mǎ, tù zi……, zuì tèbié de shì lóng. nǐ kàn kàn……",
+              "vi": "Tôi nhớ có dê, ngựa, thỏ… đặc biệt nhất là rồng. Bạn xem này…"
             },
             {
               "speaker": "友美",
               "zh": "原來是十二生肖，真的很有意思。",
-              "pinyin": "",
-              "vi": ""
+              "pinyin": "yuánlái shì shíèr shēngxiào, zhēn de hěn yǒuyìsī.",
+              "vi": "Hóa ra là mười hai con giáp, thật sự rất thú vị."
             },
             {
               "speaker": "宜文",
               "zh": "什麼是十二生肖？",
-              "pinyin": "",
-              "vi": ""
+              "pinyin": "shénme shì shíèr shēngxiào?",
+              "vi": "Mười hai con giáp là gì?"
             },
             {
               "speaker": "友美",
               "zh": "華人用不一樣的動物代表每一年，一共有十二種動物。",
-              "pinyin": "",
-              "vi": ""
+              "pinyin": "huá rén yòng bù yíyàng de dòngwù dài biǎo měi yī nián, yígòng yǒu shí èr zhǒng dòngwù.",
+              "vi": "Người Hoa dùng những con vật khác nhau để đại diện cho từng năm, tổng cộng có mười hai loài."
             },
             {
               "speaker": "國安",
               "zh": "越南也有十二生肖，可是我們沒有兔年，有貓年。我是貓年出生的，屬貓。",
-              "pinyin": "",
-              "vi": ""
+              "pinyin": "yuè nán yě yǒu shíèr shēngxiào, kěshì wǒmen méi yǒu tù nián, yǒu māo nián. wǒ shì māo nián chū shēng de, shǔ māo.",
+              "vi": "Việt Nam cũng có mười hai con giáp, nhưng chúng tôi không có năm Thỏ mà có năm Mèo. Tôi sinh năm Mèo, cầm tinh con mèo."
             },
             {
               "speaker": "宜文",
               "zh": "真的啊？好有趣！",
-              "pinyin": "",
-              "vi": ""
+              "pinyin": "zhēn de ā? hǎo yǒuqù!",
+              "vi": "Thật à? Thú vị quá!"
             },
             {
               "speaker": "友美",
               "zh": "原來越南的生肖跟中國的有點兒不一樣。",
-              "pinyin": "",
-              "vi": ""
+              "pinyin": "yuánlái yuè nán de shēngxiào gēn zhōngguó de yǒudiǎnr bù yíyàng.",
+              "vi": "Hóa ra con giáp của Việt Nam hơi khác Trung Quốc."
             },
             {
               "speaker": "宜文",
               "zh": "我好想知道我屬什麼。",
-              "pinyin": "",
-              "vi": ""
+              "pinyin": "wǒ hǎo xiǎng zhīdào wǒ shǔ shénme.",
+              "vi": "Tôi rất muốn biết mình cầm tinh con gì."
             },
             {
               "speaker": "國安",
               "zh": "很簡單，上網一查就知道了。",
-              "pinyin": "",
-              "vi": ""
+              "pinyin": "hěn jiǎndān, shàngwǎng yī chá jiù zhīdào le.",
+              "vi": "Rất đơn giản, lên mạng tra một cái là biết."
             },
             {
               "speaker": "宜文",
               "zh": "好，我上網查查看。",
-              "pinyin": "",
-              "vi": ""
+              "pinyin": "hǎo, wǒ shàngwǎng chá chá kàn.",
+              "vi": "Được, tôi lên mạng tra thử."
             }
           ]
         },
@@ -2667,62 +2667,62 @@
             {
               "speaker": "宜文",
               "zh": "中明，你手裡拿著什麼？",
-              "pinyin": "",
-              "vi": ""
+              "pinyin": "Zhōngmíng, nǐ shǒu lǐ ná zhe shénme?",
+              "vi": "Zhongming, bạn đang cầm gì trong tay?"
             },
             {
               "speaker": "中明",
               "zh": "這是燈籠。",
-              "pinyin": "",
-              "vi": ""
+              "pinyin": "zhè shì dēnglong.",
+              "vi": "Đây là đèn lồng."
             },
             {
               "speaker": "宜文",
               "zh": "燈籠上的小老虎好可愛。",
-              "pinyin": "",
-              "vi": ""
+              "pinyin": "dēnglong shàng de xiǎo lǎo hǔ hǎo kěài.",
+              "vi": "Con hổ nhỏ trên đèn lồng dễ thương quá."
             },
             {
               "speaker": "中明",
               "zh": "這是我朋友做的，因為他屬虎。妳知道十二生肖嗎？",
-              "pinyin": "",
-              "vi": ""
+              "pinyin": "zhè shì wǒ péngyǒu zuò de, yīnwèi tā shǔ hǔ. nǐ zhīdào shíèr shēngxiào ma?",
+              "vi": "Đây là bạn tôi làm, vì cậu ấy cầm tinh con hổ. Bạn biết mười hai con giáp không?"
             },
             {
               "speaker": "宜文",
               "zh": "知道，友美跟我講過。",
-              "pinyin": "",
-              "vi": ""
+              "pinyin": "zhīdào, Yǒuměi gēn wǒ jiǎng guò.",
+              "vi": "Biết, Yumi đã kể cho tôi."
             },
             {
               "speaker": "中明",
               "zh": "這個星期六是元宵節，妳跟友美會去看燈會嗎？",
-              "pinyin": "",
-              "vi": ""
+              "pinyin": "zhè gè xīngqí liù shì Yuánxiāojié, nǐ gēn Yǒuměi huì qù kàn dēnghuì ma?",
+              "vi": "Thứ Bảy này là Tết Nguyên Tiêu, bạn và Yumi có đi xem hội đèn lồng không?"
             },
             {
               "speaker": "宜文",
               "zh": "友美說她想去，我還沒決定去不去。燈會好玩嗎？",
-              "pinyin": "",
-              "vi": ""
+              "pinyin": "Yǒuměi shuō tā xiǎng qù, wǒ hái méi juédìng qù bù qù. dēnghuì hǎowán ma?",
+              "vi": "Yumi nói cô ấy muốn đi, tôi vẫn chưa quyết định có đi hay không. Hội đèn lồng có vui không?"
             },
             {
               "speaker": "中明",
               "zh": "我去年去看了，很多大人帶著小孩去看燈會，非常熱鬧，我照了很多相片。",
-              "pinyin": "",
-              "vi": ""
+              "pinyin": "wǒ qùnián qù kàn le, hěn duō dà rén dài zhe xiǎohái qù kàn dēnghuì, fēicháng rènào, wǒ zhào le hěn duō xiāng piàn.",
+              "vi": "Năm ngoái tôi đã đi xem. Rất nhiều người lớn dẫn trẻ em đến hội đèn lồng, vô cùng náo nhiệt; tôi chụp rất nhiều ảnh."
             },
             {
               "speaker": "宜文",
               "zh": "那我這個週末一定要去看看。",
-              "pinyin": "",
-              "vi": ""
+              "pinyin": "nà wǒ zhè gè zhōumò yídìng yào qù kàn kàn.",
+              "vi": "Vậy cuối tuần này tôi nhất định phải đi xem."
             },
             {
               "speaker": "中明",
               "zh": "我週末還要工作，打算一下班就去看燈會。我們可以約友美一起去。",
-              "pinyin": "",
-              "vi": ""
+              "pinyin": "wǒ zhōumò hái yào gōngzuò, dǎsuàn yī xiàbān jiù qù kàn dēnghuì. wǒmen kěyǐ yuē Yǒuměi yìqǐ qù.",
+              "vi": "Cuối tuần tôi còn phải làm việc, dự định tan làm là đi xem hội đèn lồng ngay. Chúng ta có thể hẹn Yumi cùng đi."
             }
           ]
         }

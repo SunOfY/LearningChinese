@@ -1,0 +1,14 @@
+v5.6.4
+
+Fixed:
+1. Full lesson PDF navigation now renders the requested page with PDF.js instead of relying on Safari's unreliable #page iframe behavior.
+2. Exercise answers persist per lesson/item in the existing Reading progress object. Leaving the tab and returning restores the selected answer, correct/wrong state, revealed answer, and last question index.
+3. Full-lesson book page is also remembered per lesson.
+4. New fields are stored inside the same Reading local/cloud/export progress payload; old progress remains backward-compatible.
+
+Upload:
+- reading.js
+- styles.css
+- sw.js
+
+The 15 lesson PDF files from v5.6.1 do not need to be uploaded again.

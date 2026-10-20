@@ -1,0 +1,24 @@
+v5.6.6 — Midterm Review + iPad multi-character writing orientation fix
+
+New: 🎯 Ôn giữa kỳ / Midterm
+- Based on Book 1, Lesson 1 Midterm Exam sample structure.
+- Scope: Lesson 1, Dialogue 1 & Dialogue 2.
+- Practice sections:
+  1) Listening A — tones
+  2) Listening B — picture + audio choice
+  3) Listening C — short dialogue + picture choice
+  4) Vocabulary picture matching
+  5) Read sentence and choose picture
+  6) Dialogue 1 & 2 fill-in
+  7) Grammar: 叫／姓／是, 很／不, 嗎, 呢, answer questions
+- 105-minute mock exam with 75 questions and weighted 100-point scoring.
+- Pinyin/Vietnamese hints can be toggled in practice; mock exam hides hints.
+- Practice progress, current question, mock exam state/history are stored locally and synced in the existing account cloud JSON.
+- Uses Traditional Chinese; lesson text keeps 妳 where the textbook uses 妳.
+
+Fix: iPad landscape multi-character writing
+- Re-measures handwriting canvases after orientation/visual viewport changes.
+- Uses HanziWriter.updateDimensions() instead of the previous non-working resize() assumption.
+- Adds ResizeObserver for writing/copybook containers.
+- Re-checks layout after iPad Safari settles the rotated viewport.
+- Does not rebuild rows, so user ink is preserved.

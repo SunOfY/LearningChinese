@@ -42,6 +42,7 @@
       <button class="tab is-active" data-view="today" type="button"><span>🏠</span> <span data-i18n="navToday">Hôm nay</span></button>
       <button class="tab" data-view="vocab" type="button"><span>📚</span> <span data-i18n="navVocab">Từ vựng</span></button>
       <button class="tab" data-view="reading" type="button"><span>📖</span> <span data-i18n="navReading">Reading</span></button>
+      <button class="tab" data-view="midterm" type="button"><span>🎯</span> <span data-i18n="navMidterm">Ôn giữa kỳ</span></button>
       <button class="tab" data-view="quiz" type="button"><span>🧠</span> <span data-i18n="navQuiz">Quiz</span></button>
       <button class="tab" data-view="progress" type="button"><span>📊</span> <span data-i18n="navProgress">Tiến độ</span></button>
     </nav>
@@ -327,6 +328,12 @@
         </div>
       </section>
 
+      <section id="view-midterm" class="view">
+        <div id="midtermApp" class="midterm-app">
+          <div class="card"><strong>Đang tải nội dung ôn giữa kỳ…</strong></div>
+        </div>
+      </section>
+
       <section id="view-quiz" class="view">
         <div class="card quiz-card">
           <div class="eyebrow">MINI QUIZ</div>
@@ -503,6 +510,7 @@
   <script src="./app.js" defer></script>
   <script src="./radicals.js" defer></script>
   <script src="./reading.js" defer></script>
+  <script src="./midterm.js" defer></script>
   <script type="module" src="./auth.js"></script>
 </body>
 </html>

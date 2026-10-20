@@ -81,7 +81,7 @@ const CEDICT_URL = 'https://raw.githubusercontent.com/jtoy/crdict/refs/heads/mas
 
 const I18N = {
   vi: {
-    day:'Ngày', navToday:'Hôm nay', navVocab:'Từ vựng', navReading:'Reading', navQuiz:'Quiz', navProgress:'Tiến độ', goal:'Mục tiêu',
+    day:'Ngày', navToday:'Hôm nay', navVocab:'Từ vựng', navReading:'Reading', navMidterm:'Ôn giữa kỳ', navQuiz:'Quiz', navProgress:'Tiến độ', goal:'Mục tiêu',
     favorite:'Đánh dấu từ', listenWord:'Nghe từ', slow:'Chậm', hidePinyin:'Ẩn Pinyin', showPinyin:'Hiện Pinyin',
     pronunciationPractice:'🎙 Luyện phát âm', startRecording:'Bắt đầu ghi âm', stop:'Dừng', playback:'Phát lại', checkPronunciation:'Kiểm tra phát âm',
     target:'Mẫu:', recognized:'AI nhận ra:', assessmentNote:'Groq Whisper AI nhận dạng giọng nói tiếng Trung. Điểm là độ khớp giữa chữ AI nghe được và từ mẫu; không phải điểm thanh điệu/âm vị chuyên sâu.', accuracyLabel:'Độ chính xác', fluencyLabel:'Độ trôi chảy', completenessLabel:'Độ đầy đủ',
@@ -99,7 +99,7 @@ const I18N = {
     generatedExample:'Ví dụ bổ sung tự động', curatedExample:'Ví dụ đã biên soạn'
   },
   en: {
-    day:'Day', navToday:'Today', navVocab:'Vocabulary', navReading:'Reading', navQuiz:'Quiz', navProgress:'Progress', goal:'Goal',
+    day:'Day', navToday:'Today', navVocab:'Vocabulary', navReading:'Reading', navMidterm:'Midterm', navQuiz:'Quiz', navProgress:'Progress', goal:'Goal',
     favorite:'Favorite word', listenWord:'Listen', slow:'Slow', hidePinyin:'Hide Pinyin', showPinyin:'Show Pinyin',
     pronunciationPractice:'🎙 Pronunciation practice', startRecording:'Start recording', stop:'Stop', playback:'Playback', checkPronunciation:'Check pronunciation',
     target:'Target:', recognized:'AI recognized:', assessmentNote:'Groq Whisper AI transcribes your Chinese speech. The score is text-match similarity, not a professional tone/phoneme pronunciation score.', accuracyLabel:'Accuracy', fluencyLabel:'Fluency', completenessLabel:'Completeness',
@@ -117,7 +117,7 @@ const I18N = {
     generatedExample:'Auto-generated study example', curatedExample:'Curated example'
   },
   'zh-Hant': {
-    day:'第', navToday:'今天', navVocab:'詞彙', navReading:'閱讀', navQuiz:'測驗', navProgress:'進度', goal:'今日目標',
+    day:'第', navToday:'今天', navVocab:'詞彙', navReading:'閱讀', navMidterm:'期中複習', navQuiz:'測驗', navProgress:'進度', goal:'今日目標',
     favorite:'收藏單字', listenWord:'聽單字', slow:'慢速', hidePinyin:'隱藏拼音', showPinyin:'顯示拼音',
     pronunciationPractice:'🎙 發音練習', startRecording:'開始錄音', stop:'停止', playback:'播放錄音', checkPronunciation:'檢查發音',
     target:'目標：', recognized:'AI 辨識：', assessmentNote:'Groq Whisper AI 會轉寫你的中文語音。分數代表 AI 文字辨識與目標詞的相似度，不是專業聲調／音位評分。', accuracyLabel:'準確度', fluencyLabel:'流暢度', completenessLabel:'完整度',
@@ -991,8 +991,8 @@ function applyWritingModeUI(){
 }
 function bindCanvas(){
   $('clearCanvasBtn').addEventListener('click',clearWritingCanvas);
-  $('singleWritingModeBtn')?.addEventListener('click',()=>{state.writingPracticeMode='single';saveWritingSettings();applyWritingModeUI();});
-  $('copybookWritingModeBtn')?.addEventListener('click',()=>{state.writingPracticeMode='copybook';saveWritingSettings();applyWritingModeUI();});
+  $('singleWritingModeBtn')?.addEventListener('click',()=>{state.writingPracticeMode='single';saveWritingSettings();applyWritingModeUI();scheduleWritingResponsiveRefresh();});
+  $('copybookWritingModeBtn')?.addEventListener('click',()=>{state.writingPracticeMode='copybook';saveWritingSettings();applyWritingModeUI();scheduleWritingResponsiveRefresh();});
   $('brushModeCheckbox')?.addEventListener('change',e=>{state.writingBrushMode=Boolean(e.target.checked);saveWritingSettings();});
   $('showGuideCheckbox').addEventListener('change',e=>{
     const show=e.target.checked;
@@ -1019,12 +1019,53 @@ function bindCanvas(){
   window.addEventListener('pointerup',()=>setWritingInteractionLock(false));
   window.addEventListener('pointercancel',()=>setWritingInteractionLock(false));
   window.addEventListener('blur',()=>setWritingInteractionLock(false));
-  window.addEventListener('resize',()=>{
-    [...writingCanvases,...copybookCanvases].forEach(resizeWritingCanvas);
-    writingGuideInstances.forEach(x=>x?.writer?.resize?.());
-    copybookGuideInstances.forEach(x=>x?.writer?.resize?.());
-  });
+  window.addEventListener('resize',scheduleWritingResponsiveRefresh,{passive:true});
+  window.addEventListener('orientationchange',scheduleWritingResponsiveRefresh,{passive:true});
+  window.visualViewport?.addEventListener?.('resize',scheduleWritingResponsiveRefresh,{passive:true});
+  if('ResizeObserver' in window){
+    const ro=new ResizeObserver(()=>scheduleWritingResponsiveRefresh());
+    [$('writingGrid'),$('copybookGrid'),document.querySelector('.writing-card')].filter(Boolean).forEach(el=>ro.observe(el));
+    window.__tocflWritingResizeObserver=ro;
+  }
   applyWritingModeUI();
+  scheduleWritingResponsiveRefresh();
+}
+let writingResponsiveRaf=0;
+let writingResponsiveTimer=0;
+function updateHanziWriterDimensions(inst){
+  const writer=inst?.writer,host=inst?.host;
+  if(!writer||!host)return;
+  const owner=inst.square||host.parentElement;
+  const r=(owner?.getBoundingClientRect?.()||host.getBoundingClientRect());
+  const hw=host.getBoundingClientRect();
+  const w=Math.max(0,r.width||hw.width||0),h=Math.max(0,r.height||hw.height||w||0);
+  const size=Math.round(Math.min(w,h||w));
+  if(!Number.isFinite(size)||size<20)return;
+  host.style.width='100%';host.style.height='100%';
+  try{
+    if(typeof writer.updateDimensions==='function')writer.updateDimensions({width:size,height:size});
+    else if(typeof writer.resize==='function')writer.resize(size,size);
+  }catch(err){console.warn('HanziWriter responsive resize:',err);}
+}
+function refreshWritingResponsiveLayout(){
+  [...writingCanvases,...copybookCanvases].forEach(resizeWritingCanvas);
+  writingGuideInstances.forEach(updateHanziWriterDimensions);
+  copybookGuideInstances.forEach(updateHanziWriterDimensions);
+  writingLabelInstances.forEach(inst=>{
+    const r=inst?.host?.getBoundingClientRect?.();
+    const size=Math.round(Math.min(r?.width||40,r?.height||40));
+    if(size>=16&&inst?.writer?.updateDimensions){try{inst.writer.updateDimensions({width:size,height:size});}catch{}}
+  });
+}
+function scheduleWritingResponsiveRefresh(){
+  cancelAnimationFrame(writingResponsiveRaf);
+  clearTimeout(writingResponsiveTimer);
+  writingResponsiveRaf=requestAnimationFrame(()=>requestAnimationFrame(()=>{
+    refreshWritingResponsiveLayout();
+    // iPad Safari reports an intermediate width while rotating. Re-measure once the
+    // visual viewport has settled, without rebuilding rows or deleting user ink.
+    writingResponsiveTimer=setTimeout(refreshWritingResponsiveLayout,180);
+  }));
 }
 function writingCharacters(word){
   const raw=primaryForm(word);
@@ -1327,6 +1368,7 @@ function renderCopybookPractice(word){
           cell.classList.add('guide-unavailable'); if(play)play.disabled=true;
         }
       });
+      scheduleWritingResponsiveRefresh();
     }));
   });
 }
@@ -1395,7 +1437,7 @@ function loadStrokeData(char,onComplete,onError,onData){
 function makeWritingGuideWriter(host,ch,onData,onError){
   if(typeof window.HanziWriter==='undefined') return null;
   const rect=host.getBoundingClientRect();
-  const size=Math.max(160,Math.round(Math.min(rect.width||220,rect.height||rect.width||220)));
+  const size=Math.max(60,Math.round(Math.min(rect.width||220,rect.height||rect.width||220)));
   return window.HanziWriter.create(host,ch,{
     width:size,
     height:size,
@@ -1686,6 +1728,15 @@ function applyReadingCloudState(value){
   try{localStorage.setItem(READING_PROGRESS_KEY,JSON.stringify(value));document.dispatchEvent(new CustomEvent('tocfl:reading-cloud-applied'));return true;}catch{return false;}
 }
 
+const MIDTERM_PROGRESS_KEY='tocfl-midterm-progress-v1';
+function getMidtermCloudState(){
+  try{const x=JSON.parse(localStorage.getItem(MIDTERM_PROGRESS_KEY)||'null');return x&&typeof x==='object'?x:{version:1,practice:{},history:[]};}catch{return {version:1,practice:{},history:[]};}
+}
+function applyMidtermCloudState(value){
+  if(!value||typeof value!=='object'||Array.isArray(value))return false;
+  try{localStorage.setItem(MIDTERM_PROGRESS_KEY,JSON.stringify(value));document.dispatchEvent(new CustomEvent('tocfl:midterm-cloud-applied'));return true;}catch{return false;}
+}
+
 function bindBackup(){
   $('exportBtn').addEventListener('click',exportProgress); $('importInput').addEventListener('change',importProgress);
   $('resetBtn').addEventListener('click',()=>{
@@ -1693,13 +1744,14 @@ function bindBackup(){
     for(const cfg of LEVEL_CATALOG) state.levelStates[cfg.id]=emptyLevelState();
     state.progress={}; state.favorites=new Set(); state.day=1; persistMultiState();
     localStorage.removeItem(READING_PROGRESS_KEY); document.dispatchEvent(new CustomEvent('tocfl:reading-cloud-applied'));
+    localStorage.removeItem(MIDTERM_PROGRESS_KEY); document.dispatchEvent(new CustomEvent('tocfl:midterm-cloud-applied'));
     selectDay(1,{notify:false}); document.dispatchEvent(new CustomEvent('tocfl:state-changed'));
     $('backupStatus').textContent=t('resetDone');
   });
 }
 function exportProgress(){
   saveCurrentLevelSnapshot(); persistMultiState();
-  const data={version:5,format:'tocfl-multilevel-v1',exportedAt:new Date().toISOString(),levels:state.levelStates,settings:{activeLevel:state.activeLevel,rememberLevel:state.rememberLevel},radicals:getRadicalCloudState(),reading:getReadingCloudState(),language:state.lang};
+  const data={version:5,format:'tocfl-multilevel-v1',exportedAt:new Date().toISOString(),levels:state.levelStates,settings:{activeLevel:state.activeLevel,rememberLevel:state.rememberLevel},radicals:getRadicalCloudState(),reading:getReadingCloudState(),midterm:getMidtermCloudState(),language:state.lang};
   const blob=new Blob([JSON.stringify(data,null,2)],{type:'application/json'}),url=URL.createObjectURL(blob),a=document.createElement('a');
   a.href=url;a.download=`tocfl-all-levels-progress-${new Date().toISOString().slice(0,10)}.json`;a.click();URL.revokeObjectURL(url);$('backupStatus').textContent=t('exportDone');
 }
@@ -1714,6 +1766,7 @@ async function importProgress(e){
       if(I18N[data.language]){state.lang=data.language;localStorage.setItem(LANGUAGE_KEY,state.lang);}
       if(data.radicals&&typeof data.radicals==='object')applyRadicalCloudState(data.radicals);
       if(data.reading&&typeof data.reading==='object')applyReadingCloudState(data.reading);
+      if(data.midterm&&typeof data.midterm==='object')applyMidtermCloudState(data.midterm);
       await applyLevel(wanted,{notify:false,close:false,skipSnapshot:true}); persistMultiState(); document.dispatchEvent(new CustomEvent('tocfl:state-changed'));
     }else if(data.progress && typeof data.progress==='object'){
       state.levelStates.A1=normalizeLevelState({progress:data.progress,favorites:Array.isArray(data.favorites)?data.favorites:[],lastDay:data.lastDay||1});
@@ -1760,7 +1813,7 @@ function getCloudState(){
   const levels={}; for(const cfg of LEVEL_CATALOG) if(state.levelStates[cfg.id]) levels[cfg.id]=normalizeLevelState(state.levelStates[cfg.id]);
   const a1=normalizeLevelState(levels.A1||emptyLevelState());
   return {
-    progress:{__format:'tocfl-multilevel-v1',levels,settings:{activeLevel:state.activeLevel,rememberLevel:Boolean(state.rememberLevel)},radicals:getRadicalCloudState(),reading:getReadingCloudState()},
+    progress:{__format:'tocfl-multilevel-v1',levels,settings:{activeLevel:state.activeLevel,rememberLevel:Boolean(state.rememberLevel)},radicals:getRadicalCloudState(),reading:getReadingCloudState(),midterm:getMidtermCloudState()},
     // Legacy mirrors keep the existing database schema and make migration reversible.
     favorites:a1.favorites,lastDay:a1.lastDay,language:state.lang
   };
@@ -1775,6 +1828,7 @@ async function applyCloudState(data={}){
     const desired=String(cloudProgress.settings?.activeLevel||'A1').toUpperCase(); state.activeLevel=levelConfig(desired)?desired:'A1';
     if(cloudProgress.radicals&&typeof cloudProgress.radicals==='object')applyRadicalCloudState(cloudProgress.radicals);
     if(cloudProgress.reading&&typeof cloudProgress.reading==='object')applyReadingCloudState(cloudProgress.reading);
+    if(cloudProgress.midterm&&typeof cloudProgress.midterm==='object')applyMidtermCloudState(cloudProgress.midterm);
   }else{
     // Existing users: migrate the old single-level cloud row into A1 without touching future local levels.
     state.levelStates.A1=normalizeLevelState({progress:cloudProgress,favorites:Array.isArray(data.favorites)?data.favorites:[],lastDay:data.lastDay||1});

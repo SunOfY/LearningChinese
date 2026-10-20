@@ -42,3 +42,6 @@ Không cần chạy schema mới cho multi-level. Website vẫn dùng `public.us
 ## Lưu ý quan trọng
 
 Giữ `id` của từng từ ổn định sau khi phát hành dữ liệu. Nếu đổi ID, tiến độ đã lưu của người học sẽ không còn khớp với từ đó.
+
+## v5.6.6
+Added a Midterm Review module for Book 1 Lesson 1 (L1D1-L1D2), with practice sections and a 105-minute mock exam. Also fixes HanziWriter reference models disappearing/mis-sizing when an iPad rotates in multi-character writing modes.

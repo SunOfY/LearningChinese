@@ -796,3 +796,27 @@ body.reading-writing-active *{
 .midterm-random-sections{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:9px}.midterm-random-sections label{position:relative}.midterm-random-sections span{display:flex;align-items:center;gap:7px;min-height:54px;padding:10px 12px;border:1px solid var(--border);border-radius:12px;background:#fff;font-weight:800;cursor:pointer}.midterm-random-sections small{margin-left:auto;color:var(--muted);font-size:11px}.midterm-random-sections input:checked+span{border-color:#2b9488;background:#eef9f7}.midterm-random-sections input:checked+span:before{content:'✓';color:#13766a;font-weight:950}
 .midterm-random-progress{display:flex;align-items:center;gap:10px;margin:0 0 12px}.midterm-random-progress i{height:7px;flex:1;border-radius:999px;background:#e1efec;overflow:hidden}.midterm-random-progress i b{display:block;height:100%;background:#218b7f}.midterm-random-progress span{font-size:11px;color:var(--muted);font-weight:800;text-transform:uppercase}
 @media(max-width:820px){.midterm-review-actions{grid-template-columns:1fr}.midterm-bank-stat{grid-template-columns:auto 1fr}.midterm-random-sections{grid-template-columns:1fr}}
+
+
+/* v5.6.11 — dual image mode for midterm review */
+.midterm-image-wrap{display:grid;gap:6px;justify-items:center;align-items:start;min-width:0}
+.midterm-card-meta{display:grid;gap:2px;text-align:center;line-height:1.2}
+.midterm-card-zh{font-family:"BiauKai","DFKai-SB","Kaiti TC","Noto Serif TC",serif;font-size:18px;font-weight:800;color:#163d3a}
+.midterm-card-pinyin{font-size:13px;font-weight:700;color:#2b6d92}
+.midterm-card-en{font-size:12px;color:#9a5a35;font-weight:700}
+.midterm-main-picture-wrap{justify-items:start}
+.midterm-main-picture-wrap .midterm-card-meta{text-align:left}
+.midterm-main-picture-wrap .midterm-card-zh{font-size:22px}
+.midterm-image-mode-label{display:flex;align-items:center;gap:6px;padding:7px 9px;border:1px solid var(--border);border-radius:10px;background:#fff;font-size:12px;font-weight:700}
+.midterm-image-mode-label select{border:1px solid var(--border);border-radius:8px;padding:4px 8px;background:#fff;font:inherit}
+.midterm-option-picture{width:100%;height:125px;object-fit:contain}
+.midterm-image-option .midterm-card-meta{padding:0 4px 2px}
+.midterm-image-option .midterm-card-zh{font-size:14px}
+.midterm-image-option .midterm-card-pinyin{font-size:11px}
+.midterm-image-option .midterm-card-en{font-size:10px}
+
+/* v5.6.12 — overview image toggle polish */
+.midterm-overview-image-toggle{display:flex;align-items:center;gap:10px;flex-wrap:wrap;margin:10px 0 4px}
+.midterm-overview-image-toggle>span{font-size:13px;font-weight:800;color:#315f5a}
+.midterm-overview-image-toggle>button{border:1px solid var(--border);background:#fff;color:#1d4d49;border-radius:999px;padding:8px 14px;font-weight:800;cursor:pointer}
+.midterm-overview-image-toggle>button.active{background:rgba(18,125,114,.12);border-color:#127d72;color:#0d5e57;box-shadow:0 0 0 2px rgba(18,125,114,.08) inset}

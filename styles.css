@@ -815,8 +815,3 @@ body.reading-writing-active *{
 .midterm-image-option .midterm-card-pinyin{font-size:11px}
 .midterm-image-option .midterm-card-en{font-size:10px}
 
-/* v5.6.12 — overview image toggle polish */
-.midterm-overview-image-toggle{display:flex;align-items:center;gap:10px;flex-wrap:wrap;margin:10px 0 4px}
-.midterm-overview-image-toggle>span{font-size:13px;font-weight:800;color:#315f5a}
-.midterm-overview-image-toggle>button{border:1px solid var(--border);background:#fff;color:#1d4d49;border-radius:999px;padding:8px 14px;font-weight:800;cursor:pointer}
-.midterm-overview-image-toggle>button.active{background:rgba(18,125,114,.12);border-color:#127d72;color:#0d5e57;box-shadow:0 0 0 2px rgba(18,125,114,.08) inset}

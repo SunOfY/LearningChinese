@@ -1,4 +1,4 @@
-const CACHE = 'tocfl-v5-6-7-midterm-embedded';
+const CACHE = 'tocfl-v5-6-8-precise-midterm-images';
 const ASSETS = [
   './',
   './index.html',

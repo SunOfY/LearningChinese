@@ -1,0 +1,8 @@
+v5.6.8 — Midterm image crop fix
+
+- Re-cropped all 42 Midterm picture assets from the original sample-question pages.
+- Fixed Lesson 1 Dialogue 1 layout: row 1 has 7 cards, rows 2 and 3 have 6 cards. The old crop treated the lower rows incorrectly, causing adjacent-card slivers and cut-off pictures.
+- Lesson 0 cards use the exact 7x2 Chinese-only grid.
+- Lesson 1 Dialogue 2 cards use the exact 3x3 grid and crop the illustration side instead of the word side.
+- Embedded images in midterm.js are updated, so only midterm.js + sw.js are required at runtime.
+- data/midterm/images is also included in FULL/source for repository consistency.

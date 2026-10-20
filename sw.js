@@ -1,4 +1,4 @@
-const CACHE = 'tocfl-v5-6-13-clean-midterm';
+const CACHE = 'tocfl-v5-6-14-pdf-original-crops';
 const ASSETS = [
   './',
   './index.html',

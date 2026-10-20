@@ -1,4 +1,4 @@
-const CACHE = 'tocfl-v5-6-6-midterm-ipad-writing';
+const CACHE = 'tocfl-v5-6-7-midterm-embedded';
 const ASSETS = [
   './',
   './index.html',
@@ -12,7 +12,6 @@ const ASSETS = [
   './data/radicals.json',
   './data/a1.json',
   './data/readings.json',
-  './data/midterm_l1.json',
   './data/enrichment_day1.json',
   './manifest.webmanifest',
   './icons/icon-192.png',

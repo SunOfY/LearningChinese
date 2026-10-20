@@ -1,4 +1,4 @@
-const CACHE = 'tocfl-v5-6-15-midterm-section-image-mode-only';
+const CACHE = 'tocfl-v5-6-16-midterm-next-wrap-fix';
 const ASSETS = [
   './',
   './index.html',

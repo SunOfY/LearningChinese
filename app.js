@@ -1737,6 +1737,28 @@ function applyMidtermCloudState(value){
   try{localStorage.setItem(MIDTERM_PROGRESS_KEY,JSON.stringify(value));document.dispatchEvent(new CustomEvent('tocfl:midterm-cloud-applied'));return true;}catch{return false;}
 }
 
+const TOEIC_PROGRESS_KEY='tocfl-toeic-progress-v1';
+function getToeicCloudState(){
+  try{const x=JSON.parse(localStorage.getItem(TOEIC_PROGRESS_KEY)||'null');return x&&typeof x==='object'?x:{version:1,cards:{},log:{}};}catch{return {version:1,cards:{},log:{}};}
+}
+/**
+ * Merge (not overwrite) TOEIC progress, so studying on two devices never loses cards:
+ * each card keeps whichever copy was graded last; daily logs keep the larger count.
+ */
+function mergeToeicState(local,incoming){
+  const a=local&&typeof local==='object'?local:{},b=incoming&&typeof incoming==='object'?incoming:{};
+  const cards={...(a.cards||{})};
+  for(const [id,card] of Object.entries(b.cards||{})){if(!cards[id]||Number(card?.t||0)>Number(cards[id]?.t||0))cards[id]=card;}
+  const log={...(a.log||{})};
+  for(const [day,entry] of Object.entries(b.log||{})){const cur=log[day]||{};log[day]={reviewed:Math.max(Number(cur.reviewed||0),Number(entry?.reviewed||0)),learned:Math.max(Number(cur.learned||0),Number(entry?.learned||0))};}
+  const newer=Number(b.settings?.t||0)>Number(a.settings?.t||0);
+  return {...a,...b,version:1,cards,log,settings:newer?b.settings:(a.settings||b.settings),calendar:newer?(b.calendar||a.calendar):(a.calendar||b.calendar)};
+}
+function applyToeicCloudState(value,{replace=false}={}){
+  if(!value||typeof value!=='object'||Array.isArray(value))return false;
+  try{const next=replace?value:mergeToeicState(getToeicCloudState(),value);localStorage.setItem(TOEIC_PROGRESS_KEY,JSON.stringify(next));document.dispatchEvent(new CustomEvent('tocfl:toeic-cloud-applied'));return true;}catch{return false;}
+}
+
 function bindBackup(){
   $('exportBtn').addEventListener('click',exportProgress); $('importInput').addEventListener('change',importProgress);
   $('resetBtn').addEventListener('click',()=>{
@@ -1745,13 +1767,14 @@ function bindBackup(){
     state.progress={}; state.favorites=new Set(); state.day=1; persistMultiState();
     localStorage.removeItem(READING_PROGRESS_KEY); document.dispatchEvent(new CustomEvent('tocfl:reading-cloud-applied'));
     localStorage.removeItem(MIDTERM_PROGRESS_KEY); document.dispatchEvent(new CustomEvent('tocfl:midterm-cloud-applied'));
+    localStorage.removeItem(TOEIC_PROGRESS_KEY); document.dispatchEvent(new CustomEvent('tocfl:toeic-cloud-applied'));
     selectDay(1,{notify:false}); document.dispatchEvent(new CustomEvent('tocfl:state-changed'));
     $('backupStatus').textContent=t('resetDone');
   });
 }
 function exportProgress(){
   saveCurrentLevelSnapshot(); persistMultiState();
-  const data={version:5,format:'tocfl-multilevel-v1',exportedAt:new Date().toISOString(),levels:state.levelStates,settings:{activeLevel:state.activeLevel,rememberLevel:state.rememberLevel},radicals:getRadicalCloudState(),reading:getReadingCloudState(),midterm:getMidtermCloudState(),language:state.lang};
+  const data={version:5,format:'tocfl-multilevel-v1',exportedAt:new Date().toISOString(),levels:state.levelStates,settings:{activeLevel:state.activeLevel,rememberLevel:state.rememberLevel},radicals:getRadicalCloudState(),reading:getReadingCloudState(),midterm:getMidtermCloudState(),toeic:getToeicCloudState(),language:state.lang};
   const blob=new Blob([JSON.stringify(data,null,2)],{type:'application/json'}),url=URL.createObjectURL(blob),a=document.createElement('a');
   a.href=url;a.download=`tocfl-all-levels-progress-${new Date().toISOString().slice(0,10)}.json`;a.click();URL.revokeObjectURL(url);$('backupStatus').textContent=t('exportDone');
 }
@@ -1767,6 +1790,7 @@ async function importProgress(e){
       if(data.radicals&&typeof data.radicals==='object')applyRadicalCloudState(data.radicals);
       if(data.reading&&typeof data.reading==='object')applyReadingCloudState(data.reading);
       if(data.midterm&&typeof data.midterm==='object')applyMidtermCloudState(data.midterm);
+      if(data.toeic&&typeof data.toeic==='object')applyToeicCloudState(data.toeic);
       await applyLevel(wanted,{notify:false,close:false,skipSnapshot:true}); persistMultiState(); document.dispatchEvent(new CustomEvent('tocfl:state-changed'));
     }else if(data.progress && typeof data.progress==='object'){
       state.levelStates.A1=normalizeLevelState({progress:data.progress,favorites:Array.isArray(data.favorites)?data.favorites:[],lastDay:data.lastDay||1});
@@ -1813,7 +1837,7 @@ function getCloudState(){
   const levels={}; for(const cfg of LEVEL_CATALOG) if(state.levelStates[cfg.id]) levels[cfg.id]=normalizeLevelState(state.levelStates[cfg.id]);
   const a1=normalizeLevelState(levels.A1||emptyLevelState());
   return {
-    progress:{__format:'tocfl-multilevel-v1',levels,settings:{activeLevel:state.activeLevel,rememberLevel:Boolean(state.rememberLevel)},radicals:getRadicalCloudState(),reading:getReadingCloudState(),midterm:getMidtermCloudState()},
+    progress:{__format:'tocfl-multilevel-v1',levels,settings:{activeLevel:state.activeLevel,rememberLevel:Boolean(state.rememberLevel)},radicals:getRadicalCloudState(),reading:getReadingCloudState(),midterm:getMidtermCloudState(),toeic:getToeicCloudState()},
     // Legacy mirrors keep the existing database schema and make migration reversible.
     favorites:a1.favorites,lastDay:a1.lastDay,language:state.lang
   };
@@ -1829,6 +1853,7 @@ async function applyCloudState(data={}){
     if(cloudProgress.radicals&&typeof cloudProgress.radicals==='object')applyRadicalCloudState(cloudProgress.radicals);
     if(cloudProgress.reading&&typeof cloudProgress.reading==='object')applyReadingCloudState(cloudProgress.reading);
     if(cloudProgress.midterm&&typeof cloudProgress.midterm==='object')applyMidtermCloudState(cloudProgress.midterm);
+    if(cloudProgress.toeic&&typeof cloudProgress.toeic==='object')applyToeicCloudState(cloudProgress.toeic);
   }else{
     // Existing users: migrate the old single-level cloud row into A1 without touching future local levels.
     state.levelStates.A1=normalizeLevelState({progress:cloudProgress,favorites:Array.isArray(data.favorites)?data.favorites:[],lastDay:data.lastDay||1});
@@ -1844,7 +1869,8 @@ async function applyCloudState(data={}){
 window.TOCFLApp={
   getCloudState,applyCloudState,getLanguage:()=>state.lang,isReady:()=>Boolean(window.TOCFL_APP_READY),
   openLevelSelector:()=>openLevelSelector({force:true}),afterAccountReady,onSignedOut,
-  getActiveLevel:()=>state.activeLevel,getRememberLevel:()=>state.rememberLevel
+  getActiveLevel:()=>state.activeLevel,getRememberLevel:()=>state.rememberLevel,
+  mergeToeicFromCloud:value=>applyToeicCloudState(value)
 };
 
 window.addEventListener('beforeunload',cleanupRecordingStream);

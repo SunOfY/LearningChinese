@@ -19,6 +19,7 @@ const AUTH_TEXT = {
     signupSuccess:'Đã tạo tài khoản. Nếu Supabase yêu cầu xác nhận email, hãy mở email xác nhận rồi đăng nhập.',
     loginSuccess:'Đăng nhập thành công.', loggedOut:'Đã đăng xuất. Website chuyển về dữ liệu cục bộ trên thiết bị.',
     firstCloudUpload:'Tài khoản chưa có dữ liệu cloud; tiến độ hiện tại trên thiết bị đã được tải lên.',
+    cloudKeptLocal:'Máy này có tiến độ mới hơn nên đã được giữ lại và tải lên tài khoản.', cloudMerged:'Đã gộp tiến độ từ thiết bị khác.',
     cloudLoaded:'Đã tải tiến độ của tài khoản về thiết bị này.', guest:'Khách', profile:'Hồ sơ',
     groqTitle:'🤖 Groq AI Speech cá nhân', groqNotConnected:'Chưa kết nối Groq API Key riêng.', groqConnectedBadge:'Đã kết nối', groqConnectedAt:'Groq AI Speech đã kết nối', groqHelp:'Mỗi tài khoản dùng Groq API Key của chính mình nên quota không dùng chung. Key được mã hóa trên server và không lưu trong GitHub hay trình duyệt.', groqKey:'Groq API Key', groqSaveTest:'Lưu & kiểm tra', groqDisconnect:'Ngắt kết nối', groqSaving:'Đang kiểm tra Groq Key…', groqSaved:'✅ Groq API Key đã kết nối và kiểm tra thành công.', groqDeleted:'Đã ngắt Groq khỏi tài khoản.', groqNeedKey:'Hãy nhập Groq API Key.', groqFunctionError:'Chưa cấu hình Edge Function groq-speech hoặc schema Groq BYOK.', groqConfirmDelete:'Ngắt Groq AI Speech cá nhân khỏi tài khoản này?',
     privacy:'Mỗi tài khoản chỉ đọc/ghi tiến độ của chính mình khi bạn đã chạy file RLS trong thư mục supabase.', forgotPassword:'Quên mật khẩu?', resetSent:'Đã gửi email đặt lại mật khẩu. Hãy mở email rồi quay lại website.', resetNeedEmail:'Hãy nhập email tài khoản trước.', newPasswordPrompt:'Nhập mật khẩu mới (ít nhất 6 ký tự):', newPasswordAgain:'Nhập lại mật khẩu mới:', passwordUpdated:'Đã đổi mật khẩu. Bạn có thể tiếp tục dùng tài khoản.', restoreCloud:'Khôi phục dữ liệu từ cloud', restoreCloudDone:'Đã tải lại dữ liệu cloud. Nếu trước đây đã đồng bộ, tiến độ cũ sẽ xuất hiện lại.', localBackupSaved:'Đã tạo bản sao cục bộ trước khi khôi phục cloud.'
@@ -34,6 +35,7 @@ const AUTH_TEXT = {
     signupSuccess:'Account created. If email confirmation is enabled in Supabase, confirm the email before signing in.',
     loginSuccess:'Signed in successfully.', loggedOut:'Signed out. The site is now using local progress on this device.',
     firstCloudUpload:'No cloud progress existed yet, so this device’s current progress was uploaded.',
+    cloudKeptLocal:'This device had newer progress, so it was kept and uploaded to your account.', cloudMerged:'Merged progress from another device.',
     cloudLoaded:'Your account progress was loaded onto this device.', guest:'Guest', profile:'Profile',
     groqTitle:'🤖 Personal Groq AI Speech', groqNotConnected:'No personal Groq API Key connected.', groqConnectedBadge:'Connected', groqConnectedAt:'Groq AI Speech connected', groqHelp:'Each account uses its own Groq API Key, so usage quotas are separate. The key is encrypted on the server and is never stored in GitHub or the browser.', groqKey:'Groq API Key', groqSaveTest:'Save & test', groqDisconnect:'Disconnect', groqSaving:'Testing Groq key…', groqSaved:'✅ Groq API Key connected and tested successfully.', groqDeleted:'Groq disconnected from this account.', groqNeedKey:'Enter a Groq API Key.', groqFunctionError:'The groq-speech Edge Function or Groq BYOK schema is not configured.', groqConfirmDelete:'Disconnect personal Groq AI Speech from this account?',
     privacy:'With the included RLS setup, each account can only read and write its own progress.', forgotPassword:'Forgot password?', resetSent:'Password reset email sent. Open it, then return to this site.', resetNeedEmail:'Enter your account email first.', newPasswordPrompt:'Enter a new password (at least 6 characters):', newPasswordAgain:'Enter the new password again:', passwordUpdated:'Password updated. You can continue using your account.', restoreCloud:'Restore cloud data', restoreCloudDone:'Cloud data reloaded. Previously synced progress should reappear.', localBackupSaved:'A local backup was saved before restoring cloud.'
@@ -49,6 +51,7 @@ const AUTH_TEXT = {
     signupSuccess:'帳號已建立。若 Supabase 啟用電子郵件驗證，請先完成驗證再登入。',
     loginSuccess:'登入成功。', loggedOut:'已登出，目前改用這台裝置的本機進度。',
     firstCloudUpload:'雲端尚無資料，已把這台裝置目前的進度上傳。',
+    cloudKeptLocal:'這台裝置的進度較新，已保留並上傳到帳號。', cloudMerged:'已合併其他裝置的進度。',
     cloudLoaded:'已把帳號的學習進度載入這台裝置。', guest:'訪客', profile:'個人資料',
     groqTitle:'🤖 個人 Groq AI Speech', groqNotConnected:'尚未連接個人的 Groq API Key。', groqConnectedBadge:'已連接', groqConnectedAt:'Groq AI Speech 已連接', groqHelp:'每個帳號使用自己的 Groq API Key，因此用量額度彼此獨立。Key 會在伺服器端加密，不會儲存在 GitHub 或瀏覽器。', groqKey:'Groq API Key', groqSaveTest:'儲存並測試', groqDisconnect:'中斷連接', groqSaving:'正在測試 Groq Key…', groqSaved:'✅ Groq API Key 已成功連接並通過測試。', groqDeleted:'已從此帳號移除 Groq。', groqNeedKey:'請輸入 Groq API Key。', groqFunctionError:'尚未設定 groq-speech Edge Function 或 Groq BYOK schema。', groqConfirmDelete:'要中斷此帳號的個人 Groq AI Speech 嗎？',
     privacy:'執行內附的 RLS 設定後，每個帳號只能讀寫自己的學習進度。', forgotPassword:'忘記密碼？', resetSent:'已寄出重設密碼郵件，請開啟郵件後回到此網站。', resetNeedEmail:'請先輸入帳號電子郵件。', newPasswordPrompt:'輸入新密碼（至少 6 個字元）：', newPasswordAgain:'再次輸入新密碼：', passwordUpdated:'密碼已更新，可以繼續使用帳號。', restoreCloud:'從雲端復原資料', restoreCloudDone:'已重新載入雲端資料；若之前有同步，舊進度會重新出現。', localBackupSaved:'復原雲端前已建立本機備份。'
@@ -63,6 +66,35 @@ let syncBusy = false;
 let suppressSync = false;
 let groqStatus = { connected:false, updatedAt:null };
 let cloudReady = false;
+let pendingSync = false;
+
+// Multi-device safety:
+//  DIRTY = this device has changes not yet uploaded (per user, with time).
+//  SEEN  = the cloud row version (updated_at) this device last loaded or wrote.
+// Before uploading we check whether another device wrote in the meantime, so an
+// old tab/iPad coming back online cannot silently overwrite newer progress.
+const DIRTY_KEY = 'tocfl-sync-dirty-v1';
+const SEEN_KEY = 'tocfl-sync-seen-v1';
+function readMark(key) {
+  try {
+    const x = JSON.parse(localStorage.getItem(key) || 'null');
+    return x && session?.user && x.uid === session.user.id ? x : null;
+  } catch { return null; }
+}
+function writeMark(key, at) {
+  if (!session?.user) return;
+  try { localStorage.setItem(key, JSON.stringify({ uid: session.user.id, at })); } catch {}
+}
+let cloudLoadFailed = false; // e.g. opened offline: still remember local edits
+function markDirty() {
+  // Ignore startup noise before the cloud copy was loaded, unless loading failed (offline).
+  if (suppressSync || !session?.user || (!cloudReady && !cloudLoadFailed)) return;
+  writeMark(DIRTY_KEY, Date.now());
+}
+function clearDirtyIfOlder(than) {
+  const d = readMark(DIRTY_KEY);
+  if (d && d.at <= than) localStorage.removeItem(DIRTY_KEY);
+}
 
 const $ = id => document.getElementById(id);
 const lang = () => window.TOCFLApp?.getLanguage?.() || localStorage.getItem('tocfl-a1-ui-language-v2') || 'vi';
@@ -271,7 +303,7 @@ async function afterSignedIn() {
   if (appReady) await loadCloudState();
 }
 
-async function loadCloudState() {
+async function loadCloudState(force=false) {
   if (!session?.user || !supabaseClient || !window.TOCFLApp) return;
   setCloudStatus(tr('cloudSyncing'));
   const { data, error } = await supabaseClient
@@ -279,7 +311,8 @@ async function loadCloudState() {
     .select('progress,favorites,last_day,ui_language,updated_at')
     .eq('user_id', session.user.id)
     .maybeSingle();
-  if (error) { setCloudStatus(`${tr('cloudError')}: ${error.message}`, true); return; }
+  if (error) { cloudLoadFailed = true; setCloudStatus(`${tr('cloudError')}: ${error.message}`, true); return; }
+  cloudLoadFailed = false;
   if (!data) {
     cloudReady=true;
     await syncNow(true);
@@ -287,6 +320,22 @@ async function loadCloudState() {
     await window.TOCFLApp?.afterAccountReady?.(session.user.id);
     return;
   }
+  const cloudAt = Date.parse(data.updated_at) || 0;
+  const dirty = readMark(DIRTY_KEY);
+
+  if (!force && dirty && dirty.at > cloudAt) {
+    // This device changed things after the last cloud save (e.g. studied offline):
+    // keep local progress, but still merge TOEIC cards from the cloud, then upload.
+    suppressSync = true;
+    try { window.TOCFLApp.mergeToeicFromCloud?.(data.progress?.toeic); } finally { suppressSync = false; }
+    writeMark(SEEN_KEY, cloudAt);
+    cloudReady = true;
+    await syncNow(true);
+    setCloudStatus(tr('cloudKeptLocal'));
+    await window.TOCFLApp?.afterAccountReady?.(session.user.id);
+    return;
+  }
+
   backupLocalBeforeCloudRestore();
   suppressSync = true;
   try {
@@ -299,18 +348,49 @@ async function loadCloudState() {
   } finally {
     suppressSync = false;
   }
+  writeMark(SEEN_KEY, cloudAt);
   cloudReady=true;
-  setCloudStatus(tr('cloudLoaded'));
+  if (dirty && !force) {
+    // Older local edits: cloud won, but TOEIC cards were merged — push the merged result.
+    await syncNow(true);
+    setCloudStatus(tr('cloudMerged'));
+  } else {
+    localStorage.removeItem(DIRTY_KEY);
+    setCloudStatus(tr('cloudLoaded'));
+  }
   await window.TOCFLApp?.afterAccountReady?.(session.user.id);
 }
 
 async function syncNow(initialUpload=false) {
-  if (!session?.user || !supabaseClient || !window.TOCFLApp || syncBusy) return;
+  if (!session?.user || !supabaseClient || !window.TOCFLApp) return;
+  if (syncBusy) { pendingSync = true; return; } // run again when the current upload ends
   if (!cloudReady && !initialUpload) { await loadCloudState(); return; }
   syncBusy = true;
   renderAccountUI();
   setCloudStatus(tr('cloudSyncing'));
+  const startedAt = Date.now();
+  let reloadFromCloud = false;
   try {
+    // Did another device save after we last loaded/wrote? Then reconcile first.
+    const seen = readMark(SEEN_KEY);
+    if (seen) {
+      const { data: remote, error: remoteError } = await supabaseClient
+        .from('user_learning_state').select('updated_at').eq('user_id', session.user.id).maybeSingle();
+      if (remoteError) throw remoteError;
+      if (remote && (Date.parse(remote.updated_at) || 0) > seen.at + 1000) reloadFromCloud = true;
+    }
+    if (!reloadFromCloud) await uploadState(startedAt);
+  } catch (error) {
+    setCloudStatus(`${tr('cloudError')}: ${error.message}`, true);
+  } finally {
+    syncBusy = false;
+    renderAccountUI();
+  }
+  if (reloadFromCloud) { await loadCloudState(); return; }
+  if (pendingSync) { pendingSync = false; clearTimeout(syncTimer); syncTimer = setTimeout(syncNow, 300); }
+}
+
+async function uploadState(startedAt) {
     const payload = window.TOCFLApp.getCloudState();
     const row = {
       user_id: session.user.id,
@@ -322,13 +402,21 @@ async function syncNow(initialUpload=false) {
     };
     const { error } = await supabaseClient.from('user_learning_state').upsert(row, { onConflict: 'user_id' });
     if (error) throw error;
+    writeMark(SEEN_KEY, Date.parse(row.updated_at));
+    clearDirtyIfOlder(startedAt);
     setCloudStatus(`${tr('cloudSynced')} · ${new Date().toLocaleTimeString([], {hour:'2-digit',minute:'2-digit'})}`);
-  } catch (error) {
-    setCloudStatus(`${tr('cloudError')}: ${error.message}`, true);
-  } finally {
-    syncBusy = false;
-    renderAccountUI();
-  }
+}
+
+/** When the app comes back to the foreground: pull newer progress saved by another device. */
+async function checkRemoteChanges() {
+  if (!session?.user || !supabaseClient || !cloudReady || syncBusy) return;
+  if (readMark(DIRTY_KEY)) { syncNow(); return; }
+  const seen = readMark(SEEN_KEY);
+  try {
+    const { data: remote } = await supabaseClient
+      .from('user_learning_state').select('updated_at').eq('user_id', session.user.id).maybeSingle();
+    if (remote && (!seen || (Date.parse(remote.updated_at) || 0) > seen.at + 1000)) await loadCloudState();
+  } catch (error) { console.warn('Remote check:', error); }
 }
 
 
@@ -423,6 +511,7 @@ async function transcribeWithGroq(audioBlob, target='') {
 }
 
 function scheduleSync() {
+  markDirty();
   if (suppressSync || !session?.user || !configured || !cloudReady) return;
   clearTimeout(syncTimer);
   syncTimer = setTimeout(syncNow, 900);
@@ -477,12 +566,22 @@ function bindUI() {
   $('forgotPasswordBtn')?.addEventListener('click', requestPasswordReset);
   $('signupForm')?.addEventListener('submit', signUp);
   $('logoutBtn')?.addEventListener('click', signOut);
-  $('syncNowBtn')?.addEventListener('click', syncNow);
-  $('restoreCloudBtn')?.addEventListener('click', async()=>{if(!session?.user){openAuth('login');return;}cloudReady=false;await loadCloudState();setCloudStatus(tr('restoreCloudDone'));});
+  $('syncNowBtn')?.addEventListener('click', () => syncNow());
+  $('restoreCloudBtn')?.addEventListener('click', async()=>{if(!session?.user){openAuth('login');return;}cloudReady=false;await loadCloudState(true);setCloudStatus(tr('restoreCloudDone'));});
   $('groqCredentialsForm')?.addEventListener('submit', saveGroqCredentials);
   $('deleteGroqBtn')?.addEventListener('click', deleteGroqCredentials);
   document.addEventListener('tocfl:language-changed', applyAuthLanguage);
   document.addEventListener('tocfl:state-changed', scheduleSync);
+  // Upload right away when the app goes to the background (switching device) or comes back online.
+  document.addEventListener('visibilitychange', () => {
+    if (document.visibilityState === 'hidden' && syncTimer && cloudReady) { clearTimeout(syncTimer); syncTimer = null; syncNow(); }
+    else if (document.visibilityState === 'visible') checkRemoteChanges();
+  });
+  window.addEventListener('online', () => {
+    if (!session?.user) return;
+    if (!cloudReady) loadCloudState(); // was opened offline: reconcile now
+    else if (readMark(DIRTY_KEY)) syncNow();
+  });
   document.addEventListener('tocfl:app-ready', async () => {
     appReady = true;
     applyAuthLanguage();

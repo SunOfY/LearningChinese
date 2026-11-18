@@ -2,7 +2,7 @@
 
 Website tự học **TOCFL Traditional Chinese** dành cho học từ vựng, luyện viết, luyện đọc, phát âm, ôn giữa kỳ và theo dõi tiến độ cá nhân.
 
-> **Phiên bản hiện tại:** v5.6.16  
+> **Phiên bản hiện tại:** v5.7.0  
 > README này thay cho các file ghi chú/hotfix theo từng phiên bản cũ. Có thể xóa các file lịch sử `.txt` / `.md` cũ nếu chúng chỉ là changelog và không được code sử dụng.
 
 ---
@@ -107,6 +107,15 @@ Trong từng phần ôn tập có thể chọn:
 - không dùng ảnh do code tự vẽ lại.
 
 Các ảnh của Midterm hiện được **nhúng trực tiếp trong `midterm.js`**, vì vậy bản cập nhật Midterm thường không cần upload riêng thư mục ảnh.
+
+### 🇬🇧 TOEIC — Flash card (ETS Starter Vocab)
+- 2.400 từ TOEIC từ 2 file ETS Starter Vocab: **LC** (Listening) và **RC** (Reading), mỗi file 20 ngày × 60 từ. Dữ liệu ở `data/toeic.json`.
+- Flash card lật 2 chiều (Anh → Việt, Việt → Anh hoặc trộn), có phát âm tiếng Anh.
+- Ôn tập ngắt quãng: bấm **Quên / Khó / Nhớ / Dễ**; từ quên sẽ quay lại ngày hôm sau, từ đã nhớ giãn ra 3 → 7 → 14 → 30 → 60 ngày.
+- Kế hoạch học: xen kẽ LC/RC (40 ngày), hết LC rồi RC, hoặc chỉ một file. Bỏ lỡ ngày nào thì hôm sau học tiếp đúng bài đó, không bị nhảy bài.
+- Phím tắt: `Space` lật thẻ, `1`–`4` chấm điểm.
+- **📅 Thêm vào lịch:** tải file `.ics` (iPhone / iPad / Mac / Outlook) hoặc thêm vào Google Calendar. Mỗi ngày có báo thức và link mở thẳng tab TOEIC (`index.html#toeic`).
+- Tiến độ TOEIC đồng bộ theo tài khoản cùng các phần khác, và được **gộp từng thẻ** giữa các thiết bị nên không bị mất khi học trên 2 máy.
 
 ### 🧠 Quiz
 - Trắc nghiệm từ vựng.

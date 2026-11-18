@@ -1,4 +1,4 @@
-const CACHE = 'tocfl-v5-6-16-midterm-next-wrap-fix';
+const CACHE = 'tocfl-v5-7-0-toeic-flashcards';
 const ASSETS = [
   './',
   './index.html',
@@ -6,11 +6,14 @@ const ASSETS = [
   './app.js',
   './reading.js',
   './midterm.js',
+  './toeic.js',
   './auth.js',
   './pinyin-helper.js',
   './radicals.js',
   './data/radicals.json',
   './data/a1.json',
+  './data/a2.json',
+  './data/toeic.json',
   './data/readings.json',
   './data/enrichment_day1.json',
   './manifest.webmanifest',
@@ -64,6 +67,7 @@ self.addEventListener('fetch', event => {
     url.pathname.endsWith('/auth.js') ||
     url.pathname.endsWith('/reading.js') ||
     url.pathname.endsWith('/midterm.js') ||
+    url.pathname.endsWith('/toeic.js') ||
     url.pathname.endsWith('/radicals.js') ||
     url.pathname.endsWith('/pinyin-helper.js') ||
     url.pathname.includes('/data/') && url.pathname.endsWith('.json') ||
@@ -97,8 +101,10 @@ self.addEventListener('fetch', event => {
     caches.match(event.request).then(cached => {
       if (cached) return cached;
       return fetch(event.request).then(response => {
-        const copy = response.clone();
-        caches.open(CACHE).then(cache => cache.put(event.request, copy));
+        if (response.ok) {
+          const copy = response.clone();
+          caches.open(CACHE).then(cache => cache.put(event.request, copy));
+        }
         return response;
       });
     })

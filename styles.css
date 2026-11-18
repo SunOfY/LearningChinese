@@ -893,3 +893,72 @@ body.reading-writing-active *{
   .toeic-rate button{font-size:15px;padding:10px 2px}
   .toeic-cal-grid{grid-template-columns:1fr}
 }
+
+/* ---------- English v2: decks, IPA, examples, writing pad ---------- */
+.toeic-deck-tabs{display:flex;gap:8px;flex-wrap:wrap}
+.toeic-deck-tab{border-radius:999px;padding:8px 18px;min-height:40px}
+.toeic-deck-tab.is-active{background:var(--accent);color:#fff;border-color:var(--accent)}
+.toeic-mode-toggle{display:inline-flex;border:1px solid var(--border);border-radius:12px;overflow:hidden;margin-top:8px}
+.toeic-mode-toggle button{border:0;border-radius:0;min-height:38px;padding:6px 14px;background:#fff}
+.toeic-mode-toggle button.is-active{background:var(--accent-soft);color:var(--accent)}
+.toeic-session-head .toeic-mode-toggle{margin-top:0}
+.toeic-unit-grid.is-forum{grid-template-columns:repeat(auto-fill,minmax(170px,1fr))}
+.toeic-unit em{font-style:normal;font-size:12px;color:var(--text);font-weight:600;line-height:1.3;text-align:left}
+.toeic-forum-extras{margin:6px 0 10px}
+.toeic-ipa{font-family:"Lucida Sans Unicode","Arial Unicode MS","Segoe UI",system-ui,sans-serif;color:#5b6b8c;font-weight:500;font-size:clamp(16px,2.4vw,20px);letter-spacing:.2px}
+.toeic-card{cursor:pointer}
+.toeic-card .toeic-detail{width:100%;max-width:640px;cursor:auto}
+.toeic-card-kicker{font-size:14px;color:var(--danger);font-weight:700}
+.toeic-card-front.is-fix{font-size:clamp(22px,3.6vw,30px);text-decoration:line-through;text-decoration-color:rgba(180,35,24,.55)}
+.toeic-card-context{font-size:15px;color:var(--muted);font-weight:600}
+.toeic-detail{display:grid;gap:10px;text-align:center}
+.toeic-detail-label{font-size:12px;text-transform:uppercase;letter-spacing:.6px;color:var(--muted);font-weight:700}
+.toeic-meaning{font-size:clamp(20px,3.6vw,28px);color:var(--accent);font-weight:700}
+.toeic-answer-word{font-size:clamp(26px,4.6vw,40px);font-weight:800}
+.toeic-answer-word .toeic-ipa{display:block;margin-top:4px}
+.toeic-usage{font-size:15px;color:#334;font-weight:500}
+.toeic-example{background:#f6faf9;border:1px solid var(--border);border-radius:14px;padding:12px 14px;display:grid;gap:4px;text-align:left}
+.toeic-example-en{font-size:clamp(16px,2.4vw,19px);font-weight:600;line-height:1.45}
+.toeic-example-en mark{background:#fff1b8;color:inherit;border-radius:4px;padding:0 2px}
+.toeic-example-vi{font-size:15px;color:var(--muted);font-weight:500}
+.toeic-audio-row{display:flex;flex-wrap:wrap;gap:8px;justify-content:center;align-items:center}
+.toeic-audio-row button{min-height:40px;padding:6px 12px}
+.toeic-check.is-inline{margin:0;font-size:14px}
+.toeic-write{gap:12px}
+.toeic-write-prompt{display:grid;gap:8px;text-align:center}
+.toeic-write-meaning{font-size:clamp(22px,4vw,32px);font-weight:800;color:var(--accent)}
+.toeic-pad-wrap{position:relative}
+.toeic-pad{display:block;width:100%;height:clamp(180px,34vh,300px);border:1px solid var(--border);border-radius:18px;background:#fffdf8;touch-action:none;-webkit-user-select:none;user-select:none;cursor:crosshair}
+.toeic-pad-tools{position:absolute;top:8px;right:8px;display:flex;gap:6px}
+.toeic-pad-tools button{min-height:36px;padding:4px 10px;font-size:14px;background:rgba(255,255,255,.92)}
+.toeic-typed{width:100%;min-height:52px;font-size:20px;border:1px solid var(--border);border-radius:14px;padding:10px 14px;background:#fff}
+.toeic-write-result{border-radius:14px;padding:12px 14px;background:var(--panel);display:grid;gap:6px}
+.toeic-write-result.is-right{background:#ecfdf3;border:1px solid #86efac}
+.toeic-write-result.is-wrong{background:#fff5f5;border:1px solid #fca5a5}
+.toeic-diff{font-size:18px;font-family:ui-monospace,SFMono-Regular,Menlo,monospace;word-break:break-word}
+.toeic-diff>span:first-child{font-family:inherit;font-size:13px;color:var(--muted);margin-right:6px}
+.toeic-diff i{font-style:normal}
+.toeic-diff i.is-wrong{color:var(--danger);text-decoration:underline}
+.toeic-diff i.is-missing{color:#c2410c}
+.toeic-group-intro{background:var(--accent-soft);border-radius:14px;padding:12px 14px;font-weight:500}
+.toeic-group-table{display:grid;gap:6px}
+.toeic-group-table>div{display:grid;grid-template-columns:120px 1fr 1fr;gap:10px;padding:8px 10px;border:1px solid var(--border);border-radius:12px;background:#fff}
+.toeic-group-table em{font-style:normal;color:var(--muted)}
+.toeic-notes{border:1px solid var(--border);border-radius:14px;padding:10px 14px;background:#fff}
+.toeic-notes summary{cursor:pointer;font-weight:700}
+.toeic-notes p{margin:8px 0;line-height:1.55}
+.toeic-notes h4{margin:12px 0 4px}
+.toeic-word-row{grid-template-columns:34px minmax(0,1fr) minmax(0,1.6fr) 80px}
+.toeic-word-main{display:grid;gap:2px}
+.toeic-word-main .toeic-ipa{font-size:14px}
+.toeic-word-main small{color:var(--muted)}
+.toeic-word-vi{display:grid;gap:4px}
+.toeic-word-ex{color:var(--muted);font-size:13px;cursor:pointer}
+.toeic-word-ex mark{background:#fff1b8;color:inherit;border-radius:3px}
+.toeic-word-list.hide-meaning .toeic-word-vi:not(.is-revealed) *{visibility:hidden}
+.toeic-word-row.is-fix s{color:var(--danger)}
+@media (max-width:720px){
+  .toeic-word-row{grid-template-columns:28px minmax(0,1fr)}
+  .toeic-group-table>div{grid-template-columns:1fr}
+  .toeic-session-head{gap:8px}
+}

@@ -1,31 +1,34 @@
 /**
- * TOEIC flashcards (ETS Starter Vocab · LC + RC).
+ * English flashcards: TOEIC (ETS Starter Vocab LC + RC) and Forum (Từ vựng theo ngữ cảnh).
  *
  * - Spaced repetition (Leitner boxes): Quên / Khó / Nhớ / Dễ.
- * - Study plan: one "unit" (60 words of one PDF day) per study day.
- * - Progress is kept in localStorage and synced through the existing
- *   account sync (progress.toeic) — see getToeicCloudState in app.js.
+ * - Each card: word, IPA, audio (normal + slow), meaning, example sentence (EN + VI).
+ * - Two study modes: "Lật thẻ" (flip) and "Viết" (handwriting with Apple Pencil / finger,
+ *   optional tracing guide, optional typed/Scribble answer that is checked automatically).
+ * - Progress lives in localStorage and syncs through the account (progress.toeic in app.js).
  * - "Thêm vào lịch": .ics file (Apple/Outlook) or Google Calendar link.
  */
 (() => {
   'use strict';
 
   const STORAGE_KEY = 'tocfl-toeic-progress-v1';
-  const DATA_URL = './data/toeic.json';
+  const DECKS = {
+    toeic: { url: './data/toeic.json', label: 'TOEIC', sub: 'ETS Starter Vocab — Listening (LC) & Reading (RC)' },
+    forum: { url: './data/forum.json', label: 'Forum', sub: 'Từ vựng tiếng Anh theo ngữ cảnh — Nguyễn Hoàng Huy' },
+  };
   const INTERVALS = [0, 1, 3, 7, 14, 30, 60]; // days per box
   const MASTERED_BOX = 4;
   const PLAN_ORDERS = ['alternate', 'lc-first', 'lc-only', 'rc-only'];
 
   const TEXT = {
     vi: {
-      title: 'TOEIC · Flash card',
-      sub: 'ETS Starter Vocab — Listening (LC) & Reading (RC)',
+      title: 'Tiếng Anh · Flash card',
       today: 'Hôm nay',
-      unit: (set, day) => `${set} · Day ${String(day).padStart(2, '0')}`,
       newWords: n => `${n} từ mới`,
       dueWords: n => `${n} từ cần ôn`,
       start: '▶ Học ngay',
       continue: '▶ Học tiếp',
+      writeStart: '✍️ Luyện viết',
       allDone: '🎉 Xong hết cho hôm nay! Có thể học thêm bài tiếp theo.',
       studyNext: '➕ Học thêm bài tiếp',
       calendar: '📅 Thêm vào lịch',
@@ -33,7 +36,7 @@
       settings: '⚙️ Cài đặt',
       statsSeen: 'Đã học',
       statsMastered: 'Đã thuộc',
-      statsDue: 'Cần ôn',
+      statsDue: 'Cần ôn (tất cả bộ)',
       statsStreak: 'Chuỗi ngày',
       planProgress: (done, total) => `Kế hoạch: ${done}/${total} bài`,
       flip: 'Chạm để lật thẻ',
@@ -43,6 +46,10 @@
       easy: 'Dễ',
       back: '← Quay lại',
       speak: '🔊 Nghe',
+      slow: '🐢 Chậm',
+      speakExample: '🔊 Nghe câu',
+      example: 'Ví dụ',
+      usage: 'Cách dùng',
       cardOf: (i, n) => `${i} / ${n}`,
       sessionDone: 'Hoàn thành phiên học!',
       sessionSummary: (n, again) => `Bạn đã ôn ${n} thẻ · ${again} lần bấm "Quên".`,
@@ -52,22 +59,48 @@
       dirEnVi: 'Tiếng Anh → nghĩa Việt',
       dirViEn: 'Nghĩa Việt → tiếng Anh',
       dirMixed: 'Trộn cả hai',
-      order: 'Thứ tự học',
+      order: 'Thứ tự học TOEIC',
       orderAlternate: 'Xen kẽ LC / RC (40 ngày)',
       orderLcFirst: 'Hết LC rồi tới RC (40 ngày)',
       orderLcOnly: 'Chỉ LC (20 ngày)',
       orderRcOnly: 'Chỉ RC (20 ngày)',
       newPerDay: 'Số từ mới mỗi phiên',
-      wholeUnit: 'Cả bài (60)',
-      autoSpeak: 'Tự đọc từ tiếng Anh khi lật thẻ',
+      wholeUnit: 'Cả bài',
+      autoSpeak: 'Tự đọc từ tiếng Anh khi hiện thẻ',
+      showIpaFront: 'Hiện phiên âm ở mặt trước',
       save: 'Lưu',
       close: 'Đóng',
       chooseUnit: 'Chọn bài để xem / học',
       studyThisUnit: '▶ Học bài này',
+      writeThisUnit: '✍️ Viết bài này',
       hideMeaning: 'Che nghĩa để tự kiểm tra',
       boxLabel: b => (b <= 0 ? 'Chưa học' : b >= MASTERED_BOX ? 'Đã thuộc' : `Hộp ${b}`),
+      mode: 'Cách học',
+      modeFlip: '🃏 Lật thẻ',
+      modeWrite: '✍️ Viết',
+      writePrompt: 'Viết từ tiếng Anh có nghĩa:',
+      writeFixPrompt: 'Viết lại câu cho đúng:',
+      trace: 'Tô theo mẫu',
+      hint: '💡 Gợi ý',
+      hintText: (first, n) => `Bắt đầu bằng "${first}" · ${n} chữ cái`,
+      clear: '🧽 Xóa',
+      undo: '↶ Hoàn tác',
+      check: '✓ Xem đáp án',
+      typeHere: 'Gõ hoặc viết tay vào đây (Scribble) để chấm tự động',
+      typedRight: '✅ Chính xác!',
+      typedWrong: '❌ Chưa đúng — so sánh với đáp án:',
+      yourAnswer: 'Bạn viết',
+      answer: 'Đáp án',
+      selfCheck: 'So sánh chữ bạn viết với đáp án rồi tự chấm:',
+      penTip: 'Mẹo: dùng Apple Pencil — app tự bỏ qua lòng bàn tay khi đang viết bằng bút.',
+      fixFront: 'Câu này sai ở đâu?',
+      fixAnswer: 'Câu đúng',
+      groupNotes: '📝 Ghi chú của sách',
+      groupIntro: 'Giới thiệu',
+      reading: '📖 Đoạn văn mẫu',
+      mistakes: '⚠️ Lỗi thường gặp',
       calTitle: '📅 Nhắc học trong lịch',
-      calDesc: 'Tạo lịch học hằng ngày theo kế hoạch. Mỗi ngày có báo thức và link mở thẳng vào tab TOEIC.',
+      calDesc: 'Tạo lịch học hằng ngày theo kế hoạch của bộ đang chọn. Mỗi ngày có báo thức và link mở thẳng vào tab Tiếng Anh.',
       calStart: 'Bắt đầu từ ngày',
       calTime: 'Giờ học',
       calDuration: 'Thời lượng',
@@ -78,27 +111,26 @@
       calIcs: '⬇ Tải file lịch (.ics) — iPhone · iPad · Mac · Outlook',
       calGoogle: '➕ Thêm vào Google Calendar',
       calHelp: 'iPhone/iPad: mở bằng Safari rồi bấm "Thêm tất cả". Google Calendar tạo một sự kiện lặp lại hằng ngày.',
-      calEventTitle: unit => `📚 Học TOEIC ${unit}`,
-      calEventTitleGeneric: '📚 Giờ học TOEIC + Tiếng Trung',
+      calEventTitle: unit => `📚 Học ${unit}`,
+      calEventTitleGeneric: '📚 Giờ học Tiếng Anh + Tiếng Trung',
       calEventBody: (unit, chinese) =>
-        `Hôm nay: ${unit} (60 từ mới) + ôn các thẻ đến hạn.` +
-        (chinese ? '\nSau đó: ôn tiếng Trung (Từ vựng / Reading).' : ''),
+        `Hôm nay: ${unit} + ôn các thẻ đến hạn.` + (chinese ? '\nSau đó: ôn tiếng Trung (Từ vựng / Reading).' : ''),
       calDone: 'Đã tạo file lịch. Mở file vừa tải để thêm vào Lịch.',
-      loading: 'Đang tải từ vựng TOEIC…',
-      loadError: 'Không tải được data/toeic.json',
+      loading: 'Đang tải từ vựng…',
+      loadError: 'Không tải được dữ liệu',
       resetUnit: '↻ Học lại bài này từ đầu',
       resetConfirm: 'Đặt lại tiến độ của bài này?',
-      keyboardHint: 'Phím tắt: Space = lật · 1 Quên · 2 Khó · 3 Nhớ · 4 Dễ',
+      keyboardHint: 'Phím tắt: Space = lật · 1 Quên · 2 Khó · 3 Nhớ · 4 Dễ · S = nghe',
+      groupLabel: g => `Nhóm ${g}`,
     },
     en: {
-      title: 'TOEIC · Flashcards',
-      sub: 'ETS Starter Vocab — Listening (LC) & Reading (RC)',
+      title: 'English · Flashcards',
       today: 'Today',
-      unit: (set, day) => `${set} · Day ${String(day).padStart(2, '0')}`,
       newWords: n => `${n} new words`,
       dueWords: n => `${n} due for review`,
       start: '▶ Study now',
       continue: '▶ Continue',
+      writeStart: '✍️ Writing practice',
       allDone: '🎉 All done for today! You can study the next unit too.',
       studyNext: '➕ Study next unit',
       calendar: '📅 Add to calendar',
@@ -106,7 +138,7 @@
       settings: '⚙️ Settings',
       statsSeen: 'Studied',
       statsMastered: 'Mastered',
-      statsDue: 'Due',
+      statsDue: 'Due (all decks)',
       statsStreak: 'Streak',
       planProgress: (done, total) => `Plan: ${done}/${total} units`,
       flip: 'Tap to flip',
@@ -116,6 +148,10 @@
       easy: 'Easy',
       back: '← Back',
       speak: '🔊 Listen',
+      slow: '🐢 Slow',
+      speakExample: '🔊 Sentence',
+      example: 'Example',
+      usage: 'Usage',
       cardOf: (i, n) => `${i} / ${n}`,
       sessionDone: 'Session complete!',
       sessionSummary: (n, again) => `You reviewed ${n} cards · pressed "Again" ${again} times.`,
@@ -125,22 +161,48 @@
       dirEnVi: 'English → Vietnamese',
       dirViEn: 'Vietnamese → English',
       dirMixed: 'Mixed',
-      order: 'Study order',
+      order: 'TOEIC study order',
       orderAlternate: 'Alternate LC / RC (40 days)',
       orderLcFirst: 'All LC, then RC (40 days)',
       orderLcOnly: 'LC only (20 days)',
       orderRcOnly: 'RC only (20 days)',
       newPerDay: 'New words per session',
-      wholeUnit: 'Whole unit (60)',
-      autoSpeak: 'Read the English word aloud when flipping',
+      wholeUnit: 'Whole unit',
+      autoSpeak: 'Read the English word aloud',
+      showIpaFront: 'Show IPA on the front',
       save: 'Save',
       close: 'Close',
       chooseUnit: 'Choose a unit to view / study',
       studyThisUnit: '▶ Study this unit',
+      writeThisUnit: '✍️ Write this unit',
       hideMeaning: 'Hide meanings to test yourself',
       boxLabel: b => (b <= 0 ? 'Not started' : b >= MASTERED_BOX ? 'Mastered' : `Box ${b}`),
+      mode: 'Mode',
+      modeFlip: '🃏 Flip',
+      modeWrite: '✍️ Write',
+      writePrompt: 'Write the English word for:',
+      writeFixPrompt: 'Rewrite the sentence correctly:',
+      trace: 'Trace the word',
+      hint: '💡 Hint',
+      hintText: (first, n) => `Starts with "${first}" · ${n} letters`,
+      clear: '🧽 Clear',
+      undo: '↶ Undo',
+      check: '✓ Show answer',
+      typeHere: 'Type or handwrite here (Scribble) for automatic checking',
+      typedRight: '✅ Correct!',
+      typedWrong: '❌ Not quite — compare with the answer:',
+      yourAnswer: 'You wrote',
+      answer: 'Answer',
+      selfCheck: 'Compare your handwriting with the answer, then grade yourself:',
+      penTip: 'Tip: with Apple Pencil, palm touches are ignored while you write.',
+      fixFront: 'What is wrong with this sentence?',
+      fixAnswer: 'Correct sentence',
+      groupNotes: '📝 Book notes',
+      groupIntro: 'Introduction',
+      reading: '📖 Sample paragraphs',
+      mistakes: '⚠️ Common mistakes',
       calTitle: '📅 Study reminders',
-      calDesc: 'Create a daily study schedule following your plan, with an alarm and a link that opens the TOEIC tab.',
+      calDesc: 'Create a daily study schedule for the selected deck, with an alarm and a link that opens the English tab.',
       calStart: 'Start date',
       calTime: 'Study time',
       calDuration: 'Duration',
@@ -151,16 +213,17 @@
       calIcs: '⬇ Download calendar file (.ics) — iPhone · iPad · Mac · Outlook',
       calGoogle: '➕ Add to Google Calendar',
       calHelp: 'iPhone/iPad: open in Safari and tap "Add All". Google Calendar creates one daily repeating event.',
-      calEventTitle: unit => `📚 TOEIC ${unit}`,
-      calEventTitleGeneric: '📚 Study time: TOEIC + Chinese',
+      calEventTitle: unit => `📚 ${unit}`,
+      calEventTitleGeneric: '📚 Study time: English + Chinese',
       calEventBody: (unit, chinese) =>
-        `Today: ${unit} (60 new words) + due reviews.` + (chinese ? '\nThen: review Chinese (Vocabulary / Reading).' : ''),
+        `Today: ${unit} + due reviews.` + (chinese ? '\nThen: review Chinese (Vocabulary / Reading).' : ''),
       calDone: 'Calendar file created. Open it to add the events.',
-      loading: 'Loading TOEIC vocabulary…',
-      loadError: 'Could not load data/toeic.json',
+      loading: 'Loading vocabulary…',
+      loadError: 'Could not load data',
       resetUnit: '↻ Restart this unit',
       resetConfirm: 'Reset progress for this unit?',
-      keyboardHint: 'Shortcuts: Space = flip · 1 Again · 2 Hard · 3 Good · 4 Easy',
+      keyboardHint: 'Shortcuts: Space = flip · 1 Again · 2 Hard · 3 Good · 4 Easy · S = listen',
+      groupLabel: g => `Group ${g}`,
     },
   };
 
@@ -184,19 +247,30 @@
   };
 
   // ---------- state ----------
-  let data = null; // {meta, vocabulary}
-  let byUnit = new Map(); // "LC-1" -> [entries]
+  const decks = {}; // deck -> {meta, vocabulary, groups?, byUnit: Map}
+  const byId = new Map(); // card id -> entry (all loaded decks)
   let state = loadState();
-  let session = null; // {queue, index, flipped, reviewed, again, front}
+  let session = null;
   let screen = 'home'; // home | session | list | done
   let listUnit = null;
+  let hideMeaning = false;
 
   function defaultState() {
     return {
-      version: 1,
+      version: 2,
       cards: {}, // id -> {box, due, seen, lapses, t}
       log: {}, // YYYY-MM-DD -> {reviewed, learned}
-      settings: { direction: 'en-vi', order: 'alternate', newPerSession: 60, autoSpeak: true, t: 0 },
+      settings: {
+        deck: 'toeic',
+        direction: 'en-vi',
+        order: 'alternate',
+        newPerSession: 60,
+        autoSpeak: true,
+        ipaFront: true,
+        mode: 'flip',
+        trace: false,
+        t: 0,
+      },
       calendar: { time: '20:00', duration: 30, alarm: 10, chinese: true },
     };
   }
@@ -209,6 +283,7 @@
       return {
         ...base,
         ...raw,
+        version: 2,
         cards: raw.cards && typeof raw.cards === 'object' ? raw.cards : {},
         log: raw.log && typeof raw.log === 'object' ? raw.log : {},
         settings: { ...base.settings, ...(raw.settings || {}) },
@@ -220,34 +295,49 @@
   }
 
   function save() {
-    // Keep the log small: last 120 days.
     const keys = Object.keys(state.log).sort();
     while (keys.length > 120) delete state.log[keys.shift()];
     try {
       localStorage.setItem(STORAGE_KEY, JSON.stringify(state));
     } catch (err) {
-      console.warn('TOEIC save failed', err);
+      console.warn('English flashcards: save failed', err);
     }
     document.dispatchEvent(new CustomEvent('tocfl:state-changed'));
     updateTabBadge();
   }
 
-  // ---------- data ----------
-  async function loadData() {
-    if (data) return data;
-    const res = await fetch(DATA_URL, { cache: 'no-cache' });
-    if (!res.ok) throw new Error(`${T().loadError} (${res.status})`);
-    data = await res.json();
-    byUnit = new Map();
-    for (const w of data.vocabulary) {
-      const key = `${w.set}-${w.day}`;
-      if (!byUnit.has(key)) byUnit.set(key, []);
-      byUnit.get(key).push(w);
-    }
-    return data;
+  function setSetting(patch) {
+    state.settings = { ...state.settings, ...patch, t: Date.now() };
+    save();
   }
 
-  function planUnits() {
+  const deckId = () => (DECKS[state.settings.deck] ? state.settings.deck : 'toeic');
+
+  // ---------- data ----------
+  async function loadDeck(id) {
+    if (decks[id]) return decks[id];
+    const res = await fetch(DECKS[id].url, { cache: 'no-cache' });
+    if (!res.ok) throw new Error(`${T().loadError}: ${DECKS[id].url} (${res.status})`);
+    const data = await res.json();
+    data.byUnit = new Map();
+    for (const w of data.vocabulary) {
+      const key = `${w.set}-${w.day}`;
+      if (!data.byUnit.has(key)) data.byUnit.set(key, []);
+      data.byUnit.get(key).push(w);
+      byId.set(w.id, w);
+    }
+    decks[id] = data;
+    return data;
+  }
+  const loadAll = () => Promise.all(Object.keys(DECKS).map(id => loadDeck(id).catch(() => null)));
+
+  const deck = () => decks[deckId()];
+
+  function planUnits(id = deckId()) {
+    if (id === 'forum') {
+      const groups = decks.forum?.groups || [];
+      return groups.filter(g => decks.forum.byUnit.has(`FO-${g.group}`)).map(g => ({ set: 'FO', day: g.group }));
+    }
     const lc = Array.from({ length: 20 }, (_, i) => ({ set: 'LC', day: i + 1 }));
     const rc = Array.from({ length: 20 }, (_, i) => ({ set: 'RC', day: i + 1 }));
     switch (state.settings.order) {
@@ -262,46 +352,45 @@
     }
   }
 
-  const unitWords = u => byUnit.get(`${u.set}-${u.day}`) || [];
-  const unitLabel = u => T().unit(u.set, u.day);
+  const unitDeck = u => (u.set === 'FO' ? decks.forum : decks.toeic);
+  const unitWords = u => unitDeck(u)?.byUnit.get(`${u.set}-${u.day}`) || [];
+  const groupInfo = n => decks.forum?.groups?.find(g => g.group === Number(n));
+  const unitLabel = u =>
+    u.set === 'FO' ? `Forum · ${T().groupLabel(u.day)}: ${groupInfo(u.day)?.title || ''}` : `TOEIC ${u.set} · Day ${pad(u.day)}`;
+  const unitShort = u => (u.set === 'FO' ? T().groupLabel(u.day) : `${u.set} ${pad(u.day)}`);
   const isSeen = w => Boolean(state.cards[w.id]?.seen);
   const unitStarted = u => unitWords(u).some(isSeen);
   const unitComplete = u => unitWords(u).length > 0 && unitWords(u).every(isSeen);
+  const currentUnit = (id = deckId()) => planUnits(id).find(u => !unitComplete(u)) || null;
 
-  /** First unit in the plan that still has unseen words. Missing a day never skips a unit. */
-  function currentUnit() {
-    return planUnits().find(u => !unitComplete(u)) || null;
-  }
-
+  /** Due cards from every loaded deck — reviews are never left behind when switching decks. */
   function dueCards(today = dayKey()) {
-    if (!data) return [];
-    return data.vocabulary
-      .filter(w => {
-        const c = state.cards[w.id];
-        return c?.seen && c.due && c.due <= today;
-      })
-      .sort((a, b) => (state.cards[a.id].due < state.cards[b.id].due ? -1 : 1));
+    const out = [];
+    for (const [id, c] of Object.entries(state.cards)) {
+      if (c?.seen && c.due && c.due <= today && byId.has(id)) out.push(byId.get(id));
+    }
+    return out.sort((a, b) => (state.cards[a.id].due < state.cards[b.id].due ? -1 : 1));
   }
 
-  function newCards(unit, limit) {
-    if (!unit) return [];
-    return unitWords(unit)
-      .filter(w => !isSeen(w))
-      .slice(0, limit);
-  }
+  const newCards = (unit, limit) => (unit ? unitWords(unit).filter(w => !isSeen(w)).slice(0, limit) : []);
 
   function stats() {
-    const cards = Object.values(state.cards);
-    const seen = cards.filter(c => c.seen).length;
-    const mastered = cards.filter(c => c.box >= MASTERED_BOX).length;
+    const ids = new Set((deck()?.vocabulary || []).map(w => w.id));
+    const cards = Object.entries(state.cards).filter(([id]) => ids.has(id)).map(([, c]) => c);
     let streak = 0;
     let key = dayKey();
-    if (!state.log[key]) key = addDays(key, -1); // today not studied yet: streak still counts until midnight
+    if (!state.log[key]) key = addDays(key, -1);
     while (state.log[key] && (state.log[key].reviewed || 0) > 0) {
       streak += 1;
       key = addDays(key, -1);
     }
-    return { seen, mastered, due: dueCards().length, streak, total: data?.vocabulary.length || 0 };
+    return {
+      seen: cards.filter(c => c.seen).length,
+      mastered: cards.filter(c => c.box >= MASTERED_BOX).length,
+      due: dueCards().length,
+      streak,
+      total: ids.size,
+    };
   }
 
   // ---------- spaced repetition ----------
@@ -337,6 +426,35 @@
     save();
   }
 
+  // ---------- word helpers ----------
+  const isFix = w => w.kind === 'fix';
+  const headword = w => w.en || w.phrase; // what is shown
+  const sayText = w => w.say || w.en || w.phrase; // what is spoken / written
+  const meaningOf = w => w.vi || w.meaning || '';
+  const ipaOf = w => (w.ipa ? `/${w.ipa}/` : '');
+  /** Answer used in writing mode: the spoken form without "~", "…" or placeholders. */
+  const writeAnswer = w => (isFix(w) ? w.ex_en.split(' / ')[0] : sayText(w)).replace(/[~…]/g, ' ').replace(/\s+/g, ' ').trim();
+
+  function exampleHtml(w) {
+    const s = w.ex_en || '';
+    if (!s) return '';
+    // Merge neighbouring spans ("take a photo") into one highlight.
+    const spans = [];
+    for (const [a, b] of Array.isArray(w.hl) ? w.hl : []) {
+      const last = spans[spans.length - 1];
+      if (last && /^\s*$/.test(s.slice(last[1], a))) last[1] = b;
+      else spans.push([a, b]);
+    }
+    let out = '';
+    let pos = 0;
+    for (const [a, b] of spans) {
+      if (a < pos || b > s.length) continue;
+      out += esc(s.slice(pos, a)) + `<mark>${esc(s.slice(a, b))}</mark>`;
+      pos = b;
+    }
+    return out + esc(s.slice(pos));
+  }
+
   // ---------- speech ----------
   let voice = null;
   function pickVoice() {
@@ -351,7 +469,7 @@
     pickVoice();
     window.speechSynthesis.addEventListener?.('voiceschanged', pickVoice);
   }
-  function speak(text) {
+  function speak(text, rate = 0.92) {
     if (!('speechSynthesis' in window)) return;
     const clean = String(text).replace(/[~…]/g, ' ').replace(/\s+/g, ' ').trim();
     if (!clean) return;
@@ -359,7 +477,7 @@
     const u = new SpeechSynthesisUtterance(clean);
     u.lang = 'en-US';
     if (voice) u.voice = voice;
-    u.rate = 0.9;
+    u.rate = rate;
     window.speechSynthesis.speak(u);
   }
 
@@ -369,16 +487,13 @@
   function render() {
     const el = root();
     if (!el) return;
-    if (!data) {
+    if (!deck()) {
       el.innerHTML = `<div class="card"><strong>${esc(T().loading)}</strong></div>`;
-      loadData()
-        .then(() => {
-          updateTabBadge();
-          render();
-        })
-        .catch(err => {
-          el.innerHTML = `<div class="card"><strong>${esc(err.message)}</strong></div>`;
-        });
+      loadAll().then(() => {
+        updateTabBadge();
+        if (deck()) render();
+        else el.innerHTML = `<div class="card"><strong>${esc(T().loadError)}</strong></div>`;
+      });
       return;
     }
     if (screen === 'session' && session) return renderSession();
@@ -387,8 +502,49 @@
     renderHome();
   }
 
+  const deckTabs = () => `
+    <div class="toeic-deck-tabs" role="tablist">
+      ${Object.entries(DECKS)
+        .map(
+          ([id, d]) =>
+            `<button type="button" role="tab" class="toeic-deck-tab ${id === deckId() ? 'is-active' : ''}" data-deck="${id}" aria-selected="${id === deckId()}">${esc(d.label)}</button>`
+        )
+        .join('')}
+    </div>`;
+
+  const modeToggle = () => `
+    <div class="toeic-mode-toggle" role="group" aria-label="${esc(T().mode)}">
+      <button type="button" data-mode="flip" class="${state.settings.mode !== 'write' ? 'is-active' : ''}">${esc(T().modeFlip)}</button>
+      <button type="button" data-mode="write" class="${state.settings.mode === 'write' ? 'is-active' : ''}">${esc(T().modeWrite)}</button>
+    </div>`;
+
+  function bindCommon() {
+    root()
+      .querySelectorAll('[data-deck]')
+      .forEach(b =>
+        b.addEventListener('click', () => {
+          setSetting({ deck: b.dataset.deck });
+          screen = 'home';
+          render();
+        })
+      );
+    root()
+      .querySelectorAll('[data-mode]')
+      .forEach(b =>
+        b.addEventListener('click', () => {
+          setSetting({ mode: b.dataset.mode });
+          if (screen === 'session' && session) {
+            session.flipped = false;
+            session.checked = false;
+            renderSession();
+          } else render();
+        })
+      );
+  }
+
   function renderHome() {
     const t = T();
+    const id = deckId();
     const unit = currentUnit();
     const plan = planUnits();
     const doneUnits = plan.filter(unitComplete).length;
@@ -398,12 +554,20 @@
     const pct = plan.length ? Math.round((doneUnits / plan.length) * 100) : 0;
     const nothingLeft = !due.length && !fresh.length;
     const started = unit && unitStarted(unit);
+    const forumExtras =
+      id === 'forum'
+        ? `<div class="toeic-actions toeic-forum-extras">
+             ${groupInfo(11) ? `<button type="button" data-open-group="11">${esc(t.reading)}</button>` : ''}
+           </div>`
+        : '';
 
     root().innerHTML = `
+      ${deckTabs()}
       <div class="toeic-hero card">
         <div>
-          <div class="eyebrow">🇬🇧 ${esc(t.sub)}</div>
+          <div class="eyebrow">🇬🇧 ${esc(DECKS[id].sub)}</div>
           <h2>${esc(t.title)}</h2>
+          ${modeToggle()}
         </div>
         <div class="toeic-today">
           <div class="small muted">${esc(t.today)}</div>
@@ -421,7 +585,9 @@
           ${
             nothingLeft
               ? `<div class="toeic-done-note">${esc(t.allDone)}</div>`
-              : `<button id="toeicStartBtn" class="primary toeic-big-btn" type="button">${esc(started || due.length ? t.continue : t.start)}</button>`
+              : `<button id="toeicStartBtn" class="primary toeic-big-btn" type="button">${esc(
+                  state.settings.mode === 'write' ? t.writeStart : started || due.length ? t.continue : t.start
+                )}</button>`
           }
           <button id="toeicCalendarBtn" type="button">${esc(t.calendar)}</button>
           <button id="toeicListBtn" type="button">${esc(t.list)}</button>
@@ -436,21 +602,24 @@
       </div>
       <div class="card">
         <h3>${esc(t.chooseUnit)}</h3>
-        <div class="toeic-unit-grid">
+        <div class="toeic-unit-grid ${id === 'forum' ? 'is-forum' : ''}">
           ${plan
             .map(u => {
               const words = unitWords(u);
               const seen = words.filter(isSeen).length;
               const cls = unitComplete(u) ? 'is-complete' : seen ? 'is-started' : '';
               const current = unit && u.set === unit.set && u.day === unit.day ? ' is-current' : '';
+              const title = u.set === 'FO' ? `<em>${esc(groupInfo(u.day)?.title || '')}</em>` : '';
               return `<button type="button" class="toeic-unit ${cls}${current}" data-unit="${u.set}-${u.day}">
-                <strong>${esc(u.set)} ${pad(u.day)}</strong><span>${seen}/${words.length}</span></button>`;
+                <strong>${esc(unitShort(u))}</strong>${title}<span>${seen}/${words.length}</span></button>`;
             })
             .join('')}
         </div>
+        ${forumExtras}
         <p class="small muted">${esc(t.keyboardHint)}</p>
       </div>`;
 
+    bindCommon();
     $('toeicStartBtn')?.addEventListener('click', () => startSession());
     $('toeicCalendarBtn').addEventListener('click', openCalendarModal);
     $('toeicListBtn').addEventListener('click', () => {
@@ -469,29 +638,38 @@
           render();
         })
       );
+    root()
+      .querySelectorAll('[data-open-group]')
+      .forEach(b =>
+        b.addEventListener('click', () => {
+          listUnit = { set: 'FO', day: Number(b.dataset.openGroup) };
+          screen = 'list';
+          render();
+        })
+      );
   }
 
   const statTile = (label, value) =>
     `<div class="card toeic-stat"><div class="small muted">${esc(label)}</div><strong>${value}</strong></div>`;
 
-  function startSession(unitOverride) {
+  function startSession(unitOverride, { forceWrite = false, all = false } = {}) {
+    if (forceWrite && state.settings.mode !== 'write') setSetting({ mode: 'write' });
     const unit = unitOverride || currentUnit();
     const due = unitOverride ? [] : dueCards();
-    const fresh = unitOverride
+    let fresh = unitOverride
       ? unitWords(unitOverride).filter(w => !isSeen(w)).slice(0, state.settings.newPerSession)
       : newCards(unit, state.settings.newPerSession);
-    let queue = [...due.map(w => ({ w, isNew: false })), ...fresh.map(w => ({ w, isNew: true }))];
-    if (unitOverride && !queue.length) {
-      // Unit already seen: drill the whole unit again (counts as review).
-      queue = unitWords(unitOverride).map(w => ({ w, isNew: false }));
-    }
+    if (all && unitOverride) fresh = [];
+    let queue = [...due.map(w => ({ w, isNew: false })), ...fresh.map(w => ({ w, isNew: !isSeen(w) }))];
+    if (unitOverride && !queue.length) queue = unitWords(unitOverride).map(w => ({ w, isNew: false }));
     if (!queue.length) return;
-    session = { queue, index: 0, flipped: false, reviewed: 0, again: 0, requeued: new Set() };
+    session = { queue, index: 0, flipped: false, checked: false, reviewed: 0, again: 0, requeued: new Set() };
     screen = 'session';
     render();
   }
 
   function frontSide(item) {
+    if (isFix(item.w)) return 'fix';
     const dir = state.settings.direction;
     if (dir === 'mixed') {
       item.front ||= Math.random() < 0.5 ? 'en' : 'vi';
@@ -500,79 +678,437 @@
     return dir === 'vi-en' ? 'vi' : 'en';
   }
 
-  function renderSession() {
+  function sessionHead(item) {
     const t = T();
+    const w = item.w;
+    const pct = Math.round((session.index / session.queue.length) * 100);
+    const src = w.set === 'FO' ? `Forum · ${t.groupLabel(w.day)} · #${w.no}` : `${w.set} · Day ${pad(w.day)} · #${w.no}`;
+    return `
+      <div class="toeic-session-head">
+        <button id="toeicBackBtn" type="button">${esc(t.back)}</button>
+        ${modeToggle()}
+        <div class="toeic-session-meta">
+          <span class="toeic-pill ${item.isNew ? 'is-new' : 'is-due'}">${esc(item.isNew ? t.newTag : t.reviewTag)}</span>
+          <span class="small muted">${esc(src)}</span>
+          <strong>${esc(t.cardOf(session.index + 1, session.queue.length))}</strong>
+        </div>
+      </div>
+      <div class="progress-bar"><div style="width:${pct}%"></div></div>`;
+  }
+
+  const rateButtons = visible => `
+    <div class="toeic-rate ${visible ? '' : 'is-hidden'}">
+      <button type="button" data-rate="again" class="toeic-rate-again">😵 ${esc(T().again)}<small>1</small></button>
+      <button type="button" data-rate="hard" class="toeic-rate-hard">🤔 ${esc(T().hard)}<small>2</small></button>
+      <button type="button" data-rate="good" class="toeic-rate-good">🙂 ${esc(T().good)}<small>3</small></button>
+      <button type="button" data-rate="easy" class="toeic-rate-easy">😎 ${esc(T().easy)}<small>4</small></button>
+    </div>`;
+
+  /** Meaning + usage + example block shown on the back of a card / after checking. */
+  function detailsHtml(w, { showWord = false, hideMeaning: noMeaning = false } = {}) {
+    const t = T();
+    if (isFix(w)) {
+      return `
+        <div class="toeic-detail">
+          <div class="toeic-detail-label">${esc(t.fixAnswer)}</div>
+          <div class="toeic-example-en">${esc(w.ex_en)}</div>
+          ${w.meaning ? `<div class="toeic-usage">${esc(w.meaning)}</div>` : ''}
+          <div class="toeic-audio-row"><button type="button" data-say-example="1">${esc(t.speakExample)}</button></div>
+        </div>`;
+    }
+    return `
+      <div class="toeic-detail">
+        ${
+          showWord
+            ? `<div class="toeic-answer-word">${esc(headword(w))} <span class="toeic-ipa">${esc(ipaOf(w))}</span></div>`
+            : ''
+        }
+        ${noMeaning ? '' : `<div class="toeic-meaning">${esc(meaningOf(w))}</div>`}
+        ${
+          w.ex_en
+            ? `<div class="toeic-example">
+                 <div class="toeic-detail-label">${esc(t.example)}</div>
+                 <div class="toeic-example-en">${exampleHtml(w)}</div>
+                 ${w.ex_vi ? `<div class="toeic-example-vi">${esc(w.ex_vi)}</div>` : ''}
+               </div>`
+            : ''
+        }
+        <div class="toeic-audio-row">
+          <button type="button" data-say-word="1">${esc(t.speak)}</button>
+          <button type="button" data-say-slow="1">${esc(t.slow)}</button>
+          ${w.ex_en ? `<button type="button" data-say-example="1">${esc(t.speakExample)}</button>` : ''}
+        </div>
+      </div>`;
+  }
+
+  function bindAudio(w, scope = root()) {
+    scope.querySelectorAll('[data-say-word]').forEach(b =>
+      b.addEventListener('click', e => {
+        e.stopPropagation();
+        speak(sayText(w));
+      })
+    );
+    scope.querySelectorAll('[data-say-slow]').forEach(b =>
+      b.addEventListener('click', e => {
+        e.stopPropagation();
+        speak(sayText(w), 0.55);
+      })
+    );
+    scope.querySelectorAll('[data-say-example]').forEach(b =>
+      b.addEventListener('click', e => {
+        e.stopPropagation();
+        speak(w.ex_en, 0.9);
+      })
+    );
+  }
+
+  function renderSession() {
     const item = session.queue[session.index];
     if (!item) {
       screen = 'done';
       return render();
     }
+    if (state.settings.mode === 'write') return renderWriteCard(item);
+    return renderFlipCard(item);
+  }
+
+  function renderFlipCard(item) {
+    const t = T();
     const w = item.w;
     const front = frontSide(item);
     const card = state.cards[w.id];
-    const frontText = front === 'en' ? w.en : w.vi;
-    const backText = front === 'en' ? w.vi : w.en;
-    const pct = Math.round((session.index / session.queue.length) * 100);
+    let frontHtml;
+    if (front === 'fix') {
+      frontHtml = `<span class="toeic-card-kicker">${esc(t.fixFront)}</span>
+        <span class="toeic-card-front is-fix">${esc(w.phrase)}</span>
+        ${w.context ? `<span class="toeic-card-context">${esc(w.context)}</span>` : ''}`;
+    } else if (front === 'en') {
+      frontHtml = `<span class="toeic-card-front is-en">${esc(headword(w))}</span>
+        ${state.settings.ipaFront || session.flipped ? `<span class="toeic-ipa">${esc(ipaOf(w))}</span>` : ''}`;
+    } else {
+      frontHtml = `<span class="toeic-card-front is-vi">${esc(meaningOf(w))}</span>`;
+    }
+    let backHtml = '';
+    if (session.flipped) {
+      backHtml =
+        front === 'vi'
+          ? `<span class="toeic-card-divider"></span>${detailsHtml(w, { showWord: true }).replace(
+              /<div class="toeic-meaning">[\s\S]*?<\/div>/,
+              ''
+            )}`
+          : `<span class="toeic-card-divider"></span>${detailsHtml(w)}`;
+    }
 
     root().innerHTML = `
       <div class="card toeic-session">
-        <div class="toeic-session-head">
-          <button id="toeicBackBtn" type="button">${esc(t.back)}</button>
-          <div class="toeic-session-meta">
-            <span class="toeic-pill ${item.isNew ? 'is-new' : 'is-due'}">${esc(item.isNew ? t.newTag : t.reviewTag)}</span>
-            <span class="small muted">${esc(w.set)} · Day ${pad(w.day)} · #${w.no}</span>
-            <strong>${esc(t.cardOf(session.index + 1, session.queue.length))}</strong>
-          </div>
-        </div>
-        <div class="progress-bar"><div style="width:${pct}%"></div></div>
-        <button id="toeicCard" type="button" class="toeic-card ${session.flipped ? 'is-flipped' : ''}" aria-live="polite">
-          <span class="toeic-card-front ${front === 'en' ? 'is-en' : 'is-vi'}">${esc(frontText)}</span>
-          ${
-            session.flipped
-              ? `<span class="toeic-card-divider"></span><span class="toeic-card-back ${front === 'en' ? 'is-vi' : 'is-en'}">${esc(backText)}</span>`
-              : `<span class="toeic-card-hint">${esc(t.flip)}</span>`
-          }
+        ${sessionHead(item)}
+        <div id="toeicCard" role="button" tabindex="0" class="toeic-card ${session.flipped ? 'is-flipped' : ''}" aria-live="polite">
+          ${frontHtml}
+          ${session.flipped ? backHtml : `<span class="toeic-card-hint">${esc(t.flip)}</span>`}
           ${card?.seen ? `<span class="toeic-card-box">${esc(t.boxLabel(card.box))}</span>` : ''}
-        </button>
-        <div class="toeic-session-tools">
-          <button id="toeicSpeakBtn" type="button">${esc(t.speak)}</button>
         </div>
-        <div class="toeic-rate ${session.flipped ? '' : 'is-hidden'}">
-          <button type="button" data-rate="again" class="toeic-rate-again">😵 ${esc(t.again)}<small>1</small></button>
-          <button type="button" data-rate="hard" class="toeic-rate-hard">🤔 ${esc(t.hard)}<small>2</small></button>
-          <button type="button" data-rate="good" class="toeic-rate-good">🙂 ${esc(t.good)}<small>3</small></button>
-          <button type="button" data-rate="easy" class="toeic-rate-easy">😎 ${esc(t.easy)}<small>4</small></button>
-        </div>
+        ${
+          !session.flipped && front !== 'vi' && !isFix(w)
+            ? `<div class="toeic-audio-row is-center">
+                 <button type="button" data-say-word="1">${esc(t.speak)}</button>
+                 <button type="button" data-say-slow="1">${esc(t.slow)}</button>
+               </div>`
+            : ''
+        }
+        ${rateButtons(session.flipped)}
       </div>`;
 
+    bindCommon();
     $('toeicBackBtn').addEventListener('click', endSession);
-    $('toeicCard').addEventListener('click', flip);
-    $('toeicSpeakBtn').addEventListener('click', () => speak(w.en));
+    $('toeicCard').addEventListener('click', e => {
+      if (e.target.closest('button')) return;
+      flip();
+    });
+    bindAudio(w);
     root()
       .querySelectorAll('[data-rate]')
       .forEach(b => b.addEventListener('click', () => rate(b.dataset.rate)));
     if (front === 'en' && !session.flipped && state.settings.autoSpeak && !item.spoken) {
       item.spoken = true;
-      speak(w.en);
+      speak(sayText(w));
     }
   }
 
+  // ---------- writing mode ----------
+  let pad_ = null; // active WritingPad
+
+  function renderWriteCard(item) {
+    const t = T();
+    const w = item.w;
+    const fix = isFix(w);
+    const answer = writeAnswer(w);
+    const checked = session.checked;
+    const typed = session.typed || '';
+    const normalize = s =>
+      String(s).toLowerCase().replace(/[’']/g, "'").replace(/[^a-z0-9'£ ]/g, ' ').replace(/\s+/g, ' ').trim();
+    const typedOk = typed && normalize(typed) === normalize(answer);
+
+    root().innerHTML = `
+      <div class="card toeic-session toeic-write">
+        ${sessionHead(item)}
+        <div class="toeic-write-prompt">
+          <div class="small muted">${esc(fix ? t.writeFixPrompt : t.writePrompt)}</div>
+          <div class="toeic-write-meaning">${esc(fix ? w.phrase : meaningOf(w))}</div>
+          ${fix && w.context ? `<div class="toeic-card-context">${esc(w.context)}</div>` : ''}
+          <div class="toeic-audio-row">
+            ${fix ? '' : `<button type="button" data-say-word="1">${esc(t.speak)}</button>
+            <button type="button" data-say-slow="1">${esc(t.slow)}</button>`}
+            <button type="button" id="toeicHintBtn">${esc(t.hint)}</button>
+            <label class="toeic-check is-inline"><input id="toeicTrace" type="checkbox" ${state.settings.trace ? 'checked' : ''}> ${esc(t.trace)}</label>
+          </div>
+          <div id="toeicHint" class="small muted" ${session.hint ? '' : 'hidden'}>${esc(
+            t.hintText(answer.charAt(0), answer.replace(/[^A-Za-z]/g, '').length)
+          )}${w.ipa ? ` · ${esc(ipaOf(w))}` : ''}</div>
+        </div>
+        <div class="toeic-pad-wrap">
+          <canvas id="toeicPad" class="toeic-pad" aria-label="Writing pad"></canvas>
+          <div class="toeic-pad-tools">
+            <button type="button" id="toeicUndo">${esc(t.undo)}</button>
+            <button type="button" id="toeicClear">${esc(t.clear)}</button>
+          </div>
+        </div>
+        <input id="toeicTyped" class="toeic-typed" type="text" autocomplete="off" autocapitalize="off" spellcheck="false"
+          placeholder="${esc(t.typeHere)}" value="${esc(typed)}" ${checked ? 'readonly' : ''}>
+        <div class="small muted">${esc(t.penTip)}</div>
+        ${
+          checked
+            ? `<div class="toeic-write-result ${typed ? (typedOk ? 'is-right' : 'is-wrong') : ''}">
+                 ${typed ? `<div><strong>${esc(typedOk ? t.typedRight : t.typedWrong)}</strong></div>` : `<div class="small">${esc(t.selfCheck)}</div>`}
+                 ${typed && !typedOk ? `<div class="toeic-diff"><span>${esc(t.yourAnswer)}:</span> ${diffHtml(typed, answer)}</div>` : ''}
+                 <div class="toeic-diff"><span>${esc(t.answer)}:</span> <b>${esc(answer)}</b> ${fix ? '' : `<span class="toeic-ipa">${esc(ipaOf(w))}</span>`}</div>
+               </div>
+               ${detailsHtml(w, { hideMeaning: true })}`
+            : `<button id="toeicCheckBtn" class="primary toeic-big-btn" type="button">${esc(t.check)}</button>`
+        }
+        ${rateButtons(checked)}
+      </div>`;
+
+    bindCommon();
+    $('toeicBackBtn').addEventListener('click', endSession);
+    bindAudio(w);
+    $('toeicHintBtn').addEventListener('click', () => {
+      session.hint = !session.hint;
+      $('toeicHint').hidden = !session.hint;
+    });
+    $('toeicTrace').addEventListener('change', e => {
+      setSetting({ trace: e.target.checked });
+      pad_?.setGuide(e.target.checked || checked ? answer : '', checked && !e.target.checked);
+    });
+    $('toeicTyped').addEventListener('input', e => {
+      session.typed = e.target.value;
+    });
+    $('toeicTyped').addEventListener('keydown', e => {
+      if (e.key === 'Enter' && !session.checked) {
+        e.preventDefault();
+        checkWriting();
+      }
+    });
+    $('toeicCheckBtn')?.addEventListener('click', checkWriting);
+    root()
+      .querySelectorAll('[data-rate]')
+      .forEach(b => b.addEventListener('click', () => rate(b.dataset.rate)));
+
+    // Keep the strokes when re-rendering the same card (e.g. after "Xem đáp án").
+    const strokes = session.strokesFor === w.id ? session.strokes : [];
+    pad_ = new WritingPad($('toeicPad'), strokes, s => {
+      session.strokes = s;
+      session.strokesFor = w.id;
+    });
+    if (state.settings.trace) pad_.setGuide(answer);
+    else if (checked) pad_.setGuide(answer, true);
+    $('toeicUndo').addEventListener('click', () => pad_.undo());
+    $('toeicClear').addEventListener('click', () => pad_.clear());
+
+    if (!fix && state.settings.autoSpeak && !item.spoken) {
+      item.spoken = true;
+      speak(sayText(w));
+    }
+  }
+
+  function checkWriting() {
+    if (!session) return;
+    session.checked = true;
+    renderSession();
+    const w = session.queue[session.index]?.w;
+    if (w && !isFix(w)) speak(sayText(w));
+  }
+
+  /** Letter-by-letter comparison of the typed answer with the expected one. */
+  function diffHtml(typed, answer) {
+    const a = typed.trim();
+    const b = answer;
+    let out = '';
+    for (let i = 0; i < Math.max(a.length, b.length); i++) {
+      const ca = a[i] ?? '';
+      const cb = b[i] ?? '';
+      if (!ca) out += `<i class="is-missing">_</i>`;
+      else if (ca.toLowerCase() === cb.toLowerCase()) out += esc(ca);
+      else out += `<i class="is-wrong">${esc(ca)}</i>`;
+    }
+    return out;
+  }
+
+  /**
+   * Handwriting canvas: pointer events (Apple Pencil, finger, mouse), pressure-aware strokes,
+   * palm rejection once a pen is detected, English four-line guide, optional faint tracing text.
+   */
+  class WritingPad {
+    constructor(canvas, strokes = [], onChange = () => {}) {
+      this.canvas = canvas;
+      this.ctx = canvas.getContext('2d');
+      this.strokes = strokes.map(s => s.slice());
+      this.onChange = onChange;
+      this.current = null;
+      this.penSeen = false;
+      this.guide = '';
+      this.reveal = false;
+      this.resize = this.resize.bind(this);
+      this.resize();
+      window.addEventListener('resize', this.resize);
+      canvas.addEventListener('pointerdown', e => this.down(e));
+      canvas.addEventListener('pointermove', e => this.move(e));
+      canvas.addEventListener('pointerup', e => this.up(e));
+      canvas.addEventListener('pointercancel', e => this.up(e));
+      canvas.addEventListener('pointerleave', e => this.up(e));
+      // Stop iOS from scrolling / selecting while writing.
+      canvas.addEventListener('touchstart', e => e.preventDefault(), { passive: false });
+      canvas.addEventListener('touchmove', e => e.preventDefault(), { passive: false });
+    }
+    resize() {
+      if (!this.canvas.isConnected) {
+        window.removeEventListener('resize', this.resize);
+        return;
+      }
+      const rect = this.canvas.getBoundingClientRect();
+      const dpr = Math.min(window.devicePixelRatio || 1, 3);
+      this.w = Math.max(200, rect.width);
+      this.h = Math.max(160, rect.height);
+      this.canvas.width = Math.round(this.w * dpr);
+      this.canvas.height = Math.round(this.h * dpr);
+      this.ctx.setTransform(dpr, 0, 0, dpr, 0, 0);
+      this.draw();
+    }
+    point(e) {
+      const rect = this.canvas.getBoundingClientRect();
+      // Normalised coordinates survive orientation changes.
+      return [(e.clientX - rect.left) / rect.width, (e.clientY - rect.top) / rect.height, e.pressure || 0.5];
+    }
+    down(e) {
+      if (e.pointerType === 'pen') this.penSeen = true;
+      if (this.penSeen && e.pointerType === 'touch') return; // palm rejection
+      e.preventDefault();
+      try {
+        this.canvas.setPointerCapture?.(e.pointerId);
+      } catch {
+        /* synthetic or already-released pointer */
+      }
+      this.current = { id: e.pointerId, pts: [this.point(e)], pen: e.pointerType === 'pen' };
+    }
+    move(e) {
+      if (!this.current || e.pointerId !== this.current.id) return;
+      e.preventDefault();
+      const coalesced = e.getCoalescedEvents ? e.getCoalescedEvents() : [];
+      const events = coalesced.length ? coalesced : [e];
+      for (const ev of events) this.current.pts.push(this.point(ev));
+      this.draw();
+    }
+    up(e) {
+      if (!this.current || e.pointerId !== this.current.id) return;
+      if (this.current.pts.length === 1) this.current.pts.push(this.current.pts[0]);
+      this.strokes.push(this.current.pts);
+      this.current = null;
+      this.onChange(this.strokes);
+      this.draw();
+    }
+    undo() {
+      this.strokes.pop();
+      this.onChange(this.strokes);
+      this.draw();
+    }
+    clear() {
+      this.strokes = [];
+      this.onChange(this.strokes);
+      this.draw();
+    }
+    setGuide(text, reveal = false) {
+      this.guide = text || '';
+      this.reveal = reveal;
+      this.draw();
+    }
+    draw() {
+      const { ctx, w, h } = this;
+      ctx.clearRect(0, 0, w, h);
+      // Four-line handwriting guide (ascender, x-height, baseline, descender).
+      const top = h * 0.18;
+      const base = h * 0.7;
+      const xh = top + (base - top) * 0.45;
+      const desc = Math.min(h * 0.92, base + (base - top) * 0.4);
+      const line = (y, color, dash) => {
+        ctx.beginPath();
+        ctx.setLineDash(dash || []);
+        ctx.strokeStyle = color;
+        ctx.lineWidth = 1;
+        ctx.moveTo(12, y);
+        ctx.lineTo(w - 12, y);
+        ctx.stroke();
+      };
+      line(top, '#d5e3df');
+      line(xh, '#e2ecea', [6, 6]);
+      line(base, '#9fbab4');
+      line(desc, '#e2ecea', [6, 6]);
+      ctx.setLineDash([]);
+      if (this.guide) {
+        const size = base - top;
+        ctx.font = `${Math.round(size * 0.95)}px "Comic Sans MS", "Chalkboard SE", "Segoe Print", "Bradley Hand", cursive, sans-serif`;
+        let fontSize = Math.round(size * 0.95);
+        while (ctx.measureText(this.guide).width > w - 32 && fontSize > 14) {
+          fontSize -= 2;
+          ctx.font = `${fontSize}px "Comic Sans MS", "Chalkboard SE", "Segoe Print", "Bradley Hand", cursive, sans-serif`;
+        }
+        ctx.fillStyle = this.reveal ? 'rgba(15,118,110,0.28)' : 'rgba(21,35,33,0.13)';
+        ctx.textBaseline = 'alphabetic';
+        ctx.fillText(this.guide, 18, base);
+      }
+      const all = this.current ? [...this.strokes, this.current.pts] : this.strokes;
+      ctx.lineCap = 'round';
+      ctx.lineJoin = 'round';
+      ctx.strokeStyle = '#1d3b8a';
+      for (const pts of all) {
+        for (let i = 1; i < pts.length; i++) {
+          const [x0, y0, p0] = pts[i - 1];
+          const [x1, y1, p1] = pts[i];
+          ctx.lineWidth = 1.6 + 3.4 * ((p0 + p1) / 2);
+          ctx.beginPath();
+          ctx.moveTo(x0 * w, y0 * h);
+          ctx.lineTo(x1 * w, y1 * h);
+          ctx.stroke();
+        }
+      }
+    }
+  }
+
+  // ---------- session flow ----------
   function flip() {
-    if (!session || screen !== 'session') return;
+    if (!session || screen !== 'session' || state.settings.mode === 'write') return;
     session.flipped = !session.flipped;
     const item = session.queue[session.index];
-    if (session.flipped && state.settings.autoSpeak && item && frontSide(item) === 'vi') speak(item.w.en);
+    if (session.flipped && state.settings.autoSpeak && item && frontSide(item) === 'vi') speak(sayText(item.w));
     renderSession();
   }
 
   function rate(rating) {
-    if (!session || !session.flipped) return;
+    if (!session) return;
+    if (state.settings.mode === 'write' ? !session.checked : !session.flipped) return;
     const item = session.queue[session.index];
     grade(item.w, rating);
     session.reviewed += 1;
     if (rating === 'again') {
       session.again += 1;
-      // Show it once more later in this session (max once per card).
       if (!session.requeued.has(item.w.id)) {
         session.requeued.add(item.w.id);
         const pos = Math.min(session.queue.length, session.index + 5);
@@ -581,6 +1117,10 @@
     }
     session.index += 1;
     session.flipped = false;
+    session.checked = false;
+    session.typed = '';
+    session.hint = false;
+    session.strokes = [];
     renderSession();
   }
 
@@ -608,37 +1148,83 @@
     $('toeicNextBtn')?.addEventListener('click', () => startSession(next));
   }
 
-  let hideMeaning = false;
+  // ---------- word list / group view ----------
   function renderList() {
     const t = T();
     const u = listUnit || currentUnit() || planUnits()[0];
     const words = unitWords(u);
-    const options = planUnits()
+    const isForum = u.set === 'FO';
+    const g = isForum ? groupInfo(u.day) : null;
+    const units = isForum
+      ? [...planUnits('forum'), ...(groupInfo(11) ? [{ set: 'FO', day: 11 }] : [])]
+      : planUnits('toeic');
+    const options = units
       .map(p => `<option value="${p.set}-${p.day}" ${p.set === u.set && p.day === u.day ? 'selected' : ''}>${esc(unitLabel(p))}</option>`)
       .join('');
+    const notesHtml = g
+      ? `${g.intro ? `<div class="toeic-group-intro">${esc(g.intro)}</div>` : ''}
+         ${
+           g.table?.length
+             ? `<div class="toeic-group-table">${g.table
+                 .map(r => `<div><b>${esc(r[0])}</b><span>${esc(r[1])}</span><em>${esc(r[2] || '')}</em></div>`)
+                 .join('')}</div>`
+             : ''
+         }
+         ${
+           g.notes?.length
+             ? `<details class="toeic-notes" ${u.day === 11 ? 'open' : ''}><summary>${esc(t.groupNotes)}</summary>${g.notes
+                 .map(p => {
+                   const heading = /^(Bài mẫu|Phân biệt|Lựa chọn cá nhân|Sự thay đổi lựa chọn)/.test(p);
+                   return heading ? `<h4>${esc(p)}</h4>` : `<p>${esc(p)}</p>`;
+                 })
+                 .join('')}</details>`
+             : ''
+         }`
+      : '';
+
     root().innerHTML = `
       <div class="card toeic-list">
         <div class="toeic-session-head">
           <button id="toeicBackBtn" type="button">${esc(t.back)}</button>
           <select id="toeicUnitSelect" aria-label="${esc(t.chooseUnit)}">${options}</select>
-          <button id="toeicStudyUnitBtn" class="primary" type="button">${esc(t.studyThisUnit)}</button>
+          ${
+            words.length
+              ? `<button id="toeicStudyUnitBtn" class="primary" type="button">${esc(t.studyThisUnit)}</button>
+                 <button id="toeicWriteUnitBtn" type="button">${esc(t.writeThisUnit)}</button>`
+              : ''
+          }
         </div>
-        <label class="toeic-check"><input id="toeicHideMeaning" type="checkbox" ${hideMeaning ? 'checked' : ''}> ${esc(t.hideMeaning)}</label>
+        ${notesHtml}
+        ${words.length ? `<label class="toeic-check"><input id="toeicHideMeaning" type="checkbox" ${hideMeaning ? 'checked' : ''}> ${esc(t.hideMeaning)}</label>` : ''}
         <div class="toeic-word-list ${hideMeaning ? 'hide-meaning' : ''}">
           ${words
             .map(w => {
               const c = state.cards[w.id];
               const box = c?.box || 0;
+              if (isFix(w)) {
+                return `<div class="toeic-word-row is-fix box-${Math.min(box, MASTERED_BOX)}">
+                  <span class="toeic-word-no">${w.no}</span>
+                  <div class="toeic-word-main"><s>${esc(w.phrase)}</s>${w.context ? `<small>${esc(w.context)}</small>` : ''}</div>
+                  <div class="toeic-word-vi" tabindex="0"><b>${esc(w.ex_en)}</b><small>${esc(w.meaning)}</small></div>
+                  <span class="toeic-word-box">${esc(t.boxLabel(c?.seen ? box : 0))}</span>
+                </div>`;
+              }
               return `<div class="toeic-word-row box-${Math.min(box, MASTERED_BOX)}">
                 <span class="toeic-word-no">${w.no}</span>
-                <button type="button" class="toeic-word-en" data-speak="${esc(w.en)}">${esc(w.en)} <span aria-hidden="true">🔊</span></button>
-                <span class="toeic-word-vi" tabindex="0">${esc(w.vi)}</span>
+                <div class="toeic-word-main">
+                  <button type="button" class="toeic-word-en" data-speak="${esc(sayText(w))}">${esc(headword(w))} <span aria-hidden="true">🔊</span></button>
+                  <span class="toeic-ipa">${esc(ipaOf(w))}</span>
+                </div>
+                <div class="toeic-word-vi" tabindex="0">
+                  <span>${esc(meaningOf(w))}</span>
+                  ${w.ex_en ? `<small class="toeic-word-ex" data-speak="${esc(w.ex_en)}">${exampleHtml(w)}<br><i>${esc(w.ex_vi || '')}</i></small>` : ''}
+                </div>
                 <span class="toeic-word-box">${esc(t.boxLabel(c?.seen ? box : 0))}</span>
               </div>`;
             })
             .join('')}
         </div>
-        <button id="toeicResetUnitBtn" type="button" class="danger">${esc(t.resetUnit)}</button>
+        ${words.length ? `<button id="toeicResetUnitBtn" type="button" class="danger">${esc(t.resetUnit)}</button>` : ''}
       </div>`;
     $('toeicBackBtn').addEventListener('click', () => {
       screen = 'home';
@@ -649,18 +1235,27 @@
       listUnit = { set, day: Number(day) };
       renderList();
     });
-    $('toeicStudyUnitBtn').addEventListener('click', () => startSession(u));
-    $('toeicHideMeaning').addEventListener('change', e => {
+    $('toeicStudyUnitBtn')?.addEventListener('click', () => {
+      if (state.settings.mode === 'write') setSetting({ mode: 'flip' });
+      startSession(u);
+    });
+    $('toeicWriteUnitBtn')?.addEventListener('click', () => startSession(u, { forceWrite: true }));
+    $('toeicHideMeaning')?.addEventListener('change', e => {
       hideMeaning = e.target.checked;
       renderList();
     });
     root()
       .querySelectorAll('[data-speak]')
-      .forEach(b => b.addEventListener('click', () => speak(b.dataset.speak)));
+      .forEach(b =>
+        b.addEventListener('click', e => {
+          e.stopPropagation();
+          speak(b.dataset.speak);
+        })
+      );
     root()
       .querySelectorAll('.toeic-word-vi')
       .forEach(el => el.addEventListener('click', () => el.classList.toggle('is-revealed')));
-    $('toeicResetUnitBtn').addEventListener('click', () => {
+    $('toeicResetUnitBtn')?.addEventListener('click', () => {
       if (!confirm(t.resetConfirm)) return;
       for (const w of words) delete state.cards[w.id];
       save();
@@ -702,9 +1297,10 @@
         </select></label>
       <label class="toeic-field">${esc(t.newPerDay)}
         <select id="toeicNewPer">
-          ${opt(20, '20', s.newPerSession)}${opt(30, '30', s.newPerSession)}${opt(60, t.wholeUnit, s.newPerSession)}
+          ${opt(10, '10', s.newPerSession)}${opt(20, '20', s.newPerSession)}${opt(30, '30', s.newPerSession)}${opt(60, t.wholeUnit, s.newPerSession)}
         </select></label>
       <label class="toeic-check"><input id="toeicAutoSpeak" type="checkbox" ${s.autoSpeak ? 'checked' : ''}> ${esc(t.autoSpeak)}</label>
+      <label class="toeic-check"><input id="toeicIpaFront" type="checkbox" ${s.ipaFront ? 'checked' : ''}> ${esc(t.showIpaFront)}</label>
       <div class="toeic-actions">
         <button id="toeicSettingsSave" class="primary" type="button">${esc(t.save)}</button>
         <button id="toeicSettingsClose" type="button">${esc(t.close)}</button>
@@ -712,15 +1308,13 @@
     m.querySelector('#toeicSettingsClose').addEventListener('click', closeModal);
     m.querySelector('#toeicSettingsSave').addEventListener('click', () => {
       const order = m.querySelector('#toeicOrder').value;
-      state.settings = {
-        ...state.settings,
+      setSetting({
         order: PLAN_ORDERS.includes(order) ? order : 'alternate',
         direction: m.querySelector('#toeicDirection').value,
         newPerSession: Number(m.querySelector('#toeicNewPer').value) || 60,
         autoSpeak: m.querySelector('#toeicAutoSpeak').checked,
-        t: Date.now(),
-      };
-      save();
+        ipaFront: m.querySelector('#toeicIpaFront').checked,
+      });
       closeModal();
       render();
     });
@@ -752,10 +1346,10 @@
       <div class="toeic-actions"><button id="toeicCalClose" type="button">${esc(t.close)}</button></div>`);
 
     const read = () => {
-      const time = /^\d{2}:\d{2}$/.test(m.querySelector('#toeicCalTime').value) ? m.querySelector('#toeicCalTime').value : '20:00';
+      const timeVal = m.querySelector('#toeicCalTime').value;
       const opts = {
         start: m.querySelector('#toeicCalStart').value || startDefault,
-        time,
+        time: /^\d{2}:\d{2}$/.test(timeVal) ? timeVal : '20:00',
         duration: Number(m.querySelector('#toeicCalDuration').value) || 30,
         alarm: Number(m.querySelector('#toeicCalAlarm').value) || 0,
         chinese: m.querySelector('#toeicCalChinese').checked,
@@ -789,7 +1383,6 @@
     return u.toString();
   }
 
-  /** Remaining plan units from the current one, so events show what to study each day. */
   function remainingUnits() {
     const plan = planUnits();
     const cur = currentUnit();
@@ -808,7 +1401,6 @@
     `${d.getUTCFullYear()}${pad(d.getUTCMonth() + 1)}${pad(d.getUTCDate())}T${pad(d.getUTCHours())}${pad(d.getUTCMinutes())}00Z`;
   const icsEscape = s => String(s).replace(/\\/g, '\\\\').replace(/;/g, '\\;').replace(/,/g, '\\,').replace(/\n/g, '\\n');
 
-  /** RFC 5545 line folding at 75 octets (UTF-8 safe). */
   function fold(line) {
     const enc = new TextEncoder();
     if (enc.encode(line).length <= 75) return line;
@@ -819,7 +1411,7 @@
       if (enc.encode(cur + ch).length > limit) {
         out.push(cur);
         cur = ch;
-        limit = 74; // continuation lines start with a space
+        limit = 74;
       } else cur += ch;
     }
     out.push(cur);
@@ -834,10 +1426,10 @@
     const lines = [
       'BEGIN:VCALENDAR',
       'VERSION:2.0',
-      'PRODID:-//LearningChinese//TOEIC Study Plan//VI',
+      'PRODID:-//LearningChinese//English Study Plan//VI',
       'CALSCALE:GREGORIAN',
       'METHOD:PUBLISH',
-      `X-WR-CALNAME:${icsEscape('TOEIC Study Plan')}`,
+      `X-WR-CALNAME:${icsEscape(`${DECKS[deckId()].label} Study Plan`)}`,
     ];
     const list = units.length ? units : [null];
     list.forEach((u, i) => {
@@ -848,7 +1440,7 @@
       const body = `${u ? t.calEventBody(label, opts.chinese) : ''}\n${url}`.trim();
       lines.push(
         'BEGIN:VEVENT',
-        `UID:toeic-${opts.start}-${i}-${u ? `${u.set}${u.day}` : 'x'}@learningchinese`,
+        `UID:${deckId()}-${opts.start}-${i}-${u ? `${u.set}${u.day}` : 'x'}@learningchinese`,
         `DTSTAMP:${stamp}`,
         `DTSTART:${icsUtc(start)}`,
         `DTEND:${icsUtc(end)}`,
@@ -872,7 +1464,7 @@
     const href = URL.createObjectURL(blob);
     const a = document.createElement('a');
     a.href = href;
-    a.download = 'toeic-study-plan.ics';
+    a.download = `${deckId()}-study-plan.ics`;
     document.body.append(a);
     a.click();
     a.remove();
@@ -888,7 +1480,7 @@
       action: 'TEMPLATE',
       text: t.calEventTitleGeneric,
       dates: `${icsUtc(start)}/${icsUtc(end)}`,
-      details: `${opts.chinese ? t.calEventBody('TOEIC', true) : t.calEventBody('TOEIC', false)}\n${appUrl()}`,
+      details: `${t.calEventBody(DECKS[deckId()].label, opts.chinese)}\n${appUrl()}`,
       recur: `RRULE:FREQ=DAILY;COUNT=${count}`,
     });
     return `https://calendar.google.com/calendar/render?${params.toString()}`;
@@ -897,23 +1489,28 @@
   // ---------- tab badge, keyboard, wiring ----------
   function updateTabBadge() {
     const badge = $('toeicTabBadge');
-    if (!badge || !data) return;
+    if (!badge || !deck()) return;
     const n = dueCards().length + newCards(currentUnit(), state.settings.newPerSession).length;
     badge.textContent = n ? String(n) : '';
     badge.hidden = !n;
   }
 
-  function isActive() {
-    return $('view-toeic')?.classList.contains('is-active');
-  }
+  const isActive = () => $('view-toeic')?.classList.contains('is-active');
 
   document.addEventListener('keydown', e => {
     if (!isActive() || screen !== 'session' || $('toeicModal')) return;
     if (e.target.closest?.('input,select,textarea')) return;
+    const item = session?.queue[session.index];
+    if (e.key === 's' || e.key === 'S') {
+      if (item) speak(sayText(item.w));
+      return;
+    }
     if (e.code === 'Space' || e.key === 'Enter') {
       e.preventDefault();
-      flip();
-    } else if (session?.flipped && ['1', '2', '3', '4'].includes(e.key)) {
+      if (state.settings.mode === 'write') {
+        if (!session.checked) checkWriting();
+      } else flip();
+    } else if ((session?.flipped || session?.checked) && ['1', '2', '3', '4'].includes(e.key)) {
       rate(['again', 'hard', 'good', 'easy'][Number(e.key) - 1]);
     }
   });
@@ -933,22 +1530,22 @@
       if (screen === 'done') screen = 'home';
       render();
     });
-    if (window.location.hash === '#toeic') {
+    if (window.location.hash === '#toeic' || window.location.hash === '#english') {
+      let opened = false;
       const open = () => {
+        if (opened) return;
+        opened = true;
         if (typeof window.showView === 'function') window.showView('toeic');
         render();
       };
       if (window.TOCFL_APP_READY) open();
       else document.addEventListener('tocfl:app-ready', open, { once: true });
-      setTimeout(open, 1500); // fallback if the ready event already fired
+      setTimeout(open, 1500);
     }
-    loadData()
-      .then(() => {
-        updateTabBadge();
-        if (isActive()) render();
-      })
-      .catch(() => {});
-    // Recompute badge after midnight / when the tab regains focus.
+    loadAll().then(() => {
+      updateTabBadge();
+      if (isActive()) render();
+    });
     document.addEventListener('visibilitychange', () => {
       if (document.visibilityState === 'visible') {
         updateTabBadge();

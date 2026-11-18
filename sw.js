@@ -1,4 +1,4 @@
-const CACHE = 'tocfl-v5-7-0-toeic-flashcards';
+const CACHE = 'tocfl-v5-8-0-english-writing';
 const ASSETS = [
   './',
   './index.html',
@@ -14,6 +14,7 @@ const ASSETS = [
   './data/a1.json',
   './data/a2.json',
   './data/toeic.json',
+  './data/forum.json',
   './data/readings.json',
   './data/enrichment_day1.json',
   './manifest.webmanifest',

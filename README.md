@@ -2,7 +2,7 @@
 
 Website tự học **TOCFL Traditional Chinese** dành cho học từ vựng, luyện viết, luyện đọc, phát âm, ôn giữa kỳ và theo dõi tiến độ cá nhân.
 
-> **Phiên bản hiện tại:** v5.7.0  
+> **Phiên bản hiện tại:** v5.8.0  
 > README này thay cho các file ghi chú/hotfix theo từng phiên bản cũ. Có thể xóa các file lịch sử `.txt` / `.md` cũ nếu chúng chỉ là changelog và không được code sử dụng.
 
 ---
@@ -108,14 +108,14 @@ Trong từng phần ôn tập có thể chọn:
 
 Các ảnh của Midterm hiện được **nhúng trực tiếp trong `midterm.js`**, vì vậy bản cập nhật Midterm thường không cần upload riêng thư mục ảnh.
 
-### 🇬🇧 TOEIC — Flash card (ETS Starter Vocab)
-- 2.400 từ TOEIC từ 2 file ETS Starter Vocab: **LC** (Listening) và **RC** (Reading), mỗi file 20 ngày × 60 từ. Dữ liệu ở `data/toeic.json`.
-- Flash card lật 2 chiều (Anh → Việt, Việt → Anh hoặc trộn), có phát âm tiếng Anh.
-- Ôn tập ngắt quãng: bấm **Quên / Khó / Nhớ / Dễ**; từ quên sẽ quay lại ngày hôm sau, từ đã nhớ giãn ra 3 → 7 → 14 → 30 → 60 ngày.
-- Kế hoạch học: xen kẽ LC/RC (40 ngày), hết LC rồi RC, hoặc chỉ một file. Bỏ lỡ ngày nào thì hôm sau học tiếp đúng bài đó, không bị nhảy bài.
-- Phím tắt: `Space` lật thẻ, `1`–`4` chấm điểm.
-- **📅 Thêm vào lịch:** tải file `.ics` (iPhone / iPad / Mac / Outlook) hoặc thêm vào Google Calendar. Mỗi ngày có báo thức và link mở thẳng tab TOEIC (`index.html#toeic`).
-- Tiến độ TOEIC đồng bộ theo tài khoản cùng các phần khác, và được **gộp từng thẻ** giữa các thiết bị nên không bị mất khi học trên 2 máy.
+### 🇬🇧 English — Flash card TOEIC & Forum
+- **TOEIC:** 2.400 từ ETS Starter Vocab, gồm LC (Listening) và RC (Reading), mỗi bộ 20 ngày × 60 từ (`data/toeic.json`).
+- **Forum:** Từ vựng tiếng Anh theo ngữ cảnh (Nguyễn Hoàng Huy), 10 nhóm cụm từ + 8 câu "lỗi thường gặp" + đoạn văn mẫu và ghi chú của sách (`data/forum.json`).
+- Mỗi thẻ có **phiên âm IPA** (giọng Mỹ), nút nghe thường / nghe chậm, nghĩa, **câu ví dụ Anh – Việt** có tô đậm từ đang học.
+- Ôn tập ngắt quãng: **Quên / Khó / Nhớ / Dễ**; từ quên quay lại hôm sau, từ nhớ giãn ra 3 → 7 → 14 → 30 → 60 ngày.
+- **✍️ Chế độ Viết** (iPad + Apple Pencil): nhìn nghĩa / nghe từ rồi viết tay trên khung 4 dòng, có "Tô theo mẫu", gợi ý, hoàn tác. Có thể gõ hoặc viết tay vào ô Scribble để app chấm từng chữ cái.
+- **📅 Thêm vào lịch:** file `.ics` (iPhone / iPad / Mac / Outlook) hoặc Google Calendar, mỗi ngày có báo thức và link mở thẳng tab English (`index.html#toeic`).
+- Tiến độ đồng bộ theo tài khoản và được **gộp từng thẻ** giữa các thiết bị.
 
 ### 🧠 Quiz
 - Trắc nghiệm từ vựng.

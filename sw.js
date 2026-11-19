@@ -1,4 +1,4 @@
-const CACHE = 'tocfl-v5-8-0-english-writing';
+const CACHE = 'tocfl-v5-9-3-research-levels';
 const ASSETS = [
   './',
   './index.html',
@@ -15,6 +15,7 @@ const ASSETS = [
   './data/a2.json',
   './data/toeic.json',
   './data/forum.json',
+  './data/research.json',
   './data/readings.json',
   './data/enrichment_day1.json',
   './manifest.webmanifest',

@@ -14,8 +14,11 @@
   const STORAGE_KEY = 'tocfl-toeic-progress-v1';
   const DECKS = {
     toeic: { url: './data/toeic.json', label: 'TOEIC', sub: 'ETS Starter Vocab — Listening (LC) & Reading (RC)' },
-    forum: { url: './data/forum.json', label: 'Forum', sub: 'Từ vựng tiếng Anh theo ngữ cảnh — Nguyễn Hoàng Huy' },
+    forum: { url: './data/forum.json', label: 'Forum', sub: 'Từ vựng tiếng Anh theo ngữ cảnh — Nguyễn Hoàng Huy', set: 'FO' },
+    research: { url: './data/research.json', label: 'Research', sub: 'Tiếng Anh cho nghiên cứu sinh — từ câu cơ bản đến hội thảo', set: 'RS' },
   };
+  const SET_DECK = { LC: 'toeic', RC: 'toeic', FO: 'forum', RS: 'research' };
+  const isGroupSet = set => set !== 'LC' && set !== 'RC';
   const INTERVALS = [0, 1, 3, 7, 14, 30, 60]; // days per box
   const MASTERED_BOX = 4;
   const PLAN_ORDERS = ['alternate', 'lc-first', 'lc-only', 'rc-only'];
@@ -80,6 +83,7 @@
       modeWrite: '✍️ Viết',
       writePrompt: 'Viết từ tiếng Anh có nghĩa:',
       writeFixPrompt: 'Viết lại câu cho đúng:',
+      writeSentencePrompt: 'Viết câu tiếng Anh có nghĩa:',
       trace: 'Tô theo mẫu',
       hint: '💡 Gợi ý',
       hintText: (first, n) => `Bắt đầu bằng "${first}" · ${n} chữ cái`,
@@ -182,6 +186,7 @@
       modeWrite: '✍️ Write',
       writePrompt: 'Write the English word for:',
       writeFixPrompt: 'Rewrite the sentence correctly:',
+      writeSentencePrompt: 'Write the English sentence for:',
       trace: 'Trace the word',
       hint: '💡 Hint',
       hintText: (first, n) => `Starts with "${first}" · ${n} letters`,
@@ -334,9 +339,10 @@
   const deck = () => decks[deckId()];
 
   function planUnits(id = deckId()) {
-    if (id === 'forum') {
-      const groups = decks.forum?.groups || [];
-      return groups.filter(g => decks.forum.byUnit.has(`FO-${g.group}`)).map(g => ({ set: 'FO', day: g.group }));
+    if (id !== 'toeic') {
+      const d = decks[id];
+      const set = DECKS[id].set;
+      return (d?.groups || []).filter(g => d.byUnit.has(`${set}-${g.group}`)).map(g => ({ set, day: g.group }));
     }
     const lc = Array.from({ length: 20 }, (_, i) => ({ set: 'LC', day: i + 1 }));
     const rc = Array.from({ length: 20 }, (_, i) => ({ set: 'RC', day: i + 1 }));
@@ -352,12 +358,14 @@
     }
   }
 
-  const unitDeck = u => (u.set === 'FO' ? decks.forum : decks.toeic);
+  const unitDeck = u => decks[SET_DECK[u.set] || 'toeic'];
   const unitWords = u => unitDeck(u)?.byUnit.get(`${u.set}-${u.day}`) || [];
-  const groupInfo = n => decks.forum?.groups?.find(g => g.group === Number(n));
+  const groupInfo = u => unitDeck(u)?.groups?.find(g => g.group === Number(u.day));
   const unitLabel = u =>
-    u.set === 'FO' ? `Forum · ${T().groupLabel(u.day)}: ${groupInfo(u.day)?.title || ''}` : `TOEIC ${u.set} · Day ${pad(u.day)}`;
-  const unitShort = u => (u.set === 'FO' ? T().groupLabel(u.day) : `${u.set} ${pad(u.day)}`);
+    isGroupSet(u.set)
+      ? `${DECKS[SET_DECK[u.set]].label} · ${T().groupLabel(u.day)}: ${groupInfo(u)?.title || ''}`
+      : `TOEIC ${u.set} · Day ${pad(u.day)}`;
+  const unitShort = u => (isGroupSet(u.set) ? T().groupLabel(u.day) : `${u.set} ${pad(u.day)}`);
   const isSeen = w => Boolean(state.cards[w.id]?.seen);
   const unitStarted = u => unitWords(u).some(isSeen);
   const unitComplete = u => unitWords(u).length > 0 && unitWords(u).every(isSeen);
@@ -433,7 +441,12 @@
   const meaningOf = w => w.vi || w.meaning || '';
   const ipaOf = w => (w.ipa ? `/${w.ipa}/` : '');
   /** Answer used in writing mode: the spoken form without "~", "…" or placeholders. */
-  const writeAnswer = w => (isFix(w) ? w.ex_en.split(' / ')[0] : sayText(w)).replace(/[~…]/g, ' ').replace(/\s+/g, ' ').trim();
+  const writeAnswer = w => {
+    // Sentence templates ("My research is about ___.") are practised as their fixed part.
+    const base = isFix(w) ? w.ex_en.split(' / ')[0] : String(w.phrase || '').includes('___') ? w.phrase.replace(/_{3,}[.,]?/g, '…') : sayText(w);
+    return base.replace(/~/g, ' ').replace(/\s+/g, ' ').trim();
+  };
+  const isSentence = w => (sayText(w).match(/[A-Za-z']+/g) || []).length > 3;
 
   function exampleHtml(w) {
     const s = w.ex_en || '';
@@ -557,7 +570,7 @@
     const forumExtras =
       id === 'forum'
         ? `<div class="toeic-actions toeic-forum-extras">
-             ${groupInfo(11) ? `<button type="button" data-open-group="11">${esc(t.reading)}</button>` : ''}
+             ${groupInfo({ set: 'FO', day: 11 }) ? `<button type="button" data-open-group="11">${esc(t.reading)}</button>` : ''}
            </div>`
         : '';
 
@@ -602,14 +615,14 @@
       </div>
       <div class="card">
         <h3>${esc(t.chooseUnit)}</h3>
-        <div class="toeic-unit-grid ${id === 'forum' ? 'is-forum' : ''}">
+        <div class="toeic-unit-grid ${id !== 'toeic' ? 'is-forum' : ''}">
           ${plan
             .map(u => {
               const words = unitWords(u);
               const seen = words.filter(isSeen).length;
               const cls = unitComplete(u) ? 'is-complete' : seen ? 'is-started' : '';
               const current = unit && u.set === unit.set && u.day === unit.day ? ' is-current' : '';
-              const title = u.set === 'FO' ? `<em>${esc(groupInfo(u.day)?.title || '')}</em>` : '';
+              const title = isGroupSet(u.set) ? `<em>${esc(groupInfo(u)?.title || '')}</em>` : '';
               return `<button type="button" class="toeic-unit ${cls}${current}" data-unit="${u.set}-${u.day}">
                 <strong>${esc(unitShort(u))}</strong>${title}<span>${seen}/${words.length}</span></button>`;
             })
@@ -682,7 +695,9 @@
     const t = T();
     const w = item.w;
     const pct = Math.round((session.index / session.queue.length) * 100);
-    const src = w.set === 'FO' ? `Forum · ${t.groupLabel(w.day)} · #${w.no}` : `${w.set} · Day ${pad(w.day)} · #${w.no}`;
+    const src = isGroupSet(w.set)
+      ? `${DECKS[SET_DECK[w.set]].label} · ${t.groupLabel(w.day)} · #${w.no}`
+      : `${w.set} · Day ${pad(w.day)} · #${w.no}`;
     return `
       <div class="toeic-session-head">
         <button id="toeicBackBtn" type="button">${esc(t.back)}</button>
@@ -724,6 +739,7 @@
             : ''
         }
         ${noMeaning ? '' : `<div class="toeic-meaning">${esc(meaningOf(w))}</div>`}
+        ${w.note ? `<div class="toeic-usage">💬 ${esc(w.note)}</div>` : ''}
         ${
           w.ex_en
             ? `<div class="toeic-example">
@@ -852,7 +868,7 @@
       <div class="card toeic-session toeic-write">
         ${sessionHead(item)}
         <div class="toeic-write-prompt">
-          <div class="small muted">${esc(fix ? t.writeFixPrompt : t.writePrompt)}</div>
+          <div class="small muted">${esc(fix ? t.writeFixPrompt : isSentence(w) ? t.writeSentencePrompt : t.writePrompt)}</div>
           <div class="toeic-write-meaning">${esc(fix ? w.phrase : meaningOf(w))}</div>
           ${fix && w.context ? `<div class="toeic-card-context">${esc(w.context)}</div>` : ''}
           <div class="toeic-audio-row">
@@ -1153,11 +1169,10 @@
     const t = T();
     const u = listUnit || currentUnit() || planUnits()[0];
     const words = unitWords(u);
-    const isForum = u.set === 'FO';
-    const g = isForum ? groupInfo(u.day) : null;
-    const units = isForum
-      ? [...planUnits('forum'), ...(groupInfo(11) ? [{ set: 'FO', day: 11 }] : [])]
-      : planUnits('toeic');
+    const isGroup = isGroupSet(u.set);
+    const g = isGroup ? groupInfo(u) : null;
+    const extra = u.set === 'FO' && groupInfo({ set: 'FO', day: 11 }) ? [{ set: 'FO', day: 11 }] : [];
+    const units = [...planUnits(SET_DECK[u.set] || 'toeic'), ...extra];
     const options = units
       .map(p => `<option value="${p.set}-${p.day}" ${p.set === u.set && p.day === u.day ? 'selected' : ''}>${esc(unitLabel(p))}</option>`)
       .join('');

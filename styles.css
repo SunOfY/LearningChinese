@@ -962,3 +962,42 @@ body.reading-writing-active *{
   .toeic-group-table>div{grid-template-columns:1fr}
   .toeic-session-head{gap:8px}
 }
+
+/* ---------- English: speaking practice ---------- */
+.toeic-mic-btn{border-color:#f0a3a3;background:#fff6f6;font-weight:700}
+.toeic-mic-btn.is-big{font-size:20px;padding:14px 28px;min-height:58px;border-radius:999px;margin:4px auto}
+.toeic-mic-btn.is-listening{background:#dc2626;color:#fff;border-color:#dc2626;animation:toeicPulse 1.2s ease-in-out infinite}
+@keyframes toeicPulse{0%,100%{box-shadow:0 0 0 0 rgba(220,38,38,.45)}50%{box-shadow:0 0 0 12px rgba(220,38,38,0)}}
+.toeic-speech-result:empty{display:none}
+.toeic-speech-result{width:100%;max-width:640px;margin:0 auto;text-align:left}
+.toeic-speech-status{padding:10px 14px;border-radius:12px;background:var(--panel);font-weight:600}
+.toeic-speech-status.is-live{background:#fff1f1;color:#b91c1c}
+.toeic-speech-status.is-live i{color:var(--text);font-weight:500}
+.toeic-speech-status.is-error{background:#fff5f5;color:var(--danger)}
+.toeic-speech-card{display:grid;gap:8px;padding:12px 14px;border-radius:14px;border:1px solid var(--border);background:#fff}
+.toeic-speech-card.is-great{border-color:#86efac;background:#f0fdf4}
+.toeic-speech-card.is-good{border-color:#fcd34d;background:#fffbeb}
+.toeic-speech-card.is-try{border-color:#fca5a5;background:#fff5f5}
+.toeic-speech-score{display:flex;align-items:baseline;gap:10px;flex-wrap:wrap}
+.toeic-speech-score strong{font-size:30px}
+.toeic-speech-words{font-size:20px;font-weight:700;line-height:1.5}
+.toeic-speech-words .ok{color:#15803d}
+.toeic-speech-words .miss{color:#b91c1c;text-decoration:underline wavy rgba(185,28,28,.5)}
+.toeic-speech-heard{font-size:14px;color:var(--muted)}
+.toeic-speech-heard span{font-weight:700}
+.toeic-speak-prompt{display:grid;gap:10px;justify-items:center;text-align:center}
+.toeic-speak-text{font-size:clamp(26px,4.6vw,40px);font-weight:800;line-height:1.25}
+.toeic-speak-meaning{font-size:18px;color:var(--accent);font-weight:600}
+.toeic-link-btn{border:0;background:transparent;color:var(--accent);text-decoration:underline;min-height:0;padding:4px}
+.toeic-rate button.is-suggested{outline:3px solid rgba(15,118,110,.55);outline-offset:2px}
+.toeic-rate button.is-suggested::after{content:"★";font-size:12px;color:var(--accent)}
+
+/* ---------- English: word-by-word IPA ---------- */
+.toeic-ruby{display:flex;flex-wrap:wrap;justify-content:center;align-items:flex-start;gap:6px 16px;line-height:1.1}
+.toeic-ruby .iw{display:inline-flex;flex-direction:column;align-items:center;gap:6px}
+.toeic-ruby .iw b{font-weight:inherit}
+.toeic-ruby .iw i{font-style:normal;font-weight:500;font-size:max(15px,.36em);color:#4f5f86;font-family:"Lucida Sans Unicode","Arial Unicode MS","Segoe UI",system-ui,sans-serif;letter-spacing:.2px}
+.toeic-ruby.is-small{font-size:22px;font-weight:700}
+.toeic-ruby.is-small .iw i{font-size:15px}
+.toeic-ruby-label{margin-top:4px}
+.toeic-card-front .toeic-ruby{font-size:inherit}

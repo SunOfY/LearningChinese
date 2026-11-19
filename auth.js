@@ -488,12 +488,13 @@ function audioFilenameForBlob(blob) {
   return 'pronunciation.webm';
 }
 
-async function transcribeWithGroq(audioBlob, target='') {
+async function transcribeWithGroq(audioBlob, target='', options={}) {
   if (!session?.user) throw Object.assign(new Error('Please sign in first.'), {code:'NOT_SIGNED_IN'});
   if (!audioBlob?.size) throw Object.assign(new Error('Audio is empty.'), {code:'EMPTY_AUDIO'});
   const form=new FormData();
   form.append('action','transcribe');
   form.append('target',String(target||''));
+  if (options?.language) { form.append('language', String(options.language)); form.append('lang', String(options.language)); }
   form.append('audio',audioBlob,audioFilenameForBlob(audioBlob));
   const response=await fetch(`${String(cfg.url).replace(/\/$/,'')}/functions/v1/groq-speech`,{
     method:'POST',

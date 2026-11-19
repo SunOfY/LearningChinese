@@ -1,4 +1,4 @@
-const CACHE = 'tocfl-v5-9-3-research-levels';
+const CACHE = 'tocfl-v5-10-1-ipa-words';
 const ASSETS = [
   './',
   './index.html',

@@ -2,7 +2,7 @@
 
 Website tự học **TOCFL Traditional Chinese** dành cho học từ vựng, luyện viết, luyện đọc, phát âm, ôn giữa kỳ và theo dõi tiến độ cá nhân.
 
-> **Phiên bản hiện tại:** v5.9.3  
+> **Phiên bản hiện tại:** v5.10.1  
 > README này thay cho các file ghi chú/hotfix theo từng phiên bản cũ. Có thể xóa các file lịch sử `.txt` / `.md` cũ nếu chúng chỉ là changelog và không được code sử dụng.
 
 ---
@@ -112,8 +112,9 @@ Các ảnh của Midterm hiện được **nhúng trực tiếp trong `midterm.j
 - **TOEIC:** 2.400 từ ETS Starter Vocab, gồm LC (Listening) và RC (Reading), mỗi bộ 20 ngày × 60 từ (`data/toeic.json`).
 - **Forum:** Từ vựng tiếng Anh theo ngữ cảnh (Nguyễn Hoàng Huy), 10 nhóm cụm từ + 8 câu "lỗi thường gặp" + đoạn văn mẫu và ghi chú của sách (`data/forum.json`).
 - **Research:** 218 thẻ tiếng Anh cho nghiên cứu sinh ngành kiểm tra không phá hủy (MFL, dòng xoáy, EMAT), chia 4 cấp độ. Cấp 1 là câu cực ngắn dùng hằng ngày (chào hỏi, trả lời ngắn, câu hỏi đơn giản, một ngày ở lab); các cấp sau nâng dần qua các tình huống: giới thiệu bản thân, xin nhắc lại, nhờ giúp trong lab, gặp giáo sư, email, lab meeting, mô tả phương pháp & kết quả, Q&A hội thảo, đọc bài báo, từ vựng học thuật, thủ tục ở trường, xã giao, cùng 3 nhóm chuyên ngành NDT: khái niệm NDT & điện từ, thiết bị – đo đạc – mô phỏng, câu mô tả kết quả (`data/research.json`).
-- Mỗi thẻ có **phiên âm IPA** (giọng Mỹ), nút nghe thường / nghe chậm, nghĩa, **câu ví dụ Anh – Việt** có tô đậm từ đang học.
+- Mỗi thẻ có **phiên âm IPA** (giọng Mỹ); câu và cụm từ hiện **phiên âm dưới từng từ**, nút nghe thường / nghe chậm, nghĩa, **câu ví dụ Anh – Việt** có tô đậm từ đang học.
 - Ôn tập ngắt quãng: **Quên / Khó / Nhớ / Dễ**; từ quên quay lại hôm sau, từ nhớ giãn ra 3 → 7 → 14 → 30 → 60 ngày.
+- **🎤 Chế độ Nói**: đọc to câu/từ, app nhận diện giọng nói (Safari trên iPad/iPhone/Mac hoặc Chrome, miễn phí) và chấm từng từ: xanh là đúng, đỏ là chưa rõ, kèm điểm % và gợi ý mức Quên/Khó/Nhớ/Dễ. Nút "🎤 Nói thử" cũng có trên mọi thẻ.
 - **✍️ Chế độ Viết** (iPad + Apple Pencil): nhìn nghĩa / nghe từ rồi viết tay trên khung 4 dòng, có "Tô theo mẫu", gợi ý, hoàn tác. Có thể gõ hoặc viết tay vào ô Scribble để app chấm từng chữ cái.
 - **📅 Thêm vào lịch:** file `.ics` (iPhone / iPad / Mac / Outlook) hoặc Google Calendar, mỗi ngày có báo thức và link mở thẳng tab English (`index.html#toeic`).
 - Tiến độ đồng bộ theo tài khoản và được **gộp từng thẻ** giữa các thiết bị.

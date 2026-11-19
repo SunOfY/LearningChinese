@@ -81,6 +81,28 @@
       mode: 'Cách học',
       modeFlip: '🃏 Lật thẻ',
       modeWrite: '✍️ Viết',
+      modeSpeak: '🎤 Nói',
+      speakStart: '🎤 Luyện nói',
+      mic: '🎤 Nói thử',
+      micStop: '⏹ Dừng',
+      speakPrompt: 'Đọc to câu này:',
+      speakHint: 'Bấm 🎤 rồi đọc to. Nghe mẫu trước (🐢 Chậm) nếu chưa chắc.',
+      listening: '🎧 Đang nghe… hãy nói ngay bây giờ.',
+      processing: '⏳ Đang nhận diện…',
+      youSaid: 'App nghe được',
+      scoreGreat: 'Tuyệt vời! Phát âm rất rõ.',
+      scoreGood: 'Gần đúng rồi! Thử lại để rõ hơn từ màu đỏ.',
+      scoreTry: 'Chưa rõ. Nghe mẫu chậm rồi thử lại nhé.',
+      speechNoResult: 'Không nghe được gì. Hãy nói to, rõ và gần micro hơn.',
+      speechDenied: 'Chưa có quyền dùng micro. Hãy cho phép micro cho trang này trong cài đặt trình duyệt.',
+      speechUnsupported: 'Trình duyệt này chưa hỗ trợ nhận diện giọng nói. Hãy dùng Safari (iPad/iPhone/Mac) hoặc Chrome.',
+      speechNetwork: 'Nhận diện giọng nói cần kết nối mạng. Hãy kiểm tra Internet rồi thử lại.',
+      speechGroqZh: 'Groq trên tài khoản đang nhận diện theo tiếng Trung, chưa dùng được cho tiếng Anh.',
+      speechEngineGroq: 'đang dùng Groq Whisper',
+      showAnswer: '👀 Xem nghĩa & ví dụ',
+      tryAgain: '🔁 Thử lại',
+      suggested: 'gợi ý',
+      speakFix: 'Đọc to câu đúng:',
       writePrompt: 'Viết từ tiếng Anh có nghĩa:',
       writeFixPrompt: 'Viết lại câu cho đúng:',
       writeSentencePrompt: 'Viết câu tiếng Anh có nghĩa:',
@@ -184,6 +206,28 @@
       mode: 'Mode',
       modeFlip: '🃏 Flip',
       modeWrite: '✍️ Write',
+      modeSpeak: '🎤 Speak',
+      speakStart: '🎤 Speaking practice',
+      mic: '🎤 Try saying it',
+      micStop: '⏹ Stop',
+      speakPrompt: 'Read this aloud:',
+      speakHint: 'Tap 🎤 and read aloud. Listen to the model first (🐢 Slow) if unsure.',
+      listening: '🎧 Listening… speak now.',
+      processing: '⏳ Recognizing…',
+      youSaid: 'The app heard',
+      scoreGreat: 'Excellent! Very clear.',
+      scoreGood: 'Almost! Try again to make the red words clearer.',
+      scoreTry: 'Not clear yet. Listen to the slow model and try again.',
+      speechNoResult: 'Nothing was heard. Speak louder, clearly, closer to the mic.',
+      speechDenied: 'Microphone permission is off. Allow the microphone for this site in your browser settings.',
+      speechUnsupported: 'This browser does not support speech recognition. Use Safari (iPad/iPhone/Mac) or Chrome.',
+      speechNetwork: 'Speech recognition needs an internet connection. Check it and try again.',
+      speechGroqZh: 'The Groq function on this account transcribes Chinese only, so it cannot check English yet.',
+      speechEngineGroq: 'using Groq Whisper',
+      showAnswer: '👀 Show meaning & example',
+      tryAgain: '🔁 Try again',
+      suggested: 'suggested',
+      speakFix: 'Read the correct sentence aloud:',
       writePrompt: 'Write the English word for:',
       writeFixPrompt: 'Rewrite the sentence correctly:',
       writeSentencePrompt: 'Write the English sentence for:',
@@ -440,6 +484,14 @@
   const sayText = w => w.say || w.en || w.phrase; // what is spoken / written
   const meaningOf = w => w.vi || w.meaning || '';
   const ipaOf = w => (w.ipa ? `/${w.ipa}/` : '');
+  const isTemplate = w => String(w.phrase || '').includes('___');
+  /** Word-by-word reading: each word with its IPA right underneath. */
+  const rubyHtml = (w, cls = '') =>
+    Array.isArray(w.iw) && w.iw.length > 1
+      ? `<span class="toeic-ruby ${cls}">${w.iw
+          .map(([word, ipa]) => `<span class="iw"><b>${esc(word)}</b><i>${esc(ipa)}</i></span>`)
+          .join('')}</span>`
+      : '';
   /** Answer used in writing mode: the spoken form without "~", "…" or placeholders. */
   const writeAnswer = w => {
     // Sentence templates ("My research is about ___.") are practised as their fixed part.
@@ -527,8 +579,9 @@
 
   const modeToggle = () => `
     <div class="toeic-mode-toggle" role="group" aria-label="${esc(T().mode)}">
-      <button type="button" data-mode="flip" class="${state.settings.mode !== 'write' ? 'is-active' : ''}">${esc(T().modeFlip)}</button>
+      <button type="button" data-mode="flip" class="${state.settings.mode !== 'write' && state.settings.mode !== 'speak' ? 'is-active' : ''}">${esc(T().modeFlip)}</button>
       <button type="button" data-mode="write" class="${state.settings.mode === 'write' ? 'is-active' : ''}">${esc(T().modeWrite)}</button>
+      <button type="button" data-mode="speak" class="${state.settings.mode === 'speak' ? 'is-active' : ''}">${esc(T().modeSpeak)}</button>
     </div>`;
 
   function bindCommon() {
@@ -599,7 +652,7 @@
             nothingLeft
               ? `<div class="toeic-done-note">${esc(t.allDone)}</div>`
               : `<button id="toeicStartBtn" class="primary toeic-big-btn" type="button">${esc(
-                  state.settings.mode === 'write' ? t.writeStart : started || due.length ? t.continue : t.start
+                  state.settings.mode === 'write' ? t.writeStart : state.settings.mode === 'speak' ? t.speakStart : started || due.length ? t.continue : t.start
                 )}</button>`
           }
           <button id="toeicCalendarBtn" type="button">${esc(t.calendar)}</button>
@@ -720,7 +773,7 @@
     </div>`;
 
   /** Meaning + usage + example block shown on the back of a card / after checking. */
-  function detailsHtml(w, { showWord = false, hideMeaning: noMeaning = false } = {}) {
+  function detailsHtml(w, { showWord = false, hideMeaning: noMeaning = false, noMic = false } = {}) {
     const t = T();
     if (isFix(w)) {
       return `
@@ -728,7 +781,8 @@
           <div class="toeic-detail-label">${esc(t.fixAnswer)}</div>
           <div class="toeic-example-en">${esc(w.ex_en)}</div>
           ${w.meaning ? `<div class="toeic-usage">${esc(w.meaning)}</div>` : ''}
-          <div class="toeic-audio-row"><button type="button" data-say-example="1">${esc(t.speakExample)}</button></div>
+          <div class="toeic-audio-row"><button type="button" data-say-example="1">${esc(t.speakExample)}</button>${micButton()}</div>
+          ${speechBox()}
         </div>`;
     }
     return `
@@ -753,7 +807,9 @@
           <button type="button" data-say-word="1">${esc(t.speak)}</button>
           <button type="button" data-say-slow="1">${esc(t.slow)}</button>
           ${w.ex_en ? `<button type="button" data-say-example="1">${esc(t.speakExample)}</button>` : ''}
+          ${noMic ? '' : micButton()}
         </div>
+        ${noMic ? '' : speechBox()}
       </div>`;
   }
 
@@ -776,6 +832,13 @@
         speak(w.ex_en, 0.9);
       })
     );
+    scope.querySelectorAll('[data-mic]').forEach(b =>
+      b.addEventListener('click', e => {
+        e.stopPropagation();
+        toggleMic(w);
+      })
+    );
+    paintSpeech(w);
   }
 
   function renderSession() {
@@ -785,6 +848,7 @@
       return render();
     }
     if (state.settings.mode === 'write') return renderWriteCard(item);
+    if (state.settings.mode === 'speak') return renderSpeakCard(item);
     return renderFlipCard(item);
   }
 
@@ -799,8 +863,15 @@
         <span class="toeic-card-front is-fix">${esc(w.phrase)}</span>
         ${w.context ? `<span class="toeic-card-context">${esc(w.context)}</span>` : ''}`;
     } else if (front === 'en') {
-      frontHtml = `<span class="toeic-card-front is-en">${esc(headword(w))}</span>
-        ${state.settings.ipaFront || session.flipped ? `<span class="toeic-ipa">${esc(ipaOf(w))}</span>` : ''}`;
+      const showIpa = state.settings.ipaFront || session.flipped;
+      const ruby = showIpa ? rubyHtml(w) : '';
+      if (ruby && !isTemplate(w)) {
+        // Sentence / phrase: show every word with its own phonetic transcription.
+        frontHtml = `<span class="toeic-card-front is-en">${ruby}</span>`;
+      } else {
+        frontHtml = `<span class="toeic-card-front is-en">${esc(headword(w))}</span>
+        ${showIpa ? (ruby ? rubyHtml(w, 'is-small') : `<span class="toeic-ipa">${esc(ipaOf(w))}</span>`) : ''}`;
+      }
     } else {
       frontHtml = `<span class="toeic-card-front is-vi">${esc(meaningOf(w))}</span>`;
     }
@@ -848,6 +919,313 @@
       item.spoken = true;
       speak(sayText(w));
     }
+  }
+
+  // ---------- speaking practice (speech recognition) ----------
+  // Engine 1: the browser's SpeechRecognition (Safari on iPad/iPhone/Mac, Chrome) — free, no key.
+  // Engine 2 (fallback): the account's Groq Whisper function, if the browser has no recognizer.
+  let speech = { id: null, status: 'idle' }; // status: idle | listening | processing | done | error
+  let recognizer = null;
+  const Recognition = window.SpeechRecognition || window.webkitSpeechRecognition;
+
+  const micButton = () =>
+    `<button type="button" data-mic="1" class="toeic-mic-btn">${esc(speech.status === 'listening' ? T().micStop : T().mic)}</button>`;
+  const speechBox = () => `<div class="toeic-speech-result" data-speech-box aria-live="polite"></div>`;
+  const speakTarget = w => (isFix(w) ? w.ex_en.split(' / ')[0] : sayText(w));
+
+  const NUMBERS = ['zero', 'one', 'two', 'three', 'four', 'five', 'six', 'seven', 'eight', 'nine', 'ten', 'eleven', 'twelve',
+    'thirteen', 'fourteen', 'fifteen', 'sixteen', 'seventeen', 'eighteen', 'nineteen', 'twenty'];
+  const CONTRACTIONS = {
+    "i'm": 'i am', "you're": 'you are', "we're": 'we are', "they're": 'they are', "it's": 'it is', "that's": 'that is',
+    "what's": 'what is', "there's": 'there is', "here's": 'here is', "let's": 'let us', "i'll": 'i will', "you'll": 'you will',
+    "we'll": 'we will', "i've": 'i have', "we've": 'we have', "i'd": 'i would', "don't": 'do not', "doesn't": 'does not',
+    "didn't": 'did not', "isn't": 'is not', "aren't": 'are not', "can't": 'cannot', "won't": 'will not', "haven't": 'have not',
+    "hasn't": 'has not', "wasn't": 'was not', "couldn't": 'could not', "shouldn't": 'should not', "he's": 'he is', "she's": 'she is',
+  };
+  /** Words for comparison: lowercase, no punctuation, contractions expanded, numbers as digits, "v s m" → "vsm". */
+  function speechWords(text) {
+    let s = String(text || '').toLowerCase().replace(/[’`]/g, "'").replace(/…/g, ' ');
+    s = s.replace(/(\d)\.(\d)/g, '$1 point $2');
+    const raw = s.replace(/[^a-z0-9'\s-]/g, ' ').replace(/-/g, ' ').split(/\s+/).filter(Boolean);
+    const out = [];
+    for (let tok of raw) {
+      tok = tok.replace(/^'+|'+$/g, '');
+      if (!tok) continue;
+      const exp = CONTRACTIONS[tok];
+      if (exp) out.push(...exp.split(' '));
+      else if (/^[a-z]+'s$/.test(tok)) out.push(tok.slice(0, -2)); // "lin's" ≈ "lin"
+      else out.push(NUMBERS.includes(tok) ? String(NUMBERS.indexOf(tok)) : tok);
+    }
+    // Join runs of single letters ("v s m" → "vsm") so spoken abbreviations match.
+    const merged = [];
+    for (let i = 0; i < out.length; ) {
+      let j = i;
+      // Articles "a" / pronoun "i" never start an abbreviation run.
+      if (/^[b-hj-z]$/.test(out[i])) while (j < out.length && /^[a-z]$/.test(out[j])) j++;
+      if (j - i >= 2) {
+        merged.push(out.slice(i, j).join(''));
+        i = j;
+      } else {
+        merged.push(out[i]);
+        i++;
+      }
+    }
+    return merged;
+  }
+
+  /** Align target and heard words (LCS); returns per-target-word match flags and a 0–100 score. */
+  function compareSpeech(target, heard) {
+    const a = speechWords(target);
+    const b = speechWords(heard);
+    const n = a.length;
+    const m = b.length;
+    const dp = Array.from({ length: n + 1 }, () => new Array(m + 1).fill(0));
+    for (let i = n - 1; i >= 0; i--)
+      for (let j = m - 1; j >= 0; j--)
+        dp[i][j] = a[i] === b[j] || (a[i].length > 3 && b[j].startsWith(a[i].slice(0, -1)) && Math.abs(a[i].length - b[j].length) <= 2)
+          ? dp[i + 1][j + 1] + 1
+          : Math.max(dp[i + 1][j], dp[i][j + 1]);
+    const ok = new Array(n).fill(false);
+    let i = 0;
+    let j = 0;
+    while (i < n && j < m) {
+      const same = a[i] === b[j] || (a[i].length > 3 && b[j].startsWith(a[i].slice(0, -1)) && Math.abs(a[i].length - b[j].length) <= 2);
+      if (same && dp[i][j] === dp[i + 1][j + 1] + 1) {
+        ok[i] = true;
+        i++;
+        j++;
+      } else if (dp[i + 1][j] >= dp[i][j + 1]) i++;
+      else j++;
+    }
+    const matched = ok.filter(Boolean).length;
+    const extra = Math.max(0, m - matched);
+    const score = n ? Math.round((100 * matched) / (n + Math.max(0, extra - 1) * 0.5)) : 0;
+    return { words: a, ok, score: Math.max(0, Math.min(100, score)) };
+  }
+
+  function scoreToRating(score) {
+    if (score >= 95) return 'easy';
+    if (score >= 80) return 'good';
+    if (score >= 55) return 'hard';
+    return 'again';
+  }
+
+  function paintSpeech(w) {
+    const t = T();
+    root()
+      ?.querySelectorAll('[data-mic]')
+      .forEach(b => {
+        b.textContent = speech.id === w.id && speech.status === 'listening' ? t.micStop : t.mic;
+        b.classList.toggle('is-listening', speech.id === w.id && speech.status === 'listening');
+      });
+    const box = root()?.querySelector('[data-speech-box]');
+    if (!box) return;
+    if (speech.id !== w.id || speech.status === 'idle') {
+      box.innerHTML = '';
+      return;
+    }
+    if (speech.status === 'listening') box.innerHTML = `<div class="toeic-speech-status is-live">${esc(t.listening)} ${speech.interim ? `<i>${esc(speech.interim)}</i>` : ''}</div>`;
+    else if (speech.status === 'processing') box.innerHTML = `<div class="toeic-speech-status">${esc(t.processing)}</div>`;
+    else if (speech.status === 'error') box.innerHTML = `<div class="toeic-speech-status is-error">${esc(speech.message)}</div>`;
+    else {
+      const r = speech.result;
+      const verdict = r.score >= 90 ? t.scoreGreat : r.score >= 65 ? t.scoreGood : t.scoreTry;
+      const cls = r.score >= 90 ? 'is-great' : r.score >= 65 ? 'is-good' : 'is-try';
+      box.innerHTML = `
+        <div class="toeic-speech-card ${cls}">
+          <div class="toeic-speech-score"><strong>${r.score}%</strong><span>${esc(verdict)}</span></div>
+          <div class="toeic-speech-words">${r.words.map((wd, i) => `<span class="${r.ok[i] ? 'ok' : 'miss'}">${esc(wd)}</span>`).join(' ')}</div>
+          <div class="toeic-speech-heard"><span>${esc(t.youSaid)}${speech.engine === 'groq' ? ` (${esc(t.speechEngineGroq)})` : ''}:</span> “${esc(speech.heard || '—')}”</div>
+        </div>`;
+    }
+    // Highlight the suggested rating button.
+    root()
+      ?.querySelectorAll('[data-rate]')
+      .forEach(b => b.classList.toggle('is-suggested', speech.status === 'done' && speech.id === w.id && b.dataset.rate === scoreToRating(speech.result.score)));
+  }
+
+  function stopMic() {
+    try {
+      recognizer?.stop();
+    } catch {
+      /* already stopped */
+    }
+    recognizer = null;
+  }
+
+  function finishSpeech(w, alternatives, engine) {
+    const target = speakTarget(w);
+    let best = null;
+    for (const alt of alternatives.filter(Boolean)) {
+      const r = compareSpeech(target, alt);
+      if (!best || r.score > best.r.score) best = { r, alt };
+    }
+    if (!best) {
+      speech = { id: w.id, status: 'error', message: T().speechNoResult };
+    } else {
+      speech = { id: w.id, status: 'done', result: best.r, heard: best.alt, engine };
+      if (session && session.queue[session.index]?.w.id === w.id && state.settings.mode === 'speak' && !session.checked) {
+        session.checked = true;
+        renderSession();
+        return;
+      }
+    }
+    paintSpeech(w);
+  }
+
+  async function toggleMic(w) {
+    if (speech.id === w.id && speech.status === 'listening') {
+      stopMic();
+      return;
+    }
+    window.speechSynthesis?.cancel?.();
+    stopMic();
+    if (Recognition) return listenBrowser(w);
+    return listenGroq(w);
+  }
+
+  function listenBrowser(w) {
+    const rec = new Recognition();
+    recognizer = rec;
+    rec.lang = 'en-US';
+    rec.interimResults = true;
+    rec.maxAlternatives = 5;
+    rec.continuous = false;
+    const alts = [];
+    let gotFinal = false;
+    speech = { id: w.id, status: 'listening', interim: '' };
+    paintSpeech(w);
+    const words = speechWords(speakTarget(w)).length;
+    const guard = setTimeout(() => {
+      try {
+        rec.stop();
+      } catch {
+        /* ignore */
+      }
+    }, Math.min(15000, 4000 + words * 700));
+    rec.onresult = e => {
+      let interim = '';
+      for (let i = e.resultIndex; i < e.results.length; i++) {
+        const res = e.results[i];
+        if (res.isFinal) {
+          gotFinal = true;
+          for (let k = 0; k < res.length; k++) alts.push(res[k].transcript);
+        } else interim += res[0].transcript;
+      }
+      if (!gotFinal && speech.id === w.id) {
+        speech.interim = interim;
+        paintSpeech(w);
+      }
+    };
+    rec.onerror = e => {
+      clearTimeout(guard);
+      const code = e.error;
+      if (code === 'not-allowed' || code === 'service-not-allowed') speech = { id: w.id, status: 'error', message: T().speechDenied };
+      else if (code === 'network') speech = { id: w.id, status: 'error', message: T().speechNetwork };
+      else if (code === 'no-speech' || code === 'aborted') speech = { id: w.id, status: 'error', message: T().speechNoResult };
+      else speech = { id: w.id, status: 'error', message: `${T().speechNoResult} (${code})` };
+      paintSpeech(w);
+    };
+    rec.onend = () => {
+      clearTimeout(guard);
+      if (recognizer === rec) recognizer = null;
+      if (speech.status === 'error') return;
+      if (!alts.length && speech.interim) alts.push(speech.interim);
+      finishSpeech(w, alts, 'browser');
+    };
+    try {
+      rec.start();
+    } catch (err) {
+      speech = { id: w.id, status: 'error', message: String(err.message || err) };
+      paintSpeech(w);
+    }
+  }
+
+  async function listenGroq(w) {
+    const t = T();
+    const auth = window.TOCFLAuth;
+    if (!navigator.mediaDevices?.getUserMedia || !window.MediaRecorder || !auth?.transcribeWithGroq || !auth.getSession?.()?.user) {
+      speech = { id: w.id, status: 'error', message: t.speechUnsupported };
+      paintSpeech(w);
+      return;
+    }
+    let stream;
+    try {
+      stream = await navigator.mediaDevices.getUserMedia({ audio: true });
+    } catch {
+      speech = { id: w.id, status: 'error', message: t.speechDenied };
+      paintSpeech(w);
+      return;
+    }
+    const words = speechWords(speakTarget(w)).length;
+    const recorder = new MediaRecorder(stream);
+    const chunks = [];
+    recorder.ondataavailable = e => e.data?.size && chunks.push(e.data);
+    const stopped = new Promise(resolve => (recorder.onstop = resolve));
+    recognizer = { stop: () => recorder.state === 'recording' && recorder.stop() };
+    speech = { id: w.id, status: 'listening', interim: '' };
+    paintSpeech(w);
+    recorder.start(250);
+    const guard = setTimeout(() => recognizer?.stop(), Math.min(10000, 2500 + words * 500));
+    await stopped;
+    clearTimeout(guard);
+    recognizer = null;
+    stream.getTracks().forEach(tr => tr.stop());
+    speech = { id: w.id, status: 'processing' };
+    paintSpeech(w);
+    try {
+      const blob = new Blob(chunks, { type: recorder.mimeType || 'audio/webm' });
+      const data = await auth.transcribeWithGroq(blob, speakTarget(w), { language: 'en' });
+      const text = String(data?.text || '');
+      if (/[㐀-鿿]/.test(text)) {
+        speech = { id: w.id, status: 'error', message: t.speechGroqZh };
+        paintSpeech(w);
+        return;
+      }
+      finishSpeech(w, [text], 'groq');
+    } catch (err) {
+      speech = { id: w.id, status: 'error', message: err?.message || t.speechNoResult };
+      paintSpeech(w);
+    }
+  }
+
+  function renderSpeakCard(item) {
+    const t = T();
+    const w = item.w;
+    const fix = isFix(w);
+    const checked = session.checked;
+    root().innerHTML = `
+      <div class="card toeic-session toeic-speak">
+        ${sessionHead(item)}
+        <div class="toeic-speak-prompt">
+          <div class="small muted">${esc(fix ? t.speakFix : t.speakPrompt)}</div>
+          <div class="toeic-speak-text">${!fix && rubyHtml(w) ? rubyHtml(w) : esc(speakTarget(w))}</div>
+          ${!fix && w.ipa && !rubyHtml(w) ? `<div class="toeic-ipa">${esc(ipaOf(w))}</div>` : ''}
+          ${!fix ? `<div class="toeic-speak-meaning">${esc(meaningOf(w))}</div>` : ''}
+          <div class="toeic-audio-row">
+            <button type="button" data-say-target="1">${esc(t.speak)}</button>
+            <button type="button" data-say-target-slow="1">${esc(t.slow)}</button>
+          </div>
+          <button type="button" data-mic="1" class="toeic-mic-btn is-big">${esc(t.mic)}</button>
+          <div class="small muted">${esc(t.speakHint)}</div>
+          ${speechBox()}
+          ${checked ? '' : `<button type="button" id="toeicSpeakReveal" class="toeic-link-btn">${esc(t.showAnswer)}</button>`}
+        </div>
+        ${checked ? detailsHtml(w, { hideMeaning: !fix, noMic: true }) : ''}
+        ${rateButtons(checked)}
+      </div>`;
+    bindCommon();
+    $('toeicBackBtn').addEventListener('click', endSession);
+    root().querySelector('[data-say-target]').addEventListener('click', () => speak(speakTarget(w)));
+    root().querySelector('[data-say-target-slow]').addEventListener('click', () => speak(speakTarget(w), 0.55));
+    $('toeicSpeakReveal')?.addEventListener('click', () => {
+      session.checked = true;
+      renderSession();
+    });
+    bindAudio(w);
+    root()
+      .querySelectorAll('[data-rate]')
+      .forEach(b => b.addEventListener('click', () => rate(b.dataset.rate)));
   }
 
   // ---------- writing mode ----------
@@ -1110,7 +1488,7 @@
 
   // ---------- session flow ----------
   function flip() {
-    if (!session || screen !== 'session' || state.settings.mode === 'write') return;
+    if (!session || screen !== 'session' || state.settings.mode === 'write' || state.settings.mode === 'speak') return;
     session.flipped = !session.flipped;
     const item = session.queue[session.index];
     if (session.flipped && state.settings.autoSpeak && item && frontSide(item) === 'vi') speak(sayText(item.w));
@@ -1119,7 +1497,7 @@
 
   function rate(rating) {
     if (!session) return;
-    if (state.settings.mode === 'write' ? !session.checked : !session.flipped) return;
+    if (state.settings.mode === 'write' || state.settings.mode === 'speak' ? !session.checked : !session.flipped) return;
     const item = session.queue[session.index];
     grade(item.w, rating);
     session.reviewed += 1;
@@ -1137,11 +1515,14 @@
     session.typed = '';
     session.hint = false;
     session.strokes = [];
+    stopMic();
+    speech = { id: null, status: 'idle' };
     renderSession();
   }
 
   function endSession() {
     window.speechSynthesis?.cancel?.();
+    stopMic();
     session = null;
     screen = 'home';
     render();
@@ -1251,7 +1632,7 @@
       renderList();
     });
     $('toeicStudyUnitBtn')?.addEventListener('click', () => {
-      if (state.settings.mode === 'write') setSetting({ mode: 'flip' });
+      if (state.settings.mode === 'write' || state.settings.mode === 'speak') setSetting({ mode: 'flip' });
       startSession(u);
     });
     $('toeicWriteUnitBtn')?.addEventListener('click', () => startSession(u, { forceWrite: true }));
@@ -1524,6 +1905,8 @@
       e.preventDefault();
       if (state.settings.mode === 'write') {
         if (!session.checked) checkWriting();
+      } else if (state.settings.mode === 'speak') {
+        if (item) toggleMic(item.w);
       } else flip();
     } else if ((session?.flipped || session?.checked) && ['1', '2', '3', '4'].includes(e.key)) {
       rate(['again', 'hard', 'good', 'easy'][Number(e.key) - 1]);

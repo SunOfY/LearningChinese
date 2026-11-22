@@ -1,4 +1,4 @@
-const CACHE = 'tocfl-v5-10-1-ipa-words';
+const CACHE = 'tocfl-v5-10-1-reflow-1';
 const ASSETS = [
   './',
   './index.html',

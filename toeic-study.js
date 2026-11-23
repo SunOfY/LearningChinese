@@ -98,65 +98,52 @@
   let retried = new Set();
 
   function renderLessons() {
-    if (!source) return;
-    function chapter(container, name, entries, deck) {
-      const details = document.createElement('details');
-      const title = document.createElement('summary');
-      title.textContent = name + ' · ' + entries.length + ' mục';
-      const list = document.createElement('dl');
-      list.className = 'tp-lesson-body';
-      for (const [term, description, example] of entries) {
-        const heading = document.createElement('dt');
-        heading.textContent = term;
-        const explanation = document.createElement('dd');
-        const text = document.createElement('p');
-        text.textContent = description;
-        const sentence = document.createElement('p');
-        sentence.lang = 'en';
-        sentence.textContent = example;
-        explanation.append(text, sentence);
-        list.append(heading, explanation);
+    const mode = get('mode'), chapter = get('chapter'), item = get('item');
+    function chapters() {
+      return mode.value === 'quiz' ? decks : source[mode.value];
+    }
+    function showItem() {
+      const rows = chapters()[chapter.selectedIndex].rows;
+      const index = item.selectedIndex;
+      const [term, meaning, sentence] = rows[index];
+      get('position').textContent = 'Mục ' + (index + 1) + ' / ' + rows.length;
+      get('term').textContent = term;
+      get('definition').textContent = meaning;
+      get('sentence').textContent = sentence.replace('___', term);
+      get('prev').disabled = index === 0;
+      get('forward').disabled = index === rows.length - 1;
+    }
+    function showChapter() {
+      const group = chapters()[chapter.selectedIndex];
+      const quiz = mode.value === 'quiz';
+      get('reading').hidden = quiz;
+      if (!quiz) {
+        item.replaceChildren(...group.rows.map(([term], i) => new Option((i + 1) + '. ' + term)));
+        showItem();
       }
-      details.append(title, list);
+      const deck = quiz ? chapter.selectedIndex : decks.findIndex(d => d.category === 'vocabulary' && d.name === group.name);
+      get('launch').hidden = deck < 0;
+      get('deck-info').hidden = !quiz;
       if (deck >= 0) {
-        const button = document.createElement('button');
-        button.type = 'button';
-        button.className = 'tp-primary tp-lesson-quiz';
-        button.dataset.deck = deck;
-        button.textContent = 'Luyện A–D nhóm này';
-        details.append(button);
+        get('launch').dataset.deck = deck;
+        const list = decks[deck].questions;
+        get('deck-info').textContent = list.filter(q => records[q.id]?.level >= 0).length + '/' + list.length + ' câu đã làm đúng';
       }
-      container.append(details);
     }
-
-    for (const { name, rows } of source.reference) {
-      chapter(get('reference'), name, rows, -1);
+    function showMode() {
+      chapter.replaceChildren(...chapters().map(group => new Option(group.name)));
+      showChapter();
     }
-    for (const { name, rows } of source.vocabulary) {
-      const deck = decks.findIndex(group => group.category === 'vocabulary' && group.name === name);
-      chapter(get('vocabulary'), name, rows.map(([term, definition, sentence]) => [
-        term, definition, sentence.replace('___', term),
-      ]), deck);
-    }
+    mode.onchange = showMode;
+    chapter.onchange = showChapter;
+    item.onchange = showItem;
+    get('prev').onclick = () => { item.selectedIndex--; showItem(); };
+    get('forward').onclick = () => { item.selectedIndex++; showItem(); };
+    showMode();
   }
-
   function renderGroups() {
-    for (const container of root.querySelectorAll('[data-decks]')) {
-    container.replaceChildren(...decks.map((deck, index) => {
-      if ((deck.category || 'extra') !== container.dataset.decks) return null;
-      const button = document.createElement('button');
-      button.className = 'tp-group';
-      button.type = 'button';
-      button.dataset.deck = index;
-      const title = document.createElement('strong');
-      title.textContent = deck.name;
-      const count = document.createElement('span');
-      const learned = deck.questions.filter(question => records[question.id]?.level >= 0).length;
-      count.textContent = `${learned}/${deck.questions.length} câu đã làm đúng`;
-      button.append(title, count);
-      return button;
-    }).filter(Boolean));
-    }
+    if (get('mode').value === 'quiz') get('chapter').onchange();
+
     const due = questions.filter(question => records[question.id]?.due <= day(0)).length;
     get('review').textContent = `Ôn đến hạn (${due})`;
     get('review').disabled = due === 0;

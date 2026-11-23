@@ -345,24 +345,15 @@
         <p>Chọn một chủ đề để luyện từ trong câu. Các câu sai sẽ xuất hiện lại trong lượt học.</p>
         <button type="button" class="tp-primary" data-ui="review">Ôn đến hạn</button>
       </header>
-      <nav class="tp-links" aria-label="Nội dung TOEIC">
-        <a href="#toeic-vocabulary">Từ vựng theo nhóm</a>
-        <a href="#toeic-grammar">Ngữ pháp và cụm từ</a>
-          <a href="#toeic-lessons">Bài học TOEIC</a>
-      </nav>
-      <section class="tp-lessons" aria-labelledby="toeic-lessons">
-        <h2 id="toeic-lessons">Bài học TOEIC</h2>
-        <h3>Ngữ pháp và cấu trúc</h3>
-        <div class="tp-lesson-grid" data-ui="reference"></div>
-        <h3>Từ vựng theo chủ đề</h3>
-        <div class="tp-lesson-grid" data-ui="vocabulary"></div>
-      </section>
-      <h2 id="toeic-vocabulary">Từ vựng theo nhóm</h2>
-      <div class="tp-grid" data-decks="vocabulary"></div>
-      <h2 id="toeic-grammar">Ngữ pháp và cụm từ</h2>
-      <div class="tp-grid" data-decks="grammar"></div>
-      <h2>Luyện thêm</h2>
-      <div class="tp-grid" data-decks="extra"></div>
+      <div class="tp-reader">
+        <label>Chế độ <select data-ui="mode"><option value="reference">Học ngữ pháp</option><option value="vocabulary">Học từ vựng</option><option value="quiz">Luyện trắc nghiệm</option></select></label>
+        <label>Chủ đề <select data-ui="chapter"></select></label>
+        <div data-ui="reading"><label>Chuyển đến mục <select data-ui="item"></select></label>
+          <article aria-live="polite"><small data-ui="position"></small><h2 data-ui="term"></h2><p data-ui="definition"></p><p class="tp-context" lang="en" data-ui="sentence"></p></article>
+          <footer><button type="button" data-ui="prev">← Trước</button><button type="button" data-ui="forward">Tiếp →</button></footer></div>
+        <p data-ui="deck-info"></p><button type="button" class="tp-primary" data-ui="launch">Luyện A–D</button>
+      </div>
+
 
 
     </div>

@@ -35,3 +35,12 @@
 .tp-lesson-body dt { margin-top: .75rem; font-weight: 700; }
 .tp-lesson-body dd { margin: .4rem 0 1rem; }
 .tp-lesson-quiz { margin: 0 1.1rem 1rem; }
+#toeic-practice .tp-header {padding:1rem 1.25rem;display:flex;align-items:center;justify-content:space-between;gap:.75rem;flex-wrap:wrap}
+#toeic-practice .tp-header h1 {font-size:1.65rem;margin:0}
+#toeic-practice .tp-header p {display:none}
+.tp-reader {background:white;border:1px solid #bed7d0;border-radius:1rem;padding:clamp(.8rem,2vw,1.5rem);margin-top:.75rem}
+.tp-reader label {display:block;margin:.4rem 0;font-weight:650}
+.tp-reader select {display:block;width:100%;min-height:44px;border:1px solid #a7c5bf;border-radius:.6rem;padding:.4rem;color:inherit;background:white;font:inherit}
+.tp-reader article {margin:1rem 0}.tp-reader article h2 {margin:.35rem 0}
+.tp-reader footer {display:flex;justify-content:space-between}
+@media(min-width:650px){.tp-reader>label{display:inline-block;width:48%;vertical-align:top;margin-right:1%}}

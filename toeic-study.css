@@ -1,0 +1,23 @@
+#toeic-practice{max-width:960px;margin:0 auto;color:#15332f}
+#toeic-practice [hidden]{display:none!important}
+#toeic-practice button{min-height:44px}
+#toeic-practice button:focus-visible{outline:3px solid #0f766e;outline-offset:3px}
+.tp-header{padding:clamp(22px,5vw,48px);background:#ddf4eb;border:1px solid #c4e5d8;border-radius:24px;margin-bottom:18px}
+.tp-header h1{margin:0;font-size:clamp(2rem,5vw,3.5rem);letter-spacing:-.035em}
+.tp-header p{max-width:55ch}
+.tp-grid,.tp-options{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:12px}
+#toeic-practice .tp-group,#toeic-practice .tp-option{width:100%;text-align:left;padding:16px 18px;border:1px solid #c8dbd7;border-radius:14px;background:#fff;color:#15332f;white-space:normal}
+#toeic-practice .tp-group span{display:block;margin-top:6px;font-size:.9rem;color:#42635d;font-weight:400}
+#toeic-practice .tp-primary{background:#0f665c;color:white;border-color:#0f665c;padding:10px 18px}
+#toeic-practice .tp-primary:disabled{opacity:.55}
+.tp-session{padding:clamp(16px,4vw,36px);background:#fff;border:1px solid #c8dbd7;border-radius:22px}
+.tp-toolbar{display:flex;align-items:center;justify-content:space-between;gap:12px;flex-wrap:wrap}
+.tp-counter{color:#42635d;font-size:.9rem}
+.tp-session h2{font-size:clamp(1.25rem,4vw,1.8rem)}
+#toeic-practice .tp-option:disabled{opacity:1}
+#toeic-practice .tp-option.is-correct{background:#dff5e7;border-color:#3b9070;color:#114b31}
+#toeic-practice .tp-option.is-wrong{background:#fce9e8;border-color:#bc6862;color:#781f19}
+.tp-feedback{padding:16px 18px;margin-top:18px;border-radius:14px;background:#edf6f3}
+.tp-feedback p{margin:.5rem 0}
+.tp-feedback p:empty{display:none}
+@media(max-width:540px){.tp-grid,.tp-options{grid-template-columns:1fr}}

@@ -110,6 +110,48 @@
       get('term').textContent = term;
       get('definition').textContent = meaning;
       get('sentence').textContent = sentence.replace('___', term);
+      const sample = source.flash[mode.value][term];
+      const vocab = mode.value === 'vocabulary';
+      const second = vocab ? sample.replace('___', term) : sample.split('|')[0].replace(/\[([^\]]+)\]/, '$1');
+      get('extra').textContent = second;
+      get('extra').parentElement.open = false;
+      let flipped = false, step = 0;
+      function drawFace() {
+        get('inside').hidden = get('definition').hidden = !flipped;
+        get('flip').setAttribute('aria-expanded', String(flipped));
+        get('face').textContent = flipped ? 'Mặt sau' : 'Mặt trước';
+        get('flip-label').textContent = flipped ? '↶  Xem mặt trước' : '↻  Chạm để xem nghĩa và cách dùng';
+      }
+      get('flip').onclick = () => { flipped = !flipped; drawFace(); };
+      function exercise() {
+        const other = shuffle(rows.filter(row => row[0] !== term));
+        const parts = sample.split('|');
+        const blank = vocab ? term : parts[0].match(/\[([^\]]+)\]/)[1];
+        const correct = step === 0 ? term : blank;
+        const distractors = step === 1 && !vocab ? parts.slice(1) : other.slice(0,3).map(row => row[0]);
+        get('task').textContent = step === 0 ? '1/2 · Chọn mục phù hợp với nghĩa hoặc quy tắc sau. ' + meaning : '2/2 · Điền vào chỗ trống. ' + (vocab ? sample : parts[0].replace(/\[[^\]]+\]/, '___'));
+        get('answer').textContent = '';
+        get('again').hidden = true;
+        const buttons = shuffle([correct, ...distractors]).map((value, i) => {
+          const b = document.createElement('button');
+          b.type = 'button';
+          b.textContent = 'ABCD'[i] + '. ' + value;
+          b.onclick = () => {
+            for (const entry of buttons) entry.disabled = true;
+            buttons.find(entry => entry.dataset.value === correct).classList.add('fc-right');
+            if (value !== correct) b.classList.add('fc-wrong');
+            get('answer').textContent = (value === correct ? 'Chính xác. ' : 'Đáp án đúng là ' + correct + '. ') + (step === 0 ? get('sentence').textContent : second);
+            get('again').textContent = step === 0 ? 'Bài tập tiếp →' : 'Làm lại hai bài';
+            get('again').hidden = false;
+          };
+          b.dataset.value = value;
+          return b;
+        });
+        get('choices').replaceChildren(...buttons);
+      }
+      get('again').onclick = () => { step = 1 - step; exercise(); };
+      drawFace();
+      exercise();
       get('prev').disabled = index === 0;
       get('forward').disabled = index === rows.length - 1;
     }

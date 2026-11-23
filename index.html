@@ -349,7 +349,9 @@
         <label>Chế độ <select data-ui="mode"><option value="reference">Học ngữ pháp</option><option value="vocabulary">Học từ vựng</option><option value="quiz">Luyện trắc nghiệm</option></select></label>
         <label>Chủ đề <select data-ui="chapter"></select></label>
         <div data-ui="reading"><label>Chuyển đến mục <select data-ui="item"></select></label>
-          <article aria-live="polite"><small data-ui="position"></small><h2 data-ui="term"></h2><p data-ui="definition"></p><p class="tp-context" lang="en" data-ui="sentence"></p></article>
+          <article class="fc"><div class="fc-bar"><small data-ui="position"></small><span data-ui="face"></span></div><button class="fc-flip" data-ui="flip" type="button" aria-expanded="false"><strong data-ui="term"></strong><span data-ui="definition" hidden></span><small data-ui="flip-label"></small></button></article>
+          <div class="fc-body" data-ui="inside" hidden><section class="fc-example"><h3>Ví dụ trong ngữ cảnh</h3><p lang="en" data-ui="sentence"></p><details><summary>Ví dụ thứ hai</summary><p lang="en" data-ui="extra"></p></details></section><section class="fc-exercise"><h3>Luyện ngay</h3><p data-ui="task"></p><div class="fc-choices" data-ui="choices"></div><p role="status" data-ui="answer"></p><button type="button" data-ui="again"></button></section></div>
+
           <footer><button type="button" data-ui="prev">← Trước</button><button type="button" data-ui="forward">Tiếp →</button></footer></div>
         <p data-ui="deck-info"></p><button type="button" class="tp-primary" data-ui="launch">Luyện A–D</button>
       </div>

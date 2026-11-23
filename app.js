@@ -1005,7 +1005,7 @@ function bindCanvas(){
       if(inst.alwaysVisible)return;
       const visible=show && inst.guideOpacity>0;
       inst.host.style.display=visible?'block':'none';
-      if(inst.fallback) inst.fallback.style.display=visible && inst.fallback.dataset.failed==='1' ? 'flex' : 'none';
+      if(inst.fallback) inst.fallback.hidden=!visible || !!inst.vectorReady;
     });
   });
   document.addEventListener('selectionchange',()=>{ if(document.body.classList.contains('writing-active')) clearBrowserSelection(); });
@@ -1302,7 +1302,8 @@ function renderCopybookPractice(word){
       const guide=document.createElement('div'); guide.className='copybook-guide';
       guide.style.opacity=String(opacity||0);
       guide.style.display=(cellIndex===0 || ($('showGuideCheckbox').checked && opacity>0))?'block':'none';
-      const fontFallback=document.createElement('div'); fontFallback.className='copybook-font-fallback'; fontFallback.textContent=ch; fontFallback.hidden=true;
+      const fontFallback=document.createElement('div'); fontFallback.className='copybook-font-fallback'; fontFallback.textContent=ch; fontFallback.hidden=cellIndex!==0 && !(opacity>0 && $('showGuideCheckbox').checked);
+      fontFallback.style.opacity=String(opacity);
       cell.append(lines,guide,fontFallback);
       cells.append(cell);
 
@@ -1341,11 +1342,10 @@ function renderCopybookPractice(word){
         try{
           const writer=makeCopybookGuideWriter(guide,ch,{strokeColor:cellIndex===0?'#17211f':'#0f766e'},()=>{
             inst.writer=writer;
-            fontFallback.hidden=true; fontFallback.style.display='none';
+            inst.vectorReady=true; fontFallback.hidden=true;
             if(play)play.disabled=false;
           },()=>{
-            // Never overlay a different font glyph. A missing vector leaves this guide blank.
-            fontFallback.hidden=true; fontFallback.style.display='none';
+            fontFallback.hidden=cellIndex!==0 && !$('showGuideCheckbox').checked;
             cell.classList.add('guide-unavailable'); if(play)play.disabled=true;
           });
           if(!writer)throw new Error('HanziWriter unavailable');
@@ -1364,7 +1364,7 @@ function renderCopybookPractice(word){
           }
         }catch(err){
           console.warn('Copybook guide unavailable:',ch,err);
-          fontFallback.hidden=true; fontFallback.style.display='none';
+          fontFallback.hidden=cellIndex!==0 && !$('showGuideCheckbox').checked;
           cell.classList.add('guide-unavailable'); if(play)play.disabled=true;
         }
       });

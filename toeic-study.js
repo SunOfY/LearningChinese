@@ -97,6 +97,49 @@
   let lastDeck;
   let retried = new Set();
 
+  function renderLessons() {
+    if (!source) return;
+    function chapter(container, name, entries, deck) {
+      const details = document.createElement('details');
+      const title = document.createElement('summary');
+      title.textContent = name + ' · ' + entries.length + ' mục';
+      const list = document.createElement('dl');
+      list.className = 'tp-lesson-body';
+      for (const [term, description, example] of entries) {
+        const heading = document.createElement('dt');
+        heading.textContent = term;
+        const explanation = document.createElement('dd');
+        const text = document.createElement('p');
+        text.textContent = description;
+        const sentence = document.createElement('p');
+        sentence.lang = 'en';
+        sentence.textContent = example;
+        explanation.append(text, sentence);
+        list.append(heading, explanation);
+      }
+      details.append(title, list);
+      if (deck >= 0) {
+        const button = document.createElement('button');
+        button.type = 'button';
+        button.className = 'tp-primary tp-lesson-quiz';
+        button.dataset.deck = deck;
+        button.textContent = 'Luyện A–D nhóm này';
+        details.append(button);
+      }
+      container.append(details);
+    }
+
+    for (const { name, rows } of source.reference) {
+      chapter(get('reference'), name, rows, -1);
+    }
+    for (const { name, rows } of source.vocabulary) {
+      const deck = decks.findIndex(group => group.category === 'vocabulary' && group.name === name);
+      chapter(get('vocabulary'), name, rows.map(([term, definition, sentence]) => [
+        term, definition, sentence.replace('___', term),
+      ]), deck);
+    }
+  }
+
   function renderGroups() {
     for (const container of root.querySelectorAll('[data-decks]')) {
     container.replaceChildren(...decks.map((deck, index) => {
@@ -222,5 +265,6 @@
       root.querySelector('[data-deck="' + lastDeck + '"]')?.focus();
     }
   });
+  renderLessons();
   renderGroups();
 })();

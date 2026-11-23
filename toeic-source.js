@@ -912,5 +912,432 @@ window.toeicSource = {
         ]
       ]
     }
+  ],
+  "reference": [
+    {
+      "name": "Ngữ pháp nền tảng",
+      "rows": [
+        [
+          "Each / every + danh từ số ít",
+          "Dùng động từ số ít. Với each of + danh từ số nhiều, động từ vẫn theo each.",
+          "Each of the devices has a serial number."
+        ],
+        [
+          "Everyone, anything, nobody",
+          "Đại từ bất định có đuôi -one, -body hoặc -thing thường dùng với động từ số ít.",
+          "Everyone is ready for the workshop."
+        ],
+        [
+          "Thời gian, tiền và khoảng cách",
+          "Một đại lượng được xem như một đơn vị dùng động từ số ít.",
+          "Ten kilometers is a long walk."
+        ],
+        [
+          "Either…or / neither…nor / not only…but also",
+          "Trong câu có hai chủ ngữ khác số, động từ thường hòa hợp với chủ ngữ gần nhất.",
+          "Neither the instructors nor the coordinator is available."
+        ],
+        [
+          "The number of / a number of",
+          "The number of chỉ số lượng và đi với động từ số ít. A number of nghĩa là một số và đi với động từ số nhiều.",
+          "A number of students have registered."
+        ],
+        [
+          "Most of / some of / the rest of",
+          "Động từ thường theo danh từ sau of. Với a box of, chủ ngữ chính là a box.",
+          "Most of the equipment is new."
+        ],
+        [
+          "News, economics",
+          "Một số danh từ có đuôi -s vẫn dùng động từ số ít khi chỉ tin tức hoặc môn học.",
+          "Economics is an elective this semester."
+        ],
+        [
+          "That / what",
+          "That giới thiệu một mệnh đề đã đủ thành phần. What mang nghĩa điều mà và đảm nhiệm vai trò trong mệnh đề.",
+          "What we need is a spare cable."
+        ],
+        [
+          "Sở hữu và hậu tố",
+          "My, your, her đứng trước danh từ. Mine, yours, hers đứng độc lập. Các đuôi -tion, -ment, -ity thường gợi ý danh từ, còn -ful và -able thường gợi ý tính từ.",
+          "Their proposal was approved. The final decision was hers."
+        ],
+        [
+          "Nhận biết động từ và trạng từ",
+          "Các đuôi -ize, -ify và -en thường gợi ý động từ. Nhiều trạng từ kết thúc bằng -ly, nhưng friendly là tính từ.",
+          "The company will simplify the procedure significantly."
+        ],
+        [
+          "Hardly và seldom",
+          "Hai từ này mang nghĩa hạn định hoặc gần phủ định. Dùng với động từ khẳng định để nói hiếm khi hoặc hầu như không.",
+          "We seldom receive orders on Sundays."
+        ]
+      ]
+    },
+    {
+      "name": "So sánh, bị động và mệnh đề",
+      "rows": [
+        [
+          "As many / as much … as",
+          "Dùng many với danh từ đếm được số nhiều và much với danh từ không đếm được.",
+          "We ordered as many cables as last month."
+        ],
+        [
+          "-er / more / less … than",
+          "Tính từ ngắn thường thêm -er. Tính từ dài thường đi với more hoặc less. Much và far nhấn mạnh so sánh hơn.",
+          "The new printer is much quieter than the old one."
+        ],
+        [
+          "The… the…",
+          "Hai vế đều dùng dạng so sánh hơn để diễn tả càng… càng…",
+          "The longer we wait, the higher the cost becomes."
+        ],
+        [
+          "So sánh nhất",
+          "Dùng the + -est hoặc the most/least + tính từ. Of the two thường dùng dạng so sánh hơn.",
+          "This is the least expensive option available."
+        ],
+        [
+          "Bị động với be + V3",
+          "Đổi dạng be theo thì. Với động từ khuyết thiếu, dùng modal + be + V3.",
+          "The report must be submitted by Friday."
+        ],
+        [
+          "Being / been trong câu bị động",
+          "Be + being + V3 dùng cho tiếp diễn. Have/has/had + been + V3 dùng cho hoàn thành.",
+          "The instruments have already been calibrated."
+        ],
+        [
+          "By / with trong câu bị động",
+          "By có thể giới thiệu tác nhân. With có thể giới thiệu công cụ hoặc chất chứa bên trong.",
+          "The samples were packed by the technician with protective foam."
+        ],
+        [
+          "See / hear + tân ngữ",
+          "Dùng động từ nguyên mẫu để nhấn mạnh toàn bộ hành động hoặc V-ing để nhấn mạnh hành động đang diễn ra.",
+          "We heard the motor running when we entered the lab."
+        ],
+        [
+          "Rút gọn mệnh đề quan hệ",
+          "V-ing diễn tả quan hệ chủ động phù hợp. V3 diễn tả quan hệ bị động.",
+          "The equipment delivered yesterday is ready to use."
+        ]
+      ]
+    },
+    {
+      "name": "Điều kiện và giả định",
+      "rows": [
+        [
+          "Điều kiện loại 1",
+          "If + hiện tại đơn, will/can + động từ nguyên mẫu cho khả năng thực tế.",
+          "If the parts arrive today, we can start tomorrow."
+        ],
+        [
+          "Điều kiện loại 2",
+          "If + quá khứ đơn, would/could + động từ nguyên mẫu cho giả định hiện tại hoặc tương lai.",
+          "If we had more space, we could add another workstation."
+        ],
+        [
+          "Điều kiện loại 3",
+          "If + had + V3, would/could have + V3 cho giả định trái với quá khứ.",
+          "If we had left earlier, we would have caught the train."
+        ],
+        [
+          "Should / were / had",
+          "Có thể đảo ba từ này lên đầu mệnh đề điều kiện và bỏ if.",
+          "Had we checked the file, we would have found the error."
+        ],
+        [
+          "Wish / if only",
+          "Quá khứ đơn diễn tả mong muốn hiện tại, had + V3 diễn tả tiếc nuối quá khứ. Would có thể diễn tả mong muốn tình hình thay đổi.",
+          "I wish I had saved the original readings."
+        ]
+      ]
+    },
+    {
+      "name": "Thời gian, nơi chốn và cụm với make",
+      "rows": [
+        [
+          "at / in / on",
+          "At với giờ hoặc điểm, in với tháng, năm hoặc thành phố, on với ngày hoặc bề mặt.",
+          "The seminar begins at nine on Monday in Kaohsiung."
+        ],
+        [
+          "arrive at / arrive in",
+          "At với địa điểm cụ thể, in với thành phố hoặc quốc gia.",
+          "We arrived at the airport before noon."
+        ],
+        [
+          "on time / in time",
+          "On time là đúng giờ. In time là kịp lúc để làm việc gì.",
+          "We got there in time to catch the last train."
+        ],
+        [
+          "by",
+          "Chỉ hạn chót, phương tiện, tác nhân hoặc mức thay đổi.",
+          "Sales increased by 15 percent in April."
+        ],
+        [
+          "by chance / by heart",
+          "By chance là tình cờ. Learn by heart là học thuộc.",
+          "I met the supplier by chance at the airport."
+        ],
+        [
+          "make sure / be sure",
+          "Make sure that dùng để dặn kiểm tra cho chắc. Be sure to dùng để nhắc làm việc gì.",
+          "Make sure that the document includes your name."
+        ],
+        [
+          "make + danh từ",
+          "Các cụm hay gặp gồm make a decision, make an appointment, make an effort.",
+          "We need to make an appointment with the advisor."
+        ],
+        [
+          "make + tân ngữ",
+          "Theo sau bằng tính từ hoặc động từ nguyên mẫu để diễn tả tác động.",
+          "The new procedure makes the work easier."
+        ],
+        [
+          "take something into account",
+          "Cân nhắc một yếu tố trước khi quyết định.",
+          "We should take delivery costs into account."
+        ]
+      ]
+    },
+    {
+      "name": "Giới từ trong công việc và thư tín",
+      "rows": [
+        [
+          "under",
+          "Dùng trong under repair, under pressure, under supervision và under consideration.",
+          "The proposal is still under consideration."
+        ],
+        [
+          "into",
+          "Chỉ hướng vào trong hoặc sự chuyển đổi, thường đi với go, put, turn và come.",
+          "Please put the spare parts into the cabinet."
+        ],
+        [
+          "one’s turn",
+          "Chỉ đến lượt ai làm việc gì.",
+          "It is your turn to present the results."
+        ],
+        [
+          "during / for / in",
+          "During đi với tên một giai đoạn, for chỉ thời lượng, in chỉ khoảng thời gian nữa trong ngữ cảnh tương lai.",
+          "The office will reopen in two weeks."
+        ],
+        [
+          "for sale / on sale",
+          "For sale nghĩa là được rao bán. On sale có thể nghĩa là đang bán hoặc đang giảm giá tùy ngữ cảnh.",
+          "The former office building is for sale."
+        ],
+        [
+          "related to",
+          "Có liên quan đến.",
+          "Please forward all messages related to the order."
+        ],
+        [
+          "expect to / be required to",
+          "Expect to là dự kiến. Be required to là được yêu cầu hoặc bắt buộc.",
+          "Visitors are required to show identification."
+        ],
+        [
+          "write to",
+          "Viết cho ai. Có thể viết write a letter to someone.",
+          "I wrote to the hotel to confirm our booking."
+        ],
+        [
+          "an approach to",
+          "Cách tiếp cận. To là giới từ, có thể theo sau bằng V-ing.",
+          "We need a different approach to reducing waste."
+        ],
+        [
+          "be married to",
+          "Nói việc kết hôn với ai. Động từ marry có thể dùng trực tiếp với tân ngữ.",
+          "The speaker is married to a former employee."
+        ],
+        [
+          "superior to",
+          "Tốt hơn hoặc vượt trội hơn về mặt nào đó.",
+          "This material is superior to the old one in durability."
+        ],
+        [
+          "according to",
+          "Theo một nguồn thông tin hoặc quy định.",
+          "According to the schedule, the tour begins at ten."
+        ],
+        [
+          "due to",
+          "Do hoặc bởi vì. Đi với danh từ hay cụm danh từ.",
+          "The session was postponed due to a power outage."
+        ],
+        [
+          "pleased to",
+          "Vui khi được làm việc gì. Theo sau bằng động từ nguyên mẫu.",
+          "We are pleased to confirm your reservation."
+        ],
+        [
+          "prior to / in addition to",
+          "Prior to là trước. In addition to là ngoài… ra. To là giới từ trong cả hai cụm.",
+          "Please review the specifications prior to ordering."
+        ],
+        [
+          "pay attention to",
+          "Chú ý đến. Theo sau có thể là danh từ hoặc V-ing.",
+          "Pay attention to the safety instructions."
+        ],
+        [
+          "be about to",
+          "Sắp làm việc gì ngay lúc này.",
+          "The technician is about to start the test."
+        ],
+        [
+          "apologize to / for",
+          "Apologize to someone là xin lỗi ai. Apologize for something là xin lỗi về việc gì.",
+          "We apologized to the client for the delay."
+        ]
+      ]
+    },
+    {
+      "name": "Cụm từ thường gặp trong Part 5",
+      "rows": [
+        [
+          "for + người + to V",
+          "Nêu rõ ai thực hiện hành động.",
+          "It is important for visitors to sign in."
+        ],
+        [
+          "be likely to",
+          "Diễn tả khả năng có thể xảy ra.",
+          "Delivery is likely to take three days."
+        ],
+        [
+          "be + tính từ + to V / be busy + V-ing",
+          "Ready to, able to và pleased to đi với động từ nguyên mẫu. Busy có thể đi với V-ing.",
+          "The staff are busy preparing the meeting room."
+        ],
+        [
+          "a variety of / a wealth of",
+          "A variety of nhấn mạnh sự đa dạng. A wealth of nhấn mạnh lượng lớn.",
+          "The report contains a wealth of useful information."
+        ],
+        [
+          "worth / worth of",
+          "Worth + V-ing nghĩa là đáng làm. Một lượng + worth of chỉ giá trị hoặc lượng tương đương.",
+          "The workshop is worth attending."
+        ],
+        [
+          "be aware of / be interested in",
+          "Aware of là biết về. Interested in là quan tâm đến.",
+          "Are you interested in joining the training session?"
+        ],
+        [
+          "take advantage of",
+          "Tận dụng một cơ hội hoặc nguồn lực.",
+          "Customers can take advantage of the early booking discount."
+        ],
+        [
+          "wonder if / whether",
+          "Dùng khi tự hỏi hoặc hỏi gián tiếp một cách lịch sự.",
+          "I wonder if you could send me the revised quotation."
+        ],
+        [
+          "refrain from / retain",
+          "Refrain from nghĩa là kiềm chế hoặc tránh làm. Retain nghĩa là giữ lại.",
+          "Please refrain from using your phone during the test."
+        ],
+        [
+          "live up to",
+          "Đáp ứng kỳ vọng hoặc tiêu chuẩn.",
+          "The new equipment lived up to our expectations."
+        ],
+        [
+          "at work / on duty",
+          "At work là ở chỗ làm hoặc đang làm việc. On duty là đang trực hoặc đang trong ca.",
+          "A technician is on duty until six."
+        ],
+        [
+          "almost all",
+          "Nghĩa là hầu như tất cả. Đi trước danh từ số nhiều hoặc cụm danh từ phù hợp.",
+          "Almost all participants completed the survey."
+        ],
+        [
+          "serve as / work as",
+          "Serve as là đóng vai trò. Work as giới thiệu nghề hoặc vị trí.",
+          "The spare room serves as a temporary office."
+        ],
+        [
+          "based on",
+          "Dựa trên một nguồn, tiêu chí hoặc dữ liệu.",
+          "The decision was based on last year’s sales data."
+        ],
+        [
+          "cut down on / insist on",
+          "Cut down on là cắt giảm. Insist on là khăng khăng hoặc nhất quyết yêu cầu.",
+          "The manager insisted on checking every invoice."
+        ],
+        [
+          "pick up",
+          "Có thể nghĩa là đón người hoặc lấy đồ. Với đại từ, đặt đại từ giữa pick và up.",
+          "I can pick you up at the station."
+        ],
+        [
+          "provide / supply",
+          "Provide someone with something và provide something to someone đều diễn tả cung cấp.",
+          "The organizer provided each participant with a badge."
+        ]
+      ]
+    },
+    {
+      "name": "Điều kiện, lý do và nhượng bộ",
+      "rows": [
+        [
+          "provided that / as long as",
+          "Đưa ra điều kiện và theo sau bằng mệnh đề.",
+          "You may borrow the equipment as long as you return it today."
+        ],
+        [
+          "ask someone for something",
+          "Hỏi xin hoặc yêu cầu ai cung cấp thứ gì.",
+          "Please ask the supplier for a revised quotation."
+        ],
+        [
+          "keep + tân ngữ + trạng thái",
+          "Theo sau có thể là tính từ hoặc phân từ diễn tả trạng thái cần duy trì.",
+          "Please keep the cabinet locked."
+        ],
+        [
+          "but trong câu chỉ ngoại lệ",
+          "Có thể nghĩa là ngoại trừ. No choice but to V nghĩa là không còn lựa chọn nào ngoài việc làm gì.",
+          "We had no choice but to reschedule the test."
+        ],
+        [
+          "take effect / come into effect",
+          "Chỉ thời điểm bắt đầu có hiệu lực. Be in effect chỉ trạng thái đang có hiệu lực.",
+          "The revised policy takes effect next month."
+        ],
+        [
+          "whether / if",
+          "Dùng trong câu hỏi gián tiếp. Dùng whether trước to V hoặc trong cụm whether or not đứng liền.",
+          "We have to decide whether to extend the contract."
+        ],
+        [
+          "no matter / regardless of",
+          "No matter + từ hỏi + mệnh đề. Regardless of đi với cụm danh từ.",
+          "No matter what happens, keep a copy of the original file."
+        ],
+        [
+          "because / because of",
+          "Because, since và as có thể dẫn mệnh đề chỉ lý do. Because of, due to và owing to đi với cụm danh từ.",
+          "The meeting was canceled because the speaker was ill."
+        ],
+        [
+          "despite / although",
+          "Despite và in spite of đi với danh từ hoặc V-ing. Although, though và even though đi với mệnh đề đầy đủ trong cấu trúc cơ bản.",
+          "Despite the rain, the outdoor event went ahead."
+        ]
+      ]
+    }
   ]
 };

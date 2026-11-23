@@ -1,4 +1,4 @@
-const CACHE = 'tocfl-v5-10-1-calendar-2-toeic-study-3';
+const CACHE = 'tocfl-v5-10-1-calendar-2-toeic-study-4';
 const ASSETS = [
   './',
   './index.html',
@@ -8,6 +8,7 @@ const ASSETS = [
   './midterm.js',
   './toeic.js',
   './toeic-study.js',
+  './toeic-source.js',
   './toeic-study.css',
   './auth.js',
   './pinyin-helper.js',

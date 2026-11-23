@@ -55,6 +55,33 @@
   decks.push({ name: 'Ngữ pháp Part 5', icon: '05', questions: grammar.map(([prompt, options, word, note], index) => ({
     id: `grammar-${index}`, word, prompt, options, note,
   })) });
+  const source = window.toeicSource;
+  if (source) {
+    for (const group of source.vocabulary) {
+      decks.push({
+        name: group.name,
+        category: 'vocabulary',
+        questions: group.rows.map(([term, meaning, sentence], index) => ({
+          id: `source-vocab-${term}`,
+          word: meaning,
+          prompt: `Trong câu này, “${term}” có nghĩa là gì?`,
+          context: sentence.replace('___', term),
+          note: `${term} = ${meaning}`,
+          options: Array.from({ length: 4 }, (_, offset) => group.rows[(index + offset) % group.rows.length][1]),
+        })),
+      });
+    }
+    for (const group of source.grammar) {
+      decks.push({
+        name: group.name,
+        category: 'grammar',
+        questions: group.rows.map(([prompt, word, ...options]) => ({
+          id: `source-grammar-${prompt}`,
+          prompt, word, note: options.pop(), options: [word, ...options],
+        })),
+      });
+    }
+  }
   const questions = decks.flatMap(deck => deck.questions);
   const key = 'learningchinese-toeic-practice-v1';
   let records = {};
@@ -67,10 +94,13 @@
   const intervals = [1, 3, 7, 14, 30];
   const get = id => root.querySelector(`[data-ui="${id}"]`);
   let queue = [], current, name, answered, total, correct, attempts;
+  let lastDeck;
   let retried = new Set();
 
   function renderGroups() {
-    get('groups').replaceChildren(...decks.map((deck, index) => {
+    for (const container of root.querySelectorAll('[data-decks]')) {
+    container.replaceChildren(...decks.map((deck, index) => {
+      if ((deck.category || 'extra') !== container.dataset.decks) return null;
       const button = document.createElement('button');
       button.className = 'tp-group';
       button.type = 'button';
@@ -82,7 +112,8 @@
       count.textContent = `${learned}/${deck.questions.length} câu đã làm đúng`;
       button.append(title, count);
       return button;
-    }));
+    }).filter(Boolean));
+    }
     const due = questions.filter(question => records[question.id]?.due <= day(0)).length;
     get('review').textContent = `Ôn đến hạn (${due})`;
     get('review').disabled = due === 0;
@@ -96,6 +127,8 @@
     get('options').replaceChildren();
     get('counter').textContent = `${attempts} lượt đã làm · ${queue.length + Number(!!current)} câu còn lại`;
     get('prompt').textContent = current?.prompt || `Hoàn thành · ${correct}/${total} câu đúng ngay lần đầu`;
+    get('context').textContent = current?.context || '';
+    get('context').hidden = !current?.context;
     if (!current) {
       renderGroups();
       get('back').focus();
@@ -171,7 +204,8 @@
     const button = event.target.closest('button');
     if (!button || !root.contains(button)) return;
     if (button.dataset.deck !== undefined) {
-      const deck = decks[Number(button.dataset.deck)];
+      lastDeck = button.dataset.deck;
+      const deck = decks[Number(lastDeck)];
       start(deck.name, deck.questions);
     } else if (button.dataset.option !== undefined) {
       choose(button.dataset.option);
@@ -185,7 +219,7 @@
       get('session').hidden = true;
       get('menu').hidden = false;
       renderGroups();
-      get('groups').querySelector('button')?.focus();
+      root.querySelector('[data-deck="' + lastDeck + '"]')?.focus();
     }
   });
   renderGroups();

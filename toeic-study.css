@@ -21,3 +21,11 @@
 .tp-feedback p{margin:.5rem 0}
 .tp-feedback p:empty{display:none}
 @media(max-width:540px){.tp-grid,.tp-options{grid-template-columns:1fr}}
+.tp-links { display: flex; flex-wrap: wrap; gap: .65rem 1rem; margin: 1rem 0; }
+.tp-links a, .tp-pages a { color: #116359; text-decoration: underline; text-underline-offset: .2em; }
+#toeic-practice h2[id] { scroll-margin-top: 1rem; }
+.tp-pages details { border: 1px solid #bed7d0; border-radius: .75rem; background: #fff; margin: .55rem 0; padding: .75rem 1rem; }
+.tp-pages summary { cursor: pointer; font-weight: 700; }
+.tp-pages details a { display: inline-block; margin: .75rem 0; }
+.tp-pages img { display: block; width: min(100%, 56rem); height: auto; margin-inline: auto; }
+.tp-context { padding: .85rem 1rem; border-radius: .75rem; background: #e6f4ee; }

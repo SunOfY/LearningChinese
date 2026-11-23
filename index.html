@@ -44,6 +44,7 @@
       <button class="tab" data-view="reading" type="button"><span>📖</span> <span data-i18n="navReading">Reading</span></button>
       <button class="tab" data-view="midterm" type="button"><span>🎯</span> <span data-i18n="navMidterm">Ôn giữa kỳ</span></button>
       <button class="tab" data-view="toeic" type="button"><span>🇬🇧</span> <span>English</span> <span id="toeicTabBadge" class="tab-badge" hidden></span></button>
+      <button class="tab" data-view="toeic-study" type="button">Học TOEIC</button>
       <button class="tab" data-view="quiz" type="button"><span>🧠</span> <span data-i18n="navQuiz">Quiz</span></button>
       <button class="tab" data-view="progress" type="button"><span>📊</span> <span data-i18n="navProgress">Tiến độ</span></button>
     </nav>
@@ -335,6 +336,75 @@
         </div>
       </section>
 
+<section id="view-toeic-study" class="view">
+  <article class="card" id="toeic-smart">
+    <h2>Từ vựng theo ngữ cảnh</h2>
+    <p>Nhìn từ và tự nhớ nghĩa trước khi xem câu ví dụ. Ưu tiên ôn từ đến hạn, mỗi ngày học tối đa 10 từ mới.</p>
+    <button type="button" id="toeic-smart-start">Học và ôn từ</button>
+    <p id="toeic-smart-status" role="status"></p>
+    <div id="toeic-smart-card" hidden>
+      <h3 lang="en" id="toeic-smart-word"></h3>
+      <p id="toeic-smart-ipa"></p>
+      <button type="button" id="toeic-smart-reveal">Xem nghĩa và ví dụ</button>
+      <div id="toeic-smart-answer" hidden>
+        <p><strong id="toeic-smart-meaning"></strong></p>
+        <p lang="en" id="toeic-smart-example"></p>
+        <p id="toeic-smart-translation"></p>
+        <button type="button" data-rating="again">Chưa nhớ · Ôn lại hôm nay</button>
+        <button type="button" data-rating="remember">Đã nhớ · Hẹn ôn sau</button>
+      </div>
+    </div>
+  </article>
+
+  <article class="card">
+    <h1>Học TOEIC</h1>
+    <p>Luyện ngữ pháp và cụm từ qua câu điền khuyết kiểu Part 5. Tự chọn đáp án, sau đó mở phần giải thích để đối chiếu.</p>
+    <details open>
+      <summary><strong>1. Hòa hợp chủ ngữ và động từ</strong></summary>
+      <p><em>Each</em> và <em>the number of</em> đi với động từ số ít. <em>A number of</em> đi với danh từ và động từ số nhiều.</p>
+      <p lang="en">A number of invoices ___ still unpaid. <br>A. is · B. are · C. has · D. was</p>
+      <details><summary>Xem đáp án</summary><p><strong>B. are.</strong> Cụm <em>a number of invoices</em> mang nghĩa nhiều hóa đơn.</p></details>
+    </details>
+    <details>
+      <summary><strong>2. Từ loại</strong></summary>
+      <p>Sau tính từ sở hữu như <em>its</em> có thể là một cụm danh từ. Hãy xác định từ loại cần điền trước khi chọn nghĩa.</p>
+      <p lang="en">The company announced its ___ into a new market. <br>A. expand · B. expansive · C. expansion · D. expansively</p>
+      <details><summary>Xem đáp án</summary><p><strong>C. expansion.</strong> Đây là danh từ chỉ sự mở rộng.</p></details>
+    </details>
+    <details>
+      <summary><strong>3. So sánh</strong></summary>
+      <p>Với tính từ dài như <em>reliable</em>, dùng <em>more + tính từ + than</em> khi so sánh hơn.</p>
+      <p lang="en">The new printer is ___ than the previous model. <br>A. reliably · B. reliability · C. most reliable · D. more reliable</p>
+      <details><summary>Xem đáp án</summary><p><strong>D. more reliable.</strong> Từ <em>than</em> giới thiệu đối tượng được đem ra so sánh.</p></details>
+    </details>
+    <details>
+      <summary><strong>4. Câu bị động</strong></summary>
+      <p>Sau động từ khuyết thiếu, dùng <em>be + quá khứ phân từ</em> nếu chủ ngữ là đối tượng chịu tác động.</p>
+      <p lang="en">All receipts must ___ before reimbursement. <br>A. submit · B. be submitted · C. submitting · D. have submitted</p>
+      <details><summary>Xem đáp án</summary><p><strong>B. be submitted.</strong> Hóa đơn là thứ được nộp.</p></details>
+    </details>
+    <details>
+      <summary><strong>5. Mệnh đề quan hệ</strong></summary>
+      <p>Dùng <em>who</em> làm chủ ngữ của mệnh đề quan hệ chỉ người.</p>
+      <p lang="en">Applicants ___ meet the requirements will be contacted. <br>A. which · B. where · C. who · D. whose</p>
+      <details><summary>Xem đáp án</summary><p><strong>C. who.</strong> Từ này thay cho <em>applicants</em> và làm chủ ngữ của <em>meet</em>.</p></details>
+    </details>
+    <details>
+      <summary><strong>6. Chỉ lý do và nhượng bộ</strong></summary>
+      <p><em>Although</em> đi với mệnh đề. <em>Despite</em> thường đi với danh từ, cụm danh từ hoặc dạng <em>-ing</em>.</p>
+      <p lang="en">___ the delay, the team met its deadline. <br>A. Although · B. Despite · C. Because · D. Since</p>
+      <details><summary>Xem đáp án</summary><p><strong>B. Despite.</strong> <em>The delay</em> là cụm danh từ, và hai ý trong câu trái với điều được dự đoán.</p></details>
+    </details>
+    <details>
+      <summary><strong>7. Cụm từ trong công việc</strong></summary>
+      <p><em>Provide someone with something</em> nghĩa là cung cấp thứ gì cho ai. <em>Take effect</em> nghĩa là bắt đầu có hiệu lực.</p>
+      <p lang="en">The venue will provide attendees ___ a printed schedule. <br>A. on · B. in · C. for · D. with</p>
+      <details><summary>Xem đáp án</summary><p><strong>D. with.</strong> <em>Attendees</em> là người nhận và <em>a printed schedule</em> là thứ được cung cấp.</p></details>
+    </details>
+  </article>
+</section>
+
+
       <section id="view-toeic" class="view">
         <div id="toeicApp" class="toeic-app">
           <div class="card"><strong>Đang tải từ vựng tiếng Anh…</strong></div>
@@ -519,6 +589,7 @@
   <script src="./reading.js" defer></script>
   <script src="./midterm.js" defer></script>
   <script src="./toeic.js" defer></script>
+  <script src="./toeic-study.js" defer></script>
   <script type="module" src="./auth.js"></script>
 </body>
 </html>

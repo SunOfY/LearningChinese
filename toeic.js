@@ -1762,6 +1762,44 @@
       refreshGoogle();
       save();
     });
+    const nativeCalendar = window.Capacitor?.Plugins?.StudyCalendar;
+    if (nativeCalendar?.addPlan && window.Capacitor.getPlatform?.() === 'ios') {
+      const button = document.createElement('button');
+      const vi = lang() === 'vi';
+      button.type = 'button';
+      button.className = 'primary';
+      button.textContent = vi ? 'Thêm vào Lịch Apple' : 'Add to Apple Calendar';
+      const exportButton = m.querySelector('#toeicCalIcs');
+      exportButton.before(button);
+      const status = m.querySelector('#toeicCalStatus');
+      button.addEventListener('click', async () => {
+        button.disabled = true;
+        status.textContent = '';
+        let saved = false;
+        try {
+          const opts = read();
+          save();
+          const units = remainingUnits();
+          const sessions = (units.length ? units : [null]).map((unit, i) => {
+            const label = unit ? unitLabel(unit) : '';
+            return {
+              title: unit ? t.calEventTitle(label) : t.calEventTitleGeneric,
+              notes: [unit ? t.calEventBody(label, opts.chinese) : '', appUrl()].filter(Boolean).join('\n'),
+              start: eventStart(addDays(opts.start, i), opts.time).getTime() / 1000
+            };
+          });
+          const result = await nativeCalendar.addPlan({
+            language: lang(), sessions: JSON.stringify(sessions), duration: opts.duration, alarm: opts.alarm
+          });
+          saved = result.saved === true;
+          if (saved) status.textContent = vi ? 'Đã thêm các buổi học vào Lịch Apple.' : 'Study sessions added to Apple Calendar.';
+        } catch (error) {
+          status.textContent = error?.message || String(error);
+        } finally {
+          button.disabled = saved;
+        }
+      });
+    }
     m.querySelector('#toeicCalIcs').addEventListener('click', () => {
       const opts = read();
       save();

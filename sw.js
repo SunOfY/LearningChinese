@@ -1,4 +1,4 @@
-const CACHE = 'tocfl-v5-10-1-reflow-1';
+const CACHE = 'tocfl-v5-10-1-calendar-2';
 const ASSETS = [
   './',
   './index.html',

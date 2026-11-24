@@ -107,7 +107,7 @@
       const index = item.selectedIndex;
       const [term, meaning, sentence] = rows[index];
       get('position').textContent = 'Mục ' + (index + 1) + ' / ' + rows.length;
-      get('term').textContent = term;
+      get('term').textContent = /^each \/ every/i.test(term) ? 'Each / Every' : term;
       get('definition').textContent = meaning;
       get('sentence').textContent = sentence.replace('___', term);
       const sample = source.flash[mode.value][term];
@@ -115,12 +115,12 @@
       const second = vocab ? sample.replace('___', term) : sample.split('|')[0].replace(/\[([^\]]+)\]/, '$1');
       get('extra').textContent = second;
       get('extra').parentElement.open = false;
-      let flipped = false, step = 0;
+      let flipped = false, step = 1;
       function drawFace() {
-        get('inside').hidden = get('definition').hidden = !flipped;
+        get('inside').hidden = false; get('more-examples').hidden = get('definition').hidden = !flipped;
         get('flip').setAttribute('aria-expanded', String(flipped));
         get('face').textContent = flipped ? 'Mặt sau' : 'Mặt trước';
-        get('flip-label').textContent = flipped ? '↶  Xem mặt trước' : '↻  Chạm để xem nghĩa và cách dùng';
+        get('flip-label').textContent = flipped ? '↶  Xem mặt trước' : 'Lật thẻ ↻';
       }
       get('flip').onclick = () => { flipped = !flipped; drawFace(); };
       function exercise() {
@@ -129,7 +129,7 @@
         const blank = vocab ? term : parts[0].match(/\[([^\]]+)\]/)[1];
         const correct = step === 0 ? term : blank;
         const distractors = step === 1 && !vocab ? parts.slice(1) : other.slice(0,3).map(row => row[0]);
-        get('task').textContent = step === 0 ? '1/2 · Chọn mục phù hợp với nghĩa hoặc quy tắc sau. ' + meaning : '2/2 · Điền vào chỗ trống. ' + (vocab ? sample : parts[0].replace(/\[[^\]]+\]/, '___'));
+        get('task').textContent = step === 0 ? 'Chọn mục phù hợp. ' + meaning : '' + (vocab ? sample : parts[0].replace(/\[[^\]]+\]/, '___'));
         get('answer').textContent = '';
         get('again').hidden = true;
         const buttons = shuffle([correct, ...distractors]).map((value, i) => {
@@ -141,7 +141,7 @@
             buttons.find(entry => entry.dataset.value === correct).classList.add('fc-right');
             if (value !== correct) b.classList.add('fc-wrong');
             get('answer').textContent = (value === correct ? 'Chính xác. ' : 'Đáp án đúng là ' + correct + '. ') + (step === 0 ? get('sentence').textContent : second);
-            get('again').textContent = step === 0 ? 'Bài tập tiếp →' : 'Làm lại hai bài';
+            get('again').textContent = step === 1 ? 'Bài tập tiếp →' : 'Làm lại hai bài';
             get('again').hidden = false;
           };
           b.dataset.value = value;
@@ -159,6 +159,11 @@
       const group = chapters()[chapter.selectedIndex];
       const quiz = mode.value === 'quiz';
       get('reading').hidden = quiz;
+      get('session').hidden = true;
+      if (quiz) {
+        start(group.name, group.questions);
+        return;
+      }
       if (!quiz) {
         item.replaceChildren(...group.rows.map(([term], i) => new Option((i + 1) + '. ' + term)));
         showItem();
@@ -176,15 +181,23 @@
       chapter.replaceChildren(...chapters().map(group => new Option(group.name)));
       showChapter();
     }
-    mode.onchange = showMode;
+    const modeButtons = root.querySelectorAll('[data-mode]');
+    function selectMode(value) {
+      mode.value = value;
+      for (const b of modeButtons) b.setAttribute('aria-pressed', String(b.dataset.mode === value));
+      get('jump').hidden = value === 'quiz';
+      showMode();
+    }
+    for (const b of modeButtons) b.onclick = () => { if (mode.value !== b.dataset.mode) selectMode(b.dataset.mode); };
+    mode.onchange = () => selectMode(mode.value);
     chapter.onchange = showChapter;
     item.onchange = showItem;
     get('prev').onclick = () => { item.selectedIndex--; showItem(); };
     get('forward').onclick = () => { item.selectedIndex++; showItem(); };
-    showMode();
+    selectMode(mode.value);
   }
   function renderGroups() {
-    if (get('mode').value === 'quiz') get('chapter').onchange();
+
 
     const due = questions.filter(question => records[question.id]?.due <= day(0)).length;
     get('review').textContent = `Ôn đến hạn (${due})`;
@@ -203,6 +216,8 @@
     get('context').hidden = !current?.context;
     if (!current) {
       renderGroups();
+      get('back').hidden = false;
+      if (get('mode').value === 'quiz') get('back').textContent = 'Luyện lại chủ đề';
       get('back').focus();
       return;
     }
@@ -223,7 +238,11 @@
     retried = new Set();
     total = items.length;
     correct = attempts = 0;
-    get('menu').hidden = true;
+    get('reading').hidden = true;
+    get('launch').hidden = true;
+    get('deck-info').hidden = true;
+    get('back').hidden = get('mode').value === 'quiz';
+    get('back').textContent = '← Về thẻ học';
     get('session').hidden = false;
     get('topic').textContent = name;
     next();
@@ -289,7 +308,7 @@
       current = undefined;
       queue = [];
       get('session').hidden = true;
-      get('menu').hidden = false;
+      get('chapter').onchange();
       renderGroups();
       root.querySelector('[data-deck="' + lastDeck + '"]')?.focus();
     }

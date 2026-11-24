@@ -346,20 +346,13 @@
         <button type="button" class="tp-primary" data-ui="review">Ôn đến hạn</button>
       </header>
       <div class="tp-reader">
-        <label>Chế độ <select data-ui="mode"><option value="reference">Học ngữ pháp</option><option value="vocabulary">Học từ vựng</option><option value="quiz">Luyện trắc nghiệm</option></select></label>
-        <label>Chủ đề <select data-ui="chapter"></select></label>
-        <div data-ui="reading"><label>Chuyển đến mục <select data-ui="item"></select></label>
-          <article class="fc"><div class="fc-bar"><small data-ui="position"></small><span data-ui="face"></span></div><button class="fc-flip" data-ui="flip" type="button" aria-expanded="false"><strong data-ui="term"></strong><span data-ui="definition" hidden></span><small data-ui="flip-label"></small></button></article>
-          <div class="fc-body" data-ui="inside" hidden><section class="fc-example"><h3>Ví dụ trong ngữ cảnh</h3><p lang="en" data-ui="sentence"></p><details><summary>Ví dụ thứ hai</summary><p lang="en" data-ui="extra"></p></details></section><section class="fc-exercise"><h3>Luyện ngay</h3><p data-ui="task"></p><div class="fc-choices" data-ui="choices"></div><p role="status" data-ui="answer"></p><button type="button" data-ui="again"></button></section></div>
-
-          <footer><button type="button" data-ui="prev">← Trước</button><button type="button" data-ui="forward">Tiếp →</button></footer></div>
-        <p data-ui="deck-info"></p><button type="button" class="tp-primary" data-ui="launch">Luyện A–D</button>
-      </div>
-
-
-
-    </div>
-    <article class="tp-session" data-ui="session" hidden>
+        <aside class="study-rail" aria-label="Điều hướng bài học"><div class="fc-modes" role="group" aria-label="Chế độ học"><button type="button" data-mode="reference">Ngữ pháp</button><button type="button" data-mode="vocabulary">Từ vựng</button><button type="button" data-mode="quiz">Trắc nghiệm</button></div>
+        <input type="hidden" data-ui="mode" value="reference">
+        <div class="fc-selects"><label>Chủ đề<select data-ui="chapter"></select></label><label data-ui="jump">Thẻ đang học<select data-ui="item"></select></label></div>
+        </aside><div class="study-main"><div data-ui="reading">
+          <article class="fc"><div class="fc-bar"><span class="card-index"><i aria-hidden="true"></i><small data-ui="position"></small></span><span data-ui="face"></span></div><button class="fc-flip" data-ui="flip" type="button" aria-expanded="false"><strong data-ui="term"></strong><span lang="en" data-ui="sentence"></span><span data-ui="definition" hidden></span><small data-ui="flip-label"></small></button></article>
+          <div class="fc-body" data-ui="inside" hidden><section class="fc-example" data-ui="more-examples"><details><summary>Ví dụ thứ hai</summary><p lang="en" data-ui="extra"></p></details></section><section class="fc-exercise"><h3>Luyện ngay</h3><p data-ui="task"></p><div class="fc-choices" data-ui="choices"></div><p role="status" data-ui="answer"></p><button type="button" data-ui="again"></button></section></div><footer><button type="button" data-ui="prev">← Trước</button><button type="button" data-ui="forward">Tiếp →</button></footer></div>
+        <p data-ui="deck-info"></p><button type="button" class="tp-primary" data-ui="launch">Luyện A–D</button><article class="tp-session" data-ui="session" hidden>
       <div class="tp-toolbar">
         <button type="button" data-ui="back">← Chủ đề</button>
         <strong data-ui="topic"></strong>
@@ -377,7 +370,13 @@
       </div>
       <p data-ui="storage" role="status"></p>
       <button type="button" class="tp-primary" data-ui="next" hidden>Câu tiếp →</button>
-    </article>
+    </article></div>
+      </div>
+
+
+
+    </div>
+    
   </div>
 </section>
 

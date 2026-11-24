@@ -1,4 +1,4 @@
-const CACHE = 'tocfl-v5-10-1-calendar-2-toeic-study-8';
+const CACHE = 'tocfl-v5-10-1-calendar-2-toeic-cobalt-12';
 const ASSETS = [
   './',
   './index.html',
